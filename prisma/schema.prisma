@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("user") // "admin", "super_admin", "editor", "user"
+  active    Boolean  @default(true)
+  lastLogin DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  activities ActivityLog[]
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  category    String   // e.g., "ramen-deuren", "gevelrenovatie", "totaalrenovatie"
+  imageUrl    String
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  views       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String?
+  phone     String?
+  message   String
+  source    String   @default("chatbot") // "chatbot" of "contact-form"
+  read      Boolean  @default(false)
+  archived  Boolean  @default(false)
+  priority  String   @default("normal") // "low", "normal", "high"
+  notes     String?
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  rating    Int      @default(5) // 1-5 stars
+  text      String
+  imageUrl  String?
+  approved  Boolean  @default(false)
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  category    String   // "general", "contact", "social", "seo", "email"
+  description String?
+  updatedAt   DateTime @updatedAt
+}
+
+model MediaFile {
+  id        String   @id @default(cuid())
+  filename  String
+  url       String
+  size      Int      // in bytes
+  mimeType  String
+  folder    String   @default("uploads")
+  alt       String?
+  createdAt DateTime @default(now())
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  referrer  String?
+  userAgent String?
+  ip        String?
+  createdAt DateTime @default(now())
+
+  @@index([path])
+  @@index([createdAt])
+}
+
+model SeoPage {
+  id          String   @id @default(cuid())
+  path        String   @unique // e.g., "/", "/diensten", "/projecten"
+  title       String   // Meta title
+  description String   // Meta description
+  keywords    String?  // Meta keywords (comma separated)
+  ogImage     String?  // Open Graph image URL
+  ogTitle     String?  // Open Graph title (optional override)
+  ogDescription String? // Open Graph description (optional override)
+  canonicalUrl String?  // Canonical URL override
+  h1          String?  // H1 heading content
+  noindex     Boolean  @default(false)
+  nofollow    Boolean  @default(false)
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+
+  @@index([path])
+}
+
+model SeoAudit {
+  id          String   @id @default(cuid())
+  path        String
+  issue       String   // e.g., "missing_title", "missing_description", "duplicate_h1"
+  severity    String   // "error", "warning", "info"
+  message     String
+  fixed       Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  fixedAt     DateTime?
+
+  @@index([path])
+  @@index([createdAt])
+}
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action    String   // "create", "update", "delete", "login"
+  entity    String   // "project", "lead", "testimonial", etc.
+  entityId  String?
+  details   String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
