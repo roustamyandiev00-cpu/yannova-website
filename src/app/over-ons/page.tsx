@@ -38,7 +38,7 @@ export default function AboutPage() {
                         fill
                         className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
+                    <div className="absolute inset-0 bg-linear-to-b from-background via-background/80 to-background" />
                 </div>
 
                 <div className="container mx-auto px-6 lg:px-8 relative">
@@ -88,7 +88,7 @@ export default function AboutPage() {
                             </FadeIn>
                         </div>
                         <FadeIn delay={0.2} className="relative">
-                            <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-white/5 shadow-2xl ring-1 ring-white/10 lg:aspect-[3/4] relative">
+                            <div className="aspect-4/5 overflow-hidden rounded-2xl bg-white/5 shadow-2xl ring-1 ring-white/10 lg:aspect-3/4 relative">
                                 {/* Placeholder image */}
                                 <Image
                                     src="https://images.unsplash.com/photo-1507208773393-402a1789dcae?q=80&w=2187&auto=format&fit=crop"

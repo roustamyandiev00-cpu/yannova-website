@@ -6,7 +6,7 @@ async function createAdmin() {
   const connectionString = process.env.DATABASE_URL?.replace('prisma+postgres://', 'postgres://');
 
   if (!connectionString) {
-    // eslint-disable-next-line no-console
+     
     console.error('DATABASE_URL is undefined');
     process.exit(1);
   }
@@ -25,17 +25,17 @@ async function createAdmin() {
     );
 
     if (result.rowCount === 0) {
-      // eslint-disable-next-line no-console
+       
       console.log('Admin user already exists or could not be created');
     } else {
-      // eslint-disable-next-line no-console
+       
       console.log('Admin user created: admin@yannova.be');
-      // eslint-disable-next-line no-console
+       
       console.log('Password: admin123');
     }
   } catch (e) {
     const message = e instanceof Error ? e.message : String(e);
-    // eslint-disable-next-line no-console
+     
     console.error('Error:', message);
   } finally {
     await pool.end();

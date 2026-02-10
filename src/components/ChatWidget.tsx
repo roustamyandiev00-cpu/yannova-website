@@ -26,24 +26,24 @@ export function ChatWidget() {
     formData.append('source', 'chatbot');
 
     try {
-        const result = await createLead(null, formData);
-        
-        if (result.success) {
-            setStep('success');
-            setTimeout(() => {
-                setIsOpen(false);
-                setStep('welcome');
-                setMessage('');
-                setEmail('');
-                setErrorMsg(null);
-            }, 5000);
-        } else {
-            setErrorMsg(result.message || 'Er ging iets mis.');
-        }
-    } catch (e) {
-        setErrorMsg('Kan geen verbinding maken met de server.');
+      const result = await createLead(null, formData);
+
+      if (result.success) {
+        setStep('success');
+        setTimeout(() => {
+          setIsOpen(false);
+          setStep('welcome');
+          setMessage('');
+          setEmail('');
+          setErrorMsg(null);
+        }, 5000);
+      } else {
+        setErrorMsg(result.message || 'Er ging iets mis.');
+      }
+    } catch {
+      setErrorMsg('Kan geen verbinding maken met de server.');
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
   };
 
@@ -89,24 +89,24 @@ export function ChatWidget() {
                     Hallo! 👋 Welkom bij Yannova. Waarmee kan ik u helpen vandaag?
                   </div>
                   <div className="flex flex-col gap-2">
-                     <button 
-                        onClick={() => { setMessage("Ik wil graag een offerte voor ramen/deuren."); setStep('form'); }}
-                        className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
-                     >
-                        Ik wil graag een offerte voor ramen/deuren.
-                     </button>
-                     <button 
-                        onClick={() => { setMessage("Ik heb een vraag over gevelrenovatie."); setStep('form'); }}
-                        className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
-                     >
-                        Ik heb een vraag over gevelrenovatie.
-                     </button>
-                     <button 
-                        onClick={() => { setMessage(""); setStep('form'); }}
-                        className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
-                     >
-                        Stel een andere vraag...
-                     </button>
+                    <button
+                      onClick={() => { setMessage("Ik wil graag een offerte voor ramen/deuren."); setStep('form'); }}
+                      className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
+                    >
+                      Ik wil graag een offerte voor ramen/deuren.
+                    </button>
+                    <button
+                      onClick={() => { setMessage("Ik heb een vraag over gevelrenovatie."); setStep('form'); }}
+                      className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
+                    >
+                      Ik heb een vraag over gevelrenovatie.
+                    </button>
+                    <button
+                      onClick={() => { setMessage(""); setStep('form'); }}
+                      className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
+                    >
+                      Stel een andere vraag...
+                    </button>
                   </div>
                 </div>
               )}
@@ -116,29 +116,29 @@ export function ChatWidget() {
                   <div className="mr-8 rounded-2xl rounded-tl-none bg-white/10 p-3 text-sm text-gray-200 mb-4">
                     Laat uw bericht en e-mailadres achter, dan nemen we zo snel mogelijk contact op!
                   </div>
-                  
+
                   <div className="flex-1 space-y-3">
                     <textarea
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Uw vraag of bericht..."
-                        className="w-full rounded-lg border border-white/10 p-3 text-sm text-white placeholder-gray-500 focus:border-secondary focus:ring-1 focus:ring-secondary min-h-[80px] resize-none bg-white/5"
-                        required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder="Uw vraag of bericht..."
+                      className="w-full rounded-lg border border-white/10 p-3 text-sm text-white placeholder-gray-500 focus:border-secondary focus:ring-1 focus:ring-secondary min-h-[80px] resize-none bg-white/5"
+                      required
                     />
                     <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Uw e-mailadres"
-                        className="w-full rounded-lg border border-white/10 p-3 text-sm text-white placeholder-gray-500 focus:border-secondary focus:ring-1 focus:ring-secondary bg-white/5"
-                        required
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Uw e-mailadres"
+                      className="w-full rounded-lg border border-white/10 p-3 text-sm text-white placeholder-gray-500 focus:border-secondary focus:ring-1 focus:ring-secondary bg-white/5"
+                      required
                     />
                   </div>
-                  
+
                   {errorMsg && (
-                      <div className="mt-2 text-xs text-red-400 bg-red-500/10 p-2 rounded">
-                          {errorMsg}
-                      </div>
+                    <div className="mt-2 text-xs text-red-400 bg-red-500/10 p-2 rounded">
+                      {errorMsg}
+                    </div>
                   )}
 
                   <button
@@ -147,10 +147,10 @@ export function ChatWidget() {
                     className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-secondary py-2.5 text-sm font-bold text-white transition-colors hover:bg-secondary/90 disabled:opacity-50"
                   >
                     {isSubmitting ? 'Versturen...' : (
-                        <>Verstuur Bericht <Send className="h-4 w-4" /></>
+                      <>Verstuur Bericht <Send className="h-4 w-4" /></>
                     )}
                   </button>
-                  
+
                   <button type="button" onClick={() => setStep('welcome')} className="mt-2 text-xs text-center text-gray-400 hover:text-white hover:underline">
                     Terug
                   </button>
@@ -169,10 +169,10 @@ export function ChatWidget() {
                 </div>
               )}
             </div>
-            
+
             {/* Footer */}
             <div className="bg-white/5 p-2 text-center text-[10px] text-gray-400 border-t border-white/10">
-                Powered by Yannova
+              Powered by Yannova
             </div>
           </motion.div>
         )}

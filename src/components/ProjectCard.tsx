@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
@@ -27,6 +27,7 @@ export function ProjectCard({ title, category, image, description, index }: Proj
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 z-10" />
 
                 {/* Placeholder image (using Unsplash for demo if no local image provided) */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src={image}
                     alt={title}

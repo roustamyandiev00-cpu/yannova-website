@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { signOut } from '@/auth';
-import { Home, Layers, LogOut, FileText, Star, BarChart3, Image, Settings, Users, Search } from 'lucide-react';
+import { Home, Layers, LogOut, FileText, Star, BarChart3, Image as ImageIcon, Settings, Users, Search } from 'lucide-react';
 
 export default function AdminLayout({
   children,
@@ -66,7 +66,7 @@ export default function AdminLayout({
               href="/admin/media"
               className="flex h-[48px] grow shrink-0 items-center justify-center gap-2 rounded-md bg-white/5 p-3 text-sm font-medium hover:bg-secondary/20 hover:text-secondary md:flex-none md:justify-start md:p-2 md:px-3 text-foreground"
             >
-              <Image className="w-6" aria-hidden="true" />
+              <ImageIcon className="w-6" aria-hidden="true" />
               <p className="hidden md:block">Media</p>
             </Link>
             <Link

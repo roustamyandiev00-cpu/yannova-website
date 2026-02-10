@@ -568,6 +568,7 @@ export default function SeoClientPage({ pages, audits }: { pages: SeoPageType[];
                     <div className="bg-white border border-gray-200 rounded-lg overflow-hidden max-w-sm mx-auto shadow-sm">
                       {editingPage.ogImage ? (
                         <div className="relative h-48 w-full bg-gray-100">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={editingPage.ogImage}
                             alt="Preview"

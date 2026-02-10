@@ -18,7 +18,7 @@ export default async function ProjectenPage() {
   return (
     <div className="py-24 sm:py-32 bg-background relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#ffffff05_1px,transparent_1px)] [background-size:20px_20px] -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#ffffff05_1px,transparent_1px)] bg-size-[20px_20px] -z-10" />
 
       <div className="container mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center mb-16">

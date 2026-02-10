@@ -4,7 +4,7 @@ import projectsData from '../src/data/projects.json';
 const prisma = new PrismaClient();
 
 async function main() {
-  // eslint-disable-next-line no-console
+
   console.log('Bezig met seeden van projecten...');
 
   for (const imageUrl of projectsData) {
@@ -25,13 +25,12 @@ async function main() {
     });
   }
 
-  // eslint-disable-next-line no-console
   console.log('Seeding voltooid!');
 }
 
 main()
   .catch((e) => {
-    // eslint-disable-next-line no-console
+
     console.error(e);
     process.exit(1);
   })

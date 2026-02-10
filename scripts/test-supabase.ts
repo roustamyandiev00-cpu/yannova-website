@@ -23,8 +23,8 @@ async function testConnection() {
   try {
     // Test 1: Check if we can connect
     console.log('\n1. Testing connection...');
-    const { data: health, error: healthError } = await supabase.from('site_settings').select('count(*)', { count: 'exact', head: true });
-    
+    const { error: healthError } = await supabase.from('site_settings').select('count(*)', { count: 'exact', head: true });
+
     if (healthError) {
       console.error('❌ Connection failed:', healthError.message);
       console.error('Error details:', JSON.stringify(healthError, null, 2));
@@ -37,12 +37,12 @@ async function testConnection() {
     const { data: settings, error: settingsError } = await supabase
       .from('site_settings')
       .select('*');
-    
+
     if (settingsError) {
       console.error('❌ Fetch failed:', settingsError.message);
       return;
     }
-    
+
     console.log(`✓ Retrieved ${settings?.length || 0} settings:`);
     settings?.forEach(s => {
       console.log(`  - ${s.key}: ${s.value?.substring(0, 40) || '(empty)'}${s.value?.length > 40 ? '...' : ''}`);
@@ -54,11 +54,11 @@ async function testConnection() {
       const supabaseAdmin = createClient(supabaseUrl!, supabaseServiceKey, {
         auth: { autoRefreshToken: false, persistSession: false },
       });
-      
+
       const { error: adminError } = await supabaseAdmin
         .from('site_settings')
         .select('*', { head: true });
-      
+
       if (adminError) {
         console.error('❌ Service role failed:', adminError.message);
       } else {
@@ -67,7 +67,7 @@ async function testConnection() {
     }
 
     console.log('\n✅ All Supabase tests passed!');
-    
+
   } catch (error) {
     console.error('\n❌ Test error:', error);
   }

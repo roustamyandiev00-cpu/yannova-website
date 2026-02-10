@@ -19,12 +19,12 @@ async function main() {
   const password = args[1];
 
   if (!email || !password) {
-    // eslint-disable-next-line no-console
+     
     console.error('Gebruik: node scripts/create-admin.js <email> <wachtwoord>');
     process.exit(1);
   }
 
-  // eslint-disable-next-line no-console
+   
   console.log(`Bezig met aanmaken admin user: ${email}...`);
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -37,14 +37,14 @@ async function main() {
         name: 'Admin',
       },
     });
-    // eslint-disable-next-line no-console
+     
     console.log(`Admin user aangemaakt: ${user.email}`);
   } catch (e) {
     if (typeof e === 'object' && e !== null && 'code' in e && (e as { code?: string }).code === 'P2002') {
-      // eslint-disable-next-line no-console
+       
       console.error('Fout: Er bestaat al een gebruiker met dit emailadres.');
     } else {
-      // eslint-disable-next-line no-console
+       
       console.error('Er ging iets mis:', e);
     }
   } finally {
