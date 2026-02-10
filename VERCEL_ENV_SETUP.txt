@@ -1,0 +1,35 @@
+# ============================================
+# VERCEL ENVIRONMENT VARIABLES SETUP
+# ============================================
+# Ga naar: https://vercel.com/jouw-project/settings/environment-variables
+# Voeg ALLE onderstaande variabelen toe voor: Production, Preview, Development
+# ============================================
+
+# 1. DATABASE (KRITIEK - gebruik POSTGRES_PRISMA_URL voor pgBouncer)
+DATABASE_URL=postgres://postgres.adlqcdnpjaglfvleeykj:AXOuhMbviXiwobNg@aws-1-eu-central-1.pooler.supabase.com:6543/postgres?sslmode=require&pgbouncer=true
+
+# 2. NEXTAUTH (KRITIEK - update AUTH_URL naar je echte domain!)
+AUTH_SECRET=7pSeJLMcZmKwfTR2Md5eaZUOme5zJ5Sn5ECFgpSUJwQ=
+AUTH_URL=https://yannova.be
+
+# 3. EMAIL SMTP
+SMTP_HOST=mail.b.hostedemail.com
+SMTP_PORT=465
+SMTP_USER=info@yannova.be
+SMTP_PASS=WRmN3yerM_B8qjFq3z3i
+
+# 4. GOOGLE AI & ANALYTICS
+GOOGLE_GENERATIVE_AI_API_KEY=AIzaSyDwQoafHHw0rhkZiL-r6c6B-oocdWMwBXA
+NEXT_PUBLIC_GA_ID=G-1RS27QF82W
+
+# 5. SUPABASE
+NEXT_PUBLIC_SUPABASE_URL=https://adlqcdnpjaglfvleeykj.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkbHFjZG5wamFnbGZ2bGVleWtqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA3MDAyMjAsImV4cCI6MjA4NjI3NjIyMH0.V9C4PscilGrnZVB0qvqvSQc-dZBujk8pdwpyoHQdZ8g
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkbHFjZG5wamFnbGZ2bGVleWtqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDcwMDIyMCwiZXhwIjoyMDg2Mjc2MjIwfQ.BarUVh1VtzYgoZzmblwVQM44rXo04Io3HOGhk-ck6oY
+
+# ============================================
+# BELANGRIJK:
+# - DATABASE_URL gebruikt pgbouncer=true voor connection pooling
+# - AUTH_URL moet je PRODUCTIE URL zijn (niet localhost)
+# - Alle NEXT_PUBLIC_ variabelen zijn zichtbaar in de browser
+# ============================================
