@@ -1,112 +1,119 @@
-import { getSeoMetadata } from "@/lib/seo-helper";
-
-export async function generateMetadata() {
-    return getSeoMetadata('/diensten');
-}
-
+import Image from "next/image";
+import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ServiceCard } from "@/components/ServiceCard";
-import { Home, Layers, Hammer, ShieldCheck, Sun, Umbrella } from "lucide-react";
-import Image from "next/image";
+import { Home, Layers, Hammer, ShieldCheck, Phone, MessageCircle } from "lucide-react";
+import { getSeoMetadata } from "@/lib/seo-helper";
+import { company } from "@/lib/company";
+
+export async function generateMetadata() {
+  return getSeoMetadata("/diensten");
+}
 
 export default function DienstenPage() {
-    const services = [
-        {
-            title: "Ramen & Deuren",
-            description: "Hoogrendementsbeglazing in PVC of Aluminium profielen. Veilig, stijlvol en energiezuinig.",
-            link: "/diensten/ramen-deuren",
-            icon: <Home className="h-8 w-8" />,
-        },
-        {
-            title: "Gevelrenovatie",
-            description: "Crepi of steenstrips met isolatie. Geef uw woning een nieuwe look én een lagere energiefactuur.",
-            link: "/diensten/gevelrenovatie",
-            icon: <Layers className="h-8 w-8" />,
-        },
-        {
-            title: "Totaalrenovatie",
-            description: "Van badkamer tot zolder: wij nemen uw volledige verbouwing in handen van A tot Z.",
-            link: "/diensten/renovatie",
-            icon: <Hammer className="h-8 w-8" />,
-        },
-        {
-            title: "Dakwerken & Isolatie",
-            description: "Isolatie van hellende en platte daken. De snelste weg naar een energiezuinige woning.",
-            link: "/diensten/isolatie",
-            icon: <ShieldCheck className="h-8 w-8" />,
-        },
-        {
-            title: "Zonnepanelen",
-            description: "Wek uw eigen groene stroom op en word onafhankelijk van stijgende energieprijzen.",
-            link: "/diensten/zonnepanelen", // Future page
-            icon: <Sun className="h-8 w-8" />,
-        },
-        {
-            title: "Vochtbestrijding",
-            description: "Definitieve oplossingen voor opstijgend vocht, schimmels en condensatie.",
-            link: "/diensten/vochtbestrijding", // Future page
-            icon: <Umbrella className="h-8 w-8" />,
-        }
-    ];
+  const services = [
+    {
+      title: "Ramen & Deuren",
+      description: "Maatwerk in PVC of aluminium met energiezuinige beglazing en nette plaatsing.",
+      link: "/diensten/ramen-deuren",
+      icon: <Home className="h-8 w-8" />,
+    },
+    {
+      title: "Gevelrenovatie",
+      description: "Gevelisolatie met crepi of steenstrips voor meer comfort en een nieuwe uitstraling.",
+      link: "/diensten/gevelrenovatie",
+      icon: <Layers className="h-8 w-8" />,
+    },
+    {
+      title: "Isolatiewerken",
+      description: "Dak-, gevel- en vloerisolatie met focus op EPC-verbetering en energiebesparing.",
+      link: "/diensten/isolatie",
+      icon: <ShieldCheck className="h-8 w-8" />,
+    },
+    {
+      title: "Totaalrenovatie",
+      description: "Eén projectleider en één planning voor uw volledige renovatie van A tot Z.",
+      link: "/diensten/renovatie",
+      icon: <Hammer className="h-8 w-8" />,
+    },
+  ];
 
-    return (
-        <div className="bg-background min-h-screen">
-            {/* Hero Section */}
-            <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 -z-10">
-                    <Image
-                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2670&auto=format&fit=crop"
-                        alt="Onze Diensten"
-                        fill
-                        className="object-cover brightness-[0.4]"
-                        priority
-                    />
-                </div>
-                <div className="container mx-auto px-6 text-center">
-                    <FadeIn>
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 text-glow">
-                            Onze Expertise
-                        </h1>
-                        <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-                            Een compleet aanbod voor elke renovatie, uitgevoerd met passie en vakmanschap.
-                        </p>
-                    </FadeIn>
-                </div>
-            </section>
-
-            <div className="py-24 sm:py-32 container mx-auto px-6 lg:px-8">
-                <FadeIn>
-                    <div className="mx-auto max-w-2xl text-center mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                            Waarmee kunnen we u helpen?
-                        </h2>
-                        <p className="mt-4 text-lg leading-8 text-muted-foreground">
-                            Ontdek onze gespecialiseerde diensten. Klik door voor meer informatie over onze werkwijze en de mogelijkheden.
-                        </p>
-                    </div>
-                </FadeIn>
-
-                <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-                    {services.map((service, idx) => (
-                        <ServiceCard key={service.title} {...service} index={idx} />
-                    ))}
-                </div>
-            </div>
-
-            {/* CTA Bottom */}
-            <section className="bg-secondary/10 py-16 border-t border-secondary/20">
-                <div className="container mx-auto px-6 text-center">
-                    <FadeIn>
-                        <h2 className="text-2xl font-bold mb-4 text-foreground">Staat uw project er niet tussen?</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                            Wij leveren ook maatwerk. Neem contact op om uw specifieke wensen te bespreken.
-                        </p>
-                        <a href="/contact" className="inline-block rounded-full bg-secondary px-8 py-3 text-sm font-semibold text-white shadow-lg hover:bg-secondary/90 transition-all hover:scale-105">
-                            Contacteer ons
-                        </a>
-                    </FadeIn>
-                </div>
-            </section>
+  return (
+    <div className="bg-background min-h-screen">
+      <section className="relative h-[52vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2670&auto=format&fit=crop"
+            alt="Onze diensten"
+            fill
+            className="object-cover brightness-[0.35]"
+            priority
+          />
         </div>
-    );
+        <div className="container mx-auto px-6 text-center">
+          <FadeIn>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Onze diensten</h1>
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+              Van ramen en deuren tot isolatie en totaalrenovatie. U krijgt een duidelijke offerte,
+              een strakke planning en één aanspreekpunt.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24 container mx-auto px-6 lg:px-8">
+        <FadeIn>
+          <div className="mx-auto max-w-2xl text-center mb-14">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Waarmee kunnen we u helpen?</h2>
+            <p className="mt-4 text-lg leading-8 text-muted-foreground">
+              Kies een dienst voor details over werkwijze, materialen en resultaat.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-2">
+          {services.map((service, idx) => (
+            <ServiceCard key={service.title} {...service} index={idx} />
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#0f1115] py-16 border-y border-white/10">
+        <div className="container mx-auto px-6 lg:px-8">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-white">Project op maat bespreken?</h2>
+              <p className="mt-4 text-gray-300">
+                Niet elk project past in een standaardcategorie. We bekijken graag uw situatie ter plaatse.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-secondary/90 transition-colors"
+                >
+                  Vraag vrijblijvend advies
+                </Link>
+                <a
+                  href={company.phoneHref}
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  {company.phoneDisplay}
+                </a>
+                <a
+                  href={company.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+    </div>
+  );
 }

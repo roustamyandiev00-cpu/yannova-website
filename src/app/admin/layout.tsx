@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { signOut } from '@/auth';
-import { Home, Layers, LogOut, FileText, Star, BarChart3, Image as ImageIcon, Settings, Users, Search } from 'lucide-react';
+import { Home, Layers, LogOut, FileText, Star, BarChart3, Image as ImageIcon, Settings, Users, Search, MessageCircle, Archive } from 'lucide-react';
+
+export const dynamic = 'force-dynamic';
 
 export default function AdminLayout({
   children,
@@ -40,6 +42,20 @@ export default function AdminLayout({
             >
               <FileText className="w-6" />
               <p className="hidden md:block">Aanvragen</p>
+            </Link>
+            <Link
+              href="/admin/chat"
+              className="flex h-[48px] grow shrink-0 items-center justify-center gap-2 rounded-md bg-white/5 p-3 text-sm font-medium hover:bg-secondary/20 hover:text-secondary md:flex-none md:justify-start md:p-2 md:px-3 text-foreground"
+            >
+              <MessageCircle className="w-6" />
+              <p className="hidden md:block">Live Chat</p>
+            </Link>
+            <Link
+              href="/admin/chat-archief"
+              className="flex h-[48px] grow shrink-0 items-center justify-center gap-2 rounded-md bg-white/5 p-3 text-sm font-medium hover:bg-secondary/20 hover:text-secondary md:flex-none md:justify-start md:p-2 md:px-3 text-foreground"
+            >
+              <Archive className="w-6" />
+              <p className="hidden md:block">Chat Archief</p>
             </Link>
             <Link
               href="/admin/testimonials"

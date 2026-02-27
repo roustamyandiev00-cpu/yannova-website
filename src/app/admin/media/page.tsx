@@ -2,6 +2,7 @@ import { prisma } from '@/lib/prisma';
 import { Upload, Trash2, Download, FolderOpen } from 'lucide-react';
 import Image from 'next/image';
 import { deleteMediaFile } from '@/lib/actions';
+import { MediaUploadButton } from '@/components/admin/MediaUploadButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,9 +30,9 @@ export default async function MediaPage() {
         <main>
             <div className="flex items-center justify-between mb-8">
                 <h1 className="text-2xl font-bold text-foreground">Media Bibliotheek</h1>
-                <button className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-secondary/80">
-                    <Upload className="h-4 w-4" /> Upload Bestand
-                </button>
+            <div className="flex items-center gap-3">
+                    <MediaUploadButton />
+                </div>
             </div>
 
             {/* Stats */}

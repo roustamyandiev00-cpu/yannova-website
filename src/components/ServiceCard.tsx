@@ -19,9 +19,9 @@ export function ServiceCard({ title, description, link, icon, index = 0 }: Servi
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col h-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 shadow-lg hover:shadow-xl hover:shadow-secondary/10 hover:border-secondary/30 hover:-translate-y-2 transition-all duration-300 group"
+            className="flex flex-col h-full rounded-2xl border border-white/5 bg-[#1a1d24] p-6 shadow-sm hover:border-white/10 transition-all duration-300 group"
         >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary ring-1 ring-secondary/20 group-hover:bg-secondary group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary transition-colors duration-300">
                 {icon}
             </div>
             <h3 className="text-lg font-bold leading-7 text-white group-hover:text-secondary transition-colors">

@@ -7,7 +7,9 @@ import { Chatbot } from "@/components/Chatbot";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
+import { FirebaseAnalytics } from "@/components/FirebaseAnalytics";
 import { StickyCTA } from "@/components/StickyCTA";
+import { generateLocalBusinessSchema, generateServiceSchema, services } from "@/lib/structured-data";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,23 +18,11 @@ export const metadata: Metadata = {
   description: "Specialist in ramen, deuren, gevelrenovatie, crepi en totaalrenovatie in regio Zoersel, Antwerpen en Mechelen.",
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  "name": "Yannova Bouw",
-  "image": "https://www.yannova.be/logo.png",
-  "description": "Specialist in ramen, deuren, gevelrenovatie, crepi en totaalrenovatie.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Zoersel",
-    "addressRegion": "Antwerpen",
-    "addressCountry": "BE"
-  },
-  "url": "https://www.yannova.be",
-  "telephone": "+32489960001",
-  "email": "info@yannova.be",
-  "priceRange": "$$"
-}
+// Combine LocalBusiness + Services schemas
+const jsonLd = [
+  generateLocalBusinessSchema(),
+  ...services.map(generateServiceSchema),
+];
 
 export default function RootLayout({
   children,
@@ -45,6 +35,7 @@ export default function RootLayout({
         <Analytics />
       </head>
       <body className={inter.className}>
+        <FirebaseAnalytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

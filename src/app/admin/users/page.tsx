@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
-import { UserPlus, Shield, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { Shield, Clock, CheckCircle, XCircle } from 'lucide-react';
+import CreateUserButton from '@/components/admin/CreateUserButton';
 import { toggleUserStatus } from '@/lib/actions';
 
 export const dynamic = 'force-dynamic';
@@ -24,9 +25,7 @@ export default async function UsersPage() {
         <main>
             <div className="flex items-center justify-between mb-8">
                 <h1 className="text-2xl font-bold text-foreground">Gebruikers Beheer</h1>
-                <button className="flex items-center gap-2 rounded-md bg-secondary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-secondary/80">
-                    <UserPlus className="h-4 w-4" /> Nieuwe Gebruiker
-                </button>
+                <CreateUserButton />
             </div>
 
             {/* Stats */}
@@ -132,8 +131,8 @@ export default async function UsersPage() {
                                             <button
                                                 type="submit"
                                                 className={`text-xs font-medium ${user.active
-                                                        ? 'text-red-400 hover:text-red-300'
-                                                        : 'text-green-400 hover:text-green-300'
+                                                    ? 'text-red-400 hover:text-red-300'
+                                                    : 'text-green-400 hover:text-green-300'
                                                     }`}
                                             >
                                                 {user.active ? 'Deactiveren' : 'Activeren'}

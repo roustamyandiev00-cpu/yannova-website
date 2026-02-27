@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Chat sessions - allow read/write for anonymous users
+    match /chatSessions/{sessionId} {
+      allow read: if true;
+      allow create: if request.resource.data.email is string;
+      allow update: if true;
+    }
+    
+    // Chat messages - users can read/write
+    match /chatMessages/{messageId} {
+      allow read: if true;
+      allow create: if request.resource.data.text is string 
+                    && request.resource.data.text.size() < 1000;
+    }
+    
+    // Chat archived sessions - admin only
+    match /chatArchived/{sessionId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+    
+    // Chat statistics - admin only
+    match /chatStats/{docId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+    }
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

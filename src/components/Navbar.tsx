@@ -2,140 +2,280 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Phone, ChevronDown, MessageCircle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { company } from "@/lib/company";
 
-const navigation = [
-    { name: "Home", href: "/" },
-    { name: "Diensten", href: "/diensten" },
-    { name: "Projecten", href: "/projecten" },
-    { name: "Over Ons", href: "/over-ons" },
-    { name: "Advies", href: "/advies" },
-    { name: "Premie Gids", href: "/premie-gids" },
-    { name: "Contact", href: "/contact" },
+const navigation: Array<{
+  name: string;
+  href: string;
+  children?: Array<{ name: string; href: string; description: string }>;
+}> = [
+  {
+    name: "Diensten",
+    href: "/diensten",
+    children: [
+      { name: "Ramen & Deuren", href: "/diensten/ramen-deuren", description: "PVC & aluminium" },
+      { name: "Gevelrenovatie", href: "/diensten/gevelrenovatie", description: "Isolatie + afwerking" },
+      { name: "Isolatie", href: "/diensten/isolatie", description: "Dak, gevel en vloer" },
+      { name: "Renovatie", href: "/diensten/renovatie", description: "Totaalrenovatie" },
+    ],
+  },
+  { name: "Projecten", href: "/projecten" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
-    const pathname = usePathname();
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const servicesMenuId = "services-menu";
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
 
-    // Prevent scrolling when mobile menu is open
-    useEffect(() => {
-        if (mobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [mobileMenuOpen]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-        <motion.header
-            className={cn(
-                "fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b",
-                scrolled
-                    ? "bg-background/80 backdrop-blur-md border-white/10 py-3 shadow-lg"
-                    : "bg-transparent border-transparent py-5"
-            )}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
-                    <Link href="/" className="group -m-1.5 p-1.5 text-2xl font-bold tracking-tight text-white transition-colors">
-                        Yannova<span className="text-secondary group-hover:text-glow transition-all duration-300">.</span>
-                    </Link>
-                </div>
-                <div className="flex lg:hidden">
-                    <button
-                        type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300 hover:text-white"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        <span className="sr-only">Open main menu</span>
-                        {mobileMenuOpen ? (
-                            <X className="h-6 w-6" aria-hidden="true" />
-                        ) : (
-                            <Menu className="h-6 w-6" aria-hidden="true" />
-                        )}
-                    </button>
-                </div>
-                <div className="hidden lg:flex lg:gap-x-8">
-                    {navigation.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className={cn(
-                                "text-sm font-medium transition-all duration-300 relative group",
-                                pathname === item.href ? "text-secondary" : "text-gray-300 hover:text-white"
-                            )}
-                        >
-                            {item.name}
-                            <span className={cn(
-                                "absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full",
-                                pathname === item.href ? "w-full" : ""
-                            )} />
-                        </Link>
-                    ))}
-                </div>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link
-                        href="/contact"
-                        className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-secondary px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-secondary/90 hover:scale-105 active:scale-95"
-                    >
-                        <span className="absolute inset-0 -z-10 bg-gradient-to-r from-orange-600 to-orange-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                        <Phone className="h-4 w-4" /> Offerte Aanvragen
-                    </Link>
-                </div>
-            </nav>
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
 
-            {/* Mobile menu */}
-            <AnimatePresence>
-                {mobileMenuOpen && (
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
+  return (
+    <motion.header
+      className={cn(
+        "fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b",
+        scrolled ? "bg-background/80 backdrop-blur-md border-white/10 py-3 shadow-lg" : "bg-transparent border-transparent py-5",
+      )}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Hoofdmenu">
+        <div className="flex lg:flex-1">
+          <Link href="/" className="group -m-1.5 p-1.5 text-2xl font-bold tracking-tight text-white transition-colors">
+            Yannova<span className="text-secondary">.</span>
+          </Link>
+        </div>
+
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-300 hover:text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span className="sr-only">Open het menu</span>
+            {mobileMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
+          </button>
+        </div>
+
+        <div className="hidden lg:flex lg:gap-x-8">
+          {navigation.map((item) =>
+            item.children ? (
+              <div key={item.name} className="relative" ref={servicesRef}>
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className={cn(
+                    "text-sm font-medium transition-all duration-300 relative group flex items-center gap-1",
+                    pathname.startsWith(item.href) ? "text-secondary" : "text-gray-300 hover:text-white",
+                  )}
+                  aria-expanded={servicesOpen}
+                  aria-controls={servicesMenuId}
+                  aria-haspopup="menu"
+                  type="button"
+                >
+                  {item.name}
+                  <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", servicesOpen && "rotate-180")} />
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full",
+                      pathname.startsWith(item.href) ? "w-full" : "",
+                    )}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {servicesOpen && (
                     <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+                      id={servicesMenuId}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 mt-2 w-56 rounded-xl bg-[#1a1d24] border border-white/10 shadow-xl overflow-hidden"
+                      role="menu"
                     >
-                        <div className="space-y-1 px-4 pb-6 pt-4">
-                            {navigation.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    className={cn(
-                                        "block rounded-lg px-3 py-3 text-base font-medium transition-colors",
-                                        pathname === item.href
-                                            ? "bg-secondary/10 text-secondary"
-                                            : "text-gray-300 hover:bg-white/5 hover:text-white"
-                                    )}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
-                            <Link
-                                href="/contact"
-                                className="mt-6 block w-full text-center rounded-lg bg-secondary px-3 py-3 text-base font-semibold text-white shadow-md hover:bg-secondary/90"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                Offerte Aanvragen
-                            </Link>
-                        </div>
+                      <div className="py-2">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.href}
+                            onClick={() => setServicesOpen(false)}
+                            className="block px-4 py-3 hover:bg-white/5 transition-colors"
+                            role="menuitem"
+                          >
+                            <div className="text-sm font-medium text-white">{child.name}</div>
+                            <div className="text-xs text-gray-400 mt-0.5">{child.description}</div>
+                          </Link>
+                        ))}
+                      </div>
                     </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "text-sm font-medium transition-all duration-300 relative group",
+                  pathname === item.href ? "text-secondary" : "text-gray-300 hover:text-white",
                 )}
-            </AnimatePresence>
-        </motion.header>
-    );
+              >
+                {item.name}
+                <span
+                  className={cn(
+                    "absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full",
+                    pathname === item.href ? "w-full" : "",
+                  )}
+                />
+              </Link>
+            ),
+          )}
+        </div>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-3">
+          <a href={company.phoneHref} className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors">
+            <Phone className="h-4 w-4" />
+            <span>{company.phoneDisplay}</span>
+          </a>
+          <a
+            href={company.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-[#25D366] transition-colors"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span className="hidden xl:inline">WhatsApp</span>
+          </a>
+          <Link
+            href="/vraag-ai"
+            className="flex items-center gap-1.5 text-sm font-medium text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+          >
+            <Sparkles className="h-4 w-4 text-secondary" />
+            Vraag Yannova AI
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/90 transition-colors"
+          >
+            Gratis offerte
+          </Link>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            id="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+          >
+            <div className="space-y-1 px-4 pb-6 pt-4">
+              {navigation.map((item) =>
+                item.children ? (
+                  <div key={item.name}>
+                    <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">{item.name}</div>
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.name}
+                        href={child.href}
+                        className={cn(
+                          "block rounded-lg px-3 py-2.5 pl-6 text-base font-medium transition-colors",
+                          pathname === child.href ? "bg-secondary/10 text-secondary" : "text-gray-300 hover:bg-white/5 hover:text-white",
+                        )}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {child.name}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={cn(
+                      "block rounded-lg px-3 py-3 text-base font-medium transition-colors",
+                      pathname === item.href ? "bg-secondary/10 text-secondary" : "text-gray-300 hover:bg-white/5 hover:text-white",
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ),
+              )}
+
+              <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
+                <a href={company.phoneHref} className="flex items-center gap-2 px-3 py-2 text-gray-300 hover:text-white">
+                  <Phone className="h-4 w-4" />
+                  {company.phoneDisplay}
+                </a>
+                <a
+                  href={company.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-3 py-2 text-gray-300 hover:text-[#25D366]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
+                </a>
+              </div>
+
+              <Link
+                href="/vraag-ai"
+                className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-white/5 px-3 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Sparkles className="h-4 w-4 text-secondary" />
+                Vraag Yannova AI
+              </Link>
+              <Link
+                href="/contact"
+                className="mt-2 block w-full text-center rounded-lg bg-secondary px-3 py-3 text-base font-semibold text-white shadow-md hover:bg-secondary/90"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Gratis offerte aanvragen
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
 }

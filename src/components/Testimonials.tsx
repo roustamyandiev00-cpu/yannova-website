@@ -40,9 +40,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
     ];
 
     return (
-        <div className="py-24 sm:py-32 bg-background relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-secondary/5 rounded-full blur-[100px] -z-10" />
-
+        <div className="py-16 sm:py-20 bg-[#0f1115] border-y border-white/5 relative overflow-hidden">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="mx-auto max-w-xl text-center">
                     <h2 className="text-lg font-semibold leading-8 tracking-tight text-secondary">Testimonials</h2>
@@ -54,7 +52,7 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {displayTestimonials.map((testimonial, idx) => (
                             <FadeIn key={testimonial.id} delay={idx * 0.1}>
-                                <div className="relative rounded-2xl bg-white/5 p-6 shadow-sm ring-1 ring-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+                                <div className="relative rounded-2xl bg-[#1a1d24] border border-white/5 p-6 shadow-sm transition-all duration-300 hover:border-white/10">
                                     <Quote className="absolute top-6 left-6 h-8 w-8 text-secondary/20" />
                                     <div className="flex gap-x-1 text-secondary mb-4 justify-end">
                                         {[...Array(testimonial.rating || 5)].map((_, i) => (

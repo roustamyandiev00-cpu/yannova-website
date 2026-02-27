@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { Users, Briefcase, FileText, Star, Image as ImageIcon, TrendingUp, LucideIcon } from 'lucide-react';
+import { MessageCircle, Users, Briefcase, FileText, Star, Image as ImageIcon, TrendingUp, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Lead, Project } from '@prisma/client';
 
@@ -41,6 +41,7 @@ export default async function AdminDashboard() {
   let mediaCount = 0;
   let pageViewsToday = 0;
   let userCount = 0;
+  const activeChatSessions = 0; // Placeholder - zal later van Firebase komen
   let recentLeads: Lead[] = [];
   let recentProjects: Project[] = [];
 
@@ -89,6 +90,13 @@ export default async function AdminDashboard() {
           href="/admin/projects"
         />
         <StatCard
+          title="Live Chats"
+          value={activeChatSessions}
+          icon={MessageCircle}
+          color="bg-pink-500"
+          href="/admin/chat"
+        />
+        <StatCard
           title="Nieuwe Aanvragen"
           value={leadsCount}
           icon={FileText}
@@ -108,13 +116,6 @@ export default async function AdminDashboard() {
           icon={ImageIcon}
           color="bg-purple-500"
           href="/admin/media"
-        />
-        <StatCard
-          title="Bezoekers Vandaag"
-          value={pageViewsToday}
-          icon={TrendingUp}
-          color="bg-green-500"
-          href="/admin/analytics"
         />
         <StatCard
           title="Gebruikers"

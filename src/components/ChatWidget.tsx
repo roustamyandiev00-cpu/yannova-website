@@ -1,21 +1,188 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { MessageSquare, X, Send, User } from 'lucide-react';
 import { createLead } from '@/lib/actions';
 import { AnimatePresence, motion } from 'framer-motion';
+import { db } from '@/lib/firebase';
+import { 
+  collection, 
+  addDoc, 
+  onSnapshot, 
+  query, 
+  where, 
+  orderBy, 
+  serverTimestamp,
+  Timestamp,
+  DocumentData
+} from 'firebase/firestore';
+import { logChatOpened, logChatMessageSent, logLeadSubmitted } from '@/components/FirebaseAnalytics';
+import { useChatAutomation } from '@/hooks/use-chat-automation';
+
+interface Message {
+  id: string;
+  text: string;
+  sender: 'user' | 'admin';
+  timestamp: Timestamp;
+  email?: string;
+}
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [step, setStep] = useState<'welcome' | 'form' | 'success'>('welcome');
+  const [step, setStep] = useState<'welcome' | 'email' | 'chat' | 'form' | 'success'>('welcome');
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [chatSessionId, setChatSessionId] = useState<string | null>(null);
+  const [inputMessage, setInputMessage] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const toggleChat = () => setIsOpen(!isOpen);
+  // Chat automation hook
+  const { sendAutoReply } = useChatAutomation(chatSessionId, email);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Generate or retrieve session ID
+  useEffect(() => {
+    const storedSessionId = localStorage.getItem('yannova_chat_session_id');
+    const storedEmail = localStorage.getItem('yannova_chat_email');
+    
+    if (storedSessionId && storedEmail) {
+      setChatSessionId(storedSessionId);
+      setEmail(storedEmail);
+      setStep('chat');
+    }
+  }, []);
+
+  // Subscribe to messages when in chat mode
+  useEffect(() => {
+    if (!chatSessionId || step !== 'chat') return;
+
+    const messagesRef = collection(db, 'chatMessages');
+    const q = query(
+      messagesRef, 
+      where('sessionId', '==', chatSessionId),
+      orderBy('timestamp', 'asc')
+    );
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const msgs: Message[] = [];
+      snapshot.forEach((doc) => {
+        const data = doc.data() as DocumentData;
+        msgs.push({
+          id: doc.id,
+          text: data.text,
+          sender: data.sender,
+          timestamp: data.timestamp as Timestamp,
+          email: data.email,
+        });
+      });
+      setMessages(msgs);
+    });
+
+    return () => unsubscribe();
+  }, [chatSessionId, step]);
+
+  // Auto-scroll to bottom
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  const toggleChat = () => {
+    if (!isOpen) {
+      logChatOpened();
+    }
+    setIsOpen(!isOpen);
+  };
+
+  const handleStartChat = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      // Create a new chat session
+      const sessionsRef = collection(db, 'chatSessions');
+      const sessionDoc = await addDoc(sessionsRef, {
+        email: email,
+        status: 'active',
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      });
+
+      const newSessionId = sessionDoc.id;
+      setChatSessionId(newSessionId);
+      
+      // Store in localStorage for persistence
+      localStorage.setItem('yannova_chat_session_id', newSessionId);
+      localStorage.setItem('yannova_chat_email', email);
+
+      // Send welcome message
+      const messagesRef = collection(db, 'chatMessages');
+      await addDoc(messagesRef, {
+        sessionId: newSessionId,
+        text: 'Hallo! 👋 Welkom bij Yannova. Waarmee kan ik u helpen vandaag?',
+        sender: 'admin',
+        email: email,
+        timestamp: serverTimestamp(),
+      });
+
+      // Send initial user message if provided
+      if (message.trim()) {
+        await addDoc(messagesRef, {
+          sessionId: newSessionId,
+          text: message,
+          sender: 'user',
+          email: email,
+          timestamp: serverTimestamp(),
+        });
+      }
+
+      logChatMessageSent();
+      setStep('chat');
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error('Error starting chat:', error);
+      setErrorMsg('Kan chat niet starten. Probeer het later opnieuw.');
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!inputMessage.trim() || !chatSessionId) return;
+
+    try {
+      const messagesRef = collection(db, 'chatMessages');
+      await addDoc(messagesRef, {
+        sessionId: chatSessionId,
+        text: inputMessage,
+        sender: 'user',
+        email: email,
+        timestamp: serverTimestamp(),
+      });
+
+      // Update session timestamp
+      const { doc: firestoreDoc, updateDoc } = await import('firebase/firestore');
+      const sessionRef = firestoreDoc(db, 'chatSessions', chatSessionId);
+      await updateDoc(sessionRef, {
+        updatedAt: serverTimestamp(),
+      });
+
+      setInputMessage('');
+      logChatMessageSent();
+
+      // Trigger auto reply after user message
+      setTimeout(() => {
+        sendAutoReply(inputMessage);
+      }, 1000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+    }
+  };
+
+  const handleSubmitLead = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMsg(null);
@@ -29,6 +196,7 @@ export function ChatWidget() {
       const result = await createLead(null, formData);
 
       if (result.success) {
+        logLeadSubmitted('chatbot_form');
         setStep('success');
         setTimeout(() => {
           setIsOpen(false);
@@ -90,19 +258,19 @@ export function ChatWidget() {
                   </div>
                   <div className="flex flex-col gap-2">
                     <button
-                      onClick={() => { setMessage("Ik wil graag een offerte voor ramen/deuren."); setStep('form'); }}
+                      onClick={() => { setMessage("Ik wil graag een offerte voor ramen/deuren."); setStep('email'); }}
                       className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
                     >
                       Ik wil graag een offerte voor ramen/deuren.
                     </button>
                     <button
-                      onClick={() => { setMessage("Ik heb een vraag over gevelrenovatie."); setStep('form'); }}
+                      onClick={() => { setMessage("Ik heb een vraag over gevelrenovatie."); setStep('email'); }}
                       className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
                     >
                       Ik heb een vraag over gevelrenovatie.
                     </button>
                     <button
-                      onClick={() => { setMessage(""); setStep('form'); }}
+                      onClick={() => { setMessage(""); setStep('email'); }}
                       className="text-left text-sm p-3 rounded-xl bg-white/5 border border-white/10 hover:border-secondary hover:text-secondary transition-colors shadow-sm"
                     >
                       Stel een andere vraag...
@@ -111,8 +279,91 @@ export function ChatWidget() {
                 </div>
               )}
 
+              {step === 'email' && (
+                <form onSubmit={handleStartChat} className="flex flex-col h-full">
+                  <div className="mr-8 rounded-2xl rounded-tl-none bg-white/10 p-3 text-sm text-gray-200 mb-4">
+                    {message ? `Vraag: ${message}` : 'Waarmee kunnen we u helpen?'}
+                  </div>
+                  <div className="mr-8 rounded-2xl rounded-tl-none bg-white/10 p-3 text-sm text-gray-200 mb-4">
+                    Laat uw e-mailadres achter om de chat te starten. Uw gesprek wordt bewaard voor latere referentie.
+                  </div>
+
+                  <div className="flex-1 space-y-3">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Uw e-mailadres"
+                      className="w-full rounded-lg border border-white/10 p-3 text-sm text-white placeholder-gray-500 focus:border-secondary focus:ring-1 focus:ring-secondary bg-white/5"
+                      required
+                    />
+                  </div>
+
+                  {errorMsg && (
+                    <div className="mt-2 text-xs text-red-400 bg-red-500/10 p-2 rounded">
+                      {errorMsg}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-secondary py-2.5 text-sm font-bold text-white transition-colors hover:bg-secondary/90 disabled:opacity-50"
+                  >
+                    {isSubmitting ? 'Chat starten...' : (
+                      <>Start Chat <Send className="h-4 w-4" /></>
+                    )}
+                  </button>
+
+                  <button type="button" onClick={() => setStep('welcome')} className="mt-2 text-xs text-center text-gray-400 hover:text-white hover:underline">
+                    Terug
+                  </button>
+                </form>
+              )}
+
+              {step === 'chat' && (
+                <div className="flex flex-col h-full">
+                  <div className="flex-1 space-y-3 overflow-y-auto pr-1">
+                    {messages.map((msg) => (
+                      <div
+                        key={msg.id}
+                        className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                      >
+                        <div
+                          className={`max-w-[80%] rounded-2xl p-3 text-sm ${
+                            msg.sender === 'user'
+                              ? 'rounded-tr-none bg-secondary text-white'
+                              : 'rounded-tl-none bg-white/10 text-gray-200'
+                          }`}
+                        >
+                          {msg.text}
+                        </div>
+                      </div>
+                    ))}
+                    <div ref={messagesEndRef} />
+                  </div>
+
+                  <form onSubmit={handleSendMessage} className="mt-3 flex gap-2">
+                    <input
+                      type="text"
+                      value={inputMessage}
+                      onChange={(e) => setInputMessage(e.target.value)}
+                      placeholder="Typ uw bericht..."
+                      className="flex-1 rounded-lg border border-white/10 p-2.5 text-sm text-white placeholder-gray-500 focus:border-secondary focus:ring-1 focus:ring-secondary bg-white/5"
+                    />
+                    <button
+                      type="submit"
+                      disabled={!inputMessage.trim()}
+                      className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-white transition-colors hover:bg-secondary/90 disabled:opacity-50"
+                    >
+                      <Send className="h-4 w-4" />
+                    </button>
+                  </form>
+                </div>
+              )}
+
               {step === 'form' && (
-                <form onSubmit={handleSubmit} className="flex flex-col h-full">
+                <form onSubmit={handleSubmitLead} className="flex flex-col h-full">
                   <div className="mr-8 rounded-2xl rounded-tl-none bg-white/10 p-3 text-sm text-gray-200 mb-4">
                     Laat uw bericht en e-mailadres achter, dan nemen we zo snel mogelijk contact op!
                   </div>

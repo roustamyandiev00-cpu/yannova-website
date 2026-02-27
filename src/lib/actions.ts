@@ -255,7 +255,7 @@ export async function uploadMediaFile(prevState: unknown, formData: FormData) {
   const alt = formData.get('alt') as string || '';
 
   if (!file || file.size === 0) {
-    return { message: 'Selecteer een bestand om te uploaden.' };
+    return { success: false, message: 'Selecteer een bestand om te uploaden.' };
   }
 
   try {
@@ -278,7 +278,7 @@ export async function uploadMediaFile(prevState: unknown, formData: FormData) {
     return { success: true, message: 'Bestand geüpload!' };
   } catch (error) {
     console.error('Upload Error:', error);
-    return { message: 'Kon bestand niet uploaden.' };
+    return { success: false, message: 'Kon bestand niet uploaden.' };
   }
 }
 
@@ -357,7 +357,7 @@ export async function createUser(prevState: unknown, formData: FormData) {
   }
 
   if (!email || !password) {
-    return { message: 'Email en wachtwoord zijn verplicht.' };
+    return { success: false, message: 'Email en wachtwoord zijn verplicht.' };
   }
 
   try {
@@ -373,11 +373,13 @@ export async function createUser(prevState: unknown, formData: FormData) {
     });
 
     revalidatePath('/admin/users');
-    redirect('/admin/users');
   } catch (error) {
     console.error('Create User Error:', error);
-    return { message: 'Kon gebruiker niet aanmaken.' };
+    return { success: false, message: 'Kon gebruiker niet aanmaken.' };
   }
+
+  // Redirect outside try-catch to avoid digest error
+  redirect('/admin/users');
 }
 
 // --- Analytics Actions ---
@@ -610,5 +612,43 @@ Geef ALLEEN het JSON object terug, geen andere tekst.`,
   } catch (error) {
     console.error('AI SEO Error:', error);
     return { error: 'AI generation failed' };
+  }
+}
+
+// --- Media Upload ---
+
+export async function saveMediaFiles(formData: FormData) {
+  try {
+    const filename = formData.get('filename') as string;
+    const mimeType = formData.get('mimeType') as string;
+    const size = parseInt(formData.get('size') as string);
+    const fileData = formData.get('file') as string;
+
+    if (!filename || !fileData) {
+      return { error: 'Bestand is verplicht' };
+    }
+
+    // Upload to Vercel Blob (of andere storage)
+    const blob = await put(filename, Buffer.from(fileData.split(',')[1], 'base64'), {
+      access: 'public',
+      contentType: mimeType,
+    });
+
+    // Save to database
+    await prisma.mediaFile.create({
+      data: {
+        filename,
+        url: blob.url,
+        size,
+        mimeType,
+        folder: 'uploads',
+      },
+    });
+
+    revalidatePath('/admin/media');
+    return { success: true, url: blob.url };
+  } catch (error) {
+    console.error('Media Upload Error:', error);
+    return { error: 'Upload mislukt' };
   }
 }
