@@ -24,8 +24,6 @@ const pool = new Pool({
   maxUses: 7500, // Close connection after 7500 uses (prevents memory leaks)
 });
 
-import { logger } from '@/lib/logger';
-
 // Handle pool errors gracefully
 pool.on('error', (err) => {
   logger.error('Unexpected error on idle client', err);
