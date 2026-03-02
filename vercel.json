@@ -1,0 +1,11 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["ams1"],
+  "env": {
+    "NEXT_PUBLIC_GA_ID": "G-1RS27QF82W",
+    "NEXT_PUBLIC_SUPABASE_URL": "https://nnlekbywldrainqhvgif.supabase.co"
+  }
+}
