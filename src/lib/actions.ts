@@ -10,6 +10,7 @@ import { redirect } from 'next/navigation';
 import bcrypt from 'bcryptjs';
 import { generateText } from 'ai';
 import { google } from '@ai-sdk/google';
+import { logger } from '@/lib/logger';
 
 
 export async function authenticate(
@@ -82,7 +83,7 @@ export async function createProject(prevState: unknown, formData: FormData) {
     });
 
   } catch (error) {
-    console.error('Database Error:', error);
+    logger.error('Database Error', error);
     return {
       message: 'Database fout: Kon project niet aanmaken.',
     };
@@ -103,7 +104,7 @@ export async function deleteProject(id: string) {
     revalidatePath('/admin/projects');
     revalidatePath('/projecten');
   } catch (error) {
-    console.error('Database Error:', error);
+    logger.error('Database Error', error);
     throw new Error('Kon project niet verwijderen.');
   }
 }
@@ -137,7 +138,7 @@ export async function createLead(prevState: unknown, formData: FormData) {
     revalidatePath('/admin/leads');
     return { success: true, message: 'Bericht verstuurd!' };
   } catch (error) {
-    console.error('Lead Error:', error);
+    logger.error('Lead Error', error);
     return { success: false, message: 'Er ging iets mis bij het versturen.' };
   }
 }
@@ -150,7 +151,7 @@ export async function markLeadAsRead(id: string) {
     });
     revalidatePath('/admin/leads');
   } catch (e) {
-    console.error("Failed to mark as read", e);
+    logger.error("Failed to mark as read", e);
   }
 }
 

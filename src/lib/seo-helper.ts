@@ -1,6 +1,23 @@
 import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import { company } from '@/lib/company';
+import { logger } from '@/lib/logger';
+
+// Get the base URL for the site, environment-aware
+const getBaseUrl = (): string => {
+    // In production, use NEXT_PUBLIC_SITE_URL
+    if (process.env.NEXT_PUBLIC_SITE_URL) {
+        return process.env.NEXT_PUBLIC_SITE_URL;
+    }
+    
+    // In Vercel preview deployments, use VERCEL_URL
+    if (process.env.VERCEL_URL) {
+        return `https://${process.env.VERCEL_URL}`;
+    }
+    
+    // Fallback to localhost for local development
+    return 'http://localhost:3000';
+};
 
 // Default SEO metadata for key pages (local + service-specific)
 const defaultSeoData: Record<string, Metadata> = {
@@ -69,12 +86,12 @@ export async function getSeoMetadata(path: string): Promise<Metadata> {
             return {
                 ...defaults,
                 alternates: {
-                    canonical: `https://www.yannova.be${path}`,
+                    canonical: `${getBaseUrl()}${path}`,
                 },
                 openGraph: {
                     title: (defaults.title as string) || 'Yannova',
                     description: (defaults.description as string) || '',
-                    url: `https://www.yannova.be${path}`,
+                    url: `${getBaseUrl()}${path}`,
                     type: 'website',
                     locale: 'nl_BE',
                 },
@@ -86,12 +103,12 @@ export async function getSeoMetadata(path: string): Promise<Metadata> {
             description: seoPage.description || defaults.description,
             keywords: seoPage.keywords ? seoPage.keywords.split(',').map((k: string) => k.trim()) : (defaults.keywords as string[]) || [],
             alternates: {
-                canonical: seoPage.canonicalUrl || `https://www.yannova.be${path}`,
+                canonical: seoPage.canonicalUrl || `${getBaseUrl()}${path}`,
             },
             openGraph: {
                 title: seoPage.ogTitle || seoPage.title || (defaults.title as string),
                 description: seoPage.ogDescription || seoPage.description || (defaults.description as string),
-                url: `https://www.yannova.be${path}`,
+                url: `${getBaseUrl()}${path}`,
                 images: seoPage.ogImage ? [{ url: seoPage.ogImage }] : [],
                 type: 'website',
                 locale: 'nl_BE',
@@ -102,13 +119,13 @@ export async function getSeoMetadata(path: string): Promise<Metadata> {
             },
         };
     } catch (error) {
-        console.error('Error fetching SEO metadata:', error);
+        logger.error('Error fetching SEO metadata', error);
         // Return defaults on error
         const defaults = defaultSeoData[path] || {};
         return {
             ...defaults,
             alternates: {
-                canonical: `https://www.yannova.be${path}`,
+                canonical: `${getBaseUrl()}${path}`,
             },
         };
     }

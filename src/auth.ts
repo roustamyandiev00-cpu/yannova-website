@@ -4,21 +4,14 @@ import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
-
-const ALLOWED_EMAILS = [
-  'roustamyandiev00@gmail.com',
-  'info@yannova.be',
-  'windowpro.be@gmail.com',
-  'innovar.labs7@gmail.com',
-  'admin@yannova.be',
-];
+import { logger } from '@/lib/logger';
 
 async function getUser(email: string) {
   try {
     const user = await prisma.user.findUnique({ where: { email } });
     return user;
   } catch (error) {
-    console.error('Failed to fetch user:', error);
+    logger.error('Failed to fetch user', error);
     throw new Error('Failed to fetch user.');
   }
 }
@@ -35,19 +28,23 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
           
-          if (!ALLOWED_EMAILS.includes(email)) {
-            console.log('Email not in allowed list:', email);
+          const user = await getUser(email);
+          if (!user) {
+            logger.debug('User not found');
             return null;
           }
-
-          const user = await getUser(email);
-          if (!user) return null;
+          
+          // Check if user has admin or super_admin role
+          if (user.role !== 'admin' && user.role !== 'super_admin') {
+            logger.debug('User role check failed');
+            return null;
+          }
           
           const passwordsMatch = await bcrypt.compare(password, user.password);
           if (passwordsMatch) return user;
         }
 
-        console.log('Invalid credentials');
+        logger.debug('Invalid credentials provided');
         return null;
       },
     }),

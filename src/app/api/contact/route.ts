@@ -1,18 +1,37 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { sanitizeHtml, escapeHtml } from "@/lib/sanitize";
+import { z } from "zod";
+import { logger } from "@/lib/logger";
+
+// Zod schema for contact form validation
+const contactSchema = z.object({
+    name: z.string().min(1).max(100),
+    email: z.string().email().max(255),
+    phone: z.string().max(20).optional(),
+    message: z.string().min(1).max(5000),
+});
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, phone, message } = body;
 
-        // Validate input (basic check)
-        if (!name || !email || !message) {
+        // Validate input with Zod
+        const validation = contactSchema.safeParse(body);
+        if (!validation.success) {
             return NextResponse.json(
-                { error: "Naam, email en bericht zijn verplicht." },
+                { error: "Ongeldige invoer. Controleer alle velden." },
                 { status: 400 }
             );
         }
+
+        const { name, email, phone, message } = validation.data;
+
+        // Sanitize all user inputs
+        const sanitizedName = sanitizeHtml(name);
+        const sanitizedEmail = sanitizeHtml(email);
+        const sanitizedPhone = phone ? sanitizeHtml(phone) : undefined;
+        const sanitizedMessage = sanitizeHtml(message);
 
         // Configure Nodemailer transporter (using a test account or environment variables)
         // For production, you should use environment variables: process.env.SMTP_HOST, etc.
@@ -26,20 +45,20 @@ export async function POST(request: Request) {
             },
         });
 
-        // Email content
+        // Email content with sanitized values
         const mailOptions = {
-            from: `"${name}" <${email}>`, // Sender address
+            from: `"${sanitizedName}" <${sanitizedEmail}>`, // Sender address
             to: process.env.CONTACT_EMAIL || "info@yannova.be", // Receiver address
-            subject: `Nieuw bericht van ${name} via Yannova Website`, // Subject line
-            text: `Naam: ${name}\nEmail: ${email}\nTelefoon: ${phone || "Niet opgegeven"}\n\nBericht:\n${message}`, // Plain text body
+            subject: `Nieuw bericht van ${sanitizedName} via Yannova Website`, // Subject line
+            text: `Naam: ${sanitizedName}\nEmail: ${sanitizedEmail}\nTelefoon: ${sanitizedPhone || "Niet opgegeven"}\n\nBericht:\n${sanitizedMessage}`, // Plain text body
             html: `
         <h3>Nieuw contactformulier bericht</h3>
-        <p><strong>Naam:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Telefoon:</strong> ${phone || "Niet opgegeven"}</p>
+        <p><strong>Naam:</strong> ${escapeHtml(sanitizedName)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(sanitizedEmail)}</p>
+        <p><strong>Telefoon:</strong> ${escapeHtml(sanitizedPhone || "Niet opgegeven")}</p>
         <br/>
         <p><strong>Bericht:</strong></p>
-        <p>${message.replace(/\n/g, "<br>")}</p>
+        <p>${escapeHtml(sanitizedMessage).replace(/\n/g, "<br>")}</p>
       `, // HTML body
         };
 
@@ -49,14 +68,14 @@ export async function POST(request: Request) {
         if (process.env.SMTP_HOST) {
             await transporter.sendMail(mailOptions);
         } else {
-            console.log("Simulating email send:", mailOptions);
+            logger.debug("Simulating email send", { to: mailOptions.to, subject: mailOptions.subject });
             // Simulate a delay
             await new Promise((resolve) => setTimeout(resolve, 1000));
         }
 
         return NextResponse.json({ success: true, message: "Bericht succesvol verzonden!" });
     } catch (error) {
-        console.error("Error sending email:", error);
+        logger.error("Error sending email", error);
         return NextResponse.json(
             { error: "Er is iets misgegaan bij het versturen van uw bericht." },
             { status: 500 }

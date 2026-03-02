@@ -3,14 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate",
+    "analyze": "ANALYZE=true next build",
+    "optimize-images": "node scripts/optimize-images.js",
+    "health-check": "curl http://localhost:3000/api/health"
   },
   "dependencies": {
     "@ai-sdk/google": "^0.0.55",
     "@ai-sdk/openai": "^3.0.26",
+    "@google/generative-ai": "^0.21.0",
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@supabase/supabase-js": "^2.95.3",
@@ -21,6 +26,7 @@
     "clsx": "^2.1.1",
     "firebase": "^12.10.0",
     "framer-motion": "^12.34.0",
+    "isomorphic-dompurify": "^3.0.0",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
     "next-auth": "^5.0.0-beta.30",
@@ -36,6 +42,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/dompurify": "^3.0.5",
     "@types/node": "^20",
     "@types/nodemailer": "^7.0.9",
     "@types/pg": "^8.16.0",
@@ -45,7 +52,9 @@
     "dotenv-expand": "^12.0.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "sharp": "^0.33.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }
