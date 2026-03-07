@@ -24,38 +24,41 @@ export interface LocalBusinessData {
   areaServed: string[];
 }
 
-// Werkgebied: Zoersel + 20-30km straal, Antwerpen + 20-30km straal
+// Werkgebied: Zoersel + 30km straal, Antwerpen + 30km straal - alle belangrijke gemeenten
 const serviceAreas = [
-  "Zoersel",
-  "Antwerpen", 
-  "Mechelen",
-  "Westmalle",
-  "Brasschaat",
-  "Schoten",
-  "Sint-Antelinks",
-  "Malle",
-  "Zandhoven",
-  "Herenthout",
-  "Heist-op-den-Berg",
-  "Bonheiden",
-  "Wijnegem",
-  "Wommelgem",
-  "Borsbeek",
-  "Ranst",
-  "Grobbendonk",
-  "Herentals",
-  "Lille",
-  "Nijlen",
+  // Primaire zone (0-10km van Zoersel)
+  "Zoersel", "Schilde", "Brasschaat", "Schoten", "Wijnegem", "Wommelgem",
+  "Ranst", "Brecht", "Malle", "Westmalle", "Oelegem", "Zandhoven",
+  "Massenhoven", "Hove", "Kontich", "Mortsel", "Edegem", "Boechout",
+  
+  // Antwerpen en districten
+  "Antwerpen", "Wilrijk", "Berchem", "Deurne", "Borgerhout", "Merksem",
+  "Ekeren", "Hoboken", "Berendrecht", "Zandvliet",
+  
+  // Noordelijke rand (10-20km)
+  "Kapellen", "Stabroek", "Essen", "Kalmthout", "Wuustwezel",
+  
+  // Zuidelijke zone (10-25km)
+  "Lint", "Aartselaar", "Boom", "Rumst", "Niel", "Hemiksem",
+  
+  // Mechelen en omgeving (20-30km)
+  "Mechelen", "Bonheiden", "Putte", "Berlaar", "Lier", "Nijlen",
+  "Duffel", "Sint-Katelijne-Waver", "Walem",
+  
+  // Kempen (15-30km)
+  "Heist-op-den-Berg", "Grobbendonk", "Herentals", "Vorselaar", "Olen",
+  "Westerlo", "Turnhout", "Oud-Turnhout", "Beerse", "Vosselaar",
+  "Lille", "Kasterlee", "Geel", "Mol", "Balen", "Dessel", "Retie"
 ];
 
 export const localBusinessData: LocalBusinessData = {
   name: "Yannova Bouw",
-  description: "Lokale aannemer gespecialiseerd in ramen, deuren, gevelrenovatie en totaalrenovatie in Zoersel en regio Antwerpen. Werkgebied: 20-30 km rond Zoersel en Antwerpen.",
+  description: "Specialist in ramen plaatsen, deuren plaatsen, gevelrenovatie en totaalrenovatie in Zoersel, Antwerpen en omgeving. PVC & aluminium ramen met HR++ en drievoudig glas. Gratis opmeting binnen 30km. 15+ jaar ervaring. Premie-advies Mijn VerbouwPremie.",
   url: "https://www.yannova.be",
-  telephone: "+3231234567",
+  telephone: "+32489960001",
   email: "info@yannova.be",
   address: {
-    streetAddress: "Dorpstraat 1",
+    streetAddress: "Zoersel",
     addressLocality: "Zoersel",
     postalCode: "2980",
     addressRegion: "Antwerpen",
@@ -65,8 +68,8 @@ export const localBusinessData: LocalBusinessData = {
     latitude: "51.2625",
     longitude: "4.6472",
   },
-  openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-12:00"],
-  priceRange: "€€",
+  openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"],
+  priceRange: "€€-€€€",
   image: "https://www.yannova.be/images/yannova-og.jpg",
   areaServed: serviceAreas,
 };
@@ -138,11 +141,11 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
   {
-    name: "Ramen & Deuren",
-    description: "PVC en aluminium ramen en deuren met HR++ beglazing. Gratis opmeting, premie-advies en professionele plaatsing.",
+    name: "Ramen & Deuren Plaatsen",
+    description: "PVC en aluminium ramen en deuren plaatsen met HR++ of drievoudig glas. Energiezuinige ramen voor maximale isolatie. Gratis opmeting in Zoersel, Antwerpen, Schilde, Brasschaat en omgeving. Premie-advies Mijn VerbouwPremie inbegrepen. 30 jaar garantie.",
     url: "https://www.yannova.be/diensten/ramen-deuren",
     provider: "Yannova Bouw",
-    areaServed: ["Zoersel", "Antwerpen", "Mechelen"],
+    areaServed: serviceAreas,
     offers: {
       price: "0",
       priceCurrency: "EUR",
@@ -150,24 +153,24 @@ export const services: ServiceData[] = [
   },
   {
     name: "Gevelrenovatie & Crepi",
-    description: "Gevelisolatie met crepi-afwerking. EPC-verbetering, vochtbestrijding en 10 jaar garantie.",
+    description: "Professionele gevelisolatie met crepi-afwerking. EPC-verbetering gemiddeld 2-3 labels. Vochtbestrijding en drooglegging. 10 jaar garantie op afwerking. Ideaal voor woningen in Zoersel, Antwerpen en regio.",
     url: "https://www.yannova.be/diensten/gevelrenovatie",
     provider: "Yannova Bouw",
-    areaServed: ["Zoersel", "Antwerpen", "Mechelen"],
+    areaServed: serviceAreas,
   },
   {
-    name: "Totaalrenovatie",
-    description: "Volledige renovatie met één aanspreekpunt. Van ramen en isolatie tot badkamer en keuken.",
+    name: "Totaalrenovatie & Verbouwing",
+    description: "Volledige renovatie met één aanspreekpunt. Van ramen en gevelisolatie tot badkamer, keuken en binnenafwerking. Vast projectteam, geen onderaannemers. Duidelijke planning en transparante communicatie.",
     url: "https://www.yannova.be/diensten/renovatie",
     provider: "Yannova Bouw",
-    areaServed: ["Zoersel", "Antwerpen", "Mechelen"],
+    areaServed: serviceAreas,
   },
   {
-    name: "Isolatiewerken",
-    description: "Dak- en gevelisolatie voor een lager E-peil en lagere energiefactuur.",
+    name: "Gevelisolatie & Isolatiewerken",
+    description: "Dak- en gevelisolatie voor een lager E-peil en lagere energiefactuur. EPC-verbetering voor hogere woningwaarde. Premies mogelijk via Mijn VerbouwPremie.",
     url: "https://www.yannova.be/diensten/isolatie",
     provider: "Yannova Bouw",
-    areaServed: ["Zoersel", "Antwerpen", "Mechelen"],
+    areaServed: serviceAreas,
   },
 ];
 

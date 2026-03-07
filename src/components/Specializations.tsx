@@ -7,39 +7,39 @@ import { FadeIn } from "@/components/animations/FadeIn";
 
 const specializations = [
   {
-    title: "Ramen & Deuren",
-    description: "PVC en aluminium ramen met HR++ of drievoudig beglazing. We meten gratis op, adviseren het juiste profiel voor uw situatie, en plaatsen netjes inclusief afwerking. Gemiddeld 30% energiebesparing na plaatsing.",
+    title: "Ramen & Deuren Plaatsen",
+    description: "Specialist in PVC en aluminium ramen met HR++ of drievoudig beglazing voor maximale energie-efficiëntie. Wij plaatsen ramen en deuren op maat in Zoersel, Antwerpen, Schilde, Brasschaat en omgeving. Gratis opmeting, professioneel advies over het juiste profiel en glassysteem, en nette plaatsing inclusief volledige afwerking. Gemiddeld 30-40% energiebesparing na plaatsing van nieuwe energiezuinige ramen.",
     features: [
-      "Gratis opmeting in Zoersel en regio Antwerpen",
-      "HR++ en drievoudig beglazing beschikbaar",
-      "Inclusief afwerking en premie-advies"
+      "Gratis opmeting in Zoersel, Antwerpen en 30km omgeving",
+      "HR++ en drievoudig glas voor optimale isolatie",
+      "Inclusief volledige afwerking en premie-advies Mijn VerbouwPremie"
     ],
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
     link: "/diensten/ramen-deuren",
   },
   {
     title: "Gevelrenovatie & Crepi",
-    description: "Gevelisolatie met crepi-afwerking. We verbeteren uw EPC met gemiddeld 2 labels. Volledige afwerking in kleur naar keuze, inclusief herstellingen van scheuren en vochtproblemen.",
+    description: "Professionele gevelisolatie met hoogwaardige crepi-afwerking voor een energiezuinige woning. Wij verbeteren uw EPC-label met gemiddeld 2 tot 3 labels door isolatie van de buitenmuur. Volledige gevelrenovatie in kleur naar keuze, inclusief herstel van scheuren, vochtproblemen en drooglegging indien nodig. Ideaal voor woningen in Zoersel, Antwerpen en omliggende gemeenten.",
     features: [
-      "EPC-verbetering gemiddeld 2 labels",
-      "Drooglegging bij vochtproblemen",
-      "10 jaar garantie op afwerking"
+      "EPC-verbetering gemiddeld 2-3 labels voor hogere woningwaarde",
+      "Professionele drooglegging bij vochtproblemen",
+      "10 jaar garantie op crepi-afwerking en isolatiewerken"
     ],
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
     link: "/diensten/gevelrenovatie",
   },
   {
-    title: "Totaalrenovatie",
-    description: "Volledige renovatie met één aanspreekpunt. Van ramen en isolatie tot badkamer en keuken. U krijgt een vast projectteam, duidelijke planning, en nette werf.",
+    title: "Totaalrenovatie & Verbouwing",
+    description: "Volledige renovatie van uw woning met één aanspreekpunt van A tot Z. Van nieuwe ramen en gevelisolatie tot badkamer, keuken en binnenafwerking. Wij begeleiden uw totaalrenovatie in Zoersel, Antwerpen en regio met een vast projectteam, duidelijke planning en transparante communicatie. Geen onderaannemers, alles uit eigen hand voor gegarandeerde kwaliteit.",
     features: [
-      "Eén projectleider van start tot oplevering",
-      "Vaste ploeg, geen onderaannemers",
-      "Duidelijke offerte, geen verrassingen"
+      "Eén vaste projectleider van start tot oplevering",
+      "Eigen ploeg vakmensen, geen onderaannemers",
+      "Duidelijke offerte vooraf, geen verrassingen achteraf"
     ],
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
     link: "/diensten/renovatie",
   }
-];
+]
 
 export function Specializations() {
   return (
@@ -56,13 +56,14 @@ export function Specializations() {
               <span className="text-secondary font-semibold tracking-wide uppercase text-sm">Onze Diensten</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-6">
-              Ramen, deuren en renovatie in{" "}
+              Ramen plaatsen, gevelrenovatie en totaalrenovatie in{" "}
               <span className="bg-linear-to-r from-secondary via-orange-400 to-secondary bg-clip-text text-transparent">
-                Zoersel en omgeving
+                Zoersel, Antwerpen en omgeving
               </span>
             </h2>
             <p className="text-lg leading-8 text-gray-300">
-              Meer dan 200 projecten gerealiseerd. Gratis opmeting, duidelijke offerte, nette plaatsing.
+              Meer dan 200 projecten gerealiseerd in Zoersel, Schilde, Brasschaat, Antwerpen en regio. 
+              Gratis opmeting, duidelijke offerte binnen 24u, professionele plaatsing door eigen vakmensen.
             </p>
           </div>
         </FadeIn>

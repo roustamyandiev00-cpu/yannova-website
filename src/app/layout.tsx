@@ -14,8 +14,20 @@ import { generateLocalBusinessSchema, generateServiceSchema, services } from "@/
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Yannova Bouw - Ramen, Deuren en Renovatie in Zoersel",
-  description: "Specialist in ramen, deuren, gevelrenovatie, crepi en totaalrenovatie in regio Zoersel, Antwerpen en Mechelen.",
+  title: "Ramen & Deuren Plaatsen Zoersel, Antwerpen | Yannova - Gratis Offerte 24u",
+  description: "Specialist ramen en deuren in Zoersel, Antwerpen, Schilde, Brasschaat. PVC & aluminium ramen, gevelrenovatie, totaalrenovatie. 15+ jaar ervaring. Gratis opmeting & offerte binnen 24u. Premie-advies. ✓ HR++ & drievoudig glas ✓ EPC-verbetering ✓ 30 jaar garantie",
+  keywords: "ramen plaatsen Zoersel, deuren plaatsen Antwerpen, PVC ramen, aluminium ramen, gevelrenovatie, crepi, totaalrenovatie, energiezuinige ramen, HR++ glas, drievoudig glas, renovatiebedrijf Antwerpen, aannemer Zoersel, ramen Schilde, ramen Brasschaat, premies renovatie",
+  openGraph: {
+    title: "Ramen & Deuren Plaatsen Zoersel, Antwerpen | Yannova",
+    description: "Specialist ramen, deuren & renovatie in Zoersel en regio Antwerpen. Gratis offerte binnen 24u. 15+ jaar ervaring.",
+    type: "website",
+    locale: "nl_BE",
+    siteName: "Yannova Bouw",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 // Combine LocalBusiness + Services schemas

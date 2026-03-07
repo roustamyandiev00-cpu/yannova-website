@@ -60,7 +60,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
             placeholder="Zoek op titel, locatie, materiaal..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all"
+            className="w-full pl-12 pr-4 py-4 bg-white/5 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all"
           />
           {searchQuery && (
             <button
@@ -85,7 +85,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
               !activeCategory
                 ? 'bg-secondary text-white shadow-lg shadow-secondary/25'
-                : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
+                : 'bg-white/5 text-gray-300 hover:bg-white/10'
             }`}
           >
             Alle projecten
@@ -97,7 +97,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
               className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                 activeCategory === category
                   ? 'bg-secondary text-white shadow-lg shadow-secondary/25'
-                  : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10'
+                  : 'bg-white/5 text-gray-300 hover:bg-white/10'
               }`}
             >
               {category}
@@ -127,7 +127,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10 hover:border-secondary/50"
+              className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-gray-100 cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-300"
               onClick={() => setSelectedProject(project)}
             >
               <Image
@@ -167,7 +167,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
         </AnimatePresence>
         </div>
       ) : (
-        <div className="text-center py-20 bg-white/5 rounded-3xl border border-white/10">
+        <div className="text-center py-20 bg-white/5 rounded-3xl">
           <div className="max-w-md mx-auto">
             <Search className="h-16 w-16 text-gray-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Geen projecten gevonden</h3>
@@ -249,7 +249,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
                     quality={100}
                 />
               </div>
-              <div className="mt-6 text-center bg-black/50 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+              <div className="mt-6 text-center bg-black/50 backdrop-blur-md rounded-2xl p-6">
                 <div className="flex items-center justify-center gap-3 mb-3 flex-wrap">
                   <span className="text-secondary text-sm font-bold uppercase tracking-widest bg-secondary/20 px-3 py-1 rounded-full">
                     {selectedProject.category}

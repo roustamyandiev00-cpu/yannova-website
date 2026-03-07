@@ -373,7 +373,7 @@ export default function FacadePage() {
               </Link>
               <a href={company.phoneHref} className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-base font-medium text-white hover:bg-white/5 transition-colors">
                 <Phone className="h-5 w-5" />
-                {company.phone}
+                {company.phoneDisplay}
               </a>
             </div>
           </FadeIn>
