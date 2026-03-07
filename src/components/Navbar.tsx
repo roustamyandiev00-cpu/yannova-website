@@ -66,8 +66,10 @@ export function Navbar() {
   return (
     <motion.header
       className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-300 border-b",
-        scrolled ? "bg-background/80 backdrop-blur-md border-white/10 py-3 shadow-lg" : "bg-transparent border-transparent py-5",
+        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
+        scrolled 
+          ? "glass backdrop-blur-xl border-b border-white/10 py-3 shadow-elegant-lg" 
+          : "bg-transparent border-b border-transparent py-5",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -75,8 +77,9 @@ export function Navbar() {
     >
       <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Hoofdmenu">
         <div className="flex lg:flex-1">
-          <Link href="/" className="group -m-1.5 p-1.5 text-2xl font-bold tracking-tight text-white transition-colors">
-            Yannova<span className="text-secondary">.</span>
+          <Link href="/" className="group -m-1.5 p-1.5 text-2xl font-bold tracking-tight transition-all duration-300">
+            <span className="text-white group-hover:text-secondary transition-colors duration-300">Yannova</span>
+            <span className="text-secondary group-hover:scale-125 inline-block transition-transform duration-300">.</span>
           </Link>
         </div>
 
@@ -184,14 +187,14 @@ export function Navbar() {
           </a>
           <Link
             href="/vraag-ai"
-            className="flex items-center gap-1.5 text-sm font-medium text-gray-200 hover:text-white bg-white/5 hover:bg-white/10 px-3 py-2 rounded-lg transition-colors"
+            className="flex items-center gap-1.5 text-sm font-medium text-white glass px-4 py-2.5 rounded-xl glass-hover shadow-elegant group"
           >
-            <Sparkles className="h-4 w-4 text-secondary" />
+            <Sparkles className="h-4 w-4 text-secondary group-hover:rotate-12 transition-transform duration-300" />
             Vraag Yannova AI
           </Link>
           <Link
             href="/contact"
-            className="flex items-center gap-2 rounded-lg bg-secondary px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/90 transition-colors"
+            className="flex items-center gap-2 rounded-xl bg-linear-to-r from-secondary to-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-elegant glow-hover transition-all duration-300 hover:scale-105"
           >
             Gratis offerte
           </Link>
@@ -205,7 +208,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
+            className="lg:hidden glass backdrop-blur-xl border-t border-white/10 overflow-hidden shadow-elegant-lg"
           >
             <div className="space-y-1 px-4 pb-6 pt-4">
               {navigation.map((item) =>
@@ -259,7 +262,7 @@ export function Navbar() {
 
               <Link
                 href="/vraag-ai"
-                className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-white/5 px-3 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors"
+                className="mt-4 flex items-center justify-center gap-2 rounded-xl glass px-4 py-3.5 text-base font-medium text-white glass-hover shadow-elegant"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Sparkles className="h-4 w-4 text-secondary" />
@@ -267,7 +270,7 @@ export function Navbar() {
               </Link>
               <Link
                 href="/contact"
-                className="mt-2 block w-full text-center rounded-lg bg-secondary px-3 py-3 text-base font-semibold text-white shadow-md hover:bg-secondary/90"
+                className="mt-3 block w-full text-center rounded-xl bg-linear-to-r from-secondary to-orange-600 px-4 py-3.5 text-base font-semibold text-white shadow-elegant"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Gratis offerte aanvragen

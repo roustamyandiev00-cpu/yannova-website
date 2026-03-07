@@ -19,21 +19,30 @@ export function ServiceCard({ title, description, link, icon, index = 0 }: Servi
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col h-full rounded-2xl border border-white/5 bg-[#1a1d24] p-6 shadow-sm hover:border-white/10 transition-all duration-300 group"
+            className="group relative flex flex-col h-full rounded-2xl glass p-8 shadow-elegant hover:shadow-elegant-lg transition-all duration-500 overflow-hidden"
         >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary transition-colors duration-300">
-                {icon}
-            </div>
-            <h3 className="text-lg font-bold leading-7 text-white group-hover:text-secondary transition-colors">
-                {title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-gray-400 flex-1 group-hover:text-gray-300 transition-colors">
-                {description}
-            </p>
-            <div className="pt-4 mt-auto">
-                <Link href={link} className="inline-flex items-center text-sm font-semibold text-secondary hover:text-white transition-colors group/link">
-                    Meer info <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
-                </Link>
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-linear-to-br from-secondary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+            
+            <div className="relative z-10">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br from-secondary/20 to-secondary/5 text-secondary transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg">
+                    {icon}
+                </div>
+                <h3 className="text-xl font-bold leading-7 text-white group-hover:text-secondary transition-colors duration-300 mb-3">
+                    {title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-300 flex-1 group-hover:text-gray-200 transition-colors duration-300">
+                    {description}
+                </p>
+                <div className="pt-6 mt-auto">
+                    <Link 
+                        href={link} 
+                        className="inline-flex items-center text-sm font-semibold text-secondary hover:text-white transition-all duration-300 group/link"
+                    >
+                        Meer info 
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-2" />
+                    </Link>
+                </div>
             </div>
         </motion.div>
     );

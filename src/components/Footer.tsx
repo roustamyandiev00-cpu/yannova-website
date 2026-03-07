@@ -4,24 +4,28 @@ import { company } from "@/lib/company";
 
 export function Footer() {
   return (
-    <footer className="bg-background text-white border-t border-white/5" aria-labelledby="footer-heading">
+    <footer className="bg-linear-to-b from-background to-[#0d1117] text-white border-t border-white/5 relative overflow-hidden" aria-labelledby="footer-heading">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
+      
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="container mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+      <div className="container mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 relative z-10">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="text-2xl font-bold tracking-tight text-white hover:text-secondary transition-colors">
-              Yannova<span className="text-secondary">.</span>
+            <Link href="/" className="group text-2xl font-bold tracking-tight transition-all duration-300">
+              <span className="text-white group-hover:text-secondary transition-colors duration-300">Yannova</span>
+              <span className="text-secondary group-hover:scale-125 inline-block transition-transform duration-300">.</span>
             </Link>
-            <p className="text-sm leading-6 text-gray-300">
+            <p className="text-sm leading-6 text-gray-300 max-w-sm">
               Uw specialist voor ramen, deuren en totaalrenovatie in Zoersel, Antwerpen en Mechelen.
               Meer dan 15 jaar ervaring en vakmanschap.
             </p>
             <div className="flex flex-wrap gap-3">
               <a
                 href={company.phoneHref}
-                className="inline-flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2 text-sm text-gray-200 hover:bg-white/10 transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-4 py-2.5 text-sm text-gray-200 shadow-elegant"
               >
                 <Phone className="h-4 w-4 text-secondary" />
                 {company.phoneDisplay}
@@ -30,7 +34,7 @@ export function Footer() {
                 href={company.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg bg-white/5 px-3 py-2 text-sm text-gray-200 hover:bg-white/10 transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-4 py-2.5 text-sm text-gray-200 shadow-elegant"
               >
                 <MessageCircle className="h-4 w-4 text-secondary" />
                 WhatsApp

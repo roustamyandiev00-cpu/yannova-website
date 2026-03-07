@@ -13,9 +13,9 @@ if (connectionString && !connectionString.includes('sslmode=')) {
 // Enhanced connection pool configuration for Supabase with retry logic
 const pool = new Pool({
   connectionString,
-  ssl: process.env.NODE_ENV === 'production' 
-    ? { rejectUnauthorized: true }
-    : false, // Disable SSL verification in development
+  ssl: {
+    rejectUnauthorized: false // Accept self-signed certificates
+  },
   // Connection pool settings optimized for serverless
   max: 10, // Maximum number of clients in the pool
   min: 2, // Minimum number of clients in the pool

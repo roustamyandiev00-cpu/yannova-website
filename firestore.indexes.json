@@ -15,33 +15,11 @@
       ]
     },
     {
-      "collectionGroup": "chatMessages",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "sessionId",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "sender",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "timestamp",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "chatSessions",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "updatedAt",
+          "fieldPath": "lastActivity",
           "order": "DESCENDING"
         }
       ]

@@ -3,12 +3,8 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+.pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -28,13 +24,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
-# Firebase CLI logs
-firebase-debug.log
-firebase-debug.*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# local env files
+.env*.local
+.env
 
 # vercel
 .vercel
@@ -43,5 +36,26 @@ firebase-debug.*.log
 *.tsbuildinfo
 next-env.d.ts
 
-/src/generated/prisma
-.env*.local
+# prisma
+prisma/.env
+
+# bundle analyzer
+.next/analyze/
+
+# optimized images output
+/public/images/renovatie/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Firebase
+firebase-debug.log
+.firebase/

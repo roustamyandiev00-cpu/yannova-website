@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "firebase-tools": {
+      "command": "uvx",
+      "args": ["firebase-mcp-server@latest"],
+      "env": {
+        "FIREBASE_PROJECT_ID": "ai-agent-5fab0",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "autoApprove": ["firebase_deploy", "firebase_list_projects"]
+    }
+  }
+}

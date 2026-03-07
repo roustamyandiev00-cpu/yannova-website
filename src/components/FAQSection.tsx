@@ -65,16 +65,16 @@ function FAQItem({
   const triggerId = `faq-trigger-${index}`;
 
   return (
-    <div className="border border-border rounded-xl overflow-hidden bg-card">
+    <div className="rounded-xl overflow-hidden bg-card">
       <button
         id={triggerId}
         onClick={onClick}
-        className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-white/5 transition-colors"
+        className="w-full p-4 text-left flex items-center justify-between gap-4 hover:bg-white/5 transition-colors"
         aria-expanded={isOpen}
         aria-controls={contentId}
       >
-        <span className="font-semibold text-foreground">{question}</span>
-        <ChevronDown className={`h-5 w-5 text-secondary transition-transform shrink-0 ${isOpen ? "rotate-180" : ""}`} />
+        <span className="font-medium text-foreground text-sm">{question}</span>
+        <ChevronDown className={`h-4 w-4 text-secondary transition-transform shrink-0 ${isOpen ? "rotate-180" : ""}`} />
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -88,7 +88,7 @@ function FAQItem({
             transition={{ duration: 0.25 }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-6 text-muted-foreground leading-relaxed">{answer}</div>
+            <div className="px-4 pb-4 text-muted-foreground leading-relaxed text-sm">{answer}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -98,26 +98,29 @@ function FAQItem({
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const displayedFaqs = showAll ? faqs : faqs.slice(0, 4);
 
   return (
-    <section className="py-16 sm:py-20 bg-background" aria-labelledby="faq-title">
+    <section className="py-12 sm:py-16 bg-background" aria-labelledby="faq-title">
       <div className="container mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="flex justify-center mb-4">
-                <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <HelpCircle className="h-7 w-7 text-secondary" />
+            <div className="text-center mb-8">
+              <div className="flex justify-center mb-3">
+                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
+                  <HelpCircle className="h-6 w-6 text-secondary" />
                 </div>
               </div>
-              <h2 id="faq-title" className="text-3xl sm:text-4xl font-bold mb-4">
+              <h2 id="faq-title" className="text-2xl sm:text-3xl font-bold mb-3">
                 Veelgestelde vragen
               </h2>
-              <p className="text-muted-foreground">Alles wat u wilt weten over onze diensten en werkwijze.</p>
+              <p className="text-muted-foreground text-sm">Alles wat u wilt weten over onze diensten en werkwijze.</p>
             </div>
 
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
+            <div className="space-y-3">
+              {displayedFaqs.map((faq, index) => (
                 <FAQItem
                   key={faq.question}
                   index={index}
@@ -128,6 +131,18 @@ export function FAQSection() {
                 />
               ))}
             </div>
+
+            {!showAll && (
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setShowAll(true)}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-white transition-colors"
+                >
+                  Meer vragen bekijken
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </div>
+            )}
           </div>
         </FadeIn>
       </div>

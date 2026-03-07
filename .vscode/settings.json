@@ -5,5 +5,8 @@
     "less.validate": false,
     "files.associations": {
         "*.css": "tailwindcss"
-    }
+    },
+    "kiroAgent.configureMCP": "Disabled",
+    "typescript.autoClosingTags": false,
+    "prisma.pinToPrisma6": false
 }

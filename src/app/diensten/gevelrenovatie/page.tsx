@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { PaintBucket, Layers, Sun, Activity, Phone, MessageCircle } from "lucide-react";
+import { PaintBucket, Layers, Sun, Activity, Phone, MessageCircle, CheckCircle2, Shield, Clock, Award } from "lucide-react";
 import { getSeoMetadata } from "@/lib/seo-helper";
 import { company } from "@/lib/company";
 
@@ -33,19 +33,94 @@ export default function FacadePage() {
     },
   ];
 
+  const services = [
+    {
+      title: "Gevelisolatie",
+      description: "Wij plaatsen hoogwaardige isolatieplaten op uw bestaande gevel. Dit vermindert warmteverlies aanzienlijk en zorgt voor een comfortabeler binnenklimaat.",
+      features: ["EPS, XPS of minerale wol", "Dikte op maat van uw situatie", "Correcte verankering en lijmwerk"]
+    },
+    {
+      title: "Crepi afwerking",
+      description: "Na isolatie brengen we een duurzame crepilaag aan. U kiest uit verschillende structuren en kleuren die perfect bij uw woning passen.",
+      features: ["Minerale of kunststof crepi", "Diverse korrelgroottes", "Kleurvast en waterafstotend"]
+    },
+    {
+      title: "Steenstrips",
+      description: "Voor een natuurlijke uitstraling kunnen we steenstrips aanbrengen. Deze geven uw gevel een robuuste, tijdloze look met minimaal onderhoud.",
+      features: ["Natuursteen of kunststeen", "Diverse formaten en kleuren", "Vorstbestendig en duurzaam"]
+    },
+    {
+      title: "Voegwerk & herstel",
+      description: "Beschadigde voegen of scheuren worden vakkundig hersteld voordat we met isolatie en afwerking starten. Zo garanderen we een stabiele ondergrond.",
+      features: ["Voegvernieuwing", "Scheurherstellingen", "Vochtbestrijding"]
+    }
+  ];
+
+  const process = [
+    {
+      step: "1",
+      title: "Plaatsbezoek & advies",
+      description: "We komen langs om uw gevel te inspecteren, meten op te nemen en uw wensen te bespreken. U krijgt direct advies over de beste aanpak."
+    },
+    {
+      step: "2",
+      title: "Offerte op maat",
+      description: "Op basis van het plaatsbezoek stellen we een gedetailleerde offerte op met materialen, planning en prijs. Alles helder en transparant."
+    },
+    {
+      step: "3",
+      title: "Voorbereiding",
+      description: "We regelen alle benodigde materialen en stellen een planning op. Indien nodig vragen we vergunningen aan en coördineren met andere partijen."
+    },
+    {
+      step: "4",
+      title: "Uitvoering",
+      description: "Ons ervaren team start met de voorbereidende werken, plaatst de isolatie en brengt de afwerking aan. We werken netjes en efficiënt."
+    },
+    {
+      step: "5",
+      title: "Oplevering",
+      description: "Na afronding controleren we samen het resultaat. U krijgt onderhoudsadvies en alle garantiedocumenten."
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      icon: Shield,
+      title: "Vakmanschap",
+      description: "Jarenlange ervaring in gevelrenovatie en isolatiewerken"
+    },
+    {
+      icon: Award,
+      title: "Kwaliteitsgarantie",
+      description: "Wij werken enkel met A-merken en geven garantie op materiaal en uitvoering"
+    },
+    {
+      icon: Clock,
+      title: "Stipte planning",
+      description: "Duidelijke afspraken en realistische planning die we nakomen"
+    },
+    {
+      icon: CheckCircle2,
+      title: "Totaalpakket",
+      description: "Van advies tot oplevering, alles uit één hand"
+    }
+  ];
+
   return (
     <div className="bg-background min-h-screen">
       <section className="relative h-[56vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?q=80&w=2670&auto=format&fit=crop"
             alt="Gevelrenovatie en crepi"
             fill
-            className="object-cover brightness-[0.35]"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center relative z-10">
           <FadeIn>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Gevelrenovatie & crepi</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
@@ -82,14 +157,18 @@ export default function FacadePage() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <FadeIn delay={0.2} className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {benefits.map((item) => (
-              <div key={item.title} className="bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-secondary/50 transition-all duration-300 group">
-                <div className="bg-secondary/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <item.icon className="text-secondary h-6 w-6" />
+              <div key={item.title} className="group">
+                <div className="flex items-start gap-4">
+                  <div className="bg-secondary/10 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
+                    <item.icon className="text-secondary h-7 w-7" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
           </FadeIn>
@@ -111,6 +190,193 @@ export default function FacadePage() {
               WhatsApp
             </a>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 container mx-auto">
+        <FadeIn>
+          <h2 className="text-3xl font-bold mb-4 text-center text-foreground">
+            Onze <span className="text-secondary">gevelrenovatie diensten</span>
+          </h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+            Van isolatie tot afwerking - wij verzorgen het volledige traject voor een duurzame en mooie gevel.
+          </p>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 mt-16">
+          {services.map((service, index) => (
+            <FadeIn key={service.title} delay={index * 0.1}>
+              <div className="h-full">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">{service.title}</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
+                <ul className="space-y-3">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-muted/20">
+        <div className="container mx-auto">
+          <FadeIn>
+            <h2 className="text-3xl font-bold mb-4 text-center text-foreground">
+              Hoe werkt <span className="text-secondary">gevelrenovatie?</span>
+            </h2>
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+              Van eerste contact tot oplevering - zo verloopt uw gevelrenovatie stap voor stap.
+            </p>
+          </FadeIn>
+
+          <div className="max-w-4xl mx-auto mt-16">
+            {process.map((item, index) => (
+              <FadeIn key={item.step} delay={index * 0.1}>
+                <div className="flex gap-8 mb-12 last:mb-0 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold text-xl group-hover:bg-secondary group-hover:text-white transition-colors">
+                      {item.step}
+                    </div>
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <h3 className="text-xl font-bold mb-3 text-foreground">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 container mx-auto">
+        <FadeIn>
+          <h2 className="text-3xl font-bold mb-4 text-center text-foreground">
+            Waarom kiezen voor <span className="text-secondary">{company.name}?</span>
+          </h2>
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+            Wij combineren vakmanschap met persoonlijke service voor het beste resultaat.
+          </p>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          {whyChooseUs.map((item, index) => (
+            <FadeIn key={item.title} delay={index * 0.1}>
+              <div className="text-center group">
+                <div className="bg-secondary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-5 mx-auto group-hover:bg-secondary/20 transition-colors">
+                  <item.icon className="text-secondary h-8 w-8" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-20 px-6 bg-muted/20">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <FadeIn>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">
+                Veelgestelde vragen over <span className="text-secondary">gevelrenovatie</span>
+              </h2>
+            </FadeIn>
+
+            <div className="space-y-8 mt-12">
+              <FadeIn delay={0.1}>
+                <div className="border-l-4 border-secondary pl-6 py-2">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Hoelang duurt een gevelrenovatie?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    De duur hangt af van de grootte van uw woning en de gekozen afwerking. Een gemiddelde eengezinswoning 
+                    kunnen we in 2 tot 3 weken volledig renoveren. Bij grotere projecten of complexe situaties kan dit langer duren. 
+                    We maken vooraf een realistische planning die we met u bespreken.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.2}>
+                <div className="border-l-4 border-secondary pl-6 py-2">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Wat kost een gevelrenovatie?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    De prijs varieert afhankelijk van de oppervlakte, isolatiedikte, type afwerking en eventuele herstelwerken. 
+                    Gemiddeld rekent u voor een volledige gevelrenovatie met isolatie tussen €80 en €150 per m². 
+                    Na een plaatsbezoek geven we u een nauwkeurige offerte op maat.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.3}>
+                <div className="border-l-4 border-secondary pl-6 py-2">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Heb ik een vergunning nodig?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    In de meeste gevallen is gevelrenovatie vergunningsvrij, zeker als u de bestaande kleur en uitstraling behoudt. 
+                    Bij ingrijpende wijzigingen of beschermde panden kan een vergunning nodig zijn. Wij checken dit voor u en 
+                    helpen indien nodig met de aanvraag.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.4}>
+                <div className="border-l-4 border-secondary pl-6 py-2">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Welke isolatiedikte is aan te raden?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Voor optimale energiebesparing adviseren we minimaal 8 tot 10 cm isolatie. Dit hangt af van uw huidige 
+                    gevelopbouw en energiedoelstellingen. Dikkere isolatie bespaart meer energie, maar moet wel praktisch 
+                    uitvoerbaar zijn rond ramen en dakranden. We bekijken samen wat het beste bij uw situatie past.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.5}>
+                <div className="border-l-4 border-secondary pl-6 py-2">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Kan ik premies krijgen?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Ja, voor gevelisolatie zijn er vaak premies beschikbaar via uw gemeente of Vlaanderen. De voorwaarden 
+                    en bedragen verschillen per regio en wijzigen regelmatig. We informeren u graag over de actuele 
+                    mogelijkheden en helpen waar nodig met de aanvraag.
+                  </p>
+                </div>
+              </FadeIn>
+
+              <FadeIn delay={0.6}>
+                <div className="border-l-4 border-secondary pl-6 py-2">
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Moet ik het huis uit tijdens de werken?</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Nee, u kunt gewoon blijven wonen tijdens de gevelrenovatie. We werken van buitenaf en zorgen dat ramen 
+                    en deuren dagelijks bruikbaar blijven. Wel kan er tijdelijk wat stof en lawaai zijn. We houden u op de 
+                    hoogte van de planning zodat u weet wanneer we aan welke gevel werken.
+                  </p>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-secondary/10 border-y border-secondary/20">
+        <div className="container mx-auto px-6 text-center">
+          <FadeIn>
+            <h2 className="text-3xl font-bold mb-6 text-foreground">Klaar voor een nieuwe gevel?</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Vraag vrijblijvend advies aan en ontdek wat gevelrenovatie voor uw woning kan betekenen. 
+              We komen graag langs voor een persoonlijk gesprek.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact" className="inline-flex items-center rounded-lg bg-secondary px-8 py-4 text-base font-semibold text-white hover:bg-secondary/90 transition-colors shadow-lg">
+                Gratis adviesgesprek aanvragen
+              </Link>
+              <a href={company.phoneHref} className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-base font-medium text-white hover:bg-white/5 transition-colors">
+                <Phone className="h-5 w-5" />
+                {company.phone}
+              </a>
+            </div>
+          </FadeIn>
         </div>
       </section>
     </div>

@@ -11,7 +11,7 @@ const stats = [
 
 export function Stats() {
     return (
-        <div className="relative isolate overflow-hidden bg-background py-16 sm:py-20 border-y border-white/5">
+        <div className="relative isolate overflow-hidden bg-background py-16 sm:py-20">
             <div className="container mx-auto px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:max-w-none">
                     <div className="text-center">
@@ -24,7 +24,7 @@ export function Stats() {
                     </div>
                     <dl className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         {stats.map((stat) => (
-                            <div key={stat.id} className="flex flex-col bg-[#1a1d24] border border-white/5 p-8 rounded-2xl transition-all hover:border-white/10">
+                            <div key={stat.id} className="flex flex-col bg-[#1a1d24] p-8 rounded-2xl transition-all hover:bg-[#1e2128]">
                                 <dt className="text-sm font-semibold leading-6 text-gray-400">{stat.name}</dt>
                                 <dd className="order-first text-3xl font-bold tracking-tight text-white sm:text-4xl">
                                     <Counter value={stat.value} suffix={stat.suffix} />
