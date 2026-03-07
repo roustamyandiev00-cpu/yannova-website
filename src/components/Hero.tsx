@@ -37,17 +37,19 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight drop-shadow-2xl">
-              <span className="block text-white mb-2">Ramen & deuren in</span>
+              <span className="block text-white mb-2">Ramen & deuren plaatsen in</span>
               <span className="block bg-linear-to-r from-secondary via-orange-400 to-secondary bg-clip-text text-transparent mb-2 drop-shadow-lg">
-                Zoersel
+                Zoersel, Antwerpen & omgeving
               </span>
-              <span className="block text-white mb-4">en regio Antwerpen</span>
               <span className="block text-2xl sm:text-3xl lg:text-3xl font-medium text-gray-100 mt-6">
-                Levering & plaatsing door vakmensen
+                PVC & aluminium ramen | Gevelrenovatie | Totaalrenovatie
               </span>
             </h1>
 
             <p className="mt-6 text-xl text-gray-100 leading-relaxed max-w-2xl drop-shadow-lg">
+              Specialist in energiezuinige ramen met HR++ of drievoudig glas, gevelisolatie en totaalrenovatie. 
+              Gratis opmeting in Zoersel, Schilde, Brasschaat, Antwerpen en omgeving. Offerte binnen 24 uur. Premie-advies inbegrepen.
+            </p>
               Gratis opmeting in Zoersel, Antwerpen en Mechelen. Ontvang een duidelijke offerte binnen 24 uur.
             </p>
 
