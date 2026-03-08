@@ -3,6 +3,7 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
+  "outputDirectory": ".next",
   "env": {
     "NEXT_PUBLIC_GA_ID": "G-1RS27QF82W",
     "NEXT_PUBLIC_SUPABASE_URL": "https://nnlekbywldrainqhvgif.supabase.co"
