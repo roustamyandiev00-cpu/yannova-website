@@ -3,9 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
-  turbopack: {
-    root: '/Users/innovarslabo/Desktop/Yannova.be',
-  },
   
   // Image optimization configuration
   images: {
