@@ -74,7 +74,7 @@ function FAQItem({
         aria-controls={contentId}
       >
         <span className="font-medium text-foreground text-sm">{question}</span>
-        <ChevronDown className={`h-4 w-4 text-secondary transition-transform shrink-0 ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`h-4 w-4 text-secondary transition-transform shrink-0 ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (

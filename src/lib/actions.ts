@@ -21,21 +21,44 @@ export async function authenticate(
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
 
-    await signIn('credentials', { email, password, redirectTo: '/admin' });
+    logger.debug('Authenticate action called for:', email);
+
+    const result = await signIn('credentials', { 
+      email, 
+      password, 
+      redirect: false 
+    });
+    
+    logger.debug('SignIn result:', result);
+    
+    // If we get here without error, redirect manually
+    redirect('/admin');
   } catch (error) {
+    logger.error('Authentication error:', error);
+    
     if (error instanceof AuthError) {
+      logger.debug('AuthError type:', error.type);
       switch (error.type) {
         case 'CredentialsSignin':
           return 'Ongeldige inloggegevens.';
+        case 'CallbackRouteError':
+          return 'Ongeldige inloggegevens.';
         default:
-          return 'Er is iets misgegaan.';
+          logger.error('Unknown auth error type:', error.type);
+          return 'Er is iets misgegaan. Probeer opnieuw.';
       }
     }
-    // NextAuth throws redirect error on success - don't rethrow it
-    if (error instanceof Error && error.message?.includes('redirect')) {
-      return undefined;
+    
+    // NextAuth throws NEXT_REDIRECT error on success - this is expected
+    if (error instanceof Error) {
+      if (error.message?.includes('NEXT_REDIRECT')) {
+        logger.debug('Redirect error (expected) - re-throwing');
+        throw error; // Re-throw to allow redirect
+      }
+      logger.error('Unexpected error message:', error.message);
     }
-    throw error;
+    
+    return 'Er is iets misgegaan. Probeer opnieuw.';
   }
 }
 

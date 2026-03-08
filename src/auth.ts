@@ -21,31 +21,56 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
   providers: [
     Credentials({
       async authorize(credentials) {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string() })
-          .safeParse(credentials);
+        try {
+          logger.debug('Authorize called with credentials:', { email: credentials?.email });
+          
+          const parsedCredentials = z
+            .object({ email: z.string().email(), password: z.string() })
+            .safeParse(credentials);
 
-        if (parsedCredentials.success) {
+          if (!parsedCredentials.success) {
+            logger.debug('Credential validation failed:', parsedCredentials.error);
+            return null;
+          }
+
           const { email, password } = parsedCredentials.data;
+          logger.debug('Looking up user:', email);
           
           const user = await getUser(email);
           if (!user) {
-            logger.debug('User not found');
+            logger.debug('User not found:', email);
             return null;
           }
+          
+          logger.debug('User found:', { email: user.email, role: user.role, active: user.active });
           
           // Check if user has admin or super_admin role
           if (user.role !== 'admin' && user.role !== 'super_admin') {
-            logger.debug('User role check failed');
+            logger.debug('User role check failed. Role:', user.role);
             return null;
           }
           
+          // Check if user is active
+          if (!user.active) {
+            logger.debug('User is not active');
+            return null;
+          }
+          
+          logger.debug('Comparing passwords...');
           const passwordsMatch = await bcrypt.compare(password, user.password);
-          if (passwordsMatch) return user;
+          logger.debug('Password match result:', passwordsMatch);
+          
+          if (passwordsMatch) {
+            logger.debug('Authentication successful for:', email);
+            return user;
+          }
+          
+          logger.debug('Password mismatch');
+          return null;
+        } catch (error) {
+          logger.error('Authorization error:', error);
+          return null;
         }
-
-        logger.debug('Invalid credentials provided');
-        return null;
       },
     }),
   ],

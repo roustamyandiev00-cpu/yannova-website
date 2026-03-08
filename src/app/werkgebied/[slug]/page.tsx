@@ -54,9 +54,67 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Werkgebied niet gevonden" };
   }
 
+  const canonicalUrl = `https://www.yannova.be/werkgebied/${slug}`;
+
+  if (slug === "antwerpen") {
+    return {
+      title: "Ramen & Deuren in Antwerpen stad en rond Antwerpen | Yannova",
+      description:
+        "Actief in Antwerpen stad en rond Antwerpen: Berchem, Deurne, Merksem, Wilrijk, Ekeren, Brasschaat, Schoten en Wijnegem. Gratis opmeting en offerte binnen 24 uur.",
+      keywords: [
+        "ramen antwerpen stad",
+        "deuren antwerpen stad",
+        "ramen berchem",
+        "ramen deurne",
+        "ramen merksem",
+        "ramen wilrijk",
+        "ramen ekeren",
+        "ramen brasschaat",
+        "ramen schoten",
+        "ramen wijnegem",
+        "renovatie antwerpen",
+      ],
+      alternates: {
+        canonical: canonicalUrl,
+      },
+      openGraph: {
+        title: "Ramen & Deuren in Antwerpen stad en rond Antwerpen | Yannova",
+        description:
+          "Yannova plaatst ramen en deuren en voert renovaties uit in Antwerpen stad en de rand rond Antwerpen.",
+        url: canonicalUrl,
+        type: "website",
+        locale: "nl_BE",
+        siteName: "Yannova Bouw",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Ramen & Deuren in Antwerpen stad en rond Antwerpen | Yannova",
+        description:
+          "Ramen, deuren, gevelisolatie en renovatie in Antwerpen stad en randgemeenten rond Antwerpen.",
+      },
+    };
+  }
+
   return {
     title: `Ramen & Deuren ${gebied.name} | Yannova Bouw`,
     description: `Ramen, deuren en renovatie in ${gebied.name} en omgeving. Gratis opmeting, duidelijke offerte, professionele plaatsing. Actief in heel regio Antwerpen.`,
+    keywords: [
+      `ramen ${gebied.name}`,
+      `deuren ${gebied.name}`,
+      `renovatie ${gebied.name}`,
+      `aannemer ${gebied.name}`,
+    ],
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `Ramen & Deuren ${gebied.name} | Yannova Bouw`,
+      description: `Ramen, deuren en renovatie in ${gebied.name} en omgeving.`,
+      url: canonicalUrl,
+      type: "website",
+      locale: "nl_BE",
+      siteName: "Yannova Bouw",
+    },
   };
 }
 

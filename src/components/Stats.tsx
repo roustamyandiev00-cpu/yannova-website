@@ -1,35 +1,58 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { FadeIn } from "./animations/FadeIn";
+import { Award, Users, Briefcase, Shield } from "lucide-react";
 
 const stats = [
-    { id: 1, name: "Jaar Ervaring", value: 15, suffix: "+" },
-    { id: 2, name: "Tevreden Klanten", value: 500, suffix: "+" },
-    { id: 3, name: "Projecten Opgeleverd", value: 850, suffix: "+" },
-    { id: 4, name: "Garantie Jaren", value: 10, suffix: "" },
+    { id: 1, name: "Jaar Ervaring", value: 15, suffix: "+", icon: Award, color: "text-blue-400" },
+    { id: 2, name: "Tevreden Klanten", value: 500, suffix: "+", icon: Users, color: "text-green-400" },
+    { id: 3, name: "Projecten Opgeleverd", value: 850, suffix: "+", icon: Briefcase, color: "text-secondary" },
+    { id: 4, name: "Garantie Jaren", value: 10, suffix: "", icon: Shield, color: "text-purple-400" },
 ];
 
 export function Stats() {
     return (
         <div className="relative isolate overflow-hidden bg-background py-16 sm:py-20">
-            <div className="container mx-auto px-6 lg:px-8">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
+            
+            <div className="container mx-auto px-6 lg:px-8 relative z-10">
                 <div className="mx-auto max-w-2xl lg:max-w-none">
-                    <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                            Cijfers die voor zich spreken
-                        </h2>
-                        <p className="mt-4 text-lg leading-8 text-muted-foreground">
-                            Bij Yannova Bouw streven we naar perfectie in elk detail.
-                        </p>
-                    </div>
-                    <dl className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        {stats.map((stat) => (
-                            <div key={stat.id} className="flex flex-col bg-[#1a1d24] p-8 rounded-2xl transition-all hover:bg-[#1e2128]">
-                                <dt className="text-sm font-semibold leading-6 text-gray-400">{stat.name}</dt>
-                                <dd className="order-first text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                                    <Counter value={stat.value} suffix={stat.suffix} />
-                                </dd>
-                            </div>
+                    <FadeIn>
+                        <div className="text-center mb-16">
+                            <span className="text-secondary text-sm font-semibold tracking-wider uppercase">
+                                Onze Prestaties
+                            </span>
+                            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mt-3">
+                                Cijfers die voor zich spreken
+                            </h2>
+                            <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+                                Meer dan 15 jaar ervaring in ramen, deuren en renovatie in Antwerpen en omgeving.
+                            </p>
+                        </div>
+                    </FadeIn>
+                    
+                    <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        {stats.map((stat, idx) => (
+                            <FadeIn key={stat.id} delay={idx * 0.1}>
+                                <div className="group relative flex flex-col bg-card border border-border p-8 rounded-2xl transition-all hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/10">
+                                    {/* Icon */}
+                                    <div className={`w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                                        <stat.icon className={`h-6 w-6 ${stat.color}`} />
+                                    </div>
+                                    
+                                    {/* Value */}
+                                    <dd className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-2">
+                                        <Counter value={stat.value} suffix={stat.suffix} />
+                                    </dd>
+                                    
+                                    {/* Label */}
+                                    <dt className="text-sm font-medium leading-6 text-muted-foreground">
+                                        {stat.name}
+                                    </dt>
+                                </div>
+                            </FadeIn>
                         ))}
                     </dl>
                 </div>
@@ -40,13 +63,37 @@ export function Stats() {
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
     const [count, setCount] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
-        // Simple counter animation
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isVisible) return;
+
         let start = 0;
         const end = value;
         const duration = 2000;
-        const increment = end / (duration / 16); // 60fps
+        const increment = end / (duration / 16);
 
         const timer = setInterval(() => {
             start += increment;
@@ -59,10 +106,10 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
         }, 16);
 
         return () => clearInterval(timer);
-    }, [value]);
+    }, [value, isVisible]);
 
     return (
-        <span>
+        <span ref={ref}>
             {count}{suffix}
         </span>
     );

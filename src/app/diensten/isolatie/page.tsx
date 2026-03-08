@@ -84,13 +84,14 @@ export default function InsulationPage() {
       <section className="relative h-[56vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2670&auto=format&fit=crop"
-            alt="Isolatiewerken"
+            src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?q=80&w=2670&auto=format&fit=crop"
+            alt="Isolatiewerken - dak en gevel isolatie"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/60" />
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <FadeIn>
@@ -133,7 +134,7 @@ export default function InsulationPage() {
             {benefits.map((item) => (
               <div key={item.title} className="group">
                 <div className="flex items-start gap-4">
-                  <div className="bg-secondary/10 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors">
+                  <div className="bg-secondary/10 w-14 h-14 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition-colors">
                     <item.icon className="text-secondary h-7 w-7" />
                   </div>
                   <div>
@@ -184,7 +185,7 @@ export default function InsulationPage() {
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}

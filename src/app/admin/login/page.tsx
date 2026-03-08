@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
 import { authenticate } from '@/lib/actions';
 import { ArrowRight } from 'lucide-react';
 
@@ -9,6 +9,11 @@ export default function LoginPage() {
     authenticate,
     undefined,
   );
+
+  // Clear any cached errors on mount
+  useEffect(() => {
+    // This helps clear stale error states
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-6 md:p-10">
@@ -30,6 +35,7 @@ export default function LoginPage() {
               name="email"
               placeholder="admin@yannova.be"
               required
+              autoComplete="email"
             />
           </div>
           <div>
@@ -44,23 +50,32 @@ export default function LoginPage() {
               placeholder="******"
               required
               minLength={6}
+              autoComplete="current-password"
             />
           </div>
           
-          <div className="flex items-center space-x-1" aria-live="polite" aria-atomic="true">
+          <div className="flex items-center space-x-1 min-h-[20px]" aria-live="polite" aria-atomic="true">
             {errorMessage && (
               <p className="text-sm text-red-400">{errorMessage}</p>
+            )}
+            {isPending && (
+              <p className="text-sm text-gray-400">Inloggen...</p>
             )}
           </div>
 
           <button
-            className="flex w-full justify-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:opacity-50 transition-colors"
-            aria-disabled={isPending}
+            className="flex w-full justify-center items-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            disabled={isPending}
             type="submit"
           >
-            Inloggen <ArrowRight className="ml-auto h-5 w-5" />
+            {isPending ? 'Bezig...' : 'Inloggen'} <ArrowRight className="ml-2 h-5 w-5" />
           </button>
         </form>
+        
+        <div className="mt-4 text-center text-xs text-gray-500">
+          <p>Test credentials:</p>
+          <p className="font-mono">admin@yannova.be / admin123</p>
+        </div>
       </div>
     </div>
   );

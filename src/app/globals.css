@@ -105,6 +105,24 @@ body {
   }
 }
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
@@ -120,6 +138,14 @@ body {
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 3s ease infinite;
+}
+
+.animate-scroll {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
 }
 
 .dark {

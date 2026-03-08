@@ -27,15 +27,15 @@ export default function ContactPage() {
         {/* Trust Indicators */}
         <div className="mx-auto mt-12 max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="flex items-center gap-3 justify-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
-            <CheckCircle2 className="h-6 w-6 text-secondary flex-shrink-0" />
+            <CheckCircle2 className="h-6 w-6 text-secondary shrink-0" />
             <span className="text-sm font-medium text-foreground">Reactie binnen 24u</span>
           </div>
           <div className="flex items-center gap-3 justify-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
-            <Shield className="h-6 w-6 text-secondary flex-shrink-0" />
+            <Shield className="h-6 w-6 text-secondary shrink-0" />
             <span className="text-sm font-medium text-foreground">Vrijblijvende offerte</span>
           </div>
           <div className="flex items-center gap-3 justify-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
-            <Award className="h-6 w-6 text-secondary flex-shrink-0" />
+            <Award className="h-6 w-6 text-secondary shrink-0" />
             <span className="text-sm font-medium text-foreground">Vakmanschap gegarandeerd</span>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold tracking-tight text-foreground mb-6">Contactgegevens</h3>
               <dl className="space-y-6 text-base leading-7 text-muted-foreground">
                 <div className="flex gap-x-4 items-start group">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors shrink-0">
                     <MapPin className="h-5 w-5 text-secondary" aria-hidden="true" />
                   </div>
                   <dd>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div className="flex gap-x-4 items-center group">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors shrink-0">
                     <Phone className="h-5 w-5 text-secondary" aria-hidden="true" />
                   </div>
                   <dd>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div className="flex gap-x-4 items-center group">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors shrink-0">
                     <Mail className="h-5 w-5 text-secondary" aria-hidden="true" />
                   </div>
                   <dd>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div className="flex gap-x-4 items-start group">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors flex-shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 group-hover:bg-secondary/30 transition-colors shrink-0">
                     <Clock className="h-5 w-5 text-secondary" aria-hidden="true" />
                   </div>
                   <dd>

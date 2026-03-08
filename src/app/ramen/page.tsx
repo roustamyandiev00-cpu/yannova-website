@@ -4,8 +4,37 @@ import { ArrowRight, CheckCircle2, Phone, MessageCircle, Star, Shield, Clock } f
 import { company } from "@/lib/company";
 
 export const metadata: Metadata = {
-  title: "Ramen Zoersel | PVC & Aluminium Ramen – Yannova",
-  description: "PVC en aluminium ramen met HR++ beglazing. Gratis opmeting in Zoersel en regio Antwerpen. 30 jaar garantie, premie-advies inbegrepen.",
+  title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
+  description: "PVC en aluminium ramen met HR++ of drievoudig glas. Actief in Antwerpen stad en randgemeenten rond Antwerpen. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
+  keywords: [
+    "ramen plaatsen antwerpen",
+    "ramen antwerpen stad",
+    "pvc ramen antwerpen",
+    "aluminium ramen antwerpen",
+    "ramen berchem",
+    "ramen deurne",
+    "ramen merksem",
+    "ramen wilrijk",
+    "ramen brasschaat",
+    "ramen schoten",
+    "ramen wijnegem",
+  ],
+  alternates: {
+    canonical: "https://www.yannova.be/ramen",
+  },
+  openGraph: {
+    title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
+    description: "Nieuwe ramen in Antwerpen stad en randgemeenten rond Antwerpen. PVC en aluminium met HR++ of drievoudig glas.",
+    url: "https://www.yannova.be/ramen",
+    type: "website",
+    locale: "nl_BE",
+    siteName: "Yannova Bouw",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
+    description: "Ramen op maat in Antwerpen stad en rond Antwerpen met gratis opmeting en duidelijke offerte.",
+  },
 };
 
 const features = [

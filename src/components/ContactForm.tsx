@@ -66,6 +66,9 @@ export function ContactForm() {
                                 required
                                 autoComplete="name"
                                 minLength={2}
+                                maxLength={100}
+                                pattern="[A-Za-zÀ-ÿ\s'-]{2,}"
+                                title="Voer een geldige naam in (minimaal 2 karakters)"
                                 className="block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-secondary text-base sm:text-sm sm:leading-6 bg-white/5 focus:bg-white/10 transition-all"
                                 placeholder="Jan Janssens"
                             />
@@ -95,6 +98,8 @@ export function ContactForm() {
                             name="phone"
                             id="phone"
                             autoComplete="tel"
+                            pattern="[\+]?[0-9\s\-\(\)]{9,20}"
+                            title="Voer een geldig telefoonnummer in"
                             className="block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-secondary text-base sm:text-sm sm:leading-6 bg-white/5 focus:bg-white/10 transition-all"
                             placeholder="+32 489 96 00 01"
                         />
@@ -129,6 +134,7 @@ export function ContactForm() {
                             required
                             rows={5}
                             minLength={10}
+                            maxLength={2000}
                             className="block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-secondary text-base sm:text-sm sm:leading-6 bg-white/5 focus:bg-white/10 transition-all resize-none"
                             placeholder="Beschrijf uw project of vraag in detail..."
                         ></textarea>

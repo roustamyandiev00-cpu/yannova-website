@@ -14,19 +14,59 @@ import { generateLocalBusinessSchema, generateServiceSchema, services } from "@/
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ramen & Deuren Plaatsen Zoersel, Antwerpen | Yannova - Gratis Offerte 24u",
-  description: "Specialist ramen en deuren in Zoersel, Antwerpen, Schilde, Brasschaat. PVC & aluminium ramen, gevelrenovatie, totaalrenovatie. 15+ jaar ervaring. Gratis opmeting & offerte binnen 24u. Premie-advies. ✓ HR++ & drievoudig glas ✓ EPC-verbetering ✓ 30 jaar garantie",
-  keywords: "ramen plaatsen Zoersel, deuren plaatsen Antwerpen, PVC ramen, aluminium ramen, gevelrenovatie, crepi, totaalrenovatie, energiezuinige ramen, HR++ glas, drievoudig glas, renovatiebedrijf Antwerpen, aannemer Zoersel, ramen Schilde, ramen Brasschaat, premies renovatie",
+  metadataBase: new URL("https://www.yannova.be"),
+  title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
+  description:
+    "Yannova plaatst ramen en deuren en voert renovaties uit in Antwerpen stad, Berchem, Deurne, Merksem, Wilrijk en randgemeenten rond Antwerpen. Gratis opmeting en offerte binnen 24 uur.",
+  keywords: [
+    "ramen antwerpen",
+    "deuren antwerpen",
+    "ramen antwerpen stad",
+    "ramen berchem",
+    "ramen deurne",
+    "ramen merksem",
+    "ramen wilrijk",
+    "ramen brasschaat",
+    "ramen schoten",
+    "ramen wijnegem",
+    "gevelrenovatie antwerpen",
+    "totaalrenovatie antwerpen",
+    "renovatiebedrijf antwerpen",
+  ],
+  alternates: {
+    canonical: "https://www.yannova.be",
+  },
   openGraph: {
-    title: "Ramen & Deuren Plaatsen Zoersel, Antwerpen | Yannova",
-    description: "Specialist ramen, deuren & renovatie in Zoersel en regio Antwerpen. Gratis offerte binnen 24u. 15+ jaar ervaring.",
+    title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
+    description:
+      "Actief in Antwerpen stad en rond Antwerpen: ramen, deuren, gevelisolatie en renovatie. Gratis opmeting en duidelijke offerte binnen 24 uur.",
+    url: "https://www.yannova.be",
     type: "website",
     locale: "nl_BE",
     siteName: "Yannova Bouw",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
+    description:
+      "Ramen, deuren en renovatie in Antwerpen stad en randgemeenten. Gratis opmeting en offerte binnen 24 uur.",
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  other: {
+    "geo.region": "BE-VAN",
+    "geo.placename": "Antwerpen",
+    "geo.position": "51.2194;4.4025",
+    ICBM: "51.2194, 4.4025",
   },
 };
 

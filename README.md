@@ -1,36 +1,187 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yannova Bouw Website
 
-## Getting Started
+Modern, high-performance website voor Yannova Bouw - specialist in ramen, deuren en renovatie in Antwerpen en omgeving.
 
-First, run the development server:
+## 🚀 Features
+
+### Core Functionaliteit
+- ✅ **Responsive Design** - Volledig geoptimaliseerd voor desktop, tablet en mobiel
+- ✅ **SEO Optimized** - Structured data, meta tags, sitemap en robots.txt
+- ✅ **Performance** - Web Vitals monitoring, image optimization, caching
+- ✅ **Security** - Rate limiting, security headers, input sanitization
+- ✅ **Accessibility** - ARIA labels, keyboard navigation, screen reader support
+
+### Pagina's
+- 🏠 Homepage met hero sectie en diensten overzicht
+- 📋 Diensten pagina's (Ramen & Deuren, Gevelrenovatie, Isolatie, Totaalrenovatie)
+- 🖼️ Projecten galerij met filtering
+- 📞 Contact formulier met validatie
+- 💰 Premie gids voor renovatiepremies
+- 🤖 AI Chatbot voor klantenservice
+
+### Admin Dashboard
+- 📊 Analytics en statistieken
+- 📝 Project management
+- 💬 Lead management
+- ⭐ Testimonials beheer
+- 🖼️ Media library
+- 👥 User management
+- 🔍 SEO tools
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Database**: PostgreSQL (Supabase)
+- **ORM**: Prisma
+- **Authentication**: NextAuth.js
+- **AI**: Google Gemini API
+- **Email**: Nodemailer
+- **Analytics**: Google Analytics, Firebase
+- **Animations**: Framer Motion
+
+## 📦 Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/yourusername/yannova-website.git
+cd yannova-website
+
+# Install dependencies
+npm install
+
+# Setup environment variables
+cp .env.local.example .env.local
+# Edit .env.local with your credentials
+
+# Generate Prisma client
+npx prisma generate
+
+# Run database migrations
+npx prisma migrate dev
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file with the following variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# Database
+DATABASE_URL="postgresql://..."
+DIRECT_URL="postgresql://..."
 
-## Learn More
+# Authentication
+AUTH_SECRET="your-secret-key"
+AUTH_URL="http://localhost:3000"
 
-To learn more about Next.js, take a look at the following resources:
+# Email
+SMTP_HOST="your-smtp-host"
+SMTP_PORT="587"
+SMTP_USER="your-email"
+SMTP_PASS="your-password"
+CONTACT_EMAIL="info@yannova.be"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Google AI
+GOOGLE_GENERATIVE_AI_API_KEY="your-api-key"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Site
+NEXT_PUBLIC_SITE_URL="https://www.yannova.be"
+NEXT_PUBLIC_GA_ID="G-XXXXXXXXXX"
+```
 
-## Deploy on Vercel
+## 📝 Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Development
+npm run dev              # Start development server
+npm run build           # Build for production
+npm run start           # Start production server
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Database
+npx prisma generate     # Generate Prisma client
+npx prisma migrate dev  # Run migrations
+npx prisma studio       # Open Prisma Studio
+
+# Utilities
+npm run lint            # Run ESLint
+npm run health-check    # Check API health
+```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/                 # Next.js app router pages
+│   ├── admin/          # Admin dashboard
+│   ├── api/            # API routes
+│   ├── diensten/       # Service pages
+│   └── ...
+├── components/         # React components
+│   ├── admin/         # Admin components
+│   ├── animations/    # Animation components
+│   └── ui/            # UI components
+├── lib/               # Utility functions
+│   ├── actions.ts     # Server actions
+│   ├── cache.ts       # Caching system
+│   ├── rate-limit.ts  # Rate limiting
+│   └── ...
+└── prisma/            # Database schema
+```
+
+## 🔐 Security Features
+
+- **Rate Limiting**: API endpoints protected against abuse
+- **Input Sanitization**: All user inputs sanitized
+- **Security Headers**: CSP, HSTS, X-Frame-Options, etc.
+- **Authentication**: Secure admin authentication with NextAuth
+- **Environment Validation**: Type-safe environment variables
+
+## 📊 Performance
+
+- **Web Vitals Monitoring**: Track LCP, FID, CLS
+- **Image Optimization**: Next.js Image component with proper sizing
+- **Caching**: Server-side caching for database queries
+- **Code Splitting**: Automatic code splitting by Next.js
+- **Lazy Loading**: Components and images loaded on demand
+
+## 🎨 Design System
+
+- **Colors**: Custom color palette with CSS variables
+- **Typography**: Inter font family
+- **Spacing**: Consistent spacing scale
+- **Components**: Reusable UI components
+- **Animations**: Smooth transitions with Framer Motion
+
+## 📱 Responsive Design
+
+- **Mobile First**: Optimized for mobile devices
+- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
+- **Touch Friendly**: Large touch targets, swipe gestures
+- **Performance**: Optimized images and assets for mobile
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is proprietary and confidential.
+
+## 👥 Contact
+
+**Yannova Bouw**
+- Website: https://www.yannova.be
+- Email: info@yannova.be
+- Phone: +32 489 96 00 01
+
+---
+
+Built with ❤️ by Yannova Bouw

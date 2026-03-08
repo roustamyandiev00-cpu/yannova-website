@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next';
 import { prisma } from '@/lib/prisma';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.yannova.be';
+  const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.yannova.be';
+  const baseUrl = rawBaseUrl.startsWith('http') ? rawBaseUrl : `https://${rawBaseUrl}`;
 
   // Get all SEO pages from database
   const seoPages = await prisma.seoPage.findMany({
@@ -23,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    // Service pages - nieuwe structuur
+    // Service pages
     {
       url: `${baseUrl}/ramen`,
       lastModified: new Date(),
@@ -31,25 +32,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/deuren`,
+      url: `${baseUrl}/diensten`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/gevelisolatie-crepi`,
+      url: `${baseUrl}/diensten/ramen-deuren`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/renovatie`,
+      url: `${baseUrl}/diensten/gevelrenovatie`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/premies`,
+      url: `${baseUrl}/diensten/isolatie`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/diensten/renovatie`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/premie-gids`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -62,10 +75,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/offerte`,
+      url: `${baseUrl}/over-ons`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/advies`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/vraag-ai`,
@@ -90,7 +109,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/werkgebied/antwerpen`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/werkgebied/mechelen`,

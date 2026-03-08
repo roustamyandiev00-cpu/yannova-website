@@ -14,7 +14,7 @@ const specializations = [
       "HR++ en drievoudig glas voor optimale isolatie",
       "Inclusief volledige afwerking en premie-advies Mijn VerbouwPremie"
     ],
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1600&auto=format&fit=crop",
     link: "/diensten/ramen-deuren",
   },
   {
@@ -25,7 +25,7 @@ const specializations = [
       "Professionele drooglegging bij vochtproblemen",
       "10 jaar garantie op crepi-afwerking en isolatiewerken"
     ],
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
     link: "/diensten/gevelrenovatie",
   },
   {
@@ -36,7 +36,7 @@ const specializations = [
       "Eigen ploeg vakmensen, geen onderaannemers",
       "Duidelijke offerte vooraf, geen verrassingen achteraf"
     ],
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
     link: "/diensten/renovatie",
   }
 ]
@@ -68,47 +68,46 @@ export function Specializations() {
           </div>
         </FadeIn>
 
-        <div className="space-y-16 lg:space-y-24">
+        <div className="space-y-20 lg:space-y-32">
           {specializations.map((spec, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div key={spec.title} className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div key={spec.title} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
                 {/* Image Section */}
                 <FadeIn 
                   direction={isEven ? "right" : "left"} 
-                  className={`w-full lg:w-1/2 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}
+                  className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}
                 >
-                  <div className="relative aspect-video lg:h-[400px] lg:aspect-auto rounded-2xl overflow-hidden shadow-elegant-lg group">
+                  <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-elegant-lg group">
                     <Image
                       src={spec.image}
                       alt={spec.title}
-                      width={800}
-                      height={600}
-                      className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
-
+                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
                   </div>
                 </FadeIn>
 
-                {/* Text Section - Direct tekst zonder vakken */}
+                {/* Text Section */}
                 <FadeIn 
                   direction={isEven ? "left" : "right"} 
                   delay={0.2}
-                  className={`w-full lg:w-1/2 flex flex-col justify-center ${isEven ? 'lg:order-2' : 'lg:order-1'}`}
+                  className={`flex flex-col justify-center ${isEven ? 'lg:order-2' : 'lg:order-1'}`}
                 >
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
                     {spec.title}
                   </h3>
-                  <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                  <p className="text-base text-gray-300 mb-6 leading-relaxed">
                     {spec.description}
                   </p>
                   
-                  <div className="space-y-4 mb-10">
+                  <div className="space-y-3 mb-8">
                     {spec.features.map((feature, i) => (
-                      <div key={i} className="flex items-start p-4 hover:bg-white/5 transition-all duration-300 rounded-xl">
-                        <CheckCircle2 className="h-5 w-5 text-secondary shrink-0 mr-3 mt-0.5" />
-                        <span className="text-gray-200 leading-6">{feature}</span>
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-secondary shrink-0 mt-0.5" />
+                        <span className="text-gray-200 text-sm sm:text-base leading-relaxed">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -116,10 +115,10 @@ export function Specializations() {
                   <div>
                     <Link
                       href={spec.link}
-                      className="inline-flex items-center text-base font-semibold text-white bg-linear-to-r from-secondary/20 to-secondary/10 px-6 py-3.5 rounded-xl hover:from-secondary hover:to-orange-600 transition-all duration-300 group shadow-elegant hover:scale-105"
+                      className="inline-flex items-center gap-2 text-base font-semibold text-white bg-linear-to-r from-secondary/20 to-secondary/10 px-6 py-3 rounded-xl hover:from-secondary hover:to-orange-600 transition-all duration-300 group shadow-elegant hover:scale-105"
                     >
-                      Bekijk {spec.title.toLowerCase()}
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-2" />
+                      Meer info
+                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </FadeIn>

@@ -8,47 +8,49 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 export async function generateMetadata() {
   return {
-    title: 'Ramen & Deuren Plaatsen Zoersel, Antwerpen | Yannova - Gratis Offerte 24u',
-    description: 'Specialist ramen en deuren in Zoersel, Antwerpen, Schilde, Brasschaat. PVC & aluminium ramen, gevelrenovatie, totaalrenovatie. 15+ jaar ervaring. Gratis opmeting & offerte binnen 24u. Premie-advies. ✓ HR++ & drievoudig glas ✓ EPC-verbetering ✓ 30 jaar garantie',
+    title: 'Ramen & Deuren in Antwerpen Stad en rond Antwerpen | Yannova',
+    description: 'Ramen, deuren, gevelisolatie en renovatie in Antwerpen stad en rond Antwerpen: Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten en Wijnegem. Gratis opmeting en offerte binnen 24 uur.',
     keywords: [
-      // Primaire keywords - hoog volume
-      'ramen plaatsen Zoersel', 'deuren plaatsen Zoersel', 'ramen Antwerpen', 'deuren Antwerpen',
-      'PVC ramen Zoersel', 'aluminium ramen Antwerpen', 'ramen Schilde', 'ramen Brasschaat',
-      
-      // Long-tail keywords - hoge conversie
-      'ramen plaatsen prijs Antwerpen', 'nieuwe ramen kosten Zoersel', 'ramen vervangen Antwerpen',
-      'energiezuinige ramen Zoersel', 'drievoudig glas plaatsen', 'HR++ ramen Antwerpen',
-      
-      // Gevelrenovatie keywords
-      'gevelrenovatie Zoersel', 'gevelisolatie Antwerpen', 'crepi Zoersel', 'gevel isoleren Antwerpen',
-      'EPC verbetering Zoersel', 'gevelwerken Antwerpen', 'buitenmuur isoleren',
-      
-      // Totaalrenovatie keywords
-      'totaalrenovatie Zoersel', 'renovatie Antwerpen', 'verbouwing Zoersel', 'aannemer Antwerpen',
-      'renovatiebedrijf Zoersel', 'huis renoveren Antwerpen', 'totaalrenovatie prijs',
-      
-      // Lokale keywords - alle gemeenten
-      'ramen Schoten', 'ramen Wijnegem', 'ramen Ranst', 'ramen Brecht', 'ramen Malle',
-      'ramen Westmalle', 'ramen Kontich', 'ramen Mortsel', 'ramen Edegem', 'ramen Hove',
-      'ramen Mechelen', 'ramen Lier', 'ramen Wilrijk', 'ramen Berchem', 'ramen Deurne',
-      
-      // Service keywords
-      'gratis opmeting ramen', 'offerte ramen 24 uur', 'ramen op maat', 'deuren op maat',
-      'schrijnwerk Zoersel', 'schrijnwerkerij Antwerpen', 'raamplaatsing', 'deurplaatsing',
-      
-      // Premie keywords
-      'premies ramen Vlaanderen', 'renovatiepremie Antwerpen', 'mijn verbouwpremie',
-      'subsidies energiezuinige ramen', 'premie gevelisolatie', 'premie-advies renovatie'
+      'ramen antwerpen',
+      'deuren antwerpen',
+      'ramen antwerpen stad',
+      'deuren antwerpen stad',
+      'ramen berchem',
+      'ramen deurne',
+      'ramen merksem',
+      'ramen wilrijk',
+      'ramen brasschaat',
+      'ramen schoten',
+      'ramen wijnegem',
+      'ramen schilde',
+      'ramen ranst',
+      'ramen mortsel',
+      'aluminium ramen antwerpen',
+      'pvc ramen antwerpen',
+      'gevelrenovatie antwerpen',
+      'gevelisolatie antwerpen',
+      'totaalrenovatie antwerpen',
+      'renovatiebedrijf antwerpen',
+      'aannemer antwerpen',
+      'offerte ramen antwerpen',
+      'gratis opmeting antwerpen',
+      'mijn verbouwpremie antwerpen'
     ].join(', '),
     openGraph: {
-      title: 'Ramen & Deuren Plaatsen Zoersel, Antwerpen | Yannova',
-      description: 'Specialist ramen, deuren & renovatie in Zoersel en regio Antwerpen. Gratis offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen met HR++ of drievoudig glas.',
+      title: 'Ramen & Deuren in Antwerpen Stad en rond Antwerpen | Yannova',
+      description: 'Specialist in ramen, deuren en renovatie in Antwerpen stad, Berchem, Deurne, Merksem, Wilrijk en randgemeenten rond Antwerpen.',
       type: 'website',
       locale: 'nl_BE',
       siteName: 'Yannova Bouw',
+      url: 'https://www.yannova.be',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Ramen & Deuren in Antwerpen Stad en rond Antwerpen | Yannova',
+      description: 'Actief in Antwerpen stad en rond Antwerpen voor ramen, deuren, gevelisolatie en renovatie.',
     },
     alternates: {
-      canonical: 'https://yannova.be',
+      canonical: 'https://www.yannova.be',
     },
     robots: {
       index: true,
@@ -66,7 +68,7 @@ export async function generateMetadata() {
 
 export default async function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-linear-to-b from-[#0a0c10] via-[#0d1117] to-[#0a0c10]">
+    <div className="flex flex-col min-h-screen">
       <Hero />
       <Specializations />
       <FAQSection />
