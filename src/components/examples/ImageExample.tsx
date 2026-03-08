@@ -4,7 +4,7 @@
  * Dit bestand toont verschillende use cases voor de OptimizedImage component
  */
 
-import OptimizedImage from '@/components/OptimizedImage';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 export function HeroImageExample() {
   return (
@@ -13,7 +13,6 @@ export function HeroImageExample() {
       alt="Moderne uitbouw constructie"
       width={1920}
       height={1080}
-      type="hero"
       priority={true} // Laad direct (above the fold)
       quality={90} // Hogere kwaliteit voor hero
       className="w-full h-[600px] object-cover"
@@ -29,7 +28,6 @@ export function GalleryImageExample() {
         alt="Badkamerrenovatie met tegels"
         width={800}
         height={600}
-        type="gallery"
         className="rounded-lg"
       />
       
@@ -38,7 +36,6 @@ export function GalleryImageExample() {
         alt="Keukenrenovatie stripout"
         width={800}
         height={600}
-        type="gallery"
         className="rounded-lg"
       />
       
@@ -47,7 +44,6 @@ export function GalleryImageExample() {
         alt="Dakrenovatie met steigers"
         width={800}
         height={600}
-        type="gallery"
         className="rounded-lg"
       />
     </div>
@@ -61,7 +57,6 @@ export function ThumbnailExample() {
       alt="Visgraat vloer installatie"
       width={400}
       height={300}
-      type="thumbnail"
       quality={75} // Lagere kwaliteit voor thumbnails
       className="w-32 h-32 rounded-full object-cover"
     />
@@ -76,7 +71,6 @@ export function ResponsiveExample() {
         alt="Interieur renovatie met schuifdeuren"
         width={1200}
         height={675}
-        type="full"
         className="rounded-xl shadow-lg"
       />
     </div>

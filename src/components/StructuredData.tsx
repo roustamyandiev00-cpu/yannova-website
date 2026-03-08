@@ -8,7 +8,7 @@ export function LocalBusinessSchema() {
     name: company.name,
     image: 'https://www.yannova.be/logo.png',
     url: 'https://www.yannova.be',
-    telephone: company.phone,
+    telephone: company.phoneDisplay,
     email: company.email,
     address: {
       '@type': 'PostalAddress',
@@ -67,7 +67,7 @@ export function ServiceSchema({ service }: { service: string }) {
     provider: {
       '@type': 'LocalBusiness',
       name: company.name,
-      telephone: company.phone,
+      telephone: company.phoneDisplay,
       email: company.email,
     },
     areaServed: company.areas.map((area) => ({

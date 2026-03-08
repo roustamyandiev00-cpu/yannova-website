@@ -1,20 +1,8 @@
 import { MetadataRoute } from 'next';
-import { prisma } from '@/lib/prisma';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const rawBaseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.yannova.be';
   const baseUrl = rawBaseUrl.startsWith('http') ? rawBaseUrl : `https://${rawBaseUrl}`;
-
-  // Get all SEO pages from database
-  const seoPages = await prisma.seoPage.findMany({
-    where: { noindex: false },
-    orderBy: { updatedAt: 'desc' },
-  });
-
-  // Get all published projects
-  const projects = await prisma.project.findMany({
-    orderBy: { createdAt: 'desc' },
-  });
 
   // Static routes
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -119,23 +107,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Dynamic routes from SEO pages
-  const dynamicRoutes: MetadataRoute.Sitemap = seoPages
-    .filter((page) => !staticRoutes.find((r) => r.url === `${baseUrl}${page.path}`))
-    .map((page) => ({
-      url: `${baseUrl}${page.path}`,
-      lastModified: page.updatedAt,
-      changeFrequency: 'weekly' as const,
-      priority: 0.6,
-    }));
-
-  // Project routes
-  const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${baseUrl}/projecten/${project.id}`,
-    lastModified: project.updatedAt,
-    changeFrequency: 'monthly' as const,
-    priority: 0.5,
-  }));
-
-  return [...staticRoutes, ...dynamicRoutes, ...projectRoutes];
+  return staticRoutes;
 }
