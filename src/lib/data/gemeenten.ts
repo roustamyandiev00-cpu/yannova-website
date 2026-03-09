@@ -1,0 +1,17 @@
+export const gemeenten = [
+  { slug: 'berchem', name: 'Berchem', priority: 0.8 },
+  { slug: 'deurne', name: 'Deurne', priority: 0.8 },
+  { slug: 'merksem', name: 'Merksem', priority: 0.8 },
+  { slug: 'wilrijk', name: 'Wilrijk', priority: 0.8 },
+  { slug: 'brasschaat', name: 'Brasschaat', priority: 0.75 },
+  { slug: 'schoten', name: 'Schoten', priority: 0.75 },
+  { slug: 'wijnegem', name: 'Wijnegem', priority: 0.75 },
+  { slug: 'mortsel', name: 'Mortsel', priority: 0.75 },
+  { slug: 'edegem', name: 'Edegem', priority: 0.75 },
+  { slug: 'kontich', name: 'Kontich', priority: 0.75 },
+  { slug: 'mechelen', name: 'Mechelen', priority: 0.7 },
+  { slug: 'aartselaar', name: 'Aartselaar', priority: 0.7 },
+  { slug: 'boechout', name: 'Boechout', priority: 0.7 },
+  { slug: 'hove', name: 'Hove', priority: 0.7 },
+  { slug: 'lint', name: 'Lint', priority: 0.7 },
+];

@@ -40,6 +40,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/gevelrenovatie-antwerpen',
     '/ramen-deuren-antwerpen',
     '/werkgebied',
+    '/veelgestelde-vragen',
+    '/ramen/berchem',
+    '/ramen/deurne',
+    '/ramen/merksem',
+    '/ramen/wilrijk',
+    '/ramen/brasschaat',
+    '/ramen/schoten',
+    '/deuren/berchem',
+    '/deuren/deurne',
+    '/deuren/merksem',
+    '/deuren/wilrijk',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -57,8 +68,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Dynamische werkgebied paginas
-  const werkgebiedRoutes = Object.keys(werkgebieden).map((slug) => ({
-    url: `${baseUrl}/werkgebied/${slug}`,
+  const werkgebiedRoutes = werkgebieden.map((werkgebied) => ({
+    url: `${baseUrl}/werkgebied/${werkgebied.slug}`,
     lastModified: new Date(),
   }));
 
