@@ -110,6 +110,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="preconnect" href="https://t.contentsquare.net" />
         
         {/* PWA and mobile optimization */}
         <meta name="theme-color" content="#ff6b00" />
@@ -119,6 +120,34 @@ export default function RootLayout({
         
         <GoogleTagManager />
         <Analytics />
+        <Script
+          id="contentsquare-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function loadContentsquare() {
+                  if (window._uxa) return;
+                  var script = document.createElement('script');
+                  script.src = 'https://t.contentsquare.net/uxa/a86d93511a08f.js';
+                  script.async = true;
+                  document.head.appendChild(script);
+                }
+                
+                var consent = localStorage.getItem('cookieConsent');
+                if (consent === 'accepted') {
+                  loadContentsquare();
+                } else {
+                  window.addEventListener('storage', function(e) {
+                    if (e.key === 'cookieConsent' && e.newValue === 'accepted') {
+                      loadContentsquare();
+                    }
+                  });
+                }
+              })();
+            `
+          }}
+        />
         <Script
           id="clarity"
           strategy="lazyOnload"

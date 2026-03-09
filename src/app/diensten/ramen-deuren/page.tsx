@@ -140,7 +140,7 @@ export default function WindowsDoorsPage() {
             <div className="space-y-6 text-muted-foreground text-lg">
               <p>
                 We starten met een opmeting en een technisch advies op maat. Daarna ontvangt u een duidelijke offerte,
-                zonder verborgen kosten.
+                zonder verborgen kosten. U kunt meer lezen over onze <a href="/diensten/ramen-deuren/pvc" className="text-secondary hover:underline">PVC ramen</a> en <a href="/diensten/ramen-deuren/aluminium" className="text-secondary hover:underline">aluminium ramen</a>.
               </p>
               <p>
                 Onze plaatsing gebeurt door eigen vakmensen, met correcte aansluiting en nette afwerking binnen en buiten.

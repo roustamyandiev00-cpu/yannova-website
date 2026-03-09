@@ -112,7 +112,7 @@ export default function InsulationPage() {
             <div className="space-y-6 text-muted-foreground text-lg">
               <p>
                 Isolatie is vaak de snelste weg naar een lagere energiefactuur. We bekijken uw woning en adviseren
-                welke combinatie van werken het meeste effect oplevert.
+                welke combinatie van werken het meeste effect oplevert. U kunt meer lezen over onze <a href="/diensten/isolatie/dak" className="text-secondary hover:underline">dakisolatie</a>, <a href="/diensten/isolatie/gevel" className="text-secondary hover:underline">gevelisolatie</a> en <a href="/diensten/isolatie/vloer" className="text-secondary hover:underline">vloerisolatie</a> diensten.
               </p>
               <p>
                 We werken met kwalitatieve materialen en zorgen voor een correcte plaatsing, zodat de prestaties op

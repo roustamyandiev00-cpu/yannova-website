@@ -169,7 +169,7 @@ export default function FacadePage() {
             <div className="space-y-6 text-muted-foreground text-lg">
               <p>
                 Met gevelrenovatie combineert u esthetiek met energiebesparing. We analyseren eerst de bestaande
-                gevel en adviseren de juiste opbouw voor uw situatie.
+                gevel en adviseren de juiste opbouw voor uw situatie. U kunt meer lezen over onze <a href="/diensten/isolatie" className="text-secondary hover:underline">isolatie</a> en <a href="/gevelisolatie-crepi" className="text-secondary hover:underline">crepi</a> diensten.
               </p>
               <p>
                 Daarna verzorgen we uitvoering en afwerking tot in detail, inclusief correcte aansluitingen rond ramen,

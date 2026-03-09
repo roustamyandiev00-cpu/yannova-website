@@ -32,8 +32,8 @@ const faqSchema = generateFAQSchema(homepageFAQs);
 
 export async function generateMetadata() {
   return {
-    title: 'Ramen & Deuren in Antwerpen Stad en rond Antwerpen | Yannova',
-    description: 'Ramen, deuren, gevelisolatie en renovatie in Antwerpen stad en rond Antwerpen: Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten en Wijnegem. Gratis opmeting en offerte binnen 24 uur.',
+    title: 'Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova',
+    description: 'Specialist in ramen, deuren en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen, crepi, isolatie.',
     keywords: [
       'ramen antwerpen',
       'deuren antwerpen',
@@ -110,10 +110,10 @@ export default async function HomePage() {
             </h2>
             <div className="prose prose-lg prose-invert max-w-none">
               <p className="text-gray-300 leading-relaxed mb-6">
-                Yannova is uw betrouwbare partner voor <strong>ramen, deuren en renovatie in Antwerpen</strong> en omgeving. 
+                Yannova is uw betrouwbare partner voor <a href="/diensten/ramen-deuren" className="text-secondary hover:underline">ramen en deuren</a> en <a href="/diensten/renovatie" className="text-secondary hover:underline">renovatie</a> in Antwerpen en omgeving. 
                 Met meer dan 15 jaar ervaring in de bouwsector helpen wij particulieren en bedrijven met hoogwaardige 
                 renovatieprojecten. Of u nu op zoek bent naar <strong>energiezuinige ramen in Antwerpen stad</strong>, 
-                <strong>gevelisolatie in Berchem</strong>, of een <strong>totaalrenovatie in Deurne</strong> - wij staan voor u klaar.
+                <a href="/diensten/gevelrenovatie" className="text-secondary hover:underline">gevelisolatie in Berchem</a>, of een <strong>totaalrenovatie in Deurne</strong> - wij staan voor u klaar.
               </p>
               
               <h3 className="text-2xl font-bold text-white mt-8 mb-4">

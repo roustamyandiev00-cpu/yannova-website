@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.yannova.be';
 
   // Statische paginas
-  const staticRoutes = [
+  const staticRoutes = [...new Set([
     '/',
     '/contact',
     '/reviews',
@@ -49,20 +49,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/ramen/wilrijk',
     '/ramen/brasschaat',
     '/ramen/schoten',
+    '/ramen/wijnegem',
+    '/ramen/mortsel',
+    '/ramen/schilde',
     '/deuren/berchem',
     '/deuren/deurne',
     '/deuren/merksem',
     '/deuren/wilrijk',
     '/deuren/brasschaat',
     '/deuren/schoten',
-    '/ramen/merksem',
-    '/ramen/wilrijk',
-    '/ramen/brasschaat',
-    '/ramen/schoten',
-    '/ramen/wijnegem',
-    '/ramen/mortsel',
-    '/ramen/schilde',
-  ].map((route) => ({
+  ])].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
   }));
