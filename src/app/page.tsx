@@ -100,6 +100,81 @@ export default async function HomePage() {
       <div className="flex flex-col min-h-screen">
       <Hero />
       <Specializations />
+      
+      {/* SEO Content Section - Waarom Yannova */}
+      <section className="py-20 bg-gradient-to-b from-background to-background/95">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+              Waarom kiezen voor Yannova in Antwerpen?
+            </h2>
+            <div className="prose prose-lg prose-invert max-w-none">
+              <p className="text-gray-300 leading-relaxed mb-6">
+                Yannova is uw betrouwbare partner voor <strong>ramen, deuren en renovatie in Antwerpen</strong> en omgeving. 
+                Met meer dan 15 jaar ervaring in de bouwsector helpen wij particulieren en bedrijven met hoogwaardige 
+                renovatieprojecten. Of u nu op zoek bent naar <strong>energiezuinige ramen in Antwerpen stad</strong>, 
+                <strong>gevelisolatie in Berchem</strong>, of een <strong>totaalrenovatie in Deurne</strong> - wij staan voor u klaar.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+                Onze Diensten in Antwerpen en Omgeving
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Wij zijn gespecialiseerd in diverse renovatiewerken en bieden een totaalpakket aan:
+              </p>
+              <ul className="text-gray-300 space-y-3 mb-6">
+                <li>
+                  <strong>Ramen en Deuren Plaatsen:</strong> PVC en aluminium ramen met HR++ of drievoudig glas voor 
+                  maximale isolatie. Ideaal voor woningen in Antwerpen, Merksem, Wilrijk, Brasschaat en Schoten.
+                </li>
+                <li>
+                  <strong>Gevelrenovatie en Crepi:</strong> Professionele gevelisolatie met crepi-afwerking voor een 
+                  energiezuinige woning. Actief in heel Antwerpen en randgemeenten zoals Wijnegem, Mortsel en Edegem.
+                </li>
+                <li>
+                  <strong>Isolatiewerken:</strong> Dak- en gevelisolatie voor een lager E-peil en lagere energiefactuur. 
+                  Premies mogelijk via Mijn VerbouwPremie.
+                </li>
+                <li>
+                  <strong>Totaalrenovatie:</strong> Van A tot Z begeleiding bij uw renovatieproject. Eén aanspreekpunt 
+                  voor ramen, deuren, gevel, isolatie en afwerking.
+                </li>
+              </ul>
+
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+                Werkgebied: Antwerpen Stad en 30km Rondom
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Wij zijn actief in <strong>Antwerpen stad</strong> en alle randgemeenten binnen een straal van 30 kilometer. 
+                Dit omvat onder andere: <strong>Berchem, Deurne, Merksem, Wilrijk, Borgerhout, Hoboken, Brasschaat, 
+                Schoten, Wijnegem, Schilde, Ranst, Mortsel, Edegem, Kontich, Hove, Boechout, Lint, Aartselaar, 
+                Boom, Rumst, Mechelen, Lier</strong> en vele andere gemeenten in de regio Antwerpen.
+              </p>
+
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+                Gratis Opmeting en Offerte binnen 24 Uur
+              </h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Bij Yannova werken we transparant en zonder verrassingen. Na uw aanvraag komen wij <strong>gratis bij u langs 
+                voor een opmeting</strong> in Antwerpen of omgeving. Binnen 24 uur ontvangt u een <strong>duidelijke offerte 
+                zonder verborgen kosten</strong>. Wij adviseren u ook over mogelijke premies via Mijn VerbouwPremie, zodat 
+                u maximaal kunt besparen op uw renovatie.
+              </p>
+
+              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+                Kwaliteit en Garantie
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                Alle werken worden uitgevoerd door ervaren vakmensen met oog voor detail. Wij werken uitsluitend met 
+                <strong> hoogwaardige materialen van A-merken</strong> en bieden <strong>tot 30 jaar garantie op ramen en deuren</strong>. 
+                Voor gevelwerken en isolatie hanteren wij een garantie van 10 jaar. Uw tevredenheid staat bij ons centraal, 
+                daarom blijven wij betrokken tot het project volledig naar wens is afgerond.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
       <FAQSection />
       

@@ -165,6 +165,108 @@ export default function RamenPage() {
         </div>
       </section>
 
+      {/* Uitgebreide SEO Content Sectie */}
+      <section className="py-20 bg-gradient-to-b from-background to-background/95 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-invert">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Ramen Plaatsen in Antwerpen: Complete Gids
+            </h2>
+            
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              PVC of Aluminium Ramen: Wat is de Beste Keuze?
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Bij het kiezen van nieuwe ramen in Antwerpen staat u voor een belangrijke beslissing: <strong>PVC of aluminium ramen</strong>? 
+              Beide materialen hebben hun voordelen. <strong>PVC ramen</strong> zijn zeer isolerend, onderhoudsarm en betaalbaar. 
+              Ze zijn ideaal voor woningen in Antwerpen, Berchem, Deurne en Merksem waar energiebesparing prioriteit heeft.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              <strong>Aluminium ramen</strong> daarentegen bieden een strakke, moderne uitstraling met smalle profielen en 
+              maximale lichtinval. Ze zijn zeer duurzaam en geschikt voor grote raampartijen. In Wilrijk, Brasschaat en 
+              Schoten zien we steeds meer vraag naar aluminium ramen vanwege hun eigentijdse design en lange levensduur.
+            </p>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              HR++ en Drievoudig Glas: Maximale Isolatie
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              De beglazing is cruciaal voor de isolatiewaarde van uw ramen. <strong>HR++ beglazing</strong> (hoog rendement) 
+              is de standaard voor energiezuinige ramen in België. Met een U-waarde van ongeveer 1.1 W/m²K bespaart u tot 
+              30% op verwarmingskosten vergeleken met oude enkelglas ramen.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Voor nog betere isolatie adviseren wij <strong>drievoudig glas</strong> met een U-waarde tot 0.6 W/m²K. 
+              Dit is vooral interessant voor nieuwbouwprojecten en renovaties in Antwerpen waar u streeft naar een 
+              laag E-peil. Drievoudig glas vermindert ook buitenlawaai aanzienlijk - ideaal voor woningen aan drukke 
+              straten in Antwerpen stad, Wijnegem of Mortsel.
+            </p>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              Premies voor Ramen in Vlaanderen en Antwerpen
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Bij het plaatsen van nieuwe ramen in Antwerpen kunt u in aanmerking komen voor verschillende premies via 
+              <strong> Mijn VerbouwPremie</strong>. De Vlaamse renovatiepremie ondersteunt energiebesparende maatregelen 
+              zoals het vervangen van oude ramen door HR++ of drievoudig glas.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              De hoogte van de premie hangt af van uw inkomen en de energetische verbetering. Wij helpen u graag bij het 
+              aanvragen van premies en zorgen dat alle documenten correct zijn. Voor woningen in Antwerpen, Berchem, 
+              Deurne, Merksem en andere gemeenten kunnen de premies oplopen tot enkele duizenden euro's.
+            </p>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              Wat Kosten Nieuwe Ramen in Antwerpen?
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              De prijs voor nieuwe ramen hangt af van verschillende factoren: materiaal (PVC of aluminium), type beglazing 
+              (HR++ of drievoudig), afmetingen, kleur en eventuele extra opties zoals inbraakwerend glas of geïntegreerde 
+              zonwering.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Gemiddeld betaalt u voor <strong>PVC ramen met HR++ beglazing</strong> tussen €300 en €500 per m². Voor 
+              <strong> aluminium ramen</strong> ligt de prijs tussen €500 en €800 per m². Drievoudig glas kost ongeveer 
+              €100 tot €150 extra per m². Wij bieden altijd een gratis opmeting en offerte zonder verplichtingen voor 
+              projecten in Antwerpen en omgeving.
+            </p>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              Onze Werkwijze: Van Offerte tot Plaatsing
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Bij Yannova werken we volgens een duidelijk stappenplan. Na uw aanvraag komen wij <strong>gratis bij u langs 
+              voor een opmeting</strong> in Antwerpen, Berchem, Deurne, Merksem, Wilrijk of een andere gemeente in de regio. 
+              Tijdens dit bezoek bespreken we uw wensen, nemen we nauwkeurige maten en adviseren we over de beste opties.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Binnen 24 uur ontvangt u een <strong>gedetailleerde offerte</strong> met alle specificaties en prijzen. 
+              Geen verborgen kosten, geen verrassingen. Als u akkoord gaat, plannen we de productie en plaatsing in 
+              overleg met u. De levertijd bedraagt gemiddeld 4 tot 6 weken.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Op de afgesproken dag komen onze vakmensen de ramen professioneel plaatsen. Wij zorgen voor een nette 
+              afwerking, ruimen alles op en nemen de oude ramen mee voor recycling. U geniet direct van uw nieuwe, 
+              energiezuinige ramen!
+            </p>
+
+            <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              Waarom Klanten Kiezen voor Yannova
+            </h3>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Met meer dan 15 jaar ervaring in de bouwsector zijn wij een betrouwbare partner voor ramen in Antwerpen 
+              en omgeving. Onze klanten waarderen onze <strong>transparante communicatie, vakmanschap en persoonlijke 
+              aanpak</strong>. We werken uitsluitend met A-merk materialen en bieden uitgebreide garanties.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Of u nu woont in Antwerpen stad, Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten, Wijnegem, 
+              Schilde, Ranst, Mortsel, Edegem, Kontich of een andere gemeente in de regio - wij staan voor u klaar 
+              met deskundig advies en professionele uitvoering. Vraag vandaag nog uw gratis offerte aan!
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-white">Klaar voor nieuwe ramen?</h2>
