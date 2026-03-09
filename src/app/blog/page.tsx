@@ -36,6 +36,22 @@ const blogPosts = [
     readTime: "6 min",
     category: "Tips",
   },
+  {
+    slug: "energiebesparing-nieuwe-ramen",
+    title: "Energiebesparing met nieuwe ramen",
+    excerpt: "Bespaar tot 50% energie met HR++ glas. Bereken je terugverdientijd.",
+    date: "2026-03-09",
+    readTime: "5 min",
+    category: "Besparing",
+  },
+  {
+    slug: "hoeveel-kost-gevelrenovatie",
+    title: "Hoeveel kost gevelrenovatie in 2026?",
+    excerpt: "Complete prijsoverzicht: €80-150/m² voor isolatie + crepi. Inclusief premies.",
+    date: "2026-03-09",
+    readTime: "6 min",
+    category: "Prijzen",
+  },
 ];
 
 export default function BlogPage() {
