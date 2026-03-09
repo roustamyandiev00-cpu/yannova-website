@@ -1,51 +1,70 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+import { prisma } from '@/lib/prisma';
+import { werkgebieden } from '@/lib/data/werkgebieden';
 
-const baseUrl = 'https://www.yannova.be'
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = 'https://www.yannova.be';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString()
+  // Statische paginas
+  const staticRoutes = [
+    '/',
+    '/contact',
+    '/reviews',
+    '/projecten',
+    '/blog',
+    '/deuren',
+    '/ramen',
+    '/over-ons',
+    '/diensten/renovatie',
+    '/diensten/gevelrenovatie',
+    '/diensten/ramen-deuren',
+    '/diensten',
+    '/diensten/isolatie',
+    '/renovatie',
+    '/offerte',
+    '/gevelisolatie-crepi',
+    '/premies',
+    '/vraag-ai',
+    '/premie-gids',
+    '/advies',
+    '/calculator',
+    '/ramen/antwerpen',
+    '/ramen/zoersel',
+    '/deuren/antwerpen',
+    '/deuren/zoersel',
+    '/blog/pvc-of-aluminium-ramen',
+    '/blog/premies-ramen-deuren-2026',
+    '/blog/wat-kosten-nieuwe-ramen',
+    '/renovatiebedrijf-antwerpen',
+    '/crepi-isolatie-antwerpen',
+    '/gevelrenovatie-antwerpen',
+    '/ramen-deuren-antwerpen',
+    '/werkgebied',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+  }));
+
+  // Dynamische project paginas
+  const projects = await prisma.project.findMany({
+    where: { published: true },
+    select: { id: true, updatedAt: true },
+  });
+
+  const projectRoutes = projects.map((project) => ({
+    url: `${baseUrl}/projecten/${project.id}`,
+    lastModified: project.updatedAt,
+  }));
+
+  // Dynamische werkgebied paginas
+  const werkgebiedRoutes = Object.keys(werkgebieden).map((slug) => ({
+    url: `${baseUrl}/werkgebied/${slug}`,
+    lastModified: new Date(),
+  }));
 
   return [
-    { url: `${baseUrl}`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/ramen`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/deuren`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/diensten`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/diensten/ramen-deuren`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/diensten/gevelrenovatie`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/diensten/isolatie`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/diensten/renovatie`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/renovatie`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/gevelisolatie-crepi`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${baseUrl}/premie-gids`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/premies`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/projecten`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/offerte`, lastModified: now, changeFrequency: 'yearly', priority: 0.8 },
-    { url: `${baseUrl}/over-ons`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/advies`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/vraag-ai`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'yearly', priority: 0.7 },
-    { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/blog/wat-kosten-nieuwe-ramen`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/blog/premies-ramen-deuren-2026`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/blog/pvc-of-aluminium-ramen`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/werkgebied`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/ramen/antwerpen`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/ramen/zoersel`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${baseUrl}/deuren/antwerpen`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/deuren/zoersel`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${baseUrl}/werkgebied/antwerpen`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${baseUrl}/werkgebied/berchem`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/werkgebied/deurne`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/werkgebied/merksem`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/werkgebied/wilrijk`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/werkgebied/brasschaat`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/werkgebied/schoten`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/werkgebied/wijnegem`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/werkgebied/mortsel`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/werkgebied/edegem`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/werkgebied/kontich`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/werkgebied/zoersel`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/werkgebied/mechelen`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-  ]
+    ...staticRoutes,
+    ...projectRoutes,
+    ...werkgebiedRoutes,
+  ];
 }
