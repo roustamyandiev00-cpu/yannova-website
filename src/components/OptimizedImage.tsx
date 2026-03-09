@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -9,68 +7,50 @@ interface OptimizedImageProps {
   width?: number;
   height?: number;
   fill?: boolean;
-  className?: string;
   priority?: boolean;
+  className?: string;
   sizes?: string;
   quality?: number;
 }
 
+/**
+ * Optimized Image component with blur placeholder and lazy loading
+ * Uses Next.js Image component for automatic optimization
+ */
 export function OptimizedImage({
   src,
   alt,
   width,
   height,
-  fill,
-  className = '',
+  fill = false,
   priority = false,
+  className = '',
   sizes,
   quality = 85,
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
-  const handleLoad = () => {
-    setIsLoading(false);
-  };
-
-  const handleError = () => {
-    setIsLoading(false);
-    setHasError(true);
-  };
-
-  if (hasError) {
-    return (
-      <div
-        className={`flex items-center justify-center bg-muted/20 ${className}`}
-        style={fill ? undefined : { width, height }}
-      >
-        <span className="text-muted-foreground text-sm">Afbeelding niet beschikbaar</span>
-      </div>
-    );
-  }
 
   return (
-    <div className={`relative ${fill ? 'w-full h-full' : ''}`}>
-      {isLoading && (
-        <div
-          className={`absolute inset-0 bg-muted/20 animate-pulse ${className}`}
-          style={fill ? undefined : { width, height }}
-        />
-      )}
+    <div className={`relative overflow-hidden ${className}`}>
       <Image
         src={src}
         alt={alt}
-        width={fill ? undefined : width}
-        height={fill ? undefined : height}
+        width={!fill ? width : undefined}
+        height={!fill ? height : undefined}
         fill={fill}
-        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         priority={priority}
-        sizes={sizes}
         quality={quality}
-        onLoad={handleLoad}
-        onError={handleError}
-        loading={priority ? undefined : 'lazy'}
+        sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
+        className={`
+          duration-700 ease-in-out
+          ${isLoading ? 'scale-110 blur-lg' : 'scale-100 blur-0'}
+        `}
+        onLoad={() => setIsLoading(false)}
+        loading={priority ? 'eager' : 'lazy'}
       />
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
+      )}
     </div>
   );
 }

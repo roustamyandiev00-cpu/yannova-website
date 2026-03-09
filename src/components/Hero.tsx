@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Phone, MessageCircle, Star, Clock, Shield } from "lucide-react";
 import { company } from "@/lib/company";
 import { useEffect, useState } from "react";
+import { gtmTrackPhone, gtmTrackWhatsApp } from "@/components/GoogleTagManager";
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -77,6 +78,7 @@ export function Hero() {
               <div className="flex gap-3">
                 <a
                   href={company.phoneHref}
+                  onClick={() => gtmTrackPhone()}
                   className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-5 py-4 text-sm font-medium text-white shadow-elegant"
                 >
                   <Phone className="h-4 w-4 text-secondary" />
@@ -86,6 +88,7 @@ export function Hero() {
                   href={company.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => gtmTrackWhatsApp()}
                   className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-5 py-4 text-sm font-medium text-white shadow-elegant"
                 >
                   <MessageCircle className="h-4 w-4 text-secondary" />

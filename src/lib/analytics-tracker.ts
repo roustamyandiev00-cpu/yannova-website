@@ -1,113 +1,194 @@
-import { prisma } from './prisma';
+/**
+ * Analytics Event Tracker
+ * Centralized tracking for Google Analytics, Clarity, and other analytics platforms
+ */
 
-interface ConversionData {
-  type: 'lead' | 'call' | 'form' | 'chat';
-  source?: string;
-  campaign?: string;
-  keyword?: string;
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+    clarity?: (...args: any[]) => void;
+  }
+}
+
+export type EventCategory = 
+  | 'engagement'
+  | 'conversion'
+  | 'navigation'
+  | 'video'
+  | 'form'
+  | 'cta'
+  | 'scroll'
+  | 'error';
+
+export interface AnalyticsEvent {
+  action: string;
+  category: EventCategory;
+  label?: string;
   value?: number;
-  leadId?: string;
-  page?: string;
-  device?: string;
+  nonInteraction?: boolean;
 }
 
-export async function trackConversion(data: ConversionData) {
-  try {
-    await prisma.conversion.create({
-      data: {
-        type: data.type,
-        source: data.source || 'direct',
-        campaign: data.campaign || null,
-        keyword: data.keyword || null,
-        value: data.value || null,
-        leadId: data.leadId || null,
-        page: data.page || null,
-        device: data.device || null,
-      }
+/**
+ * Track custom event to Google Analytics
+ */
+export function trackEvent({ action, category, label, value, nonInteraction = false }: AnalyticsEvent) {
+  if (typeof window === 'undefined') return;
+
+  // Google Analytics 4
+  if (window.gtag) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+      non_interaction: nonInteraction,
     });
-  } catch (error) {
-    console.error('Error tracking conversion:', error);
+  }
+
+  // Microsoft Clarity custom tags
+  if (window.clarity) {
+    window.clarity('set', category, action);
+  }
+
+  // Console log in development
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[Analytics]', { action, category, label, value });
   }
 }
 
-export async function updateTrafficAnalytics() {
-  try {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+/**
+ * Track page view
+ */
+export function trackPageView(url: string, title?: string) {
+  if (typeof window === 'undefined') return;
 
-    // Get today's page views
-    const pageViews = await prisma.pageView.count({
-      where: {
-        createdAt: {
-          gte: today
-        }
-      }
+  if (window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_path: url,
+      page_title: title,
     });
-
-    // Get unique visitors (by IP)
-    const uniqueVisitors = await prisma.pageView.groupBy({
-      by: ['ip'],
-      where: {
-        createdAt: {
-          gte: today
-        }
-      }
-    });
-
-    // Get top pages
-    const topPages = await prisma.pageView.groupBy({
-      by: ['path'],
-      where: {
-        createdAt: {
-          gte: today
-        }
-      },
-      _count: true,
-      orderBy: {
-        _count: {
-          path: 'desc'
-        }
-      },
-      take: 10
-    });
-
-    // Update or create traffic analytics
-    await prisma.trafficAnalytics.upsert({
-      where: { date: today },
-      update: {
-        pageViews,
-        uniqueVisitors: uniqueVisitors.length,
-        topPages: JSON.stringify(topPages.map(p => ({ path: p.path, views: p._count })))
-      },
-      create: {
-        date: today,
-        pageViews,
-        uniqueVisitors: uniqueVisitors.length,
-        topPages: JSON.stringify(topPages.map(p => ({ path: p.path, views: p._count })))
-      }
-    });
-  } catch (error) {
-    console.error('Error updating traffic analytics:', error);
   }
 }
 
-// Helper to get UTM parameters from URL
-export function getUTMParameters(url: string) {
-  try {
-    const urlObj = new URL(url);
-    return {
-      source: urlObj.searchParams.get('utm_source') || undefined,
-      campaign: urlObj.searchParams.get('utm_campaign') || undefined,
-      keyword: urlObj.searchParams.get('utm_term') || undefined,
-    };
-  } catch {
-    return {};
-  }
+/**
+ * Track scroll depth
+ */
+export function trackScrollDepth(percentage: number) {
+  trackEvent({
+    action: 'scroll_depth',
+    category: 'scroll',
+    label: `${percentage}%`,
+    value: percentage,
+    nonInteraction: true,
+  });
 }
 
-// Helper to detect device type
-export function getDeviceType(userAgent: string): string {
-  if (/mobile/i.test(userAgent)) return 'mobile';
-  if (/tablet/i.test(userAgent)) return 'tablet';
-  return 'desktop';
+/**
+ * Track video play
+ */
+export function trackVideoPlay(videoTitle: string) {
+  trackEvent({
+    action: 'video_play',
+    category: 'video',
+    label: videoTitle,
+  });
+}
+
+/**
+ * Track CTA click
+ */
+export function trackCTAClick(ctaName: string, location: string) {
+  trackEvent({
+    action: 'cta_click',
+    category: 'cta',
+    label: `${ctaName} - ${location}`,
+  });
+}
+
+/**
+ * Track form start
+ */
+export function trackFormStart(formName: string) {
+  trackEvent({
+    action: 'form_start',
+    category: 'form',
+    label: formName,
+  });
+}
+
+/**
+ * Track form submission
+ */
+export function trackFormSubmit(formName: string, success: boolean) {
+  trackEvent({
+    action: success ? 'form_submit_success' : 'form_submit_error',
+    category: 'form',
+    label: formName,
+  });
+}
+
+/**
+ * Track phone click
+ */
+export function trackPhoneClick(location: string) {
+  trackEvent({
+    action: 'phone_click',
+    category: 'conversion',
+    label: location,
+  });
+}
+
+/**
+ * Track WhatsApp click
+ */
+export function trackWhatsAppClick(location: string) {
+  trackEvent({
+    action: 'whatsapp_click',
+    category: 'conversion',
+    label: location,
+  });
+}
+
+/**
+ * Track service page view
+ */
+export function trackServiceView(serviceName: string) {
+  trackEvent({
+    action: 'service_view',
+    category: 'engagement',
+    label: serviceName,
+  });
+}
+
+/**
+ * Track error
+ */
+export function trackError(errorMessage: string, errorLocation: string) {
+  trackEvent({
+    action: 'error',
+    category: 'error',
+    label: `${errorLocation}: ${errorMessage}`,
+  });
+}
+
+/**
+ * Track outbound link click
+ */
+export function trackOutboundLink(url: string) {
+  trackEvent({
+    action: 'outbound_link',
+    category: 'navigation',
+    label: url,
+  });
+}
+
+/**
+ * Track file download
+ */
+export function trackDownload(fileName: string) {
+  trackEvent({
+    action: 'file_download',
+    category: 'engagement',
+    label: fileName,
+  });
 }

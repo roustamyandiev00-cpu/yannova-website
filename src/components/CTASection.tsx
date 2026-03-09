@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Phone, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { company } from '@/lib/company';
 import { FadeIn } from './animations/FadeIn';
+import { gtmTrackPhone, gtmTrackWhatsApp } from '@/components/GoogleTagManager';
 
 interface CTASectionProps {
   title?: string;
@@ -98,6 +99,7 @@ export function CTASection({
                   {showSecondaryButton && (
                     <a
                       href={company.phoneHref}
+                      onClick={() => gtmTrackPhone()}
                       className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 backdrop-blur-sm border-2 border-white/30 px-8 py-4 text-lg font-semibold text-white hover:bg-white/20 transition-all"
                     >
                       <Phone className="h-5 w-5" />
@@ -157,6 +159,7 @@ export function CTASection({
                 <div className="flex gap-3 justify-center">
                   <a
                     href={company.phoneHref}
+                    onClick={() => gtmTrackPhone()}
                     className="inline-flex items-center gap-2 rounded-xl border border-border px-6 py-4 text-base font-medium text-foreground hover:bg-muted transition-all"
                   >
                     <Phone className="h-5 w-5 text-secondary" />
@@ -166,6 +169,7 @@ export function CTASection({
                     href={company.whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => gtmTrackWhatsApp()}
                     className="inline-flex items-center gap-2 rounded-xl border border-border px-6 py-4 text-base font-medium text-foreground hover:bg-muted transition-all"
                   >
                     <MessageCircle className="h-5 w-5 text-secondary" />

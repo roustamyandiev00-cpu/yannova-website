@@ -1,6 +1,7 @@
 'use client';
 
 import { trackWhatsAppClick, trackPhoneClick, trackEmailClick } from './GoogleAds';
+import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from '@/components/GoogleTagManager';
 
 interface ContactButtonsProps {
   phone?: string;
@@ -19,14 +20,17 @@ export function ContactButtons({
 }: ContactButtonsProps) {
   const handleWhatsAppClick = () => {
     trackWhatsAppClick();
+    gtmTrackWhatsApp();
   };
 
   const handlePhoneClick = () => {
     trackPhoneClick();
+    gtmTrackPhone();
   };
 
   const handleEmailClick = () => {
     trackEmailClick();
+    gtmTrackEmail();
   };
 
   const whatsappUrl = `https://wa.me/${whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;

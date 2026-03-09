@@ -3,6 +3,7 @@
 import { Phone, MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { company } from '@/lib/company';
 import { trackPhoneClick, trackWhatsAppClick } from '@/lib/google-ads';
+import { gtmTrackPhone, gtmTrackWhatsApp } from '@/components/GoogleTagManager';
 
 interface ServiceCTAProps {
   title: string;
@@ -23,10 +24,12 @@ export function ServiceCTA({
 }: ServiceCTAProps) {
   const handlePhoneClick = () => {
     trackPhoneClick();
+    gtmTrackPhone();
   };
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick();
+    gtmTrackWhatsApp();
   };
 
   const bgClass = variant === 'secondary' 

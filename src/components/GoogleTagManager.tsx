@@ -73,10 +73,3 @@ export const gtmTrackEmail = () => {
     currency: 'EUR',
   });
 };
-
-// TypeScript declarations
-declare global {
-  interface Window {
-    dataLayer: any[];
-  }
-}

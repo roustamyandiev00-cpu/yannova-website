@@ -10,16 +10,6 @@
  *    NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL=xxxxxxxxxxxxx
  */
 
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      targetId: string,
-      config?: Record<string, unknown>
-    ) => void;
-  }
-}
-
 export const trackContactFormSubmission = (value?: number) => {
   if (typeof window === 'undefined') return;
   

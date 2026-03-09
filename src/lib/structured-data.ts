@@ -251,54 +251,6 @@ export function generateWebSiteSchema() {
   };
 }
 
-export function generateArticleSchema({
-  title,
-  description,
-  url,
-  datePublished,
-  dateModified,
-  image,
-  author = "Yannova",
-}: {
-  title: string;
-  description: string;
-  url: string;
-  datePublished: string;
-  dateModified?: string;
-  image?: string;
-  author?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: title,
-    description: description,
-    url: url,
-    datePublished: datePublished,
-    dateModified: dateModified || datePublished,
-    author: {
-      "@type": "Organization",
-      name: author,
-      "@id": "https://www.yannova.be/#organization"
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Yannova Bouw",
-      "@id": "https://www.yannova.be/#organization",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.yannova.be/logo.png"
-      }
-    },
-    image: image || "https://www.yannova.be/og-image.jpg",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url
-    },
-    inLanguage: "nl-BE"
-  };
-}
-
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -325,4 +277,82 @@ export function generateOrganizationSchema() {
       "https://www.instagram.com/yannova"
     ]
   };
+}
+
+
+/**
+ * Generate Product schema for services with pricing
+ */
+export function generateProductSchema(product: {
+  name: string;
+  description: string;
+  image?: string;
+  price?: string;
+  priceCurrency?: string;
+  availability?: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.image || "https://www.yannova.be/images/yannova-og.jpg",
+    offers: {
+      "@type": "Offer",
+      price: product.price || "0",
+      priceCurrency: product.priceCurrency || "EUR",
+      availability: product.availability || "https://schema.org/InStock",
+      url: product.url,
+      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+      seller: {
+        "@type": "Organization",
+        name: "Yannova Bouw",
+        "@id": "https://www.yannova.be/#organization"
+      }
+    },
+    brand: {
+      "@type": "Brand",
+      name: "Yannova"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "47",
+      bestRating: "5",
+      worstRating: "1"
+    }
+  };
+}
+
+/**
+ * Generate Review schema for testimonials
+ */
+export function generateReviewSchema(reviews: Array<{
+  author: string;
+  rating: number;
+  reviewBody: string;
+  datePublished: string;
+}>) {
+  return reviews.map(review => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "LocalBusiness",
+      name: "Yannova Bouw",
+      "@id": "https://www.yannova.be/#organization"
+    },
+    author: {
+      "@type": "Person",
+      name: review.author
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: review.rating,
+      bestRating: "5",
+      worstRating: "1"
+    },
+    reviewBody: review.reviewBody,
+    datePublished: review.datePublished
+  }));
 }

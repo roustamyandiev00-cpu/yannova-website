@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { company } from "@/lib/company";
 import { trackPhoneClick, trackWhatsAppClick } from "@/lib/google-ads";
+import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from "@/components/GoogleTagManager";
 
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: "Home", url: "/" },
@@ -14,10 +15,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 export default function ContactPage() {
   const handlePhoneClick = () => {
     trackPhoneClick();
+    gtmTrackPhone();
   };
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick();
+    gtmTrackWhatsApp();
   };
 
   return (
@@ -93,7 +96,11 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-secondary" aria-hidden="true" />
                   </div>
                   <dd>
-                    <a className="hover:text-secondary transition-colors font-semibold break-all" href={`mailto:${company.email}`}>
+                    <a
+                      className="hover:text-secondary transition-colors font-semibold break-all"
+                      href={`mailto:${company.email}`}
+                      onClick={() => gtmTrackEmail()}
+                    >
                       {company.email}
                     </a>
                   </dd>

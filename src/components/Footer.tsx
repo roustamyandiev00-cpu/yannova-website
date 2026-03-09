@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { company } from "@/lib/company";
+import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from "@/components/GoogleTagManager";
 
 export function Footer() {
   return (
@@ -25,6 +26,7 @@ export function Footer() {
             <div className="flex flex-wrap gap-3">
               <a
                 href={company.phoneHref}
+                onClick={() => gtmTrackPhone()}
                 className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-4 py-2.5 text-sm text-gray-200 shadow-elegant"
               >
                 <Phone className="h-4 w-4 text-secondary" />
@@ -34,6 +36,7 @@ export function Footer() {
                 href={company.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => gtmTrackWhatsApp()}
                 className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-4 py-2.5 text-sm text-gray-200 shadow-elegant"
               >
                 <MessageCircle className="h-4 w-4 text-secondary" />
@@ -106,13 +109,21 @@ export function Footer() {
                   </li>
                   <li className="flex items-center gap-3 text-sm leading-6 text-gray-300">
                     <Phone className="h-5 w-5 text-secondary shrink-0" />
-                    <a href={company.phoneHref} className="hover:text-white">
+                    <a
+                      href={company.phoneHref}
+                      onClick={() => gtmTrackPhone()}
+                      className="hover:text-white"
+                    >
                       {company.phoneDisplay}
                     </a>
                   </li>
                   <li className="flex items-center gap-3 text-sm leading-6 text-gray-300">
                     <Mail className="h-5 w-5 text-secondary shrink-0" />
-                    <a href={`mailto:${company.email}`} className="hover:text-white">
+                    <a
+                      href={`mailto:${company.email}`}
+                      onClick={() => gtmTrackEmail()}
+                      className="hover:text-white"
+                    >
                       {company.email}
                     </a>
                   </li>

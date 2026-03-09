@@ -10,12 +10,12 @@ export function GoogleAds() {
 
   return (
     <>
-      {/* Google Tag (gtag.js) */}
+      {/* Google Tag (gtag.js) - Load after page is interactive */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-ads-init" strategy="afterInteractive">
+      <Script id="google-ads-init" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -75,11 +75,3 @@ export const trackEmailClick = () => {
     currency: 'EUR',
   });
 };
-
-// TypeScript declarations
-declare global {
-  interface Window {
-    dataLayer: Record<string, unknown>[];
-    gtag?: (command: string, targetId: string, config?: Record<string, unknown>) => void;
-  }
-}
