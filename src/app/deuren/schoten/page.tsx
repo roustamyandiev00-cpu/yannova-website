@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { generateSEO, generateBreadcrumbSchema } from '@/components/SEO';
+import { generateSEO } from '@/lib/seo';
+import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 import { CheckCircle, Phone, Mail, MapPin, Clock, Award } from 'lucide-react';
 import Link from 'next/link';
 import { company } from '@/lib/company';
@@ -103,7 +104,7 @@ export default function DeurenSchotenPage() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href={`tel:${company.phone}`}
+                    href={company.phoneHref}
                     className="flex items-center gap-3 p-4 bg-secondary hover:bg-secondary/90 text-white rounded-lg transition-colors"
                   >
                     <Phone className="h-5 w-5" />

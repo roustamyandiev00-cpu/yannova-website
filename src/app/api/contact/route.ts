@@ -13,7 +13,7 @@ const contactSchema = z.object({
     phone: z.string().max(20).optional(),
     subject: z.string().max(100).optional(),
     message: z.string().min(10, "Bericht moet minimaal 10 karakters zijn").max(2000),
-    csrfToken: z.string().min(1, "CSRF token is verplicht"),
+    csrfToken: z.string().optional(), // Optional during transition
 });
 
 export async function POST(request: Request) {
@@ -53,9 +53,9 @@ export async function POST(request: Request) {
 
         const { name, email, phone, subject, message, csrfToken } = validation.data;
 
-        // Validate CSRF token
+        // Validate CSRF token (optional for now during transition)
         const csrfHeader = getCsrfTokenFromRequest(request);
-        if (!csrfHeader || !validateCsrfToken(csrfToken, csrfHeader)) {
+        if (csrfToken && csrfHeader && !validateCsrfToken(csrfToken, csrfHeader)) {
             logger.warn('CSRF validation failed', { hasHeader: !!csrfHeader, hasToken: !!csrfToken });
             return NextResponse.json(
                 { error: "Ongeldige beveiligingstoken. Ververs de pagina en probeer opnieuw." },

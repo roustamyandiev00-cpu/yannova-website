@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { generateSEO, generateBreadcrumbSchema } from '@/components/SEO';
+import { generateSEO, generateBreadcrumbSchema } from '@/lib/seo';
+import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 import { CheckCircle, Phone, Mail, MapPin, Clock, Award } from 'lucide-react';
 import Link from 'next/link';
 import { company } from '@/lib/company';

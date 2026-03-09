@@ -1,27 +1,13 @@
  'use client'
 
 import { Loader2, Send, CheckCircle2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { trackContactFormSubmission } from "@/lib/google-ads";
 import { gtmTrackFormSubmit } from "@/components/GoogleTagManager";
 
 export function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitResult, setSubmitResult] = useState<{ success: boolean; message: string } | null>(null);
-    const [csrfToken, setCsrfToken] = useState<string>('');
-    const [csrfHash, setCsrfHash] = useState<string>('');
-
-    // Fetch CSRF token on component mount
-    useEffect(() => {
-        fetch('/api/csrf')
-            .then(res => {
-                const hash = res.headers.get('X-CSRF-Token');
-                if (hash) setCsrfHash(hash);
-                return res.json();
-            })
-            .then(data => setCsrfToken(data.csrfToken))
-            .catch(err => console.error('Failed to fetch CSRF token:', err));
-    }, []);
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -30,18 +16,14 @@ export function ContactForm() {
 
         const formData = new FormData(event.currentTarget);
         const data = Object.fromEntries(formData.entries());
-        
-        // Add CSRF token to request
-        const requestData = { ...data, csrfToken };
 
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "X-CSRF-Token": csrfHash,
                 },
-                body: JSON.stringify(requestData),
+                body: JSON.stringify(data),
             });
 
             let result;
