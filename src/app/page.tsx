@@ -1,10 +1,34 @@
 import { Hero } from "@/components/Hero";
 import { Specializations } from "@/components/Specializations";
 import { FAQSection } from "@/components/FAQSection";
+import { Testimonials } from "@/components/Testimonials";
 import { ArrowRight } from "lucide-react";
+import { generateFAQSchema } from "@/lib/faq-schema";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 60; // Revalidate every 60 seconds
+
+// Homepage FAQ voor structured data
+const homepageFAQs = [
+  {
+    question: "Wat zijn de kosten voor nieuwe ramen in Antwerpen?",
+    answer: "De prijs voor nieuwe ramen hangt af van het type, de grootte en het materiaal. Gemiddeld betaal je tussen €300 en €800 per m². Wij bieden een gratis opmeting en offerte binnen 24 uur.",
+  },
+  {
+    question: "In welke regio's is Yannova actief?",
+    answer: "Wij zijn actief in Antwerpen stad en alle randgemeenten: Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten, Wijnegem, Schilde, Ranst, Mortsel en omgeving.",
+  },
+  {
+    question: "Welke diensten biedt Yannova aan?",
+    answer: "Wij zijn gespecialiseerd in het plaatsen van ramen en deuren, gevelrenovatie met isolatie en crepi, isolatiewerken en totaalrenovaties. Van kleine aanpassingen tot complete woningrenovaties.",
+  },
+  {
+    question: "Hoe snel kan ik een offerte krijgen?",
+    answer: "Na uw aanvraag nemen wij binnen 24 uur contact op voor een gratis plaatsbezoek. Direct na de opmeting ontvangt u een duidelijke offerte zonder verborgen kosten.",
+  },
+];
+
+const faqSchema = generateFAQSchema(homepageFAQs);
 
 export async function generateMetadata() {
   return {
@@ -68,9 +92,15 @@ export async function generateMetadata() {
 
 export default async function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="flex flex-col min-h-screen">
       <Hero />
       <Specializations />
+      <Testimonials />
       <FAQSection />
       
       {/* CTA Section */}
@@ -102,5 +132,6 @@ export default async function HomePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

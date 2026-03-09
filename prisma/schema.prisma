@@ -140,3 +140,123 @@ model ActivityLog {
   @@index([userId])
   @@index([createdAt])
 }
+
+// Google Ads Tracking
+model GoogleAdsKeyword {
+  id              String   @id @default(cuid())
+  keyword         String
+  matchType       String   // "exact", "phrase", "broad"
+  impressions     Int      @default(0)
+  clicks          Int      @default(0)
+  conversions     Int      @default(0)
+  cost            Float    @default(0)
+  ctr             Float    @default(0) // Click-through rate
+  cpc             Float    @default(0) // Cost per click
+  conversionRate  Float    @default(0)
+  qualityScore    Int?     // 1-10
+  status          String   @default("active") // "active", "paused", "removed"
+  campaign        String?
+  adGroup         String?
+  period          DateTime // Date for this data point
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([keyword])
+  @@index([period])
+  @@index([campaign])
+}
+
+model GoogleAdsCampaign {
+  id              String   @id @default(cuid())
+  name            String
+  budget          Float
+  spent           Float    @default(0)
+  impressions     Int      @default(0)
+  clicks          Int      @default(0)
+  conversions     Int      @default(0)
+  ctr             Float    @default(0)
+  conversionRate  Float    @default(0)
+  status          String   @default("active")
+  startDate       DateTime
+  endDate         DateTime?
+  period          DateTime // Date for this data point
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([name])
+  @@index([period])
+}
+
+// Performance Metrics
+model PerformanceMetric {
+  id          String   @id @default(cuid())
+  metric      String   // "page_speed", "seo_score", "conversion_rate", "bounce_rate"
+  value       Float
+  previousValue Float?
+  improvement Float?   // Percentage improvement
+  category    String   // "seo", "performance", "conversion", "user_experience"
+  page        String?  // Specific page if applicable
+  period      DateTime // Date for this metric
+  notes       String?
+  createdAt   DateTime @default(now())
+
+  @@index([metric])
+  @@index([period])
+  @@index([category])
+}
+
+// SEO Rankings
+model SeoRanking {
+  id          String   @id @default(cuid())
+  keyword     String
+  position    Int
+  previousPosition Int?
+  url         String
+  searchEngine String  @default("google") // "google", "bing"
+  location    String  @default("Belgium") // Geographic location
+  device      String  @default("desktop") // "desktop", "mobile"
+  searchVolume Int?
+  difficulty  Int?    // 1-100
+  period      DateTime
+  createdAt   DateTime @default(now())
+
+  @@index([keyword])
+  @@index([period])
+  @@index([position])
+}
+
+// Conversion Tracking
+model Conversion {
+  id          String   @id @default(cuid())
+  type        String   // "lead", "call", "form", "chat"
+  source      String   // "google_ads", "organic", "direct", "referral"
+  campaign    String?
+  keyword     String?
+  value       Float?   // Estimated value
+  leadId      String?
+  page        String?  // Landing page
+  device      String?
+  createdAt   DateTime @default(now())
+
+  @@index([type])
+  @@index([source])
+  @@index([createdAt])
+}
+
+// Traffic Analytics
+model TrafficAnalytics {
+  id              String   @id @default(cuid())
+  date            DateTime @unique
+  pageViews       Int      @default(0)
+  uniqueVisitors  Int      @default(0)
+  bounceRate      Float    @default(0)
+  avgSessionTime  Int      @default(0) // in seconds
+  newVisitors     Int      @default(0)
+  returningVisitors Int    @default(0)
+  topPages        String?  // JSON array of top pages
+  topSources      String?  // JSON array of traffic sources
+  deviceBreakdown String?  // JSON object with device stats
+  createdAt       DateTime @default(now())
+
+  @@index([date])
+}

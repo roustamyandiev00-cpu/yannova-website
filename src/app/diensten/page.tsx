@@ -3,12 +3,27 @@ import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Home, Layers, Hammer, ShieldCheck, Phone, MessageCircle } from "lucide-react";
-import { getSeoMetadata } from "@/lib/seo-helper";
+import { generateSEO } from "@/lib/seo";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { company } from "@/lib/company";
 
-export async function generateMetadata() {
-  return getSeoMetadata("/diensten");
-}
+export const metadata = generateSEO({
+  title: "Onze Diensten - Ramen, Deuren, Gevelrenovatie & Totaalrenovatie",
+  description: "Ontdek onze diensten: ramen & deuren, gevelrenovatie met crepi, isolatiewerken en totaalrenovatie in Antwerpen en omgeving. Eén aanspreekpunt voor uw project.",
+  path: "/diensten",
+  keywords: [
+    "renovatiediensten antwerpen",
+    "bouwbedrijf antwerpen",
+    "ramen deuren antwerpen",
+    "gevelrenovatie antwerpen",
+    "totaalrenovatie antwerpen",
+  ],
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Diensten", url: "/diensten" },
+]);
 
 export default function DienstenPage() {
   const services = [
@@ -39,7 +54,12 @@ export default function DienstenPage() {
   ];
 
   return (
-    <div className="bg-background min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <div className="bg-background min-h-screen">
       <section className="relative h-[52vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
@@ -115,5 +135,6 @@ export default function DienstenPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

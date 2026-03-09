@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import { supabase } from '@/lib/supabase';
 import { MessageCircle, Users, Briefcase, FileText, Star, Image as ImageIcon, TrendingUp, LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { Lead, Project } from '@prisma/client';
@@ -39,14 +40,14 @@ export default async function AdminDashboard() {
   let leadsCount = 0;
   let testimonialCount = 0;
   let mediaCount = 0;
-  let pageViewsToday = 0;
+  const pageViewsToday = 0;
   let userCount = 0;
-  const activeChatSessions = 0; // Placeholder - zal later van Firebase komen
+  let activeChatSessions = 0;
   let recentLeads: Lead[] = [];
   let recentProjects: Project[] = [];
 
   try {
-    [projectCount, leadsCount, testimonialCount, mediaCount, pageViewsToday, userCount] = await Promise.all([
+    [projectCount, leadsCount, testimonialCount, mediaCount, userCount] = await Promise.all([
       prisma.project.count(),
       prisma.lead.count({ where: { read: false } }),
       prisma.testimonial.count({ where: { approved: false } }),
@@ -72,6 +73,16 @@ export default async function AdminDashboard() {
       take: 3,
       orderBy: { createdAt: 'desc' },
     });
+    // Active chat sessions from Supabase
+    try {
+      const { count } = await supabase
+        .from('chat_sessions')
+        .select('*', { count: 'exact', head: true })
+        .eq('status', 'active');
+      activeChatSessions = count || 0;
+    } catch (supabaseError) {
+      console.error('Chat session count error:', supabaseError);
+    }
   } catch (error) {
     console.error('Dashboard data fetch error:', error);
   }
@@ -152,7 +163,7 @@ export default async function AdminDashboard() {
                     <p className="text-xs text-gray-400 line-clamp-1">{lead.message}</p>
                   </div>
                   {!lead.read && (
-                    <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-secondary flex-shrink-0 mt-1.5" />
+                    <span className="ml-2 inline-flex h-2 w-2 rounded-full bg-secondary shrink-0 mt-1.5" />
                   )}
                 </div>
               ))}
@@ -177,7 +188,7 @@ export default async function AdminDashboard() {
             <div className="space-y-3">
               {recentProjects.map((project) => (
                 <div key={project.id} className="flex items-center gap-3 border-b border-white/10 pb-3 last:border-0">
-                  <div className="h-12 w-12 rounded-lg bg-white/5 flex-shrink-0" />
+                  <div className="h-12 w-12 rounded-lg bg-white/5 shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-foreground truncate">{project.title}</p>
                     <p className="text-xs text-gray-400">{project.category}</p>
@@ -190,7 +201,7 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Quick Actions */}
-      <div className="mt-6 rounded-xl bg-gradient-to-r from-secondary/20 to-blue-500/20 p-6 ring-1 ring-white/10">
+      <div className="mt-6 rounded-xl bg-linear-to-r from-secondary/20 to-blue-500/20 p-6 ring-1 ring-white/10">
         <h2 className="text-lg font-semibold text-foreground mb-4">Snelle Acties</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <Link
@@ -221,6 +232,39 @@ export default async function AdminDashboard() {
             <Users className="h-6 w-6 mx-auto mb-2 text-purple-400" />
             <p className="text-sm font-medium text-foreground">Instellingen</p>
           </Link>
+        </div>
+      </div>
+
+      {/* Analytics Preview */}
+      <div className="mt-6 rounded-xl bg-linear-to-r from-green-500/10 to-blue-500/10 p-6 ring-1 ring-white/10">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
+            <TrendingUp className="h-5 w-5 text-green-400" />
+            Analytics Overzicht
+          </h2>
+          <Link
+            href="/admin/analytics"
+            className="text-sm text-secondary hover:text-secondary/80"
+          >
+            Volledig dashboard →
+          </Link>
+        </div>
+        <p className="text-sm text-gray-400 mb-4">
+          Track je Google Ads performance, SEO rankings, conversies en meer in het nieuwe analytics dashboard.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <div className="bg-card/50 rounded-lg p-4">
+            <p className="text-xs text-gray-400 mb-1">Google Ads</p>
+            <p className="text-sm text-white">Track zoekwoorden & conversies</p>
+          </div>
+          <div className="bg-card/50 rounded-lg p-4">
+            <p className="text-xs text-gray-400 mb-1">SEO Rankings</p>
+            <p className="text-sm text-white">Monitor keyword posities</p>
+          </div>
+          <div className="bg-card/50 rounded-lg p-4">
+            <p className="text-xs text-gray-400 mb-1">Verbeteringen</p>
+            <p className="text-sm text-white">Bijhouden wat werkt</p>
+          </div>
         </div>
       </div>
     </main>

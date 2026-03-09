@@ -119,7 +119,7 @@ export function ProjectGallery({ projects, categories = [] }: ProjectGalleryProp
       {filteredProjects.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               layout

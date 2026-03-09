@@ -11,12 +11,23 @@ export function getProjectPhotos(): ProjectPhoto[] {
   const photosDirectory = path.join(process.cwd(), 'public', 'fotos');
   
   try {
+    // Check if directory exists
+    if (!fs.existsSync(photosDirectory)) {
+      console.warn(`Photos directory does not exist: ${photosDirectory}`);
+      return [];
+    }
+
     const filenames = fs.readdirSync(photosDirectory);
     
-    // Filter alleen afbeeldingen
+    // Filter alleen afbeeldingen (case-insensitive)
     const imageFiles = filenames.filter(file => 
       /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
     );
+    
+    // Sorteer alfabetisch
+    imageFiles.sort();
+    
+    console.log(`Found ${imageFiles.length} project photos in ${photosDirectory}`);
     
     return imageFiles.map(filename => ({
       filename,

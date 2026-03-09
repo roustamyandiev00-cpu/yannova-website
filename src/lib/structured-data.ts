@@ -227,3 +227,102 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
     })),
   };
 }
+
+export function generateWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.yannova.be/#website",
+    url: "https://www.yannova.be",
+    name: "Yannova Bouw",
+    description: "Ramen, deuren en renovatie in Antwerpen en omgeving",
+    publisher: {
+      "@id": "https://www.yannova.be/#organization"
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.yannova.be/zoeken?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    inLanguage: "nl-BE"
+  };
+}
+
+export function generateArticleSchema({
+  title,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  image,
+  author = "Yannova",
+}: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+  author?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: description,
+    url: url,
+    datePublished: datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      "@type": "Organization",
+      name: author,
+      "@id": "https://www.yannova.be/#organization"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Yannova Bouw",
+      "@id": "https://www.yannova.be/#organization",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.yannova.be/logo.png"
+      }
+    },
+    image: image || "https://www.yannova.be/og-image.jpg",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url
+    },
+    inLanguage: "nl-BE"
+  };
+}
+
+export function generateOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.yannova.be/#organization",
+    name: "Yannova Bouw",
+    url: "https://www.yannova.be",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.yannova.be/logo.png",
+      width: 250,
+      height: 60
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+32489960001",
+      contactType: "customer service",
+      email: "info@yannova.be",
+      areaServed: "BE",
+      availableLanguage: ["Dutch", "French"]
+    },
+    sameAs: [
+      "https://www.facebook.com/yannova",
+      "https://www.instagram.com/yannova"
+    ]
+  };
+}

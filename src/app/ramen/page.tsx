@@ -2,10 +2,14 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone, MessageCircle, Star, Shield, Clock } from "lucide-react";
 import { company } from "@/lib/company";
+import { generateSEO } from "@/lib/seo";
+import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateSEO({
   title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
   description: "PVC en aluminium ramen met HR++ of drievoudig glas. Actief in Antwerpen stad en randgemeenten rond Antwerpen. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
+  path: "/ramen",
   keywords: [
     "ramen plaatsen antwerpen",
     "ramen antwerpen stad",
@@ -18,24 +22,10 @@ export const metadata: Metadata = {
     "ramen brasschaat",
     "ramen schoten",
     "ramen wijnegem",
+    "hr++ beglazing",
+    "drievoudig glas",
   ],
-  alternates: {
-    canonical: "https://www.yannova.be/ramen",
-  },
-  openGraph: {
-    title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
-    description: "Nieuwe ramen in Antwerpen stad en randgemeenten rond Antwerpen. PVC en aluminium met HR++ of drievoudig glas.",
-    url: "https://www.yannova.be/ramen",
-    type: "website",
-    locale: "nl_BE",
-    siteName: "Yannova Bouw",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
-    description: "Ramen op maat in Antwerpen stad en rond Antwerpen met gratis opmeting en duidelijke offerte.",
-  },
-};
+});
 
 const features = [
   "HR++ en drievoudig beglazing",
@@ -64,9 +54,26 @@ const benefits = [
   },
 ];
 
+// Structured data voor SEO
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Ramen", url: "/ramen" },
+]);
+
+const faqSchema = generateFAQSchema(commonFAQs.ramen);
+
 export default function RamenPage() {
   return (
-    <div className="min-h-screen bg-[#0a0c10]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-[#0a0c10]">
       <section className="py-20 border-b border-white/10">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
@@ -182,6 +189,44 @@ export default function RamenPage() {
           </div>
         </div>
       </section>
+
+      {/* Lokale pagina's voor SEO */}
+      <section className="py-16 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white text-center mb-8">Ramen per regio</h2>
+          <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
+            Bekijk onze diensten voor ramen in uw regio
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <Link href="/ramen/antwerpen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Antwerpen
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/ramen/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Zoersel
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ sectie voor SEO */}
+      <section className="py-16 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Veelgestelde vragen</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {commonFAQs.ramen.map((faq, index) => (
+              <details key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <summary className="text-lg font-semibold text-white cursor-pointer">
+                  {faq.question}
+                </summary>
+                <p className="mt-4 text-gray-400 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   );
 }

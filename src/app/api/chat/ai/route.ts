@@ -1,62 +1,167 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { generateAIResponse, detectIntent, getQuickReplies, requiresHumanIntervention, ChatMessage } from '@/lib/ai-chatbot';
+import { NextResponse } from 'next/server';
+import { generateText } from 'ai';
+import { google } from '@ai-sdk/google';
+import { supabase } from '@/lib/supabase';
 
-export const dynamic = 'force-dynamic';
+const SYSTEM_PROMPT = `Je bent een vriendelijke en behulpzame AI assistent voor Yannova, een bedrijf gespecialiseerd in ramen, deuren en renovatie in Antwerpen en omgeving.
 
-export async function POST(request: NextRequest) {
+Belangrijke informatie over Yannova:
+- Specialist in PVC en aluminium ramen en deuren
+- HR++ en drievoudig glas beschikbaar
+- Actief in Antwerpen stad en omgeving (30km straal)
+- Gratis opmeting en offerte binnen 24 uur
+- 30 jaar garantie op profielen
+- Ook gevelrenovatie, isolatie en totaalrenovatie
+- Telefoonnummer: +32 489 96 00 01
+- Email: info@yannova.be
+- Website: www.yannova.be
+
+Diensten:
+1. Ramen & Deuren - PVC en aluminium, energiezuinig
+2. Gevelrenovatie - Isolatie met crepi afwerking
+3. Totaalrenovatie - Volledige verbouwingen
+4. Isolatiewerken - Dak en gevel isolatie
+
+Premies:
+- Mijn VerbouwPremie beschikbaar voor renovaties
+- We helpen met premie-aanvragen
+
+Antwoord altijd in het Nederlands, wees vriendelijk en professioneel. Als je het antwoord niet weet, verwijs dan naar contact opnemen via telefoon of email. Houd antwoorden kort en to-the-point (max 3-4 zinnen).`;
+
+export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { messages, userMessage } = body as { 
-      messages: ChatMessage[]; 
-      userMessage: string;
-    };
+    const { message, sessionId } = await request.json();
 
-    if (!userMessage || !messages) {
+    if (!message || !sessionId) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Message and sessionId are required' },
         { status: 400 }
       );
     }
 
-    // Detect intent
-    const { intent, confidence } = detectIntent(userMessage);
-    
-    // Check if human intervention is needed
-    const needsHuman = requiresHumanIntervention(userMessage, intent);
-    
-    if (needsHuman) {
+    // Get conversation history from Supabase
+    const { data: messages, error: fetchError } = await supabase
+      .from('chat_messages')
+      .select('text, sender')
+      .eq('session_id', sessionId)
+      .order('created_at', { ascending: true })
+      .limit(10); // Last 10 messages for context
+
+    if (fetchError) {
+      console.error('Error fetching messages:', fetchError);
+    }
+
+    // Build conversation context
+    const conversationHistory =
+      messages?.map((msg) => ({
+        role: (msg.sender === 'user' ? 'user' : 'assistant') as 'user' | 'assistant',
+        content: msg.text,
+      })) || [];
+
+    const cfAccountId = process.env.CF_AI_ACCOUNT_ID;
+    const cfApiToken = process.env.CF_AI_API_TOKEN;
+    const cfModel = process.env.CF_AI_MODEL;
+
+    let text: string;
+
+    if (process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+      // Google Gemini via AI SDK
+      const result = await generateText({
+        model: google('gemini-1.5-flash'),
+        system: SYSTEM_PROMPT,
+        messages: [
+          ...conversationHistory,
+          { role: 'user' as const, content: message },
+        ],
+        temperature: 0.7,
+        maxTokens: 300,
+      });
+      text = result.text;
+    } else if (cfAccountId && cfApiToken && cfModel) {
+      // Cloudflare Workers AI
+      const cfResponse = await fetch(
+        `https://api.cloudflare.com/client/v4/accounts/${cfAccountId}/ai/run/${encodeURIComponent(
+          cfModel,
+        )}`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${cfApiToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            messages: [
+              { role: 'system', content: SYSTEM_PROMPT },
+              ...conversationHistory,
+              { role: 'user', content: message },
+            ],
+          }),
+        },
+      );
+
+      const cfJson = (await cfResponse.json()) as {
+        success?: boolean;
+        result?: { response?: string };
+        errors?: unknown;
+      };
+
+      if (!cfResponse.ok || cfJson.success === false) {
+        console.error('Cloudflare AI error:', cfJson.errors || cfJson);
+        throw new Error('Cloudflare AI request failed');
+      }
+
+      text = (cfJson.result?.response || '').trim();
+      if (!text) {
+        throw new Error('Cloudflare AI returned empty response');
+      }
+    } else {
+      // Geen enkele AI-provider geconfigureerd: nette fallback
+      const fallback =
+        'Onze AI-assistent is momenteel niet actief in deze omgeving. Stel uw vraag gerust via het contactformulier of bel ons op +32 489 96 00 01 voor direct advies.';
+
+      const { error: insertFallbackError } = await supabase
+        .from('chat_messages')
+        .insert({
+          session_id: sessionId,
+          text: fallback,
+          sender: 'ai',
+        });
+
+      if (insertFallbackError) {
+        console.error('Error saving fallback AI message:', insertFallbackError);
+      }
+
       return NextResponse.json({
-        response: 'Ik begrijp dat dit een belangrijke vraag is. Laat me u doorverbinden met een van onze specialisten die u beter kan helpen. Kan ik uw naam en telefoonnummer noteren?',
-        intent,
-        confidence,
-        needsHuman: true,
-        quickReplies: ['Ja, graag contact', 'Liever via email'],
+        response: fallback,
+        success: true,
+        fallback: true,
       });
     }
 
-    // Generate AI response
-    const aiResponse = await generateAIResponse([
-      ...messages,
-      { role: 'user', content: userMessage, timestamp: new Date() }
-    ]);
+    // Save AI response to database
+    const { error: insertError } = await supabase
+      .from('chat_messages')
+      .insert({
+        session_id: sessionId,
+        text,
+        sender: 'ai',
+      });
 
-    // Get quick reply suggestions
-    const quickReplies = getQuickReplies(intent);
+    if (insertError) {
+      console.error('Error saving AI message:', insertError);
+    }
 
-    return NextResponse.json({
-      response: aiResponse,
-      intent,
-      confidence,
-      needsHuman: false,
-      quickReplies,
+    return NextResponse.json({ 
+      response: text,
+      success: true 
     });
 
   } catch (error) {
-    console.error('AI chat error:', error);
+    console.error('AI Chat Error:', error);
     return NextResponse.json(
       { 
-        error: 'Failed to generate response',
-        response: 'Sorry, er ging iets mis. Probeer het opnieuw of neem direct contact met ons op via info@yannova.be.'
+        error: 'Er is een fout opgetreden bij het verwerken van uw bericht.',
+        response: 'Sorry, ik kan momenteel niet antwoorden. Neem contact op via +32 489 96 00 01 of info@yannova.be voor directe hulp.'
       },
       { status: 500 }
     );

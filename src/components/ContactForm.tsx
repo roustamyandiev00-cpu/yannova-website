@@ -2,6 +2,7 @@
 
 import { Loader2, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import { trackContactFormSubmission } from "@/lib/google-ads";
 
 export function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,13 +25,23 @@ export function ContactForm() {
                 body: JSON.stringify(data),
             });
 
-            const result = await response.json();
+            let result;
+            try {
+                result = await response.json();
+            } catch (parseError) {
+                console.error("JSON parse error:", parseError);
+                throw new Error("Er is een fout opgetreden bij het verwerken van de response. Probeer het opnieuw.");
+            }
 
             if (!response.ok) {
                 throw new Error(result.error || "Er is iets misgegaan.");
             }
 
             setSubmitResult({ success: true, message: result.message || "Bericht succesvol verzonden! We nemen zo snel mogelijk contact met u op." });
+            
+            // Track Google Ads conversion
+            trackContactFormSubmission();
+            
             event.currentTarget.reset();
         } catch (error: unknown) {
             let errorMessage = "Er is een fout opgetreden. Probeer het opnieuw of neem telefonisch contact op.";

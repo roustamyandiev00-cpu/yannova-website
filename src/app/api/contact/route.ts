@@ -71,9 +71,9 @@ export async function POST(request: Request) {
 
         // Email content with sanitized values
         const mailOptions = {
-            from: process.env.SMTP_USER || "noreply@yannova.be",
+            from: process.env.SMTP_USER || "info@yannova.be",
             replyTo: sanitizedEmail,
-            to: process.env.CONTACT_EMAIL || "info@yannova.be",
+            to: process.env.CONTACT_EMAIL || process.env.SMTP_USER || "info@yannova.be",
             subject: `[Website] ${sanitizedSubject} - ${sanitizedName}`,
             text: `Naam: ${sanitizedName}\nEmail: ${sanitizedEmail}\nTelefoon: ${sanitizedPhone || "Niet opgegeven"}\nOnderwerp: ${sanitizedSubject}\n\nBericht:\n${sanitizedMessage}`,
             html: `
@@ -115,6 +115,11 @@ export async function POST(request: Request) {
             await transporter.sendMail(mailOptions);
             logger.info('Contact email sent', { to: sanitizedEmail, subject: sanitizedSubject });
         } else {
+            logger.warn("Email not sent - SMTP not configured", { 
+                hasHost: !!process.env.SMTP_HOST,
+                hasUser: !!process.env.SMTP_USER,
+                hasPass: !!process.env.SMTP_PASS
+            });
             logger.debug("Simulating email send (no SMTP configured)", { 
                 to: mailOptions.to, 
                 subject: mailOptions.subject 

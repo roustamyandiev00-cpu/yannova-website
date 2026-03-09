@@ -1,43 +1,15 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, CheckCircle } from "lucide-react";
 import { FadeIn } from "@/components/animations/FadeIn";
-
-interface Testimonial {
-    id: string;
-    name: string;
-    company: string | null;
-    text: string;
-    rating: number;
-}
+import { testimonials as defaultTestimonials, type Testimonial } from "@/data/testimonials";
 
 interface TestimonialsProps {
     testimonials?: Testimonial[];
+    showAll?: boolean;
 }
 
-export function Testimonials({ testimonials = [] }: TestimonialsProps) {
-    // Fallback if no testimonials are provided
-    const displayTestimonials = testimonials.length > 0 ? testimonials : [
-        {
-            id: 'fallback-1',
-            text: "Yannova heeft onze gevel volledig gerenoveerd met crepi. Het resultaat is verbluffend! Zeer propere afwerking en alles volgens afspraak.",
-            name: "Bart & Sofie",
-            company: "Zoersel",
-            rating: 5
-        },
-        {
-            id: 'fallback-2',
-            text: "Nieuwe ramen laten plaatsen. Het advies was eerlijk en de plaatsers werkten zeer nauwkeurig. Een absolute aanrader voor wie kwaliteit zoekt.",
-            name: "T. Janssens",
-            company: "Schilde",
-            rating: 5
-        },
-        {
-            id: 'fallback-3',
-            text: "We zochten een aannemer voor onze totaalrenovatie en kwamen bij Yannova terecht. Eén aanspreekpunt voor alles was een enorme geruststelling.",
-            name: "Fam. Peeters",
-            company: "Antwerpen",
-            rating: 5
-        },
-    ];
+export function Testimonials({ testimonials, showAll = false }: TestimonialsProps) {
+    const displayTestimonials = testimonials || defaultTestimonials;
+    const testimonialsToShow = showAll ? displayTestimonials : displayTestimonials.slice(0, 6);
 
     return (
         <div className="py-16 sm:py-20 bg-[#0f1115] relative overflow-hidden">
@@ -50,27 +22,46 @@ export function Testimonials({ testimonials = [] }: TestimonialsProps) {
                 </div>
                 <div className="mx-auto mt-16 flow-root max-w-2xl lg:mx-0 lg:max-w-none">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                        {displayTestimonials.map((testimonial, idx) => (
+                        {testimonialsToShow.map((testimonial, idx) => (
                             <FadeIn key={testimonial.id} delay={idx * 0.1}>
-                                <div className="relative rounded-xl bg-[#1a1d24] p-6 shadow-sm transition-all duration-300 hover:bg-[#1e2128]">
+                                <div className="relative rounded-xl bg-[#1a1d24] p-6 shadow-sm transition-all duration-300 hover:bg-[#1e2128] border border-white/5">
                                     <Quote className="absolute top-6 left-6 h-8 w-8 text-secondary/20" />
-                                    <div className="flex gap-x-1 text-secondary mb-4 justify-end">
-                                        {[...Array(testimonial.rating || 5)].map((_, i) => (
-                                            <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
-                                        ))}
+                                    
+                                    {/* Rating & Service */}
+                                    <div className="flex items-center justify-between mb-4">
+                                        <div className="flex gap-x-1 text-secondary">
+                                            {[...Array(testimonial.rating)].map((_, i) => (
+                                                <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
+                                            ))}
+                                        </div>
+                                        {testimonial.verified && (
+                                            <div className="flex items-center gap-1 text-green-400 text-xs">
+                                                <CheckCircle className="h-3 w-3" />
+                                                <span>Geverifieerd</span>
+                                            </div>
+                                        )}
                                     </div>
-                                    <blockquote className="text-gray-300 text-sm leading-6 pt-4">
+
+                                    {/* Service badge */}
+                                    <div className="mb-3">
+                                        <span className="inline-block px-3 py-1 text-xs font-medium bg-secondary/20 text-secondary rounded-full">
+                                            {testimonial.service}
+                                        </span>
+                                    </div>
+
+                                    {/* Review text */}
+                                    <blockquote className="text-gray-300 text-sm leading-6 pt-2">
                                         <p>&quot;{testimonial.text}&quot;</p>
                                     </blockquote>
-                                    <figcaption className="mt-6 flex items-center gap-x-4 pt-4">
+
+                                    {/* Author info */}
+                                    <figcaption className="mt-6 flex items-center gap-x-4 pt-4 border-t border-white/5">
                                         <div className="h-10 w-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">
                                             {testimonial.name.charAt(0)}
                                         </div>
                                         <div className="text-sm leading-6">
                                             <div className="font-semibold text-white">{testimonial.name}</div>
-                                            {testimonial.company && (
-                                                <div className="text-gray-400">{testimonial.company}</div>
-                                            )}
+                                            <div className="text-gray-400">{testimonial.location}</div>
                                         </div>
                                     </figcaption>
                                 </div>

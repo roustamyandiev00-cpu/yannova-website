@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
 
     // Project-specific ignores:
     "scripts/**/*.js",
+    "check-admin.js",
   ]),
 ]);
 

@@ -13,7 +13,7 @@ export function PerformanceMonitor() {
         // Largest Contentful Paint (LCP)
         const lcpObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
-          const lastEntry = entries[entries.length - 1] as any;
+          const lastEntry = entries[entries.length - 1] as PerformanceEntry & { renderTime?: number; loadTime?: number };
           console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
         });
         lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
@@ -21,8 +21,11 @@ export function PerformanceMonitor() {
         // First Input Delay (FID)
         const fidObserver = new PerformanceObserver((list) => {
           const entries = list.getEntries();
-          entries.forEach((entry: any) => {
-            console.log('FID:', entry.processingStart - entry.startTime);
+          entries.forEach((entry) => {
+            const fidEntry = entry as PerformanceEntry & { processingStart?: number; startTime: number };
+            if (fidEntry.processingStart) {
+              console.log('FID:', fidEntry.processingStart - fidEntry.startTime);
+            }
           });
         });
         fidObserver.observe({ type: 'first-input', buffered: true });
@@ -31,14 +34,15 @@ export function PerformanceMonitor() {
         let clsValue = 0;
         const clsObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              clsValue += (entry as any).value;
+            const clsEntry = entry as PerformanceEntry & { hadRecentInput?: boolean; value?: number };
+            if (!clsEntry.hadRecentInput && clsEntry.value) {
+              clsValue += clsEntry.value;
               console.log('CLS:', clsValue);
             }
           }
         });
         clsObserver.observe({ type: 'layout-shift', buffered: true });
-      } catch (e) {
+      } catch {
         // Silently fail if PerformanceObserver is not supported
       }
     }

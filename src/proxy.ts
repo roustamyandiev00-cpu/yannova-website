@@ -7,7 +7,8 @@ const authMiddleware = NextAuth(authConfig).auth;
 
 export default async function middleware(request: NextRequest) {
   // Run auth middleware first
-  const authResult = await authMiddleware(request as any);
+  const authFn = authMiddleware as unknown as (req: NextRequest) => Promise<NextResponse | Response | undefined | null> | NextResponse | Response | undefined | null;
+  const authResult = await authFn(request);
   
   // If auth middleware returns a response, use it
   if (authResult) {

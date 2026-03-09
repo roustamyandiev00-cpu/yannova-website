@@ -1,4 +1,4 @@
-import { db } from '@/lib/firebase';
+import { db, isFirebaseConfigured } from '@/lib/firebase';
 import { 
   collection, 
   doc, 
@@ -7,8 +7,6 @@ import {
   query, 
   where, 
   orderBy,
-  setDoc,
-  deleteDoc,
   writeBatch,
   Timestamp 
 } from 'firebase/firestore';
@@ -38,6 +36,10 @@ export async function archiveChatSession(
     leadConverted?: boolean;
   }
 ) {
+  if (!isFirebaseConfigured || !db) {
+    return { error: 'Firebase not configured' };
+  }
+
   try {
     // Get session data
     const sessionRef = doc(db, 'chatSessions', sessionId);
@@ -119,9 +121,13 @@ export async function getArchivedSessions(
     searchEmail?: string;
   }
 ) {
+  if (!isFirebaseConfigured || !db) {
+    return { success: true, sessions: [] };
+  }
+
   try {
     const archivedRef = collection(db, 'chatArchived');
-    let archivedQuery = query(archivedRef, orderBy('archivedAt', 'desc'));
+    const archivedQuery = query(archivedRef, orderBy('archivedAt', 'desc'));
 
     const snapshot = await getDocs(archivedQuery);
     let sessions = snapshot.docs.map(doc => doc.data() as ArchivedSession);
@@ -163,6 +169,10 @@ export async function getArchivedSessions(
 }
 
 export async function restoreArchivedSession(sessionId: string) {
+  if (!isFirebaseConfigured || !db) {
+    return { error: 'Firebase not configured' };
+  }
+
   try {
     const archivedRef = doc(db, 'chatArchived', sessionId);
     const archivedSnap = await getDoc(archivedRef);

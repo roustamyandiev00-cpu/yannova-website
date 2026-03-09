@@ -7,13 +7,16 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(() => {
+    try {
+      return typeof window !== 'undefined' && sessionStorage.getItem('stickyCTADismissed') === 'true';
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
-    // Check if user has dismissed
-    const dismissed = sessionStorage.getItem('stickyCTADismissed');
-    if (dismissed) {
-      setIsDismissed(true);
+    if (isDismissed) {
       return;
     }
 
@@ -26,9 +29,10 @@ export function StickyCTA() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isDismissed]);
 
   const handleDismiss = () => {
     setIsDismissed(true);

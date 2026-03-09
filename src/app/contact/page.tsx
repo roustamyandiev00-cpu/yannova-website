@@ -1,15 +1,32 @@
+'use client'
+
 import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle2, Shield, Award } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
-import { getSeoMetadata } from "@/lib/seo-helper";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { company } from "@/lib/company";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/google-ads";
 
-export async function generateMetadata() {
-  return getSeoMetadata("/contact");
-}
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Contact", url: "/contact" },
+]);
 
 export default function ContactPage() {
+  const handlePhoneClick = () => {
+    trackPhoneClick();
+  };
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick();
+  };
+
   return (
-    <div className="py-24 sm:py-32 bg-background relative overflow-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <div className="py-24 sm:py-32 bg-background relative overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10" />
 
@@ -62,7 +79,11 @@ export default function ContactPage() {
                     <Phone className="h-5 w-5 text-secondary" aria-hidden="true" />
                   </div>
                   <dd>
-                    <a className="hover:text-secondary transition-colors font-semibold" href={company.phoneHref}>
+                    <a 
+                      className="hover:text-secondary transition-colors font-semibold" 
+                      href={company.phoneHref}
+                      onClick={handlePhoneClick}
+                    >
                       {company.phoneDisplay}
                     </a>
                   </dd>
@@ -91,7 +112,7 @@ export default function ContactPage() {
             </div>
 
             {/* WhatsApp Quick Contact */}
-            <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 p-6 rounded-2xl border border-green-500/20 backdrop-blur-md">
+            <div className="bg-linear-to-br from-green-500/10 to-green-600/5 p-6 rounded-2xl border border-green-500/20 backdrop-blur-md">
               <div className="flex items-center gap-3 mb-4">
                 <MessageCircle className="h-6 w-6 text-green-500" />
                 <h3 className="text-lg font-semibold text-foreground">Direct contact via WhatsApp</h3>
@@ -103,6 +124,7 @@ export default function ContactPage() {
                 href={company.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
                 className="flex items-center justify-center gap-2 w-full rounded-full bg-green-600 hover:bg-green-700 px-4 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <MessageCircle className="h-4 w-4" />
@@ -136,7 +158,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
-              <h3 className="text-lg font-semibold text-foreground mb-2">In welke regio's zijn jullie actief?</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">In welke regio&apos;s zijn jullie actief?</h3>
               <p className="text-sm text-muted-foreground">
                 We zijn actief in {company.areas.join(", ")} en omstreken. Neem contact op voor andere locaties.
               </p>
@@ -151,5 +173,6 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

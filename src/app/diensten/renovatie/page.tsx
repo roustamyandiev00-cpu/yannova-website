@@ -2,12 +2,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Hammer, Ruler, Lightbulb, Clock, Phone, MessageCircle, CheckCircle2, Shield, Award } from "lucide-react";
-import { getSeoMetadata } from "@/lib/seo-helper";
+import { generateSEO } from "@/lib/seo";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
+import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { company } from "@/lib/company";
 
-export async function generateMetadata() {
-  return getSeoMetadata("/diensten/renovatie");
-}
+export const metadata = generateSEO({
+  title: "Totaalrenovatie in Antwerpen - Van Badkamer tot Volledige Woning",
+  description: "Totaalrenovatie met één aanspreekpunt. Badkamer, keuken, dakwerken en volledige woningrenovatie. Transparante prijzen en strakke planning in Antwerpen en omgeving.",
+  path: "/diensten/renovatie",
+  keywords: [
+    "totaalrenovatie antwerpen",
+    "badkamerrenovatie",
+    "keukenrenovatie",
+    "woningrenovatie",
+    "dakwerken",
+    "renovatiebedrijf antwerpen",
+  ],
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Diensten", url: "/diensten" },
+  { name: "Totaalrenovatie", url: "/diensten/renovatie" },
+]);
+
+const faqSchema = generateFAQSchema(commonFAQs.renovatie);
 
 export default function RenovationPage() {
   const benefits = [
@@ -80,7 +100,16 @@ export default function RenovationPage() {
   ];
 
   return (
-    <div className="bg-background min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="bg-background min-h-screen">
       <section className="relative h-[56vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -241,6 +270,24 @@ export default function RenovationPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* FAQ sectie voor SEO */}
+      <section className="py-16 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Veelgestelde vragen</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {commonFAQs.renovatie.map((faq, index) => (
+              <details key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <summary className="text-lg font-semibold text-white cursor-pointer">
+                  {faq.question}
+                </summary>
+                <p className="mt-4 text-gray-400 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Home, Search, Phone } from "lucide-react";
+import { Home, Search, Phone } from "lucide-react";
 import { company } from "@/lib/company";
 
 const popularPages = [
@@ -37,7 +37,7 @@ export default function NotFound() {
 
                 {/* Popular pages */}
                 <div className="mb-10">
-                    <p className="text-sm text-muted-foreground mb-4">Populaire pagina's:</p>
+                    <p className="text-sm text-muted-foreground mb-4">Populaire pagina&apos;s:</p>
                     <div className="flex flex-wrap items-center justify-center gap-3">
                         {popularPages.map((page) => (
                             <Link

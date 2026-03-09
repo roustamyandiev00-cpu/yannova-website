@@ -1,12 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Phone, MessageCircle, MapPin, CheckCircle2 } from "lucide-react";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
+import { generateFAQSchema } from "@/lib/faq-schema";
+import { company } from "@/lib/company";
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-const werkgebieden: Record<string, { name: string; description: string; distance: string; features: string[] }> = {
+const werkgebieden: Record<string, { name: string; description: string; distance: string; features: string[]; neighborhoods?: string[] }> = {
   zoersel: {
     name: "Zoersel",
     description: "Onze thuisbasis. Vanuit Zoersel bedienen we de volledige regio met ramen, deuren en renovatiewerken.",
@@ -20,19 +23,130 @@ const werkgebieden: Record<string, { name: string; description: string; distance
   },
   antwerpen: {
     name: "Antwerpen",
-    description: "Actief in heel Antwerpen stad en omliggende gemeenten. 20-30 minuten rijden vanuit ons atelier.",
-    distance: "20-30 km",
+    description: "Actief in heel Antwerpen stad en alle deelgemeenten. Van centrum tot rand, wij staan voor u klaar.",
+    distance: "20 km",
+    neighborhoods: ["Centrum", "Berchem", "Deurne", "Merksem", "Wilrijk", "Ekeren", "Hoboken", "Borgerhout"],
     features: [
       "Dekking heel Antwerpen",
-      "Stadsprojecten welkom",
-      "Appartementen en huizen",
+      "Stadsprojecten en appartementen",
+      "Ervaring met stadspanden",
       "Erkend voor Vlaamse premies",
+    ],
+  },
+  berchem: {
+    name: "Berchem",
+    description: "Specialist in ramen en deuren in Berchem. Wij kennen de wijk en hebben al tientallen projecten gerealiseerd.",
+    distance: "18 km",
+    features: [
+      "Lokale expertise in Berchem",
+      "Snelle service en korte wachttijden",
+      "Referenties in de buurt",
+      "Premie-advies voor Antwerpen",
+    ],
+  },
+  deurne: {
+    name: "Deurne",
+    description: "Ramen, deuren en gevelrenovatie in Deurne. Van klassieke rijwoningen tot moderne nieuwbouw.",
+    distance: "22 km",
+    features: [
+      "Ervaring met Deurne woningen",
+      "Gratis plaatsbezoek en opmeting",
+      "Vakkundige plaatsing",
+      "Garantie op alle werken",
+    ],
+  },
+  merksem: {
+    name: "Merksem",
+    description: "Actief in Merksem voor ramen, deuren en renovatieprojecten. Lokale service met persoonlijke aanpak.",
+    distance: "20 km",
+    features: [
+      "Kennis van Merksem architectuur",
+      "Snelle reactietijd",
+      "Nette afwerking gegarandeerd",
+      "Hulp bij premie-aanvragen",
+    ],
+  },
+  wilrijk: {
+    name: "Wilrijk",
+    description: "Specialist in ramen en deuren in Wilrijk. Van villa's tot appartementen, wij hebben de expertise.",
+    distance: "17 km",
+    features: [
+      "Ervaring met Wilrijk projecten",
+      "Hoogwaardige materialen",
+      "Professionele montage",
+      "10 jaar garantie",
+    ],
+  },
+  brasschaat: {
+    name: "Brasschaat",
+    description: "Ramen, deuren en gevelwerken in Brasschaat. Kwaliteit en service voor uw woning.",
+    distance: "25 km",
+    features: [
+      "Actief in heel Brasschaat",
+      "Gratis advies en offerte",
+      "Ervaren vakmensen",
+      "Transparante prijzen",
+    ],
+  },
+  schoten: {
+    name: "Schoten",
+    description: "Uw partner voor ramen en deuren in Schoten. Betrouwbaar en vakkundig.",
+    distance: "23 km",
+    features: [
+      "Lokale service in Schoten",
+      "Korte levertijden",
+      "Kwaliteit voorop",
+      "Premie-ondersteuning",
+    ],
+  },
+  wijnegem: {
+    name: "Wijnegem",
+    description: "Ramen en deuren plaatsen in Wijnegem. Persoonlijke service en vakmanschap.",
+    distance: "19 km",
+    features: [
+      "Ervaring in Wijnegem",
+      "Snelle planning",
+      "Nette uitvoering",
+      "Nazorg gegarandeerd",
+    ],
+  },
+  mortsel: {
+    name: "Mortsel",
+    description: "Specialist in ramen, deuren en renovatie in Mortsel. Kwaliteit en betrouwbaarheid.",
+    distance: "16 km",
+    features: [
+      "Actief in Mortsel en omgeving",
+      "Gratis opmeting",
+      "Vakkundige plaatsing",
+      "Garantie op materiaal en werk",
+    ],
+  },
+  edegem: {
+    name: "Edegem",
+    description: "Ramen en deuren in Edegem. Van klassiek tot modern, wij realiseren uw wensen.",
+    distance: "15 km",
+    features: [
+      "Kennis van Edegem woningen",
+      "Persoonlijke aanpak",
+      "Kwaliteitsgarantie",
+      "Premie-advies beschikbaar",
+    ],
+  },
+  kontich: {
+    name: "Kontich",
+    description: "Uw aannemer voor ramen en deuren in Kontich. Betrouwbaar en professioneel.",
+    distance: "14 km",
+    features: [
+      "Ervaring in Kontich",
+      "Snelle service",
+      "Transparante communicatie",
+      "Volledige garantie",
     ],
   },
   mechelen: {
     name: "Mechelen",
     description: "Mechelen en omgeving behoren tot ons werkgebied. Korte aanrijtijd, lokale service.",
-    distance: "15-25 km",
+    distance: "20 km",
     features: [
       "Mechelen stad en rand",
       "Snel ter plaatse",
@@ -56,31 +170,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const canonicalUrl = `https://www.yannova.be/werkgebied/${slug}`;
 
+  // Speciale metadata voor Antwerpen
   if (slug === "antwerpen") {
     return {
-      title: "Ramen & Deuren in Antwerpen stad en rond Antwerpen | Yannova",
+      title: "Ramen & Deuren in Antwerpen Stad en Alle Deelgemeenten | Yannova",
       description:
-        "Actief in Antwerpen stad en rond Antwerpen: Berchem, Deurne, Merksem, Wilrijk, Ekeren, Brasschaat, Schoten en Wijnegem. Gratis opmeting en offerte binnen 24 uur.",
+        "Actief in heel Antwerpen: Centrum, Berchem, Deurne, Merksem, Wilrijk, Ekeren, Hoboken en Borgerhout. Ramen, deuren en gevelrenovatie. Gratis opmeting en offerte binnen 24 uur.",
       keywords: [
+        "ramen antwerpen",
+        "deuren antwerpen",
         "ramen antwerpen stad",
-        "deuren antwerpen stad",
         "ramen berchem",
         "ramen deurne",
         "ramen merksem",
         "ramen wilrijk",
         "ramen ekeren",
-        "ramen brasschaat",
-        "ramen schoten",
-        "ramen wijnegem",
+        "ramen hoboken",
+        "ramen borgerhout",
         "renovatie antwerpen",
+        "gevelrenovatie antwerpen",
       ],
       alternates: {
         canonical: canonicalUrl,
       },
       openGraph: {
-        title: "Ramen & Deuren in Antwerpen stad en rond Antwerpen | Yannova",
+        title: "Ramen & Deuren in Antwerpen Stad en Alle Deelgemeenten | Yannova",
         description:
-          "Yannova plaatst ramen en deuren en voert renovaties uit in Antwerpen stad en de rand rond Antwerpen.",
+          "Yannova plaatst ramen en deuren in heel Antwerpen: van centrum tot alle deelgemeenten.",
         url: canonicalUrl,
         type: "website",
         locale: "nl_BE",
@@ -88,32 +204,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
       twitter: {
         card: "summary_large_image",
-        title: "Ramen & Deuren in Antwerpen stad en rond Antwerpen | Yannova",
+        title: "Ramen & Deuren in Antwerpen | Yannova",
         description:
-          "Ramen, deuren, gevelisolatie en renovatie in Antwerpen stad en randgemeenten rond Antwerpen.",
+          "Ramen, deuren en renovatie in heel Antwerpen en alle deelgemeenten.",
       },
     };
   }
 
+  // Metadata voor andere gemeenten
   return {
-    title: `Ramen & Deuren ${gebied.name} | Yannova Bouw`,
-    description: `Ramen, deuren en renovatie in ${gebied.name} en omgeving. Gratis opmeting, duidelijke offerte, professionele plaatsing. Actief in heel regio Antwerpen.`,
+    title: `Ramen & Deuren ${gebied.name} | Gratis Offerte | Yannova`,
+    description: `Specialist in ramen, deuren en gevelrenovatie in ${gebied.name}. Gratis opmeting, offerte binnen 24 uur, 10 jaar garantie. Actief in heel ${gebied.name} en omgeving.`,
     keywords: [
-      `ramen ${gebied.name}`,
-      `deuren ${gebied.name}`,
-      `renovatie ${gebied.name}`,
-      `aannemer ${gebied.name}`,
+      `ramen ${gebied.name.toLowerCase()}`,
+      `deuren ${gebied.name.toLowerCase()}`,
+      `ramen plaatsen ${gebied.name.toLowerCase()}`,
+      `pvc ramen ${gebied.name.toLowerCase()}`,
+      `aluminium ramen ${gebied.name.toLowerCase()}`,
+      `gevelrenovatie ${gebied.name.toLowerCase()}`,
+      `renovatie ${gebied.name.toLowerCase()}`,
+      `aannemer ${gebied.name.toLowerCase()}`,
+      `renovatiebedrijf ${gebied.name.toLowerCase()}`,
     ],
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `Ramen & Deuren ${gebied.name} | Yannova Bouw`,
-      description: `Ramen, deuren en renovatie in ${gebied.name} en omgeving.`,
+      title: `Ramen & Deuren ${gebied.name} | Yannova`,
+      description: `Specialist in ramen, deuren en renovatie in ${gebied.name}. Gratis offerte binnen 24 uur.`,
       url: canonicalUrl,
       type: "website",
       locale: "nl_BE",
       siteName: "Yannova Bouw",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Ramen & Deuren ${gebied.name} | Yannova`,
+      description: `Ramen, deuren en renovatie in ${gebied.name}.`,
     },
   };
 }
@@ -136,8 +263,41 @@ export default async function WerkgebiedPage({ params }: Props) {
     );
   }
 
+  // Structured data
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Werkgebied", url: "/werkgebied" },
+    { name: gebied.name, url: `/werkgebied/${slug}` },
+  ]);
+
+  const locationFAQs = [
+    {
+      question: `Wat kost het plaatsen van ramen in ${gebied.name}?`,
+      answer: `De prijs voor nieuwe ramen in ${gebied.name} hangt af van het type, de grootte en het materiaal. Gemiddeld betaal je tussen €300 en €800 per m². Wij bieden een gratis opmeting en offerte binnen 24 uur.`,
+    },
+    {
+      question: `Hoe snel kunnen jullie in ${gebied.name} starten?`,
+      answer: `Na de gratis opmeting ontvangt u binnen 24 uur een offerte. Bij akkoord kunnen we meestal binnen 2-4 weken starten, afhankelijk van de planning en levertijden.`,
+    },
+    {
+      question: `Bieden jullie garantie in ${gebied.name}?`,
+      answer: `Ja, wij bieden 10 jaar garantie op alle ramen en deuren die we plaatsen in ${gebied.name}. Dit geldt voor zowel het materiaal als de plaatsing.`,
+    },
+  ];
+
+  const faqSchema = generateFAQSchema(locationFAQs);
+
   return (
-    <div className="min-h-screen bg-[#0a0c10]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-[#0a0c10]">
       {/* Hero */}
       <section className="py-20 border-b border-white/10">
         <div className="container mx-auto px-6">
@@ -147,11 +307,23 @@ export default async function WerkgebiedPage({ params }: Props) {
               <span className="text-sm font-medium">{gebied.distance} van Zoersel</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
-              Ramen & deuren in <span className="text-secondary">{gebied.name}</span>
+              Ramen & Deuren in <span className="text-secondary">{gebied.name}</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300 leading-relaxed">
               {gebied.description}
             </p>
+            {gebied.neighborhoods && (
+              <div className="mt-6">
+                <p className="text-sm text-gray-400 mb-2">Ook actief in:</p>
+                <div className="flex flex-wrap gap-2">
+                  {gebied.neighborhoods.map((neighborhood) => (
+                    <span key={neighborhood} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300">
+                      {neighborhood}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/offerte"
@@ -161,11 +333,11 @@ export default async function WerkgebiedPage({ params }: Props) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href="tel:+3231234567"
+                href={company.phoneHref}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3.5 text-base font-medium text-white hover:bg-white/5 transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                Bel 03 123 45 67
+                Bel {company.phoneDisplay}
               </a>
             </div>
           </div>
@@ -255,7 +427,7 @@ export default async function WerkgebiedPage({ params }: Props) {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="https://wa.me/3231234567"
+              href={company.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-6 py-3 text-base font-medium text-white hover:bg-white/5 transition-colors"
@@ -266,6 +438,26 @@ export default async function WerkgebiedPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Veelgestelde vragen over {gebied.name}
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {locationFAQs.map((faq, index) => (
+              <details key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <summary className="text-lg font-semibold text-white cursor-pointer">
+                  {faq.question}
+                </summary>
+                <p className="mt-4 text-gray-400 leading-relaxed">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   );
 }

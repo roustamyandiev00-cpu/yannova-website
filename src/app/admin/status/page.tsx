@@ -41,7 +41,7 @@ export default async function StatusPage() {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-400">Role:</span>
-              <span className="text-white">{(session.user as any).role || 'N/A'}</span>
+              <span className="text-white">{(session.user as { role?: string }).role || 'N/A'}</span>
             </div>
           </div>
         </div>

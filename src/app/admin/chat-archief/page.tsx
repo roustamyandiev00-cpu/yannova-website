@@ -3,7 +3,7 @@ import { ChatArchiveDashboard } from '@/components/admin/ChatArchiveDashboard';
 
 export const metadata: Metadata = {
   title: 'Chat Archief | Yannova Admin',
-  description: 'Gearchiveerde chat gesprekken bekijken en analyseren',
+  description: 'Gearchiveerde chatgesprekken bekijken en beheren',
 };
 
 export default function ChatArchivePage() {
@@ -14,3 +14,4 @@ export default function ChatArchivePage() {
     </main>
   );
 }
+

@@ -2,12 +2,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { PaintBucket, Layers, Sun, Activity, Phone, MessageCircle, CheckCircle2, Shield, Clock, Award } from "lucide-react";
-import { getSeoMetadata } from "@/lib/seo-helper";
+import { generateSEO } from "@/lib/seo";
+import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
+import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { company } from "@/lib/company";
 
-export async function generateMetadata() {
-  return getSeoMetadata("/diensten/gevelrenovatie");
-}
+export const metadata = generateSEO({
+  title: "Gevelrenovatie & Crepi in Antwerpen - Isolatie en Afwerking",
+  description: "Professionele gevelrenovatie met isolatie en crepi afwerking. Energiebesparing, nieuwe uitstraling en premie-advies. Vakkundige uitvoering in Antwerpen en omgeving.",
+  path: "/diensten/gevelrenovatie",
+  keywords: [
+    "gevelrenovatie antwerpen",
+    "crepi antwerpen",
+    "gevelisolatie",
+    "steenstrips",
+    "gevel renoveren",
+    "buitenisolatie",
+  ],
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Diensten", url: "/diensten" },
+  { name: "Gevelrenovatie", url: "/diensten/gevelrenovatie" },
+]);
+
+const faqSchema = generateFAQSchema(commonFAQs.gevelisolatie);
 
 export default function FacadePage() {
   const benefits = [
@@ -108,7 +128,16 @@ export default function FacadePage() {
   ];
 
   return (
-    <div className="bg-background min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="bg-background min-h-screen">
       <section className="relative h-[56vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -380,6 +409,9 @@ export default function FacadePage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Bestaande FAQ sectie blijft behouden - voeg alleen schema toe */}
     </div>
+    </>
   );
 }

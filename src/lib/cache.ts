@@ -9,7 +9,7 @@ interface CacheEntry<T> {
 }
 
 class Cache {
-  private cache: Map<string, CacheEntry<any>> = new Map();
+  private cache: Map<string, CacheEntry<unknown>> = new Map();
   private defaultTTL = 60 * 1000; // 1 minute default
 
   /**
@@ -107,7 +107,7 @@ export const cache = new Cache();
  * Cache decorator for functions
  * Usage: const cachedFn = withCache('key', fn, 60000);
  */
-export function withCache<T extends (...args: any[]) => Promise<any>>(
+export function withCache<T extends (...args: unknown[]) => Promise<unknown>>(
   keyPrefix: string,
   fn: T,
   ttl?: number

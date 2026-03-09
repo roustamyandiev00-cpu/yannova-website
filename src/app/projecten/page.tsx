@@ -4,8 +4,10 @@ import { prisma } from "@/lib/prisma";
 import { getSeoMetadata } from "@/lib/seo-helper";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { getProjectPhotos } from "@/lib/get-project-photos";
+import { logger } from "@/lib/logger";
+import projectsData from "@/data/projects.json";
 import Image from "next/image";
-import { CheckCircle, Award, ArrowRight, Camera, MessageCircle, FileText, Hammer, CheckCircle2 } from "lucide-react";
+import { Award, ArrowRight, Camera, MessageCircle, FileText, Hammer, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export async function generateMetadata() {
@@ -15,25 +17,73 @@ export async function generateMetadata() {
 export const dynamic = 'force-dynamic';
 
 export default async function ProjectenPage() {
-  const projects = await prisma.project.findMany({
-    where: {
-      published: true,
-    },
-    select: {
-      id: true,
-      title: true,
-      description: true,
-      category: true,
-      imageUrl: true,
-      location: true,
-      material: true,
-      year: true,
-      featured: true,
-    },
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
+  let projects: Array<{
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    imageUrl: string;
+    location?: string | null;
+    material?: string | null;
+    year?: number | null;
+    featured?: boolean | null;
+  }> = [];
+
+  const cleanTitle = (value: string, idx: number) => {
+    const cleaned = value
+      .replace(/gemini/gi, "")
+      .replace(/generated/gi, "")
+      .replace(/image/gi, "")
+      .replace(/img/gi, "")
+      .replace(/[_-]+/g, " ")
+      .replace(/\b[a-f0-9]{6,}\b/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const title = cleaned.length >= 3 ? cleaned : `Projectfoto ${idx + 1}`;
+    return title.replace(/\b\w/g, (c) => c.toUpperCase());
+  };
+
+  try {
+    projects = await prisma.project.findMany({
+      where: {
+        published: true,
+      },
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        category: true,
+        imageUrl: true,
+        location: true,
+        material: true,
+        year: true,
+        featured: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+  } catch (error) {
+    logger.error("Kon projecten niet ophalen uit de database", error);
+    // Veilige fallback: bouw een eenvoudige lijst op basis van lokale images
+    projects = (projectsData as string[]).map((imageUrl, idx) => {
+      const filename = imageUrl.split('/').pop()?.split('.')[0] ?? `project-${idx + 1}`;
+      const title = cleanTitle(filename, idx);
+      return {
+        id: `placeholder-${idx}`,
+        title: title || `Project ${idx + 1}`,
+        description: `Realisatie: ${title}. Hoogwaardige afwerking door Yannova Bouw.`,
+        category: 'Totaalrenovatie',
+        imageUrl,
+        featured: idx < 3,
+      };
+    });
+  }
+
+  projects = projects.map((p, idx) => ({
+    ...p,
+    title: cleanTitle(p.title, idx),
+  }));
 
   // Haal foto's op uit de fotos map
   const projectPhotos = getProjectPhotos();
@@ -133,10 +183,10 @@ export default async function ProjectenPage() {
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm rounded-full px-5 py-2 mb-4">
                   <Camera className="h-4 w-4 text-secondary" />
-                  <span className="text-secondary text-sm font-medium">{projectPhotos.length} foto's</span>
+                  <span className="text-secondary text-sm font-medium">{projectPhotos.length} foto&apos;s</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
-                  Project Foto's
+                  Project Foto&apos;s
                 </h2>
                 <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                   Bekijk onze recente projecten in detail. Klik op een foto voor een grotere weergave.
@@ -267,7 +317,7 @@ export default async function ProjectenPage() {
                       <span key={i} className="text-secondary text-xl">★</span>
                     ))}
                   </div>
-                  <p className="text-gray-300 text-lg mb-8 italic leading-relaxed">"{testimonial.text}"</p>
+                  <p className="text-gray-300 text-lg mb-8 italic leading-relaxed">&quot;{testimonial.text}&quot;</p>
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
                       <span className="text-secondary font-bold text-lg">{testimonial.name.charAt(0)}</span>

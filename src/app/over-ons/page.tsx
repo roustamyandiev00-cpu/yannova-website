@@ -1,11 +1,25 @@
-import { getSeoMetadata } from '@/lib/seo-helper';
+import { generateSEO } from '@/lib/seo';
+import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 import { FadeIn } from "@/components/animations/FadeIn";
 import { User, Hammer, Lightbulb } from "lucide-react";
 import Image from "next/image";
 
-export async function generateMetadata() {
-    return getSeoMetadata('/over-ons');
-}
+export const metadata = generateSEO({
+  title: "Over Ons - Renovatiebedrijf in Antwerpen",
+  description: "Yannova is een ervaren renovatiebedrijf in Antwerpen. Meer dan 15 jaar expertise in ramen, deuren, gevelrenovatie en totaalrenovaties. Vakmanschap en klantgerichtheid staan centraal.",
+  path: "/over-ons",
+  keywords: [
+    "over yannova",
+    "renovatiebedrijf antwerpen",
+    "aannemer antwerpen",
+    "bouwbedrijf antwerpen",
+  ],
+});
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Over Ons", url: "/over-ons" },
+]);
 
 export default function AboutPage() {
     const values = [
@@ -27,7 +41,12 @@ export default function AboutPage() {
     ];
 
     return (
-        <div className="bg-background min-h-screen">
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+            />
+            <div className="bg-background min-h-screen">
             {/* Hero Section */}
             <div className="relative isolate overflow-hidden py-24 sm:py-32">
                 <div className="absolute inset-0 -z-10 opacity-20">
@@ -120,5 +139,6 @@ export default function AboutPage() {
                 </div>
             </section>
         </div>
+        </>
     );
 }

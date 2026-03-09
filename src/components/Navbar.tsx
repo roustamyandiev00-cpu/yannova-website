@@ -24,6 +24,7 @@ const navigation: Array<{
     ],
   },
   { name: "Projecten", href: "/projecten" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
