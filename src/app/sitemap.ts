@@ -75,8 +75,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Dynamische werkgebied paginas
-  const werkgebiedRoutes = werkgebieden.map((werkgebied) => ({
-    url: `${baseUrl}/werkgebied/${werkgebied.slug}`,
+  const werkgebiedRoutes = Object.entries(werkgebieden).map(([slug, werkgebied]) => ({
+    url: `${baseUrl}/werkgebied/${slug}`,
     lastModified: new Date(),
   }));
 

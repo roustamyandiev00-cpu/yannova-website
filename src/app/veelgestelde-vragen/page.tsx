@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
-import { generateSEO, generateBreadcrumbSchema, generateFAQSchema } from '@/components/SEO';
+import { generateSEO } from '@/lib/seo';
+import { generateBreadcrumbSchema, generateFAQSchema } from '@/components/SEO';
 import { ChevronDown } from 'lucide-react';
 
 export const metadata: Metadata = generateSEO({

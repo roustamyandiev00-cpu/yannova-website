@@ -1,0 +1,20 @@
+{
+  "node": {
+    "60cc43acfd1a938f2ac2e8d82e7f191ab4e73ac12c": {
+      "workers": {
+        "app/ramen/page": {
+          "moduleId": "[project]/.next-internal/server/app/ramen/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/ramen/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

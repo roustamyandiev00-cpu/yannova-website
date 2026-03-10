@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { Home, Search, Phone } from "lucide-react";
 import { company } from "@/lib/company";
 
 const popularPages = [
@@ -20,8 +18,8 @@ export default function NotFound() {
             
             <div className="max-w-2xl mx-auto">
                 <div className="flex justify-center mb-8">
-                    <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center">
-                        <Search className="h-10 w-10 text-secondary" />
+                    <div className="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center text-4xl">
+                        🔍
                     </div>
                 </div>
                 
@@ -40,32 +38,30 @@ export default function NotFound() {
                     <p className="text-sm text-muted-foreground mb-4">Populaire pagina&apos;s:</p>
                     <div className="flex flex-wrap items-center justify-center gap-3">
                         {popularPages.map((page) => (
-                            <Link
+                            <a
                                 key={page.href}
                                 href={page.href}
                                 className="inline-flex items-center gap-2 rounded-lg glass glass-hover px-4 py-2 text-sm font-medium text-white shadow-elegant transition-all hover:scale-105"
                             >
                                 {page.name}
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>
 
                 {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Link
+                    <a
                         href="/"
                         className="inline-flex items-center gap-2 rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-secondary/90 hover:scale-105 transition-all"
                     >
-                        <Home className="w-4 h-4" />
-                        Terug naar Home
-                    </Link>
+                        🏠 Terug naar Home
+                    </a>
                     <a
                         href={company.phoneHref}
                         className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white hover:bg-white/5 transition-all"
                     >
-                        <Phone className="w-4 h-4" />
-                        Bel ons
+                        📞 Bel ons
                     </a>
                 </div>
             </div>

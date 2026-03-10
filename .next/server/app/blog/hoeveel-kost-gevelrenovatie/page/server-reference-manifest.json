@@ -1,0 +1,20 @@
+{
+  "node": {
+    "60c4dd1a95b53c61ad90367c8daea8310c4de99ea9": {
+      "workers": {
+        "app/blog/hoeveel-kost-gevelrenovatie/page": {
+          "moduleId": 82302,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/blog/hoeveel-kost-gevelrenovatie/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

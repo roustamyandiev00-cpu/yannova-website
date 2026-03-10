@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60c4dd1a95b53c61ad90367c8daea8310c4de99ea9": {
+      "workers": {
+        "app/admin/projects/new/page": {
+          "moduleId": 8233,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/projects/new/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    },
+    "0021fb8a194503f27686a589d8e960f769c19d09a2": {
+      "workers": {
+        "app/admin/projects/new/page": {
+          "moduleId": 8233,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/admin/layout.tsx"
+        }
+      },
+      "layer": {
+        "app/admin/projects/new/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "src/app/admin/layout.tsx"
+    },
+    "60905130e50a0b6d9a977903ecb7b9ca04a94bef5d": {
+      "workers": {
+        "app/admin/projects/new/page": {
+          "moduleId": 8233,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/projects/new/page": "action-browser"
+      },
+      "exportedName": "createProject",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

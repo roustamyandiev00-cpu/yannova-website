@@ -1,0 +1,50 @@
+{
+  "node": {
+    "60c4dd1a95b53c61ad90367c8daea8310c4de99ea9": {
+      "workers": {
+        "app/admin/login/page": {
+          "moduleId": 97193,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/login/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    },
+    "0021fb8a194503f27686a589d8e960f769c19d09a2": {
+      "workers": {
+        "app/admin/login/page": {
+          "moduleId": 97193,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/admin/layout.tsx"
+        }
+      },
+      "layer": {
+        "app/admin/login/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "src/app/admin/layout.tsx"
+    },
+    "60c2eba06951d7bc12605b2b54b33bbddc1fb3178d": {
+      "workers": {
+        "app/admin/login/page": {
+          "moduleId": 97193,
+          "async": true,
+          "exportedName": "authenticate",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/login/page": "action-browser"
+      },
+      "exportedName": "authenticate",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

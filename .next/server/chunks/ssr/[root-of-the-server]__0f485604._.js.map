@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/app/gevelisolatie-crepi/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\nexport default function GevelisolatieRedirectPage() {\n  redirect(\"/diensten/gevelrenovatie\");\n}\n"],"names":[],"mappings":"sXAAA,EAAA,CAAA,CAAA,OAAA,IAAA,EAAA,EAAA,CAAA,CAAA,OAEe,SAAS,IACtB,CAAA,EAAA,EAAA,QAAA,AAAQ,EAAC,2BACX"}

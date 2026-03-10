@@ -1,12 +1,10 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2, Phone, MessageCircle, Star, Shield, Clock } from "lucide-react";
-import { company } from "@/lib/company";
-import { generateSEO } from "@/lib/seo";
+import { generateSEO } from '@/lib/seo';
+import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
+import { ArrowRight, Phone, CheckCircle, CheckCircle2, Star, MessageCircle, Shield, Clock } from 'lucide-react';
+import { company } from '@/lib/company';
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
-import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 
-export const metadata: Metadata = generateSEO({
+export const metadata = generateSEO({
   title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
   description: "PVC en aluminium ramen met HR++ of drievoudig glas. Actief in Antwerpen stad en randgemeenten rond Antwerpen. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
   path: "/ramen",
@@ -89,13 +87,13 @@ export default function RamenPage() {
               professionele plaatsing door vakmensen.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Link
+              <a
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
               >
                 Gratis offerte aanvragen
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <a
                 href={company.phoneHref}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3.5 text-base font-medium text-white hover:bg-white/5 transition-colors"
@@ -272,13 +270,13 @@ export default function RamenPage() {
           <h2 className="text-2xl font-bold text-white">Klaar voor nieuwe ramen?</h2>
           <p className="mt-3 text-gray-400">Vraag een gratis offerte aan of neem contact op voor advies.</p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
+            <a
               href="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
             >
               Gratis offerte
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <a
               href={company.whatsappHref}
               target="_blank"
@@ -300,14 +298,14 @@ export default function RamenPage() {
             Bekijk onze diensten voor ramen in uw regio
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <Link href="/ramen/antwerpen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+            <a href="/ramen/antwerpen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
               Ramen Antwerpen
               <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link href="/ramen/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+            </a>
+            <a href="/ramen/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
               Ramen Zoersel
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

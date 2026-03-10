@@ -1,0 +1,38 @@
+[00:00:00.735] Server  LOG     ✓ Ready in 568ms
+[00:05:33.594] Server  ERROR   Error: Both middleware file "./src/middleware.ts" and proxy file "./src/proxy.ts" are detected. Please use "./src/proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:33.599] Server  ERROR   ⨯ "unhandledRejection:" Error: Both middleware file "./src/middleware.ts" and proxy file "./src/proxy.ts" are detected. Please use "./src/proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:33.601] Server  ERROR   ⨯ "unhandledRejection: " Error: Both middleware file "./src/middleware.ts" and proxy file "./src/proxy.ts" are detected. Please use "./src/proxy.ts" only. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:05:33.636] Server  LOG     ✓ Compiled in 67ms
+[00:11:09.711] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... onClick={function onClick} className=... children=...>
+                      ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:09.796] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... target="_blank" rel=... onClick={function onClick} className=... children=...>
+                                              ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:09.884] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... onClick={function onClick} className=... children=...>
+                      ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:09.971] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... onClick={function onClick} className=... children=...>
+                      ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:10.305] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... onClick={function onClick} className=... children=...>
+                      ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:10.407] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... target="_blank" rel=... onClick={function onClick} className=... children=...>
+                                              ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:10.482] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... onClick={function onClick} className=... children=...>
+                      ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:11:10.570] Server  ERROR   ⨯ Error: Event handlers cannot be passed to Client Component props.
+  <a href=... onClick={function onClick} className=... children=...>
+                      ^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+[00:16:40.754] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy

@@ -1,0 +1,95 @@
+{
+  "node": {
+    "60c4dd1a95b53c61ad90367c8daea8310c4de99ea9": {
+      "workers": {
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/seo/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    },
+    "0021fb8a194503f27686a589d8e960f769c19d09a2": {
+      "workers": {
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/admin/layout.tsx"
+        }
+      },
+      "layer": {
+        "app/admin/seo/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "src/app/admin/layout.tsx"
+    },
+    "4091a7c35c2f2f75e808edfb6426b224a04bed25f4": {
+      "workers": {
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "saveSeoPage",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/seo/page": "action-browser"
+      },
+      "exportedName": "saveSeoPage",
+      "filename": "src/lib/actions.ts"
+    },
+    "406859fe2ecb6eebffa5e2d62ade4c38381ebfeaac": {
+      "workers": {
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/seo/page": "action-browser"
+      },
+      "exportedName": "deleteSeoPage",
+      "filename": "src/lib/actions.ts"
+    },
+    "00d2f2ec1f673b19659649f644dd9664133fb43c8a": {
+      "workers": {
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "runSeoAudit",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/seo/page": "action-browser"
+      },
+      "exportedName": "runSeoAudit",
+      "filename": "src/lib/actions.ts"
+    },
+    "608c10312188572faaf2f66e836ad181b379770354": {
+      "workers": {
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "generateAiSeo",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/seo/page": "action-browser"
+      },
+      "exportedName": "generateAiSeo",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}
