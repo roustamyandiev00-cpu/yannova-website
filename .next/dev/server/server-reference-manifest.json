@@ -7,10 +7,17 @@
           "async": true,
           "exportedName": "createLead",
           "filename": "src/lib/actions.ts"
+        },
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
         }
       },
       "layer": {
-        "app/_not-found/page": "action-browser"
+        "app/_not-found/page": "action-browser",
+        "app/page": "action-browser"
       },
       "filename": "src/lib/actions.ts",
       "exportedName": "createLead"

@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+User-Agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+Sitemap: https://www.yannova.be/sitemap.xml

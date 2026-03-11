@@ -3,16 +3,20 @@
   "middleware": {
     "/": {
       "files": [
-        "server/edge/chunks/node_modules_040a7017._.js",
-        "server/edge/chunks/[root-of-the-server]__8978dbac._.js",
-        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_2c951981.js"
+        "server/edge/chunks/node_modules_next_dist_3069cb54._.js",
+        "server/edge/chunks/node_modules_@opentelemetry_api_build_esm_4557a825._.js",
+        "server/edge/chunks/node_modules_@auth_core_a56a313d._.js",
+        "server/edge/chunks/node_modules_jose_dist_webapi_f4e85af0._.js",
+        "server/edge/chunks/node_modules_7533397a._.js",
+        "server/edge/chunks/[root-of-the-server]__1aca127e._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_af9f96a6.js"
       ],
       "name": "middleware",
       "page": "/",
       "matchers": [
         {
-          "regexp": "/:nextData(_next/data/[^/]{1,})?/:path*{(\\\\.json)}?",
-          "originalSource": "/:path*"
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/((?!api|_next/static|_next/image|.*\\.png$).*){(\\\\.json)}?",
+          "originalSource": "/((?!api|_next/static|_next/image|.*\\.png$).*)"
         }
       ],
       "wasm": [],
@@ -20,9 +24,9 @@
       "env": {
         "__NEXT_BUILD_ID": "development",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "J/RdUv39EQ7HZ/jryvxOdfsG04txq5dbQ4K01w7ZaM0=",
-        "__NEXT_PREVIEW_MODE_ID": "371aa63d152724d99b235ad1c74f2de3",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "3df6cd98ea308be3fc4de6559638fb74bc176b1be70e11baa585001cb40b19e3",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "34bc66d2e6dcceefec6434a7fb7bbe894bb54b2ab0aefd62726d95f9e7298bde"
+        "__NEXT_PREVIEW_MODE_ID": "aef6a3826f1a22119d280973f1de9562",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "95d1de412df78d0e53f939e1825acba82a90821af642fb4b6fb9fb108bc72b62",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "94cc519398425ff1d40d3ea1d02626f96ddf97d8deba11d22c58a1a0ebb15e1f"
       }
     }
   },

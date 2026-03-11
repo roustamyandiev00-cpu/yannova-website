@@ -56,11 +56,11 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://www.googleadservices.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://www.googleadservices.com https://t.contentsquare.net",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: blob:",
-              "connect-src 'self' https://www.google-analytics.com https://www.clarity.ms https://*.supabase.co",
+              "connect-src 'self' https://www.google-analytics.com https://www.clarity.ms https://*.supabase.co https://t.contentsquare.net",
               "frame-src 'self' https://www.google.com",
             ].join('; ')
           },

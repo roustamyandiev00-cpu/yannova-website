@@ -160,10 +160,6 @@
     --text-6xl--line-height: 1;
     --text-7xl: 4.5rem;
     --text-7xl--line-height: 1;
-    --text-8xl: 6rem;
-    --text-8xl--line-height: 1;
-    --text-9xl: 8rem;
-    --text-9xl--line-height: 1;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -663,10 +659,6 @@
 
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
-  }
-
-  .bottom-1\/4 {
-    bottom: 25%;
   }
 
   .bottom-2 {
@@ -1174,10 +1166,6 @@
 
   .min-h-\[90vh\] {
     min-height: 90vh;
-  }
-
-  .min-h-\[calc\(100vh-80px\)\] {
-    min-height: calc(100vh - 80px);
   }
 
   .min-h-screen {
@@ -3238,11 +3226,6 @@
     line-height: var(--tw-leading, var(--text-6xl--line-height));
   }
 
-  .text-8xl {
-    font-size: var(--text-8xl);
-    line-height: var(--tw-leading, var(--text-8xl--line-height));
-  }
-
   .text-base {
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
@@ -4261,6 +4244,12 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-orange-600:hover {
+      background-color: var(--color-orange-600);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-orange-700:hover {
       background-color: var(--color-orange-700);
     }
@@ -4875,13 +4864,6 @@
     .sm\:text-6xl {
       font-size: var(--text-6xl);
       line-height: var(--tw-leading, var(--text-6xl--line-height));
-    }
-  }
-
-  @media (min-width: 40rem) {
-    .sm\:text-9xl {
-      font-size: var(--text-9xl);
-      line-height: var(--tw-leading, var(--text-9xl--line-height));
     }
   }
 

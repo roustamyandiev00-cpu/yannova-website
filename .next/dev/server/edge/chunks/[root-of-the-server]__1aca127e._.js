@@ -79,7 +79,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 const authMiddleware = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2d$auth$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$auth$2e$config$2e$ts__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["authConfig"]).auth;
 async function middleware(request) {
     // Run auth middleware first
-    const authResult = await authMiddleware(request);
+    const authFn = authMiddleware;
+    const authResult = await authFn(request);
     // If auth middleware returns a response, use it
     if (authResult) {
         return authResult;

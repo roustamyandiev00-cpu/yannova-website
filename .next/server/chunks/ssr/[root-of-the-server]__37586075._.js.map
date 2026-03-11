@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../src/app/renovatie/page.tsx"],"sourcesContent":["import { redirect } from \"next/navigation\";\n\nexport default function RenovatieRedirectPage() {\n  redirect(\"/diensten/renovatie\");\n}\n"],"names":[],"mappings":"wXAAA,EAAA,CAAA,CAAA,OAAA,IAAA,EAAA,EAAA,CAAA,CAAA,OAEe,SAAS,IACtB,CAAA,EAAA,EAAA,QAAA,AAAQ,EAAC,sBACX"}

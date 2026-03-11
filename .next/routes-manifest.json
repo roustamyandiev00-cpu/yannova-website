@@ -59,14 +59,6 @@
         "nxtPnextauth": "nxtPnextauth"
       },
       "namedRegex": "^/api/auth/(?<nxtPnextauth>.+?)(?:/)?$"
-    },
-    {
-      "page": "/werkgebied/[slug]",
-      "regex": "^/werkgebied/([^/]+?)(?:/)?$",
-      "routeKeys": {
-        "nxtPslug": "nxtPslug"
-      },
-      "namedRegex": "^/werkgebied/(?<nxtPslug>[^/]+?)(?:/)?$"
     }
   ],
   "staticRoutes": [
@@ -179,12 +171,6 @@
       "namedRegex": "^/admin/users(?:/)?$"
     },
     {
-      "page": "/advies",
-      "regex": "^/advies(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/advies(?:/)?$"
-    },
-    {
       "page": "/api/admin/seed",
       "regex": "^/api/admin/seed(?:/)?$",
       "routeKeys": {},
@@ -263,142 +249,10 @@
       "namedRegex": "^/api/setup\\-admin(?:/)?$"
     },
     {
-      "page": "/blog",
-      "regex": "^/blog(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog(?:/)?$"
-    },
-    {
-      "page": "/blog/energiebesparing-nieuwe-ramen",
-      "regex": "^/blog/energiebesparing\\-nieuwe\\-ramen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/energiebesparing\\-nieuwe\\-ramen(?:/)?$"
-    },
-    {
-      "page": "/blog/hoeveel-kost-gevelrenovatie",
-      "regex": "^/blog/hoeveel\\-kost\\-gevelrenovatie(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/hoeveel\\-kost\\-gevelrenovatie(?:/)?$"
-    },
-    {
-      "page": "/blog/premies-ramen-deuren-2026",
-      "regex": "^/blog/premies\\-ramen\\-deuren\\-2026(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/premies\\-ramen\\-deuren\\-2026(?:/)?$"
-    },
-    {
-      "page": "/blog/pvc-of-aluminium-ramen",
-      "regex": "^/blog/pvc\\-of\\-aluminium\\-ramen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/pvc\\-of\\-aluminium\\-ramen(?:/)?$"
-    },
-    {
-      "page": "/blog/wat-kosten-nieuwe-ramen",
-      "regex": "^/blog/wat\\-kosten\\-nieuwe\\-ramen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blog/wat\\-kosten\\-nieuwe\\-ramen(?:/)?$"
-    },
-    {
-      "page": "/calculator",
-      "regex": "^/calculator(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/calculator(?:/)?$"
-    },
-    {
-      "page": "/contact",
-      "regex": "^/contact(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/contact(?:/)?$"
-    },
-    {
-      "page": "/crepi-isolatie-antwerpen",
-      "regex": "^/crepi\\-isolatie\\-antwerpen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/crepi\\-isolatie\\-antwerpen(?:/)?$"
-    },
-    {
-      "page": "/deuren",
-      "regex": "^/deuren(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/deuren(?:/)?$"
-    },
-    {
-      "page": "/diensten",
-      "regex": "^/diensten(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/diensten(?:/)?$"
-    },
-    {
-      "page": "/diensten/gevelrenovatie",
-      "regex": "^/diensten/gevelrenovatie(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/diensten/gevelrenovatie(?:/)?$"
-    },
-    {
-      "page": "/diensten/isolatie",
-      "regex": "^/diensten/isolatie(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/diensten/isolatie(?:/)?$"
-    },
-    {
-      "page": "/diensten/ramen-deuren",
-      "regex": "^/diensten/ramen\\-deuren(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/diensten/ramen\\-deuren(?:/)?$"
-    },
-    {
-      "page": "/diensten/renovatie",
-      "regex": "^/diensten/renovatie(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/diensten/renovatie(?:/)?$"
-    },
-    {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/favicon\\.ico(?:/)?$"
-    },
-    {
-      "page": "/gevelisolatie-crepi",
-      "regex": "^/gevelisolatie\\-crepi(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/gevelisolatie\\-crepi(?:/)?$"
-    },
-    {
-      "page": "/gevelrenovatie-antwerpen",
-      "regex": "^/gevelrenovatie\\-antwerpen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/gevelrenovatie\\-antwerpen(?:/)?$"
-    },
-    {
-      "page": "/offerte",
-      "regex": "^/offerte(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/offerte(?:/)?$"
-    },
-    {
-      "page": "/over-ons",
-      "regex": "^/over\\-ons(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/over\\-ons(?:/)?$"
-    },
-    {
-      "page": "/premie-gids",
-      "regex": "^/premie\\-gids(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/premie\\-gids(?:/)?$"
-    },
-    {
-      "page": "/premies",
-      "regex": "^/premies(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/premies(?:/)?$"
-    },
-    {
-      "page": "/projecten",
-      "regex": "^/projecten(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/projecten(?:/)?$"
     },
     {
       "page": "/ramen",
@@ -407,58 +261,10 @@
       "namedRegex": "^/ramen(?:/)?$"
     },
     {
-      "page": "/ramen-deuren-antwerpen",
-      "regex": "^/ramen\\-deuren\\-antwerpen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/ramen\\-deuren\\-antwerpen(?:/)?$"
-    },
-    {
-      "page": "/renovatie",
-      "regex": "^/renovatie(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/renovatie(?:/)?$"
-    },
-    {
-      "page": "/renovatiebedrijf-antwerpen",
-      "regex": "^/renovatiebedrijf\\-antwerpen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/renovatiebedrijf\\-antwerpen(?:/)?$"
-    },
-    {
-      "page": "/reviews",
-      "regex": "^/reviews(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/reviews(?:/)?$"
-    },
-    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/robots\\.txt(?:/)?$"
-    },
-    {
-      "page": "/sitemap.xml",
-      "regex": "^/sitemap\\.xml(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/sitemap\\.xml(?:/)?$"
-    },
-    {
-      "page": "/veelgestelde-vragen",
-      "regex": "^/veelgestelde\\-vragen(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/veelgestelde\\-vragen(?:/)?$"
-    },
-    {
-      "page": "/vraag-ai",
-      "regex": "^/vraag\\-ai(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/vraag\\-ai(?:/)?$"
-    },
-    {
-      "page": "/werkgebied",
-      "regex": "^/werkgebied(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/werkgebied(?:/)?$"
     }
   ],
   "dataRoutes": [],
