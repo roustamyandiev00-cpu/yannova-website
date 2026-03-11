@@ -47,7 +47,7 @@ export function ServicesGrid() {
             <Link
               key={service.href}
               href={service.href}
-              className="group relative bg-[#1a1d24] hover:bg-[#1f2229] rounded-lg p-6 transition-all shadow-lg hover:shadow-xl"
+              className="group relative bg-transparent hover:bg-[#1a1d24]/50 rounded-lg p-6 transition-all"
             >
               {service.highlight && (
                 <span className="absolute -top-2.5 right-4 bg-secondary px-2.5 py-1 text-xs font-semibold text-white rounded-full">

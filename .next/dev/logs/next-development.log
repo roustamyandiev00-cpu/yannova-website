@@ -60,3 +60,79 @@ It can also happen if the client has a browser extension installed which messes 
 [00:13:34.064] Server  LOG     ✓ Compiled in 0ms
 [00:13:34.190] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:14:59.756] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:07.612] Server  LOG     ✓ Compiled in 49ms
+[00:24:14.980] Server  ERROR   [auth][error] JWTSessionError: Read more at https://errors.authjs.dev#jwtsessionerror
+[00:24:14.981] Server  ERROR   [auth][cause]: Error: no matching decryption secret
+    at clockTolerance (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_@auth_core_a56a313d._.js:915:15)
+    at async flattenedDecrypt (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_jose_dist_webapi_f4e85af0._.js:3329:15)
+    at async compactDecrypt (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_jose_dist_webapi_f4e85af0._.js:3425:23)
+    at async jwtDecrypt (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_jose_dist_webapi_f4e85af0._.js:3459:23)
+    at async Object.decode (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_@auth_core_a56a313d._.js:905:25)
+    at async Module.session (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_@auth_core_a56a313d._.js:4547:29)
+    at async AuthInternal (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_@auth_core_a56a313d._.js:5132:24)
+    at async Auth (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_@auth_core_a56a313d._.js:5371:34)
+    at async handleAuth (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/node_modules_7533397a._.js:4023:29)
+    at async middleware (/Users/innovarslabo/Desktop/Yannova.be/.next/dev/server/edge/chunks/[root-of-the-server]__1aca127e._.js:83:24)
+[00:24:14.981] Server  ERROR   [auth][details]: {}
+[00:25:37.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:12.038] Server  LOG     ✓ Compiled in 179ms
+[00:26:32.638] Server  LOG     ✓ Compiled in 41ms
+[00:26:58.314] Server  LOG     ✓ Compiled in 37ms
+[00:27:19.620] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:29.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:40.693] Server  LOG     ✓ Compiled in 59ms
+[00:28:09.264] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:09.888] Server  LOG     ✓ Compiled in 119ms
+[00:28:14.720] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:17.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:21.522] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:21.663] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/diensten/..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="nl" className="dark">
+                          <head>
+                          <body className="inter_5b7c...">
+                            <GoogleTagManagerNoScript>
+                            <PerformanceMonitor>
+                            <script>
+                            <div className="flex min-h...">
+                              <Navbar>
++                             <main className="flex-1">
+-                             <Suspense>
+                              ...
+                            ...
+                  ...
+
+[00:28:22.095] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1574359411659-15573a21bc2c?q=80&w=2670&auto=format&fit=crop" 404

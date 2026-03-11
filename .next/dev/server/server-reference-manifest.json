@@ -14,6 +14,24 @@
           "exportedName": "createLead",
           "filename": "src/lib/actions.ts"
         },
+        "app/diensten/gevelrenovatie/page": {
+          "moduleId": "[project]/.next-internal/server/app/diensten/gevelrenovatie/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/ramen-deuren/page": {
+          "moduleId": "[project]/.next-internal/server/app/diensten/ramen-deuren/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/renovatie/page": {
+          "moduleId": "[project]/.next-internal/server/app/diensten/renovatie/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
         "app/page": {
           "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": true,
@@ -24,6 +42,9 @@
       "layer": {
         "app/_not-found/page": "action-browser",
         "app/contact/page": "action-browser",
+        "app/diensten/gevelrenovatie/page": "action-browser",
+        "app/diensten/ramen-deuren/page": "action-browser",
+        "app/diensten/renovatie/page": "action-browser",
         "app/page": "action-browser"
       },
       "filename": "src/lib/actions.ts",

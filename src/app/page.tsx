@@ -38,7 +38,7 @@ export default function HomePage() {
       <Hero />
       <ServicesGrid />
       <Specializations />
-      <FAQSection faqs={homepageFAQs} />
+      <FAQSection />
       <CTASection />
     </>
   );

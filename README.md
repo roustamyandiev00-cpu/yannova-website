@@ -114,23 +114,67 @@ npm run health-check    # Check API health
 ## 🏗️ Project Structure
 
 ```
-src/
-├── app/                 # Next.js app router pages
-│   ├── admin/          # Admin dashboard
-│   ├── api/            # API routes
-│   ├── diensten/       # Service pages
-│   └── ...
-├── components/         # React components
-│   ├── admin/         # Admin components
-│   ├── animations/    # Animation components
-│   └── ui/            # UI components
-├── lib/               # Utility functions
-│   ├── actions.ts     # Server actions
-│   ├── cache.ts       # Caching system
-│   ├── rate-limit.ts  # Rate limiting
-│   └── ...
-└── prisma/            # Database schema
+/
+├── src/                    # Source code
+│   ├── app/               # Next.js app router pages
+│   │   ├── admin/        # Admin dashboard
+│   │   ├── api/          # API routes
+│   │   ├── diensten/     # Service pages
+│   │   └── ...
+│   ├── components/        # React components
+│   │   ├── admin/        # Admin components
+│   │   ├── animations/   # Animation components
+│   │   └── ui/           # UI components
+│   ├── lib/              # Utility functions
+│   ├── hooks/            # Custom React hooks
+│   └── types/            # TypeScript types
+│
+├── docs/                  # 📚 Documentatie (georganiseerd)
+│   ├── deployment/       # Deployment guides
+│   ├── setup/            # Setup instructies
+│   ├── guides/           # Algemene handleidingen
+│   ├── seo/              # SEO documentatie
+│   ├── google-ads/       # Google Ads docs
+│   └── changelog/        # Project updates
+│
+├── scripts/               # 🔧 Utility scripts (georganiseerd)
+│   ├── admin/            # Admin scripts
+│   ├── database/         # Database scripts
+│   ├── seo/              # SEO scripts
+│   └── deployment/       # Deployment scripts
+│
+├── config/                # ⚙️ Configuratie bestanden
+│   ├── firebase/         # Firebase configs
+│   └── deployment/       # Deployment configs
+│
+├── .ai-tools/            # 🤖 AI tool configuraties
+│   ├── agents/           # Agent configs
+│   ├── workflows/        # Workflows
+│   └── templates/        # Templates
+│
+├── prisma/               # Database schema & migrations
+├── public/               # Static assets
+│   ├── images/          # Optimized images
+│   └── fotos/           # Project photos
+│
+└── [config files]        # Root config files
+    ├── package.json
+    ├── tsconfig.json
+    ├── next.config.ts
+    └── .env.local
 ```
+
+## 📚 Documentatie
+
+Alle documentatie is verplaatst naar de `docs/` map voor betere organisatie:
+
+- **Deployment**: Zie `docs/deployment/` voor deployment guides
+- **Setup**: Zie `docs/setup/` voor configuratie instructies
+- **Guides**: Zie `docs/guides/` voor algemene handleidingen
+- **SEO**: Zie `docs/seo/` voor SEO documentatie
+- **Google Ads**: Zie `docs/google-ads/` voor advertising docs
+
+Elke map bevat een eigen README met meer details.
 
 ## 🔐 Security Features
 

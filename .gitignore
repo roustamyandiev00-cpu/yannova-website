@@ -48,3 +48,24 @@ copilot-messages.log
 .DS_Store
 .project/attachments/files/**
 node_modules
+
+# Deprecated AI tool folders (consolidated to .ai-tools/)
+.agents/
+.codex/
+.gemini/
+.qodo/
+.specify/
+
+# Build and cache
+.next/
+.venv/
+*.log
+
+# Environment files
+.env.local
+.env*.local
+
+# Temporary files
+*.tmp
+*.temp
+*_backup

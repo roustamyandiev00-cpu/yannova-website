@@ -29,12 +29,12 @@ var _s = __turbopack_context__.k.signature();
 ;
 function Hero() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(20);
-    if ($[0] !== "5480ce01104168f3ab848a0c3e8393a60ee07a1b938c46e06ba06154934e2cd0") {
-        for(let $i = 0; $i < 20; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(21);
+    if ($[0] !== "86836431f9c4069427d33528b835f450e0ec30f8df19cdf76da9ab6963a16cbf") {
+        for(let $i = 0; $i < 21; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "5480ce01104168f3ab848a0c3e8393a60ee07a1b938c46e06ba06154934e2cd0";
+        $[0] = "86836431f9c4069427d33528b835f450e0ec30f8df19cdf76da9ab6963a16cbf";
     }
     const [scrollY, setScrollY] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     let t0;
@@ -323,77 +323,42 @@ function Hero() {
     let t14;
     if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
         t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "container mx-auto px-6 py-16 lg:py-20",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-center items-center text-center",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "max-w-5xl",
+            className: "flex flex-col sm:flex-row items-center justify-center gap-4 mb-6",
+            children: [
+                t12,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex gap-3",
                     children: [
-                        t8,
-                        t9,
-                        t10,
-                        t11,
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col sm:flex-row items-center justify-center gap-4 mb-6",
+                        t13,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                            href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$company$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["company"].whatsappHref,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            onClick: _HeroAOnClick2,
+                            className: "inline-flex items-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-5 py-4 text-sm font-medium text-white shadow-lg transition-all",
                             children: [
-                                t12,
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex gap-3",
-                                    children: [
-                                        t13,
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$company$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["company"].whatsappHref,
-                                            target: "_blank",
-                                            rel: "noopener noreferrer",
-                                            onClick: _HeroAOnClick2,
-                                            className: "inline-flex items-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-5 py-4 text-sm font-medium text-white shadow-lg transition-all",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__["MessageCircle"], {
-                                                    className: "h-4 w-4 text-secondary"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/Hero.tsx",
-                                                    lineNumber: 119,
-                                                    columnNumber: 543
-                                                }, this),
-                                                "WhatsApp"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/Hero.tsx",
-                                            lineNumber: 119,
-                                            columnNumber: 293
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$message$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MessageCircle$3e$__["MessageCircle"], {
+                                    className: "h-4 w-4 text-secondary"
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/Hero.tsx",
                                     lineNumber: 119,
-                                    columnNumber: 260
-                                }, this)
+                                    columnNumber: 381
+                                }, this),
+                                "WhatsApp"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Hero.tsx",
                             lineNumber: 119,
-                            columnNumber: 173
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm text-gray-400",
-                            children: "Antwoord binnen 1 uur tijdens kantooruren"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/Hero.tsx",
-                            lineNumber: 119,
-                            columnNumber: 619
+                            columnNumber: 131
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
                     lineNumber: 119,
-                    columnNumber: 128
+                    columnNumber: 98
                 }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 119,
-                columnNumber: 66
-            }, this)
-        }, void 0, false, {
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/Hero.tsx",
             lineNumber: 119,
             columnNumber: 11
@@ -405,23 +370,58 @@ function Hero() {
     let t15;
     if ($[17] === Symbol.for("react.memo_cache_sentinel")) {
         t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-xl py-4 sm:py-6 shadow-2xl overflow-hidden border-t border-white/10",
+            className: "container mx-auto px-6 py-16 lg:py-20",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative w-full overflow-hidden",
+                className: "flex justify-center items-center text-center",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex animate-scroll-right",
+                    className: "max-w-5xl",
                     children: [
-                        ...Array(4)
-                    ].map(_HeroAnonymous)
-                }, void 0, false, {
+                        t8,
+                        t9,
+                        t10,
+                        t11,
+                        t14,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center justify-center mt-8 mb-12",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-full px-6 py-3",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
+                                        className: "h-5 w-5 text-secondary"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Hero.tsx",
+                                        lineNumber: 126,
+                                        columnNumber: 370
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-base font-semibold text-white",
+                                        children: "Reactie binnen 1 uur tijdens kantooruren"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Hero.tsx",
+                                        lineNumber: 126,
+                                        columnNumber: 414
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/Hero.tsx",
+                                lineNumber: 126,
+                                columnNumber: 239
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/Hero.tsx",
+                            lineNumber: 126,
+                            columnNumber: 178
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/src/components/Hero.tsx",
                     lineNumber: 126,
-                    columnNumber: 204
+                    columnNumber: 128
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
                 lineNumber: 126,
-                columnNumber: 155
+                columnNumber: 66
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/Hero.tsx",
@@ -433,25 +433,55 @@ function Hero() {
         t15 = $[17];
     }
     let t16;
-    if ($[18] !== t5) {
-        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-            className: "relative min-h-[90vh] lg:min-h-[85vh] flex items-center overflow-hidden pt-20",
-            children: [
-                t5,
-                t14,
-                t15
-            ]
-        }, void 0, true, {
+    if ($[18] === Symbol.for("react.memo_cache_sentinel")) {
+        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-xl py-4 sm:py-6 shadow-2xl overflow-hidden border-t border-white/10",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative w-full overflow-hidden",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex animate-scroll-right",
+                    children: [
+                        ...Array(4)
+                    ].map(_HeroAnonymous)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/Hero.tsx",
+                    lineNumber: 133,
+                    columnNumber: 204
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/Hero.tsx",
+                lineNumber: 133,
+                columnNumber: 155
+            }, this)
+        }, void 0, false, {
             fileName: "[project]/src/components/Hero.tsx",
             lineNumber: 133,
             columnNumber: 11
         }, this);
-        $[18] = t5;
-        $[19] = t16;
+        $[18] = t16;
     } else {
-        t16 = $[19];
+        t16 = $[18];
     }
-    return t16;
+    let t17;
+    if ($[19] !== t5) {
+        t17 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+            className: "relative min-h-[90vh] lg:min-h-[85vh] flex items-center overflow-hidden pt-20",
+            children: [
+                t5,
+                t15,
+                t16
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/Hero.tsx",
+            lineNumber: 140,
+            columnNumber: 11
+        }, this);
+        $[19] = t5;
+        $[20] = t17;
+    } else {
+        t17 = $[20];
+    }
+    return t17;
 }
 _s(Hero, "eTR5W6wH45bVtWbD0ho0jkNrbDM=");
 _c = Hero;
@@ -464,7 +494,7 @@ function _HeroAnonymous(_, index) {
                 children: "Schüco"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 98
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -472,7 +502,7 @@ function _HeroAnonymous(_, index) {
                 children: "•"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 189
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -480,7 +510,7 @@ function _HeroAnonymous(_, index) {
                 children: "Aluplast"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 260
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -488,7 +518,7 @@ function _HeroAnonymous(_, index) {
                 children: "•"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 353
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -496,7 +526,7 @@ function _HeroAnonymous(_, index) {
                 children: "Salamander"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 424
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -504,7 +534,7 @@ function _HeroAnonymous(_, index) {
                 children: "•"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 519
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -512,7 +542,7 @@ function _HeroAnonymous(_, index) {
                 children: "Reynaers"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 590
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -520,7 +550,7 @@ function _HeroAnonymous(_, index) {
                 children: "•"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 683
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -528,7 +558,7 @@ function _HeroAnonymous(_, index) {
                 children: "Deceuninck"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 754
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -536,13 +566,13 @@ function _HeroAnonymous(_, index) {
                 children: "•"
             }, void 0, false, {
                 fileName: "[project]/src/components/Hero.tsx",
-                lineNumber: 142,
+                lineNumber: 149,
                 columnNumber: 849
             }, this)
         ]
     }, index, true, {
         fileName: "[project]/src/components/Hero.tsx",
-        lineNumber: 142,
+        lineNumber: 149,
         columnNumber: 10
     }, this);
 }
@@ -607,11 +637,11 @@ const services = [
 ];
 function ServicesGrid() {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(4);
-    if ($[0] !== "171e333d4c5f8e3be872a1d3fa9bd7616da2964c78a16c9f96c76a2d3b8b6a1c") {
+    if ($[0] !== "571584d1240ccf7e2bb60f8679a5ac96971150b41e40dbf0d43562634c1a3001") {
         for(let $i = 0; $i < 4; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "171e333d4c5f8e3be872a1d3fa9bd7616da2964c78a16c9f96c76a2d3b8b6a1c";
+        $[0] = "571584d1240ccf7e2bb60f8679a5ac96971150b41e40dbf0d43562634c1a3001";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -713,7 +743,7 @@ _c = ServicesGrid;
 function _ServicesGridServicesMap(service) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         href: service.href,
-        className: "group relative bg-[#1a1d24] hover:bg-[#1f2229] rounded-lg p-6 transition-all shadow-lg hover:shadow-xl",
+        className: "group relative bg-transparent hover:bg-[#1a1d24]/50 rounded-lg p-6 transition-all",
         children: [
             service.highlight && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 className: "absolute -top-2.5 right-4 bg-secondary px-2.5 py-1 text-xs font-semibold text-white rounded-full",
@@ -721,7 +751,7 @@ function _ServicesGridServicesMap(service) {
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesGrid.tsx",
                 lineNumber: 60,
-                columnNumber: 192
+                columnNumber: 171
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex h-12 w-12 items-center justify-center rounded-lg bg-secondary text-white mb-4 transition-colors",
@@ -730,12 +760,12 @@ function _ServicesGridServicesMap(service) {
                 }, void 0, false, {
                     fileName: "[project]/src/components/ServicesGrid.tsx",
                     lineNumber: 60,
-                    columnNumber: 452
+                    columnNumber: 431
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesGrid.tsx",
                 lineNumber: 60,
-                columnNumber: 334
+                columnNumber: 313
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                 className: "text-lg font-semibold text-white group-hover:text-secondary transition-colors",
@@ -743,7 +773,7 @@ function _ServicesGridServicesMap(service) {
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesGrid.tsx",
                 lineNumber: 60,
-                columnNumber: 494
+                columnNumber: 473
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "mt-2 text-sm text-gray-400 leading-relaxed",
@@ -751,7 +781,7 @@ function _ServicesGridServicesMap(service) {
             }, void 0, false, {
                 fileName: "[project]/src/components/ServicesGrid.tsx",
                 lineNumber: 60,
-                columnNumber: 608
+                columnNumber: 587
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-4 flex items-center text-sm font-medium text-secondary group-hover:text-white transition-colors",
@@ -762,13 +792,13 @@ function _ServicesGridServicesMap(service) {
                     }, void 0, false, {
                         fileName: "[project]/src/components/ServicesGrid.tsx",
                         lineNumber: 60,
-                        columnNumber: 816
+                        columnNumber: 795
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ServicesGrid.tsx",
                 lineNumber: 60,
-                columnNumber: 691
+                columnNumber: 670
             }, this)
         ]
     }, service.href, true, {

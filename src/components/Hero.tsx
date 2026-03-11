@@ -97,7 +97,12 @@ export function Hero() {
               </div>
             </div>
 
-            <p className="text-sm text-gray-400">Antwoord binnen 1 uur tijdens kantooruren</p>
+            <div className="flex items-center justify-center mt-8 mb-12">
+              <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm border border-secondary/30 rounded-full px-6 py-3">
+                <Clock className="h-5 w-5 text-secondary" />
+                <p className="text-base font-semibold text-white">Reactie binnen 1 uur tijdens kantooruren</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

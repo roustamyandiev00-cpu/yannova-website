@@ -4155,6 +4155,13 @@
   }
 
   @media (hover: hover) {
+    .hover\:bg-\[\#1a1d24\]\/50:hover {
+      background-color: #1a1d2480;
+      background-color: lab(10.6864% .0644922 -5.30182 / .5);
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-\[\#1e2128\]:hover {
       background-color: #1e2128;
     }
