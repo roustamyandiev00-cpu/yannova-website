@@ -67,8 +67,12 @@ export function ExitIntentPopup() {
             <div className="bg-background border border-border rounded-3xl p-8 max-w-md w-full shadow-2xl pointer-events-auto relative overflow-hidden">
               {/* Close button */}
               <button
-                onClick={() => setIsVisible(false)}
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/10 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsVisible(false);
+                }}
+                className="absolute top-4 right-4 p-2 rounded-full hover:bg-white/10 transition-colors z-10"
+                aria-label="Sluiten"
               >
                 <X className="h-5 w-5 text-muted-foreground" />
               </button>
@@ -95,7 +99,10 @@ export function ExitIntentPopup() {
                 <div className="space-y-3">
                   <a
                     href="/contact"
-                    onClick={() => setIsVisible(false)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsVisible(false);
+                    }}
                     className="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:bg-secondary/80 transition-colors flex items-center justify-center gap-2"
                   >
                     Vraag gratis offerte aan
@@ -103,7 +110,10 @@ export function ExitIntentPopup() {
                   </a>
                   
                   <button
-                    onClick={() => setIsVisible(false)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsVisible(false);
+                    }}
                     className="w-full py-3 text-muted-foreground hover:text-foreground transition-colors text-sm"
                   >
                     Nee, ik mis liever de korting

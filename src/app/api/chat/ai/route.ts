@@ -58,13 +58,46 @@ export async function POST(request: Request) {
         content: msg.text,
       })) || [];
 
+    const xaiApiKey = process.env.XAI_API_KEY;
     const cfAccountId = process.env.CF_AI_ACCOUNT_ID;
     const cfApiToken = process.env.CF_AI_API_TOKEN;
     const cfModel = process.env.CF_AI_MODEL;
 
     let text: string;
 
-    if (process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+    if (xaiApiKey) {
+      // Grok AI (xAI) - OpenAI-compatible API
+      const grokResponse = await fetch('https://api.x.ai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${xaiApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'grok-beta',
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...conversationHistory,
+            { role: 'user', content: message },
+          ],
+          temperature: 0.7,
+          max_tokens: 300,
+        }),
+      });
+
+      if (!grokResponse.ok) {
+        const errorData = await grokResponse.json();
+        console.error('Grok AI error:', errorData);
+        throw new Error('Grok AI request failed');
+      }
+
+      const grokJson = await grokResponse.json();
+      text = grokJson.choices?.[0]?.message?.content?.trim() || '';
+      
+      if (!text) {
+        throw new Error('Grok AI returned empty response');
+      }
+    } else if (process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
       // Google Gemini via AI SDK
       const result = await generateText({
         model: google('gemini-1.5-flash'),
