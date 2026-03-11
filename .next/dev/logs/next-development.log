@@ -136,3 +136,12 @@ https://react.dev/link/hydration-mismatch
                   ...
 
 [00:28:22.095] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1574359411659-15573a21bc2c?q=80&w=2670&auto=format&fit=crop" 404
+[00:31:25.400] Server  LOG       Reload env: .env.local
+[00:31:25.994] Server  LOG     ✓ Compiled in 388ms
+[00:31:26.173] Server  LOG     ✓ Compiled in 0ms
+[00:31:26.583] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:27.088] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:27.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:48.158] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:48.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:48.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

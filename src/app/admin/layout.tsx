@@ -51,6 +51,13 @@ export default function AdminLayout({
               <p className="hidden md:block">Live Chat</p>
             </Link>
             <Link
+              href="/admin/chat-analytics"
+              className="flex h-[48px] grow shrink-0 items-center justify-center gap-2 rounded-md bg-white/5 p-3 text-sm font-medium hover:bg-secondary/20 hover:text-secondary md:flex-none md:justify-start md:p-2 md:px-3 text-foreground"
+            >
+              <BarChart3 className="w-6" />
+              <p className="hidden md:block">Chat Analytics</p>
+            </Link>
+            <Link
               href="/admin/chat-archief"
               className="flex h-[48px] grow shrink-0 items-center justify-center gap-2 rounded-md bg-white/5 p-3 text-sm font-medium hover:bg-secondary/20 hover:text-secondary md:flex-none md:justify-start md:p-2 md:px-3 text-foreground"
             >
