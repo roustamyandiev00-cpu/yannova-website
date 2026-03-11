@@ -16,6 +16,12 @@ async function getUser(email: string) {
   }
 }
 
+// Whitelist van toegestane admin emails
+const ALLOWED_ADMIN_EMAILS = [
+  'roustamyandiev00@gmail.com',
+  'windowpro.be@gmail.com'
+];
+
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
   providers: [
@@ -34,6 +40,12 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
           }
 
           const { email, password } = parsedCredentials.data;
+          
+          // Check whitelist
+          if (!ALLOWED_ADMIN_EMAILS.includes(email.toLowerCase())) {
+            logger.debug('Email not in whitelist:', email);
+            return null;
+          }
           logger.debug('Looking up user:', email);
           
           const user = await getUser(email);

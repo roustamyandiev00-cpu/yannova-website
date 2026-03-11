@@ -74,12 +74,13 @@ export async function POST(request: Request) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: 'grok-beta',
+          model: 'grok-4-latest',
           messages: [
             { role: 'system', content: SYSTEM_PROMPT },
             ...conversationHistory,
             { role: 'user', content: message },
           ],
+          stream: false,
           temperature: 0.7,
           max_tokens: 300,
         }),

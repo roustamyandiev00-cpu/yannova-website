@@ -84,7 +84,7 @@ export default function InsulationPage() {
       <section className="relative h-[56vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?q=80&w=2670&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2670&auto=format&fit=crop"
             alt="Isolatiewerken - dak en gevel isolatie"
             fill
             sizes="100vw"

@@ -12,7 +12,8 @@
     "optimize-images": "node scripts/optimize-images.js",
     "health-check": "curl http://localhost:3000/api/health",
     "test:email": "node scripts/test-email.js",
-    "pre-deploy": "bash scripts/pre-deploy-check.sh"
+    "pre-deploy": "bash scripts/pre-deploy-check.sh",
+    "create-admin": "node scripts/insert-admin-direct.js"
   },
   "dependencies": {
     "@ai-sdk/google": "^0.0.55",
@@ -56,6 +57,7 @@
     "eslint-config-next": "16.1.6",
     "sharp": "^0.33.5",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "webpack-bundle-analyzer": "^4.10.2"
   }

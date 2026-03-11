@@ -167,15 +167,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <Chatbot />
-        <ExitIntentPopup />
-        <CookieConsent />
-        <StickyCTA />
+        {children}
       </body>
     </html>
   );
