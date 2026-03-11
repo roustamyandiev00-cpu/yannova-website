@@ -18,6 +18,7 @@ type ChatStep = 'chat' | 'lead-form' | 'lead-success';
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<ChatStep>('chat');
+  const [showWelcome, setShowWelcome] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat();
   
@@ -27,6 +28,24 @@ export function Chatbot() {
   const [name, setName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Show welcome message after 3 seconds
+  useEffect(() => {
+    const hasSeenWelcome = sessionStorage.getItem('chatbot-welcome-seen');
+    if (!hasSeenWelcome) {
+      const timer = setTimeout(() => {
+        setShowWelcome(true);
+        sessionStorage.setItem('chatbot-welcome-seen', 'true');
+        
+        // Auto-hide after 10 seconds
+        setTimeout(() => {
+          setShowWelcome(false);
+        }, 10000);
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -258,6 +277,50 @@ export function Chatbot() {
 
   return (
     <>
+      {/* Welcome Notification */}
+      <AnimatePresence>
+        {showWelcome && !isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            className="fixed bottom-24 right-6 z-40 w-[300px] rounded-xl border border-white/10 bg-card shadow-2xl overflow-hidden"
+          >
+            <div className="bg-secondary p-3">
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
+                  <Bot className="h-5 w-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-sm font-bold text-white">Hallo! 👋</h4>
+                  <p className="text-xs text-white/80">Kimberly - Yannova Assistent</p>
+                </div>
+                <button 
+                  onClick={() => setShowWelcome(false)}
+                  className="text-white/60 hover:text-white"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+            <div className="p-4 bg-background">
+              <p className="text-sm text-gray-300 mb-3">
+                Ik kan u helpen met vragen over ramen, deuren, renovaties en offertes. Stel gerust uw vraag!
+              </p>
+              <button
+                onClick={() => {
+                  setShowWelcome(false);
+                  setIsOpen(true);
+                }}
+                className="w-full bg-secondary text-white text-sm py-2 rounded-lg hover:bg-secondary/80 transition-colors font-semibold"
+              >
+                Start gesprek
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
