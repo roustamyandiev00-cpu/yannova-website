@@ -19,8 +19,20 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<ChatStep>('chat');
   const [showWelcome, setShowWelcome] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat();
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+    body: {
+      sessionId,
+    },
+    onResponse: (response) => {
+      const newSessionId = response.headers.get('X-Session-Id');
+      if (newSessionId && !sessionId) {
+        setSessionId(newSessionId);
+        localStorage.setItem('chatbot-session-id', newSessionId);
+      }
+    },
+  });
   
   // Lead form state
   const [email, setEmail] = useState('');
@@ -44,6 +56,14 @@ export function Chatbot() {
       }, 3000);
       
       return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // Load existing session ID
+  useEffect(() => {
+    const savedSessionId = localStorage.getItem('chatbot-session-id');
+    if (savedSessionId) {
+      setSessionId(savedSessionId);
     }
   }, []);
 
