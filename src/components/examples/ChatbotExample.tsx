@@ -1,3 +1,4 @@
+"use client";
 /**
  * VOORBEELD: Hoe de AI Chatbot te integreren
  * 

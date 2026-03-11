@@ -136,7 +136,7 @@ export function Navbar() {
                     >
                       <div className="py-2">
                         {item.children.map((child) => (
-                          <Link
+                          <a
                             key={child.name}
                             href={child.href}
                             onClick={() => setServicesOpen(false)}
@@ -145,7 +145,7 @@ export function Navbar() {
                           >
                             <div className="text-sm font-medium text-white">{child.name}</div>
                             <div className="text-xs text-gray-400 mt-0.5">{child.description}</div>
-                          </Link>
+                          </a>
                         ))}
                       </div>
                     </motion.div>
@@ -223,7 +223,7 @@ export function Navbar() {
                   <div key={item.name}>
                     <div className="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">{item.name}</div>
                     {item.children.map((child) => (
-                      <Link
+                      <a
                         key={child.name}
                         href={child.href}
                         className={cn(
@@ -233,11 +233,11 @@ export function Navbar() {
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {child.name}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 ) : (
-                  <Link
+                  <a
                     key={item.name}
                     href={item.href}
                     className={cn(
@@ -247,7 +247,7 @@ export function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
-                  </Link>
+                  </a>
                 ),
               )}
 
@@ -272,21 +272,21 @@ export function Navbar() {
                 </a>
               </div>
 
-              <Link
+              <a
                 href="/vraag-ai"
                 className="mt-4 flex items-center justify-center gap-2 rounded-xl glass px-4 py-3.5 text-base font-medium text-white glass-hover shadow-elegant"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Sparkles className="h-4 w-4 text-secondary" />
                 Vraag Yannova AI
-              </Link>
-              <Link
+              </a>
+              <a
                 href="/contact"
                 className="mt-3 block w-full text-center rounded-xl bg-linear-to-r from-secondary to-orange-600 px-4 py-3.5 text-base font-semibold text-white shadow-elegant"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Gratis offerte aanvragen
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

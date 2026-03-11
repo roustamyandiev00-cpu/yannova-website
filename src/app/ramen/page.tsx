@@ -4,6 +4,8 @@ import { ArrowRight, Phone, CheckCircle, CheckCircle2, Star, MessageCircle, Shie
 import { company } from '@/lib/company';
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = generateSEO({
   title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
   description: "PVC en aluminium ramen met HR++ of drievoudig glas. Actief in Antwerpen stad en randgemeenten rond Antwerpen. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",

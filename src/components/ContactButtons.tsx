@@ -1,3 +1,4 @@
+"use client";
 'use client';
 
 import { trackWhatsAppClick, trackPhoneClick, trackEmailClick } from './GoogleAds';

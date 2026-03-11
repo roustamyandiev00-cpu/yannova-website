@@ -1,3 +1,4 @@
+"use client";
 import Link from 'next/link';
 import { ArrowRight, Phone, MessageCircle, CheckCircle2 } from 'lucide-react';
 import { company } from '@/lib/company';

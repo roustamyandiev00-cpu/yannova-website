@@ -1,8 +1,8 @@
+"use client";
 'use client';
 
 import { useState, useEffect } from 'react';
 import { X, Gift, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function ExitIntentPopup() {
@@ -93,14 +93,14 @@ export function ExitIntentPopup() {
                 </p>
 
                 <div className="space-y-3">
-                  <Link
+                  <a
                     href="/contact"
                     onClick={() => setIsVisible(false)}
                     className="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:bg-secondary/80 transition-colors flex items-center justify-center gap-2"
                   >
                     Vraag gratis offerte aan
                     <ArrowRight className="h-5 w-5" />
-                  </Link>
+                  </a>
                   
                   <button
                     onClick={() => setIsVisible(false)}

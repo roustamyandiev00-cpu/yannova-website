@@ -1,3 +1,4 @@
+"use client";
  'use client'
 
 import { Loader2, Send, CheckCircle2 } from "lucide-react";
