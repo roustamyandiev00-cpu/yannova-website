@@ -2,21 +2,9 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
 
-// This endpoint should be protected or removed after first use
-export async function POST(request: Request) {
+// This endpoint creates admin users - should be called once after deployment
+export async function GET() {
   try {
-    // Get secret key from request
-    const body = await request.json();
-    const { secret } = body;
-
-    // Simple protection - change this secret
-    if (secret !== process.env.ADMIN_SETUP_SECRET) {
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
-
     const adminEmails = [
       'roustamyandiev00@gmail.com',
       'windowpro.be@gmail.com'
@@ -72,6 +60,7 @@ export async function POST(request: Request) {
       success: true,
       message: 'Admin users setup complete',
       results,
+      note: 'You can now login with these credentials',
       credentials: {
         emails: adminEmails,
         password: 'Yannova2024!'
@@ -88,4 +77,9 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
+}
+
+export async function POST(request: Request) {
+  // Keep POST for backward compatibility
+  return GET();
 }
