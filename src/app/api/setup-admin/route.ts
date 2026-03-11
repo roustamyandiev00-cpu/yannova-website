@@ -1,10 +1,33 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { Pool } from 'pg';
 import bcrypt from 'bcryptjs';
 
 // This endpoint creates admin users - should be called once after deployment
 export async function GET() {
   try {
+    // Direct database connection with SSL disabled for self-signed certs
+    const connectionString = process.env.DATABASE_URL;
+    
+    if (!connectionString) {
+      return NextResponse.json(
+        { error: 'DATABASE_URL not configured' },
+        { status: 500 }
+      );
+    }
+
+    // Add sslmode=no-verify if not present
+    let modifiedConnectionString = connectionString;
+    if (!modifiedConnectionString.includes('sslmode=')) {
+      modifiedConnectionString += modifiedConnectionString.includes('?') ? '&sslmode=no-verify' : '?sslmode=no-verify';
+    }
+
+    const pool = new Pool({
+      connectionString: modifiedConnectionString,
+      ssl: {
+        rejectUnauthorized: false
+      }
+    });
+
     const adminEmails = [
       'roustamyandiev00@gmail.com',
       'windowpro.be@gmail.com'
@@ -18,33 +41,41 @@ export async function GET() {
     for (const email of adminEmails) {
       try {
         // Check if user exists
-        const existingUser = await prisma.user.findUnique({
-          where: { email }
-        });
+        const existingUserResult = await pool.query(
+          'SELECT * FROM "User" WHERE email = $1',
+          [email]
+        );
 
-        if (existingUser) {
+        if (existingUserResult.rows.length > 0) {
           // Update existing user
-          await prisma.user.update({
-            where: { email },
-            data: {
-              password: hashedPassword,
-              role: 'super_admin',
-              active: true,
-              name: email === 'roustamyandiev00@gmail.com' ? 'Roustam' : 'Yannova Admin'
-            }
-          });
+          await pool.query(
+            `UPDATE "User" 
+             SET password = $1, role = $2, active = $3, name = $4, "updatedAt" = NOW()
+             WHERE email = $5`,
+            [
+              hashedPassword,
+              'super_admin',
+              true,
+              email === 'roustamyandiev00@gmail.com' ? 'Roustam' : 'Yannova Admin',
+              email
+            ]
+          );
           results.push({ email, status: 'updated' });
         } else {
-          // Create new user
-          await prisma.user.create({
-            data: {
+          // Create new user with cuid-like ID
+          const id = 'clx' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+          await pool.query(
+            `INSERT INTO "User" (id, email, password, name, role, active, "createdAt", "updatedAt")
+             VALUES ($1, $2, $3, $4, $5, $6, NOW(), NOW())`,
+            [
+              id,
               email,
-              password: hashedPassword,
-              role: 'super_admin',
-              active: true,
-              name: email === 'roustamyandiev00@gmail.com' ? 'Roustam' : 'Yannova Admin'
-            }
-          });
+              hashedPassword,
+              email === 'roustamyandiev00@gmail.com' ? 'Roustam' : 'Yannova Admin',
+              'super_admin',
+              true
+            ]
+          );
           results.push({ email, status: 'created' });
         }
       } catch (error) {
@@ -56,6 +87,8 @@ export async function GET() {
       }
     }
 
+    await pool.end();
+
     return NextResponse.json({
       success: true,
       message: 'Admin users setup complete',
@@ -63,7 +96,8 @@ export async function GET() {
       note: 'You can now login with these credentials',
       credentials: {
         emails: adminEmails,
-        password: 'Yannova2024!'
+        password: 'Yannova2024!',
+        loginUrl: '/admin/login'
       }
     });
 
@@ -72,7 +106,8 @@ export async function GET() {
     return NextResponse.json(
       { 
         error: 'Failed to setup admin users',
-        details: error instanceof Error ? error.message : 'Unknown error'
+        details: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : undefined
       },
       { status: 500 }
     );
