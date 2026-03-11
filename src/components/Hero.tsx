@@ -37,16 +37,16 @@ export function Hero() {
         <div className="flex justify-center items-center text-center">
           <div className="max-w-5xl">
             <div className="flex flex-wrap items-center justify-center gap-3 mb-10 animate-fade-in">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 shadow-2xl whitespace-nowrap hover:bg-white/20 hover:scale-105 transition-all duration-300">
+              <div className="flex items-center gap-2 bg-[#1a1d24] rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
                 <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 shrink-0" />
                 <span className="text-white font-bold text-sm">4.9</span>
                 <span className="text-gray-100 font-medium text-sm">Google</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 shadow-2xl whitespace-nowrap hover:bg-white/20 hover:scale-105 transition-all duration-300">
+              <div className="flex items-center gap-2 bg-[#1a1d24] rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
                 <Clock className="h-4 w-4 text-secondary shrink-0" />
                 <span className="text-white font-medium text-sm">Offerte binnen 24u</span>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 shadow-2xl whitespace-nowrap hover:bg-white/20 hover:scale-105 transition-all duration-300">
+              <div className="flex items-center gap-2 bg-[#1a1d24] rounded-full px-4 py-2 shadow-lg whitespace-nowrap">
                 <Shield className="h-4 w-4 text-secondary shrink-0" />
                 <span className="text-white font-medium text-sm">15+ jaar ervaring</span>
               </div>
@@ -79,7 +79,7 @@ export function Hero() {
                 <a
                   href={company.phoneHref}
                   onClick={() => gtmTrackPhone()}
-                  className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-5 py-4 text-sm font-medium text-white shadow-elegant"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-5 py-4 text-sm font-medium text-white shadow-lg transition-all"
                 >
                   <Phone className="h-4 w-4 text-secondary" />
                   Bel nu
@@ -89,7 +89,7 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => gtmTrackWhatsApp()}
-                  className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-5 py-4 text-sm font-medium text-white shadow-elegant"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-5 py-4 text-sm font-medium text-white shadow-lg transition-all"
                 >
                   <MessageCircle className="h-4 w-4 text-secondary" />
                   WhatsApp

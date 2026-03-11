@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/vraag-ai/layout,_N_T_/vraag-ai/page,_N_T_/vraag-ai"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/vraag-ai/__PAGE__",
+    "/vraag-ai",
+    "/_index",
+    "/_head"
+  ]
+}

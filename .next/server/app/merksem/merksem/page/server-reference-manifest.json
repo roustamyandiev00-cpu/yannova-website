@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6023c225277875d62ad1112ad967d4701e45374bba": {
+      "workers": {
+        "app/merksem/merksem/page": {
+          "moduleId": 77543,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/merksem/merksem/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -24,7 +24,7 @@ export function Testimonials({ testimonials, showAll = false }: TestimonialsProp
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {testimonialsToShow.map((testimonial, idx) => (
                             <FadeIn key={testimonial.id} delay={idx * 0.1}>
-                                <div className="relative rounded-xl bg-[#1a1d24] p-6 shadow-sm transition-all duration-300 hover:bg-[#1e2128] border border-white/5">
+                                <div className="relative rounded-xl bg-[#1a1d24] p-6 shadow-lg transition-all duration-300 hover:bg-[#1e2128]">
                                     <Quote className="absolute top-6 left-6 h-8 w-8 text-secondary/20" />
                                     
                                     {/* Rating & Service */}
@@ -55,7 +55,7 @@ export function Testimonials({ testimonials, showAll = false }: TestimonialsProp
                                     </blockquote>
 
                                     {/* Author info */}
-                                    <figcaption className="mt-6 flex items-center gap-x-4 pt-4 border-t border-white/5">
+                                    <figcaption className="mt-6 flex items-center gap-x-4 pt-4">
                                         <div className="h-10 w-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">
                                             {testimonial.name.charAt(0)}
                                         </div>

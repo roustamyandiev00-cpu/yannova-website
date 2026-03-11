@@ -1,3 +1,8 @@
+import { Hero } from "@/components/Hero";
+import { ServicesGrid } from "@/components/ServicesGrid";
+import { Specializations } from "@/components/Specializations";
+import { CTASection } from "@/components/CTASection";
+import { FAQSection } from "@/components/FAQSection";
 import { generateFAQSchema } from "@/lib/faq-schema";
 
 export const dynamic = 'force-dynamic';
@@ -11,6 +16,14 @@ const homepageFAQs = [
     question: "In welke regio's is Yannova actief?",
     answer: "Wij zijn actief in Antwerpen stad en alle randgemeenten: Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten, Wijnegem, Schilde, Ranst, Mortsel en omgeving.",
   },
+  {
+    question: "Hoe lang duurt de plaatsing van nieuwe ramen?",
+    answer: "De plaatsing van nieuwe ramen duurt gemiddeld 1 tot 2 dagen, afhankelijk van het aantal ramen en de complexiteit van het project.",
+  },
+  {
+    question: "Bieden jullie garantie op jullie werk?",
+    answer: "Ja, wij bieden 10 jaar garantie op al ons werk en de geplaatste materialen. Daarnaast krijg je ook de fabrieksgarantie op de ramen en deuren.",
+  },
 ];
 
 const faqSchema = generateFAQSchema(homepageFAQs);
@@ -22,13 +35,11 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="min-h-screen bg-gray-900 text-white p-8">
-        <h1 className="text-4xl font-bold mb-4">Yannova Bouw</h1>
-        <p className="text-gray-300 mb-4">Specialist in ramen, deuren en gevelrenovatie in Antwerpen en omgeving.</p>
-        <a href="/offerte" className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600">
-          Gratis offerte aanvragen
-        </a>
-      </div>
+      <Hero />
+      <ServicesGrid />
+      <Specializations />
+      <FAQSection faqs={homepageFAQs} />
+      <CTASection />
     </>
   );
 }

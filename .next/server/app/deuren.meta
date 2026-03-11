@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/deuren/layout,_N_T_/deuren/page,_N_T_/deuren"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/deuren/__PAGE__",
+    "/deuren",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/diensten/layout,_N_T_/diensten/gevelrenovatie/layout,_N_T_/diensten/gevelrenovatie/page,_N_T_/diensten/gevelrenovatie"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/diensten/gevelrenovatie/__PAGE__",
+    "/diensten/gevelrenovatie",
+    "/diensten",
+    "/_index",
+    "/_head"
+  ]
+}

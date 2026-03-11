@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/werkgebied/layout,_N_T_/werkgebied/[slug]/layout,_N_T_/werkgebied/[slug]/page,_N_T_/werkgebied/wijnegem"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/werkgebied/$d$slug/__PAGE__",
+    "/werkgebied/$d$slug",
+    "/werkgebied",
+    "/_index",
+    "/_head"
+  ]
+}

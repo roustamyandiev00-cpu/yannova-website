@@ -1,9 +1,15 @@
 {
   "node": {
-    "60cc43acfd1a938f2ac2e8d82e7f191ab4e73ac12c": {
+    "60bfd230f630555f3d304823fb5996f28e0b2131c0": {
       "workers": {
         "app/_not-found/page": {
           "moduleId": "[project]/.next-internal/server/app/_not-found/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/contact/page": {
+          "moduleId": "[project]/.next-internal/server/app/contact/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": true,
           "exportedName": "createLead",
           "filename": "src/lib/actions.ts"
@@ -17,6 +23,7 @@
       },
       "layer": {
         "app/_not-found/page": "action-browser",
+        "app/contact/page": "action-browser",
         "app/page": "action-browser"
       },
       "filename": "src/lib/actions.ts",
@@ -24,5 +31,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "J/RdUv39EQ7HZ/jryvxOdfsG04txq5dbQ4K01w7ZaM0="
+  "encryptionKey": "aYEvNmHTvBRneDVCOGjsOImopprVl1WP7+m8qavyc4M="
 }

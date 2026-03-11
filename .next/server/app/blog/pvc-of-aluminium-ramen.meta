@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/pvc-of-aluminium-ramen/layout,_N_T_/blog/pvc-of-aluminium-ramen/page,_N_T_/blog/pvc-of-aluminium-ramen"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/blog/pvc-of-aluminium-ramen/__PAGE__",
+    "/blog/pvc-of-aluminium-ramen",
+    "/blog",
+    "/_index",
+    "/_head"
+  ]
+}

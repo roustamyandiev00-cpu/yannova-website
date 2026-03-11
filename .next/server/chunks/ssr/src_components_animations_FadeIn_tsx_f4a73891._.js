@@ -1,0 +1,3 @@
+module.exports=[48673,a=>{"use strict";var b=a.i(87924),c=a.i(46271);a.s(["FadeIn",0,({children:a,delay:d=0,duration:e=.5,direction:f="up",className:g})=>(0,b.jsx)(c.motion.div,{initial:{opacity:0,...{up:{y:20},down:{y:-20},left:{x:20},right:{x:-20}}[f]},whileInView:{opacity:1,x:0,y:0},viewport:{once:!0,margin:"-50px"},transition:{duration:e,delay:d,ease:"easeOut"},className:g,children:a})])}];
+
+//# sourceMappingURL=src_components_animations_FadeIn_tsx_f4a73891._.js.map

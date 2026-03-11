@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/schoten/layout,_N_T_/schoten/schoten/layout,_N_T_/schoten/schoten/page,_N_T_/schoten/schoten"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/schoten/schoten/__PAGE__",
+    "/schoten/schoten",
+    "/schoten",
+    "/_index",
+    "/_head"
+  ]
+}

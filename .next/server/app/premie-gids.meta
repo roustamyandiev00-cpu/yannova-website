@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/premie-gids/layout,_N_T_/premie-gids/page,_N_T_/premie-gids"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/premie-gids/__PAGE__",
+    "/premie-gids",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6023c225277875d62ad1112ad967d4701e45374bba": {
+      "workers": {
+        "app/veelgestelde-vragen/page": {
+          "moduleId": 90551,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/veelgestelde-vragen/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

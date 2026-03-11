@@ -1,6 +1,6 @@
 {
   "node": {
-    "60c4dd1a95b53c61ad90367c8daea8310c4de99ea9": {
+    "6023c225277875d62ad1112ad967d4701e45374bba": {
       "workers": {
         "app/admin/seo/page": {
           "moduleId": 77209,
@@ -15,7 +15,7 @@
       "exportedName": "createLead",
       "filename": "src/lib/actions.ts"
     },
-    "0021fb8a194503f27686a589d8e960f769c19d09a2": {
+    "0049eba4f237f4f9d1196492db5ed7f693d43fc57a": {
       "workers": {
         "app/admin/seo/page": {
           "moduleId": 77209,
@@ -30,7 +30,7 @@
       "exportedName": "$$RSC_SERVER_ACTION_0",
       "filename": "src/app/admin/layout.tsx"
     },
-    "4091a7c35c2f2f75e808edfb6426b224a04bed25f4": {
+    "4008bc3c9e4b24f6311480e215068c732ecf77afb5": {
       "workers": {
         "app/admin/seo/page": {
           "moduleId": 77209,
@@ -45,7 +45,7 @@
       "exportedName": "saveSeoPage",
       "filename": "src/lib/actions.ts"
     },
-    "406859fe2ecb6eebffa5e2d62ade4c38381ebfeaac": {
+    "40cbfb63a4cf5ed4d46bc86557a427b42634aec4c5": {
       "workers": {
         "app/admin/seo/page": {
           "moduleId": 77209,
@@ -60,7 +60,7 @@
       "exportedName": "deleteSeoPage",
       "filename": "src/lib/actions.ts"
     },
-    "00d2f2ec1f673b19659649f644dd9664133fb43c8a": {
+    "00d0ebdd17b4046ad491c052abafef47bf18a558d1": {
       "workers": {
         "app/admin/seo/page": {
           "moduleId": 77209,
@@ -75,7 +75,7 @@
       "exportedName": "runSeoAudit",
       "filename": "src/lib/actions.ts"
     },
-    "608c10312188572faaf2f66e836ad181b379770354": {
+    "607c4b2c46162466c8d419a474c786fcd06b8566fb": {
       "workers": {
         "app/admin/seo/page": {
           "moduleId": 77209,

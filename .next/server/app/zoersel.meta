@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/zoersel/layout,_N_T_/zoersel/page,_N_T_/zoersel"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/zoersel/__PAGE__",
+    "/zoersel",
+    "/_index",
+    "/_head"
+  ]
+}

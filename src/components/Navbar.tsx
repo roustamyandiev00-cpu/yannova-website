@@ -70,8 +70,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled 
-          ? "glass backdrop-blur-xl border-b border-white/10 py-3 shadow-elegant-lg" 
-          : "bg-transparent border-b border-transparent py-5",
+          ? "bg-[#0a0c10]/95 backdrop-blur-sm py-3 shadow-lg" 
+          : "bg-transparent py-5",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -194,7 +194,7 @@ export function Navbar() {
           </a>
           <Link
             href="/vraag-ai"
-            className="flex items-center gap-1.5 text-sm font-medium text-white glass px-4 py-2.5 rounded-xl glass-hover shadow-elegant group"
+            className="flex items-center gap-1.5 text-sm font-medium text-white bg-[#1a1d24] hover:bg-[#1f2229] px-4 py-2.5 rounded-xl shadow-lg transition-all group"
           >
             <Sparkles className="h-4 w-4 text-secondary group-hover:rotate-12 transition-transform duration-300" />
             Vraag Yannova AI
@@ -215,7 +215,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass backdrop-blur-xl border-t border-white/10 overflow-hidden shadow-elegant-lg"
+            className="lg:hidden bg-[#0a0c10]/95 backdrop-blur-sm overflow-hidden shadow-lg"
           >
             <div className="space-y-1 px-4 pb-6 pt-4">
               {navigation.map((item) =>
@@ -274,7 +274,7 @@ export function Navbar() {
 
               <a
                 href="/vraag-ai"
-                className="mt-4 flex items-center justify-center gap-2 rounded-xl glass px-4 py-3.5 text-base font-medium text-white glass-hover shadow-elegant"
+                className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-4 py-3.5 text-base font-medium text-white shadow-lg transition-all"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Sparkles className="h-4 w-4 text-secondary" />

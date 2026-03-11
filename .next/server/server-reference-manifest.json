@@ -1,6 +1,6 @@
 {
   "node": {
-    "60c4dd1a95b53c61ad90367c8daea8310c4de99ea9": {
+    "6023c225277875d62ad1112ad967d4701e45374bba": {
       "workers": {
         "app/_not-found/page": {
           "moduleId": 9307,
@@ -98,14 +98,302 @@
           "exportedName": "createLead",
           "filename": "src/lib/actions.ts"
         },
+        "app/advies/page": {
+          "moduleId": 13346,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/antwerpen/antwerpen/page": {
+          "moduleId": 77447,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/antwerpen/page": {
+          "moduleId": 59141,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/berchem/page": {
+          "moduleId": 39337,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/blog/energiebesparing-nieuwe-ramen/page": {
+          "moduleId": 17581,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/blog/hoeveel-kost-gevelrenovatie/page": {
+          "moduleId": 82302,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/blog/page": {
+          "moduleId": 30340,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/blog/premies-ramen-deuren-2026/page": {
+          "moduleId": 56009,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/blog/pvc-of-aluminium-ramen/page": {
+          "moduleId": 33414,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/blog/wat-kosten-nieuwe-ramen/page": {
+          "moduleId": 78819,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/brasschaat/brasschaat/page": {
+          "moduleId": 96879,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/brasschaat/page": {
+          "moduleId": 40546,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/calculator/page": {
+          "moduleId": 16194,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/contact/page": {
+          "moduleId": 83192,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/crepi-isolatie-antwerpen/page": {
+          "moduleId": 56087,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/deuren/page": {
+          "moduleId": 83770,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/deurne/page": {
+          "moduleId": 15955,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/gevelrenovatie/page": {
+          "moduleId": 60528,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/isolatie/page": {
+          "moduleId": 22185,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/page": {
+          "moduleId": 53794,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/ramen-deuren/page": {
+          "moduleId": 45145,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/diensten/renovatie/page": {
+          "moduleId": 24605,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/gevelisolatie-crepi/page": {
+          "moduleId": 29513,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/gevelrenovatie-antwerpen/page": {
+          "moduleId": 17888,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/merksem/merksem/page": {
+          "moduleId": 77543,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/merksem/page": {
+          "moduleId": 51925,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/mortsel/page": {
+          "moduleId": 29105,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/offerte/page": {
+          "moduleId": 70677,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/over-ons/page": {
+          "moduleId": 88273,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
         "app/page": {
           "moduleId": 45739,
           "async": true,
           "exportedName": "createLead",
           "filename": "src/lib/actions.ts"
         },
+        "app/premie-gids/page": {
+          "moduleId": 52595,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/premies/page": {
+          "moduleId": 44178,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/projecten/page": {
+          "moduleId": 48332,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/ramen-deuren-antwerpen/page": {
+          "moduleId": 76721,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
         "app/ramen/page": {
           "moduleId": 32896,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/renovatie/page": {
+          "moduleId": 93876,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/renovatiebedrijf-antwerpen/page": {
+          "moduleId": 80690,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/reviews/page": {
+          "moduleId": 93290,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/schilde/page": {
+          "moduleId": 65180,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/schoten/page": {
+          "moduleId": 93723,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/schoten/schoten/page": {
+          "moduleId": 30996,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/veelgestelde-vragen/page": {
+          "moduleId": 90551,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/vraag-ai/page": {
+          "moduleId": 76582,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/werkgebied/[slug]/page": {
+          "moduleId": 82325,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/werkgebied/page": {
+          "moduleId": 63008,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/wijnegem/page": {
+          "moduleId": 45323,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/wilrijk/page": {
+          "moduleId": 53133,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/wilrijk/wilrijk/page": {
+          "moduleId": 97973,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/zoersel/page": {
+          "moduleId": 44959,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/zoersel/zoersel/page": {
+          "moduleId": 46892,
           "async": true,
           "exportedName": "createLead",
           "filename": "src/lib/actions.ts"
@@ -128,13 +416,61 @@
         "app/admin/status/page": "action-browser",
         "app/admin/testimonials/page": "rsc",
         "app/admin/users/page": "rsc",
+        "app/advies/page": "action-browser",
+        "app/antwerpen/antwerpen/page": "action-browser",
+        "app/antwerpen/page": "action-browser",
+        "app/berchem/page": "action-browser",
+        "app/blog/energiebesparing-nieuwe-ramen/page": "action-browser",
+        "app/blog/hoeveel-kost-gevelrenovatie/page": "action-browser",
+        "app/blog/page": "action-browser",
+        "app/blog/premies-ramen-deuren-2026/page": "action-browser",
+        "app/blog/pvc-of-aluminium-ramen/page": "action-browser",
+        "app/blog/wat-kosten-nieuwe-ramen/page": "action-browser",
+        "app/brasschaat/brasschaat/page": "action-browser",
+        "app/brasschaat/page": "action-browser",
+        "app/calculator/page": "action-browser",
+        "app/contact/page": "action-browser",
+        "app/crepi-isolatie-antwerpen/page": "action-browser",
+        "app/deuren/page": "action-browser",
+        "app/deurne/page": "action-browser",
+        "app/diensten/gevelrenovatie/page": "action-browser",
+        "app/diensten/isolatie/page": "action-browser",
+        "app/diensten/page": "action-browser",
+        "app/diensten/ramen-deuren/page": "action-browser",
+        "app/diensten/renovatie/page": "action-browser",
+        "app/gevelisolatie-crepi/page": "action-browser",
+        "app/gevelrenovatie-antwerpen/page": "action-browser",
+        "app/merksem/merksem/page": "action-browser",
+        "app/merksem/page": "action-browser",
+        "app/mortsel/page": "action-browser",
+        "app/offerte/page": "action-browser",
+        "app/over-ons/page": "action-browser",
         "app/page": "action-browser",
-        "app/ramen/page": "action-browser"
+        "app/premie-gids/page": "action-browser",
+        "app/premies/page": "action-browser",
+        "app/projecten/page": "action-browser",
+        "app/ramen-deuren-antwerpen/page": "action-browser",
+        "app/ramen/page": "action-browser",
+        "app/renovatie/page": "action-browser",
+        "app/renovatiebedrijf-antwerpen/page": "action-browser",
+        "app/reviews/page": "action-browser",
+        "app/schilde/page": "action-browser",
+        "app/schoten/page": "action-browser",
+        "app/schoten/schoten/page": "action-browser",
+        "app/veelgestelde-vragen/page": "action-browser",
+        "app/vraag-ai/page": "action-browser",
+        "app/werkgebied/[slug]/page": "action-browser",
+        "app/werkgebied/page": "action-browser",
+        "app/wijnegem/page": "action-browser",
+        "app/wilrijk/page": "action-browser",
+        "app/wilrijk/wilrijk/page": "action-browser",
+        "app/zoersel/page": "action-browser",
+        "app/zoersel/zoersel/page": "action-browser"
       },
       "filename": "src/lib/actions.ts",
       "exportedName": "createLead"
     },
-    "0021fb8a194503f27686a589d8e960f769c19d09a2": {
+    "0049eba4f237f4f9d1196492db5ed7f693d43fc57a": {
       "workers": {
         "app/admin/analytics-old/page": {
           "moduleId": 7659,
@@ -247,7 +583,7 @@
       "filename": "src/app/admin/layout.tsx",
       "exportedName": "$$RSC_SERVER_ACTION_0"
     },
-    "00d2f2ec1f673b19659649f644dd9664133fb43c8a": {
+    "00d0ebdd17b4046ad491c052abafef47bf18a558d1": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
@@ -304,364 +640,7 @@
       "filename": "src/lib/actions.ts",
       "exportedName": "runSeoAudit"
     },
-    "4005f13117f049e53877cac478292c1ace92e30bbe": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "approveTestimonial",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "approveTestimonial",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "approveTestimonial",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "approveTestimonial",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "approveTestimonial",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "approveTestimonial",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "approveTestimonial"
-    },
-    "401a3d9066b21b8497f18384757620e269d66d07f2": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "toggleUserStatus",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "toggleUserStatus",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "toggleUserStatus",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "toggleUserStatus",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "toggleUserStatus",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "toggleUserStatus",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "toggleUserStatus"
-    },
-    "403abd185c9bb536aca551b1c4c53b4ab84312d642": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "fixSeoIssue",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "fixSeoIssue",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "fixSeoIssue",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "fixSeoIssue",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "fixSeoIssue",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "fixSeoIssue",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "fixSeoIssue"
-    },
-    "4050e6291491f0b5f07fecd8190c561bbc13856661": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "markLeadAsRead",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "markLeadAsRead",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "markLeadAsRead",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "markLeadAsRead",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "markLeadAsRead",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "markLeadAsRead",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "markLeadAsRead"
-    },
-    "406859fe2ecb6eebffa5e2d62ade4c38381ebfeaac": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/seo/page": {
-          "moduleId": 77209,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "deleteSeoPage",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/seo/page": "action-browser",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "deleteSeoPage"
-    },
-    "408f88550f5bf9190df270fb23a05172e1ecdb1dd0": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "deleteMediaFile",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "deleteMediaFile",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "deleteMediaFile",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "deleteMediaFile",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "deleteMediaFile",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "deleteMediaFile",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "deleteMediaFile"
-    },
-    "40910f7618abcf46b00ff4cf6979f1720af7e50315": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "deleteProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "deleteProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "deleteProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "deleteProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "deleteProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "deleteProject",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "deleteProject"
-    },
-    "4091a7c35c2f2f75e808edfb6426b224a04bed25f4": {
+    "4008bc3c9e4b24f6311480e215068c732ecf77afb5": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
@@ -718,42 +697,42 @@
       "filename": "src/lib/actions.ts",
       "exportedName": "saveSeoPage"
     },
-    "40a7b93905ecbea30eeed4db005bbe7b01e14bf90e": {
+    "4015761f38d4b5422b0e91bdacc6cb43e5c1136fa8": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
           "async": true,
-          "exportedName": "toggleFeaturedTestimonial",
+          "exportedName": "approveTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/media/page": {
           "moduleId": 74032,
           "async": true,
-          "exportedName": "toggleFeaturedTestimonial",
+          "exportedName": "approveTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/projects/page": {
           "moduleId": 300,
           "async": true,
-          "exportedName": "toggleFeaturedTestimonial",
+          "exportedName": "approveTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/settings/page": {
           "moduleId": 87685,
           "async": true,
-          "exportedName": "toggleFeaturedTestimonial",
+          "exportedName": "approveTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/testimonials/page": {
           "moduleId": 73635,
           "async": true,
-          "exportedName": "toggleFeaturedTestimonial",
+          "exportedName": "approveTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/users/page": {
           "moduleId": 76156,
           "async": true,
-          "exportedName": "toggleFeaturedTestimonial",
+          "exportedName": "approveTestimonial",
           "filename": "src/lib/actions.ts"
         }
       },
@@ -766,44 +745,44 @@
         "app/admin/users/page": "rsc"
       },
       "filename": "src/lib/actions.ts",
-      "exportedName": "toggleFeaturedTestimonial"
+      "exportedName": "approveTestimonial"
     },
-    "40d9e72eb13ed71d02fac4ba89bd8fc7eeff61dcbb": {
+    "403920f47881808db3b8f7f387cd546b9d02e43198": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
           "async": true,
-          "exportedName": "deleteTestimonial",
+          "exportedName": "markLeadAsRead",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/media/page": {
           "moduleId": 74032,
           "async": true,
-          "exportedName": "deleteTestimonial",
+          "exportedName": "markLeadAsRead",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/projects/page": {
           "moduleId": 300,
           "async": true,
-          "exportedName": "deleteTestimonial",
+          "exportedName": "markLeadAsRead",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/settings/page": {
           "moduleId": 87685,
           "async": true,
-          "exportedName": "deleteTestimonial",
+          "exportedName": "markLeadAsRead",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/testimonials/page": {
           "moduleId": 73635,
           "async": true,
-          "exportedName": "deleteTestimonial",
+          "exportedName": "markLeadAsRead",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/users/page": {
           "moduleId": 76156,
           "async": true,
-          "exportedName": "deleteTestimonial",
+          "exportedName": "markLeadAsRead",
           "filename": "src/lib/actions.ts"
         }
       },
@@ -816,9 +795,9 @@
         "app/admin/users/page": "rsc"
       },
       "filename": "src/lib/actions.ts",
-      "exportedName": "deleteTestimonial"
+      "exportedName": "markLeadAsRead"
     },
-    "40de10457177bb842028d1d51ee7407ff4b6250442": {
+    "404d56fdcd8f6cd5820945b3ac9ab13a4d87773fcb": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
@@ -868,42 +847,42 @@
       "filename": "src/lib/actions.ts",
       "exportedName": "updateSettings"
     },
-    "40de794769f5ccae53b5d84c81a4c131f6eb8158bf": {
+    "4055d2c8227f24ccba1608010a04279a7fc9639626": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
           "async": true,
-          "exportedName": "incrementProjectViews",
+          "exportedName": "toggleUserStatus",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/media/page": {
           "moduleId": 74032,
           "async": true,
-          "exportedName": "incrementProjectViews",
+          "exportedName": "toggleUserStatus",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/projects/page": {
           "moduleId": 300,
           "async": true,
-          "exportedName": "incrementProjectViews",
+          "exportedName": "toggleUserStatus",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/settings/page": {
           "moduleId": 87685,
           "async": true,
-          "exportedName": "incrementProjectViews",
+          "exportedName": "toggleUserStatus",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/testimonials/page": {
           "moduleId": 73635,
           "async": true,
-          "exportedName": "incrementProjectViews",
+          "exportedName": "toggleUserStatus",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/users/page": {
           "moduleId": 76156,
           "async": true,
-          "exportedName": "incrementProjectViews",
+          "exportedName": "toggleUserStatus",
           "filename": "src/lib/actions.ts"
         }
       },
@@ -916,9 +895,9 @@
         "app/admin/users/page": "rsc"
       },
       "filename": "src/lib/actions.ts",
-      "exportedName": "incrementProjectViews"
+      "exportedName": "toggleUserStatus"
     },
-    "40e3ac3668c89fcada9c61e3033c864d1bcad3a381": {
+    "40762962f08c41d9be5dd2014db9cce95c792c8477": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
@@ -968,42 +947,42 @@
       "filename": "src/lib/actions.ts",
       "exportedName": "saveMediaFiles"
     },
-    "602df4925a393133379bf7d4c893b7a9e0fd2318bf": {
+    "40794036959a608eb28a21227da5725668b5295bdd": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
           "async": true,
-          "exportedName": "uploadMediaFile",
+          "exportedName": "deleteTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/media/page": {
           "moduleId": 74032,
           "async": true,
-          "exportedName": "uploadMediaFile",
+          "exportedName": "deleteTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/projects/page": {
           "moduleId": 300,
           "async": true,
-          "exportedName": "uploadMediaFile",
+          "exportedName": "deleteTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/settings/page": {
           "moduleId": 87685,
           "async": true,
-          "exportedName": "uploadMediaFile",
+          "exportedName": "deleteTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/testimonials/page": {
           "moduleId": 73635,
           "async": true,
-          "exportedName": "uploadMediaFile",
+          "exportedName": "deleteTestimonial",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/users/page": {
           "moduleId": 76156,
           "async": true,
-          "exportedName": "uploadMediaFile",
+          "exportedName": "deleteTestimonial",
           "filename": "src/lib/actions.ts"
         }
       },
@@ -1016,44 +995,44 @@
         "app/admin/users/page": "rsc"
       },
       "filename": "src/lib/actions.ts",
-      "exportedName": "uploadMediaFile"
+      "exportedName": "deleteTestimonial"
     },
-    "606da8ac414cd56ebf5cc2d7a42f60ad12d476f301": {
+    "407dbf9e0f958615f18964c90f5f9f42de772f2740": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
           "async": true,
-          "exportedName": "createTestimonial",
+          "exportedName": "deleteMediaFile",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/media/page": {
           "moduleId": 74032,
           "async": true,
-          "exportedName": "createTestimonial",
+          "exportedName": "deleteMediaFile",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/projects/page": {
           "moduleId": 300,
           "async": true,
-          "exportedName": "createTestimonial",
+          "exportedName": "deleteMediaFile",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/settings/page": {
           "moduleId": 87685,
           "async": true,
-          "exportedName": "createTestimonial",
+          "exportedName": "deleteMediaFile",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/testimonials/page": {
           "moduleId": 73635,
           "async": true,
-          "exportedName": "createTestimonial",
+          "exportedName": "deleteMediaFile",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/users/page": {
           "moduleId": 76156,
           "async": true,
-          "exportedName": "createTestimonial",
+          "exportedName": "deleteMediaFile",
           "filename": "src/lib/actions.ts"
         }
       },
@@ -1066,44 +1045,44 @@
         "app/admin/users/page": "rsc"
       },
       "filename": "src/lib/actions.ts",
-      "exportedName": "createTestimonial"
+      "exportedName": "deleteMediaFile"
     },
-    "607693afa5468191262de99d4654e3d01908e1e27a": {
+    "4094cd4d097945380934b48af3d4165bac06a13927": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
           "async": true,
-          "exportedName": "trackPageView",
+          "exportedName": "incrementProjectViews",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/media/page": {
           "moduleId": 74032,
           "async": true,
-          "exportedName": "trackPageView",
+          "exportedName": "incrementProjectViews",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/projects/page": {
           "moduleId": 300,
           "async": true,
-          "exportedName": "trackPageView",
+          "exportedName": "incrementProjectViews",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/settings/page": {
           "moduleId": 87685,
           "async": true,
-          "exportedName": "trackPageView",
+          "exportedName": "incrementProjectViews",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/testimonials/page": {
           "moduleId": 73635,
           "async": true,
-          "exportedName": "trackPageView",
+          "exportedName": "incrementProjectViews",
           "filename": "src/lib/actions.ts"
         },
         "app/admin/users/page": {
           "moduleId": 76156,
           "async": true,
-          "exportedName": "trackPageView",
+          "exportedName": "incrementProjectViews",
           "filename": "src/lib/actions.ts"
         }
       },
@@ -1116,9 +1095,216 @@
         "app/admin/users/page": "rsc"
       },
       "filename": "src/lib/actions.ts",
-      "exportedName": "trackPageView"
+      "exportedName": "incrementProjectViews"
     },
-    "608c10312188572faaf2f66e836ad181b379770354": {
+    "40cbfb63a4cf5ed4d46bc86557a427b42634aec4c5": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/seo/page": {
+          "moduleId": 77209,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "deleteSeoPage",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/seo/page": "action-browser",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "deleteSeoPage"
+    },
+    "40df8b02fffa41e1fa43f3e98defab6eaba078ef11": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "toggleFeaturedTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "toggleFeaturedTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "toggleFeaturedTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "toggleFeaturedTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "toggleFeaturedTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "toggleFeaturedTestimonial",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "toggleFeaturedTestimonial"
+    },
+    "40e36401d495ce19e8bde8ca98c1260930fe4277b2": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "fixSeoIssue",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "fixSeoIssue",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "fixSeoIssue",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "fixSeoIssue",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "fixSeoIssue",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "fixSeoIssue",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "fixSeoIssue"
+    },
+    "40f4497abd8d24d4d8acda146a17424c72f40a923a": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "deleteProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "deleteProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "deleteProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "deleteProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "deleteProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "deleteProject",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "deleteProject"
+    },
+    "607c4b2c46162466c8d419a474c786fcd06b8566fb": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
@@ -1175,114 +1361,7 @@
       "filename": "src/lib/actions.ts",
       "exportedName": "generateAiSeo"
     },
-    "60905130e50a0b6d9a977903ecb7b9ca04a94bef5d": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/new/page": {
-          "moduleId": 8233,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "createProject",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/new/page": "action-browser",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "createProject"
-    },
-    "60912296dd312a85d8081f36b1a99e99220ba3c262": {
-      "workers": {
-        "app/admin/leads/page": {
-          "moduleId": 16140,
-          "async": true,
-          "exportedName": "createUser",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/media/page": {
-          "moduleId": 74032,
-          "async": true,
-          "exportedName": "createUser",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/projects/page": {
-          "moduleId": 300,
-          "async": true,
-          "exportedName": "createUser",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/settings/page": {
-          "moduleId": 87685,
-          "async": true,
-          "exportedName": "createUser",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/testimonials/page": {
-          "moduleId": 73635,
-          "async": true,
-          "exportedName": "createUser",
-          "filename": "src/lib/actions.ts"
-        },
-        "app/admin/users/page": {
-          "moduleId": 76156,
-          "async": true,
-          "exportedName": "createUser",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/leads/page": "rsc",
-        "app/admin/media/page": "rsc",
-        "app/admin/projects/page": "rsc",
-        "app/admin/settings/page": "rsc",
-        "app/admin/testimonials/page": "rsc",
-        "app/admin/users/page": "rsc"
-      },
-      "filename": "src/lib/actions.ts",
-      "exportedName": "createUser"
-    },
-    "60c2eba06951d7bc12605b2b54b33bbddc1fb3178d": {
+    "6084fecabeda2a94a6b78134e583443c5ddb54caad": {
       "workers": {
         "app/admin/leads/page": {
           "moduleId": 16140,
@@ -1338,8 +1417,265 @@
       },
       "filename": "src/lib/actions.ts",
       "exportedName": "authenticate"
+    },
+    "60a998d734cf31f1983162e864fe8a749b20a74fa9": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "uploadMediaFile",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "uploadMediaFile",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "uploadMediaFile",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "uploadMediaFile",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "uploadMediaFile",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "uploadMediaFile",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "uploadMediaFile"
+    },
+    "60bf774f88732d2547ebf8f7e937676901bee5801f": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "createTestimonial"
+    },
+    "60d18a0bc24e73a24ffab2fb3375fd13435f0e2788": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "createUser",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "createUser",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "createUser",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "createUser",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "createUser",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "createUser",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "createUser"
+    },
+    "60fc3e5224529f9e93618e32b371a4c65af74da60e": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "trackPageView",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "trackPageView",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "trackPageView",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "trackPageView",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "trackPageView",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "trackPageView",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "trackPageView"
+    },
+    "60fe8b7e7c92c1c4534543840dbee5c71dd02dc16f": {
+      "workers": {
+        "app/admin/leads/page": {
+          "moduleId": 16140,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/media/page": {
+          "moduleId": 74032,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/new/page": {
+          "moduleId": 8233,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/projects/page": {
+          "moduleId": 300,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/settings/page": {
+          "moduleId": 87685,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/testimonials/page": {
+          "moduleId": 73635,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/admin/users/page": {
+          "moduleId": 76156,
+          "async": true,
+          "exportedName": "createProject",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/leads/page": "rsc",
+        "app/admin/media/page": "rsc",
+        "app/admin/projects/new/page": "action-browser",
+        "app/admin/projects/page": "rsc",
+        "app/admin/settings/page": "rsc",
+        "app/admin/testimonials/page": "rsc",
+        "app/admin/users/page": "rsc"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "createProject"
     }
   },
   "edge": {},
-  "encryptionKey": "bD48CflncK2DyUW0G3dVaRCoOQNCzGL8u42coq6P4q8="
+  "encryptionKey": "CahPs9SJ5wuY56N0NWe6ysmxc37N+oSvk0gukOIHX6o="
 }

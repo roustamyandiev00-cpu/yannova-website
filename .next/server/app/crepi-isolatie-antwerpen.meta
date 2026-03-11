@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/crepi-isolatie-antwerpen/layout,_N_T_/crepi-isolatie-antwerpen/page,_N_T_/crepi-isolatie-antwerpen"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/crepi-isolatie-antwerpen/__PAGE__",
+    "/crepi-isolatie-antwerpen",
+    "/_index",
+    "/_head"
+  ]
+}
