@@ -2,13 +2,14 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/calculator/layout,_N_T_/calculator/page,_N_T_/calculator"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/calculator/layout,_N_T_/(public)/calculator/page,_N_T_/calculator"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/calculator/__PAGE__",
-    "/calculator",
+    "/!KHB1YmxpYyk/calculator/__PAGE__",
+    "/!KHB1YmxpYyk/calculator",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

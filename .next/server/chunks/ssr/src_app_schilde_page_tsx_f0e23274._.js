@@ -1,3 +1,0 @@
-module.exports=[58495,a=>{"use strict";var b=a.i(87924);function c(){return(0,b.jsxs)("div",{className:"min-h-screen bg-gray-900 p-8",children:[(0,b.jsx)("h1",{className:"text-4xl font-bold text-white",children:"Ramen Schilde"}),(0,b.jsx)("p",{className:"text-gray-300 mt-4",children:"Specialist in ramen in Schilde en omgeving."})]})}a.s(["default",()=>c])}];
-
-//# sourceMappingURL=src_app_schilde_page_tsx_f0e23274._.js.map

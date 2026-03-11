@@ -2,14 +2,15 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/pvc-of-aluminium-ramen/layout,_N_T_/blog/pvc-of-aluminium-ramen/page,_N_T_/blog/pvc-of-aluminium-ramen"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/blog/layout,_N_T_/(public)/blog/pvc-of-aluminium-ramen/layout,_N_T_/(public)/blog/pvc-of-aluminium-ramen/page,_N_T_/blog/pvc-of-aluminium-ramen"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/blog/pvc-of-aluminium-ramen/__PAGE__",
-    "/blog/pvc-of-aluminium-ramen",
-    "/blog",
+    "/!KHB1YmxpYyk/blog/pvc-of-aluminium-ramen/__PAGE__",
+    "/!KHB1YmxpYyk/blog/pvc-of-aluminium-ramen",
+    "/!KHB1YmxpYyk/blog",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

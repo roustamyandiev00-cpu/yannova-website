@@ -71,11 +71,6 @@ export default function LoginPage() {
             {isPending ? 'Bezig...' : 'Inloggen'} <ArrowRight className="ml-2 h-5 w-5" />
           </button>
         </form>
-        
-        <div className="mt-4 text-center text-xs text-gray-500">
-          <p>Test credentials:</p>
-          <p className="font-mono">admin@yannova.be / admin123</p>
-        </div>
       </div>
     </div>
   );

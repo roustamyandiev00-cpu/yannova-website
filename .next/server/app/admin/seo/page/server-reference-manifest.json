@@ -1,24 +1,9 @@
 {
   "node": {
-    "6023c225277875d62ad1112ad967d4701e45374bba": {
-      "workers": {
-        "app/admin/seo/page": {
-          "moduleId": 77209,
-          "async": true,
-          "exportedName": "createLead",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/seo/page": "action-browser"
-      },
-      "exportedName": "createLead",
-      "filename": "src/lib/actions.ts"
-    },
     "0049eba4f237f4f9d1196492db5ed7f693d43fc57a": {
       "workers": {
         "app/admin/seo/page": {
-          "moduleId": 77209,
+          "moduleId": 32615,
           "async": true,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "src/app/admin/layout.tsx"
@@ -33,7 +18,7 @@
     "4008bc3c9e4b24f6311480e215068c732ecf77afb5": {
       "workers": {
         "app/admin/seo/page": {
-          "moduleId": 77209,
+          "moduleId": 32615,
           "async": true,
           "exportedName": "saveSeoPage",
           "filename": "src/lib/actions.ts"
@@ -48,7 +33,7 @@
     "40cbfb63a4cf5ed4d46bc86557a427b42634aec4c5": {
       "workers": {
         "app/admin/seo/page": {
-          "moduleId": 77209,
+          "moduleId": 32615,
           "async": true,
           "exportedName": "deleteSeoPage",
           "filename": "src/lib/actions.ts"
@@ -63,7 +48,7 @@
     "00d0ebdd17b4046ad491c052abafef47bf18a558d1": {
       "workers": {
         "app/admin/seo/page": {
-          "moduleId": 77209,
+          "moduleId": 32615,
           "async": true,
           "exportedName": "runSeoAudit",
           "filename": "src/lib/actions.ts"
@@ -78,7 +63,7 @@
     "607c4b2c46162466c8d419a474c786fcd06b8566fb": {
       "workers": {
         "app/admin/seo/page": {
-          "moduleId": 77209,
+          "moduleId": 32615,
           "async": true,
           "exportedName": "generateAiSeo",
           "filename": "src/lib/actions.ts"

@@ -2,13 +2,14 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/ramen-deuren-antwerpen/layout,_N_T_/ramen-deuren-antwerpen/page,_N_T_/ramen-deuren-antwerpen"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/ramen-deuren-antwerpen/layout,_N_T_/(public)/ramen-deuren-antwerpen/page,_N_T_/ramen-deuren-antwerpen"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/ramen-deuren-antwerpen/__PAGE__",
-    "/ramen-deuren-antwerpen",
+    "/!KHB1YmxpYyk/ramen-deuren-antwerpen/__PAGE__",
+    "/!KHB1YmxpYyk/ramen-deuren-antwerpen",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

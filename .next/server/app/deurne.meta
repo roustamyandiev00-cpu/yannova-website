@@ -2,13 +2,14 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/deurne/layout,_N_T_/deurne/page,_N_T_/deurne"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/deurne/layout,_N_T_/(public)/deurne/page,_N_T_/deurne"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/deurne/__PAGE__",
-    "/deurne",
+    "/!KHB1YmxpYyk/deurne/__PAGE__",
+    "/!KHB1YmxpYyk/deurne",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

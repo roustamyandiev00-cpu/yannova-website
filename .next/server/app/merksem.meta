@@ -2,13 +2,14 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/merksem/layout,_N_T_/merksem/page,_N_T_/merksem"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/merksem/layout,_N_T_/(public)/merksem/page,_N_T_/merksem"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/merksem/__PAGE__",
-    "/merksem",
+    "/!KHB1YmxpYyk/merksem/__PAGE__",
+    "/!KHB1YmxpYyk/merksem",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

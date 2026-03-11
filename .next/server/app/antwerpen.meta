@@ -2,13 +2,14 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/antwerpen/layout,_N_T_/antwerpen/page,_N_T_/antwerpen"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/antwerpen/layout,_N_T_/(public)/antwerpen/page,_N_T_/antwerpen"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/antwerpen/__PAGE__",
-    "/antwerpen",
+    "/!KHB1YmxpYyk/antwerpen/__PAGE__",
+    "/!KHB1YmxpYyk/antwerpen",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

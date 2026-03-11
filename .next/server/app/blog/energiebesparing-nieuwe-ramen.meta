@@ -2,14 +2,15 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/energiebesparing-nieuwe-ramen/layout,_N_T_/blog/energiebesparing-nieuwe-ramen/page,_N_T_/blog/energiebesparing-nieuwe-ramen"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/blog/layout,_N_T_/(public)/blog/energiebesparing-nieuwe-ramen/layout,_N_T_/(public)/blog/energiebesparing-nieuwe-ramen/page,_N_T_/blog/energiebesparing-nieuwe-ramen"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/blog/energiebesparing-nieuwe-ramen/__PAGE__",
-    "/blog/energiebesparing-nieuwe-ramen",
-    "/blog",
+    "/!KHB1YmxpYyk/blog/energiebesparing-nieuwe-ramen/__PAGE__",
+    "/!KHB1YmxpYyk/blog/energiebesparing-nieuwe-ramen",
+    "/!KHB1YmxpYyk/blog",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

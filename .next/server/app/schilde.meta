@@ -2,13 +2,14 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/schilde/layout,_N_T_/schilde/page,_N_T_/schilde"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/schilde/layout,_N_T_/(public)/schilde/page,_N_T_/schilde"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/schilde/__PAGE__",
-    "/schilde",
+    "/!KHB1YmxpYyk/schilde/__PAGE__",
+    "/!KHB1YmxpYyk/schilde",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

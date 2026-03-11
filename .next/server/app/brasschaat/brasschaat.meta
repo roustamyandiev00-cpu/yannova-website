@@ -2,14 +2,15 @@
   "headers": {
     "x-nextjs-stale-time": "300",
     "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/brasschaat/layout,_N_T_/brasschaat/brasschaat/layout,_N_T_/brasschaat/brasschaat/page,_N_T_/brasschaat/brasschaat"
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/brasschaat/layout,_N_T_/(public)/brasschaat/brasschaat/layout,_N_T_/(public)/brasschaat/brasschaat/page,_N_T_/brasschaat/brasschaat"
   },
   "segmentPaths": [
     "/_tree",
     "/_full",
-    "/brasschaat/brasschaat/__PAGE__",
-    "/brasschaat/brasschaat",
-    "/brasschaat",
+    "/!KHB1YmxpYyk/brasschaat/brasschaat/__PAGE__",
+    "/!KHB1YmxpYyk/brasschaat/brasschaat",
+    "/!KHB1YmxpYyk/brasschaat",
+    "/!KHB1YmxpYyk",
     "/_index",
     "/_head"
   ]

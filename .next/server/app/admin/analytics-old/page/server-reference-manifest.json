@@ -1,24 +1,9 @@
 {
   "node": {
-    "6023c225277875d62ad1112ad967d4701e45374bba": {
-      "workers": {
-        "app/admin/analytics-old/page": {
-          "moduleId": 7659,
-          "async": true,
-          "exportedName": "createLead",
-          "filename": "src/lib/actions.ts"
-        }
-      },
-      "layer": {
-        "app/admin/analytics-old/page": "action-browser"
-      },
-      "exportedName": "createLead",
-      "filename": "src/lib/actions.ts"
-    },
     "0049eba4f237f4f9d1196492db5ed7f693d43fc57a": {
       "workers": {
         "app/admin/analytics-old/page": {
-          "moduleId": 7659,
+          "moduleId": 93343,
           "async": true,
           "exportedName": "$$RSC_SERVER_ACTION_0",
           "filename": "src/app/admin/layout.tsx"
