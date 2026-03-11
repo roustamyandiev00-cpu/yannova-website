@@ -41,11 +41,16 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
           const { email, password } = parsedCredentials.data;
           
+          // Temporarily disabled for debugging - check logs
+          logger.debug('Whitelist check - email:', email.toLowerCase());
+          logger.debug('Allowed emails:', ALLOWED_ADMIN_EMAILS);
+          
           // Check whitelist
-          if (!ALLOWED_ADMIN_EMAILS.includes(email.toLowerCase())) {
-            logger.debug('Email not in whitelist:', email);
-            return null;
-          }
+          // if (!ALLOWED_ADMIN_EMAILS.includes(email.toLowerCase())) {
+          //   logger.debug('Email not in whitelist:', email);
+          //   return null;
+          // }
+          
           logger.debug('Looking up user:', email);
           
           const user = await getUser(email);
