@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/renovatie',
     '/projecten',
     '/over-ons',
+    '/privacy',
     '/contact',
     '/offerte',
     '/premie-gids',
@@ -47,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'schoten',
     'zoersel'
   ].map(m => `/deuren/${m}`)
+  const localGevelrenovatiePages = municipalities.map(m => `/gevelrenovatie/${m}`)
 
   // Overige specifieke landingspagina's
   const specialLandingPages = [
@@ -60,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...mainPages, 
     ...localRamenPages, 
     ...localDeurenPages, 
+    ...localGevelrenovatiePages,
     ...specialLandingPages
   ]
 
