@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../../.next";
 
 @theme {
   --font-inter: "Inter", "sans-serif";
@@ -193,17 +194,17 @@ body {
 }
 
 @layer utilities {
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
+    height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-background;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-secondary/30 rounded-full hover:bg-secondary/50 transition-colors;
+    @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
   }
 
   /* Glassmorphism utilities - minimalistisch zonder borders */

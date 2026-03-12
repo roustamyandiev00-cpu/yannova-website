@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 
-const GTM_ID = 'GTM-586XVHKN';
+const GTM_ID = 'GTM-MZ98NM6L';
 
 export function GoogleTagManager() {
   return (
@@ -35,6 +35,7 @@ export function GoogleTagManagerNoScript() {
 }
 
 // Helper functions for GTM events
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function gtmEvent(eventName: string, eventData?: Record<string, any>) {
   if (typeof window !== 'undefined' && (window as any).dataLayer) {
     (window as any).dataLayer.push({

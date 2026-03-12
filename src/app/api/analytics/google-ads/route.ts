@@ -9,6 +9,7 @@ export async function POST(request: NextRequest) {
     // Save keywords data
     if (keywords && Array.isArray(keywords)) {
       await Promise.all(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         keywords.map((kw: any) =>
           prisma.googleAdsKeyword.create({
             data: {
@@ -35,6 +36,7 @@ export async function POST(request: NextRequest) {
     // Save campaigns data
     if (campaigns && Array.isArray(campaigns)) {
       await Promise.all(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         campaigns.map((camp: any) =>
           prisma.googleAdsCampaign.create({
             data: {

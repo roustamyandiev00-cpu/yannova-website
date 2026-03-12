@@ -25,7 +25,7 @@ export default function BlogPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+      <div className="min-h-screen bg-linear-to-b from-gray-900 via-gray-800 to-gray-900">
         <article className="py-20">
           <div className="container mx-auto px-6 max-w-4xl">
             <Link href="/blog" className="inline-flex items-center gap-2 text-secondary hover:underline mb-8">
@@ -80,7 +80,7 @@ export default function BlogPost() {
 
               <h2 className="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
                 <Euro className="h-8 w-8 text-secondary" />
-                Concrete Besparingen in Euro's
+                Concrete Besparingen in Euro&apos;s
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Voor een gemiddelde rijwoning met 12 ramen (ca. 20m² glas):
@@ -133,7 +133,7 @@ export default function BlogPost() {
                 </li>
               </ul>
 
-              <div className="bg-gradient-to-r from-secondary/10 to-primary/10 border border-secondary/20 rounded-2xl p-8 mt-12">
+              <div className="bg-linear-to-r from-secondary/10 to-primary/10 border border-secondary/20 rounded-2xl p-8 mt-12">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Bereken Uw Besparing
                 </h3>

@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Ramen en Deuren Plaatsen Antwerpen | Yannova - Gratis Offerte',
@@ -11,7 +10,7 @@ export default function RamenDeurenAntwerpenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16 px-4">
+      <section className="bg-linear-to-br from-blue-600 to-blue-800 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Ramen en Deuren Plaatsen in Antwerpen
@@ -183,14 +182,14 @@ export default function RamenDeurenAntwerpenPage() {
             <div className="border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
               <p className="text-gray-700 mb-4">
-                "Professioneel werk! Onze nieuwe ramen zijn perfect geplaatst en het huis is nu veel stiller."
+                &quot;Professioneel werk! Onze nieuwe ramen zijn perfect geplaatst en het huis is nu veel stiller.&quot;
               </p>
               <p className="font-semibold">- Jan D., Antwerpen</p>
             </div>
             <div className="border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
               <p className="text-gray-700 mb-4">
-                "Snelle service en goede prijs. Aanrader voor wie nieuwe ramen wil in Antwerpen!"
+                &quot;Snelle service en goede prijs. Aanrader voor wie nieuwe ramen wil in Antwerpen!&quot;
               </p>
               <p className="font-semibold">- Marie V., Berchem</p>
             </div>

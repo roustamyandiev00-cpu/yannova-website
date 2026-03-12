@@ -15,7 +15,13 @@ export function Stats() {
     return (
         <div className="relative isolate overflow-hidden bg-background py-16 sm:py-20">
             {/* Background decoration */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
+            <div
+                className="absolute inset-0"
+                style={{
+                    backgroundImage:
+                        "radial-gradient(ellipse at center, rgba(255, 107, 0, 0.08), transparent 60%)",
+                }}
+            />
             
             <div className="container mx-auto px-6 lg:px-8 relative z-10">
                 <div className="mx-auto max-w-2xl lg:max-w-none">

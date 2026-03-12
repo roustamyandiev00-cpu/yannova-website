@@ -30,12 +30,10 @@ CREATE INDEX IF NOT EXISTS idx_chat_messages_created_at ON chat_messages(created
 ALTER TABLE chat_sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE chat_messages ENABLE ROW LEVEL SECURITY;
 
--- Grants for Supabase API roles
 GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
 GRANT ALL ON TABLE chat_sessions TO anon, authenticated, service_role;
 GRANT ALL ON TABLE chat_messages TO anon, authenticated, service_role;
 
--- RLS Policies - Allow all operations for now (you can restrict later)
 DO $$
 BEGIN
   IF NOT EXISTS (
@@ -66,7 +64,6 @@ BEGIN
 END
 $$;
 
--- Function to update updated_at timestamp
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -75,7 +72,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Trigger to auto-update updated_at
 DO $$
 BEGIN
   IF NOT EXISTS (
@@ -91,7 +87,6 @@ BEGIN
 END
 $$;
 
--- Enable Realtime for both tables
 DO $$
 BEGIN
   IF NOT EXISTS (

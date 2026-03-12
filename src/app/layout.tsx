@@ -2,15 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { Chatbot } from "@/components/Chatbot";
-import { ExitIntentPopup } from "@/components/ExitIntentPopup";
-import { CookieConsent } from "@/components/CookieConsent";
 import { Analytics } from "@/components/Analytics";
-import { StickyCTA } from "@/components/StickyCTA";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
-import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 import { generateLocalBusinessSchema, generateServiceSchema, generateWebSiteSchema, generateOrganizationSchema, services } from "@/lib/structured-data";
 
 const inter = Inter({ 
@@ -18,6 +11,8 @@ const inter = Inter({
   display: 'swap',
   preload: true,
 });
+
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MZ98NM6L";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.yannova.be"),
@@ -40,7 +35,9 @@ export const metadata: Metadata = {
     "renovatiebedrijf antwerpen",
   ],
   alternates: {
-    canonical: "https://www.yannova.be",
+    languages: {
+      'nl-BE': 'https://www.yannova.be',
+    },
   },
   openGraph: {
     title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
@@ -117,8 +114,14 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        
-        <GoogleTagManager />
+
+        <Script id="google-tag-manager" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
         <Analytics />
         <Script
           id="contentsquare-init"
@@ -148,20 +151,16 @@ export default function RootLayout({
             `
           }}
         />
-        <Script
-          id="clarity"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "vsu0sqq5xj");`
-          }}
-        />
       </head>
       <body className={inter.className}>
-        <GoogleTagManagerNoScript />
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <PerformanceMonitor />
         <script
           type="application/ld+json"

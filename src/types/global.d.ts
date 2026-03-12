@@ -5,9 +5,10 @@
 
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
-    clarity?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+    clarity?: (...args: unknown[]) => void;
+    uetq?: unknown[] | { push: (...args: unknown[]) => void };
   }
 }
 

@@ -8,6 +8,7 @@ export async function POST(request: NextRequest) {
 
     if (rankings && Array.isArray(rankings)) {
       await Promise.all(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         rankings.map((ranking: any) =>
           prisma.seoRanking.create({
             data: {

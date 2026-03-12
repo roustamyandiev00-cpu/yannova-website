@@ -10,7 +10,7 @@ export default function GevelrenovatieAntwerpenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-orange-600 to-orange-800 text-white py-16 px-4">
+      <section className="bg-linear-to-br from-orange-600 to-orange-800 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Gevelrenovatie in Antwerpen
@@ -172,12 +172,12 @@ export default function GevelrenovatieAntwerpenPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Onze gevel ziet er weer prachtig uit! Professioneel werk en netjes afgewerkt."</p>
+              <p className="text-gray-700 mb-4">&quot;Onze gevel ziet er weer prachtig uit! Professioneel werk en netjes afgewerkt.&quot;</p>
               <p className="font-semibold">- Peter M., Antwerpen</p>
             </div>
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Snelle service en goede prijs voor gevelrenovatie. Zeer tevreden!"</p>
+              <p className="text-gray-700 mb-4">&quot;Snelle service en goede prijs voor gevelrenovatie. Zeer tevreden!&quot;</p>
               <p className="font-semibold">- Linda K., Berchem</p>
             </div>
           </div>

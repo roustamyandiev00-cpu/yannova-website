@@ -34,6 +34,14 @@ export async function authenticate(
     // If we get here without error, redirect manually
     redirect('/admin');
   } catch (error) {
+    // NextAuth throws NEXT_REDIRECT error on success - this is expected
+    if (error instanceof Error) {
+      if (error.message?.includes('NEXT_REDIRECT')) {
+        logger.debug('Redirect error (expected) - re-throwing');
+        throw error; // Re-throw to allow redirect
+      }
+    }
+
     logger.error('Authentication error:', error);
     
     if (error instanceof AuthError) {
@@ -48,13 +56,8 @@ export async function authenticate(
           return 'Er is iets misgegaan. Probeer opnieuw.';
       }
     }
-    
-    // NextAuth throws NEXT_REDIRECT error on success - this is expected
+
     if (error instanceof Error) {
-      if (error.message?.includes('NEXT_REDIRECT')) {
-        logger.debug('Redirect error (expected) - re-throwing');
-        throw error; // Re-throw to allow redirect
-      }
       logger.error('Unexpected error message:', error.message);
     }
     

@@ -1,6 +1,6 @@
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
-import { ArrowRight, Phone, CheckCircle, CheckCircle2, Star, MessageCircle, Shield, Clock } from 'lucide-react';
+import { ArrowRight, Phone, CheckCircle2, Star, MessageCircle, Shield, Clock } from 'lucide-react';
 import { company } from '@/lib/company';
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 
@@ -166,7 +166,7 @@ export default function RamenPage() {
       </section>
 
       {/* Uitgebreide SEO Content Sectie */}
-      <section className="py-20 bg-gradient-to-b from-background to-background/95 border-t border-white/10">
+      <section className="py-20 bg-linear-to-b from-background to-background/95 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto prose prose-lg prose-invert">
             <h2 className="text-3xl font-bold text-white mb-6">
@@ -213,7 +213,7 @@ export default function RamenPage() {
             <p className="text-gray-300 leading-relaxed mb-6">
               De hoogte van de premie hangt af van uw inkomen en de energetische verbetering. Wij helpen u graag bij het 
               aanvragen van premies en zorgen dat alle documenten correct zijn. Voor woningen in Antwerpen, Berchem, 
-              Deurne, Merksem en andere gemeenten kunnen de premies oplopen tot enkele duizenden euro's.
+              Deurne, Merksem en andere gemeenten kunnen de premies oplopen tot enkele duizenden euro&apos;s.
             </p>
 
             <h3 className="text-2xl font-bold text-white mt-8 mb-4">

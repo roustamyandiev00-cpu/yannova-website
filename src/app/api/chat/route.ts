@@ -42,6 +42,17 @@ BELANGRIJKE REGELS:
 - Weet je iets niet? Zeg: "Daar kan ik u beter telefonisch over adviseren: +32 489 96 00 01"
 - Praat als Kimberly, een échte medewerker`;
 
+async function touchChatSession(sessionId: string) {
+  const { error } = await supabase
+    .from('chat_sessions')
+    .update({ updated_at: new Date().toISOString() })
+    .eq('id', sessionId);
+
+  if (error) {
+    console.error('Error updating chat session timestamp:', error);
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -116,39 +127,44 @@ export async function POST(req: Request) {
         } else {
           const errorData = await grokResponse.json();
           console.error('Grok AI error:', errorData);
-          console.log('Falling back to Google Gemini...');
+          console.log('Falling back after Grok error...');
         }
-      } catch (grokError) {
-        console.log('Grok failed, falling back to Google Gemini...');
+      } catch (providerError) {
+        console.error('Grok failed, falling back:', providerError);
       }
     }
 
     // Fallback to Google Gemini
-    if (googleApiKey) {
-      const result = await streamText({
-        model: google('gemini-flash-latest'),
-        system: systemPrompt,
-        messages,
-        async onFinish({ text }) {
-          // Save AI response to database after streaming completes
-          if (sessionId) {
-            await supabase.from('chat_messages').insert({
-              session_id: sessionId,
-              text,
-              sender: 'ai',
-            });
-          }
-        },
-      });
+    if (googleApiKey && googleApiKey !== 'YOUR_GOOGLE_AI_API_KEY_HERE') {
+      try {
+        const result = await streamText({
+          model: google('gemini-1.5-flash'),
+          system: systemPrompt,
+          messages,
+          async onFinish({ text }) {
+            // Save AI response to database after streaming completes
+            if (sessionId) {
+              await supabase.from('chat_messages').insert({
+                session_id: sessionId,
+                text,
+                sender: 'ai',
+              });
+              await touchChatSession(sessionId);
+            }
+          },
+        });
 
-      const response = result.toDataStreamResponse();
-      
-      // Add session ID to response headers
-      if (sessionId) {
-        response.headers.set('X-Session-Id', sessionId);
+        const response = result.toDataStreamResponse();
+        
+        // Add session ID to response headers
+        if (sessionId) {
+          response.headers.set('X-Session-Id', sessionId);
+        }
+        
+        return response;
+      } catch (providerError) {
+        console.error('Gemini failed, falling back:', providerError);
       }
-      
-      return response;
     }
 
     // Last resort fallback response
@@ -176,14 +192,15 @@ export async function POST(req: Request) {
         text: response,
         sender: 'ai',
       });
+      await touchChatSession(sessionId);
     }
 
-    // Return as streaming response format
+    // Return as Vercel AI SDK streaming response format
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
       start(controller) {
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ choices: [{ delta: { content: response } }] })}\n\n`));
-        controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+        // Vercel AI SDK protocol: 0: means text content
+        controller.enqueue(encoder.encode(`0:${JSON.stringify(response)}\n`));
         controller.close();
       },
     });

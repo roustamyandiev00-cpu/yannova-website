@@ -10,7 +10,7 @@ export default function CrepiIsolatieAntwerpenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-16 px-4">
+      <section className="bg-linear-to-br from-green-600 to-green-800 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Crepi Aanbrengen in Antwerpen
@@ -171,12 +171,12 @@ export default function CrepiIsolatieAntwerpenPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Mooi afgewerkt crepi! Onze gevel ziet er weer als nieuw uit."</p>
+              <p className="text-gray-700 mb-4">&quot;Mooi afgewerkt crepi! Onze gevel ziet er weer als nieuw uit.&quot;</p>
               <p className="font-semibold">- Tom V., Antwerpen</p>
             </div>
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Professioneel werk en netjes opgeleverd. Aanrader!"</p>
+              <p className="text-gray-700 mb-4">&quot;Professioneel werk en netjes opgeleverd. Aanrader!&quot;</p>
               <p className="font-semibold">- Sarah D., Deurne</p>
             </div>
           </div>

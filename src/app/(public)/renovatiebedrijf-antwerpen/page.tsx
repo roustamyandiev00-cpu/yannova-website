@@ -10,7 +10,7 @@ export default function RenovatiebedrijfAntwerpenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-purple-600 to-purple-800 text-white py-16 px-4">
+      <section className="bg-linear-to-br from-purple-600 to-purple-800 text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Renovatiebedrijf in Antwerpen
@@ -124,35 +124,35 @@ export default function RenovatiebedrijfAntwerpenPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Hoe Werkt Het?</h2>
           <div className="space-y-8">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
+              <div className="shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
               <div>
                 <h3 className="font-bold text-lg mb-2">Contact & Afspraak</h3>
                 <p className="text-gray-700">Neem contact op voor een vrijblijvend gesprek en plaatsbezoek.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
+              <div className="shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
               <div>
                 <h3 className="font-bold text-lg mb-2">Offerte op Maat</h3>
                 <p className="text-gray-700">We maken een gedetailleerde offerte met duidelijke prijzen.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
+              <div className="shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
               <div>
                 <h3 className="font-bold text-lg mb-2">Planning</h3>
                 <p className="text-gray-700">We plannen de werkzaamheden in overleg met u.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">4</div>
+              <div className="shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">4</div>
               <div>
                 <h3 className="font-bold text-lg mb-2">Uitvoering</h3>
                 <p className="text-gray-700">Onze vakmannen voeren het werk professioneel uit.</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">5</div>
+              <div className="shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">5</div>
               <div>
                 <h3 className="font-bold text-lg mb-2">Oplevering</h3>
                 <p className="text-gray-700">Netjes afgewerkt en opgeleverd, klaar om van te genieten!</p>
@@ -211,17 +211,17 @@ export default function RenovatiebedrijfAntwerpenPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Onze totaalrenovatie perfect uitgevoerd. Alles uit één hand, super handig!"</p>
+              <p className="text-gray-700 mb-4">&quot;Onze totaalrenovatie perfect uitgevoerd. Alles uit één hand, super handig!&quot;</p>
               <p className="font-semibold">- Koen B., Antwerpen</p>
             </div>
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Betrouwbaar bedrijf met vakmanschap. Onze badkamer is prachtig geworden."</p>
+              <p className="text-gray-700 mb-4">&quot;Betrouwbaar bedrijf met vakmanschap. Onze badkamer is prachtig geworden.&quot;</p>
               <p className="font-semibold">- Els M., Berchem</p>
             </div>
             <div className="bg-white border rounded-lg p-6">
               <div className="text-yellow-400 mb-2">★★★★★</div>
-              <p className="text-gray-700 mb-4">"Goede communicatie en netjes afgewerkt. Zeer tevreden!"</p>
+              <p className="text-gray-700 mb-4">&quot;Goede communicatie en netjes afgewerkt. Zeer tevreden!&quot;</p>
               <p className="font-semibold">- Dirk P., Deurne</p>
             </div>
           </div>

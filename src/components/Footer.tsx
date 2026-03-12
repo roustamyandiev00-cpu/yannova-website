@@ -9,7 +9,13 @@ export function Footer() {
   return (
     <footer className="bg-linear-to-b from-background to-[#0d1117] text-white border-t border-white/5 relative overflow-hidden" aria-labelledby="footer-heading">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at bottom, rgba(255, 107, 0, 0.08), transparent 60%)",
+        }}
+      />
       
       <h2 id="footer-heading" className="sr-only">
         Footer

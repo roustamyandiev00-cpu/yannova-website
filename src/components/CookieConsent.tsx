@@ -9,6 +9,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
+  const broadcastConsent = (value: 'accepted' | 'declined') => {
+    window.dispatchEvent(new CustomEvent('cookie-consent-change', { detail: value }));
+  };
+
   useEffect(() => {
     // Check if user has already accepted
     const consent = localStorage.getItem('cookieConsent');
@@ -23,11 +27,13 @@ export function CookieConsent() {
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
+    broadcastConsent('accepted');
     setIsVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem('cookieConsent', 'declined');
+    broadcastConsent('declined');
     setIsVisible(false);
   };
 

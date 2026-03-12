@@ -45,7 +45,13 @@ export function Specializations() {
   return (
     <section className="py-20 sm:py-28 bg-linear-to-b from-background via-background to-[#0d1117] relative overflow-hidden" id="diensten">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-secondary/5 via-transparent to-transparent" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse at top, rgba(255, 107, 0, 0.08), transparent 60%)",
+        }}
+      />
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       

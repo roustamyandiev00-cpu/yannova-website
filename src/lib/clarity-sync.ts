@@ -71,9 +71,10 @@ export async function syncClarityToAnalytics(date?: Date) {
  * Sync laatste 30 dagen van Clarity data
  */
 export async function syncClarityHistorical(days: number = 30) {
+  const allowedDays = Math.min(Math.max(days, 1), 3);
   const results = [];
   
-  for (let i = 0; i < days; i++) {
+  for (let i = 0; i < allowedDays; i++) {
     const date = new Date();
     date.setDate(date.getDate() - i);
     
@@ -91,13 +92,21 @@ export async function syncClarityHistorical(days: number = 30) {
   return results;
 }
 
+function getMetadataValue(
+  metadata: Record<string, unknown> | undefined,
+  key: string
+): string | undefined {
+  const value = metadata?.[key];
+  return typeof value === 'string' && value.trim() ? value : undefined;
+}
+
 /**
  * Track custom Clarity events naar conversies
  */
 export async function trackClarityEvent(
   eventName: string,
   sessionId: string,
-  metadata?: Record<string, any>
+  metadata?: Record<string, unknown>
 ) {
   try {
     // Bepaal conversie type gebaseerd op event naam
@@ -115,11 +124,11 @@ export async function trackClarityEvent(
     await prisma.conversion.create({
       data: {
         type: conversionType,
-        source: metadata?.source || 'clarity_event',
-        campaign: metadata?.campaign,
-        keyword: metadata?.keyword,
-        page: metadata?.page,
-        device: metadata?.device,
+        source: getMetadataValue(metadata, 'source') || 'clarity_event',
+        campaign: getMetadataValue(metadata, 'campaign'),
+        keyword: getMetadataValue(metadata, 'keyword'),
+        page: getMetadataValue(metadata, 'page'),
+        device: getMetadataValue(metadata, 'device'),
       },
     });
 

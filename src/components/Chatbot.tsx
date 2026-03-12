@@ -304,12 +304,12 @@ export function Chatbot() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
-            className="fixed bottom-24 right-6 z-40 w-[300px] rounded-xl border border-white/10 bg-card shadow-2xl overflow-hidden"
+            className="fixed bottom-24 right-6 z-40 w-[300px] rounded-xl border border-white/10 bg-card shadow-xl overflow-hidden"
           >
-            <div className="bg-secondary p-3">
+            <div className="border-b border-white/10 bg-white/5 p-3">
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-                  <Bot className="h-5 w-5 text-white" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary/20">
+                  <Bot className="h-5 w-5 text-secondary" />
                 </div>
                 <div className="flex-1">
                   <h4 className="text-sm font-bold text-white">Hallo! 👋</h4>
@@ -344,7 +344,7 @@ export function Chatbot() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-white shadow-2xl transition-transform hover:scale-110 active:scale-95"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-white shadow-xl transition-transform hover:scale-110 active:scale-95"
       >
         {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>
@@ -355,13 +355,13 @@ export function Chatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[350px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-background shadow-2xl sm:w-[400px]"
+            className="fixed bottom-24 right-6 z-50 flex h-[500px] w-[350px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-background shadow-xl sm:w-[400px]"
           >
             {/* Header */}
-            <div className="flex items-center justify-between bg-secondary p-4 text-white">
+            <div className="flex items-center justify-between border-b border-white/10 bg-white/5 p-4 text-white">
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-                  <Bot className="h-5 w-5" />
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary/20">
+                  <Bot className="h-5 w-5 text-secondary" />
                 </div>
                 <div>
                   <h3 className="text-sm font-bold">Kimberly</h3>

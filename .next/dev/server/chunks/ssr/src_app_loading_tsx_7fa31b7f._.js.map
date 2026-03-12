@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/innovarslabo/Desktop/Yannova.be/src/app/loading.tsx"],"sourcesContent":["export default function Loading() {\n    return (\n        <div className=\"flex h-[calc(100vh-80px)] items-center justify-center bg-linear-to-b from-[#0a0c10] via-[#0d1117] to-[#0a0c10]\">\n            <div className=\"relative\">\n                <div className=\"h-20 w-20 rounded-full border-4 border-secondary/20 border-t-secondary animate-spin shadow-elegant glow\"></div>\n                <div className=\"absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-bold text-lg animate-pulse\">\n                    <span className=\"gradient-text\">Y</span>\n                </div>\n            </div>\n        </div>\n    );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,8OAAC;QAAI,WAAU;kBACX,cAAA,8OAAC;YAAI,WAAU;;8BACX,8OAAC;oBAAI,WAAU;;;;;;8BACf,8OAAC;oBAAI,WAAU;8BACX,cAAA,8OAAC;wBAAK,WAAU;kCAAgB;;;;;;;;;;;;;;;;;;;;;;AAKpD"}}]
-}

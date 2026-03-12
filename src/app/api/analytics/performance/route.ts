@@ -42,7 +42,7 @@ export async function GET(request: NextRequest) {
     const category = searchParams.get('category');
     const startDate = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
 
-    const where: any = { period: { gte: startDate } };
+    const where: Record<string, unknown> = { period: { gte: startDate } };
     if (category) {
       where.category = category;
     }

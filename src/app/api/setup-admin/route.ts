@@ -114,7 +114,7 @@ export async function GET() {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST() {
   // Keep POST for backward compatibility
   return GET();
 }

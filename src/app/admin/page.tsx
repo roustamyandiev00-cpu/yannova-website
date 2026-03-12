@@ -40,14 +40,15 @@ export default async function AdminDashboard() {
   let leadsCount = 0;
   let testimonialCount = 0;
   let mediaCount = 0;
-  const pageViewsToday = 0;
+  let pageViewsToday = 0;
   let userCount = 0;
   let activeChatSessions = 0;
   let recentLeads: Lead[] = [];
   let recentProjects: Project[] = [];
 
   try {
-    [projectCount, leadsCount, testimonialCount, mediaCount, userCount] = await Promise.all([
+    [projectCount, leadsCount, testimonialCount, mediaCount, pageViewsToday, userCount] =
+      await Promise.all([
       prisma.project.count(),
       prisma.lead.count({ where: { read: false } }),
       prisma.testimonial.count({ where: { approved: false } }),
@@ -60,7 +61,7 @@ export default async function AdminDashboard() {
         },
       }),
       prisma.user.count(),
-    ]);
+      ]);
 
     // Get recent leads
     recentLeads = await prisma.lead.findMany({
@@ -266,6 +267,9 @@ export default async function AdminDashboard() {
             <p className="text-sm text-white">Bijhouden wat werkt</p>
           </div>
         </div>
+        <p className="mt-4 text-xs text-gray-500">
+          Vandaag geregistreerde pageviews: {pageViewsToday}
+        </p>
       </div>
     </main>
   );
