@@ -3,6 +3,10 @@ import { PrismaPg } from '@prisma/adapter-pg';
 import { PrismaClient } from '@prisma/client';
 import { logger } from '@/lib/logger';
 
+const isBuildProcess =
+  process.env.NEXT_PHASE === 'phase-production-build' ||
+  process.env.npm_lifecycle_event === 'build';
+
 // Ensure DATABASE_URL has sslmode parameter for self-signed certificates
 let connectionString = process.env.DATABASE_URL;
 
@@ -44,7 +48,7 @@ export const prisma =
   globalForPrisma.prisma ||
   new PrismaClient({
     adapter,
-    log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+    log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : isBuildProcess ? [] : ['error'],
     errorFormat: 'pretty',
   });
 

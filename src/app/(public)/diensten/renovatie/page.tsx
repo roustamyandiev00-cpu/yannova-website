@@ -6,6 +6,7 @@ import { generateSEO } from "@/lib/seo";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { company } from "@/lib/company";
+import { ServiceSeoSection } from "@/components/ServiceSeoSection";
 
 export const metadata = generateSEO({
   title: "Totaalrenovatie in Antwerpen - Van Badkamer tot Volledige Woning",
@@ -32,47 +33,47 @@ const faqSchema = generateFAQSchema(commonFAQs.renovatie);
 export default function RenovationPage() {
   const benefits = [
     {
-      title: "Totaalcoördinatie",
-      description: "Van afbraak tot afwerking met één duidelijke projectverantwoordelijke.",
+      title: "Full-Service Partner",
+      description: "Eén aanspreekpunt voor uw gevel, ramen en dak. Wij regelen de volledige coördinatie.",
       icon: Hammer,
     },
     {
-      title: "Budgetcontrole",
-      description: "Transparante offertes en afspraken zonder onaangename verrassingen.",
+      title: "Energetische Focus",
+      description: "Wij optimaliseren uw woning voor de toekomst met focus op isolatie en EPC-verbetering.",
       icon: Ruler,
     },
     {
-      title: "Slim ontwerp",
-      description: "Praktische keuzes voor indeling, licht en materiaalgebruik.",
+      title: "Bouwkundig Advies",
+      description: "Technisch onderbouwde keuzes die de levensduur en waarde van uw pand verhogen.",
       icon: Lightbulb,
     },
     {
-      title: "Strakke planning",
-      description: "Heldere timing en goede opvolging tijdens alle fases van de werken.",
+      title: "Strakke Planning",
+      description: "Geen wekenlange leegstand tussen verschillende vakmensen door onze integrale aanpak.",
       icon: Clock,
     },
   ];
 
   const services = [
     {
-      title: "Badkamerrenovatie",
-      description: "Van klassiek tot modern - wij realiseren uw droombadkamer. Inclusief loodgieterij, tegelwerk, sanitair en verlichting.",
-      features: ["Volledige coördinatie", "Keuze uit topmerken", "Waterdichte afwerking"]
+      title: "Integrale Buitenschil",
+      description: "De meest effectieve renovatie start buiten. Wij combineren gevelisolatie, nieuwe ramen en dakwerken voor een optimaal resultaat.",
+      features: ["Luchtdichte aansluitingen", "Uniforme esthetiek", "Maximale energiebesparing"]
     },
     {
-      title: "Keukenrenovatie",
-      description: "Nieuwe keuken plaatsen of bestaande renoveren. Wij zorgen voor elektriciteit, loodgieterij en afwerking rond uw keukenkasten.",
-      features: ["Aansluiting toestellen", "Tegelwerk of andere wandafwerking", "Verlichting en stopcontacten"]
+      title: "Totaalrenovatie Woning",
+      description: "Van ruwbouw tot de laatste plint. Wij transformeren verouderde woningen naar moderne, comfortabele leefruimtes.",
+      features: ["Structurele aanpassingen", "Nieuwe technieken (elektra/loodgieterij)", "Hoogwaardige afwerkingsgraad"]
     },
     {
-      title: "Volledige woningrenovatie",
-      description: "Van ruwbouw tot sleutel-op-de-deur. Wij coördineren alle disciplines en zorgen voor een vlot verloop van begin tot eind.",
-      features: ["Eén aanspreekpunt", "Alle disciplines onder één dak", "Duidelijke planning en opvolging"]
+      title: "Badkamer & Interieur",
+      description: "Complete make-over van uw sanitaire ruimtes. Wij zorgen voor een functioneel ontwerp met oog voor design.",
+      features: ["Waterdichte systeemoplossingen", "Maatwerk meubilair mogelijk", "Luxe afwerking in tegelwerk"]
     },
     {
-      title: "Dakwerken & zolderinrichting",
-      description: "Dak vernieuwen, isoleren of zolder omvormen tot leefruimte. Wij verzorgen dakbedekking, isolatie, ramen en afwerking.",
-      features: ["Platte en hellende daken", "Dakvensters en velux", "Volledige zolderafwerking"]
+      title: "Dak- & Zolderwerken",
+      description: "Maak van uw zolder een volwaardige verdieping. Wij isoleren volgens de nieuwste normen en plaatsen dakvlakramen.",
+      features: ["Isolatie volgens huidige normen", "Gyproc- en pleisterwerken", "Vloerafwerking op maat"]
     }
   ];
 
@@ -193,6 +194,8 @@ export default function RenovationPage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoSection serviceSlug="renovatie" title="Renovatie" />
 
       <section className="py-20 px-6 container mx-auto">
         <FadeIn>

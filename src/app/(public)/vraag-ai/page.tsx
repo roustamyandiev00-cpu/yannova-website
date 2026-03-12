@@ -56,7 +56,7 @@ export default function VraagAIPage() {
                   <Link href="/ramen" className="px-3 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm text-gray-300 hover:text-white text-center transition-colors">
                     Ramen
                   </Link>
-                  <Link href="/diensten/ramen-deuren" className="px-3 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm text-gray-300 hover:text-white text-center transition-colors">
+                  <Link href="/ramen-deuren" className="px-3 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm text-gray-300 hover:text-white text-center transition-colors">
                     Deuren
                   </Link>
                   <Link href="/contact" className="px-3 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm text-gray-300 hover:text-white text-center transition-colors">
@@ -84,11 +84,11 @@ export default function VraagAIPage() {
               <h3 className="font-semibold text-white group-hover:text-secondary">Ramen</h3>
               <p className="mt-1 text-sm text-gray-400">PVC en aluminium ramen</p>
             </Link>
-            <Link href="/diensten/ramen-deuren" className="group p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
+            <Link href="/ramen-deuren" className="group p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
               <h3 className="font-semibold text-white group-hover:text-secondary">Deuren</h3>
               <p className="mt-1 text-sm text-gray-400">Voordeuren en schuifdeuren</p>
             </Link>
-            <Link href="/diensten/gevelrenovatie" className="group p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
+            <Link href="/gevelrenovatie" className="group p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
               <h3 className="font-semibold text-white group-hover:text-secondary">Gevelisolatie</h3>
               <p className="mt-1 text-sm text-gray-400">Isolatie met crepi-afwerking</p>
             </Link>

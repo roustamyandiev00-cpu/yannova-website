@@ -18,12 +18,13 @@ const navigation: Array<{
     name: "Diensten",
     href: "/diensten",
     children: [
-      { name: "Ramen & Deuren", href: "/diensten/ramen-deuren", description: "PVC & aluminium" },
-      { name: "Gevelrenovatie", href: "/diensten/gevelrenovatie", description: "Isolatie + afwerking" },
+      { name: "Ramen & Deuren", href: "/ramen-deuren", description: "PVC & aluminium" },
+      { name: "Gevelrenovatie", href: "/gevelrenovatie", description: "Isolatie + afwerking" },
       { name: "Isolatie", href: "/diensten/isolatie", description: "Dak, gevel en vloer" },
-      { name: "Renovatie", href: "/diensten/renovatie", description: "Totaalrenovatie" },
+      { name: "Renovatie", href: "/renovatie", description: "Totaalrenovatie" },
     ],
   },
+  { name: "Producten", href: "/producten" },
   { name: "Projecten", href: "/projecten" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
@@ -158,14 +159,16 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-all duration-300 relative group",
-                  pathname === item.href ? "text-secondary" : "text-gray-300 hover:text-white",
+                  pathname === item.href || pathname.startsWith(`${item.href}/`)
+                    ? "text-secondary"
+                    : "text-gray-300 hover:text-white",
                 )}
               >
                 {item.name}
                 <span
                   className={cn(
                     "absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full",
-                    pathname === item.href ? "w-full" : "",
+                    pathname === item.href || pathname.startsWith(`${item.href}/`) ? "w-full" : "",
                   )}
                 />
               </Link>
@@ -242,7 +245,9 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       "block rounded-lg px-3 py-3 text-base font-medium transition-colors",
-                      pathname === item.href ? "bg-secondary/10 text-secondary" : "text-gray-300 hover:bg-white/5 hover:text-white",
+                      pathname === item.href || pathname.startsWith(`${item.href}/`)
+                        ? "bg-secondary/10 text-secondary"
+                        : "text-gray-300 hover:bg-white/5 hover:text-white",
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -272,21 +277,21 @@ export function Navbar() {
                 </a>
               </div>
 
-              <a
+              <Link
                 href="/vraag-ai"
                 className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-4 py-3.5 text-base font-medium text-white shadow-lg transition-all"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Sparkles className="h-4 w-4 text-secondary" />
                 Vraag Yannova AI
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="mt-3 block w-full text-center rounded-xl bg-linear-to-r from-secondary to-orange-600 px-4 py-3.5 text-base font-semibold text-white shadow-elegant"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Gratis offerte aanvragen
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

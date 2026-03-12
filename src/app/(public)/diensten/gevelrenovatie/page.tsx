@@ -6,18 +6,21 @@ import { generateSEO } from "@/lib/seo";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { company } from "@/lib/company";
+import { ServiceSeoSection } from "@/components/ServiceSeoSection";
 
 export const metadata = generateSEO({
-  title: "Gevelrenovatie & Crepi in Antwerpen - Isolatie en Afwerking",
-  description: "Professionele gevelrenovatie met isolatie en crepi afwerking. Energiebesparing, nieuwe uitstraling en premie-advies. Vakkundige uitvoering in Antwerpen en omgeving.",
+  title: "Gevelrenovatie & Crepi Antwerpen | Hoogwaardige Gevelisolatie",
+  description: "Professionele gevelrenovatie met isolatie en crepi (siliconenharspleister). Verhoog uw woningwaarde en verlaag uw energiefactuur. Ontdek onze totaaloplossing voor uw exterieur.",
   path: "/diensten/gevelrenovatie",
   keywords: [
     "gevelrenovatie antwerpen",
     "crepi antwerpen",
-    "gevelisolatie",
-    "steenstrips",
+    "gevelisolatie EPS",
+    "siliconenharspleister",
+    "steenstrips met isolatie",
     "gevel renoveren",
-    "buitenisolatie",
+    "buitenmuurisolatie",
+    "EPC waarde verbeteren",
   ],
 });
 
@@ -32,47 +35,47 @@ const faqSchema = generateFAQSchema(commonFAQs.gevelisolatie);
 export default function FacadePage() {
   const benefits = [
     {
-      title: "Isolatie en bescherming",
-      description: "Bescherm uw woning beter tegen vocht, temperatuurwissels en slijtage.",
+      title: "Optimale Isolatie",
+      description: "Creëer een doorlopende thermische schil met hoogwaardige EPS-platen en verlaag uw EPC-waarde.",
       icon: Layers,
     },
     {
-      title: "Nieuwe uitstraling",
-      description: "Moderne afwerking in crepi of steenstrips, afgestemd op uw woning.",
+      title: "Onderhoudsvriendelijk",
+      description: "Onze siliconenharspleister is waterafstotend en resistent tegen algen, mossen en vervuiling.",
       icon: PaintBucket,
     },
     {
-      title: "Lagere energiefactuur",
-      description: "Goede gevelisolatie helpt uw warmteverlies structureel te beperken.",
+      title: "Totaalrenovatie",
+      description: "Wij coördineren gevel-, raam- en dakwerken voor een naadloze afwerking en planning.",
       icon: Sun,
     },
     {
-      title: "Meer woningwaarde",
-      description: "Een verzorgde en geïsoleerde gevel verhoogt comfort en marktwaarde.",
+      title: "Woningwaarde",
+      description: "Een esthetisch vernieuwde en energiezuinige woning is direct meer waard op de vastgoedmarkt.",
       icon: Activity,
     },
   ];
 
   const services = [
     {
-      title: "Gevelisolatie",
-      description: "Wij plaatsen hoogwaardige isolatieplaten op uw bestaande gevel. Dit vermindert warmteverlies aanzienlijk en zorgt voor een comfortabeler binnenklimaat.",
-      features: ["EPS, XPS of minerale wol", "Dikte op maat van uw situatie", "Correcte verankering en lijmwerk"]
+      title: "Gevelisolatie (EWI)",
+      description: "Wij maken uw woning 'future-proof' door het aanbrengen van een continue isolatielaag. Dit elimineert koudebruggen en zorgt voor een stabiel binnenklimaat.",
+      features: ["Hoogwaardige EPS-isolatieplaten", "Naadloze aansluiting op ramen en dak", "Directe besparing op energiekosten"]
     },
     {
-      title: "Crepi afwerking",
-      description: "Na isolatie brengen we een duurzame crepilaag aan. U kiest uit verschillende structuren en kleuren die perfect bij uw woning passen.",
-      features: ["Minerale of kunststof crepi", "Diverse korrelgroottes", "Kleurvast en waterafstotend"]
+      title: "Siliconenharspleister (Crepi)",
+      description: "De meest duurzame vorm van crepi. Dankzij de elastische eigenschappen en waterafstotende toplaag blijft uw gevel jarenlang barstvrij en schoon.",
+      features: ["Zelfreinigend effect door regen", "Verkrijgbaar in honderden kleuren", "Bestand tegen extreme weersomstandigheden"]
     },
     {
-      title: "Steenstrips",
-      description: "Voor een natuurlijke uitstraling kunnen we steenstrips aanbrengen. Deze geven uw gevel een robuuste, tijdloze look met minimaal onderhoud.",
-      features: ["Natuursteen of kunststeen", "Diverse formaten en kleuren", "Vorstbestendig en duurzaam"]
+      title: "Steenstrips & Design",
+      description: "Combineer de look van traditioneel metselwerk met de voordelen van moderne isolatie. Ideaal voor een robuuste uitstraling zonder ruimteverlies.",
+      features: ["Niet van echt metselwerk te onderscheiden", "Vorstbestendig en slagvast", "Onderhoudsarm en tijdloos"]
     },
     {
-      title: "Voegwerk & herstel",
-      description: "Beschadigde voegen of scheuren worden vakkundig hersteld voordat we met isolatie en afwerking starten. Zo garanderen we een stabiele ondergrond.",
-      features: ["Voegvernieuwing", "Scheurherstellingen", "Vochtbestrijding"]
+      title: "Detailafwerking & Herstel",
+      description: "Vakmanschap zit in de details. Wij zorgen voor perfecte aansluitingen rond dorpels, lateien en hoeken voor een strak eindresultaat.",
+      features: ["Correcte afwatering bij vensterbanken", "Verstevigde hoekprofielen", "Professioneel voeg- en herstelwerk"]
     }
   ];
 
@@ -107,23 +110,23 @@ export default function FacadePage() {
   const whyChooseUs = [
     {
       icon: Shield,
-      title: "Vakmanschap",
-      description: "Jarenlange ervaring in gevelrenovatie en isolatiewerken"
+      title: "Siliconen-Specialist",
+      description: "Wij gebruiken enkel hoogwaardige siliconenharspleister voor een blijvend schoon resultaat."
     },
     {
       icon: Award,
-      title: "Kwaliteitsgarantie",
-      description: "Wij werken enkel met A-merken en geven garantie op materiaal en uitvoering"
+      title: "Totaaloplossing",
+      description: "Eén partner voor gevel, ramen en dak. Dit garandeert een vlottere planning en perfecte details."
     },
     {
       icon: Clock,
-      title: "Stipte planning",
-      description: "Duidelijke afspraken en realistische planning die we nakomen"
+      title: "EPC-Expertise",
+      description: "Wij adviseren u over de juiste isolatiedikte om uw woning maximaal energiezuinig te maken."
     },
     {
       icon: CheckCircle2,
-      title: "Totaalpakket",
-      description: "Van advies tot oplevering, alles uit één hand"
+      title: "Garantie op Werk",
+      description: "U krijgt volledige garantie op zowel de materialen als de vakkundige uitvoering."
     }
   ];
 
@@ -169,7 +172,15 @@ export default function FacadePage() {
             <div className="space-y-6 text-muted-foreground text-lg">
               <p>
                 Met gevelrenovatie combineert u esthetiek met energiebesparing. We analyseren eerst de bestaande
-                gevel en adviseren de juiste opbouw voor uw situatie. U kunt meer lezen over onze <a href="/diensten/isolatie" className="text-secondary hover:underline">isolatie</a> en <a href="/gevelisolatie-crepi" className="text-secondary hover:underline">crepi</a> diensten.
+                gevel en adviseren de juiste opbouw voor uw situatie. U kunt meer lezen over onze{" "}
+                <Link href="/diensten/isolatie" className="text-secondary hover:underline">
+                  isolatie
+                </Link>{" "}
+                en{" "}
+                <Link href="/crepi-gevel" className="text-secondary hover:underline">
+                  crepi
+                </Link>{" "}
+                diensten.
               </p>
               <p>
                 Daarna verzorgen we uitvoering en afwerking tot in detail, inclusief correcte aansluitingen rond ramen,
@@ -222,6 +233,8 @@ export default function FacadePage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoSection serviceSlug="gevelrenovatie" title="Gevelrenovatie" />
 
       <section className="py-20 px-6 container mx-auto">
         <FadeIn>
@@ -321,55 +334,54 @@ export default function FacadePage() {
             <div className="space-y-8 mt-12">
               <FadeIn delay={0.1}>
                 <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Hoelang duurt een gevelrenovatie?</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Wat is het verschil tussen minerale crepi en siliconenharspleister?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    De duur hangt af van de grootte van uw woning en de gekozen afwerking. Een gemiddelde eengezinswoning 
-                    kunnen we in 2 tot 3 weken volledig renoveren. Bij grotere projecten of complexe situaties kan dit langer duren. 
-                    We maken vooraf een realistische planning die we met u bespreken.
+                    Siliconenharspleister (onze standaard) is elastischer en waterafstotend, wat de kans op barsten en vervuiling (zoals algen) aanzienlijk verkleint. 
+                    Minerale crepi is minder flexibel maar heeft een hogere dampopenheid. Voor de meeste woningen is siliconenharspleister de beste keuze 
+                    vanwege de duurzaamheid en het zelfreinigende effect.
                   </p>
                 </div>
               </FadeIn>
 
               <FadeIn delay={0.2}>
                 <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Wat kost een gevelrenovatie?</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Hoe moet ik mijn crepi gevel onderhouden?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    De prijs varieert afhankelijk van de oppervlakte, isolatiedikte, type afwerking en eventuele herstelwerken. 
-                    Gemiddeld rekent u voor een volledige gevelrenovatie met isolatie tussen €80 en €150 per m². 
-                    Na een plaatsbezoek geven we u een nauwkeurige offerte op maat.
+                    Dankzij de siliconen toplaag is de gevel grotendeels zelfreinigend: vuil spoelt weg met de regen. 
+                    Wij adviseren om de gevel jaarlijks even af te spoelen met een tuinslang (lage druk) om stof te verwijderen. 
+                    Gebruik nooit een hogedrukreiniger, dit kan de structuur van de pleister beschadigen.
                   </p>
                 </div>
               </FadeIn>
 
               <FadeIn delay={0.3}>
                 <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Heb ik een vergunning nodig?</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Kan crepi gecombineerd worden met andere materialen?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    In de meeste gevallen is gevelrenovatie vergunningsvrij, zeker als u de bestaande kleur en uitstraling behoudt. 
-                    Bij ingrijpende wijzigingen of beschermde panden kan een vergunning nodig zijn. Wij checken dit voor u en 
-                    helpen indien nodig met de aanvraag.
+                    Absoluut. Voor een moderne look combineren we crepi vaak met steenstrips, houtaccenten of zwarte aluminium details 
+                    rond de ramen. Wij kunnen dit als totaalpakket aanbieden, zodat alle aansluitingen technisch perfect zijn uitgevoerd.
                   </p>
                 </div>
               </FadeIn>
 
               <FadeIn delay={0.4}>
                 <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Welke isolatiedikte is aan te raden?</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Hoeveel bespaar ik met gevelisolatie?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Voor optimale energiebesparing adviseren we minimaal 8 tot 10 cm isolatie. Dit hangt af van uw huidige 
-                    gevelopbouw en energiedoelstellingen. Dikkere isolatie bespaart meer energie, maar moet wel praktisch 
-                    uitvoerbaar zijn rond ramen en dakranden. We bekijken samen wat het beste bij uw situatie past.
+                    Een niet-geïsoleerde buitenmuur is verantwoordelijk voor zo&apos;n 25% tot 30% van het warmteverlies. 
+                    Met 10 cm EPS-isolatie kunt u uw energiefactuur met honderden euro&apos;s per jaar verlagen en uw 
+                    comfort (geen tocht of koude muren) direct verbeteren.
                   </p>
                 </div>
               </FadeIn>
 
               <FadeIn delay={0.5}>
                 <div className="border-l-4 border-secondary pl-6 py-2">
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">Kan ik premies krijgen?</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-foreground">Zijn er premies voor gevelrenovatie in 2026?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Ja, voor gevelisolatie zijn er vaak premies beschikbaar via uw gemeente of Vlaanderen. De voorwaarden 
-                    en bedragen verschillen per regio en wijzigen regelmatig. We informeren u graag over de actuele 
-                    mogelijkheden en helpen waar nodig met de aanvraag.
+                    Ja, via de Mijn VerbouwPremie van de Vlaamse overheid kunt u aanzienlijke bedragen terugkrijgen voor 
+                    buitenmuurisolatie en afwerking. Wij helpen u bij het verzamelen van de juiste documentatie en 
+                    attesten voor een vlotte aanvraag.
                   </p>
                 </div>
               </FadeIn>

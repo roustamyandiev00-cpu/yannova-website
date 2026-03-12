@@ -3,6 +3,10 @@ import { prisma } from '@/lib/prisma';
 import { company } from '@/lib/company';
 import { logger } from '@/lib/logger';
 
+const isBuildProcess =
+    process.env.NEXT_PHASE === 'phase-production-build' ||
+    process.env.npm_lifecycle_event === 'build';
+
 // Get the base URL for the site, environment-aware
 const getBaseUrl = (): string => {
     // In production, use NEXT_PUBLIC_SITE_URL
@@ -147,7 +151,9 @@ export async function getSeoMetadata(path: string): Promise<Metadata> {
             },
         };
     } catch (error) {
-        logger.error('Error fetching SEO metadata', error);
+        if (!isBuildProcess) {
+            logger.error('Error fetching SEO metadata', error);
+        }
         // Return defaults on error
         const defaults = defaultSeoData[path] || {};
         return {

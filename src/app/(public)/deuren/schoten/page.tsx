@@ -1,22 +1,51 @@
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
-import { CheckCircle, Phone, Mail, MapPin, Clock, Award } from 'lucide-react';
-import Link from 'next/link';
+import { CheckCircle, Phone, Mail, MapPin, Clock, Award, ChevronRight, Euro, ShieldCheck } from 'lucide-react';
 import { company } from '@/lib/company';
 
+const cityName = "Schoten";
+
 export const metadata: Metadata = generateSEO({
-  title: "Deuren Schoten | Voor- en achterdeuren in PVC en aluminium | Yannova",
-  description: "Deuren in Schoten? Yannova is specialist in voor- en achterdeuren in pvc en aluminium. Gratis opmeting en offerte binnen 24 uur. 15+ jaar ervaring in Schoten en omgeving.",
+  title: "Deuren Schoten | Buitendeuren & Binnendeuren | Yannova",
+  description: "Deuren in Schoten? Wij plaatsen kwalitatieve en veilige voor- en achterdeuren in PVC en aluminium. Ontdek ons aanbod en vraag een offerte aan.",
   path: "/deuren/schoten",
-  keywords: ["deuren schoten", "deuren plaatsen schoten", "deuren Schoten", "nieuwe deuren schoten", "deuren specialist schoten"],
+  keywords: ["deuren schoten","deuren vervangen schoten","nieuwe deuren schoten","deuren plaatsen schoten","deuren specialist schoten","aannemer deuren schoten"],
 });
 
 const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: "Home", url: "/" },
-  { name: "Deuren", url: "/deuren" },
-  { name: "Schoten", url: "/deuren/schoten" },
+  { name: "Home", url: "https://www.yannova.be/" },
+  { name: "Deuren", url: "https://www.yannova.be/deuren" },
+  { name: "Deuren Schoten", url: `https://www.yannova.be/deuren/schoten` },
 ]);
+
+// Organization & Local Business Schema (Combined for optimal Rich Snippets)
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Yannova Deuren",
+  "image": "https://www.yannova.be/images/logo.png",
+  "@id": "https://www.yannova.be/#organization",
+  "url": "https://www.yannova.be",
+  "telephone": company.phone,
+  "email": company.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": company.address,
+    "addressLocality": company.city,
+    "postalCode": company.zip,
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": cityName
+  },
+  "priceRange": "€€",
+  "founder": {
+    "@type": "Person",
+    "name": "Arbi Yannova"
+  }
+};
 
 export default function DeurenSchotenPage() {
   return (
@@ -25,180 +54,251 @@ export default function DeurenSchotenPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-        {/* Hero Section */}
-        <section className="py-20 border-b border-white/10">
-          <div className="container mx-auto px-6">
+      <div className="min-h-screen bg-gray-50 text-gray-900">
+        {/* HERO SECTION */}
+        <section className="relative py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-[url('/images/hero/windows-hero.jpg')] bg-cover bg-center opacity-20 mixing-blend-overlay"></div>
+          </div>
+          <div className="container relative z-10 mx-auto px-6">
             <div className="max-w-4xl">
               <div className="flex items-center gap-2 text-secondary mb-4">
                 <MapPin className="h-5 w-5" />
-                <span className="text-sm font-medium">Schoten en omgeving</span>
+                <span className="text-sm font-medium uppercase tracking-wider">Schoten en Provincie Antwerpen</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                Deuren in <span className="text-secondary">Schoten</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Deuren in <span className="text-secondary">Schoten</span> vervangen of plaatsen
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Specialist in voor- en achterdeuren in pvc en aluminium in Schoten. Gratis opmeting, duidelijke offerte binnen 24 uur 
-                en vakkundige plaatsing door ervaren vaklui. Actief in Schoten en omgeving.
+              <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                Bent u op zoek naar nieuwe deuren in Schoten? Yannova levert en plaatst hoogwaardige voor- en achterdeuren in pvc en aluminium. 
+                Verhoog uw wooncomfort, verbeter de veiligheid en bespaar direct op uw energierekening.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Main Content */}
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              {/* Left Column - Benefits */}
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  Waarom kiezen voor Yannova in Schoten?
-                </h2>
-                <div className="space-y-4 mb-8">
-                  {[
-                    "Lokaal actief in Schoten en omgeving",
-                    "Gratis opmeting bij u thuis",
-                    "Offerte binnen 24 uur",
-                    "Voor- en achterdeuren in PVC en aluminium",
-                    "10-30 jaar garantie op materiaal en plaatsing",
-                    "Hulp bij premie-aanvraag (Mijn VerbouwPremie)",
-                    "Vaste ploeg ervaren vaklui",
-                    "Plaatsing binnen 4-6 weken",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* USPs */}
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                    <Clock className="h-8 w-8 text-secondary mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">24u</div>
-                    <div className="text-sm text-gray-400">Offerte</div>
-                  </div>
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                    <Award className="h-8 w-8 text-secondary mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">15+</div>
-                    <div className="text-sm text-gray-400">Jaar ervaring</div>
-                  </div>
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                    <CheckCircle className="h-8 w-8 text-secondary mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">30j</div>
-                    <div className="text-sm text-gray-400">Garantie</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column - Contact Form */}
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sticky top-24">
-                <h3 className="text-2xl font-bold text-white mb-6">
-                  Vraag een gratis offerte aan
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  Neem contact op voor een vrijblijvende offerte in Schoten. 
-                  We komen gratis langs voor een opmeting.
-                </p>
-                <div className="space-y-4">
-                  <a
-                    href={company.phoneHref}
-                    className="flex items-center gap-3 p-4 bg-secondary hover:bg-secondary/90 text-white rounded-lg transition-colors"
-                  >
-                    <Phone className="h-5 w-5" />
-                    <div>
-                      <div className="text-sm opacity-90">Bel ons direct</div>
-                      <div className="font-semibold">{company.phoneDisplay}</div>
-                    </div>
-                  </a>
-                  <a
-                    href={`mailto:${company.email}`}
-                    className="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-colors"
-                  >
-                    <Mail className="h-5 w-5" />
-                    <div>
-                      <div className="text-sm opacity-90">Email ons</div>
-                      <div className="font-semibold">{company.email}</div>
-                    </div>
-                  </a>
-                  <Link
-                    href="/offerte"
-                    className="block text-center p-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-colors font-medium"
-                  >
-                    Online offerte aanvragen
-                  </Link>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
+                  Vraag een gratis offerte
+                  <ChevronRight className="w-5 h-5" />
+                </a>
+                <a href={company.phoneHref} className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/20 transition-all text-lg">
+                  <Phone className="w-5 h-5" />
+                  Bel {company.phoneDisplay}
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SEO Content Section */}
-        <section className="py-20 bg-white/5">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto prose prose-invert prose-lg">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Deuren Plaatsen in Schoten: Wat U Moet Weten
+        <div className="container mx-auto px-6 py-16 grid lg:grid-cols-3 gap-12">
+          {/* MAIN CONTENT AREA */}
+          <div className="lg:col-span-2 space-y-16">
+            
+            {/* SECTIE 1: EXPERTISE */}
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Specialist in deuren in omgeving Schoten
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Als u op zoek bent naar deuren in Schoten, bent u bij Yannova aan het juiste adres. 
-                Met meer dan 15 jaar ervaring in de regio Schoten en omgeving, weten wij precies wat er 
-                komt kijken bij het plaatsen van deuren. Of het nu gaat om een nieuwbouwproject of 
-                renovatie, wij staan voor u klaar met professioneel advies en vakkundige uitvoering.
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                Het vervangen van uw deuren is een investering die zichzelf op termijn terugverdient. Zeker met de stijgende 
+                energieprijzen is goede isolatie in uw woning in Schoten belangrijker dan ooit. Wij werken uitsluitend met 
+                topmerken die garant staan voor duurzaamheid en een uitstekende isolatiewaarde (inclusief HR++ of triple glas).
               </p>
+              
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold mb-3 text-secondary flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> PVC Deuren
+                  </h3>
+                  <p className="text-gray-600">
+                    PVC biedt de beste prijs-kwaliteitverhouding. Ze isoleren perfect, vergen amper onderhoud en 
+                    zijn verkrijgbaar in talloze kleuren en afwerkingen in Schoten.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold mb-3 text-secondary flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Aluminium Deuren
+                  </h3>
+                  <p className="text-gray-600">
+                    Aluminium is robuust en ultrasterk. Het laat toe om grote overspanningen te maken met zeer slanke profielen.
+                    Ideaal voor een strakke, moderne woning.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
-                Onze Werkwijze in Schoten
-              </h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Bij Yannova werken we volgens een vaste werkwijze die zorgt voor een vlot verloop 
-                van uw project in Schoten:
+            {/* SECTIE 1.5: ONZE PROFIELEN */}
+            <section className="border-t border-gray-200 pt-12 mt-12">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Kwaliteit met topmerken: PVC en Aluminium profielen
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                Voor uw project in Schoten werken wij met de absolute topmerken op de markt. Wij kunnen buitenschrijnwerk bestellen, leveren en vakkundig plaatsen van onbetwiste Europese marktleiders: <strong>Schüco</strong>, <strong>Veka</strong>, <strong>Rehau</strong>, <strong>Deceuninck</strong>, <strong>Reynaers Aluminium</strong> en <strong>Eko-Okna</strong>. 
+                Dankzij dit veelzijdige aanbod garanderen wij altijd buitenschrijnwerk dat technisch en esthetisch 100% past bij uw woning. Enkele populaire opties en technologieën:
               </p>
-              <ol className="text-gray-300 space-y-3 mb-6">
-                <li><strong>Gratis opmeting:</strong> We komen bij u langs in Schoten voor een gratis en vrijblijvende opmeting.</li>
-                <li><strong>Offerte binnen 24 uur:</strong> U ontvangt een duidelijke offerte zonder verborgen kosten.</li>
-                <li><strong>Planning:</strong> We plannen de werkzaamheden op een moment dat u uitkomt.</li>
-                <li><strong>Professionele plaatsing:</strong> Onze ervaren vaklui zorgen voor een nette en snelle plaatsing.</li>
-                <li><strong>Oplevering:</strong> We ruimen alles netjes op en controleren samen met u het eindresultaat.</li>
-              </ol>
+              
+              <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2 text-secondary">Premium PVC Merken</h3>
+                  <p className="text-gray-600 text-sm">
+                    Met profielen van onder meer <strong>Schüco, Veka, Rehau en Deceuninck</strong> bent u verzekerd van tientallen jaren probleemloos wooncomfort en de allerhoogste isolatiewaardes.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2 text-secondary">Reynaers Aluminium</h3>
+                  <p className="text-gray-600 text-sm">
+                    Kiest u voor strak en modern? De aluminium profielen van <strong>Reynaers Aluminium</strong> maken state-of-the-art grote raam-overspanningen en schuifpuien mogelijk.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2 text-secondary">Eko-Okna & Aluplast</h3>
+                  <p className="text-gray-600 text-sm">
+                    Zeer betrouwbare PVC-ramen (zoals de bekende <strong>Ideal-reeksen</strong> en Energeto Neo). Budgetvriendelijk, veelzijdig en uiterst degelijk afgewerkt.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2 text-secondary">Driedubbel (Triple) Glas</h3>
+                  <p className="text-gray-600 text-sm">
+                    In veel profielen plaatsen wij probleemloos zwaar triple glas voor specifieke zware thermische of akoestische bouw-eisen in Schoten.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2 text-secondary">V-Perfect lasnaden</h3>
+                  <p className="text-gray-600 text-sm">
+                    Esthetische perfectie op PVC bereiken we door geavanceerde, nagenoeg onzichtbare verbindingstechnieken (V-Perfect) te hanteren in de raamhoeken.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-bold mb-2 text-secondary">Kleur op maat in Schoten</h3>
+                  <p className="text-gray-600 text-sm">
+                    Aluminium is verkrijgbaar in élke RAL coating, en onze PVC profielen bieden keuze uit talloze krasvaste folies, inclusief levensechte houtstructuren.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
-                Premies en Subsidies in Schoten
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Voor energiebesparende renovaties zoals deuren kunt u in aanmerking komen voor premies 
-                via Mijn VerbouwPremie. Wij helpen u graag met het aanvragen van deze premies, zodat u 
-                maximaal kunt besparen op uw project in Schoten. Afhankelijk van uw situatie kunt u tot 
-                €3.500 subsidie ontvangen.
+            {/* SECTIE 2: VOORDELEN */}
+            <section className="bg-gray-100 -mx-6 px-6 py-12 rounded-none md:rounded-2xl">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Waarom kiezen voor Yannova in Schoten?
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-8 text-lg">
+                Een vakkundige installatie start met goed advies en precisiewerk. Bij Yannova nemen we uw project 
+                serieus. Dit is wat u van ons mag verwachten in Schoten:
               </p>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                  <ShieldCheck className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-gray-900">10 tot 30 jaar garantie</h4>
+                    <p className="text-gray-600 text-sm mt-1">U geniet van een lange garantieperiode op zowel het materiaal als de vakkundige plaatsing van uw deuren.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                  <ShieldCheck className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-gray-900">Gratis opmeting thuis</h4>
+                    <p className="text-gray-600 text-sm mt-1">Geen verassingen of verborgen kosten. Wij komen bij u in Schoten langs, meten correct op en leveren een duidelijke offerte.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                  <ShieldCheck className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-gray-900">Inbraakveilig & Isolerend</h4>
+                    <p className="text-gray-600 text-sm mt-1">Al onze profielen voldoen aan de strengste normen inzake inbraakvertraging en hebben de benodigde U-waardes voor premies.</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            {/* SECTIE 3: PREMIES & LOKAAL */}
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Premies voor nieuwe deuren in Schoten
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                Via de Vlaamse overheid (Mijn VerbouwPremie) heeft u vaak recht op financiële tussenkomst wanneer u enkele beglazing 
+                of oud dubbel glas vervangt door hoogrendementsglas. Dit geldt dus ook voor het vernieuwen van het buitenschrijnwerk 
+                (deuren) van uw woning in Schoten.
+              </p>
+              
+              <div className="bg-blue-50 border-l-4 border-secondary p-6 rounded-r-xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <Euro className="w-6 h-6 text-secondary" />
+                  <h3 className="text-xl font-bold text-gray-900">Wij helpen u met de aanvraag</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  Omdat het aanvragen van dergelijke premies niet altijd evident is, bezorgen wij voor elke afgeronde 
+                  werf in Schoten direct alle nodige bijlages. Zowel voor hr-glas, geluidswerend glas als het 
+                  buitenschrijnwerk zelf zullen wij u de nodige stavingsdocumenten bezorgen zodat u de premie vlot ontvangt!
+                </p>
+              </div>
+            </section>
+
+            {/* LINKS NAAR ANDERE DIENSTEN */}
+            <section className="border-t border-gray-200 pt-12">
+               <h2 className="text-2xl font-bold mb-6 text-gray-900">Verder lezen</h2>
+               <div className="flex flex-wrap gap-4">
+                 <a href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Algemene info Ramen & Deuren
+                 </a>
+                 <a href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Gevelisolatie en Crepi in Schoten
+                 </a>
+                 <a href="/diensten/renovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Totaalaannemer in Schoten
+                 </a>
+               </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR (Sticky CTA) */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-28 bg-gray-900 rounded-2xl p-8 text-white shadow-xl">
+              <h3 className="text-2xl font-bold mb-4">
+                Wilt u de prijs voor uw woning in Schoten weten?
+              </h3>
+              <p className="text-gray-300 mb-8 leading-relaxed text-sm">
+                Nieuwe deuren laten plaatsen is een verstandige keuze. Contacteer ons vandaag nog voor een vrijblijvend deskundig 
+                advies. We komen de situatie opmeten en bezorgen u een heldere offerte.
+              </p>
+              
+              <div className="space-y-4">
+                <a
+                  href="/offerte"
+                  className="w-full flex justify-center items-center gap-2 p-4 bg-secondary font-bold text-white rounded-lg hover:bg-secondary/90 transition-colors shadow-lg"
+                >
+                  Nu offerte aanvragen
+                </a>
+                
+                <a
+                  href={company.phoneHref}
+                  className="w-full flex items-center justify-center gap-3 p-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-lg transition-colors"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span className="font-semibold">{company.phoneDisplay}</span>
+                </a>
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-secondary/20 p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">Werkgebied</div>
+                    <div className="text-sm text-gray-400">Actief in Schoten en omstreken.</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* Related Services */}
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Onze andere diensten in Schoten
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <Link href="/ramen" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-                <h3 className="text-xl font-semibold text-white mb-2">Ramen</h3>
-                <p className="text-gray-300">PVC en aluminium ramen met HR++ glas</p>
-              </Link>
-              <Link href="/deuren" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-                <h3 className="text-xl font-semibold text-white mb-2">Deuren</h3>
-                <p className="text-gray-300">Voor- en achterdeuren in PVC & aluminium</p>
-              </Link>
-              <Link href="/diensten/gevelrenovatie" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-                <h3 className="text-xl font-semibold text-white mb-2">Gevelrenovatie</h3>
-                <p className="text-gray-300">Isolatie met crepi-afwerking</p>
-              </Link>
-            </div>
-          </div>
-        </section>
+          
+        </div>
       </div>
     </>
   );

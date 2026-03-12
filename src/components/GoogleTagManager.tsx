@@ -7,6 +7,26 @@ const GTM_ID = 'GTM-MZ98NM6L';
 export function GoogleTagManager() {
   return (
     <>
+      {/* Google Consent Mode V2 */}
+      <Script id="consent-mode-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          
+          // Default all tracking to denied until user consents 
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+          });
+          
+          // Enable data redaction when ad_storage is denied
+          gtag('set', 'ads_data_redaction', true);
+        `}
+      </Script>
+
       {/* Google Tag Manager */}
       <Script id="gtm-script" strategy="afterInteractive">
         {`
@@ -35,13 +55,15 @@ export function GoogleTagManagerNoScript() {
 }
 
 // Helper functions for GTM events
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function gtmEvent(eventName: string, eventData?: Record<string, any>) {
-  if (typeof window !== 'undefined' && (window as any).dataLayer) {
-    (window as any).dataLayer.push({
-      event: eventName,
-      ...eventData,
-    });
+export function gtmEvent(eventName: string, eventData?: Record<string, unknown>) {
+  if (typeof window !== 'undefined') {
+    const w = window as unknown as { dataLayer: Record<string, unknown>[] };
+    if (w.dataLayer) {
+      w.dataLayer.push({
+        event: eventName,
+        ...eventData,
+      });
+    }
   }
 }
 

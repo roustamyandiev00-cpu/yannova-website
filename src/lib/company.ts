@@ -1,9 +1,13 @@
 export const company = {
   name: "Yannova Bouw",
+  phone: "+32 489 96 00 01",
   phoneDisplay: "+32 489 96 00 01",
   phoneHref: "tel:+32489960001",
   whatsappHref: "https://wa.me/32489960001",
   email: "info@yannova.be",
+  address: "Zoersel",
+  city: "Zoersel",
+  zip: "2980",
   // Primaire werkgebieden (binnen 15km van Zoersel)
   areas: [
     "Zoersel", "Antwerpen", "Schilde", "Brasschaat", "Schoten", "Wijnegem",

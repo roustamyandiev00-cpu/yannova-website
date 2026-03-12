@@ -53,18 +53,18 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-white">Diensten</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <Link href="/diensten/ramen-deuren" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link href="/ramen-deuren" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Ramen & Deuren
                     </Link>
                   </li>
                   <li>
-                    <Link href="/diensten/gevelrenovatie" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link href="/gevelrenovatie" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Gevelrenovatie & Crepi
                     </Link>
                   </li>
@@ -74,13 +74,13 @@ export function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/diensten/renovatie" className="text-sm leading-6 text-gray-300 hover:text-white">
+                    <Link href="/renovatie" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Totaalrenovatie
                     </Link>
                   </li>
                 </ul>
               </div>
-              <div className="mt-10 md:mt-0">
+              <div className="mt-2 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">Bedrijf</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
@@ -91,6 +91,11 @@ export function Footer() {
                   <li>
                     <Link href="/projecten" className="text-sm leading-6 text-gray-300 hover:text-white">
                       Projecten
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/producten" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Producten
                     </Link>
                   </li>
                   <li>
@@ -107,8 +112,33 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="md:grid md:grid-cols-1 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
+                <h3 className="text-sm font-semibold leading-6 text-white">Populaire Regio&apos;s</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  <li>
+                    <Link href="/ramen/antwerpen" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Ramen Antwerpen
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/gevelrenovatie/zoersel" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Gevel Zoersel
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/totaalrenovatie/brasschaat" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Renovatie Brasschaat
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/deuren/schoten" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Deuren Schoten
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="mt-2 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">Contact</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li className="flex items-start gap-3 text-sm leading-6 text-gray-300">

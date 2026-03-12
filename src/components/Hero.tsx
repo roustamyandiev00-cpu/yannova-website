@@ -53,18 +53,18 @@ export function Hero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] drop-shadow-2xl animate-slide-up mb-6">
-              <span className="block text-white mb-2">Ramen & deuren plaatsen in</span>
+              <span className="block text-white mb-2">Ramen, Gevels & Renovatie in</span>
               <span className="block bg-linear-to-r from-secondary via-orange-400 to-secondary bg-clip-text text-transparent drop-shadow-lg animate-gradient-x">
                 Zoersel, Antwerpen & omgeving
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl lg:text-2xl font-medium text-gray-100 mb-6 drop-shadow-lg">
-              PVC & aluminium ramen | Gevelrenovatie | Totaalrenovatie
+              Hoogwaardige Ramen | Gevelisolatie & Crepi | Totaalprojecten
             </p>
 
             <p className="text-base sm:text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto mb-10 drop-shadow-lg animate-fade-in-delay">
-              Gratis opmeting in Zoersel, Antwerpen en Mechelen. Ontvang een duidelijke offerte binnen 24 uur.
+              Dé partner voor een energiezuinige en moderne woning. Ontvang een technisch onderbouwd voorstel en offerte binnen 24 uur.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">

@@ -15,7 +15,7 @@ const specializations = [
       "Inclusief volledige afwerking en premie-advies Mijn VerbouwPremie"
     ],
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1600&auto=format&fit=crop",
-    link: "/diensten/ramen-deuren",
+    link: "/ramen-deuren",
   },
   {
     title: "Gevelrenovatie & Crepi",
@@ -26,7 +26,7 @@ const specializations = [
       "10 jaar garantie op crepi-afwerking en isolatiewerken"
     ],
     image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop",
-    link: "/diensten/gevelrenovatie",
+    link: "/gevelrenovatie",
   },
   {
     title: "Totaalrenovatie & Verbouwing",
@@ -37,7 +37,7 @@ const specializations = [
       "Duidelijke offerte vooraf, geen verrassingen achteraf"
     ],
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop",
-    link: "/diensten/renovatie",
+    link: "/renovatie",
   }
 ]
 

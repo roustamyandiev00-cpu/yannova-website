@@ -6,6 +6,7 @@ import { generateSEO } from "@/lib/seo";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { company } from "@/lib/company";
+import { ServiceSeoSection } from "@/components/ServiceSeoSection";
 
 export const metadata = generateSEO({
   title: "Ramen & Deuren plaatsen in Antwerpen - PVC en Aluminium",
@@ -32,47 +33,47 @@ const faqSchema = generateFAQSchema(commonFAQs.ramen);
 export default function WindowsDoorsPage() {
   const benefits = [
     {
-      title: "Hoge isolatiewaarde",
-      description: "Lagere energiekosten met hoogrendementsbeglazing en kwalitatieve profielen.",
+      title: "Superieure Isolatie",
+      description: "Profielen met tot wel 7 isolatiekamers en triple glas (HR+++) voor een minimale energiefactuur.",
       icon: Thermometer,
     },
     {
       title: "Inbraakveilig",
-      description: "Veilig beslag en sterke sluitpunten voor extra bescherming.",
+      description: "Standaard voorzien van SKG-gecertificeerd beslag en meerdere sterke sluitpunten.",
       icon: ShieldCheck,
     },
     {
-      title: "Akoestisch comfort",
-      description: "Minder storend straatgeluid dankzij correcte afdichting en beglazing.",
+      title: "Akoestisch Comfort",
+      description: "Optimale geluidsdemping door meerkamerprofielen en hoogwaardige EPDM-dichtingen.",
       icon: Wind,
     },
     {
-      title: "Onderhoudsvriendelijk",
-      description: "PVC en aluminium vragen weinig onderhoud en behouden hun uitstraling.",
+      title: "Perfecte Aansluiting",
+      description: "Naadloze integratie met uw (nieuwe) gevelisolatie voor een 100% luchtdicht resultaat.",
       icon: CheckCircle2,
     },
   ];
 
   const services = [
     {
-      title: "PVC ramen & deuren",
-      description: "PVC is onderhoudsarm, betaalbaar en biedt uitstekende isolatie. Verkrijgbaar in verschillende kleuren en profielen voor elke woonstijl.",
-      features: ["Hoogrendementsbeglazing standaard", "Keuze uit wit, grijs, antraciet", "Tot 7 kamers voor optimale isolatie"]
+      title: "PVC Ramen & Deuren",
+      description: "De perfecte balans tussen prijs en isolatie. Onze 6- of 7-kamer profielen bieden de beste thermische prestaties in de markt.",
+      features: ["U-waardes die voldoen aan passiefhuisnormen", "Verkrijgbaar in strakke staal-look of houtnerf", "Onderhoudsarm en 100% recyclebaar"]
     },
     {
-      title: "Aluminium ramen & deuren",
-      description: "Aluminium combineert strakke lijnen met duurzaamheid. Ideaal voor grote glaspartijen en moderne architectuur.",
-      features: ["Slanke profielen, meer lichtinval", "Thermisch onderbroken", "Poedercoating in elke RAL-kleur"]
+      title: "Aluminium Ramen & Deuren",
+      description: "Voor een modern, minimalistisch design met slanke profielen. Onze aluminium systemen zijn thermisch onderbroken en uiterst vormvast.",
+      features: ["Grote glaspartijen zonder extra dikke profielen", "Poederlak in elke denkbare RAL-kleur", "Extreem lange levensduur (50+ jaar)"]
     },
     {
-      title: "Schuiframen & -deuren",
-      description: "Maximale lichtinval en naadloze overgang naar buiten. Wij plaatsen zowel PVC als aluminium schuifsystemen met vlotte bediening.",
-      features: ["Hef-schuif of parallel-schuif", "Drempelloze uitvoering mogelijk", "Inbraakwerend beslag"]
+      title: "Schuiframen & Vouwwanden",
+      description: "Creëer een vloeiende overgang tussen binnen en buiten. Wij plaatsen hef-schuifsystemen die zelfs bij grote afmetingen vederlicht bedienbaar zijn.",
+      features: ["Drempelloze 'flat threshold' opties", "Inbraakwerendheid klasse RC2", "Zonwerende of geluidswerende beglazing"]
     },
     {
-      title: "Plaatsing & afwerking",
-      description: "Vakkundige plaatsing met correcte aansluiting op muur en gevel. Binnen en buiten netjes afgewerkt, inclusief vensterbanken en afdichtingen.",
-      features: ["Eigen plaatsers", "Stofvrij frezen mogelijk", "Opruimen en afvoeren oude ramen"]
+      title: "Montage & Gevelintegratie",
+      description: "De kwaliteit van een raam valt of staat met de plaatsing. Wij zorgen voor een technisch correcte aansluiting op uw isolatieschil.",
+      features: ["Luchtdichte montage volgens de regels van de kunst", "Coördinatie met gevelwerken (crepi/steenstrips)", "Nette binnenafwerking met vensterbanken"]
     }
   ];
 
@@ -140,7 +141,14 @@ export default function WindowsDoorsPage() {
             <div className="space-y-6 text-muted-foreground text-lg">
               <p>
                 We starten met een opmeting en een technisch advies op maat. Daarna ontvangt u een duidelijke offerte,
-                zonder verborgen kosten. U kunt meer lezen over onze <a href="/diensten/ramen-deuren/pvc" className="text-secondary hover:underline">PVC ramen</a> en <a href="/diensten/ramen-deuren/aluminium" className="text-secondary hover:underline">aluminium ramen</a>.
+                zonder verborgen kosten. U kunt meer lezen over{" "}
+                <Link href="/blog/pvc-of-aluminium-ramen" className="text-secondary hover:underline">
+                  PVC of aluminium ramen
+                </Link>{" "}
+                en onze{" "}
+                <Link href="/ramen-deuren" className="text-secondary hover:underline">
+                  lokale pagina&apos;s voor ramen en deuren
+                </Link>.
               </p>
               <p>
                 Onze plaatsing gebeurt door eigen vakmensen, met correcte aansluiting en nette afwerking binnen en buiten.
@@ -192,6 +200,8 @@ export default function WindowsDoorsPage() {
           </div>
         </div>
       </section>
+
+      <ServiceSeoSection serviceSlug="ramen-deuren" title="Ramen en deuren" />
 
       <section className="py-20 px-6 container mx-auto">
         <FadeIn>

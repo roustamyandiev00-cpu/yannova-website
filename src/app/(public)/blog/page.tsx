@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { generateSEO } from "@/lib/seo";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
+import { getBlogIndexPosts } from "@/lib/data/blog-posts";
 
 export const metadata: Metadata = generateSEO({
   title: "Blog - Tips over Ramen, Deuren en Renovatie | Yannova",
@@ -11,48 +12,7 @@ export const metadata: Metadata = generateSEO({
   keywords: ["renovatie tips", "ramen prijzen", "premies vlaanderen", "renovatie advies"],
 });
 
-const blogPosts = [
-  {
-    slug: "wat-kosten-nieuwe-ramen",
-    title: "Wat kosten nieuwe ramen in 2026?",
-    excerpt: "Ontdek de prijzen voor PVC en aluminium ramen en waar de prijs van afhangt.",
-    date: "2026-03-08",
-    readTime: "5 min",
-    category: "Prijzen",
-  },
-  {
-    slug: "premies-ramen-deuren-2026",
-    title: "Premies voor ramen en deuren in 2026",
-    excerpt: "Overzicht van alle beschikbare premies in Vlaanderen voor nieuwe ramen en deuren.",
-    date: "2026-03-08",
-    readTime: "7 min",
-    category: "Premies",
-  },
-  {
-    slug: "pvc-of-aluminium-ramen",
-    title: "PVC of aluminium ramen: wat is beter?",
-    excerpt: "Vergelijk de voor- en nadelen van PVC en aluminium ramen voor uw woning.",
-    date: "2026-03-08",
-    readTime: "6 min",
-    category: "Tips",
-  },
-  {
-    slug: "energiebesparing-nieuwe-ramen",
-    title: "Energiebesparing met nieuwe ramen",
-    excerpt: "Bespaar tot 50% energie met HR++ glas. Bereken je terugverdientijd.",
-    date: "2026-03-09",
-    readTime: "5 min",
-    category: "Besparing",
-  },
-  {
-    slug: "hoeveel-kost-gevelrenovatie",
-    title: "Hoeveel kost gevelrenovatie in 2026?",
-    excerpt: "Complete prijsoverzicht: €80-150/m² voor isolatie + crepi. Inclusief premies.",
-    date: "2026-03-09",
-    readTime: "6 min",
-    category: "Prijzen",
-  },
-];
+const blogPosts = getBlogIndexPosts();
 
 export default function BlogPage() {
   return (

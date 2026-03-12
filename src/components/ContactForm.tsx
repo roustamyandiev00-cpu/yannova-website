@@ -58,7 +58,7 @@ export function ContactForm() {
     };
 
     return (
-        <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md shadow-xl">
+        <div className="editorial-pane pr-2">
             <div className="mb-6">
                 <h3 className="text-2xl font-bold tracking-tight text-foreground">Stuur ons een bericht</h3>
                 <p className="mt-2 text-sm text-muted-foreground">

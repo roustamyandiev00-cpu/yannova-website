@@ -1,24 +1,52 @@
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
-import { CheckCircle, Phone, Mail, MapPin, Clock, Award } from 'lucide-react';
+import { CheckCircle, Phone, Mail, MapPin, Clock, Award, ChevronRight, Euro, ShieldCheck } from 'lucide-react';
 import { company } from '@/lib/company';
 
 const cityName = "Merksem";
 
 export const metadata: Metadata = generateSEO({
-  title: `Gevelrenovatie ${cityName} | Crepi & Gevelisolatie | Yannova`,
-  description: `Gevelrenovatie in ${cityName}? Ontdek de voordelen van gevelisolatie met crepi. Yannova biedt topkwaliteit, gratis opmeting en 15+ jaar ervaring.`,
+  title: `Gevelrenovatie ${cityName} | Gevelwerken, Crepi & Isolatie | Yannova`,
+  description: `Gevelrenovatie ${cityName}? Yannova is dé vakman voor gevelisolatie, crepi, steenstrips en hout. A-tot-Z begeleiding, duurzame materialen. Vraag een offerte!`,
   path: `/gevelrenovatie/${cityName.toLowerCase()}`,
-  keywords: [`gevelrenovatie ${cityName}`, `crepi ${cityName}`, `gevelisolatie ${cityName}`, `gevelbepleistering ${cityName}`, `gevel vernieuwen ${cityName}`],
+  keywords: [`gevelrenovatie ${cityName}`, `totaalrenovatie ${cityName}`, `crepi ${cityName}`, `gevelisolatie ${cityName}`, `gevelbepleistering ${cityName}`, `uitvoeren gevelrenovatie ${cityName}`],
 });
 
 const breadcrumbSchema = generateBreadcrumbSchema([
-  { name: "Home", url: "/" },
-  { name: "Diensten", url: "/diensten" },
-  { name: "Gevelrenovatie", url: "/diensten/gevelrenovatie" },
-  { name: cityName, url: `/gevelrenovatie/${cityName.toLowerCase()}` },
+  { name: "Home", url: "https://www.yannova.be/" },
+  { name: "Diensten", url: "https://www.yannova.be/diensten" },
+  { name: "Gevelrenovatie", url: "https://www.yannova.be/diensten/gevelrenovatie" },
+  { name: `Gevelrenovatie ${cityName}`, url: `https://www.yannova.be/gevelrenovatie/${cityName.toLowerCase()}` },
 ]);
+
+// Organization & Local Business Schema (Combined for optimal Rich Snippets)
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Yannova Renovatie",
+  "image": "https://www.yannova.be/images/logo.png",
+  "@id": "https://www.yannova.be/#organization",
+  "url": "https://www.yannova.be",
+  "telephone": company.phone,
+  "email": company.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": company.address,
+    "addressLocality": company.city,
+    "postalCode": company.zip,
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": cityName
+  },
+  "priceRange": "€€",
+  "founder": {
+    "@type": "Person",
+    "name": "Arbi Yannova"
+  }
+};
 
 export default function GevelrenovatieCityPage() {
   return (
@@ -27,169 +55,229 @@ export default function GevelrenovatieCityPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-        <section className="py-20 border-b border-white/10">
-          <div className="container mx-auto px-6">
+      <div className="min-h-screen bg-gray-50 text-gray-900">
+        {/* HERO SECTION */}
+        <section className="relative py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            {/* Achtergrondafbeelding voor de sfeer */}
+            <div className="absolute inset-0 bg-[url('/images/hero/renovation-hero.jpg')] bg-cover bg-center opacity-20 mixing-blend-overlay"></div>
+          </div>
+          <div className="container relative z-10 mx-auto px-6">
             <div className="max-w-4xl">
               <div className="flex items-center gap-2 text-secondary mb-4">
                 <MapPin className="h-5 w-5" />
-                <span className="text-sm font-medium">{cityName} en omgeving</span>
+                <span className="text-sm font-medium uppercase tracking-wider">{cityName} en Provincie Antwerpen</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                Gevelrenovatie & Crepi in <span className="text-secondary">{cityName}</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Gevelrenovatie & Gevelisolatie in <span className="text-secondary">{cityName}</span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Een nieuwe uitstraling en besparing op uw energiefactuur? Yannova is uw specialist in gevelisolatie 
-                en crepi voor woningen in {cityName}. Hoogwaardige afwerking door ervaren vakmensen.
+              <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
+                Bent u op zoek naar een betrouwbare aannemer voor gevelrenovatie in {cityName}? 
+                Wij transformeren uw gevel met hoogwaardige crepi, steenstrips, spuitkurk of hout.  
+                Bespaar op uw energiefactuur dankzij onze professionele gevelisolatie.
               </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  Waarom gevelrenovatie door Yannova in {cityName}?
-                </h2>
-                <div className="space-y-4 mb-8">
-                  {[
-                    `Lokaal actief in ${cityName} en omgeving`,
-                    "Gratis expertise aan huis",
-                    "Tot 30% besparing op uw energiefactuur",
-                    "Bescherming tegen weersinvloeden en vocht",
-                    "Brede keuze aan crepi kleuren",
-                    "Hulp bij premie-aanvragen (Mijn VerbouwPremie)",
-                    "Volledige afwerking inclusief plinten",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                    <Clock className="h-8 w-8 text-secondary mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">24u</div>
-                    <div className="text-sm text-gray-400">Offerte</div>
-                  </div>
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                    <Award className="h-8 w-8 text-secondary mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">15+</div>
-                    <div className="text-sm text-gray-400">Jaar Ervaring</div>
-                  </div>
-                  <div className="bg-white/5 border border-white/10 rounded-lg p-4 text-center">
-                    <CheckCircle className="h-8 w-8 text-secondary mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">10j</div>
-                    <div className="text-sm text-gray-400">Garantie</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sticky top-24">
-                <h3 className="text-2xl font-bold text-white mb-6">
-                  Vraag een gratis offerte aan
-                </h3>
-                <p className="text-gray-300 mb-6">
-                  Geïnteresseerd in gevelisolatie met crepi in {cityName}? 
-                  Neem contact op voor een vrijblijvende plaatsbezoek.
-                </p>
-                <div className="space-y-4">
-                  <a
-                    href={company.phoneHref}
-                    className="flex items-center gap-3 p-4 bg-secondary hover:bg-secondary/90 text-white rounded-lg transition-colors"
-                  >
-                    <Phone className="h-5 w-5" />
-                    <div>
-                      <div className="text-sm opacity-90">Bel ons direct</div>
-                      <div className="font-semibold">{company.phoneDisplay}</div>
-                    </div>
-                  </a>
-                  <a
-                    href={`mailto:${company.email}`}
-                    className="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-colors"
-                  >
-                    <Mail className="h-5 w-5" />
-                    <div>
-                      <div className="text-sm opacity-90">Email ons</div>
-                      <div className="font-semibold">{company.email}</div>
-                    </div>
-                  </a>
-                  <a
-                    href="/offerte"
-                    className="block text-center p-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-colors font-medium"
-                  >
-                    Online offerte aanvragen
-                  </a>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
+                  Vraag een vrijblijvende offerte
+                  <ChevronRight className="w-5 h-5" />
+                </a>
+                <a href={company.phoneHref} className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/20 transition-all text-lg">
+                  <Phone className="w-5 h-5" />
+                  Bel {company.phoneDisplay}
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-white/5">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto prose prose-invert prose-lg">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Alles over Gevelrenovatie en Crepi in {cityName}
+        <div className="container mx-auto px-6 py-16 grid lg:grid-cols-3 gap-12">
+          {/* MAIN CONTENT AREA */}
+          <div className="lg:col-span-2 space-y-16">
+            
+            {/* SECTIE 1: MATERIALEN & DIENSTEN */}
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Onze expertises: Soorten gevelrenovaties in {cityName}
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Wanneer u uw gevel in {cityName} wil renoveren, is gevelisolatie afgewerkt met sierpleister (crepi) de 
-                meest populaire en efficiënte keuze. Het zorgt niet alleen voor een strak, volledig nieuw uiterlijk, 
-                maar verhoogt direct het energielabel (EPC) van uw woning. Dat is goed nieuws voor uw energiefactuur én de waarde van uw huis.
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                Een gevel bepaalt niet alleen het uitzicht van uw woning in {cityName}, maar beschermt ook tegen weersinvloeden en koude. 
+                Als ervaren gevelexpert bieden we diverse duurzame afwerkingsmaterialen:
               </p>
+              
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold mb-3 text-secondary flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Bepleistering & Crepi
+                  </h3>
+                  <p className="text-gray-600">
+                    Gevelbepleistering (crepi) is de meest gekozen vorm van gevelbekleding in {cityName}. Het is strak, waterafstotend, overschilderbaar in alle kleuren en perfect te combineren met buitengevelisolatie.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold mb-3 text-secondary flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Steenstrips
+                  </h3>
+                  <p className="text-gray-600">
+                    Wilt u de authentieke look van bakstenen behouden maar profiteren van moderne isolatiewaarden? Steenstrips worden rechtstreeks over de isolatielaag verlijmd met een prachtig resultaat.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold mb-3 text-secondary flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Spuitkurk
+                  </h3>
+                  <p className="text-gray-600">
+                    Een milieuvriendelijk en ademend alternatief dat vaak gebruikt wordt voor renovaties in {cityName}. Het is akoestisch isolerend, elastisch (geen tot weinig kans op scheuren) en vergt weinig onderhoud.
+                  </p>
+                </div>
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold mb-3 text-secondary flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Hout & Andere
+                  </h3>
+                  <p className="text-gray-600">
+                    Gevelbekleding in Thermowood, padoek of composiet donneert een unieke, warme uitstraling. Wij plaatsen houten gevels eveneens steevast met de nodige isolatielagen voor optimaal wooncomfort.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
-                Werkwijze voor Gevelbekleding
-              </h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Bij Yannova doorlopen wij een professioneel, strak gepland traject in {cityName}:
+            {/* SECTIE 2: VOORDELEN & WAAROM YANNOVA */}
+            <section className="bg-gray-100 -mx-6 px-6 py-12 rounded-none md:rounded-2xl">
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Voordelen van samenwerken met Yannova
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-8 text-lg">
+                Voor grote renovatiewerken kiest u beter direct voor betrouwbaar vakmanschap. Of het nu gaat om een specifieke 
+                gevelrenovatie of een complete <a href="/diensten/renovatie" className="text-secondary hover:underline">totaalrenovatie in {cityName}</a>, 
+                ons bouwteam neemt alles in handen van A tot Z. Onze speerpunten:
               </p>
-              <ol className="text-gray-300 space-y-3 mb-6">
-                <li><strong>Inspectie & Opmeting:</strong> Onze gevelexpert komt ter plaatse in {cityName} om de staat van de huidige muren te beoordelen.</li>
-                <li><strong>Isolatie plaatsen:</strong> Isolatieplaten van hoge densiteit (EPS) worden naadloos op uw buitengevel bevestigd.</li>
-                <li><strong>Wapeningsnet:</strong> Wij brengen een uitvlakkende mortellaag aan met een glasvezelnet, dat barsten en scheuren voorkomt.</li>
-                <li><strong>Afwerking in Crepi:</strong> Tot slot wordt de decoratieve siliconenharspleister in de door u gekozen kleur aangebracht.</li>
-              </ol>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                  <ShieldCheck className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-gray-900">Vakmanschap & Precisie</h4>
+                    <p className="text-gray-600 text-sm mt-1">Onze specialisten werken met de grootste zorg, letten op details en leveren enkel kwalitatief hoogstaande afwerkingen op. Van raamaansluiting tot plint.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                  <ShieldCheck className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-gray-900">Duurzame Materialen</h4>
+                    <p className="text-gray-600 text-sm mt-1">Wij gebruiken 100% kwaliteitsproducten (EPB-conform) wat zorgt voor een lange levensduur en maximale thermische isolatiewaarde voor de woningen in {cityName}.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
+                  <ShieldCheck className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="font-bold text-gray-900">A-tot-Z Begeleiding</h4>
+                    <p className="text-gray-600 text-sm mt-1">Van eerste plaatsbezoek in {cityName} tot materiaalkeuze, planning van de werken én hulp bij het aanvragen van uw Vlaamse renovatiepremie: wij regelen het.</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
 
-              <h3 className="text-2xl font-bold text-white mt-8 mb-4">
-                Premies voor Gevelisolatie in {cityName}
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Nieuwe gevelisolatie is een investering in energiezuinigheid, waar de Vlaamse overheid u voor beloont.
-                Afhankelijk van uw inkomenscategorie en de exacte thermische specificaties, kunt u via Mijn VerbouwPremie 
-                aanzienlijke bedragen terugkrijgen. Wij zorgen voor alle benodigde bouwtechnische documenten en offertes om 
-                uw premieaanvraag in {cityName} probleemloos de deur uit te sturen.
+            {/* SECTIE 3: LOKALE INFO & PREMIES */}
+            <section>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                Lokale informatie: Premies voor woningen in {cityName}
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                Veel woningen in {cityName} kunnen vandaag flink verbeterd worden met extra gevelisolatie. Oudere woningen kennen 
+                vaak veel warmteverlies, waardoor energie onnodig via de buitenmuren verdwijnt. Een renovatie met isolatieplaten en strakke gevelbekleding 
+                geeft de woning een waardevermeerdering én verlaagt de maandelijkse kosten.
               </p>
+              
+              <div className="bg-blue-50 border-l-4 border-secondary p-6 rounded-r-xl">
+                <div className="flex items-center gap-3 mb-3">
+                  <Euro className="w-6 h-6 text-secondary" />
+                  <h3 className="text-xl font-bold text-gray-900">Mijn VerbouwPremie {cityName}</h3>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm mb-4">
+                  Bewoners in {cityName} die investeren in het isoleren van hun buitenmuren (minstens Rd-waarde van 3 m²K/W) kunnen 
+                  een deel van die kosten recupereren via de Vlaamse Mijn VerbouwPremie (en eventueel Mijn VerbouwLening). Wist u dat u ook voor het vernieuwen van <a href="/diensten/ramen-en-deuren" className="text-secondary hover:underline">ramen en deuren</a> in aanmerking komt voor dergelijke subsidies?
+                </p>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  <strong>Wij helpen u!</strong> Elke factuur en document die wij voor u opmaken, bevat precies die noodzakelijke informatie die de gemeente {cityName} en de Vlaamse overheid van u verwachten.
+                </p>
+              </div>
+            </section>
+
+            {/* LINKS NAAR ANDERE DIENSTEN */}
+            <section className="border-t border-gray-200 pt-12">
+               <h2 className="text-2xl font-bold mb-6 text-gray-900">Verder lezen & Interne diensten</h2>
+               <div className="flex flex-wrap gap-4">
+                 <a href="/diensten/renovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Totaalrenovatie {cityName}
+                 </a>
+                 <a href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Ramen & Deuren in {cityName}
+                 </a>
+                 <a href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Meer over Gevelisolatie & Crepi
+                 </a>
+                 <a href="/diensten/dakrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                   Dakrenovatie expertise
+                 </a>
+               </div>
+            </section>
+
+          </div>
+
+          {/* SIDEBAR (Sticky CTA) */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-28 bg-gray-900 rounded-2xl p-8 text-white shadow-xl">
+              <h3 className="text-2xl font-bold mb-4">
+                Klaar voor een nieuwe gevel in {cityName}?
+              </h3>
+              <p className="text-gray-300 mb-8 leading-relaxed text-sm">
+                Vraag vandaag nog een plaatsbezoek aan en ontvang een gratis, gedetailleerde en vrijblijvende offerte. 
+                Ook voor advies over isolatie-oplossingen, steenstrips of de Mijn VerbouwPremie helpen onze experten u graag verder.
+              </p>
+              
+              <div className="space-y-4">
+                <a
+                  href="/offerte"
+                  className="w-full flex justify-center items-center gap-2 p-4 bg-secondary font-bold text-white rounded-lg hover:bg-secondary/90 transition-colors shadow-lg"
+                >
+                  Contacteer ons & Offerte
+                </a>
+                
+                <a
+                  href={company.phoneHref}
+                  className="w-full flex items-center justify-center gap-3 p-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-lg transition-colors"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span className="font-semibold">{company.phoneDisplay}</span>
+                </a>
+                <a
+                  href={`mailto:${company.email}`}
+                  className="w-full flex items-center justify-center gap-3 p-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-lg transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
+                  <span className="font-semibold">{company.email}</span>
+                </a>
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-secondary/20 p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">Werkgebied</div>
+                    <div className="text-sm text-gray-400">Actief in {cityName} en heel de provincie.</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Onze andere diensten in {cityName}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <a href="/ramen" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-                <h3 className="text-xl font-semibold text-white mb-2">Ramen</h3>
-                <p className="text-gray-300">PVC en aluminium ramen met HR++ glas</p>
-              </a>
-              <a href="/deuren" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-                <h3 className="text-xl font-semibold text-white mb-2">Deuren</h3>
-                <p className="text-gray-300">Voor- en achterdeuren in PVC & aluminium</p>
-              </a>
-              <a href="/diensten/dakrenovatie" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
-                <h3 className="text-xl font-semibold text-white mb-2">Dakrenovatie</h3>
-                <p className="text-gray-300">Volledige vernieuwing & dakisolatie</p>
-              </a>
-            </div>
-          </div>
-        </section>
+          
+        </div>
       </div>
     </>
   );

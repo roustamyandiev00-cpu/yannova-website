@@ -9,7 +9,7 @@ import type { ChatMessage } from "@/lib/supabase";
 const quickLinks = [
   { title: "Premies", href: "/premie-gids" },
   { title: "Ramen", href: "/ramen" },
-  { title: "Ramen & Deuren", href: "/diensten/ramen-deuren" },
+  { title: "Ramen & Deuren", href: "/ramen-deuren" },
   { title: "Contact", href: "/contact" },
   { title: "Offerte", href: "/contact" },
 ];

@@ -30,13 +30,13 @@ export default function DienstenPage() {
     {
       title: "Ramen & Deuren",
       description: "Maatwerk in PVC of aluminium met energiezuinige beglazing en nette plaatsing.",
-      link: "/diensten/ramen-deuren",
+      link: "/ramen-deuren",
       icon: <Home className="h-8 w-8" />,
     },
     {
       title: "Gevelrenovatie",
       description: "Gevelisolatie met crepi of steenstrips voor meer comfort en een nieuwe uitstraling.",
-      link: "/diensten/gevelrenovatie",
+      link: "/gevelrenovatie",
       icon: <Layers className="h-8 w-8" />,
     },
     {
@@ -48,7 +48,7 @@ export default function DienstenPage() {
     {
       title: "Totaalrenovatie",
       description: "Eén projectleider en één planning voor uw volledige renovatie van A tot Z.",
-      link: "/diensten/renovatie",
+      link: "/renovatie",
       icon: <Hammer className="h-8 w-8" />,
     },
   ];

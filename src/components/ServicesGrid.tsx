@@ -76,14 +76,23 @@ export function ServicesGrid() {
         </div>
 
         {/* Premies link */}
-        <div className="mt-10 text-center">
-          <Link
-            href="/premies"
-            className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors font-medium"
-          >
-            Bekijk alle beschikbare premies
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="mt-10">
+          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-center">
+            <Link
+              href="/premies"
+              className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors font-medium"
+            >
+              Bekijk alle beschikbare premies
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/producten"
+              className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors font-medium"
+            >
+              Ontdek ook rolluiken, horren en garagepoorten
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

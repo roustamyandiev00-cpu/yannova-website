@@ -89,7 +89,7 @@ export default function AboutPage() {
                                         Yannova Bouw is opgericht met één duidelijke missie: kwaliteit leveren zonder compromissen. Waar veel aannemers stoppen, gaan wij verder. Wij geloven dat een renovatie meer is dan alleen stenen stapelen; het gaat om het creëren van een thuis.
                                     </p>
                                     <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                                        Vandaag de dag zijn we trots op ons team van gespecialiseerde vakmensen. Of het nu gaat om het plaatsen van ramen, het isoleren van een gevel of een complete woningrenovatie, wij hebben de expertise in huis.
+                                        Vandaag de dag zijn we trots op ons team van gespecialiseerde vakmensen. Wij geloven in de kracht van een integrale aanpak: <strong>één team, één planning</strong>. Of het nu gaat om het plaatsen van ramen, het isoleren van een gevel of een complete woningrenovatie, wij coördineren alles voor een technisch perfect en zorgeloos resultaat.
                                     </p>
 
                                     <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-muted-foreground lg:max-w-none">

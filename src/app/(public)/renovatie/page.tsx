@@ -1,5 +1,11 @@
-import { redirect } from "next/navigation";
+import { LocalSeoHubPage } from "@/components/LocalSeoHubPage";
+import { getLocalSeoHubSeoInput } from "@/lib/data/local-seo";
+import { generateSEO } from "@/lib/seo";
 
-export default function RenovatieRedirectPage() {
-  redirect("/diensten/renovatie");
+const seo = getLocalSeoHubSeoInput("renovatie");
+
+export const metadata = seo ? generateSEO(seo) : undefined;
+
+export default function RenovatieHubPage() {
+  return <LocalSeoHubPage serviceSlug="renovatie" />;
 }

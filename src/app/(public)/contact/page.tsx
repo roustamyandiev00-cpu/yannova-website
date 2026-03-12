@@ -46,15 +46,15 @@ export default function ContactPage() {
 
         {/* Trust Indicators */}
         <div className="mx-auto mt-12 max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="flex items-center gap-3 justify-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+          <div className="editorial-slat flex items-center gap-3 justify-center p-4">
             <CheckCircle2 className="h-6 w-6 text-secondary shrink-0" />
             <span className="text-sm font-medium text-foreground">Reactie binnen 24u</span>
           </div>
-          <div className="flex items-center gap-3 justify-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+          <div className="editorial-slat flex items-center gap-3 justify-center p-4">
             <Shield className="h-6 w-6 text-secondary shrink-0" />
             <span className="text-sm font-medium text-foreground">Vrijblijvende offerte</span>
           </div>
-          <div className="flex items-center gap-3 justify-center p-4 bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm">
+          <div className="editorial-slat flex items-center gap-3 justify-center p-4">
             <Award className="h-6 w-6 text-secondary shrink-0" />
             <span className="text-sm font-medium text-foreground">Vakmanschap gegarandeerd</span>
           </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
           {/* Contact Information - Left Column */}
           <div className="lg:col-span-1 space-y-6">
             {/* Contact Details Card */}
-            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md">
+            <div className="editorial-pane pr-4">
               <h3 className="text-2xl font-bold tracking-tight text-foreground mb-6">Contactgegevens</h3>
               <dl className="space-y-6 text-base leading-7 text-muted-foreground">
                 <div className="flex gap-x-4 items-start group">
@@ -119,7 +119,7 @@ export default function ContactPage() {
             </div>
 
             {/* WhatsApp Quick Contact */}
-            <div className="bg-linear-to-br from-green-500/10 to-green-600/5 p-6 rounded-2xl border border-green-500/20 backdrop-blur-md">
+            <div className="editorial-callout px-6 py-6">
               <div className="flex items-center gap-3 mb-4">
                 <MessageCircle className="h-6 w-6 text-green-500" />
                 <h3 className="text-lg font-semibold text-foreground">Direct contact via WhatsApp</h3>
@@ -152,25 +152,25 @@ export default function ContactPage() {
             Veelgestelde vragen
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+            <div className="editorial-slat pr-4">
               <h3 className="text-lg font-semibold text-foreground mb-2">Hoe snel krijg ik een reactie?</h3>
               <p className="text-sm text-muted-foreground">
                 We streven ernaar om binnen 24 uur te reageren op alle aanvragen. Spoedgevallen worden met voorrang behandeld.
               </p>
             </div>
-            <div className="bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+            <div className="editorial-slat pr-4">
               <h3 className="text-lg font-semibold text-foreground mb-2">Is een offerte gratis?</h3>
               <p className="text-sm text-muted-foreground">
                 Ja, alle offertes zijn volledig vrijblijvend en kosteloos. We komen graag bij u langs voor een gratis plaatsbezoek.
               </p>
             </div>
-            <div className="bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+            <div className="editorial-slat pr-4">
               <h3 className="text-lg font-semibold text-foreground mb-2">In welke regio&apos;s zijn jullie actief?</h3>
               <p className="text-sm text-muted-foreground">
                 We zijn actief in {company.areas.join(", ")} en omstreken. Neem contact op voor andere locaties.
               </p>
             </div>
-            <div className="bg-white/5 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+            <div className="editorial-slat pr-4">
               <h3 className="text-lg font-semibold text-foreground mb-2">Welke diensten bieden jullie aan?</h3>
               <p className="text-sm text-muted-foreground">
                 Van gevelrenovatie tot ramen en deuren, isolatie en volledige renovaties. Bekijk onze diensten pagina voor meer info.
