@@ -76,32 +76,31 @@ Als de API methode niet werkt, kun je ook direct in Supabase SQL Editor:
 4. Voer uit:
 
 ```sql
--- Genereer hash voor wachtwoord "Yannova2024!"
--- Deze hash moet je eerst lokaal genereren met:
--- node -e "const bcrypt = require('bcryptjs'); console.log(bcrypt.hashSync('Yannova2024!', 10));"
-
+-- Verwijder eerst eventuele bestaande admin accounts
 DELETE FROM "User" WHERE email IN ('roustamyandiev00@gmail.com', 'windowpro.be@gmail.com');
 
+-- Maak nieuwe admin accounts aan met wachtwoord: Yannova2024!
 INSERT INTO "User" (id, email, password, name, role, active, "createdAt", "updatedAt")
-VALUES 
-  (
-    'clx' || substr(md5(random()::text), 1, 22),
-    'roustamyandiev00@gmail.com',
-    '$2b$10$[HASH_HIER]',  -- Vervang met de gegenereerde hash
-    'Roustam',
-    'super_admin',
-    true,
-    NOW(),
-    NOW()
-  ),
-  (
-    'clx' || substr(md5(random()::text), 1, 22),
-    'windowpro.be@gmail.com',
-    '$2b$10$[HASH_HIER]',  -- Vervang met de gegenereerde hash
-    'Yannova Admin',
-    'super_admin',
-    true,
-    NOW(),
-    NOW()
-  );
+VALUES (
+  'clx' || substr(md5(random()::text), 1, 22),
+  'roustamyandiev00@gmail.com',
+  '$2b$10$AoFs/JQdta1nepywj0EWyewyImD61tJoYlOtWp/Bw9ZAO9btZARBC',
+  'Roustam',
+  'super_admin',
+  true,
+  NOW(),
+  NOW()
+);
+
+INSERT INTO "User" (id, email, password, name, role, active, "createdAt", "updatedAt")
+VALUES (
+  'clx' || substr(md5(random()::text), 1, 22),
+  'windowpro.be@gmail.com',
+  '$2b$10$AoFs/JQdta1nepywj0EWyewyImD61tJoYlOtWp/Bw9ZAO9btZARBC',
+  'Yannova Admin',
+  'super_admin',
+  true,
+  NOW(),
+  NOW()
+);
 ```
