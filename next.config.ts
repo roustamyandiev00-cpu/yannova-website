@@ -2,12 +2,12 @@ import type { NextConfig } from "next";
 
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://t.contentsquare.net https://bat.bing.com https://bat.bing.net",
+  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://t.contentsquare.net https://bat.bing.com https://bat.bing.net https://www.datadoghq-browser-agent.com",
   "worker-src 'self' blob:",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
   "img-src 'self' data: https: blob:",
-  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms https://*.supabase.co https://t.contentsquare.net https://*.contentsquare.net https://bat.bing.com https://bat.bing.net",
+  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms https://*.supabase.co https://t.contentsquare.net https://*.contentsquare.net https://bat.bing.com https://bat.bing.net https://*.datadoghq.eu",
   "frame-src 'self' https://www.google.com https://www.googletagmanager.com https://tagmanager.google.com",
 ].join('; ');
 

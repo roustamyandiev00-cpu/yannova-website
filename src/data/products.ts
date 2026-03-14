@@ -48,6 +48,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 48,
     images: [SHOP_IMAGES.pvcReiniger],
+    features: [
       'Verwijdert vuil en lichte aanslag zonder strepen',
       'Geschikt voor ramen, deuren en rolluiken',
       'Favoriet product na plaatsing en oplevering',
@@ -77,6 +78,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 32,
     images: [SHOP_IMAGES.aluminiumCleaner],
+    features: [
       'Verwijdert lichte kalk- en cementsluier',
       'Professionele formule voor renovatie en nazorg',
       'Laat een frisse, propere afwerking achter',
@@ -105,6 +107,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 44,
     images: [SHOP_IMAGES.rubberconditioner],
+    features: [
       'Helpt tocht en piepen verminderen',
       'Makkelijk aan te brengen met doek of applicator',
       'Aanbevolen voor jaarlijks onderhoud',
@@ -133,6 +136,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 52,
     images: [SHOP_IMAGES.smeerspray],
+    features: [
       'Snelle smering zonder vettige resten',
       'Helpt piepen en stroef openen voorkomen',
       'Geschikt voor periodiek onderhoud',
@@ -160,6 +164,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 80,
     images: [SHOP_IMAGES.tochtstrip],
+    features: [
       'Sterke kleeflaag voor snelle montage',
       'Geschikt voor ramen, deuren en renovatieprojecten',
       'Helpt warmteverlies beperken',
@@ -217,6 +222,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 26,
     images: [SHOP_IMAGES.deurborstel],
+    features: [
       'Stevig aluminium profiel',
       'Op maat in te korten',
       'Geschikt voor binnen- en buitendeuren',
@@ -245,6 +251,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 18,
     images: [SHOP_IMAGES.raamgreep],
+    features: [
       'Strakke matzwarte afwerking',
       'Universele maatvoering voor veel draaikiepramen',
       'Ideaal voor slaapkamers en kinderkamers',
@@ -273,6 +280,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 14,
     images: [SHOP_IMAGES.ventilatie],
+    features: [
       'Geschikt voor renovatie en vervanging',
       'Helpt condensvorming beperken',
       'Strakke witte afwerking',
@@ -300,6 +308,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 21,
     images: [SHOP_IMAGES.scharnierset],
+    features: [
       'Inclusief precisiespray en onderhoudsdoek',
       'Voor ramen, deuren en schuifsystemen',
       'Verlengt de levensduur van beslag',
@@ -327,6 +336,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 36,
     images: [SHOP_IMAGES.deurstopper],
+    features: [
       'Stevige montage op vloer',
       'Neutrale inox look',
       'Onderhoudsvriendelijk',
@@ -355,6 +365,7 @@ export const PRODUCTS: Product[] = [
     inStock: true,
     stockQuantity: 9,
     images: [SHOP_IMAGES.veiligheidsbeslag],
+    features: [
       'Geschikt voor renovatie van bestaande voordeuren',
       'Strakke en duurzame afwerking',
       'Inclusief bevestigingsmateriaal',

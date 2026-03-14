@@ -1,0 +1,159 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - link "Yannova Admin" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: Yannova Admin
+      - generic [ref=e7]:
+        - link "Dashboard" [ref=e8] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=e9]
+          - paragraph [ref=e12]: Dashboard
+        - link "Projecten" [ref=e13] [cursor=pointer]:
+          - /url: /admin/projects
+          - img [ref=e14]
+          - paragraph [ref=e18]: Projecten
+        - link "Aanvragen" [ref=e19] [cursor=pointer]:
+          - /url: /admin/leads
+          - img [ref=e20]
+          - paragraph [ref=e23]: Aanvragen
+        - link "Live Chat" [ref=e24] [cursor=pointer]:
+          - /url: /admin/chat
+          - img [ref=e25]
+          - paragraph [ref=e27]: Live Chat
+        - link "Chat Analytics" [ref=e28] [cursor=pointer]:
+          - /url: /admin/chat-analytics
+          - img [ref=e29]
+          - paragraph [ref=e31]: Chat Analytics
+        - link "Chat Archief" [ref=e32] [cursor=pointer]:
+          - /url: /admin/chat-archief
+          - img [ref=e33]
+          - paragraph [ref=e36]: Chat Archief
+        - link "Testimonials" [ref=e37] [cursor=pointer]:
+          - /url: /admin/testimonials
+          - img [ref=e38]
+          - paragraph [ref=e40]: Testimonials
+        - link "Analytics" [ref=e41] [cursor=pointer]:
+          - /url: /admin/analytics
+          - img [ref=e42]
+          - paragraph [ref=e44]: Analytics
+        - link "SEO" [ref=e45] [cursor=pointer]:
+          - /url: /admin/seo
+          - img [ref=e46]
+          - paragraph [ref=e49]: SEO
+        - link "Media" [ref=e50] [cursor=pointer]:
+          - /url: /admin/media
+          - img [ref=e51]
+          - paragraph [ref=e55]: Media
+        - link "Gebruikers" [ref=e56] [cursor=pointer]:
+          - /url: /admin/users
+          - img [ref=e57]
+          - paragraph [ref=e62]: Gebruikers
+        - link "Instellingen" [ref=e63] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=e64]
+          - paragraph [ref=e67]: Instellingen
+        - button "Uitloggen" [ref=e69]:
+          - img [ref=e70]
+          - paragraph [ref=e73]: Uitloggen
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - heading "Admin Login" [level=1] [ref=e78]
+        - paragraph [ref=e79]: Log in om projecten te beheren
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]: Email
+          - textbox "Email" [ref=e83]:
+            - /placeholder: admin@yannova.be
+        - generic [ref=e84]:
+          - generic [ref=e85]: Wachtwoord
+          - textbox "Wachtwoord" [ref=e86]:
+            - /placeholder: "******"
+        - button "Inloggen" [ref=e88]:
+          - text: Inloggen
+          - img [ref=e89]
+  - generic [active]:
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - navigation [ref=e96]:
+            - button "previous" [disabled] [ref=e97]:
+              - img "previous" [ref=e98]
+            - generic [ref=e100]:
+              - generic [ref=e101]: 1/
+              - text: "1"
+            - button "next" [disabled] [ref=e102]:
+              - img "next" [ref=e103]
+          - img
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - generic "Latest available version is detected (16.1.6)." [ref=e109]: Next.js 16.1.6
+            - generic [ref=e110]: Turbopack
+          - img
+      - dialog "Build Error" [ref=e112]:
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - generic [ref=e119]: Build Error
+              - generic [ref=e120]:
+                - button "Copy Error Info" [ref=e121] [cursor=pointer]:
+                  - img [ref=e122]
+                - link "Go to related documentation" [ref=e124] [cursor=pointer]:
+                  - /url: https://nextjs.org/docs/messages/module-not-found
+                  - img [ref=e125]
+                - button "Attach Node.js inspector" [ref=e127] [cursor=pointer]:
+                  - img [ref=e128]
+            - generic [ref=e137]: "Module not found: Can't resolve '@/contexts/CartContext'"
+          - generic [ref=e139]:
+            - generic [ref=e141]:
+              - img [ref=e143]
+              - generic [ref=e146]: ./src/app/(public)/layout.tsx (7:1)
+              - button "Open in editor" [ref=e147] [cursor=pointer]:
+                - img [ref=e149]
+            - generic [ref=e152]:
+              - generic [ref=e153]: Module not found
+              - generic [ref=e154]: ": Can't resolve"
+              - text: "'@/contexts/CartContext'"
+              - generic [ref=e155]: 5 |
+              - text: import
+              - generic [ref=e156]: "{"
+              - text: CookieConsent
+              - generic [ref=e157]: "}"
+              - text: from "@/components/CookieConsent";
+              - generic [ref=e158]: 6 |
+              - text: import
+              - generic [ref=e159]: "{"
+              - text: StickyCTA
+              - generic [ref=e160]: "}"
+              - text: from "@/components/StickyCTA"; >
+              - generic [ref=e161]: 7 |
+              - text: import
+              - generic [ref=e162]: "{"
+              - text: CartProvider
+              - generic [ref=e163]: "}"
+              - text: from "@/contexts/CartContext";
+              - generic [ref=e164]: "|"
+              - text: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              - generic [ref=e165]: 8 |
+              - generic [ref=e166]: 9 |
+              - text: export default function PublicLayout
+              - generic [ref=e167]: "({"
+              - generic [ref=e168]: 10 |
+              - generic [ref=e169]: children
+              - text: ","
+              - generic [ref=e170]:
+                - text: "Import map: aliased to relative './src/contexts/CartContext' inside of [project]/"
+                - link "https://nextjs.org/docs/messages/module-not-found" [ref=e171] [cursor=pointer]:
+                  - /url: https://nextjs.org/docs/messages/module-not-found
+        - generic [ref=e172]: "1"
+        - generic [ref=e173]: "2"
+    - generic [ref=e178] [cursor=pointer]:
+      - button "Open Next.js Dev Tools" [ref=e179]:
+        - img [ref=e180]
+      - button "Open issues overlay" [ref=e184]:
+        - generic [ref=e185]:
+          - generic [ref=e186]: "0"
+          - generic [ref=e187]: "1"
+        - generic [ref=e188]: Issue
+  - alert [ref=e189]

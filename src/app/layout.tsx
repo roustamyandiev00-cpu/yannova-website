@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
 import { PerformanceMonitor } from "@/components/PerformanceMonitor";
+import { DatadogRUM } from "@/components/DatadogRUM";
 import { generateLocalBusinessSchema, generateServiceSchema, generateWebSiteSchema, generateOrganizationSchema, services } from "@/lib/structured-data";
 
 const inter = Inter({ 
@@ -175,6 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <PerformanceMonitor />
+        <DatadogRUM />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

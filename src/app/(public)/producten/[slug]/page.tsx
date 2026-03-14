@@ -249,33 +249,31 @@ export default async function ProductCategoryPage({ params }: Props) {
         </section>
 
         <section className="border-t border-white/10 py-16">
-              <div className="mt-6 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-                {item.secondaryLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="editorial-link text-sm text-gray-300 hover:text-white"
-                  >
-                    <div className="font-semibold text-white">{link.label}</div>
-                    <div className="mt-1 text-xs text-gray-400">{link.href}</div>
-                  </Link>
-                ))}
-                <Link
-                  href="/contact"
-                  className="editorial-link text-sm text-gray-300 hover:text-white"
-                >
-                  <div className="font-semibold text-white">Contact</div>
-                  <div className="mt-1 text-xs text-gray-400">Bespreek welke systemen passen bij uw project</div>
-                </Link>
-                <Link
-                  href="/producten"
-                  className="editorial-link text-sm text-gray-300 hover:text-white"
-                >
-                  <div className="font-semibold text-white">Alle producten</div>
-                  <div className="mt-1 text-xs text-gray-400">Terug naar het productoverzicht</div>
-                </Link>
-              </div>
-            </div>
+          <div className="mt-6 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+            {item.secondaryLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="editorial-link text-sm text-gray-300 hover:text-white"
+              >
+                <div className="font-semibold text-white">{link.label}</div>
+                <div className="mt-1 text-xs text-gray-400">{link.href}</div>
+              </Link>
+            ))}
+            <Link
+              href="/contact"
+              className="editorial-link text-sm text-gray-300 hover:text-white"
+            >
+              <div className="font-semibold text-white">Contact</div>
+              <div className="mt-1 text-xs text-gray-400">Bespreek welke systemen passen bij uw project</div>
+            </Link>
+            <Link
+              href="/producten"
+              className="editorial-link text-sm text-gray-300 hover:text-white"
+            >
+              <div className="font-semibold text-white">Alle producten</div>
+              <div className="mt-1 text-xs text-gray-400">Terug naar het productoverzicht</div>
+            </Link>
           </div>
         </section>
       </div>
