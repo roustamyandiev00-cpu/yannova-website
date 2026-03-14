@@ -114,8 +114,8 @@ export function Navbar() {
                 <button
                   onClick={() => setServicesOpen(!servicesOpen)}
                   className={cn(
-                    "text-sm font-medium transition-all duration-300 relative group flex items-center gap-1",
-                    pathname.startsWith(item.href) ? "text-secondary" : "text-gray-300 hover:text-white",
+                    "text-sm font-semibold tracking-wide transition-all duration-300 relative group flex items-center gap-1",
+                    pathname.startsWith(item.href) ? "text-secondary drop-shadow-[0_0_8px_rgba(255,107,0,0.6)]" : "text-white/80 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]",
                   )}
                   aria-expanded={servicesOpen}
                   aria-controls={servicesMenuId}
@@ -166,10 +166,10 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-all duration-300 relative group",
+                  "text-sm font-semibold tracking-wide transition-all duration-300 relative group",
                   pathname === item.href || pathname.startsWith(`${item.href}/`)
-                    ? "text-secondary"
-                    : "text-gray-300 hover:text-white",
+                    ? "text-secondary drop-shadow-[0_0_8px_rgba(255,107,0,0.6)]"
+                    : "text-white/80 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]",
                 )}
               >
                 {item.name}
@@ -188,7 +188,7 @@ export function Navbar() {
           <a
             href={company.phoneHref}
             onClick={() => gtmTrackPhone()}
-            className="flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap"
+            className="flex items-center gap-1.5 text-sm font-semibold tracking-wide text-white/80 hover:text-white transition-colors whitespace-nowrap hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]"
           >
             <Phone className="h-4 w-4" />
             <span className="hidden xl:inline">{company.phoneDisplay}</span>
@@ -198,7 +198,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => gtmTrackWhatsApp()}
-            className="flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-[#25D366] transition-colors"
+            className="flex items-center gap-1.5 text-sm font-semibold tracking-wide text-white/80 hover:text-[#25D366] transition-colors hover:drop-shadow-[0_0_6px_rgba(37,211,102,0.4)]"
           >
             <MessageCircle className="h-4 w-4" />
             <span className="hidden xl:inline">WhatsApp</span>
