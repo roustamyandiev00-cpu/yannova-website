@@ -11,11 +11,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const mainPages = [
     '',
     '/diensten',
+    '/diensten/ramen-deuren',
+    '/diensten/isolatie',
     '/ramen',
     '/deuren',
     '/ramen-deuren',
     '/gevelrenovatie',
     '/crepi-gevel',
+    '/crepi',
+    '/gevelisolatie',
     '/gevelisolatie-crepi',
     '/renovatie',
     '/totaalrenovatie',
@@ -29,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/reviews',
     '/werkgebied',
     '/producten',
+    '/blog',
   ]
 
   // Gemeenten
@@ -52,8 +57,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const localGevelrenovatiePages = municipalities.map(m => `/gevelrenovatie/${m}`)
   const localRenovatiePages = municipalities.map(m => `/renovatie/${m}`)
   const localTotaalRenovatiePages = municipalities.map(m => `/totaalrenovatie/${m}`)
+  const localCrepiPages = municipalities.map(m => `/crepi/${m}`)
+  const localGevelisolatiePages = municipalities.map(m => `/gevelisolatie/${m}`)
 
-  // Overige specifieke landingspagina's
+  // Overige specifieke landingspagina&apos;s
   const specialLandingPages = [
     '/ramen-deuren-antwerpen',
     '/gevelrenovatie-antwerpen',
@@ -75,24 +82,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localGevelrenovatiePages,
     ...localRenovatiePages,
     ...localTotaalRenovatiePages,
+    ...localCrepiPages,
+    ...localGevelisolatiePages,
     ...specialLandingPages
   ]
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,
     lastModified,
-    changeFrequency: page === '' ? 'daily' : 'weekly',
+    changeFrequency: 
+      page === '' 
+        ? 'daily' as const
+        : page.includes('/blog/') 
+          ? 'monthly' as const
+          : 'weekly' as const,
     priority:
       page === ''
         ? 1.0
-        : flatLocalSeoPages.includes(page)
+        : page === '/diensten' || page === '/ramen' || page === '/deuren' || page === '/gevelrenovatie' || page === '/crepi' || page === '/gevelisolatie'
           ? 0.95
+        : flatLocalSeoPages.includes(page)
+          ? 0.9
           : blogPages.includes(page)
-            ? 0.85
+            ? 0.7
             : productPages.includes(page)
-              ? 0.88
-          : page.includes('/ramen/') || page.includes('/deuren/')
-            ? 0.8
-            : 0.9,
+              ? 0.85
+          : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') || page.includes('/crepi/') || page.includes('/gevelisolatie/')
+            ? 0.85
+            : page === '/shop' || page === '/vraag-ai'
+              ? 0.8
+              : 0.75,
   }))
 }

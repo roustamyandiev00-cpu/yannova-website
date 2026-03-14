@@ -7,14 +7,16 @@ import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 
 export const metadata: Metadata = generateSEO({
-  title: "Deuren plaatsen | PVC & Aluminium Deuren | Yannova",
-  description: "Professionele plaatsing van PVC en aluminium deuren. Voordeur, achterdeur, schuifdeuren. Gratis opmeting, offerte binnen 24u.",
+  title: "Deuren plaatsen Zoersel & Antwerpen | PVC & Aluminium | Yannova",
+  description: "Professionele plaatsing van PVC en aluminium deuren in Zoersel, Antwerpen en omgeving. Voordeur, achterdeur, schuifdeuren. Gratis opmeting, offerte binnen 24u.",
   path: "/deuren",
   keywords: [
-    "deuren plaatsen",
+    "deuren zoersel",
+    "deuren plaatsen zoersel",
+    "deuren plaatsen antwerpen",
     "pvc deuren",
     "aluminium deuren",
-    "voordeur",
+    "voordeur antwerpen",
     "schuifdeuren",
     "deuren antwerpen",
   ],
@@ -52,10 +54,10 @@ export default function DeurenPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
-              Deuren plaatsen in <span className="text-secondary">Antwerpen en omgeving</span>
+              Deuren plaatsen in <span className="text-secondary">Zoersel en Antwerpen</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300 leading-relaxed">
-              PVC en aluminium deuren met inbraakwerend beslag. Gratis opmeting, duidelijke offerte binnen 24 uur.
+              PVC en aluminium deuren met inbraakwerend beslag. Specialist in Zoersel, Antwerpen en omgeving. Gratis opmeting, duidelijke offerte binnen 24 uur.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors">
@@ -98,6 +100,22 @@ export default function DeurenPage() {
             </Link>
             <Link href="/deuren/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
               Deuren Zoersel
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/deuren/brasschaat" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Deuren Brasschaat
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/deuren/schoten" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Deuren Schoten
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/deuren/wijnegem" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Deuren Wijnegem
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/deuren/schilde" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Deuren Schilde
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

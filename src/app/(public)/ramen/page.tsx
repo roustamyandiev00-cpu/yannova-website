@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 import { ArrowRight, Phone, CheckCircle2, Star, MessageCircle, Shield, Clock } from 'lucide-react';
@@ -7,18 +8,16 @@ import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 export const dynamic = 'force-dynamic';
 
 export const metadata = generateSEO({
-  title: "Ramen plaatsen in Antwerpen en rond Antwerpen | Yannova",
-  description: "PVC en aluminium ramen met HR++ of drievoudig glas. Actief in Antwerpen stad en randgemeenten rond Antwerpen. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
+  title: "Ramen plaatsen Zoersel & Antwerpen | PVC & Aluminium | Yannova",
+  description: "PVC en aluminium ramen met HR++ of drievoudig glas. Specialist in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
   path: "/ramen",
   keywords: [
+    "ramen zoersel",
+    "ramen plaatsen zoersel",
     "ramen plaatsen antwerpen",
     "ramen antwerpen stad",
-    "pvc ramen antwerpen",
+    "pvc ramen zoersel",
     "aluminium ramen antwerpen",
-    "ramen berchem",
-    "ramen deurne",
-    "ramen merksem",
-    "ramen wilrijk",
     "ramen brasschaat",
     "ramen schoten",
     "ramen wijnegem",
@@ -89,13 +88,13 @@ export default function RamenPage() {
               professionele plaatsing door vakmensen.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
               >
                 Gratis offerte aanvragen
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
               <a
                 href={company.phoneHref}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3.5 text-base font-medium text-white hover:bg-white/5 transition-colors"
@@ -272,13 +271,13 @@ export default function RamenPage() {
           <h2 className="text-2xl font-bold text-white">Klaar voor nieuwe ramen?</h2>
           <p className="mt-3 text-gray-400">Vraag een gratis offerte aan of neem contact op voor advies.</p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
             >
               Gratis offerte
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
             <a
               href={company.whatsappHref}
               target="_blank"
@@ -292,7 +291,7 @@ export default function RamenPage() {
         </div>
       </section>
 
-      {/* Lokale pagina's voor SEO */}
+      {/* Lokale pagina&apos;s voor SEO */}
       <section className="py-16 border-t border-white/10">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-white text-center mb-8">Ramen per regio</h2>
@@ -300,14 +299,30 @@ export default function RamenPage() {
             Bekijk onze diensten voor ramen in uw regio
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <a href="/ramen/antwerpen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+            <Link href="/ramen/antwerpen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
               Ramen Antwerpen
               <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href="/ramen/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+            </Link>
+            <Link href="/ramen/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
               Ramen Zoersel
               <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
+            <Link href="/ramen/brasschaat" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Brasschaat
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/ramen/schoten" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Schoten
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/ramen/wijnegem" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Wijnegem
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/ramen/schilde" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Schilde
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

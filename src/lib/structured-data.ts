@@ -166,8 +166,8 @@ export const services: ServiceData[] = [
     areaServed: serviceAreas,
   },
   {
-    name: "Gevelisolatie & Isolatiewerken",
-    description: "Dak- en gevelisolatie voor een lager E-peil en lagere energiefactuur. EPC-verbetering voor hogere woningwaarde. Premies mogelijk via Mijn VerbouwPremie.",
+    name: "Isolatiewerken voor dak, gevel en vloer",
+    description: "Isolatiewerken in Zoersel, Antwerpen en omgeving: dakisolatie, spouwmuurisolatie, buitengevelisolatie en vloerisolatie voor meer comfort, een betere EPC-score en een lagere energiefactuur.",
     url: "https://www.yannova.be/diensten/isolatie",
     provider: "Yannova Bouw",
     areaServed: serviceAreas,
@@ -261,8 +261,8 @@ export function generateOrganizationSchema() {
     logo: {
       "@type": "ImageObject",
       url: "https://www.yannova.be/logo.png",
-      width: 250,
-      height: 60
+      width: 200,
+      height: 200
     },
     contactPoint: {
       "@type": "ContactPoint",

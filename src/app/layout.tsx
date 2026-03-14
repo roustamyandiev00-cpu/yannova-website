@@ -16,20 +16,19 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MZ98NM6L";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.yannova.be"),
-  title: "Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova",
+  title: "Ramen & Deuren Zoersel | Gevelrenovatie & Crepi Antwerpen | Yannova",
   description:
-    "Specialist in ramen, deuren en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen, crepi, isolatie.",
+    "Yannova: specialist in ramen, deuren en gevelrenovatie in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium, crepi, isolatie.",
   keywords: [
+    "ramen zoersel",
+    "deuren zoersel",
     "ramen plaatsen antwerpen",
     "deuren antwerpen",
-    "crepi antwerpen",
+    "crepi zoersel",
+    "gevelrenovatie zoersel",
     "gevelisolatie antwerpen",
     "renovatiebedrijf antwerpen",
     "ramen antwerpen stad",
-    "ramen berchem",
-    "ramen deurne",
-    "ramen merksem",
-    "ramen wilrijk",
     "ramen brasschaat",
     "ramen schoten",
     "gevelrenovatie antwerpen",
@@ -41,9 +40,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova",
+    title: "Ramen & Deuren Zoersel | Gevelrenovatie & Crepi Antwerpen | Yannova",
     description:
-      "Specialist in ramen, deuren, crepi en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring.",
+      "Yannova: specialist in ramen, deuren, crepi en gevelrenovatie in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u. 15+ jaar ervaring.",
     url: "https://www.yannova.be",
     type: "website",
     locale: "nl_BE",
@@ -59,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova",
+    title: "Ramen & Deuren Zoersel | Gevelrenovatie & Crepi Antwerpen | Yannova",
     description:
-      "Specialist in ramen, deuren, crepi en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u.",
+      "Yannova: specialist in ramen, deuren, crepi en gevelrenovatie in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u.",
     images: ["https://www.yannova.be/og-image.jpg"],
   },
   robots: {
