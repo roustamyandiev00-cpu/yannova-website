@@ -13,16 +13,27 @@ export const authConfig = {
       const isOnAdmin = nextUrl.pathname.startsWith('/admin');
       const isOnLogin = nextUrl.pathname.startsWith('/admin/login');
 
+      // Always allow static files and SEO files
+      const pathname = nextUrl.pathname;
+      if (
+        pathname.startsWith('/_next') ||
+        pathname.startsWith('/api') ||
+        pathname === '/favicon.ico' ||
+        pathname === '/robots.txt' ||
+        pathname === '/sitemap.xml' ||
+        /\.(png|jpg|jpeg|gif|svg|ico|webp|avif|txt|xml|json)$/.test(pathname)
+      ) {
+        return true;
+      }
+
       if (isOnAdmin) {
-        if (isOnLogin) return true; // Always allow access to login page
-        if (!isLoggedIn) return false; // Redirect unauthenticated users to login page
-        
-        // Check admin role
+        if (isOnLogin) return true;
+        if (!isLoggedIn) return Response.redirect(new URL('/admin/login', nextUrl));
         if (isAdmin) return true;
-        
-        // Logged in but not admin -> redirect to home
         return Response.redirect(new URL('/', nextUrl));
       }
+
+      // All public routes are always accessible
       return true;
     },
     async session({ session, token }) {

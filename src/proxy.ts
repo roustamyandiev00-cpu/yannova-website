@@ -31,6 +31,6 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
-  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
+  // Exclude static files, API routes, and SEO files from auth middleware
+  matcher: ['/((?!api|_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.svg$|.*\\.ico$|.*\\.webp$|.*\\.avif$|.*\\.txt$|.*\\.xml$|.*\\.json$|.*\\.html$).*)'],
 };
