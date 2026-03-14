@@ -146,7 +146,7 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Bekijk onze renovatie-aanpak",
     hubTitle: "Renovatie in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale renovatiepagina's voor Zoersel, Schilde, Brasschaat, Malle, Wijnegem, Antwerpen, Deurne, Merksem, Kapellen en Schoten. Focus op renovatie, gevelwerken, ramen en totaalprojecten.",
+      "Lokale renovatiepagina&apos;s voor Zoersel, Schilde, Brasschaat, Malle, Wijnegem, Antwerpen, Deurne, Merksem, Kapellen en Schoten. Focus op renovatie, gevelwerken, ramen en totaalprojecten.",
     hubIntro: [
       "Yannova bouwt hiermee een consistente lokale SEO-structuur uit rond renovatie in de sterkste gemeenten rond Zoersel. Elke pagina koppelt renovatie aan concrete wooncontext, omliggende deelgemeenten en relevante interne links.",
       "Dat maakt de site duidelijker voor Google en sterker voor bezoekers die zoeken op combinaties zoals renovatie Zoersel, aannemer Schilde of renovatiebedrijf Brasschaat.",
@@ -177,9 +177,9 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over ramen en deuren",
     hubTitle: "Ramen en deuren in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale landingspagina's voor ramen en deuren in de belangrijkste gemeenten rond Zoersel. Gericht op PVC, aluminium, hoogrendementsbeglazing en nette plaatsing.",
+      "Lokale landingspagina&apos;s voor ramen en deuren in de belangrijkste gemeenten rond Zoersel. Gericht op PVC, aluminium, hoogrendementsbeglazing en nette plaatsing.",
     hubIntro: [
-      "Met deze hub bundelt Yannova de lokale pagina's voor ramen en deuren in de regio waar de meeste zoekvraag zit. Elke stadspagina focust op plaatsing, isolatie, veiligheid en de koppeling met andere renovatiewerken.",
+      "Met deze hub bundelt Yannova de lokale pagina&apos;s voor ramen en deuren in de regio waar de meeste zoekvraag zit. Elke stadspagina focust op plaatsing, isolatie, veiligheid en de koppeling met andere renovatiewerken.",
       "Zo ontstaat een duidelijke SEO-structuur rond termen als ramen en deuren Zoersel, ramen vervangen Brasschaat of buitenschrijnwerk Antwerpen.",
     ],
     benefits: [
@@ -208,9 +208,9 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over gevelrenovatie",
     hubTitle: "Gevelrenovatie in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale SEO-pagina's voor gevelrenovatie in de sterkste gemeenten rond Zoersel. Gericht op gevelherstel, isolatie, crepi en duurzame buitenafwerking.",
+      "Lokale SEO-pagina&apos;s voor gevelrenovatie in de sterkste gemeenten rond Zoersel. Gericht op gevelherstel, isolatie, crepi en duurzame buitenafwerking.",
     hubIntro: [
-      "De gevel is vaak de eerste winst bij een renovatie. Deze hub groepeert lokale pagina's rond gevelrenovatie voor gemeenten waar veel gezocht wordt op gevelwerken, crepi en gevelisolatie.",
+      "De gevel is vaak de eerste winst bij een renovatie. Deze hub groepeert lokale pagina&apos;s rond gevelrenovatie voor gemeenten waar veel gezocht wordt op gevelwerken, crepi en gevelisolatie.",
       "Per stadspagina koppelen we gevelrenovatie aan de lokale woningvoorraad, omliggende buurten en de link met ramen, isolatie en totaalrenovatie.",
     ],
     benefits: [
@@ -239,10 +239,10 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over crepi en gevelafwerking",
     hubTitle: "Crepi gevels in Zoersel en regio Antwerpen",
     hubDescription:
-      "Gerichte lokale pagina's voor crepi gevelafwerking in Zoersel en de omliggende zoekregio. Focus op strakke afwerking, kleurkeuze, isolatie en onderhoudsarme gevels.",
+      "Gerichte lokale pagina&apos;s voor crepi gevelafwerking in Zoersel en de omliggende zoekregio. Focus op strakke afwerking, kleurkeuze, isolatie en onderhoudsarme gevels.",
     hubIntro: [
-      "Crepi wordt vaak afzonderlijk gezocht, los van het bredere begrip gevelrenovatie. Daarom krijgt crepi hier een eigen lokale SEO-structuur met expliciete stadspagina's.",
-      "Die pagina's ondersteunen zoekopdrachten zoals crepi gevel Zoersel, crepi Schilde of gevelbepleistering Brasschaat en linken tegelijk slim door naar gevelrenovatie en totaalrenovatie.",
+      "Crepi wordt vaak afzonderlijk gezocht, los van het bredere begrip gevelrenovatie. Daarom krijgt crepi hier een eigen lokale SEO-structuur met expliciete stadspagina&apos;s.",
+      "Die pagina&apos;s ondersteunen zoekopdrachten zoals crepi gevel Zoersel, crepi Schilde of gevelbepleistering Brasschaat en linken tegelijk slim door naar gevelrenovatie en totaalrenovatie.",
     ],
     benefits: [
       "Zelfreinigende siliconenharspleister",
@@ -270,10 +270,10 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over totaalrenovatie",
     hubTitle: "Totaalrenovatie in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale SEO-pagina's voor totaalrenovatie in de gemeenten met de meeste zoekvraag rond Zoersel. Focus op coördinatie, planning en één vast aanspreekpunt van start tot oplevering.",
+      "Lokale SEO-pagina&apos;s voor totaalrenovatie in de gemeenten met de meeste zoekvraag rond Zoersel. Focus op coördinatie, planning en één vast aanspreekpunt van start tot oplevering.",
     hubIntro: [
-      "Totaalrenovatie vraagt meer dan losse aannemingswerken. Deze hub zet daarom in op lokale pagina's die het volledige traject uitleggen voor gemeenten waar eigenaars gericht zoeken naar één partner.",
-      "Zo worden zoektermen zoals totaalrenovatie Zoersel, totaalrenovatie Antwerpen of renovatiebedrijf Schoten beter ondersteund door duidelijke landingspagina's en interne links.",
+      "Totaalrenovatie vraagt meer dan losse aannemingswerken. Deze hub zet daarom in op lokale pagina&apos;s die het volledige traject uitleggen voor gemeenten waar eigenaars gericht zoeken naar één partner.",
+      "Zo worden zoektermen zoals totaalrenovatie Zoersel, totaalrenovatie Antwerpen of renovatiebedrijf Schoten beter ondersteund door duidelijke landingspagina&apos;s en interne links.",
     ],
     benefits: [
       "Eén partner voor gevel, ramen en dakwerken",

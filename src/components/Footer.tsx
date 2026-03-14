@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { company } from "@/lib/company";
 import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from "@/components/GoogleTagManager";
@@ -23,9 +24,15 @@ export function Footer() {
       <div className="container mx-auto px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32 relative z-10">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="group text-2xl font-bold tracking-tight transition-all duration-300">
-              <span className="text-white group-hover:text-secondary transition-colors duration-300">Yannova</span>
-              <span className="text-secondary group-hover:scale-125 inline-block transition-transform duration-300">.</span>
+            <Link href="/" className="inline-block">
+              <span className="sr-only">Yannova</span>
+              <Image
+                src="/logo.png"
+                alt="Yannova Logo"
+                width={200}
+                height={50}
+                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              />
             </Link>
             <p className="text-sm leading-6 text-gray-300 max-w-sm">
               Uw specialist voor ramen, deuren en totaalrenovatie in Zoersel, Antwerpen en Mechelen.

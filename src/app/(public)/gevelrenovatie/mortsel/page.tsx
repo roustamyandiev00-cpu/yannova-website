@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
@@ -82,10 +83,10 @@ export default function GevelrenovatieCityPage() {
                 Bespaar op uw energiefactuur dankzij onze professionele gevelisolatie.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
+                <Link href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
                   Vraag een vrijblijvende offerte
                   <ChevronRight className="w-5 h-5" />
-                </a>
+                </Link>
                 <a href={company.phoneHref} className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/20 transition-all text-lg">
                   <Phone className="w-5 h-5" />
                   Bel {company.phoneDisplay}
@@ -152,7 +153,7 @@ export default function GevelrenovatieCityPage() {
               </h2>
               <p className="text-gray-700 leading-relaxed mb-8 text-lg">
                 Voor grote renovatiewerken kiest u beter direct voor betrouwbaar vakmanschap. Of het nu gaat om een specifieke 
-                gevelrenovatie of een complete <a href="/diensten/renovatie" className="text-secondary hover:underline">totaalrenovatie in {cityName}</a>, 
+                gevelrenovatie of een complete <Link href="/diensten/renovatie" className="text-secondary hover:underline">totaalrenovatie in {cityName}</Link>, 
                 ons bouwteam neemt alles in handen van A tot Z. Onze speerpunten:
               </p>
               
@@ -199,7 +200,7 @@ export default function GevelrenovatieCityPage() {
                 </div>
                 <p className="text-gray-700 leading-relaxed text-sm mb-4">
                   Bewoners in {cityName} die investeren in het isoleren van hun buitenmuren (minstens Rd-waarde van 3 m²K/W) kunnen 
-                  een deel van die kosten recupereren via de Vlaamse Mijn VerbouwPremie (en eventueel Mijn VerbouwLening). Wist u dat u ook voor het vernieuwen van <a href="/diensten/ramen-en-deuren" className="text-secondary hover:underline">ramen en deuren</a> in aanmerking komt voor dergelijke subsidies?
+                  een deel van die kosten recupereren via de Vlaamse Mijn VerbouwPremie (en eventueel Mijn VerbouwLening). Wist u dat u ook voor het vernieuwen van <Link href="/diensten/ramen-en-deuren" className="text-secondary hover:underline">ramen en deuren</Link> in aanmerking komt voor dergelijke subsidies?
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   <strong>Wij helpen u!</strong> Elke factuur en document die wij voor u opmaken, bevat precies die noodzakelijke informatie die de gemeente {cityName} en de Vlaamse overheid van u verwachten.
@@ -211,18 +212,18 @@ export default function GevelrenovatieCityPage() {
             <section className="border-t border-gray-200 pt-12">
                <h2 className="text-2xl font-bold mb-6 text-gray-900">Verder lezen & Interne diensten</h2>
                <div className="flex flex-wrap gap-4">
-                 <a href="/diensten/renovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 <Link href="/diensten/renovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Totaalrenovatie {cityName}
-                 </a>
-                 <a href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Ramen & Deuren in {cityName}
-                 </a>
-                 <a href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Meer over Gevelisolatie & Crepi
-                 </a>
-                 <a href="/diensten/dakrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/diensten/dakrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Dakrenovatie expertise
-                 </a>
+                 </Link>
                </div>
             </section>
 
@@ -240,12 +241,12 @@ export default function GevelrenovatieCityPage() {
               </p>
               
               <div className="space-y-4">
-                <a
+                <Link
                   href="/offerte"
                   className="w-full flex justify-center items-center gap-2 p-4 bg-secondary font-bold text-white rounded-lg hover:bg-secondary/90 transition-colors shadow-lg"
                 >
                   Contacteer ons & Offerte
-                </a>
+                </Link>
                 
                 <a
                   href={company.phoneHref}

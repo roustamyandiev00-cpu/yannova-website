@@ -1,6 +1,6 @@
 /**
- * Helper functions voor lokale SEO pagina's
- * Genereert keywords, FAQ's en content voor stad-specifieke pagina's
+ * Helper functions voor lokale SEO pagina&apos;s
+ * Genereert keywords, FAQ's en content voor stad-specifieke pagina&apos;s
  */
 
 export type ServiceType = 'ramen' | 'deuren' | 'crepi' | 'gevelisolatie' | 'renovatie';

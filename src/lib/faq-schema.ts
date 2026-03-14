@@ -18,7 +18,7 @@ export function generateFAQSchema(faqs: FAQItem[]) {
   };
 }
 
-// Veelgestelde vragen voor verschillende pagina's
+// Veelgestelde vragen voor verschillende pagina&apos;s
 export const commonFAQs = {
   ramen: [
     {
@@ -62,6 +62,24 @@ export const commonFAQs = {
     {
       question: 'Welke premies zijn er voor gevelisolatie?',
       answer: 'Je kunt aanspraak maken op de Vlaamse renovatiepremie voor muurisolatie. De premie bedraagt tot €50 per m². Bekijk onze premie-gids voor alle voorwaarden.',
+    },
+  ],
+  isolatie: [
+    {
+      question: 'Welke isolatiewerken leveren meestal het snelste rendement op?',
+      answer: 'Dat hangt af van waar uw woning vandaag warmte verliest. Bij veel woningen leveren dakisolatie en spouwmuurisolatie snel resultaat op, terwijl buitengevelisolatie vooral interessant wordt wanneer ook de gevelafwerking of het EPC grondig verbeterd moet worden.',
+    },
+    {
+      question: 'Voert Yannova alleen gevelisolatie uit of ook andere isolatiewerken?',
+      answer: 'Yannova helpt bij verschillende isolatiewerken zoals dakisolatie, spouwmuurisolatie, buitengevelisolatie en vloer- of kelderisolatie. We bekijken per woning welke combinatie technisch en budgettair het meest logisch is.',
+    },
+    {
+      question: 'Zijn er premies mogelijk voor isolatiewerken?',
+      answer: 'Voor veel isolatiewerken zijn er in Vlaanderen voorwaarden en premiekanalen zoals Mijn VerbouwPremie. Welke steun mogelijk is, hangt af van het type werk, de woning, de gekozen opbouw en de administratieve voorwaarden. Wij helpen u graag om dat praktisch in kaart te brengen.',
+    },
+    {
+      question: 'Is het slim om isolatie te combineren met ramen of gevelrenovatie?',
+      answer: 'Ja, vaak wel. Wie isolatie slim combineert met nieuwe ramen, gevelrenovatie of een bredere buitenschil-aanpak vermijdt dubbel werk en behaalt meestal een beter resultaat op vlak van comfort, luchtdichtheid, planning en EPC.',
     },
   ],
 };

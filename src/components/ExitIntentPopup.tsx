@@ -1,6 +1,7 @@
 "use client";
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { X, Gift, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -97,7 +98,7 @@ export function ExitIntentPopup() {
                 </p>
 
                 <div className="space-y-3">
-                  <a
+                  <Link
                     href="/contact"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -107,7 +108,7 @@ export function ExitIntentPopup() {
                   >
                     Vraag gratis offerte aan
                     <ArrowRight className="h-5 w-5" />
-                  </a>
+                  </Link>
                   
                   <button
                     onClick={(e) => {

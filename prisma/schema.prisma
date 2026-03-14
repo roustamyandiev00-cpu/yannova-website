@@ -260,3 +260,40 @@ model TrafficAnalytics {
 
   @@index([date])
 }
+
+// Shop Products
+model ShopProduct {
+  id                String   @id @default(cuid())
+  name              String
+  slug              String   @unique
+  category          String
+  description       String   @db.Text
+  shortDescription  String?
+  price             Float
+  originalPrice     Float?
+  costPrice         Float?   // Inkoopprijs
+  margin            Float?   // Marge in euro
+  marginPercentage  Float?   // Marge percentage
+  inStock           Boolean  @default(true)
+  stockQuantity     Int?
+  images            String[] // Array of image URLs
+  features          String[] // Array of features
+  specifications    Json?    // JSON object with specs
+  relatedProducts   String[] // Array of product IDs
+  tags              String[]
+  brand             String?
+  sku               String?  @unique
+  weight            Int?     // in grams
+  dimensions        Json?    // {length, width, height}
+  featured          Boolean  @default(false)
+  bestseller        Boolean  @default(false)
+  bigbuyId          Int?     @unique // BigBuy product ID
+  source            String   @default("manual") // "manual" or "bigbuy"
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([category])
+  @@index([bigbuyId])
+  @@index([featured])
+  @@index([bestseller])
+}       

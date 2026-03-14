@@ -12,6 +12,7 @@
     "optimize-images": "node scripts/optimize-images.js",
     "health-check": "curl http://localhost:3000/api/health",
     "test:email": "node scripts/test-email.js",
+    "test:sitemap": "node scripts/test-sitemap.js",
     "pre-deploy": "bash scripts/pre-deploy-check.sh",
     "create-admin": "node scripts/insert-admin-direct.js"
   },
@@ -20,6 +21,7 @@
     "@ai-sdk/openai": "^3.0.26",
     "@google/generative-ai": "^0.21.0",
     "@microsoft/clarity": "^1.0.2",
+    "@mollie/api-client": "^4.4.0",
     "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "@supabase/supabase-js": "^2.95.3",

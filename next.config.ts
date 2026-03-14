@@ -51,8 +51,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/bouwcreatie:path*',
+        source: '/bouwcreatie/:path*',
         destination: '/renovatie',
+        permanent: true,
+      },
+      {
+        source: '/shop',
+        destination: '/producten',
+        permanent: true,
+      },
+      {
+        source: '/shop/:path*',
+        destination: '/producten',
         permanent: true,
       },
     ];

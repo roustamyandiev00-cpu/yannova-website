@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
 import { FadeIn } from "@/components/animations/FadeIn";
@@ -131,9 +132,9 @@ export default function AboutPage() {
                             Wij komen graag bij u langs voor een kennismaking en een vrijblijvende opmeting.
                         </p>
                         <div className="mt-8">
-                            <a href="/contact" className="inline-block rounded-full bg-secondary px-8 py-4 text-sm font-semibold text-white shadow-lg hover:bg-secondary/90 transition-all transform hover:scale-105">
+                            <Link href="/contact" className="inline-block rounded-full bg-secondary px-8 py-4 text-sm font-semibold text-white shadow-lg hover:bg-secondary/90 transition-all transform hover:scale-105">
                                 Maak een afspraak
-                            </a>
+                            </Link>
                         </div>
                     </FadeIn>
                 </div>

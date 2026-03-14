@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Star, Quote } from 'lucide-react';
 import { testimonials, type Testimonial } from '@/data/testimonials';
 
@@ -67,13 +68,13 @@ export function ServiceTestimonials({ service, limit = 3 }: ServiceTestimonialsP
 
         {/* Link to all reviews */}
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/reviews"
             className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 transition-colors text-sm font-medium"
           >
             <span>Bekijk alle reviews</span>
             <span>→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

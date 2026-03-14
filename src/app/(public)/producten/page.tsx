@@ -73,7 +73,7 @@ export default function ProductenPage() {
                   "We tonen dit gamma als eigen Yannova-aanbod, niet als kopie van de leverancierssite.",
                   "Productcopy moet herschreven worden in eigen woorden voor SEO en duidelijkheid.",
                   "Leveranciersfoto's of technische fiches gebruik je alleen met expliciete toestemming.",
-                  "Elke productgroep linkt best door naar contact, offerte en relevante dienstpagina's.",
+                  "Elke productgroep linkt best door naar contact, offerte en relevante dienstpagina&apos;s.",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-gray-300">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-secondary" />

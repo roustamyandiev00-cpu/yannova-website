@@ -1,6 +1,9 @@
+import Link from 'next/link';
 import { Testimonials } from "@/components/Testimonials";
 import { GoogleReviews } from "@/components/GoogleReviews";
 import { generateSEO } from "@/lib/seo";
+import { generateReviewSchema } from "@/lib/structured-data";
+import { testimonials } from "@/data/testimonials";
 import { Star } from "lucide-react";
 
 export const metadata = generateSEO({
@@ -16,8 +19,23 @@ export const metadata = generateSEO({
 });
 
 export default function ReviewsPage() {
+  const reviewSchemas = generateReviewSchema(
+    testimonials
+      .filter((t) => t.date)
+      .map((t) => ({
+        author: t.name,
+        rating: t.rating,
+        reviewBody: t.text,
+        datePublished: t.date!,
+      }))
+  );
+
   return (
     <div className="py-24 sm:py-32 bg-background relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchemas) }}
+      />
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[100px] -z-10" />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10" />
 
@@ -54,18 +72,18 @@ export default function ReviewsPage() {
               Vraag een gratis offerte aan en ervaar zelf ons vakmanschap en service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/offerte"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary hover:bg-secondary/90 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 Gratis offerte aanvragen
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 px-8 py-4 text-base font-semibold text-foreground border border-white/10 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 Neem contact op
-              </a>
+              </Link>
             </div>
           </div>
         </div>

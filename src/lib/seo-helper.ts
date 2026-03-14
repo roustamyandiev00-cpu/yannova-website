@@ -47,9 +47,9 @@ const defaultSeoData: Record<string, Metadata> = {
         keywords: ['gevelrenovatie antwerpen', 'crepi antwerpen', 'gevelisolatie antwerpen', 'epc verbeteren antwerpen', 'vochtbestrijding antwerpen'],
     },
     '/diensten/isolatie': {
-        title: 'Isolatiewerken Antwerpen | Dak-, Gevel- en Vloerisolatie',
-        description: 'Professionele isolatiewerken in Antwerpen en rond Antwerpen: dakisolatie, gevelisolatie en vloerisolatie met premie-advies.',
-        keywords: ['isolatiewerken antwerpen', 'dakisolatie antwerpen', 'gevelisolatie antwerpen', 'vloerisolatie antwerpen', 'epc verbeteren antwerpen'],
+        title: 'Isolatiewerken Antwerpen | Dakisolatie, Spouwmuurisolatie & Vloerisolatie',
+        description: 'Yannova voert isolatiewerken uit in Antwerpen en regio Zoersel: dakisolatie, spouwmuurisolatie, buitengevelisolatie en vloerisolatie met helder advies over EPC en premies.',
+        keywords: ['isolatiewerken antwerpen', 'isolatiebedrijf antwerpen', 'dakisolatie antwerpen', 'spouwmuurisolatie antwerpen', 'muurisolatie antwerpen', 'vloerisolatie antwerpen', 'zolderisolatie antwerpen', 'isolatie offerte antwerpen', 'epc verbeteren antwerpen'],
     },
     '/diensten/renovatie': {
         title: 'Totaalrenovatie Antwerpen | Renovatie van A tot Z',

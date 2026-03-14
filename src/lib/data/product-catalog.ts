@@ -96,7 +96,7 @@ export const productCatalog: ProductCatalogItem[] = [
     keywords: ["ramen op maat", "pvc ramen", "aluminium ramen", "nieuwe ramen", "buitenschrijnwerk"],
     intro: [
       "Op basis van het aanbod van onze leverancier kan Yannova veel meer aanbieden dan alleen standaard ramen. Denk aan verschillende profielsystemen, kleurafwerkingen, beglazingspakketten en oplossingen voor klassieke of moderne woningen.",
-      "Op de website vertalen we dat gamma naar duidelijke Yannova-productpagina's, zodat bezoekers begrijpen wat u kunt leveren zonder dat de site een technische leverancierscatalogus wordt.",
+      "Op de website vertalen we dat gamma naar duidelijke Yannova-productpagina&apos;s, zodat bezoekers begrijpen wat u kunt leveren zonder dat de site een technische leverancierscatalogus wordt.",
     ],
     productTypes: [
       "PVC ramen",

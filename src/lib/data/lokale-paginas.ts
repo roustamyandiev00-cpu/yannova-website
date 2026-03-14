@@ -1,6 +1,6 @@
-// Lijst van alle lokale pagina's die we moeten maken voor SEO
+// Lijst van alle lokale pagina&apos;s die we moeten maken voor SEO
 export const lokalePaginas = [
-  // Ramen pagina's
+  // Ramen pagina&apos;s
   { type: 'ramen', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.9 },
   { type: 'ramen', gemeente: 'berchem', naam: 'Berchem', priority: 0.85 },
   { type: 'ramen', gemeente: 'deurne', naam: 'Deurne', priority: 0.85 },
@@ -17,7 +17,7 @@ export const lokalePaginas = [
   { type: 'ramen', gemeente: 'mechelen', naam: 'Mechelen', priority: 0.75 },
   { type: 'ramen', gemeente: 'lier', naam: 'Lier', priority: 0.75 },
   
-  // Deuren pagina's
+  // Deuren pagina&apos;s
   { type: 'deuren', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.9 },
   { type: 'deuren', gemeente: 'berchem', naam: 'Berchem', priority: 0.85 },
   { type: 'deuren', gemeente: 'deurne', naam: 'Deurne', priority: 0.85 },
@@ -28,7 +28,7 @@ export const lokalePaginas = [
   { type: 'deuren', gemeente: 'wijnegem', naam: 'Wijnegem', priority: 0.8 },
   { type: 'deuren', gemeente: 'zoersel', naam: 'Zoersel', priority: 0.75 },
   
-  // Gevelrenovatie / Crepi pagina's
+  // Gevelrenovatie / Crepi pagina&apos;s
   { type: 'gevelrenovatie', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
   { type: 'gevelrenovatie', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
   { type: 'gevelrenovatie', gemeente: 'deurne', naam: 'Deurne', priority: 0.8 },
@@ -39,18 +39,18 @@ export const lokalePaginas = [
   { type: 'crepi', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
   { type: 'crepi', gemeente: 'schoten', naam: 'Schoten', priority: 0.8 },
   
-  // Gevelisolatie pagina's
+  // Gevelisolatie pagina&apos;s
   { type: 'gevelisolatie', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
   { type: 'gevelisolatie', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
   { type: 'gevelisolatie', gemeente: 'deurne', naam: 'Deurne', priority: 0.8 },
   
-  // Renovatie pagina's
+  // Renovatie pagina&apos;s
   { type: 'renovatie', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
   { type: 'renovatie', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
   { type: 'renovatie', gemeente: 'deurne', naam: 'Deurne', priority: 0.8 },
   { type: 'renovatie', gemeente: 'merksem', naam: 'Merksem', priority: 0.8 },
   
-  // Renovatiebedrijf pagina's
+  // Renovatiebedrijf pagina&apos;s
   { type: 'renovatiebedrijf', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
   { type: 'renovatiebedrijf', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
 ];

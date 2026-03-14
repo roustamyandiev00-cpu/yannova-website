@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { saveSeoPage, deleteSeoPage, runSeoAudit, generateAiSeo } from '@/lib/actions';
 import { Globe, AlertCircle, CheckCircle, AlertTriangle, Trash2, Plus, Edit3, FileSearch, Map, Eye, Facebook, Search, Sparkles, Loader2 } from 'lucide-react';
@@ -145,7 +146,7 @@ export default function SeoClientPage({ pages, audits }: { pages: SeoPageType[];
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-foreground">SEO Beheer</h1>
         <div className="flex gap-2">
-          <a
+          <Link
             href="/sitemap.xml"
             target="_blank"
             rel="noopener noreferrer"
@@ -153,7 +154,7 @@ export default function SeoClientPage({ pages, audits }: { pages: SeoPageType[];
           >
             <Map className="h-4 w-4" />
             Sitemap
-          </a>
+          </Link>
           <button
             onClick={runAudit}
             className="flex items-center gap-2 rounded-md bg-secondary/20 px-4 py-2 text-sm font-medium text-secondary hover:bg-secondary/30"

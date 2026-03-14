@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema, generateFAQSchema } from '@/components/SEO';
@@ -123,12 +124,12 @@ export default function FAQPage() {
               <p className="text-gray-300 mb-6">
                 Neem gerust contact met ons op. We helpen u graag verder!
               </p>
-              <a
+              <Link
                 href="/contact"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 Neem Contact Op
-              </a>
+              </Link>
             </div>
           </div>
         </section>

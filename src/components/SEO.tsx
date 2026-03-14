@@ -92,7 +92,7 @@ export function generatePageMetadata({
 }
 
 /**
- * Helper voor lokale SEO pagina's (werkgebied)
+ * Helper voor lokale SEO pagina&apos;s (werkgebied)
  */
 export function generateLocalPageMetadata({
   city,

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
@@ -82,10 +83,10 @@ export default function RenovatieZoerselPage() {
                 Geniet van transparante prijzen, één aanspreekpunt en vakkundige uitvoering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
+                <Link href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
                   Vraag een vrijblijvende offerte
                   <ChevronRight className="w-5 h-5" />
-                </a>
+                </Link>
                 <a href={company.phoneHref} className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/20 transition-all text-lg">
                   <Phone className="w-5 h-5" />
                   Bel {company.phoneDisplay}
@@ -199,7 +200,7 @@ export default function RenovatieZoerselPage() {
                 </div>
                 <p className="text-gray-700 leading-relaxed text-sm">
                   Wist u dat een groot deel van uw investeringen (zoals dakisolatie, hoogrendementsglas en gevelisolatie) in aanmerking komt 
-                  voor de Mijn VerbouwPremie? Voor inwoners van Zoersel kan een renovatieproject tot tienduizenden euro's voordeliger uitvallen 
+                  voor de Mijn VerbouwPremie? Voor inwoners van Zoersel kan een renovatieproject tot tienduizenden euro&apos;s voordeliger uitvallen 
                   door de juiste premies te benutten. Wij zorgen dat u alle juiste facturen en EPB-gerelateerde bijlages ontvangt!
                 </p>
               </div>
@@ -209,15 +210,15 @@ export default function RenovatieZoerselPage() {
             <section className="border-t border-gray-200 pt-12">
                <h2 className="text-2xl font-bold mb-6 text-gray-900">Verder lezen & Diensten</h2>
                <div className="flex flex-wrap gap-4">
-                 <a href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 <Link href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Gevelrenovatie & Crepi
-                 </a>
-                 <a href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Ramen & Deuren in Zoersel
-                 </a>
-                 <a href="/projecten" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/projecten" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Bekijk onze realisaties
-                 </a>
+                 </Link>
                </div>
             </section>
 
@@ -235,12 +236,12 @@ export default function RenovatieZoerselPage() {
               </p>
               
               <div className="space-y-4">
-                <a
+                <Link
                   href="/offerte"
                   className="w-full flex justify-center items-center gap-2 p-4 bg-secondary font-bold text-white rounded-lg hover:bg-secondary/90 transition-colors shadow-lg"
                 >
                   Contacteer ons & Offerte
-                </a>
+                </Link>
                 
                 <a
                   href={company.phoneHref}

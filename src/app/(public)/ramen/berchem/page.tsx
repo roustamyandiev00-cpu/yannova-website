@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
@@ -90,12 +91,12 @@ export default function RamenBerchemPage() {
                       <div className="font-semibold">{company.email}</div>
                     </div>
                   </a>
-                  <a
+                  <Link
                     href="/offerte"
                     className="block text-center p-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-colors"
                   >
                     Online offerte aanvragen
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -108,18 +109,18 @@ export default function RamenBerchemPage() {
               Onze diensten in Berchem
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <a href="/ramen" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
+              <Link href="/ramen" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
                 <h3 className="text-xl font-semibold text-white mb-2">PVC Ramen</h3>
                 <p className="text-gray-300">Vanaf €400/m² inclusief plaatsing</p>
-              </a>
-              <a href="/ramen" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
+              </Link>
+              <Link href="/ramen" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
                 <h3 className="text-xl font-semibold text-white mb-2">Aluminium Ramen</h3>
                 <p className="text-gray-300">Vanaf €600/m² inclusief plaatsing</p>
-              </a>
-              <a href="/deuren" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
+              </Link>
+              <Link href="/deuren" className="bg-gray-800/50 border border-white/10 rounded-xl p-6 hover:bg-gray-800 transition-colors">
                 <h3 className="text-xl font-semibold text-white mb-2">Deuren</h3>
                 <p className="text-gray-300">Voor- en achterdeuren in PVC & aluminium</p>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

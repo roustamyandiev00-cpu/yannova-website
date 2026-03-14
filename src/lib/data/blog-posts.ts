@@ -353,13 +353,242 @@ export const blogPosts: BlogPostData[] = [
         title: "Wat is de slimste volgorde?",
         paragraphs: [
           "Meestal begint een slim traject met ramen, deuren en/of gevel. Daarna volgen technieken en binnenafwerking. Zo bouwt u eerst de energieprestatie en het comfort op, en daarna de rest van de woning.",
-          "Dat is precies de reden waarom lokale SEO-pagina's voor ramen, gevelrenovatie en totaalrenovatie elkaar intern moeten versterken: ze horen inhoudelijk ook echt samen.",
+          "Dat is precies de reden waarom lokale SEO-pagina&apos;s voor ramen, gevelrenovatie en totaalrenovatie elkaar intern moeten versterken: ze horen inhoudelijk ook echt samen.",
         ],
       },
     ],
     ctaTitle: "Wilt u weten welke premiegericht renovatiepad logisch is?",
     ctaText: "Yannova helpt u graag prioriteiten te leggen tussen ramen, gevel, isolatie en bredere renovatiewerken.",
     relatedSlugs: ["premies-ramen-deuren-2026", "hoeveel-kost-gevelrenovatie", "prijs-renovatie-zoersel"],
+  },
+  {
+    slug: "crepi-prijs-per-m2",
+    title: "Crepi prijs per m²: wat kost gevelbepleistering in 2026?",
+    excerpt: "Wat kost crepi per m² in 2026? Overzicht van prijzen voor crepi zonder en met isolatie, plus factoren die de prijs bepalen.",
+    description: "Ontdek de prijs van crepi per m² in 2026. Van €40/m² voor enkel crepi tot €150/m² voor ETICS met isolatie. Inclusief premie-info.",
+    date: "2026-03-13",
+    readTime: "6 min",
+    category: "Prijzen",
+    keywords: ["crepi prijs per m2", "crepi prijs", "gevelbepleistering prijs", "crepi kosten", "crepi antwerpen prijs"],
+    serviceTags: ["crepi-gevel", "gevelrenovatie"],
+    dynamic: true,
+    intro:
+      "De prijs van crepi hangt sterk af van wat er onder zit. Enkel crepi op een bestaande gevel is een heel ander verhaal dan een volledig ETICS-systeem met isolatieplaten. In deze gids zetten we de prijsblokken op een rij.",
+    keyPoints: [
+      "Enkel crepi (zonder isolatie): gemiddeld €40–€70 per m²",
+      "Crepi met buitenisolatie (ETICS): gemiddeld €80–€150 per m²",
+      "Voorbereiding en herstelwerk kunnen de prijs significant beïnvloeden",
+      "Mijn VerbouwPremie kan een deel van de kosten terugbetalen",
+    ],
+    sections: [
+      {
+        title: "Wat bepaalt de prijs van crepi?",
+        paragraphs: [
+          "De grootste prijsfactor is of u enkel crepi aanbrengt of tegelijk isoleert. Bij een ETICS-systeem (isolatieplaten + wapening + crepi) is de investering hoger, maar de energiewinst en premie-opbrengst zijn dat ook.",
+          "Daarnaast spelen de staat van de bestaande gevel, de oppervlakte, de toegankelijkheid (steigers of hoogtewerker) en de gekozen textuur en kleur een rol in de eindprijs.",
+        ],
+        bullets: [
+          "Type systeem: enkel crepi vs. ETICS met isolatie",
+          "Staat van de ondergrond: herstelwerk verhoogt de kostprijs",
+          "Oppervlakte en complexiteit van de gevel",
+          "Steigerkosten bij hogere gevels",
+        ],
+      },
+      {
+        title: "Prijsoverzicht crepi per m² in 2026",
+        paragraphs: [
+          "Voor enkel crepi op een voorbereide, stabiele ondergrond rekent u gemiddeld €40 tot €70 per m². Dit omvat de basislaag, wapening en afwerklaag, maar geen isolatie.",
+          "Een volledig ETICS-systeem met EPS-isolatieplaten (60–120mm) en crepi-afwerking kost gemiddeld €80 tot €150 per m². De exacte prijs hangt af van de isolatiedikte, het type crepi en de voorbereiding.",
+        ],
+        bullets: [
+          "Enkel crepi: €40–€70/m²",
+          "ETICS met 60mm EPS + crepi: €80–€110/m²",
+          "ETICS met 100–120mm EPS + crepi: €110–€150/m²",
+          "Steenstrips i.p.v. crepi: +€20–€40/m² extra",
+        ],
+      },
+      {
+        title: "Wanneer loont de investering het meest?",
+        paragraphs: [
+          "Crepi met isolatie loont het meest wanneer de woning veel warmte verliest via de buitenmuren en de gevel toch al aan vernieuwing toe is. U combineert dan een esthetische upgrade met een energetische verbetering.",
+          "Wie enkel crepi overweegt zonder isolatie, doet dat vaak om een verouderde of beschadigde gevel te vernieuwen. Dat is zinvol, maar het is de moeite om ook het isolatiescenario te laten berekenen.",
+        ],
+      },
+      {
+        title: "Premies voor crepi en gevelisolatie",
+        paragraphs: [
+          "Via de Vlaamse Mijn VerbouwPremie kunt u een deel van de kosten voor buitenmuurisolatie recupereren. De voorwaarde is dat de isolatielaag minimaal Rd 3 m²K/W haalt, wat overeenkomt met ongeveer 80–100mm EPS.",
+          "Wij bezorgen u alle nodige attesten en facturen zodat uw premieaanvraag vlot verloopt. Vraag ook naar de Mijn VerbouwLening voor een voordelig rentetarief.",
+        ],
+      },
+      {
+        title: "Hoe vraagt u een correcte offerte aan?",
+        paragraphs: [
+          "Geef bij uw aanvraag de oppervlakte van de te behandelen gevels mee, de staat van de bestaande gevel en of u ook wilt isoleren. Zo krijgt u een realistische en vergelijkbare offerte.",
+          "Vraag altijd twee scenario's: enkel crepi en crepi met isolatie. Het prijsverschil is kleiner dan veel mensen denken, maar het verschil in energiewinst en premie is groot.",
+        ],
+      },
+    ],
+    ctaTitle: "Prijs voor crepi op uw woning kennen?",
+    ctaText: "Yannova komt ter plaatse opmeten en bezorgt u een gedetailleerde offerte voor crepi, gevelisolatie of een complete gevelrenovatie.",
+    relatedSlugs: ["hoeveel-kost-gevelrenovatie", "crepi-gevel-voordelen", "energie-renovatie-premie-belgie"],
+  },
+  {
+    slug: "gevelisolatie-prijs-voordelen",
+    title: "Gevelisolatie prijs en voordelen: wat levert buitenmuurisolatie op?",
+    excerpt: "Wat kost gevelisolatie en wat levert het op? Overzicht van prijzen, energiewinst en premies voor buitenmuurisolatie in 2026.",
+    description: "Ontdek de prijs en voordelen van gevelisolatie in 2026. ETICS-systemen vanaf €80/m², tot 30% energiebesparing en Mijn VerbouwPremie.",
+    date: "2026-03-13",
+    readTime: "7 min",
+    category: "Advies",
+    keywords: ["gevelisolatie prijs", "buitenmuurisolatie prijs", "gevelisolatie voordelen", "gevelisolatie kosten", "gevelisolatie antwerpen"],
+    serviceTags: ["gevelrenovatie", "crepi-gevel"],
+    dynamic: true,
+    intro:
+      "Gevelisolatie is een van de meest effectieve energetische ingrepen voor woningen met ongeïsoleerde buitenmuren. U stopt warmteverlies, verbetert uw EPC en geeft de gevel tegelijk een nieuwe uitstraling.",
+    keyPoints: [
+      "Buitenmuurisolatie vermindert warmteverlies via de gevel met 20–35%",
+      "ETICS-systemen kosten gemiddeld €80–€150 per m²",
+      "Mijn VerbouwPremie dekt een deel van de kosten",
+      "Geen verlies van binnenruimte, in tegenstelling tot binnenmuuisolatie",
+    ],
+    sections: [
+      {
+        title: "Waarom is gevelisolatie zo effectief?",
+        paragraphs: [
+          "Bij woningen zonder gevelisolatie gaat 20 tot 35% van de warmte verloren via de buitenmuren. Dat is na het dak de grootste bron van warmteverlies. Buitengevelisolatie pakt dit direct aan.",
+          "Bovendien verbetert gevelisolatie ook het zomercomfort: de woning warmt minder snel op bij hoge temperaturen, wat de behoefte aan koeling vermindert.",
+        ],
+      },
+      {
+        title: "Welke systemen bestaan er?",
+        paragraphs: [
+          "Het meest gebruikte systeem is ETICS (External Thermal Insulation Composite System): isolatieplaten worden op de gevel gelijmd en verankerd, daarna afgewerkt met crepi, steenstrips of spuitkurk.",
+          "De keuze van isolatiemateriaal (EPS, minerale wol, PIR) en dikte bepaalt de thermische prestatie en de prijs. EPS is het meest betaalbaar; minerale wol is dampopen en brandwerend.",
+        ],
+        bullets: [
+          "EPS (geëxpandeerd polystyreen): meest betaalbaar, goede isolatiewaarden",
+          "Minerale wol: dampopen, brandwerend, iets duurder",
+          "PIR: hoogste isolatiewaarde per cm, interessant bij beperkte ruimte",
+        ],
+      },
+      {
+        title: "Wat kost gevelisolatie per m²?",
+        paragraphs: [
+          "Een volledig ETICS-systeem met EPS en crepi-afwerking kost gemiddeld €80 tot €150 per m², afhankelijk van isolatiedikte, afwerking en staat van de bestaande gevel.",
+          "Minerale wol is iets duurder dan EPS. Steenstrips als afwerking kosten €20–€40/m² meer dan crepi. Steigerkosten komen bovenop de prijs per m².",
+        ],
+        bullets: [
+          "ETICS met EPS 60mm + crepi: €80–€110/m²",
+          "ETICS met EPS 100mm + crepi: €100–€130/m²",
+          "ETICS met minerale wol + crepi: €110–€150/m²",
+          "Steenstrips als afwerking: +€20–€40/m²",
+        ],
+      },
+      {
+        title: "Welke voordelen merkt u in de praktijk?",
+        paragraphs: [
+          "Naast de energiebesparing verbetert gevelisolatie ook het akoestisch comfort: de woning wordt stiller. Bovendien verdwijnen koudebruggen, wat condensatie en vochtproblemen aan de binnenkant vermindert.",
+          "Een betere EPC-score verhoogt ook de verkoopwaarde van uw woning. Zeker bij verhuur is een goede EPC-score steeds belangrijker door de Vlaamse renovatieverplichting.",
+        ],
+        bullets: [
+          "20–35% minder warmteverlies via de gevel",
+          "Betere EPC-score en hogere woningwaarde",
+          "Minder condensatie en vochtproblemen",
+          "Verbeterd akoestisch comfort",
+          "Geen verlies van binnenruimte",
+        ],
+      },
+      {
+        title: "Premies voor gevelisolatie in 2026",
+        paragraphs: [
+          "Via de Vlaamse Mijn VerbouwPremie kunt u een deel van de kosten recupereren als de isolatielaag minimaal Rd 3 m²K/W haalt (ca. 80–100mm EPS). Het premiebedrag hangt af van uw inkomen en de oppervlakte.",
+          "Combineer gevelisolatie met ramen of dakisolatie voor een hogere totaalpremie. Wij bezorgen u alle vereiste attesten en facturen voor een vlotte premieaanvraag.",
+        ],
+      },
+    ],
+    ctaTitle: "Gevelisolatie laten plaatsen?",
+    ctaText: "Yannova komt ter plaatse opmeten en bezorgt u een gedetailleerde offerte voor gevelisolatie, crepi of een complete gevelrenovatie.",
+    relatedSlugs: ["crepi-prijs-per-m2", "hoeveel-kost-gevelrenovatie", "energie-renovatie-premie-belgie"],
+  },
+  {
+    slug: "renovatie-premies-vlaanderen-2026",
+    title: "Renovatie premies Vlaanderen 2026: volledig overzicht",
+    excerpt: "Welke renovatiepremies zijn er in Vlaanderen in 2026? Overzicht van Mijn VerbouwPremie, Mijn VerbouwLening en andere subsidies.",
+    description: "Volledig overzicht van renovatiepremies in Vlaanderen 2026: Mijn VerbouwPremie, Mijn VerbouwLening, REG-premies en lokale subsidies voor ramen, gevel en isolatie.",
+    date: "2026-03-13",
+    readTime: "8 min",
+    category: "Premies",
+    keywords: ["renovatie premies vlaanderen 2026", "mijn verbouwpremie 2026", "premies renovatie 2026", "verbouwpremie vlaanderen", "renovatie subsidie belgie"],
+    serviceTags: ["renovatie", "ramen-deuren", "gevelrenovatie", "crepi-gevel", "totaalrenovatie"],
+    dynamic: true,
+    intro:
+      "Renoveren in Vlaanderen loont in 2026 meer dan ooit. De Mijn VerbouwPremie, Mijn VerbouwLening en REG-premies maken energetische renovaties financieel aantrekkelijker. Dit is het volledige overzicht.",
+    keyPoints: [
+      "Mijn VerbouwPremie: voor ramen, gevelisolatie, dakisolatie en meer",
+      "Mijn VerbouwLening: voordelig rentetarief voor energetische renovaties",
+      "REG-premies via uw netbeheerder voor specifieke werken",
+      "Combineer premies slim voor maximale terugbetaling",
+    ],
+    sections: [
+      {
+        title: "Mijn VerbouwPremie: de belangrijkste subsidie",
+        paragraphs: [
+          "De Mijn VerbouwPremie is de centrale Vlaamse renovatiepremie voor woningeigenaars en verhuurders. Ze dekt een deel van de kosten voor energetische ingrepen aan de buitenschil: dakisolatie, gevelisolatie, vloerisolatie, ramen en deuren.",
+          "Het premiebedrag hangt af van uw inkomen (lager inkomen = hogere premie) en de oppervlakte of het aantal eenheden. U vraagt de premie aan via het Mijn VerbouwPremie-portaal na uitvoering van de werken.",
+        ],
+        bullets: [
+          "Ramen en deuren: premie bij vervanging door HR++ of beter",
+          "Gevelisolatie: premie bij min. Rd 3 m²K/W (ca. 80–100mm EPS)",
+          "Dakisolatie: premie bij min. Rd 4,5 m²K/W",
+          "Vloerisolatie: premie bij min. Rd 1,5 m²K/W",
+        ],
+      },
+      {
+        title: "Mijn VerbouwLening: voordelig lenen voor renovatie",
+        paragraphs: [
+          "Naast de premie kunt u ook een Mijn VerbouwLening aanvragen bij het Vlaams Energiebedrijf (VEB). Dit is een lening aan een voordelig rentetarief voor energetische renovaties.",
+          "De lening is interessant als u meerdere werken combineert of als de premie niet voldoende is om de investering te financieren. Het tarief is lager dan een gewone banklening.",
+        ],
+      },
+      {
+        title: "REG-premies via uw netbeheerder",
+        paragraphs: [
+          "Naast de Vlaamse premies bieden netbeheerders (Fluvius) ook REG-premies (Rationeel Energiegebruik) voor specifieke werken. Deze worden automatisch verrekend via uw installateur of aannemer.",
+          "REG-premies zijn beschikbaar voor onder meer hoogrendementsglas, warmtepompen en zonnepanelen. Ze worden gecombineerd met de Mijn VerbouwPremie.",
+        ],
+      },
+      {
+        title: "Lokale premies in Antwerpen en omgeving",
+        paragraphs: [
+          "Naast de Vlaamse premies hebben sommige gemeenten en de stad Antwerpen eigen subsidies voor renovatie. Deze zijn vaak gericht op specifieke doelgroepen of wijken.",
+          "Informeer bij uw gemeente of er lokale premies beschikbaar zijn voor uw renovatieproject. Wij helpen u graag de juiste documenten op te stellen.",
+        ],
+      },
+      {
+        title: "Hoe combineert u premies slim?",
+        paragraphs: [
+          "De slimste aanpak is om meerdere energetische ingrepen te combineren in één project. Zo kunt u voor elk onderdeel (ramen, gevel, dak) een aparte premie aanvragen.",
+          "Bewaar alle facturen, attesten en technische fiches zorgvuldig. Wij bezorgen u bij elk project de nodige documenten voor een vlotte premieaanvraag.",
+        ],
+        bullets: [
+          "Combineer ramen + gevelisolatie + dakisolatie voor maximale premie",
+          "Vraag premies aan per onderdeel, niet als totaalproject",
+          "Bewaar alle facturen en technische attesten",
+          "Vraag ook naar de Mijn VerbouwLening voor het resterende bedrag",
+        ],
+      },
+      {
+        title: "Wat verandert er in 2026?",
+        paragraphs: [
+          "De Vlaamse renovatieverplichting wordt strenger: woningen met EPC-label E of F die verkocht worden, moeten binnen 5 jaar gerenoveerd worden naar label D of beter. Dit maakt energetische renovatie niet alleen financieel interessant, maar ook steeds meer verplicht.",
+          "De premies voor 2026 zijn grotendeels ongewijzigd ten opzichte van 2025, maar de drempelwaarden voor isolatie worden strenger. Informeer tijdig over de actuele voorwaarden.",
+        ],
+      },
+    ],
+    ctaTitle: "Weten welke premies u kunt aanvragen?",
+    ctaText: "Yannova helpt u graag de juiste premies te identificeren en bezorgt u alle nodige attesten en facturen voor een vlotte aanvraag.",
+    relatedSlugs: ["energie-renovatie-premie-belgie", "gevelisolatie-prijs-voordelen", "crepi-prijs-per-m2"],
   },
   {
     slug: "wat-kosten-nieuwe-ramen",

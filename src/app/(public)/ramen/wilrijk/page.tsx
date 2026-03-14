@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { generateSEO } from '@/lib/seo';
 import { generateBreadcrumbSchema } from '@/lib/breadcrumb-schema';
@@ -79,10 +80,10 @@ export default function RamenWilrijkPage() {
                 Verhoog uw wooncomfort, verbeter de veiligheid en bespaar direct op uw energierekening.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
+                <Link href="/offerte" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-secondary/90 transition-all text-lg">
                   Vraag een gratis offerte
                   <ChevronRight className="w-5 h-5" />
-                </a>
+                </Link>
                 <a href={company.phoneHref} className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-white/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/20 transition-all text-lg">
                   <Phone className="w-5 h-5" />
                   Bel {company.phoneDisplay}
@@ -242,15 +243,15 @@ export default function RamenWilrijkPage() {
             <section className="border-t border-gray-200 pt-12">
                <h2 className="text-2xl font-bold mb-6 text-gray-900">Verder lezen</h2>
                <div className="flex flex-wrap gap-4">
-                 <a href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 <Link href="/diensten/ramen-en-deuren" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Algemene info Ramen & Deuren
-                 </a>
-                 <a href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/diensten/gevelrenovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Gevelisolatie en Crepi in Wilrijk
-                 </a>
-                 <a href="/diensten/renovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                 </Link>
+                 <Link href="/diensten/renovatie" className="inline-block bg-white text-secondary font-semibold border border-gray-200 shadow-sm px-6 py-3 rounded-full hover:bg-secondary hover:text-white transition-colors">
                    Totaalaannemer in Wilrijk
-                 </a>
+                 </Link>
                </div>
             </section>
 
@@ -268,12 +269,12 @@ export default function RamenWilrijkPage() {
               </p>
               
               <div className="space-y-4">
-                <a
+                <Link
                   href="/offerte"
                   className="w-full flex justify-center items-center gap-2 p-4 bg-secondary font-bold text-white rounded-lg hover:bg-secondary/90 transition-colors shadow-lg"
                 >
                   Nu offerte aanvragen
-                </a>
+                </Link>
                 
                 <a
                   href={company.phoneHref}
