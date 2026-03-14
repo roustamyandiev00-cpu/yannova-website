@@ -10,6 +10,7 @@ export function ContactForm() {
     const searchParams = useSearchParams();
     const productName = searchParams.get('product');
     const productSku = searchParams.get('sku');
+    const categorie = searchParams.get('categorie');
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitResult, setSubmitResult] = useState<{ success: boolean; message: string } | null>(null);
@@ -17,9 +18,11 @@ export function ContactForm() {
 
     useEffect(() => {
         if (productName) {
-            setMessage(`Ik wil graag het volgende product aanvragen:\n\nProduct: ${productName}${productSku ? `\nSKU: ${productSku}` : ''}\n\nKunt u mij meer informatie geven over beschikbaarheid en levering?`);
+            const skuLine = productSku ? `\nSKU: ${productSku}` : '';
+            const catLine = categorie ? `\nCategorie: ${categorie}` : '';
+            setMessage(`Ik wil graag het volgende product aanvragen:\n\nProduct: ${productName}${skuLine}${catLine}\n\nKunt u mij meer informatie geven over beschikbaarheid en levering?`);
         }
-    }, [productName, productSku]);
+    }, [productName, productSku, categorie]);
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -86,7 +89,11 @@ export function ContactForm() {
                             <span className="text-xl">📦</span>
                             <div>
                                 <p className="text-sm font-semibold text-orange-300">Product aanvraag</p>
-                                <p className="text-sm text-orange-200">{productName}{productSku && ` — SKU: ${productSku}`}</p>
+                                <p className="text-sm text-orange-200">
+                                    {productName}
+                                    {categorie && ` — ${categorie}`}
+                                    {productSku && ` — SKU: ${productSku}`}
+                                </p>
                             </div>
                         </div>
                     )}

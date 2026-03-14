@@ -90,7 +90,7 @@ export default async function ProductCategoryPage({ params }: Props) {
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href={item.primaryCtaHref}
+                  href={`/contact?product=${encodeURIComponent(item.name)}&categorie=${encodeURIComponent(item.categoryLabel)}`}
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
                 >
                   {item.primaryCtaLabel}
@@ -231,8 +231,24 @@ export default async function ProductCategoryPage({ params }: Props) {
 
         <section className="border-t border-white/10 py-16">
           <div className="container mx-auto px-6">
-            <div className="editorial-pane">
-              <h2 className="text-2xl font-bold text-white">Relevante volgende stappen</h2>
+            <div className="rounded-2xl bg-secondary/10 border border-secondary/20 px-8 py-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-secondary">Interesse?</p>
+                <h2 className="mt-2 text-2xl font-bold text-white">Vraag {item.name.toLowerCase()} aan bij Yannova</h2>
+                <p className="mt-2 text-gray-300">Stuur ons een bericht — wij bevestigen beschikbaarheid, prijs en plaatsing.</p>
+              </div>
+              <Link
+                href={`/contact?product=${encodeURIComponent(item.name)}&categorie=${encodeURIComponent(item.categoryLabel)}`}
+                className="shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
+              >
+                Vraag aan
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-white/10 py-16">
               <div className="mt-6 grid gap-x-6 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
                 {item.secondaryLinks.map((link) => (
                   <Link

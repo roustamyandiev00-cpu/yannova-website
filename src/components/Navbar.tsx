@@ -26,7 +26,6 @@ const navigation: Array<{
     ],
   },
   { name: "Producten", href: "/producten" },
-  { name: "Shop", href: "/shop" },
   { name: "Projecten", href: "/projecten" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
