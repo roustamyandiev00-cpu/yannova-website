@@ -1,14 +1,25 @@
 "use client";
- 'use client'
 
 import { Loader2, Send, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { trackContactFormSubmission } from "@/lib/google-ads";
 import { gtmTrackFormSubmit } from "@/components/GoogleTagManager";
 
 export function ContactForm() {
+    const searchParams = useSearchParams();
+    const productName = searchParams.get('product');
+    const productSku = searchParams.get('sku');
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitResult, setSubmitResult] = useState<{ success: boolean; message: string } | null>(null);
+    const [message, setMessage] = useState('');
+
+    useEffect(() => {
+        if (productName) {
+            setMessage(`Ik wil graag het volgende product aanvragen:\n\nProduct: ${productName}${productSku ? `\nSKU: ${productSku}` : ''}\n\nKunt u mij meer informatie geven over beschikbaarheid en levering?`);
+        }
+    }, [productName, productSku]);
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -68,6 +79,17 @@ export function ContactForm() {
 
             <form onSubmit={onSubmit}>
                 <div className="grid grid-cols-1 gap-6">
+
+                    {/* Productbanner als er een product is meegegeven */}
+                    {productName && (
+                        <div className="flex items-center gap-3 rounded-lg border border-orange-500/30 bg-orange-500/10 px-4 py-3">
+                            <span className="text-xl">📦</span>
+                            <div>
+                                <p className="text-sm font-semibold text-orange-300">Product aanvraag</p>
+                                <p className="text-sm text-orange-200">{productName}{productSku && ` — SKU: ${productSku}`}</p>
+                            </div>
+                        </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="name" className="block text-sm font-semibold leading-6 text-foreground mb-2">
@@ -126,10 +148,12 @@ export function ContactForm() {
                         <select
                             name="subject"
                             id="subject"
+                            defaultValue={productName ? 'product-aanvraag' : 'algemeen'}
                             className="block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-secondary text-base sm:text-sm sm:leading-6 bg-white/5 focus:bg-white/10 transition-all"
                         >
                             <option value="algemeen">Algemene vraag</option>
                             <option value="offerte">Offerte aanvraag</option>
+                            <option value="product-aanvraag">Product aanvraag</option>
                             <option value="gevelrenovatie">Gevelrenovatie</option>
                             <option value="ramen-deuren">Ramen & Deuren</option>
                             <option value="isolatie">Isolatie</option>
@@ -149,6 +173,8 @@ export function ContactForm() {
                             rows={5}
                             minLength={10}
                             maxLength={2000}
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
                             className="block w-full rounded-lg border-0 px-4 py-3 text-foreground shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-muted-foreground focus:ring-2 focus:ring-inset focus:ring-secondary text-base sm:text-sm sm:leading-6 bg-white/5 focus:bg-white/10 transition-all resize-none"
                             placeholder="Beschrijf uw project of vraag in detail..."
                         ></textarea>
