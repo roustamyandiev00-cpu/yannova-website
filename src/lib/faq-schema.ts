@@ -36,12 +36,24 @@ export const commonFAQs = {
   ],
   deuren: [
     {
+      question: 'Wat kost een nieuwe voordeur in Zoersel of Antwerpen?',
+      answer: 'Een nieuwe voordeur kost gemiddeld tussen €800 en €2.500 afhankelijk van het materiaal (PVC of aluminium), het design en de veiligheidsklasse. Wij bieden een gratis opmeting en offerte binnen 24 uur.',
+    },
+    {
       question: 'Wat zijn de voordelen van een nieuwe voordeur?',
-      answer: 'Een nieuwe voordeur verbetert de isolatie, verhoogt de veiligheid en geeft je woning een frisse uitstraling. Moderne deuren zijn energiezuinig en onderhoudsvriendelijk.',
+      answer: 'Een nieuwe voordeur verbetert de isolatie, verhoogt de veiligheid en geeft uw woning een frisse uitstraling. Moderne deuren zijn energiezuinig, inbraakwerend en onderhoudsvriendelijk.',
     },
     {
       question: 'Welke soorten deuren plaatst Yannova?',
-      answer: 'Wij plaatsen voordeuren, achterdeuren, schuifdeuren en garagepoorten in verschillende materialen zoals PVC, aluminium en hout.',
+      answer: 'Wij plaatsen voordeuren, achterdeuren, schuifdeuren en garagepoorten in PVC en aluminium. Alle deuren zijn verkrijgbaar in elke RAL-kleur met inbraakwerend beslag.',
+    },
+    {
+      question: 'Zijn er premies voor nieuwe deuren in Vlaanderen?',
+      answer: 'Voor energiezuinige deuren met goede isolatiewaarde kunt u in aanmerking komen voor de Mijn VerbouwPremie. Wij helpen u bij de aanvraag en zorgen voor de nodige attesten.',
+    },
+    {
+      question: 'Hoe lang duurt de plaatsing van een nieuwe deur?',
+      answer: 'De plaatsing van een voordeur of achterdeur duurt gemiddeld een halve dag. Schuifdeuren of meerdere deuren kunnen 1 tot 2 dagen in beslag nemen. Wij zorgen voor een nette afwerking.',
     },
   ],
   renovatie: [
