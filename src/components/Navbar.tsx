@@ -73,7 +73,7 @@ export function Navbar() {
         "fixed top-0 inset-x-0 z-50 transition-all duration-500",
         scrolled 
           ? "bg-[#0a0c10]/95 backdrop-blur-sm py-3 shadow-lg" 
-          : "bg-transparent py-5",
+          : "bg-gradient-to-b from-black/60 to-transparent backdrop-blur-[2px] py-5",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
