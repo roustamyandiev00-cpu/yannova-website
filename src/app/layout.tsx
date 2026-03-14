@@ -16,12 +16,15 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MZ98NM6L";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.yannova.be"),
-  title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
+  title: "Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova",
   description:
-    "Yannova plaatst ramen en deuren en voert renovaties uit in Antwerpen stad, Berchem, Deurne, Merksem, Wilrijk en randgemeenten rond Antwerpen. Gratis opmeting en offerte binnen 24 uur.",
+    "Specialist in ramen, deuren en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen, crepi, isolatie.",
   keywords: [
-    "ramen antwerpen",
+    "ramen plaatsen antwerpen",
     "deuren antwerpen",
+    "crepi antwerpen",
+    "gevelisolatie antwerpen",
+    "renovatiebedrijf antwerpen",
     "ramen antwerpen stad",
     "ramen berchem",
     "ramen deurne",
@@ -29,10 +32,8 @@ export const metadata: Metadata = {
     "ramen wilrijk",
     "ramen brasschaat",
     "ramen schoten",
-    "ramen wijnegem",
     "gevelrenovatie antwerpen",
     "totaalrenovatie antwerpen",
-    "renovatiebedrijf antwerpen",
   ],
   alternates: {
     languages: {
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
+    title: "Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova",
     description:
-      "Actief in Antwerpen stad en rond Antwerpen: ramen, deuren, gevelisolatie en renovatie. Gratis opmeting en duidelijke offerte binnen 24 uur.",
+      "Specialist in ramen, deuren, crepi en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring.",
     url: "https://www.yannova.be",
     type: "website",
     locale: "nl_BE",
@@ -58,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova",
+    title: "Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova",
     description:
-      "Ramen, deuren en renovatie in Antwerpen stad en randgemeenten. Gratis opmeting en offerte binnen 24 uur.",
+      "Specialist in ramen, deuren, crepi en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u.",
     images: ["https://www.yannova.be/og-image.jpg"],
   },
   robots: {
@@ -79,6 +80,17 @@ export const metadata: Metadata = {
     "geo.placename": "Antwerpen",
     "geo.position": "51.2194;4.4025",
     ICBM: "51.2194, 4.4025",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "icon", url: "/icon-192.png", sizes: "192x192" },
+      { rel: "icon", url: "/icon-512.png", sizes: "512x512" },
+    ],
   },
   verification: {
     google: "IuTf3i7Tc8GnysVMp6-Yp-jLR2IW4H1dOkr6Kh3nzU4",
@@ -113,7 +125,9 @@ export default function RootLayout({
         <meta name="theme-color" content="#ff6b00" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
 
         <Script id="google-tag-manager" strategy="beforeInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
