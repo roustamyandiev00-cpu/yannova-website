@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Phone, ChevronDown, MessageCircle, Sparkles } from "lucide-react";
@@ -25,6 +26,7 @@ const navigation: Array<{
     ],
   },
   { name: "Producten", href: "/producten" },
+  { name: "Shop", href: "/shop" },
   { name: "Projecten", href: "/projecten" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
@@ -78,11 +80,18 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Hoofdmenu">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="group -m-1.5 p-1.5 text-2xl font-bold tracking-tight transition-all duration-300">
-            <span className="text-white group-hover:text-secondary transition-colors duration-300">Yannova</span>
-            <span className="text-secondary group-hover:scale-125 inline-block transition-transform duration-300">.</span>
+      <nav className="container mx-auto flex items-center justify-between gap-8 px-6 lg:px-8" aria-label="Hoofdmenu">
+        <div className="flex items-center lg:w-[240px]">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
+            <span className="sr-only">Yannova</span>
+            <Image
+              src="/logo.png"
+              alt="Yannova Logo"
+              width={280}
+              height={70}
+              priority
+              className="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
+            />
           </Link>
         </div>
 
@@ -99,7 +108,7 @@ export function Navbar() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-8">
           {navigation.map((item) =>
             item.children ? (
               <div key={item.name} className="relative" ref={servicesRef}>
@@ -176,38 +185,39 @@ export function Navbar() {
           )}
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-3">
+        <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-x-4 lg:w-[240px] xl:w-auto">
           <a
             href={company.phoneHref}
             onClick={() => gtmTrackPhone()}
-            className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-white transition-colors whitespace-nowrap"
           >
             <Phone className="h-4 w-4" />
-            <span>{company.phoneDisplay}</span>
+            <span className="hidden xl:inline">{company.phoneDisplay}</span>
           </a>
           <a
             href={company.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => gtmTrackWhatsApp()}
-            className="flex items-center gap-1.5 text-sm text-gray-300 hover:text-[#25D366] transition-colors"
+            className="flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-[#25D366] transition-colors"
           >
             <MessageCircle className="h-4 w-4" />
             <span className="hidden xl:inline">WhatsApp</span>
           </a>
           <Link
             href="/vraag-ai"
-            className="flex items-center gap-1.5 text-sm font-medium text-white bg-[#1a1d24] hover:bg-[#1f2229] px-4 py-2.5 rounded-xl shadow-lg transition-all group"
+            className="flex items-center gap-2 text-sm font-medium text-white bg-[#1a1d24] hover:bg-[#1f2229] px-4 py-2.5 rounded-xl shadow-lg transition-all group whitespace-nowrap"
           >
             <Sparkles className="h-4 w-4 text-secondary group-hover:rotate-12 transition-transform duration-300" />
-            Vraag Yannova AI
+            <span className="hidden xl:inline">Vraag Yannova AI</span>
           </Link>
           <Link
             href="/contact"
-            className="flex items-center gap-2 rounded-xl bg-linear-to-r from-secondary to-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-elegant glow-hover transition-all duration-300 hover:scale-105"
+            className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-secondary to-orange-600 px-6 py-2.5 text-sm font-semibold text-white shadow-elegant glow-hover transition-all duration-300 hover:scale-105 whitespace-nowrap"
           >
             Gratis offerte
           </Link>
+
         </div>
       </nav>
 
