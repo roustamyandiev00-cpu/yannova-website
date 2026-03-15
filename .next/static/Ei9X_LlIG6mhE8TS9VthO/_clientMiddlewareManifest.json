@@ -1,6 +1,0 @@
-[
-  {
-    "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?(?:\\/((?!api|_next\\/static|_next\\/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.svg$|.*\\.ico$|.*\\.webp$|.*\\.avif$|.*\\.txt$|.*\\.xml$|.*\\.json$|.*\\.html$).*))(\\.json)?[\\/#\\?]?$",
-    "originalSource": "/((?!api|_next/static|_next/image|favicon\\.ico|robots\\.txt|sitemap\\.xml|.*\\.png$|.*\\.jpg$|.*\\.jpeg$|.*\\.gif$|.*\\.svg$|.*\\.ico$|.*\\.webp$|.*\\.avif$|.*\\.txt$|.*\\.xml$|.*\\.json$|.*\\.html$).*)"
-  }
-]

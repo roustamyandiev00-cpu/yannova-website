@@ -48,3 +48,6 @@ copilot-messages.log
 .DS_Store
 .project/attachments/files/**
 node_modules
+.next
+.env.local
+.env*.local

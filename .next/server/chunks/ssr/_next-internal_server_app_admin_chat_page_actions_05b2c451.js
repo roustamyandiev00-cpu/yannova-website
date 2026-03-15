@@ -1,3 +1,0 @@
-module.exports=[806136,a=>a.a(async(b,c)=>{try{var d=a.i(436102),e=b([d]);[d]=e.then?(await e)():e,a.s([]),c()}catch(a){c(a)}},!1),146828,a=>a.a(async(b,c)=>{try{var d=a.i(806136),e=a.i(436102),f=b([d,e]);[d,e]=f.then?(await f)():f,a.s(["00fc550177f76344ec03d9639eb9a0a95d9a66c3ea",()=>e.$$RSC_SERVER_ACTION_0]),c()}catch(a){c(a)}},!1)];
-
-//# sourceMappingURL=_next-internal_server_app_admin_chat_page_actions_05b2c451.js.map

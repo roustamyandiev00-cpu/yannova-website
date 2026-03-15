@@ -1,7 +1,0 @@
-{
-  "/(public)/[seoSlug]/page": "app/(public)/[seoSlug]/page.js",
-  "/(public)/page": "app/(public)/page.js",
-  "/(public)/producten/page": "app/(public)/producten/page.js",
-  "/(public)/projecten/page": "app/(public)/projecten/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
-}
