@@ -1,7 +1,7 @@
 "use client";
 'use client';
 
-import { trackWhatsAppClick, trackPhoneClick, trackEmailClick } from './GoogleAds';
+import { trackWhatsAppClick, trackPhoneClick, trackEmailClick } from '@/lib/analytics';
 import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from '@/components/GoogleTagManager';
 
 interface ContactButtonsProps {
@@ -20,17 +20,17 @@ export function ContactButtons({
   className = '',
 }: ContactButtonsProps) {
   const handleWhatsAppClick = () => {
-    trackWhatsAppClick();
+    trackWhatsAppClick('contact_buttons');
     gtmTrackWhatsApp();
   };
 
   const handlePhoneClick = () => {
-    trackPhoneClick();
+    trackPhoneClick('contact_buttons');
     gtmTrackPhone();
   };
 
   const handleEmailClick = () => {
-    trackEmailClick();
+    trackEmailClick('contact_buttons');
     gtmTrackEmail();
   };
 

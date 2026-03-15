@@ -51,3 +51,31 @@ node_modules
 .next
 .env.local
 .env*.local
+
+# Build artifacts
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# Debug logs
+firebase-debug.log
+*.log
+
+# Test artifacts
+.playwright-cli/
+
+# Backup files
+*.backup
+
+# AI tool configs (lokaal gebruik)
+.agents/
+.ai-tools/
+.gemini/
+.specify/
+.qodo/
+.codex/
+
+# Misc rommel
+files/
+doc.json
+# Kies één package manager — verwijder de andere lockfile
+# bun.lock

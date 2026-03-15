@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -14,7 +14,7 @@
     "test:email": "node scripts/test-email.js",
     "test:sitemap": "node scripts/test-sitemap.js",
     "pre-deploy": "bash scripts/pre-deploy-check.sh",
-    "create-admin": "node scripts/insert-admin-direct.js"
+    "create-admin": "node scripts/admin/create-admin.js"
   },
   "dependencies": {
     "@ai-sdk/google": "^0.0.55",

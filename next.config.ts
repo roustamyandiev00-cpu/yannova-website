@@ -105,7 +105,7 @@ const nextConfig: NextConfig = {
 
   // Experimental features for better performance
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react', 'framer-motion', '@datadog/browser-rum', '@datadog/browser-rum-react'],
   },
 
   // Add empty turbopack config to silence the warning

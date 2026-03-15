@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { Suspense } from "react";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
-import { PerformanceMonitor } from "@/components/PerformanceMonitor";
-import { DatadogRUM } from "@/components/DatadogRUM";
+import dynamic from "next/dynamic";
 import { generateLocalBusinessSchema, generateServiceSchema, generateWebSiteSchema, generateOrganizationSchema, services } from "@/lib/structured-data";
+
+const PerformanceMonitor = dynamic(() => import("@/components/PerformanceMonitor").then(m => ({ default: m.PerformanceMonitor })), { ssr: false });
+const DatadogRUM = dynamic(() => import("@/components/DatadogRUM").then(m => ({ default: m.DatadogRUM })), { ssr: false });
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -13,7 +16,7 @@ const inter = Inter({
   preload: true,
 });
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MZ98NM6L";
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-D3Z5L5RJ";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.yannova.be"),
@@ -129,15 +132,14 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
 
-        <Script id="google-tag-manager" strategy="beforeInteractive">
+        <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
-        <Analytics />
-        <Script
+        <Analytics />        <Script
           id="contentsquare-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -175,6 +177,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        {/* Analytics: Suspense required because Analytics uses usePathname */}
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <PerformanceMonitor />
         <DatadogRUM />
         <script

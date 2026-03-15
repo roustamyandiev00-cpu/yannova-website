@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Chatbot } from "@/components/Chatbot";
-import { ExitIntentPopup } from "@/components/ExitIntentPopup";
-import { CookieConsent } from "@/components/CookieConsent";
-import { StickyCTA } from "@/components/StickyCTA";
 import { CartProvider } from "@/contexts/CartContext";
+import dynamic from "next/dynamic";
+
+const Chatbot = dynamic(() => import("@/components/Chatbot").then(m => ({ default: m.Chatbot })), { ssr: false });
+const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup").then(m => ({ default: m.ExitIntentPopup })), { ssr: false });
+const CookieConsent = dynamic(() => import("@/components/CookieConsent").then(m => ({ default: m.CookieConsent })), { ssr: false });
+const StickyCTA = dynamic(() => import("@/components/StickyCTA").then(m => ({ default: m.StickyCTA })), { ssr: false });
 
 export default function PublicLayout({
   children,

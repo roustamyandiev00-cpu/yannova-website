@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { company } from "@/lib/company";
 import { gtmTrackPhone, gtmTrackWhatsApp } from "@/components/GoogleTagManager";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 
 const navigation: Array<{
   name: string;
@@ -187,7 +188,7 @@ export function Navbar() {
         <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-x-4 lg:w-[240px] xl:w-auto">
           <a
             href={company.phoneHref}
-            onClick={() => gtmTrackPhone()}
+            onClick={() => { trackPhoneClick('navbar'); gtmTrackPhone(); }}
             className="flex items-center gap-1.5 text-sm font-semibold tracking-wide text-white/80 hover:text-white transition-colors whitespace-nowrap hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.4)]"
           >
             <Phone className="h-4 w-4" />
@@ -197,7 +198,7 @@ export function Navbar() {
             href={company.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => gtmTrackWhatsApp()}
+            onClick={() => { trackWhatsAppClick('navbar'); gtmTrackWhatsApp(); }}
             className="flex items-center gap-1.5 text-sm font-semibold tracking-wide text-white/80 hover:text-[#25D366] transition-colors hover:drop-shadow-[0_0_6px_rgba(37,211,102,0.4)]"
           >
             <MessageCircle className="h-4 w-4" />
@@ -268,7 +269,7 @@ export function Navbar() {
               <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
                 <a
                   href={company.phoneHref}
-                  onClick={() => gtmTrackPhone()}
+                  onClick={() => { trackPhoneClick('navbar_mobile'); gtmTrackPhone(); }}
                   className="flex items-center gap-2 px-3 py-2 text-gray-300 hover:text-white"
                 >
                   <Phone className="h-4 w-4" />
@@ -278,7 +279,7 @@ export function Navbar() {
                   href={company.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => gtmTrackWhatsApp()}
+                  onClick={() => { trackWhatsAppClick('navbar_mobile'); gtmTrackWhatsApp(); }}
                   className="flex items-center gap-2 px-3 py-2 text-gray-300 hover:text-[#25D366]"
                 >
                   <MessageCircle className="h-4 w-4" />

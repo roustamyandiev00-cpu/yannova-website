@@ -3,8 +3,7 @@
 import { Loader2, Send, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { trackContactFormSubmission } from "@/lib/google-ads";
-import { gtmTrackFormSubmit } from "@/components/GoogleTagManager";
+import { trackGenerateLead } from "@/lib/analytics";
 
 export function ContactForm() {
     const searchParams = useSearchParams();
@@ -55,9 +54,8 @@ export function ContactForm() {
 
             setSubmitResult({ success: true, message: result.message || "Bericht succesvol verzonden! We nemen zo snel mogelijk contact met u op." });
             
-            // Track Google Ads conversion + GTM event
-            trackContactFormSubmission();
-            gtmTrackFormSubmit();
+            // Track GA4 generate_lead + Google Ads conversion + GTM
+            trackGenerateLead('contact');
             
             event.currentTarget.reset();
         } catch (error: unknown) {

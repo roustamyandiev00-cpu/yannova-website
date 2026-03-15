@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { X, Gift, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { trackCtaClick } from '@/lib/analytics';
 
 export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,6 +103,7 @@ export function ExitIntentPopup() {
                     href="/contact"
                     onClick={(e) => {
                       e.stopPropagation();
+                      trackCtaClick('offerte_aanvragen', 'exit_intent_popup');
                       setIsVisible(false);
                     }}
                     className="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:bg-secondary/80 transition-colors flex items-center justify-center gap-2"

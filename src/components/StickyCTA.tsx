@@ -5,6 +5,7 @@ import { Phone, MessageCircle, X } from "lucide-react";
 import { company } from "@/lib/company";
 import { motion, AnimatePresence } from "framer-motion";
 import { gtmTrackPhone, gtmTrackWhatsApp } from "@/components/GoogleTagManager";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export function StickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +57,7 @@ export function StickyCTA() {
               <div className="flex-1 flex items-center gap-3">
                 <a 
                   href={company.phoneHref}
-                  onClick={() => gtmTrackPhone()} 
+                  onClick={() => { trackPhoneClick('sticky_cta'); gtmTrackPhone(); }}
                   className="flex-1 flex items-center justify-center gap-2 bg-white text-secondary font-bold py-3 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <Phone className="h-5 w-5" />
@@ -66,7 +67,7 @@ export function StickyCTA() {
                   href={company.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => gtmTrackWhatsApp()}
+                  onClick={() => { trackWhatsAppClick('sticky_cta'); gtmTrackWhatsApp(); }}
                   className="flex-1 flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-bold py-3 rounded-lg hover:bg-white/20 transition-colors border border-white/20"
                 >
                   <MessageCircle className="h-5 w-5" />

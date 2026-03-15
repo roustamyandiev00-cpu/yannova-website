@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle2, Shield, Award 
 import { ContactForm } from "@/components/ContactForm";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { company } from "@/lib/company";
-import { trackPhoneClick, trackWhatsAppClick } from "@/lib/google-ads";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from "@/components/GoogleTagManager";
 
 const breadcrumbSchema = generateBreadcrumbSchema([
@@ -14,12 +14,12 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
 export default function ContactPage() {
   const handlePhoneClick = () => {
-    trackPhoneClick();
+    trackPhoneClick('contact_page');
     gtmTrackPhone();
   };
 
   const handleWhatsAppClick = () => {
-    trackWhatsAppClick();
+    trackWhatsAppClick('contact_page');
     gtmTrackWhatsApp();
   };
 

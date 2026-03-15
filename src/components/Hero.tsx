@@ -5,6 +5,7 @@ import { ArrowRight, Phone, MessageCircle, Star, Clock, Shield } from "lucide-re
 import { company } from "@/lib/company";
 import { useEffect, useState } from "react";
 import { gtmTrackPhone, gtmTrackWhatsApp } from "@/components/GoogleTagManager";
+import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -78,7 +79,7 @@ export function Hero() {
               <div className="flex gap-3">
                 <a
                   href={company.phoneHref}
-                  onClick={() => gtmTrackPhone()}
+                  onClick={() => { trackPhoneClick('hero'); gtmTrackPhone(); }}
                   className="inline-flex items-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-5 py-4 text-sm font-medium text-white shadow-lg transition-all"
                 >
                   <Phone className="h-4 w-4 text-secondary" />
@@ -88,7 +89,7 @@ export function Hero() {
                   href={company.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => gtmTrackWhatsApp()}
+                  onClick={() => { trackWhatsAppClick('hero'); gtmTrackWhatsApp(); }}
                   className="inline-flex items-center gap-2 rounded-xl bg-[#1a1d24] hover:bg-[#1f2229] px-5 py-4 text-sm font-medium text-white shadow-lg transition-all"
                 >
                   <MessageCircle className="h-4 w-4 text-secondary" />
