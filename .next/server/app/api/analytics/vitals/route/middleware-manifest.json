@@ -1,0 +1,39 @@
+{
+  "sorted_middleware": [
+    "/api/analytics/vitals/route"
+  ],
+  "middleware": {},
+  "instrumentation": null,
+  "functions": {
+    "/api/analytics/vitals/route": {
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/interception-route-rewrite-manifest.js",
+        "required-server-files.js",
+        "server/server-reference-manifest.js",
+        "server/app/api/analytics/vitals/route_client-reference-manifest.js",
+        "server/edge/chunks/_next-internal_server_app_api_analytics_vitals_route_actions_4e02e471.js",
+        "server/edge/chunks/[root-of-the-server]__8441e1a2._.js",
+        "server/edge/chunks/node_modules_e32319c5._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_4ab119aa.js"
+      ],
+      "name": "app/api/analytics/vitals/route",
+      "page": "/api/analytics/vitals/route",
+      "matchers": [
+        {
+          "regexp": "^/api/analytics/vitals(?:/)?$",
+          "originalSource": "/api/analytics/vitals"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "Ei9X_LlIG6mhE8TS9VthO",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "YuW8z8nkXChW7b+7q23fb/x2iZB8CFd7qNOaxM/JPvY=",
+        "__NEXT_PREVIEW_MODE_ID": "7c497d0a24138df30f4ee3dffd1f1775",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "7bfb284f41d187878b6be982e86244e21f337b73501c2ea1adc5715593efa472",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "4a26079ec45fdef5530fe4293cbf31c027a3f94354d8d37f2f642878da6b6f5f"
+      }
+    }
+  }
+}

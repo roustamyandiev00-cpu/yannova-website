@@ -1,0 +1,20 @@
+{
+  "node": {
+    "00fc550177f76344ec03d9639eb9a0a95d9a66c3ea": {
+      "workers": {
+        "app/admin/chat-analytics/page": {
+          "moduleId": 577939,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/admin/layout.tsx"
+        }
+      },
+      "layer": {
+        "app/admin/chat-analytics/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "src/app/admin/layout.tsx"
+    }
+  },
+  "edge": {}
+}

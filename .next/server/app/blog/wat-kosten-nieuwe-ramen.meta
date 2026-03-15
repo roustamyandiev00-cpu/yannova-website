@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/blog/layout,_N_T_/(public)/blog/wat-kosten-nieuwe-ramen/layout,_N_T_/(public)/blog/wat-kosten-nieuwe-ramen/page,_N_T_/blog/wat-kosten-nieuwe-ramen"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHB1YmxpYyk/blog/wat-kosten-nieuwe-ramen/__PAGE__",
+    "/!KHB1YmxpYyk/blog/wat-kosten-nieuwe-ramen",
+    "/!KHB1YmxpYyk/blog",
+    "/!KHB1YmxpYyk",
+    "/_index",
+    "/_head"
+  ]
+}

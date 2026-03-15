@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6059315ccd63b55f204ec457fedb85e4146fb3ca66": {
+      "workers": {
+        "app/(public)/totaalrenovatie/page": {
+          "moduleId": 627042,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(public)/totaalrenovatie/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

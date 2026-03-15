@@ -6,8 +6,8 @@ const siteConfig = {
   url: 'https://www.yannova.be',
   ogImage: 'https://www.yannova.be/og-image.jpg',
   links: {
-    facebook: 'https://www.facebook.com/yannova',
-    instagram: 'https://www.instagram.com/yannova',
+    facebook: 'https://www.facebook.com/yannovabouw',
+    instagram: 'https://www.instagram.com/yannovabouw',
   },
 };
 

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/deuren/layout,_N_T_/(public)/deuren/schoten/layout,_N_T_/(public)/deuren/schoten/page,_N_T_/deuren/schoten"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHB1YmxpYyk/deuren/schoten/__PAGE__",
+    "/!KHB1YmxpYyk/deuren/schoten",
+    "/!KHB1YmxpYyk/deuren",
+    "/!KHB1YmxpYyk",
+    "/_index",
+    "/_head"
+  ]
+}

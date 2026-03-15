@@ -116,13 +116,15 @@ export function generateLocalBusinessSchema(data: LocalBusinessData = localBusin
       name: area,
     })),
     sameAs: [
-      "https://www.facebook.com/yannova",
-      "https://www.instagram.com/yannova",
+      "https://www.facebook.com/yannovabouw",
+      "https://www.instagram.com/yannovabouw",
     ],
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
       reviewCount: "47",
+      bestRating: "5",
+      worstRating: "1",
     },
   };
 }
@@ -239,14 +241,6 @@ export function generateWebSiteSchema() {
     publisher: {
       "@id": "https://www.yannova.be/#organization"
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.yannova.be/zoeken?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    },
     inLanguage: "nl-BE"
   };
 }
@@ -273,8 +267,8 @@ export function generateOrganizationSchema() {
       availableLanguage: ["Dutch", "French"]
     },
     sameAs: [
-      "https://www.facebook.com/yannova",
-      "https://www.instagram.com/yannova"
+      "https://www.facebook.com/yannovabouw",
+      "https://www.instagram.com/yannovabouw"
     ]
   };
 }

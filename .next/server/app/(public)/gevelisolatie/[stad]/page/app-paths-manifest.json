@@ -1,0 +1,3 @@
+{
+  "/(public)/gevelisolatie/[stad]/page": "app/(public)/gevelisolatie/[stad]/page.js"
+}

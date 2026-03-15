@@ -1,0 +1,42 @@
+{
+  "node": {
+    "60fb6db5dca0d2f723a921bce8d1ddf01aa65b7ed4": {
+      "workers": {
+        "app/(public)/[seoSlug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/[seoSlug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/(public)/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/(public)/producten/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/producten/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        },
+        "app/(public)/projecten/page": {
+          "moduleId": "[project]/.next-internal/server/app/(public)/projecten/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(public)/[seoSlug]/page": "action-browser",
+        "app/(public)/page": "action-browser",
+        "app/(public)/producten/page": "action-browser",
+        "app/(public)/projecten/page": "action-browser"
+      },
+      "filename": "src/lib/actions.ts",
+      "exportedName": "createLead"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "bSK1696Hatoe2Jfxxy1xYzu35SugM3opJ+GvZAis2b4="
+}

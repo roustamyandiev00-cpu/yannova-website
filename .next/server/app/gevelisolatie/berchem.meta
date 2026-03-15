@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(public)/layout,_N_T_/(public)/gevelisolatie/layout,_N_T_/(public)/gevelisolatie/[stad]/layout,_N_T_/(public)/gevelisolatie/[stad]/page,_N_T_/gevelisolatie/berchem"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHB1YmxpYyk/gevelisolatie/$d$stad/__PAGE__",
+    "/!KHB1YmxpYyk/gevelisolatie/$d$stad",
+    "/!KHB1YmxpYyk/gevelisolatie",
+    "/!KHB1YmxpYyk",
+    "/_index",
+    "/_head"
+  ]
+}

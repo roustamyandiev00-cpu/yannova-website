@@ -109,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
               ? 0.85
           : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') || page.includes('/crepi/') || page.includes('/gevelisolatie/')
             ? 0.85
-            : page === '/shop' || page === '/vraag-ai'
+            : page === '/vraag-ai'
               ? 0.8
               : 0.75,
   }))

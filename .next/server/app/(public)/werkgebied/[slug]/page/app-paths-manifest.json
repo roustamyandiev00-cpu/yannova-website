@@ -1,0 +1,3 @@
+{
+  "/(public)/werkgebied/[slug]/page": "app/(public)/werkgebied/[slug]/page.js"
+}

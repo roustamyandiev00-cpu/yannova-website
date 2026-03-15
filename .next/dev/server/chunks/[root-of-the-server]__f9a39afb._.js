@@ -1,0 +1,1943 @@
+module.exports = [
+"[externals]/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-route-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-route-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-route-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js [external] (next/dist/compiled/next-server/app-page-turbo.runtime.dev.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js", () => require("next/dist/compiled/next-server/app-page-turbo.runtime.dev.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-unit-async-storage.external.js [external] (next/dist/server/app-render/work-unit-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-unit-async-storage.external.js", () => require("next/dist/server/app-render/work-unit-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/work-async-storage.external.js [external] (next/dist/server/app-render/work-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/work-async-storage.external.js", () => require("next/dist/server/app-render/work-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/shared/lib/no-fallback-error.external.js [external] (next/dist/shared/lib/no-fallback-error.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/shared/lib/no-fallback-error.external.js", () => require("next/dist/shared/lib/no-fallback-error.external.js"));
+
+module.exports = mod;
+}),
+"[externals]/next/dist/server/app-render/after-task-async-storage.external.js [external] (next/dist/server/app-render/after-task-async-storage.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/server/app-render/after-task-async-storage.external.js", () => require("next/dist/server/app-render/after-task-async-storage.external.js"));
+
+module.exports = mod;
+}),
+"[project]/src/lib/data/local-seo.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getHubCityLinks",
+    ()=>getHubCityLinks,
+    "getLocalSeoCity",
+    ()=>getLocalSeoCity,
+    "getLocalSeoHubSeoInput",
+    ()=>getLocalSeoHubSeoInput,
+    "getLocalSeoPageBySlug",
+    ()=>getLocalSeoPageBySlug,
+    "getLocalSeoPagePath",
+    ()=>getLocalSeoPagePath,
+    "getLocalSeoPageSlugs",
+    ()=>getLocalSeoPageSlugs,
+    "getLocalSeoService",
+    ()=>getLocalSeoService,
+    "getServiceHubLinks",
+    ()=>getServiceHubLinks,
+    "localSeoServices",
+    ()=>localSeoServices,
+    "priorityCities",
+    ()=>priorityCities
+]);
+const priorityCities = [
+    {
+        slug: "zoersel",
+        name: "Zoersel",
+        nearby: [
+            "Halle",
+            "Sint-Antonius",
+            "Westmalle"
+        ],
+        localContext: "veel open bebouwing en residentiële renovaties waar isolatie, planning en een verzorgde afwerking zwaar doorwegen",
+        propertyFocus: "villa's, gezinswoningen en uitbreidingen",
+        priority: 1
+    },
+    {
+        slug: "schilde",
+        name: "Schilde",
+        nearby: [
+            "'s-Gravenwezel",
+            "Zoersel",
+            "Wijnegem"
+        ],
+        localContext: "woningen waar esthetiek, materiaalkeuze en detailafwerking vaak bepalend zijn voor de uiteindelijke waarde",
+        propertyFocus: "villa's, karakterwoningen en hoogwaardige renovaties",
+        priority: 0.95
+    },
+    {
+        slug: "brasschaat",
+        name: "Brasschaat",
+        nearby: [
+            "Kapellen",
+            "Schoten",
+            "Antwerpen"
+        ],
+        localContext: "residentiële buurten met vraag naar duurzame materialen, nette uitvoering en een premium uitstraling",
+        propertyFocus: "gezinswoningen, villa's en grondige gevel- of raamrenovaties",
+        priority: 0.93
+    },
+    {
+        slug: "malle",
+        name: "Malle",
+        nearby: [
+            "Westmalle",
+            "Oostmalle",
+            "Zoersel"
+        ],
+        localContext: "woningen waar energetische renovatie en een slimme combinatie van buitenschilwerken extra veel rendement opleveren",
+        propertyFocus: "eengezinswoningen, renovatieprojecten en uitbreidingen",
+        priority: 0.91
+    },
+    {
+        slug: "wijnegem",
+        name: "Wijnegem",
+        nearby: [
+            "Schilde",
+            "Wommelgem",
+            "Deurne"
+        ],
+        localContext: "een mix van bestaande woningen en recente verbouwingen waar comfort, EPC en strakke planning centraal staan",
+        propertyFocus: "rijwoningen, halfopen bebouwing en energetische upgrades",
+        priority: 0.89
+    },
+    {
+        slug: "antwerpen",
+        name: "Antwerpen",
+        nearby: [
+            "Borgerhout",
+            "Berchem",
+            "Merksem"
+        ],
+        localContext: "stadspanden en appartementen waar voorbereiding, bereikbaarheid en correcte uitvoering in een stedelijke context cruciaal zijn",
+        propertyFocus: "stadswoningen, appartementen en investeringspanden",
+        priority: 0.88
+    },
+    {
+        slug: "deurne",
+        name: "Deurne",
+        nearby: [
+            "Antwerpen",
+            "Wijnegem",
+            "Borsbeek"
+        ],
+        localContext: "veel rijwoningen waar geluidsdemping, isolatie en een doordachte renovatiefase meteen voelbaar zijn in dagelijks comfort",
+        propertyFocus: "rijwoningen, gezinswoningen en praktische renovaties",
+        priority: 0.86
+    },
+    {
+        slug: "merksem",
+        name: "Merksem",
+        nearby: [
+            "Antwerpen",
+            "Schoten",
+            "Ekeren"
+        ],
+        localContext: "renovaties waarbij budgetcontrole, snelle uitvoering en een betere buitenschil vaak samenkomen",
+        propertyFocus: "klassieke gezinswoningen en woningen met renovatiepotentieel",
+        priority: 0.84
+    },
+    {
+        slug: "kapellen",
+        name: "Kapellen",
+        nearby: [
+            "Brasschaat",
+            "Stabroek",
+            "Putte"
+        ],
+        localContext: "ruimere woningen waar duurzaamheid, afwerking en waardevaste materiaalkeuzes belangrijk blijven op lange termijn",
+        propertyFocus: "vrijstaande woningen, villa's en totaalprojecten",
+        priority: 0.82
+    },
+    {
+        slug: "schoten",
+        name: "Schoten",
+        nearby: [
+            "Brasschaat",
+            "Merksem",
+            "Wijnegem"
+        ],
+        localContext: "gezinswoningen en uitbreidingen waar ramen, gevel en renovatieplanning vaak in één logisch traject worden samengebracht",
+        propertyFocus: "gezinswoningen, verbouwingen en energetische verbeteringen",
+        priority: 0.8
+    }
+];
+const localSeoServices = [
+    {
+        slug: "renovatie",
+        name: "Renovatie",
+        hubPath: "/renovatie",
+        detailPath: "/diensten/renovatie",
+        detailLabel: "Bekijk onze renovatie-aanpak",
+        hubTitle: "Renovatie in Zoersel en regio Antwerpen",
+        hubDescription: "Lokale renovatiepagina&apos;s voor Zoersel, Schilde, Brasschaat, Malle, Wijnegem, Antwerpen, Deurne, Merksem, Kapellen en Schoten. Focus op renovatie, gevelwerken, ramen en totaalprojecten.",
+        hubIntro: [
+            "Yannova bouwt hiermee een consistente lokale SEO-structuur uit rond renovatie in de sterkste gemeenten rond Zoersel. Elke pagina koppelt renovatie aan concrete wooncontext, omliggende deelgemeenten en relevante interne links.",
+            "Dat maakt de site duidelijker voor Google en sterker voor bezoekers die zoeken op combinaties zoals renovatie Zoersel, aannemer Schilde of renovatiebedrijf Brasschaat."
+        ],
+        benefits: [
+            "Eén partner voor gevel, ramen en dakwerken",
+            "Energetische optimalisatie en EPC-verbetering",
+            "Strakke planning zonder leegstand tussen fases",
+            "Bouwkundig advies en vakkundige uitvoering"
+        ],
+        deliverables: [
+            "integrale buitenschil-renovatie",
+            "ramen en deuren",
+            "gevelisolatie en crepi",
+            "totaalrenovatie van interieur en technieken"
+        ],
+        focusSentence: "Wij realiseren zorgeloze totaalprojecten waarbij we de buitenschil en binnenafwerking technisch perfect op elkaar afstemmen.",
+        priceCue: "afhankelijk van omvang, technieken en afwerkingsniveau",
+        timeline: "een gefaseerde planning van enkele weken tot meerdere maanden",
+        keywordRoots: [
+            "renovatie",
+            "aannemer renovatie",
+            "renovatiebedrijf",
+            "verbouwing"
+        ],
+        extraKeywords: [
+            "totaalrenovatie",
+            "energetische renovatie",
+            "woning renoveren"
+        ],
+        getCityTitle: (city)=>`Renovatie ${city} | Aannemer Renovatie | Yannova`,
+        getCityDescription: (city)=>`Renovatie in ${city}? Yannova helpt met gevelrenovatie, ramen en deuren en totaalrenovaties. Vraag vandaag een offerte aan.`,
+        getCityHeading: (city)=>`Renovatie in ${city} door ervaren aannemer`
+    },
+    {
+        slug: "ramen-deuren",
+        name: "Ramen en deuren",
+        hubPath: "/ramen-deuren",
+        detailPath: "/diensten/ramen-deuren",
+        detailLabel: "Meer over ramen en deuren",
+        hubTitle: "Ramen en deuren in Zoersel en regio Antwerpen",
+        hubDescription: "Lokale landingspagina&apos;s voor ramen en deuren in de belangrijkste gemeenten rond Zoersel. Gericht op PVC, aluminium, hoogrendementsbeglazing en nette plaatsing.",
+        hubIntro: [
+            "Met deze hub bundelt Yannova de lokale pagina&apos;s voor ramen en deuren in de regio waar de meeste zoekvraag zit. Elke stadspagina focust op plaatsing, isolatie, veiligheid en de koppeling met andere renovatiewerken.",
+            "Zo ontstaat een duidelijke SEO-structuur rond termen als ramen en deuren Zoersel, ramen vervangen Brasschaat of buitenschrijnwerk Antwerpen."
+        ],
+        benefits: [
+            "PVC en aluminium profielen tot 7 kamers",
+            "Standaard HR++ of triple glas (HR+++)",
+            "Luchtdichte montage en gevelintegratie",
+            "Inbraakveilig beslag en topafwerking"
+        ],
+        deliverables: [
+            "PVC en aluminium ramen",
+            "hoogrendementsglas",
+            "voordeuren en schuiframen",
+            "perfecte aansluiting op gevelisolatie"
+        ],
+        focusSentence: "Wij combineren technische superioriteit met esthetiek, zodat uw nieuwe ramen perfect aansluiten op de isolatieschil van uw woning.",
+        priceCue: "afhankelijk van aantal openingen, materiaal, beglazing en afwerking",
+        timeline: "meestal 1 tot 3 plaatsingsdagen na opmeting en productie",
+        keywordRoots: [
+            "ramen en deuren",
+            "ramen vervangen",
+            "deuren plaatsen",
+            "buitenschrijnwerk"
+        ],
+        extraKeywords: [
+            "pvc ramen",
+            "aluminium ramen",
+            "triple glas",
+            "schuifdeur"
+        ],
+        getCityTitle: (city)=>`Ramen en deuren ${city} | Plaatsing op maat | Yannova`,
+        getCityDescription: (city)=>`Nieuwe ramen en deuren in ${city}? Yannova plaatst PVC en aluminium ramen, buitendeuren en schuiframen met professionele afwerking. Vraag een offerte aan.`,
+        getCityHeading: (city)=>`Ramen en deuren in ${city} laten plaatsen`
+    },
+    {
+        slug: "gevelrenovatie",
+        name: "Gevelrenovatie",
+        hubPath: "/gevelrenovatie",
+        detailPath: "/diensten/gevelrenovatie",
+        detailLabel: "Meer over gevelrenovatie",
+        hubTitle: "Gevelrenovatie in Zoersel en regio Antwerpen",
+        hubDescription: "Lokale SEO-pagina&apos;s voor gevelrenovatie in de sterkste gemeenten rond Zoersel. Gericht op gevelherstel, isolatie, crepi en duurzame buitenafwerking.",
+        hubIntro: [
+            "De gevel is vaak de eerste winst bij een renovatie. Deze hub groepeert lokale pagina&apos;s rond gevelrenovatie voor gemeenten waar veel gezocht wordt op gevelwerken, crepi en gevelisolatie.",
+            "Per stadspagina koppelen we gevelrenovatie aan de lokale woningvoorraad, omliggende buurten en de link met ramen, isolatie en totaalrenovatie."
+        ],
+        benefits: [
+            "Hoogwaardige siliconenharspleister (crepi)",
+            "Totaaloplossing: gevel, ramen en dak in één planning",
+            "Structurele verbetering van EPC en woningwaarde",
+            "Vakmanschap in detailafwerking rond dorpels en hoeken"
+        ],
+        deliverables: [
+            "gevelisolatie (EPS)",
+            "siliconenharspleister (crepi)",
+            "steenstrips met isolatie",
+            "totaalrenovatie van de buitenschil"
+        ],
+        focusSentence: "Wij maken uw woning future-proof met een doorlopende thermische schil en een onderhoudsvriendelijke afwerking die jarenlang mooi blijft.",
+        priceCue: "afhankelijk van oppervlakte, herstelwerk, isolatiedikte en gekozen afwerking",
+        timeline: "vaak 1 tot 3 weken afhankelijk van voorbereidende werken en weersomstandigheden",
+        keywordRoots: [
+            "gevelrenovatie",
+            "gevelwerken",
+            "gevel herstellen",
+            "gevel isoleren"
+        ],
+        extraKeywords: [
+            "crepi",
+            "gevelisolatie",
+            "gevelafwerking"
+        ],
+        getCityTitle: (city)=>`Gevelrenovatie ${city} | Crepi en gevelwerken | Yannova`,
+        getCityDescription: (city)=>`Gevelrenovatie in ${city}? Yannova verzorgt gevelherstel, isolatie en crepi-afwerking voor woningen in ${city} en omgeving. Vraag een vrijblijvende offerte aan.`,
+        getCityHeading: (city)=>`Gevelrenovatie in ${city} met duurzame afwerking`
+    },
+    {
+        slug: "crepi-gevel",
+        name: "Crepi gevel",
+        hubPath: "/crepi-gevel",
+        detailPath: "/diensten/gevelrenovatie",
+        detailLabel: "Meer over crepi en gevelafwerking",
+        hubTitle: "Crepi gevels in Zoersel en regio Antwerpen",
+        hubDescription: "Gerichte lokale pagina&apos;s voor crepi gevelafwerking in Zoersel en de omliggende zoekregio. Focus op strakke afwerking, kleurkeuze, isolatie en onderhoudsarme gevels.",
+        hubIntro: [
+            "Crepi wordt vaak afzonderlijk gezocht, los van het bredere begrip gevelrenovatie. Daarom krijgt crepi hier een eigen lokale SEO-structuur met expliciete stadspagina&apos;s.",
+            "Die pagina&apos;s ondersteunen zoekopdrachten zoals crepi gevel Zoersel, crepi Schilde of gevelbepleistering Brasschaat en linken tegelijk slim door naar gevelrenovatie en totaalrenovatie."
+        ],
+        benefits: [
+            "Zelfreinigende siliconenharspleister",
+            "Eliminatie van koudebruggen via gevelisolatie",
+            "Eén aanspreekpunt voor gevel, ramen en dak",
+            "Keuze uit honderden kleurvaste afwerkingen"
+        ],
+        deliverables: [
+            "crepi-afwerking (siliconen)",
+            "gevelisolatie op maat",
+            "kleuradvies",
+            "perfecte aansluiting op ramen en dorpels"
+        ],
+        focusSentence: "Onze focus ligt op een technisch perfecte opbouw die uw energiefactuur verlaagt en uw gevel een moderne, onderhoudsarme uitstraling geeft.",
+        priceCue: "afhankelijk van de oppervlakte, gewenste structuur, ondergrond en combinatie met isolatie",
+        timeline: "meestal 1 tot 2 weken inclusief voorbereiding en afwerking",
+        keywordRoots: [
+            "crepi gevel",
+            "crepi",
+            "gevelbepleistering",
+            "sierpleister"
+        ],
+        extraKeywords: [
+            "gevelisolatie",
+            "crepi afwerking",
+            "buitengevel"
+        ],
+        getCityTitle: (city)=>`Crepi gevel ${city} | Gevelafwerking en isolatie | Yannova`,
+        getCityDescription: (city)=>`Crepi gevel in ${city}? Kies voor een strakke gevelafwerking met isolatie, kleuradvies en vakkundige uitvoering door Yannova. Vraag uw offerte aan.`,
+        getCityHeading: (city)=>`Crepi gevel in ${city} voor een nieuwe uitstraling`
+    },
+    {
+        slug: "totaalrenovatie",
+        name: "Totaalrenovatie",
+        hubPath: "/totaalrenovatie",
+        detailPath: "/diensten/renovatie",
+        detailLabel: "Meer over totaalrenovatie",
+        hubTitle: "Totaalrenovatie in Zoersel en regio Antwerpen",
+        hubDescription: "Lokale SEO-pagina&apos;s voor totaalrenovatie in de gemeenten met de meeste zoekvraag rond Zoersel. Focus op coördinatie, planning en één vast aanspreekpunt van start tot oplevering.",
+        hubIntro: [
+            "Totaalrenovatie vraagt meer dan losse aannemingswerken. Deze hub zet daarom in op lokale pagina&apos;s die het volledige traject uitleggen voor gemeenten waar eigenaars gericht zoeken naar één partner.",
+            "Zo worden zoektermen zoals totaalrenovatie Zoersel, totaalrenovatie Antwerpen of renovatiebedrijf Schoten beter ondersteund door duidelijke landingspagina&apos;s en interne links."
+        ],
+        benefits: [
+            "Eén partner voor gevel, ramen en dakwerken",
+            "Energetische optimalisatie (EPC-upgrades)",
+            "Vaste projectleider van start tot oplevering",
+            "Gecoördineerde planning zonder tijdverlies"
+        ],
+        deliverables: [
+            "integrale aanpak buitenschil",
+            "technieken en binnenafwerking",
+            "ramen, deuren en gevelisolatie",
+            "totaalprojectbegeleiding"
+        ],
+        focusSentence: "Wij realiseren complete woningtransformaties waarbij techniek, isolatie en esthetiek naadloos op elkaar aansluiten.",
+        priceCue: "afhankelijk van de omvang van het project, technieken, materiaalkeuzes en gewenste afwerkingsgraad",
+        timeline: "meestal een gefaseerde planning over meerdere weken of maanden",
+        keywordRoots: [
+            "totaalrenovatie",
+            "woningrenovatie",
+            "volledige renovatie",
+            "renovatiebedrijf"
+        ],
+        extraKeywords: [
+            "aannemer",
+            "energetische renovatie",
+            "coördinatie renovatie"
+        ],
+        getCityTitle: (city)=>`Totaalrenovatie ${city} | Eén aanspreekpunt | Yannova`,
+        getCityDescription: (city)=>`Totaalrenovatie in ${city}? Yannova coördineert uw renovatie van afbraak tot afwerking met één vast aanspreekpunt. Vraag een vrijblijvende offerte aan.`,
+        getCityHeading: (city)=>`Totaalrenovatie in ${city} met strakke opvolging`
+    }
+];
+const orderedServiceSlugs = [
+    ...localSeoServices
+].map((service)=>service.slug).sort((left, right)=>right.length - left.length);
+function getLocalSeoService(serviceSlug) {
+    return localSeoServices.find((service)=>service.slug === serviceSlug) ?? null;
+}
+function getLocalSeoCity(citySlug) {
+    return priorityCities.find((city)=>city.slug === citySlug) ?? null;
+}
+function getLocalSeoPagePath(serviceSlug, citySlug) {
+    return `/${serviceSlug}-${citySlug}`;
+}
+function getLocalSeoPageSlugs() {
+    return localSeoServices.flatMap((service)=>priorityCities.map((city)=>`${service.slug}-${city.slug}`));
+}
+function getServiceHubLinks() {
+    return localSeoServices.map((service)=>({
+            label: service.name,
+            href: service.hubPath,
+            description: `${service.name} in Zoersel en regio Antwerpen`
+        }));
+}
+function buildKeywords(service, city) {
+    const cityName = city.name.toLowerCase();
+    return Array.from(new Set([
+        ...service.keywordRoots.map((root)=>`${root} ${cityName}`),
+        ...service.keywordRoots.map((root)=>`${root} ${cityName} prijs`),
+        ...service.extraKeywords.map((keyword)=>`${keyword} ${cityName}`),
+        `aannemer ${cityName}`,
+        `${service.name.toLowerCase()} ${cityName}`
+    ]));
+}
+function buildFaqs(service, city) {
+    return [
+        {
+            question: `Wat kost ${service.name.toLowerCase()} in ${city.name}?`,
+            answer: `De prijs voor ${service.name.toLowerCase()} in ${city.name} is ${service.priceCue}. Na een plaatsbezoek krijgt u van Yannova een duidelijke offerte op maat van uw woning en planning.`
+        },
+        {
+            question: `Hoe snel kunnen jullie starten in ${city.name}?`,
+            answer: `Na een eerste opname in ${city.name} ontvangt u snel een voorstel met aanpak en timing. Voor ${service.name.toLowerCase()} rekenen we meestal op ${service.timeline}.`
+        },
+        {
+            question: `Werken jullie enkel in ${city.name}?`,
+            answer: `Nee. Yannova werkt naast ${city.name} ook in ${city.nearby.join(", ")} en andere gemeenten rond Zoersel en de Antwerpse rand.`
+        },
+        {
+            question: `Kunnen jullie ${service.name.toLowerCase()} combineren met andere werken?`,
+            answer: `Ja. We combineren ${service.name.toLowerCase()} geregeld met ramen en deuren, gevelwerken of een bredere renovatiefase zodat planning, budget en afwerking logisch op elkaar aansluiten.`
+        }
+    ];
+}
+function parseLocalSeoSlug(seoSlug) {
+    for (const serviceSlug of orderedServiceSlugs){
+        const prefix = `${serviceSlug}-`;
+        if (!seoSlug.startsWith(prefix)) {
+            continue;
+        }
+        const citySlug = seoSlug.slice(prefix.length);
+        const service = getLocalSeoService(serviceSlug);
+        const city = getLocalSeoCity(citySlug);
+        if (service && city) {
+            return {
+                service,
+                city
+            };
+        }
+    }
+    return null;
+}
+function getSameCityPages(city, currentServiceSlug) {
+    return localSeoServices.filter((service)=>service.slug !== currentServiceSlug).map((service)=>({
+            label: `${service.name} ${city.name}`,
+            href: getLocalSeoPagePath(service.slug, city.slug),
+            description: `${service.name} in ${city.name} en omgeving`
+        }));
+}
+function getSameServicePages(service, currentCitySlug) {
+    return priorityCities.filter((city)=>city.slug !== currentCitySlug).sort((left, right)=>right.priority - left.priority).map((city)=>({
+            label: `${service.name} ${city.name}`,
+            href: getLocalSeoPagePath(service.slug, city.slug),
+            description: `${service.name} in ${city.name}`
+        }));
+}
+function getHubCityLinks(serviceSlug) {
+    const service = getLocalSeoService(serviceSlug);
+    if (!service) {
+        return [];
+    }
+    return priorityCities.map((city)=>({
+            label: `${service.name} ${city.name}`,
+            href: getLocalSeoPagePath(service.slug, city.slug),
+            description: city.localContext
+        }));
+}
+function getLocalSeoHubSeoInput(serviceSlug) {
+    const service = getLocalSeoService(serviceSlug);
+    if (!service) {
+        return null;
+    }
+    return {
+        title: service.hubTitle,
+        description: service.hubDescription,
+        path: service.hubPath,
+        keywords: priorityCities.flatMap((city)=>[
+                `${service.name.toLowerCase()} ${city.name.toLowerCase()}`,
+                `${service.name.toLowerCase()} ${city.name.toLowerCase()} offerte`
+            ])
+    };
+}
+function getLocalSeoPageBySlug(seoSlug) {
+    const parsed = parseLocalSeoSlug(seoSlug);
+    if (!parsed) {
+        return null;
+    }
+    const { service, city } = parsed;
+    const sameCityPages = getSameCityPages(city, service.slug);
+    const sameServicePages = getSameServicePages(service, city.slug);
+    return {
+        slug: seoSlug,
+        path: getLocalSeoPagePath(service.slug, city.slug),
+        title: service.getCityTitle(city.name),
+        description: service.getCityDescription(city.name),
+        h1: service.getCityHeading(city.name),
+        keywords: buildKeywords(service, city),
+        heroDescription: `${service.name} in ${city.name}? Yannova helpt met ${service.deliverables.join(", ")}. ${service.focusSentence}`,
+        introParagraphs: [
+            `Bent u op zoek naar een betrouwbare partner voor ${service.name.toLowerCase()} in ${city.name}? Yannova begeleidt eigenaars in ${city.name} met ${service.deliverables[0]}, ${service.deliverables[1]} en een aanpak die past bij ${city.propertyFocus}.`,
+            `In ${city.name} zien we ${city.localContext}. Daarom vertrekken wij niet vanuit standaardoplossingen, maar vanuit de bestaande toestand van uw woning, de gewenste timing en het rendement op lange termijn.`
+        ],
+        planningParagraphs: [
+            `Tijdens een plaatsbezoek in ${city.name} bekijken we de huidige situatie, de technische aandachtspunten en de volgorde van de werken. Daarna ontvangt u een duidelijke offerte met advies over materiaalkeuze, afwerking en uitvoering.`,
+            `Yannova werkt geregeld in ${city.name} en omliggende gemeenten zoals ${city.nearby.join(", ")}. Daardoor kunnen we realistische termijnen voorstellen en ${service.name.toLowerCase()} in ${city.name} logisch laten aansluiten op uw woningtype en planning.`
+        ],
+        combinationParagraphs: [
+            `Veel projecten in ${city.name} combineren ${service.name.toLowerCase()} met ${sameCityPages.slice(0, 2).map((link)=>link.label.toLowerCase()).join(" en ")}. Door die werken op elkaar af te stemmen, vermijdt u dubbele kosten en krijgt u een consistenter eindresultaat.`,
+            `Wie in ${city.name} renoveert, wint vaak tegelijk op comfort, EPC, onderhoud en uitstraling wanneer ramen, gevel en renovatieplanning samen bekeken worden. Dat is precies waar Yannova het verschil maakt met een lokale en praktische aanpak.`
+        ],
+        areaParagraph: `${city.name} is voor Yannova een strategisch werkgebied binnen de regio rond Zoersel. We zijn ook actief in ${city.nearby.join(", ")} en andere buurten waar ${city.propertyFocus} sterk vertegenwoordigd zijn.`,
+        faqs: buildFaqs(service, city),
+        city,
+        service,
+        sameCityPages,
+        sameServicePages,
+        serviceHubLinks: getServiceHubLinks()
+    };
+}
+}),
+"[project]/src/lib/data/blog-posts.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "blogPosts",
+    ()=>blogPosts,
+    "getBlogIndexPosts",
+    ()=>getBlogIndexPosts,
+    "getBlogPostBySlug",
+    ()=>getBlogPostBySlug,
+    "getDynamicBlogPosts",
+    ()=>getDynamicBlogPosts,
+    "getRelatedBlogPosts",
+    ()=>getRelatedBlogPosts
+]);
+const blogPosts = [
+    {
+        slug: "prijs-renovatie-zoersel",
+        title: "Wat kost renovatie in Zoersel in 2026?",
+        excerpt: "Prijsrichtlijnen voor renovatie in Zoersel: van ramen en gevel tot totaalrenovatie en slimme fasering.",
+        description: "Ontdek wat renovatie in Zoersel kost in 2026. Inclusief prijsvoorbeelden voor ramen, gevelrenovatie en totaalrenovatie, plus de factoren die uw budget beïnvloeden.",
+        date: "2026-03-12",
+        readTime: "7 min",
+        category: "Prijzen",
+        keywords: [
+            "prijs renovatie zoersel",
+            "renovatie zoersel prijs",
+            "totaalrenovatie zoersel",
+            "aannemer zoersel"
+        ],
+        serviceTags: [
+            "renovatie",
+            "totaalrenovatie",
+            "ramen-deuren",
+            "gevelrenovatie"
+        ],
+        cityTags: [
+            "zoersel"
+        ],
+        dynamic: true,
+        intro: "Wie zoekt op renovatie Zoersel wil meestal geen algemene richtprijzen, maar een realistisch budget voor een woning in de eigen regio. In deze gids zetten we de belangrijkste prijsblokken op een rij en leggen we uit hoe u werken slim kunt faseren.",
+        keyPoints: [
+            "Gerichte renovatiewerken: vanaf ongeveer €8.000",
+            "Gevelrenovatie met isolatie: vaak €80 tot €150 per m²",
+            "Nieuwe ramen en deuren: afhankelijk van materiaal, glas en aantal openingen",
+            "Totaalrenovatie: budget wordt bepaald door technieken, afwerking en volgorde van de werken"
+        ],
+        sections: [
+            {
+                title: "Welke renovatiewerken worden het vaakst gecombineerd in Zoersel?",
+                paragraphs: [
+                    "In Zoersel zien we vaak renovatieprojecten waarbij de buitenschil centraal staat: nieuwe ramen en deuren, gevelisolatie, crepi of een grotere totaalrenovatie waarin ook binnenafwerking wordt meegenomen.",
+                    "Omdat veel woningen in en rond Zoersel vrijstaand of halfopen zijn, loont het meestal om niet alleen naar één onderdeel te kijken. Wie ramen, gevel en algemene renovatiewerken samen bekijkt, haalt doorgaans een beter resultaat op vlak van comfort, EPC en planning."
+                ],
+                bullets: [
+                    "Ramen en deuren vervangen om warmteverlies en tocht te beperken",
+                    "Gevelrenovatie met isolatie om de buitenschil energetisch te verbeteren",
+                    "Gefaseerde renovatie waarbij budget per fase wordt bewaakt"
+                ]
+            },
+            {
+                title: "Richtprijzen per type werk",
+                paragraphs: [
+                    "Voor kleinere renovatiewerken of een duidelijke eerste fase start het budget vaak vanaf een paar duizend euro, maar zodra meerdere onderdelen samenkomen, stijgt de kost snel door voorbereiding, materiaal en afwerking.",
+                    "Nieuwe ramen en deuren worden geprijsd op basis van materiaal, glas, afmetingen en afwerking. Gevelrenovatie hangt vooral af van oppervlakte, isolatiedikte, herstelwerk en gekozen afwerking. Bij totaalrenovatie spelen technieken, afbraak, planning en binnenafwerking een veel grotere rol."
+                ],
+                bullets: [
+                    "Ramen en deuren: prijs hangt sterk af van PVC of aluminium en het aantal openingen",
+                    "Gevelrenovatie: reken op een prijs per m², afhankelijk van herstel en isolatie",
+                    "Totaalrenovatie: budget op projectbasis met duidelijke fases en keuzes"
+                ]
+            },
+            {
+                title: "Wat duwt het budget omhoog?",
+                paragraphs: [
+                    "De grootste budgetversnellers zijn bijna altijd verborgen gebreken, bijkomende voorbereidende werken en te late beslissingen tijdens de uitvoering. Daarom is een goede opname vooraf essentieel.",
+                    "Ook materiaalkeuze maakt een groot verschil. Aluminium ramen, zwaardere isolatiepakketten of een hogere afwerkingsgraad zijn logisch wanneer de woning en het doel dat vragen, maar ze moeten wel in verhouding staan tot het totale project."
+                ]
+            },
+            {
+                title: "Hoe houdt u renovatie in Zoersel financieel beheersbaar?",
+                paragraphs: [
+                    "De meest efficiënte aanpak is meestal starten met de buitenschil: ramen, deuren, gevel en isolatie. Daarna volgen technieken en binnenafwerking. Zo vermijdt u dat afgewerkte ruimtes later opnieuw open moeten.",
+                    "Vraag ook altijd naar scenario's. Een offerte met een basisaanpak, een energetische upgrade en een totaaltraject maakt het eenvoudiger om het juiste evenwicht te vinden tussen investering en rendement."
+                ]
+            },
+            {
+                title: "Wanneer is een offerte echt bruikbaar?",
+                paragraphs: [
+                    "Een bruikbare offerte is meer dan een totaalprijs. Ze splitst materialen, voorbereiding, uitvoering en afwerking op, en ze maakt duidelijk welke keuzes nog openstaan.",
+                    "Voor renovatie in Zoersel is het zinvol om zowel de werken op korte termijn als de logische volgende fase mee te bespreken. Dat voorkomt dat u vandaag goedkopere keuzes maakt die later extra kosten veroorzaken."
+                ]
+            }
+        ],
+        ctaTitle: "Renovatie in Zoersel bespreken?",
+        ctaText: "Yannova bekijkt graag welke combinatie van ramen, gevel en renovatiewerken voor uw woning in Zoersel het meeste effect geeft.",
+        relatedSlugs: [
+            "prijs-renovatie-zoersel",
+            "energie-renovatie-premie-belgie",
+            "hoeveel-kost-gevelrenovatie"
+        ]
+    },
+    {
+        slug: "ramen-vervangen-prijs-antwerpen",
+        title: "Ramen vervangen prijs in Antwerpen: waar moet u op rekenen?",
+        excerpt: "Wat kost ramen vervangen in Antwerpen, welke factoren bepalen de prijs en wanneer loont PVC of aluminium?",
+        description: "Ontdek de prijs van ramen vervangen in Antwerpen. We bekijken materiaal, glas, plaatsing, stadswoningen en slimme keuzes voor renovatieprojecten.",
+        date: "2026-03-12",
+        readTime: "6 min",
+        category: "Prijzen",
+        keywords: [
+            "ramen vervangen prijs antwerpen",
+            "ramen antwerpen prijs",
+            "pvc ramen antwerpen",
+            "aluminium ramen antwerpen"
+        ],
+        serviceTags: [
+            "ramen-deuren"
+        ],
+        cityTags: [
+            "antwerpen",
+            "deurne",
+            "merksem"
+        ],
+        dynamic: true,
+        intro: "Bij ramen vervangen in Antwerpen is de context minstens even belangrijk als het product zelf. Stadspanden, rijwoningen en appartementen vragen een andere voorbereiding dan een vrijstaande woning, en dat ziet u ook terug in de prijs.",
+        keyPoints: [
+            "PVC is meestal de meest budgetvriendelijke keuze",
+            "Aluminium wordt vaak gekozen bij grotere glaspartijen en strakkere architectuur",
+            "Plaatsing in stedelijke context vraagt extra aandacht voor bereikbaarheid en afwerking",
+            "Goede ramen leveren niet alleen comfort op, maar ook winst op EPC en geluidsdemping"
+        ],
+        sections: [
+            {
+                title: "Welke prijsfactoren zijn in Antwerpen doorslaggevend?",
+                paragraphs: [
+                    "De kost van ramen vervangen in Antwerpen wordt vooral bepaald door materiaal, beglazing, afmetingen, bereikbaarheid en de staat van de bestaande openingen.",
+                    "Bij stadswoningen zien we vaker extra werk rond afbraak, transport, beperkte toegang en afwerking. Daardoor ligt de prijs niet alleen vast in het raam zelf, maar ook in de plaatsingscontext."
+                ]
+            },
+            {
+                title: "PVC of aluminium: wanneer kiest u wat?",
+                paragraphs: [
+                    "PVC is bijzonder sterk als u prijs, isolatie en onderhoudsgemak wilt combineren. Voor veel rijwoningen en renovatieprojecten in Antwerpen blijft het de meest rationele keuze.",
+                    "Aluminium wordt interessanter bij grotere raamoppervlaktes, slanke profielen en een meer architecturale uitstraling. Het prijsverschil is reëel, maar kan verantwoord zijn wanneer lichtinval en design zwaarder wegen."
+                ],
+                bullets: [
+                    "PVC: sterk op budget, isolatie en onderhoud",
+                    "Aluminium: sterk op design, glasoppervlak en strakke afwerking",
+                    "De juiste keuze hangt af van woningtype, gewenste stijl en totaalbudget"
+                ]
+            },
+            {
+                title: "Wat zit meestal in de prijs inbegrepen?",
+                paragraphs: [
+                    "Een goede prijsinschatting omvat meer dan de levering van nieuwe ramen. Demontage van oude profielen, transport, plaatsing, aansluiting, afwerking en eventuele dorpels of vensterbanken bepalen mee het totale plaatje.",
+                    "Vraag daarom altijd na wat exact inbegrepen is. Een scherpe prijs zonder degelijke afwerking of duidelijke plaatsingsmethode is zelden de beste investering."
+                ]
+            },
+            {
+                title: "Wanneer loont ramen vervangen het meest?",
+                paragraphs: [
+                    "Ramen vervangen loont het hardst wanneer bestaande profielen tocht veroorzaken, de beglazing verouderd is of de gevel toch al aangepakt wordt. In die gevallen vermijdt u dubbel werk en verbetert u de woning in één beweging.",
+                    "In Antwerpen wordt ramen vervangen ook vaak gekoppeld aan geluidscomfort. Zeker aan drukkere assen maken betere profielen en glas een voelbaar verschil."
+                ]
+            },
+            {
+                title: "Hoe vraagt u een correcte offerte aan?",
+                paragraphs: [
+                    "Geef naast afmetingen ook context mee: woningtype, verdieping, bereikbaarheid en gewenste afwerking. Dat helpt om sneller een bruikbare en realistische offerte te krijgen.",
+                    "Wie twijfelt tussen PVC en aluminium doet er goed aan beide scenario's naast elkaar te laten prijzen. Zo vergelijkt u niet alleen de investering, maar ook het effect op comfort en uitstraling."
+                ]
+            }
+        ],
+        ctaTitle: "Prijs voor ramen vervangen in Antwerpen kennen?",
+        ctaText: "Yannova maakt graag een duidelijke prijsinschatting voor uw woning in Antwerpen, Deurne, Merksem of omliggende buurten.",
+        relatedSlugs: [
+            "wat-kosten-nieuwe-ramen",
+            "pvc-of-aluminium-ramen",
+            "premies-ramen-deuren-2026"
+        ]
+    },
+    {
+        slug: "crepi-gevel-voordelen",
+        title: "Crepi gevel voordelen: wanneer is crepi de juiste keuze?",
+        excerpt: "De voordelen van crepi op een rij: uitstraling, isolatie, onderhoud en de situaties waarin crepi echt loont.",
+        description: "Ontdek de voordelen van een crepi gevel. Wanneer is crepi slim, hoe combineert u het met isolatie en waar moet u op letten bij afwerking en onderhoud?",
+        date: "2026-03-12",
+        readTime: "6 min",
+        category: "Advies",
+        keywords: [
+            "crepi gevel voordelen",
+            "crepi gevel",
+            "voordelen crepi",
+            "gevelrenovatie crepi"
+        ],
+        serviceTags: [
+            "crepi-gevel",
+            "gevelrenovatie"
+        ],
+        dynamic: true,
+        intro: "Crepi is populair omdat het tegelijk een esthetische en technische oplossing kan zijn. U geeft uw woning een nieuwe uitstraling, en als u crepi combineert met buitenisolatie verbetert u ook de energieprestatie van de gevel.",
+        keyPoints: [
+            "Crepi geeft een bestaande woning snel een strakke, hedendaagse uitstraling",
+            "De afwerking combineert goed met buitenisolatie",
+            "Een correcte opbouw en detailafwerking zijn bepalend voor duurzaamheid",
+            "Crepi is vooral interessant wanneer gevelbeeld en energieprestatie samen belangrijk zijn"
+        ],
+        sections: [
+            {
+                title: "Waarom kiezen zoveel eigenaars voor crepi?",
+                paragraphs: [
+                    "Crepi maakt het mogelijk om een verouderde gevel visueel volledig te vernieuwen zonder de woning structureel te veranderen. Dat is een groot voordeel bij renovaties waar de basis nog goed is, maar de gevel gedateerd oogt.",
+                    "Bovendien laat crepi zich perfect combineren met buitenisolatie. Daardoor is het niet alleen een esthetische keuze, maar ook een functionele investering in comfort en energieverbruik."
+                ]
+            },
+            {
+                title: "Welke voordelen merkt u in de praktijk?",
+                paragraphs: [
+                    "Het eerste voordeel is uitstraling. Een woning met een goed afgewerkte crepi-gevel oogt meteen verzorgd en eigentijds. Daarnaast voelt de woning vaak comfortabeler aan wanneer de gevel tegelijk geïsoleerd wordt.",
+                    "Ook onderhoud speelt mee. Een kwalitatieve crepi-opbouw met aangepaste detaillering rond dorpels, plinten en aansluitingen blijft lang mooi en is relatief eenvoudig proper te houden."
+                ],
+                bullets: [
+                    "Nieuwe uitstraling zonder volledige heropbouw van de gevel",
+                    "Combineerbaar met gevelisolatie voor beter EPC",
+                    "Minder warmteverlies en meer wooncomfort",
+                    "Kleur- en structuurkeuze afgestemd op de woning"
+                ]
+            },
+            {
+                title: "Wanneer is crepi minder geschikt?",
+                paragraphs: [
+                    "Crepi is niet voor elke gevel automatisch de beste oplossing. Wanneer de ondergrond instabiel is, er zware vochtproblemen spelen of het architecturale karakter van de woning om een andere afwerking vraagt, moet eerst technisch bekeken worden wat haalbaar is.",
+                    "Daarom is een plaatsbezoek cruciaal. Het gaat niet alleen om kleur en look, maar om de volledige opbouw van de gevel en de kwaliteit van de detaillering."
+                ]
+            },
+            {
+                title: "Wat bepaalt de levensduur?",
+                paragraphs: [
+                    "De duurzaamheid van crepi zit in de voorbereiding: correcte isolatieplaten, een degelijke wapening, de juiste basislagen en zorgvuldige afwerking aan alle randen en aansluitingen.",
+                    "Ook waterafvoer is essentieel. Slechte detaillering aan vensterbanken, dakranden of plinten is een veel grotere risicofactor dan het crepi-materiaal zelf."
+                ]
+            },
+            {
+                title: "Hoe maakt u de juiste keuze?",
+                paragraphs: [
+                    "Bekijk crepi altijd in functie van de totale woning. Past het bij de architectuur, wilt u tegelijk isoleren en is een strakke buitenafwerking een prioriteit? Dan is crepi vaak een zeer sterke optie.",
+                    "Laat altijd een scenario vergelijken met en zonder isolatie. Zo ziet u meteen wat het verschil is in investering, uitstraling en energetische winst."
+                ]
+            }
+        ],
+        ctaTitle: "Twijfelt u of crepi bij uw gevel past?",
+        ctaText: "Yannova bekijkt graag ter plaatse of crepi, gevelisolatie of een bredere gevelrenovatie de juiste stap is voor uw woning.",
+        relatedSlugs: [
+            "hoeveel-kost-gevelrenovatie",
+            "renovatie-vergunning-antwerpen",
+            "energie-renovatie-premie-belgie"
+        ]
+    },
+    {
+        slug: "renovatie-vergunning-antwerpen",
+        title: "Renovatie vergunning Antwerpen: wanneer moet u opletten?",
+        excerpt: "Niet elke renovatie in Antwerpen vraagt een vergunning, maar bij gevelwijzigingen en grotere werken is voorbereiding cruciaal.",
+        description: "Lees wanneer u in Antwerpen een vergunning of meldingsplicht moet bekijken bij renovatie, gevelwerken, ramen en totaalprojecten.",
+        date: "2026-03-12",
+        readTime: "6 min",
+        category: "Advies",
+        keywords: [
+            "renovatie vergunning antwerpen",
+            "gevelrenovatie vergunning antwerpen",
+            "omgevingsvergunning renovatie antwerpen"
+        ],
+        serviceTags: [
+            "renovatie",
+            "totaalrenovatie",
+            "gevelrenovatie",
+            "ramen-deuren"
+        ],
+        cityTags: [
+            "antwerpen"
+        ],
+        dynamic: true,
+        intro: "Bij renovatie in Antwerpen is technische voorbereiding niet genoeg. Zeker in stedelijke context moet u ook goed inschatten of een omgevingsvergunning, melding of voorafgaand advies nodig is.",
+        keyPoints: [
+            "Interne werken zijn vaak eenvoudiger dan zichtbare wijzigingen aan de gevel",
+            "Ramen, deuren en gevelaanpassingen aan straatzijde vragen extra aandacht",
+            "Ook beschermd erfgoed of specifieke zones kunnen de regels verstrengen",
+            "Een goede voorbereiding voorkomt stilstand en herwerk"
+        ],
+        sections: [
+            {
+                title: "Welke renovaties zijn meestal eenvoudig?",
+                paragraphs: [
+                    "Veel zuiver interne vernieuwingen vallen buiten de zwaardere vergunningsplicht, zolang u geen structurele of stedenbouwkundige wijzigingen doorvoert. Denk aan afwerking, beperkte vernieuwing of het vervangen van technieken zonder impact op het uitzicht van de woning.",
+                    "Zodra de buitenschil verandert of het volume aangepast wordt, stijgt de kans dat u regels, meldingen of vergunningen moet bekijken."
+                ]
+            },
+            {
+                title: "Waar zitten de gevoeligste punten in Antwerpen?",
+                paragraphs: [
+                    "Gevelwijzigingen aan de straatzijde, ingrepen aan ramen en deuren die het uitzicht veranderen, uitbreidingen en ingrepen in beschermde of gevoelige zones verdienen altijd extra aandacht.",
+                    "In Antwerpen speelt ook de stedelijke context mee. Wat in een randgemeente sneller kan, vraagt in de stad soms bijkomend overleg of een andere uitwerking."
+                ],
+                bullets: [
+                    "Wijziging van uitzicht aan straatzijde",
+                    "Grotere ingrepen aan volume of dak",
+                    "Werken in zones met erfgoed- of beeldkwaliteitsregels"
+                ]
+            },
+            {
+                title: "Waarom is dit ook belangrijk voor prijs en planning?",
+                paragraphs: [
+                    "Een vergunningstraject of bijkomende voorbereiding heeft impact op de timing. Daarom moet dit vroeg in het project bekeken worden, zeker als meerdere werken samenlopen.",
+                    "Wie pas tijdens de uitvoering vaststelt dat een aanpassing niet zomaar kan, riskeert vertraging, bijkomende kosten en wijzigingen in materiaal of detailafwerking."
+                ]
+            },
+            {
+                title: "Hoe pakt u dit praktisch aan?",
+                paragraphs: [
+                    "Werk met duidelijke foto's, beschrijf de bestaande toestand en wees concreet over wat u wil aanpassen. Bij ramen en deuren is het bijvoorbeeld nuttig om exact aan te geven of het uitzicht, de indeling of de kleur verandert.",
+                    "Voor grotere trajecten is het verstandig om eerst een technisch en stedenbouwkundig haalbaar scenario vast te leggen, en pas daarna de uitvoering te plannen."
+                ]
+            },
+            {
+                title: "Wat kan Yannova hierin betekenen?",
+                paragraphs: [
+                    "Yannova begeleidt renovatieprojecten praktisch: we bekijken welke werken logisch samen horen, waar de gevoeligheden zitten en welke voorbereiding nodig is om zonder verrassingen te starten.",
+                    "Voor Antwerpen is die voorbereiding extra waardevol, omdat timing, bereikbaarheid en regelgeving samen het verschil maken tussen een vlot project en een stilgevallen planning."
+                ]
+            }
+        ],
+        ctaTitle: "Renovatieproject in Antwerpen opstarten?",
+        ctaText: "We bekijken graag samen welke werken technisch en praktisch logisch zijn, en waar u vooraf rekening mee moet houden.",
+        relatedSlugs: [
+            "prijs-renovatie-zoersel",
+            "crepi-gevel-voordelen",
+            "ramen-vervangen-prijs-antwerpen"
+        ]
+    },
+    {
+        slug: "energie-renovatie-premie-belgie",
+        title: "Energie renovatie premie België: welke werken leveren het meeste op?",
+        excerpt: "Niet elke premie is even interessant. Dit zijn de renovatiewerken die meestal het sterkste rendement geven op comfort en subsidie.",
+        description: "Overzicht van energiegerichte renovatiepremies in België en Vlaanderen, en welke werken meestal het meeste opleveren voor eigenaars.",
+        date: "2026-03-12",
+        readTime: "7 min",
+        category: "Premies",
+        keywords: [
+            "energie renovatie premie belgië",
+            "renovatie premie belgie",
+            "mijn verbouwpremie",
+            "premie ramen deuren gevel"
+        ],
+        serviceTags: [
+            "renovatie",
+            "ramen-deuren",
+            "gevelrenovatie",
+            "crepi-gevel",
+            "totaalrenovatie"
+        ],
+        dynamic: true,
+        intro: "Premies zijn interessant, maar ze zijn zelden de enige reden om te renoveren. De echte winst zit in de combinatie van subsidie, lager verbruik, meer comfort en een sterkere woningwaarde.",
+        keyPoints: [
+            "Buitenschilwerken geven meestal de grootste combinatie van subsidie en energiewinst",
+            "Ramen, deuren en gevelisolatie zijn vaak de eerste logische stap",
+            "Premies zijn pas interessant als de technische oplossing ook echt bij de woning past",
+            "Een goede volgorde van werken voorkomt dat u subsidie misloopt of dubbel werk betaalt"
+        ],
+        sections: [
+            {
+                title: "Waarom eerst naar de buitenschil kijken?",
+                paragraphs: [
+                    "Bij veel woningen zit de grootste energetische winst in ramen, deuren, gevel en isolatie. Dat zijn ook precies de werken die vaak in aanmerking komen voor premie-ondersteuning.",
+                    "Wie eerst de buitenschil op orde zet, krijgt niet alleen meer comfort, maar vermijdt ook dat latere investeringen minder efficiënt worden door warmteverlies of verouderde openingen."
+                ]
+            },
+            {
+                title: "Welke werken leveren meestal het meeste op?",
+                paragraphs: [
+                    "Nieuwe ramen en deuren zijn sterk wanneer de bestaande profielen verouderd zijn of de beglazing nog zwak presteert. Gevelisolatie en crepi worden interessant wanneer de woning veel warmte verliest via de buitenmuren en de uitstraling tegelijk een upgrade mag krijgen.",
+                    "In grotere trajecten maakt totaalrenovatie het mogelijk om meerdere premiegeschikte werken logisch te bundelen, maar dan is de volgorde en documentatie extra belangrijk."
+                ],
+                bullets: [
+                    "Ramen en deuren voor comfort, geluidsdemping en energieverlies",
+                    "Gevelisolatie en crepi voor een sterke buitenschil",
+                    "Gefaseerde renovatie om premie en planning slim te combineren"
+                ]
+            },
+            {
+                title: "Wanneer krijgt premie te veel aandacht?",
+                paragraphs: [
+                    "Een premie mag nooit de enige reden zijn om voor een bepaald systeem of materiaal te kiezen. Soms is een oplossing die technisch beter past bij de woning uiteindelijk interessanter, ook als de subsidie beperkter is.",
+                    "Daarom is goed advies belangrijk: eerst bekijken wat de woning nodig heeft, daarna zien hoe premie daar logisch op aansluit."
+                ]
+            },
+            {
+                title: "Hoe voorkomt u dat u kansen mist?",
+                paragraphs: [
+                    "Bewaar offertes, facturen en technische info zorgvuldig. Werk ook met een duidelijke planning zodat premies, uitvoering en eventuele bijkomende fases op elkaar afgestemd blijven.",
+                    "Voor wie meerdere ingrepen plant, is het vaak interessanter om vooraf het totaalplaatje te bekijken in plaats van per onderdeel ad hoc te beslissen."
+                ]
+            },
+            {
+                title: "Wat is de slimste volgorde?",
+                paragraphs: [
+                    "Meestal begint een slim traject met ramen, deuren en/of gevel. Daarna volgen technieken en binnenafwerking. Zo bouwt u eerst de energieprestatie en het comfort op, en daarna de rest van de woning.",
+                    "Dat is precies de reden waarom lokale SEO-pagina&apos;s voor ramen, gevelrenovatie en totaalrenovatie elkaar intern moeten versterken: ze horen inhoudelijk ook echt samen."
+                ]
+            }
+        ],
+        ctaTitle: "Wilt u weten welke premiegericht renovatiepad logisch is?",
+        ctaText: "Yannova helpt u graag prioriteiten te leggen tussen ramen, gevel, isolatie en bredere renovatiewerken.",
+        relatedSlugs: [
+            "premies-ramen-deuren-2026",
+            "hoeveel-kost-gevelrenovatie",
+            "prijs-renovatie-zoersel"
+        ]
+    },
+    {
+        slug: "wat-kosten-nieuwe-ramen",
+        title: "Wat kosten nieuwe ramen in 2026?",
+        excerpt: "Ontdek de prijzen voor PVC en aluminium ramen en waar de prijs van afhangt.",
+        description: "Ontdek de prijzen voor nieuwe ramen in 2026. PVC ramen vanaf €400/m², aluminium vanaf €600/m². Inclusief plaatsing en BTW.",
+        date: "2026-03-08",
+        readTime: "5 min",
+        category: "Prijzen",
+        keywords: [
+            "ramen prijzen",
+            "wat kosten ramen",
+            "pvc ramen prijs",
+            "aluminium ramen prijs"
+        ],
+        serviceTags: [
+            "ramen-deuren"
+        ]
+    },
+    {
+        slug: "premies-ramen-deuren-2026",
+        title: "Premies voor ramen en deuren in 2026",
+        excerpt: "Overzicht van alle beschikbare premies in Vlaanderen voor nieuwe ramen en deuren.",
+        description: "Overzicht van alle beschikbare premies in Vlaanderen voor nieuwe ramen en deuren.",
+        date: "2026-03-08",
+        readTime: "7 min",
+        category: "Premies",
+        keywords: [
+            "premies ramen deuren",
+            "ramen premie",
+            "deuren premie",
+            "mijn verbouwpremie"
+        ],
+        serviceTags: [
+            "ramen-deuren"
+        ]
+    },
+    {
+        slug: "pvc-of-aluminium-ramen",
+        title: "PVC of aluminium ramen: wat is beter?",
+        excerpt: "Vergelijk de voor- en nadelen van PVC en aluminium ramen voor uw woning.",
+        description: "Vergelijk de voor- en nadelen van PVC en aluminium ramen voor uw woning.",
+        date: "2026-03-08",
+        readTime: "6 min",
+        category: "Tips",
+        keywords: [
+            "pvc of aluminium ramen",
+            "aluminium ramen",
+            "pvc ramen",
+            "ramen vergelijken"
+        ],
+        serviceTags: [
+            "ramen-deuren"
+        ]
+    },
+    {
+        slug: "energiebesparing-nieuwe-ramen",
+        title: "Energiebesparing met nieuwe ramen",
+        excerpt: "Bespaar tot 50% energie met HR++ glas. Bereken je terugverdientijd.",
+        description: "Bespaar tot 50% energie met HR++ glas. Bereken je terugverdientijd.",
+        date: "2026-03-09",
+        readTime: "5 min",
+        category: "Besparing",
+        keywords: [
+            "energiebesparing ramen",
+            "hr++ glas besparen",
+            "ramen isolatie"
+        ],
+        serviceTags: [
+            "ramen-deuren"
+        ]
+    },
+    {
+        slug: "hoeveel-kost-gevelrenovatie",
+        title: "Hoeveel kost gevelrenovatie in 2026?",
+        excerpt: "Complete prijsoverzicht: €80-150/m² voor isolatie + crepi. Inclusief premies.",
+        description: "Ontdek de prijzen voor gevelrenovatie met isolatie en crepi. Gemiddeld €80-150 per m². Inclusief premies en besparingen.",
+        date: "2026-03-09",
+        readTime: "6 min",
+        category: "Prijzen",
+        keywords: [
+            "gevelrenovatie prijs",
+            "kosten gevelrenovatie",
+            "crepi prijs",
+            "gevelisolatie kosten"
+        ],
+        serviceTags: [
+            "gevelrenovatie",
+            "crepi-gevel"
+        ]
+    }
+];
+function getBlogIndexPosts() {
+    return [
+        ...blogPosts
+    ].sort((left, right)=>right.date.localeCompare(left.date));
+}
+function getBlogPostBySlug(slug) {
+    return blogPosts.find((post)=>post.slug === slug) ?? null;
+}
+function getDynamicBlogPosts() {
+    return blogPosts.filter((post)=>post.dynamic);
+}
+function getRelatedBlogPosts({ currentSlug, serviceSlug, citySlug, limit = 3 }) {
+    const scored = getBlogIndexPosts().filter((post)=>post.slug !== currentSlug).map((post)=>{
+        let score = 0;
+        if (serviceSlug && post.serviceTags.includes(serviceSlug)) {
+            score += 3;
+        }
+        if (citySlug && post.cityTags?.includes(citySlug)) {
+            score += 2;
+        }
+        return {
+            post,
+            score
+        };
+    }).sort((left, right)=>{
+        if (right.score !== left.score) {
+            return right.score - left.score;
+        }
+        return right.post.date.localeCompare(left.post.date);
+    });
+    return scored.slice(0, limit).map((entry)=>entry.post);
+}
+}),
+"[project]/src/lib/data/product-catalog.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getProductCatalogItem",
+    ()=>getProductCatalogItem,
+    "productCatalog",
+    ()=>productCatalog
+]);
+const productCatalog = [
+    {
+        slug: "ramen",
+        name: "Ramen",
+        shortName: "Ramen",
+        categoryLabel: "Productgamma",
+        overview: "PVC en aluminium ramen in verschillende profielen, stijlen en isolatieniveaus. Leverbaar en plaatsbaar via Yannova.",
+        metaTitle: "Ramen op maat | PVC & Aluminium | Yannova",
+        metaDescription: "Ontdek het ramenaanbod van Yannova: PVC en aluminium ramen met verschillende profielen, kleuren en beglazingsopties.",
+        heroTitle: "Ramen op maat voor renovatie en nieuw buitenschrijnwerk",
+        heroDescription: "Yannova levert en plaatst ramen uit een breed gamma van PVC- en aluminiumoplossingen, afgestemd op woningtype, isolatie-eisen en gewenste uitstraling.",
+        icon: "window",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/okna-do-sesji-43.jpg",
+            alt: "Voorbeeld van moderne ramen uit het leveranciergamma",
+            label: "Ramen op maat"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/76c5-oknapvc.webp",
+                alt: "PVC-raamprofielen uit het leveranciergamma",
+                label: "PVC-ramen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/oknaaluminiowe.png",
+                alt: "Aluminium raamprofielen uit het leveranciergamma",
+                label: "Aluminium ramen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/oknastalowe.png",
+                alt: "Stalen raamprofielen uit het leveranciergamma",
+                label: "Stalen ramen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/b816-oknadrewniane.webp",
+                alt: "Houten raamprofielen uit het leveranciergamma",
+                label: "Houten ramen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/e4a6-dodatki2x.png",
+                alt: "Raamaccessoires uit het leveranciergamma",
+                label: "Extra's"
+            }
+        ],
+        keywords: [
+            "ramen op maat",
+            "pvc ramen",
+            "aluminium ramen",
+            "nieuwe ramen",
+            "buitenschrijnwerk"
+        ],
+        intro: [
+            "Op basis van het aanbod van onze leverancier kan Yannova veel meer aanbieden dan alleen standaard ramen. Denk aan verschillende profielsystemen, kleurafwerkingen, beglazingspakketten en oplossingen voor klassieke of moderne woningen.",
+            "Op de website vertalen we dat gamma naar duidelijke Yannova-productpagina&apos;s, zodat bezoekers begrijpen wat u kunt leveren zonder dat de site een technische leverancierscatalogus wordt."
+        ],
+        productTypes: [
+            "PVC ramen",
+            "Aluminium ramen",
+            "Vaste ramen en draaikiepsystemen",
+            "Projectmatige oplossingen voor renovatie en grotere openingen"
+        ],
+        benefits: [
+            "Sterke isolatiewaarden met HR++ of drievoudige beglazing",
+            "Veel keuze in profielen, kleuren en afwerking",
+            "Combineerbaar met deuren en schuifsystemen",
+            "Plaatsing en opvolging via Yannova"
+        ],
+        idealFor: [
+            "Renovaties waar comfort en EPC moeten verbeteren",
+            "Eigenaars die PVC en aluminium willen vergelijken",
+            "Projecten waar ramen samen met gevel of deuren worden aangepakt"
+        ],
+        supplierNote: "Dit gamma is gebaseerd op het aanbod van onze leverancier. Yannova adviseert welke systemen technisch en esthetisch het best passen bij uw woning.",
+        primaryCtaHref: "/ramen",
+        primaryCtaLabel: "Bekijk onze ramenservice",
+        secondaryLinks: [
+            {
+                label: "Ramen & deuren",
+                href: "/ramen-deuren"
+            },
+            {
+                label: "Prijs nieuwe ramen",
+                href: "/blog/wat-kosten-nieuwe-ramen"
+            }
+        ]
+    },
+    {
+        slug: "deuren",
+        name: "Deuren",
+        shortName: "Deuren",
+        categoryLabel: "Productgamma",
+        overview: "Voordeuren, achterdeuren, terrasdeuren en technische deuroplossingen in PVC en aluminium.",
+        metaTitle: "Deuren op maat | PVC & Aluminium Deuren | Yannova",
+        metaDescription: "Bekijk het deurgamma van Yannova: voordeuren, terrasdeuren, technische deuren en aluminium of PVC oplossingen op maat.",
+        heroTitle: "Deuren op maat voor veiligheid, isolatie en uitstraling",
+        heroDescription: "Yannova kan een breed assortiment deuren leveren en plaatsen: van stijlvolle voordeuren tot technische en terrasgerichte oplossingen.",
+        icon: "door",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/drzwi2.jpg",
+            alt: "Voorbeeld van moderne deuren uit het leveranciergamma",
+            label: "Inkom- en terrasdeuren"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/drzwizestawienie2xv2.png",
+                alt: "Buitendeuren uit het leveranciergamma",
+                label: "Buitendeuren"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/5cc0-norm-pivot.webp",
+                alt: "Binnendeuren uit het leveranciergamma",
+                label: "Binnendeuren"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/drzwidodatki.png",
+                alt: "Extra deuraccessoires uit het leveranciergamma",
+                label: "Extra's"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/drzwi1.jpg",
+                alt: "Deurbeslag en afwerking uit het leveranciergamma",
+                label: "Beslag & afwerking"
+            }
+        ],
+        keywords: [
+            "deuren op maat",
+            "voordeur",
+            "achterdeur",
+            "aluminium deuren",
+            "pvc deuren"
+        ],
+        intro: [
+            "De leverancier heeft een ruimer gamma dan wat nu zichtbaar is op de Yannova-site. Daar vallen niet alleen klassieke voordeuren onder, maar ook terrasgerichte oplossingen en technische deurtypes.",
+            "Door dat gamma als eigen productstructuur te tonen, kan Yannova meer zoekintentie capteren rond deuren zonder dat bezoekers naar de leverancierssite moeten doorsturen."
+        ],
+        productTypes: [
+            "Voordeuren",
+            "Achterdeuren",
+            "Terrasdeuren en zijlichten",
+            "Technische en functionele deuren"
+        ],
+        benefits: [
+            "Meer keuze in stijl, glasverdeling en veiligheid",
+            "Afgestemd op ramen en schuifsystemen",
+            "Sterke isolatie en moderne slotopties",
+            "Technisch advies en plaatsing via Yannova"
+        ],
+        idealFor: [
+            "Eigenaars die hun inkom willen upgraden",
+            "Renovaties waar deur en ramen één geheel moeten vormen",
+            "Projecten met focus op veiligheid en afwerking"
+        ],
+        supplierNote: "Het getoonde assortiment wordt door Yannova vertaald naar projecten op maat. We selecteren niet blind elk model, maar alleen wat technisch en visueel klopt voor de woning.",
+        primaryCtaHref: "/deuren",
+        primaryCtaLabel: "Bekijk onze deurenservice",
+        secondaryLinks: [
+            {
+                label: "Ramen & deuren",
+                href: "/ramen-deuren"
+            },
+            {
+                label: "Deuren in Antwerpen",
+                href: "/deuren/antwerpen"
+            }
+        ]
+    },
+    {
+        slug: "schuifsystemen",
+        name: "Schuifsystemen",
+        shortName: "Schuifsystemen",
+        categoryLabel: "Productgamma",
+        overview: "Hefschuifdeuren, terrasoplossingen en grote glaspartijen die binnen en buiten visueel verbinden.",
+        metaTitle: "Schuifsystemen | Terrasdeuren & Grote Glaspartijen | Yannova",
+        metaDescription: "Ontdek schuifsystemen via Yannova: hefschuifdeuren, terrasoplossingen en grote glaspartijen in PVC of aluminium.",
+        heroTitle: "Schuifsystemen voor licht, comfort en open woonruimtes",
+        heroDescription: "Yannova kan ook schuifsystemen leveren en plaatsen: ideaal voor terrassen, tuingerichte leefruimtes en renovaties met veel glas.",
+        icon: "panels",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/przesuwne02.jpg",
+            alt: "Voorbeeld van een schuifsysteem met grote glaspartij",
+            label: "Grote glaspartijen"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/3fd1-00.png",
+                alt: "PVC-schuifsystemen uit het leveranciergamma",
+                label: "PVC-systemen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/4e9e-cor-vision-plus00.png",
+                alt: "Aluminium schuifsystemen uit het leveranciergamma",
+                label: "Aluminiumsystemen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/systemy-stalowe.png",
+                alt: "Stalen schuifsystemen uit het leveranciergamma",
+                label: "Stalensystemen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/systemydrewniane.png",
+                alt: "Houten schuifsystemen uit het leveranciergamma",
+                label: "Houtsystemen"
+            }
+        ],
+        keywords: [
+            "schuifsystemen",
+            "hefschuifdeur",
+            "schuifdeur aluminium",
+            "schuifdeur pvc",
+            "terrasdeur"
+        ],
+        intro: [
+            "Schuifsystemen verdienen een eigen plek op de site. Ze zijn technisch en visueel anders dan standaard ramen of deuren en worden vaak apart gezocht.",
+            "Via de leverancier is er een breder gamma mogelijk voor grote glaspartijen, terrasopeningen en meer architecturale oplossingen."
+        ],
+        productTypes: [
+            "Hefschuifdeuren",
+            "Schuiframen voor grote openingen",
+            "Terrasgerichte aluminium systemen",
+            "Ruimtes met maximale lichtinval"
+        ],
+        benefits: [
+            "Meer glasoppervlak en licht",
+            "Vlotte verbinding tussen binnen en buiten",
+            "Geschikt voor moderne renovaties en uitbreidingen",
+            "Combineerbaar met ramen, deuren en zonwering"
+        ],
+        idealFor: [
+            "Woningen met tuin- of terrasconnectie",
+            "Renovaties waar lichtinval belangrijk is",
+            "Eigenaars die strakke profielen zoeken"
+        ],
+        supplierNote: "Niet elk schuifsysteem past bij elke opening. Yannova bekijkt draagkracht, detaillering en gebruikscomfort voor we een systeem voorstellen.",
+        primaryCtaHref: "/ramen-deuren",
+        primaryCtaLabel: "Bespreek een schuifsysteem",
+        secondaryLinks: [
+            {
+                label: "PVC of aluminium ramen",
+                href: "/blog/pvc-of-aluminium-ramen"
+            },
+            {
+                label: "Contact opnemen",
+                href: "/contact"
+            }
+        ]
+    },
+    {
+        slug: "rolluiken-zonwering",
+        name: "Rolluiken & zonwering",
+        shortName: "Rolluiken & zonwering",
+        categoryLabel: "Productgamma",
+        overview: "Rolluiken, screens, geveljaloezieën en aanverwante buitenzonwering als aanvulling op ramen en schuifsystemen.",
+        metaTitle: "Rolluiken & Zonwering | Screens en Shutters | Yannova",
+        metaDescription: "Yannova kan ook rolluiken, screens en andere zonweringsoplossingen leveren en plaatsen als onderdeel van een totaalproject.",
+        heroTitle: "Rolluiken, screens en buitenzonwering op maat",
+        heroDescription: "Naast ramen en deuren kan Yannova ook oplossingen aanbieden voor verduistering, privacy, zonwering en extra gebruikscomfort.",
+        icon: "sun",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/oslony.jpg",
+            alt: "Voorbeeld van rolluiken en zonwering uit het leveranciergamma",
+            label: "Rolluiken en screens"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/bce7-rolety.jpg",
+                alt: "Rolluiken uit het leveranciergamma",
+                label: "Rolluiken"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/6255-zaluzja-fasadowa-raff-i-z-napisem-2.webp",
+                alt: "Geveljaloezieen uit het leveranciergamma",
+                label: "Geveljaloezieen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/okiennicetamiz.jpg",
+                alt: "Shutters uit het leveranciergamma",
+                label: "Shutters"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/oslonyokiennedodatki.jpg",
+                alt: "Accessoires voor zonwering uit het leveranciergamma",
+                label: "Accessoires"
+            }
+        ],
+        keywords: [
+            "rolluiken",
+            "screens",
+            "zonwering",
+            "geveljaloezie",
+            "shutters"
+        ],
+        intro: [
+            "Dit is vandaag nog amper zichtbaar op de site, terwijl het een logische uitbreiding is van ramen, deuren en schuifsystemen. Voor veel bezoekers hoort buitenzonwering gewoon bij het totaalplaatje.",
+            "Op basis van het gamma van de leverancier kan Yannova dit dus wel degelijk aanbieden, maar dan onder een eigen productpagina met duidelijke uitleg over toepassingen en combinaties."
+        ],
+        productTypes: [
+            "Opbouw- en voorzetrolluiken",
+            "Screens",
+            "Geveljaloezieën",
+            "Aanvullende oplossingen voor privacy en lichtregeling"
+        ],
+        benefits: [
+            "Meer comfort in zomer en winter",
+            "Extra privacy en lichtcontrole",
+            "Logische combinatie met nieuwe ramen en schuifdeuren",
+            "Technische afstemming via één partner"
+        ],
+        idealFor: [
+            "Projecten met veel glas en zonbelasting",
+            "Eigenaars die ramen en zonwering samen willen aanpakken",
+            "Woningen waar comfort en privacy extra belangrijk zijn"
+        ],
+        supplierNote: "Niet elk systeem is zichtbaar op de site van Yannova, maar we kunnen deze productgroep wel meenemen in het aanbod en in offertes op maat.",
+        primaryCtaHref: "/contact",
+        primaryCtaLabel: "Vraag advies over rolluiken en screens",
+        secondaryLinks: [
+            {
+                label: "Schuifsystemen",
+                href: "/producten/schuifsystemen"
+            },
+            {
+                label: "Ramen",
+                href: "/ramen"
+            }
+        ]
+    },
+    {
+        slug: "garagepoorten",
+        name: "Garagepoorten",
+        shortName: "Garagepoorten",
+        categoryLabel: "Productgamma",
+        overview: "Sectionale en aanverwante garagepoortoplossingen als onderdeel van buitenschil en totaalrenovatie.",
+        metaTitle: "Garagepoorten | Sectionale Poorten op maat | Yannova",
+        metaDescription: "Ontdek garagepoorten via Yannova. Leverbaar als onderdeel van een bredere renovatie of buitenschilproject.",
+        heroTitle: "Garagepoorten als volwaardig onderdeel van uw buitenschil",
+        heroDescription: "Yannova kan ook garagepoorten opnemen in het aanbod, zodat ramen, deuren, poorten en afwerking beter op elkaar aansluiten.",
+        icon: "garage",
+        coverImage: {
+            src: "https://ekookna.nl/file/uploads/Animacje/Brama/brama_01.jpg",
+            alt: "Voorbeeld van een garagepoort uit het leveranciergamma",
+            label: "Garagepoorten op maat"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/3795-bramy-garazowe.webp",
+                alt: "Garagedeuren uit het leveranciergamma",
+                label: "Garagedeuren"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/bramakratarolowana2x.png",
+                alt: "Rolroosters uit het leveranciergamma",
+                label: "Rolroosters"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/dodatkibramy.png",
+                alt: "Garagepoortaccessoires uit het leveranciergamma",
+                label: "Accessoires"
+            }
+        ],
+        keywords: [
+            "garagepoorten",
+            "sectionale poort",
+            "garagedeur",
+            "poort op maat"
+        ],
+        intro: [
+            "Garagepoorten zitten vaak in dezelfde beslissingsfase als ramen, deuren of gevelwerken. Daarom is het logisch dat ze ook op de site zichtbaar worden als apart aanbod.",
+            "Via de leverancier is deze categorie beschikbaar, en voor Yannova is dit interessant als upsell binnen bredere renovatieprojecten."
+        ],
+        productTypes: [
+            "Sectionale garagepoorten",
+            "Poorten afgestemd op gevel en buitenschrijnwerk",
+            "Oplossingen voor renovatie en volledige buitenschilprojecten"
+        ],
+        benefits: [
+            "Één visuele lijn met ramen en deuren",
+            "Meer comfort en gebruiksgemak",
+            "Sterke aanvulling op totaalrenovatie",
+            "Technische coördinatie via Yannova"
+        ],
+        idealFor: [
+            "Woningen met inpandige of aangebouwde garage",
+            "Projecten waar buitenschrijnwerk en poort samen worden vernieuwd",
+            "Eigenaars die één partner willen voor het geheel"
+        ],
+        supplierNote: "Garagepoorten zijn niet zomaar een los product. Yannova bekijkt aansluiting, uitstraling en gebruik in functie van de volledige woning.",
+        primaryCtaHref: "/contact",
+        primaryCtaLabel: "Bespreek uw garagepoort",
+        secondaryLinks: [
+            {
+                label: "Totaalrenovatie",
+                href: "/totaalrenovatie"
+            },
+            {
+                label: "Offerte aanvragen",
+                href: "/offerte"
+            }
+        ]
+    },
+    {
+        slug: "omheiningen",
+        name: "Omheiningen",
+        shortName: "Omheiningen",
+        categoryLabel: "Productgamma",
+        overview: "Omheiningen, poorten en buitenafsluitingen die aansluiten op de uitstraling van woning en buitenschil.",
+        metaTitle: "Omheiningen & Poorten | Buitenafsluiting op maat | Yannova",
+        metaDescription: "Yannova kan ook omheiningen en buitenafsluitingen opnemen in het aanbod als onderdeel van een totaalproject of buitenschilrenovatie.",
+        heroTitle: "Omheiningen en poorten die aansluiten op uw woning",
+        heroDescription: "Naast ramen, deuren en poorten kan Yannova ook buitenafsluitingen en omheiningen meenemen wanneer u uw volledige buitenschil coherent wilt aanpakken.",
+        icon: "shield",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/2efc-ogrodzenie3.jpg",
+            alt: "Voorbeeld van een omheining uit het leveranciergamma",
+            label: "Buitenafsluitingen"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/ogrodzeniastandard.png",
+                alt: "Standaard omheiningen uit het leveranciergamma",
+                label: "Standaard omheiningen"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/ogrodzeniaelegance.png",
+                alt: "Elegante omheiningen uit het leveranciergamma",
+                label: "Omheiningen Elegantie"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/ogrodzeniaprestige.png",
+                alt: "Prestige hekken uit het leveranciergamma",
+                label: "Prestige hekken"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/ogrodzenia.png",
+                alt: "Accessoires voor omheiningen uit het leveranciergamma",
+                label: "Accessoires"
+            }
+        ],
+        keywords: [
+            "omheiningen",
+            "poorten",
+            "buitenafsluiting",
+            "hekwerk",
+            "tuinafsluiting"
+        ],
+        intro: [
+            "Op de leverancierssite vallen ook omheiningen en poorten onder het productgamma. Voor Yannova is dat interessant bij projecten waar de buitenzijde van de woning als geheel wordt aangepakt.",
+            "Op de site tonen we dit niet als losse technische catalogus, maar als aanvullende productgroep voor klanten die een partner zoeken voor ramen, deuren, poorten en buitenafwerking."
+        ],
+        productTypes: [
+            "Standaard omheiningen",
+            "Afsluitingen met meer architecturale uitstraling",
+            "Poortoplossingen afgestemd op woning en toegang",
+            "Accessoires en afwerkingsopties"
+        ],
+        benefits: [
+            "Eén visuele lijn tussen woning en perceel",
+            "Meer privacy en afbakening",
+            "Interessant in combinatie met poorten en buitenschrijnwerk",
+            "Praktisch voor totaalprojecten met één aanspreekpunt"
+        ],
+        idealFor: [
+            "Eigenaars die de volledige buitenzijde willen vernieuwen",
+            "Projecten waar toegang en afwerking samen bekeken worden",
+            "Woningen waar coherente materiaal- en kleurkeuze belangrijk is"
+        ],
+        supplierNote: "Deze productgroep is beschikbaar via onze leverancier, maar Yannova vertaalt ze naar projecten waar afwerking, plaatsing en samenhang met de woning centraal staan.",
+        primaryCtaHref: "/contact",
+        primaryCtaLabel: "Bespreek omheiningen en poorten",
+        secondaryLinks: [
+            {
+                label: "Garagepoorten",
+                href: "/producten/garagepoorten"
+            },
+            {
+                label: "Totaalrenovatie",
+                href: "/totaalrenovatie"
+            }
+        ]
+    },
+    {
+        slug: "horren",
+        name: "Horren",
+        shortName: "Horren",
+        categoryLabel: "Productgamma",
+        overview: "Horren en muggengaasoplossingen voor ramen en deuren, geïntegreerd in het buitenschrijnwerk.",
+        metaTitle: "Horren & Muggengaas | Oplossingen voor ramen en deuren | Yannova",
+        metaDescription: "Yannova kan ook horren en muggengaasoplossingen leveren voor ramen en deuren als onderdeel van een volledig buitenschrijnwerkproject.",
+        heroTitle: "Horren als praktische aanvulling op ramen en deuren",
+        heroDescription: "Horren horen voor veel klanten bij een compleet ramen- en deurenproject. Daarom kan Yannova ze ook meenemen binnen het bredere productgamma.",
+        icon: "shield",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/moskitiera01.jpg",
+            alt: "Voorbeeld van horren voor ramen en deuren",
+            label: "Horren voor ramen en deuren"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/moskitieraokienna2x.png",
+                alt: "Horren voor ramen uit het leveranciergamma",
+                label: "Horren"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/moskitieradrzwiowa2x.png",
+                alt: "Muggengaas voor deuren uit het leveranciergamma",
+                label: "Muggengaas voor deuren"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/moskitieraprzesuwna2x.png",
+                alt: "Uitschuifbare horren uit het leveranciergamma",
+                label: "Uitschuifbare horren"
+            }
+        ],
+        keywords: [
+            "horren",
+            "muggengaas",
+            "horramen",
+            "hordeur",
+            "insectenwering"
+        ],
+        intro: [
+            "Horren zijn geen hoofdproduct zoals ramen of deuren, maar ze verhogen het gebruikscomfort aanzienlijk en worden vaak mee beslist tijdens de opmeting.",
+            "Door ze zichtbaar op de site te maken, vangt Yannova ook bezoekers op die specifiek zoeken naar een geïntegreerde oplossing voor insectenwering bij nieuwe ramen of deuren."
+        ],
+        productTypes: [
+            "Horren voor ramen",
+            "Muggengaas voor deuren",
+            "Uitschuifbare en geïntegreerde oplossingen",
+            "Toepassingen afgestemd op dagelijks gebruik"
+        ],
+        benefits: [
+            "Meer comfort zonder los achterafwerk",
+            "Nettere integratie in nieuwe ramen en deuren",
+            "Interessant als upsell bij buitenschrijnwerk",
+            "Eén technisch afgestemde oplossing"
+        ],
+        idealFor: [
+            "Klanten die ramen en deuren volledig willen afwerken",
+            "Woningen met tuin- of terrasconnectie",
+            "Projecten waar comfort en dagelijks gebruik centraal staan"
+        ],
+        supplierNote: "Horren nemen we best mee als onderdeel van het totaaladvies. Zo sluiten maatvoering, gebruik en afwerking beter aan op het gekozen schrijnwerk.",
+        primaryCtaHref: "/ramen-deuren",
+        primaryCtaLabel: "Combineer horren met ramen en deuren",
+        secondaryLinks: [
+            {
+                label: "Ramen",
+                href: "/producten/ramen"
+            },
+            {
+                label: "Deuren",
+                href: "/producten/deuren"
+            }
+        ]
+    },
+    {
+        slug: "beglazing",
+        name: "Beglazing",
+        shortName: "Beglazing",
+        categoryLabel: "Productgamma",
+        overview: "Dubbele, drievoudige en gespecialiseerde beglazing voor isolatie, veiligheid en geluidscomfort.",
+        metaTitle: "Beglazing | HR++, Triple en Veiligheidsglas | Yannova",
+        metaDescription: "Ontdek beglazingsoplossingen via Yannova: dubbele beglazing, drievoudige beglazing, akoestische en veilige glasopties.",
+        heroTitle: "Beglazing die isolatie en comfort mee bepaalt",
+        heroDescription: "Niet alleen het profiel, maar ook het glas bepaalt hoe goed ramen en schuifsystemen presteren. Daarom nemen we beglazing mee als aparte productgroep.",
+        icon: "sparkles",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/szyby01.jpg",
+            alt: "Voorbeeld van beglazing uit het leveranciergamma",
+            label: "Dubbel en triple glas"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/pakietyszybowe2x.png",
+                alt: "Beglazingseenheden uit het leveranciergamma",
+                label: "Beglazingseenheden"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/rodzajeszyb2x.png",
+                alt: "Soorten glas uit het leveranciergamma",
+                label: "Soorten glas"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/2c85-szybydodatki.png",
+                alt: "Glasaccessoires uit het leveranciergamma",
+                label: "Accessoires"
+            }
+        ],
+        keywords: [
+            "beglazing",
+            "dubbele beglazing",
+            "drievoudige beglazing",
+            "veiligheidsglas",
+            "akoestisch glas"
+        ],
+        intro: [
+            "Op de leverancierssite is beglazing een aparte categorie. Dat is logisch, want glaskeuze heeft directe impact op warmteverlies, geluidscomfort, veiligheid en zonbelasting.",
+            "Voor Yannova is dit vooral relevant als inhoudelijke verdieping: we tonen klanten dat er meer keuzes zijn dan alleen een nieuw raam en dat we daarin gericht kunnen adviseren."
+        ],
+        productTypes: [
+            "Dubbele beglazing",
+            "Drievoudige beglazing",
+            "Akoestische glasoplossingen",
+            "Veiligheids- en comfortglas"
+        ],
+        benefits: [
+            "Betere energieprestaties",
+            "Meer geluidscomfort in drukke omgevingen",
+            "Extra veiligheid waar nodig",
+            "Afstembaar op ramen, deuren en schuifsystemen"
+        ],
+        idealFor: [
+            "Renovaties met EPC-focus",
+            "Woningen langs drukke straten",
+            "Klanten die prestatie en comfort expliciet willen vergelijken"
+        ],
+        supplierNote: "Glaskeuze gebeurt niet los van het profiel. Yannova stemt beglazing af op de raamopbouw, de woning en het beoogde comfortniveau.",
+        primaryCtaHref: "/ramen",
+        primaryCtaLabel: "Bespreek beglazing voor uw ramen",
+        secondaryLinks: [
+            {
+                label: "Prijs nieuwe ramen",
+                href: "/blog/wat-kosten-nieuwe-ramen"
+            },
+            {
+                label: "PVC of aluminium",
+                href: "/blog/pvc-of-aluminium-ramen"
+            }
+        ]
+    },
+    {
+        slug: "pergolas",
+        name: "Pergola's",
+        shortName: "Pergola's",
+        categoryLabel: "Productgamma",
+        overview: "Pergola-oplossingen en buitencomfortsystemen als uitbreiding van terras, schuifsystemen en leefruimte.",
+        metaTitle: "Pergola's | Buitencomfort en Terrasoplossingen | Yannova",
+        metaDescription: "Yannova kan ook pergola-oplossingen en buitencomfortsystemen meenemen als onderdeel van een bredere buiten- of renovatieaanpak.",
+        heroTitle: "Pergola's voor buitencomfort en een sterkere leefomgeving",
+        heroDescription: "Pergola's zijn een interessante uitbreiding voor woningen met terras of tuin en sluiten goed aan op schuifsystemen, zonwering en moderne buitenprojecten.",
+        icon: "sun",
+        coverImage: {
+            src: "https://ekookna.nl/file/records/oryginalne/pergolanuuneco1.jpg",
+            alt: "Voorbeeld van een pergola uit het leveranciergamma",
+            label: "Bioklimatische pergola's"
+        },
+        gallery: [
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/fc08-pergolanuuneco.png",
+                alt: "Bioklimatische pergola's uit het leveranciergamma",
+                label: "Bioklimatische pergola's"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/zestawieniedodatki.jpg",
+                alt: "Accessoires voor pergola's uit het leveranciergamma",
+                label: "Accessoires"
+            },
+            {
+                src: "https://ekookna.nl/file/records/oryginalne/pergolanuuneco2.jpg",
+                alt: "Vrijstaande pergola-opstelling uit het leveranciergamma",
+                label: "Vrijstaande opstelling"
+            }
+        ],
+        keywords: [
+            "pergola",
+            "bioklimatische pergola",
+            "terrasoverkapping",
+            "buitencomfort"
+        ],
+        intro: [
+            "Dit is geen klassieke Yannova-dienst, maar wel een productgroep die via de leverancier beschikbaar is en goed past bij klanten die hun buitenruimte mee willen afwerken.",
+            "Vooral bij moderne renovaties met veel glas, schuifdeuren en terrasconnectie kan een pergola logisch deel uitmaken van het totaalvoorstel."
+        ],
+        productTypes: [
+            "Bioklimatische pergola's",
+            "Terrasgerichte oplossingen",
+            "Aanvullende accessoires en afwerking",
+            "Combinaties met zonwering en schuifsystemen"
+        ],
+        benefits: [
+            "Meer bruikbare buitenruimte",
+            "Sterke aanvulling op terrasgerichte renovaties",
+            "Interessant bij grote glaspartijen en schuifsystemen",
+            "Meerwaarde voor comfort en uitstraling"
+        ],
+        idealFor: [
+            "Woningen met tuin of patio",
+            "Projecten waar binnen en buiten visueel verbonden worden",
+            "Eigenaars die comfort en uitstraling samen willen aanpakken"
+        ],
+        supplierNote: "Pergola's nemen we op als aanvullende productgroep. We beoordelen eerst of dit logisch is binnen het project en de architectuur van de woning.",
+        primaryCtaHref: "/contact",
+        primaryCtaLabel: "Bespreek een pergola-oplossing",
+        secondaryLinks: [
+            {
+                label: "Schuifsystemen",
+                href: "/producten/schuifsystemen"
+            },
+            {
+                label: "Rolluiken & zonwering",
+                href: "/producten/rolluiken-zonwering"
+            }
+        ]
+    }
+];
+function getProductCatalogItem(slug) {
+    return productCatalog.find((item)=>item.slug === slug) ?? null;
+}
+}),
+"[project]/src/app/sitemap.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>sitemap
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$local$2d$seo$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/data/local-seo.ts [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$blog$2d$posts$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/data/blog-posts.ts [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$product$2d$catalog$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/data/product-catalog.ts [app-route] (ecmascript)");
+;
+;
+;
+function sitemap() {
+    const baseUrl = 'https://www.yannova.be';
+    const lastModified = new Date();
+    // Hoofdpagina&apos;s
+    const mainPages = [
+        '',
+        '/diensten',
+        '/diensten/ramen-deuren',
+        '/diensten/isolatie',
+        '/ramen',
+        '/deuren',
+        '/ramen-deuren',
+        '/gevelrenovatie',
+        '/crepi-gevel',
+        '/gevelisolatie-crepi',
+        '/renovatie',
+        '/totaalrenovatie',
+        '/projecten',
+        '/over-ons',
+        '/privacy',
+        '/contact',
+        '/offerte',
+        '/premie-gids',
+        '/veelgestelde-vragen',
+        '/reviews',
+        '/werkgebied',
+        '/producten',
+        '/shop',
+        '/shop/cart',
+        '/vraag-ai',
+        '/blog'
+    ];
+    // Gemeenten
+    const municipalities = [
+        'antwerpen',
+        'berchem',
+        'brasschaat',
+        'deurne',
+        'merksem',
+        'mortsel',
+        'schilde',
+        'schoten',
+        'wijnegem',
+        'wilrijk',
+        'zoersel'
+    ];
+    // Genereer alle lokale pagina&apos;s in de nieuwe hiërarchie
+    const localRamenPages = municipalities.map((m)=>`/ramen/${m}`);
+    const localDeurenPages = municipalities.map((m)=>`/deuren/${m}`);
+    const localGevelrenovatiePages = municipalities.map((m)=>`/gevelrenovatie/${m}`);
+    const localRenovatiePages = municipalities.map((m)=>`/renovatie/${m}`);
+    const localTotaalRenovatiePages = municipalities.map((m)=>`/totaalrenovatie/${m}`);
+    // Overige specifieke landingspagina&apos;s
+    const specialLandingPages = [
+        '/ramen-deuren-antwerpen',
+        '/gevelrenovatie-antwerpen',
+        '/renovatiebedrijf-antwerpen',
+        '/crepi-isolatie-antwerpen'
+    ];
+    const flatLocalSeoPages = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$local$2d$seo$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getLocalSeoPageSlugs"])().map((slug)=>`/${slug}`);
+    const blogPages = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$blog$2d$posts$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getBlogIndexPosts"])().map((post)=>`/blog/${post.slug}`);
+    const productPages = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$data$2f$product$2d$catalog$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["productCatalog"].map((item)=>`/producten/${item.slug}`);
+    const allPages = [
+        ...mainPages,
+        ...flatLocalSeoPages,
+        ...blogPages,
+        ...productPages,
+        ...localRamenPages,
+        ...localDeurenPages,
+        ...localGevelrenovatiePages,
+        ...localRenovatiePages,
+        ...localTotaalRenovatiePages,
+        ...specialLandingPages
+    ];
+    return allPages.map((page)=>({
+            url: `${baseUrl}${page}`,
+            lastModified,
+            changeFrequency: page === '' ? 'daily' : page.includes('/blog/') ? 'monthly' : 'weekly',
+            priority: page === '' ? 1.0 : page === '/diensten' || page === '/ramen' || page === '/deuren' || page === '/gevelrenovatie' ? 0.95 : flatLocalSeoPages.includes(page) ? 0.9 : blogPages.includes(page) ? 0.7 : productPages.includes(page) ? 0.85 : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') ? 0.85 : page === '/shop' || page === '/vraag-ai' ? 0.8 : 0.75
+        }));
+}
+}),
+"[project]/src/app/sitemap--route-entry.js [app-route] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "GET",
+    ()=>GET
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$sitemap$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/sitemap.ts [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$metadata$2f$resolve$2d$route$2d$data$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/webpack/loaders/metadata/resolve-route-data.js [app-route] (ecmascript)");
+;
+;
+;
+const contentType = "application/xml";
+const cacheControl = "public, max-age=0, must-revalidate";
+const fileType = "sitemap";
+if (typeof __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$sitemap$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"] !== 'function') {
+    throw new Error('Default export is missing in "./sitemap.ts"');
+}
+async function GET() {
+    const data = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$sitemap$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"])();
+    const content = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$webpack$2f$loaders$2f$metadata$2f$resolve$2d$route$2d$data$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["resolveRouteData"])(data, fileType);
+    return new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"](content, {
+        headers: {
+            'Content-Type': contentType,
+            'Cache-Control': cacheControl
+        }
+    });
+}
+;
+}),
+"[project]/src/app/sitemap--route-entry.js [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "GET",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$sitemap$2d2d$route$2d$entry$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__["GET"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$sitemap$2d2d$route$2d$entry$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/src/app/sitemap--route-entry.js [app-route] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$sitemap$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/sitemap.ts [app-route] (ecmascript)");
+}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__f9a39afb._.js.map

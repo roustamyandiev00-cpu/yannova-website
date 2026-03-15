@@ -1,0 +1,954 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/bouwcreatie-pids",
+      "destination": "/renovatie",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/bouwcreatie-pids(?:/)?$"
+    },
+    {
+      "source": "/budget-tool",
+      "destination": "/offerte",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/budget-tool(?:/)?$"
+    },
+    {
+      "source": "/bouwcreatie/:path*",
+      "destination": "/renovatie",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/bouwcreatie(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    },
+    {
+      "source": "/shop",
+      "destination": "/producten",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/shop(?:/)?$"
+    },
+    {
+      "source": "/shop/:path*",
+      "destination": "/producten",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/shop(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://www.googleadservices.com https://t.contentsquare.net https://bat.bing.com https://bat.bing.net https://www.datadoghq-browser-agent.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms https://*.supabase.co https://t.contentsquare.net https://*.contentsquare.net https://bat.bing.com https://bat.bing.net https://*.datadoghq.eu; frame-src 'self' https://www.google.com https://www.googletagmanager.com https://tagmanager.google.com"
+        }
+      ],
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/auth/[...nextauth]",
+      "regex": "^/api/auth/(.+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPnextauth": "nxtPnextauth"
+      },
+      "namedRegex": "^/api/auth/(?<nxtPnextauth>.+?)(?:/)?$"
+    },
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/crepi/[stad]",
+      "regex": "^/crepi/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPstad": "nxtPstad"
+      },
+      "namedRegex": "^/crepi/(?<nxtPstad>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/gevelisolatie/[stad]",
+      "regex": "^/gevelisolatie/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPstad": "nxtPstad"
+      },
+      "namedRegex": "^/gevelisolatie/(?<nxtPstad>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/producten/[slug]",
+      "regex": "^/producten/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/producten/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/werkgebied/[slug]",
+      "regex": "^/werkgebied/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/werkgebied/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[seoSlug]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPseoSlug": "nxtPseoSlug"
+      },
+      "namedRegex": "^/(?<nxtPseoSlug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/admin/analytics",
+      "regex": "^/admin/analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/analytics(?:/)?$"
+    },
+    {
+      "page": "/admin/analytics-old",
+      "regex": "^/admin/analytics\\-old(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/analytics\\-old(?:/)?$"
+    },
+    {
+      "page": "/admin/bigbuy",
+      "regex": "^/admin/bigbuy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/bigbuy(?:/)?$"
+    },
+    {
+      "page": "/admin/chat",
+      "regex": "^/admin/chat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/chat(?:/)?$"
+    },
+    {
+      "page": "/admin/chat-analytics",
+      "regex": "^/admin/chat\\-analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/chat\\-analytics(?:/)?$"
+    },
+    {
+      "page": "/admin/chat-archief",
+      "regex": "^/admin/chat\\-archief(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/chat\\-archief(?:/)?$"
+    },
+    {
+      "page": "/admin/leads",
+      "regex": "^/admin/leads(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/leads(?:/)?$"
+    },
+    {
+      "page": "/admin/login",
+      "regex": "^/admin/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/login(?:/)?$"
+    },
+    {
+      "page": "/admin/media",
+      "regex": "^/admin/media(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/media(?:/)?$"
+    },
+    {
+      "page": "/admin/projects",
+      "regex": "^/admin/projects(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/projects(?:/)?$"
+    },
+    {
+      "page": "/admin/projects/new",
+      "regex": "^/admin/projects/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/projects/new(?:/)?$"
+    },
+    {
+      "page": "/admin/seo",
+      "regex": "^/admin/seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/seo(?:/)?$"
+    },
+    {
+      "page": "/admin/settings",
+      "regex": "^/admin/settings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/settings(?:/)?$"
+    },
+    {
+      "page": "/admin/setup-database",
+      "regex": "^/admin/setup\\-database(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/setup\\-database(?:/)?$"
+    },
+    {
+      "page": "/admin/shop",
+      "regex": "^/admin/shop(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/shop(?:/)?$"
+    },
+    {
+      "page": "/admin/status",
+      "regex": "^/admin/status(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/status(?:/)?$"
+    },
+    {
+      "page": "/admin/testimonials",
+      "regex": "^/admin/testimonials(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/testimonials(?:/)?$"
+    },
+    {
+      "page": "/admin/testimonials/new",
+      "regex": "^/admin/testimonials/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/testimonials/new(?:/)?$"
+    },
+    {
+      "page": "/admin/users",
+      "regex": "^/admin/users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/users(?:/)?$"
+    },
+    {
+      "page": "/advies",
+      "regex": "^/advies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/advies(?:/)?$"
+    },
+    {
+      "page": "/api/admin/seed",
+      "regex": "^/api/admin/seed(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/seed(?:/)?$"
+    },
+    {
+      "page": "/api/admin/setup-database",
+      "regex": "^/api/admin/setup\\-database(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/setup\\-database(?:/)?$"
+    },
+    {
+      "page": "/api/analytics/clarity-sync",
+      "regex": "^/api/analytics/clarity\\-sync(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/analytics/clarity\\-sync(?:/)?$"
+    },
+    {
+      "page": "/api/analytics/google-ads",
+      "regex": "^/api/analytics/google\\-ads(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/analytics/google\\-ads(?:/)?$"
+    },
+    {
+      "page": "/api/analytics/performance",
+      "regex": "^/api/analytics/performance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/analytics/performance(?:/)?$"
+    },
+    {
+      "page": "/api/analytics/seo",
+      "regex": "^/api/analytics/seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/analytics/seo(?:/)?$"
+    },
+    {
+      "page": "/api/analytics/vitals",
+      "regex": "^/api/analytics/vitals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/analytics/vitals(?:/)?$"
+    },
+    {
+      "page": "/api/chat",
+      "regex": "^/api/chat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/chat(?:/)?$"
+    },
+    {
+      "page": "/api/chat/ai",
+      "regex": "^/api/chat/ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/chat/ai(?:/)?$"
+    },
+    {
+      "page": "/api/clarity/metrics",
+      "regex": "^/api/clarity/metrics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/clarity/metrics(?:/)?$"
+    },
+    {
+      "page": "/api/contact",
+      "regex": "^/api/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/contact(?:/)?$"
+    },
+    {
+      "page": "/api/csrf",
+      "regex": "^/api/csrf(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/csrf(?:/)?$"
+    },
+    {
+      "page": "/api/health",
+      "regex": "^/api/health(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/health(?:/)?$"
+    },
+    {
+      "page": "/api/init-admin",
+      "regex": "^/api/init\\-admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/init\\-admin(?:/)?$"
+    },
+    {
+      "page": "/api/setup-admin",
+      "regex": "^/api/setup\\-admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/setup\\-admin(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/blog/energiebesparing-nieuwe-ramen",
+      "regex": "^/blog/energiebesparing\\-nieuwe\\-ramen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/energiebesparing\\-nieuwe\\-ramen(?:/)?$"
+    },
+    {
+      "page": "/blog/hoeveel-kost-gevelrenovatie",
+      "regex": "^/blog/hoeveel\\-kost\\-gevelrenovatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/hoeveel\\-kost\\-gevelrenovatie(?:/)?$"
+    },
+    {
+      "page": "/blog/premies-ramen-deuren-2026",
+      "regex": "^/blog/premies\\-ramen\\-deuren\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/premies\\-ramen\\-deuren\\-2026(?:/)?$"
+    },
+    {
+      "page": "/blog/pvc-of-aluminium-ramen",
+      "regex": "^/blog/pvc\\-of\\-aluminium\\-ramen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/pvc\\-of\\-aluminium\\-ramen(?:/)?$"
+    },
+    {
+      "page": "/blog/wat-kosten-nieuwe-ramen",
+      "regex": "^/blog/wat\\-kosten\\-nieuwe\\-ramen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog/wat\\-kosten\\-nieuwe\\-ramen(?:/)?$"
+    },
+    {
+      "page": "/calculator",
+      "regex": "^/calculator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/calculator(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/crepi-gevel",
+      "regex": "^/crepi\\-gevel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/crepi\\-gevel(?:/)?$"
+    },
+    {
+      "page": "/crepi-isolatie-antwerpen",
+      "regex": "^/crepi\\-isolatie\\-antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/crepi\\-isolatie\\-antwerpen(?:/)?$"
+    },
+    {
+      "page": "/deuren",
+      "regex": "^/deuren(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren(?:/)?$"
+    },
+    {
+      "page": "/deuren/antwerpen",
+      "regex": "^/deuren/antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/antwerpen(?:/)?$"
+    },
+    {
+      "page": "/deuren/brasschaat",
+      "regex": "^/deuren/brasschaat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/brasschaat(?:/)?$"
+    },
+    {
+      "page": "/deuren/merksem",
+      "regex": "^/deuren/merksem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/merksem(?:/)?$"
+    },
+    {
+      "page": "/deuren/mortsel",
+      "regex": "^/deuren/mortsel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/mortsel(?:/)?$"
+    },
+    {
+      "page": "/deuren/schilde",
+      "regex": "^/deuren/schilde(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/schilde(?:/)?$"
+    },
+    {
+      "page": "/deuren/schoten",
+      "regex": "^/deuren/schoten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/schoten(?:/)?$"
+    },
+    {
+      "page": "/deuren/wijnegem",
+      "regex": "^/deuren/wijnegem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/wijnegem(?:/)?$"
+    },
+    {
+      "page": "/deuren/wilrijk",
+      "regex": "^/deuren/wilrijk(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/wilrijk(?:/)?$"
+    },
+    {
+      "page": "/deuren/zoersel",
+      "regex": "^/deuren/zoersel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/deuren/zoersel(?:/)?$"
+    },
+    {
+      "page": "/diensten",
+      "regex": "^/diensten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/diensten(?:/)?$"
+    },
+    {
+      "page": "/diensten/gevelrenovatie",
+      "regex": "^/diensten/gevelrenovatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/diensten/gevelrenovatie(?:/)?$"
+    },
+    {
+      "page": "/diensten/isolatie",
+      "regex": "^/diensten/isolatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/diensten/isolatie(?:/)?$"
+    },
+    {
+      "page": "/diensten/ramen-deuren",
+      "regex": "^/diensten/ramen\\-deuren(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/diensten/ramen\\-deuren(?:/)?$"
+    },
+    {
+      "page": "/diensten/renovatie",
+      "regex": "^/diensten/renovatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/diensten/renovatie(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/gevelisolatie-crepi",
+      "regex": "^/gevelisolatie\\-crepi(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelisolatie\\-crepi(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie",
+      "regex": "^/gevelrenovatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/antwerpen",
+      "regex": "^/gevelrenovatie/antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/antwerpen(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/berchem",
+      "regex": "^/gevelrenovatie/berchem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/berchem(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/brasschaat",
+      "regex": "^/gevelrenovatie/brasschaat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/brasschaat(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/deurne",
+      "regex": "^/gevelrenovatie/deurne(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/deurne(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/merksem",
+      "regex": "^/gevelrenovatie/merksem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/merksem(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/mortsel",
+      "regex": "^/gevelrenovatie/mortsel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/mortsel(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/schilde",
+      "regex": "^/gevelrenovatie/schilde(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/schilde(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/schoten",
+      "regex": "^/gevelrenovatie/schoten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/schoten(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/wijnegem",
+      "regex": "^/gevelrenovatie/wijnegem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/wijnegem(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/wilrijk",
+      "regex": "^/gevelrenovatie/wilrijk(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/wilrijk(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie/zoersel",
+      "regex": "^/gevelrenovatie/zoersel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie/zoersel(?:/)?$"
+    },
+    {
+      "page": "/gevelrenovatie-antwerpen",
+      "regex": "^/gevelrenovatie\\-antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/gevelrenovatie\\-antwerpen(?:/)?$"
+    },
+    {
+      "page": "/icon.png",
+      "regex": "^/icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.png(?:/)?$"
+    },
+    {
+      "page": "/offerte",
+      "regex": "^/offerte(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/offerte(?:/)?$"
+    },
+    {
+      "page": "/over-ons",
+      "regex": "^/over\\-ons(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/over\\-ons(?:/)?$"
+    },
+    {
+      "page": "/premie-gids",
+      "regex": "^/premie\\-gids(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/premie\\-gids(?:/)?$"
+    },
+    {
+      "page": "/premies",
+      "regex": "^/premies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/premies(?:/)?$"
+    },
+    {
+      "page": "/privacy",
+      "regex": "^/privacy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/privacy(?:/)?$"
+    },
+    {
+      "page": "/producten",
+      "regex": "^/producten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/producten(?:/)?$"
+    },
+    {
+      "page": "/projecten",
+      "regex": "^/projecten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/projecten(?:/)?$"
+    },
+    {
+      "page": "/ramen",
+      "regex": "^/ramen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen(?:/)?$"
+    },
+    {
+      "page": "/ramen/antwerpen",
+      "regex": "^/ramen/antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/antwerpen(?:/)?$"
+    },
+    {
+      "page": "/ramen/berchem",
+      "regex": "^/ramen/berchem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/berchem(?:/)?$"
+    },
+    {
+      "page": "/ramen/brasschaat",
+      "regex": "^/ramen/brasschaat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/brasschaat(?:/)?$"
+    },
+    {
+      "page": "/ramen/deurne",
+      "regex": "^/ramen/deurne(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/deurne(?:/)?$"
+    },
+    {
+      "page": "/ramen/merksem",
+      "regex": "^/ramen/merksem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/merksem(?:/)?$"
+    },
+    {
+      "page": "/ramen/mortsel",
+      "regex": "^/ramen/mortsel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/mortsel(?:/)?$"
+    },
+    {
+      "page": "/ramen/schilde",
+      "regex": "^/ramen/schilde(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/schilde(?:/)?$"
+    },
+    {
+      "page": "/ramen/schoten",
+      "regex": "^/ramen/schoten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/schoten(?:/)?$"
+    },
+    {
+      "page": "/ramen/wijnegem",
+      "regex": "^/ramen/wijnegem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/wijnegem(?:/)?$"
+    },
+    {
+      "page": "/ramen/wilrijk",
+      "regex": "^/ramen/wilrijk(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/wilrijk(?:/)?$"
+    },
+    {
+      "page": "/ramen/zoersel",
+      "regex": "^/ramen/zoersel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen/zoersel(?:/)?$"
+    },
+    {
+      "page": "/ramen-deuren",
+      "regex": "^/ramen\\-deuren(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen\\-deuren(?:/)?$"
+    },
+    {
+      "page": "/ramen-deuren-antwerpen",
+      "regex": "^/ramen\\-deuren\\-antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ramen\\-deuren\\-antwerpen(?:/)?$"
+    },
+    {
+      "page": "/renovatie",
+      "regex": "^/renovatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie(?:/)?$"
+    },
+    {
+      "page": "/renovatie/antwerpen",
+      "regex": "^/renovatie/antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/antwerpen(?:/)?$"
+    },
+    {
+      "page": "/renovatie/berchem",
+      "regex": "^/renovatie/berchem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/berchem(?:/)?$"
+    },
+    {
+      "page": "/renovatie/brasschaat",
+      "regex": "^/renovatie/brasschaat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/brasschaat(?:/)?$"
+    },
+    {
+      "page": "/renovatie/deurne",
+      "regex": "^/renovatie/deurne(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/deurne(?:/)?$"
+    },
+    {
+      "page": "/renovatie/merksem",
+      "regex": "^/renovatie/merksem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/merksem(?:/)?$"
+    },
+    {
+      "page": "/renovatie/mortsel",
+      "regex": "^/renovatie/mortsel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/mortsel(?:/)?$"
+    },
+    {
+      "page": "/renovatie/schilde",
+      "regex": "^/renovatie/schilde(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/schilde(?:/)?$"
+    },
+    {
+      "page": "/renovatie/schoten",
+      "regex": "^/renovatie/schoten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/schoten(?:/)?$"
+    },
+    {
+      "page": "/renovatie/wijnegem",
+      "regex": "^/renovatie/wijnegem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/wijnegem(?:/)?$"
+    },
+    {
+      "page": "/renovatie/wilrijk",
+      "regex": "^/renovatie/wilrijk(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/wilrijk(?:/)?$"
+    },
+    {
+      "page": "/renovatie/zoersel",
+      "regex": "^/renovatie/zoersel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatie/zoersel(?:/)?$"
+    },
+    {
+      "page": "/renovatiebedrijf-antwerpen",
+      "regex": "^/renovatiebedrijf\\-antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/renovatiebedrijf\\-antwerpen(?:/)?$"
+    },
+    {
+      "page": "/reviews",
+      "regex": "^/reviews(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reviews(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie",
+      "regex": "^/totaalrenovatie(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/antwerpen",
+      "regex": "^/totaalrenovatie/antwerpen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/antwerpen(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/berchem",
+      "regex": "^/totaalrenovatie/berchem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/berchem(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/brasschaat",
+      "regex": "^/totaalrenovatie/brasschaat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/brasschaat(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/deurne",
+      "regex": "^/totaalrenovatie/deurne(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/deurne(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/merksem",
+      "regex": "^/totaalrenovatie/merksem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/merksem(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/mortsel",
+      "regex": "^/totaalrenovatie/mortsel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/mortsel(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/schilde",
+      "regex": "^/totaalrenovatie/schilde(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/schilde(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/schoten",
+      "regex": "^/totaalrenovatie/schoten(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/schoten(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/wijnegem",
+      "regex": "^/totaalrenovatie/wijnegem(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/wijnegem(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/wilrijk",
+      "regex": "^/totaalrenovatie/wilrijk(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/wilrijk(?:/)?$"
+    },
+    {
+      "page": "/totaalrenovatie/zoersel",
+      "regex": "^/totaalrenovatie/zoersel(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/totaalrenovatie/zoersel(?:/)?$"
+    },
+    {
+      "page": "/veelgestelde-vragen",
+      "regex": "^/veelgestelde\\-vragen(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/veelgestelde\\-vragen(?:/)?$"
+    },
+    {
+      "page": "/vraag-ai",
+      "regex": "^/vraag\\-ai(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/vraag\\-ai(?:/)?$"
+    },
+    {
+      "page": "/werkgebied",
+      "regex": "^/werkgebied(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/werkgebied(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

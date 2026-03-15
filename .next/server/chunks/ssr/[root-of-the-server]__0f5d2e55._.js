@@ -1,0 +1,3 @@
+module.exports=[688947,(a,b,c)=>{b.exports=a.x("stream",()=>require("stream"))},478500,(a,b,c)=>{b.exports=a.x("node:async_hooks",()=>require("node:async_hooks"))},951615,(a,b,c)=>{b.exports=a.x("node:buffer",()=>require("node:buffer"))},45299,a=>a.a(async(b,c)=>{try{var d=a.i(436102),e=a.i(694495),f=b([d,e]);[d,e]=f.then?(await f)():f,a.s([]),c()}catch(a){c(a)}},!1),215498,a=>a.a(async(b,c)=>{try{var d=a.i(45299),e=a.i(436102),f=a.i(694495),g=b([d,e,f]);[d,e,f]=g.then?(await g)():g,a.s(["00fc550177f76344ec03d9639eb9a0a95d9a66c3ea",()=>e.$$RSC_SERVER_ACTION_0,"60e3c0935ed3f20cb88e9f64964ee9095621757362",()=>f.createProject]),c()}catch(a){c(a)}},!1)];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__0f5d2e55._.js.map

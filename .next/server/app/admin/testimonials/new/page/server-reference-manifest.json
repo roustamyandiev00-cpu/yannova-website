@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00fc550177f76344ec03d9639eb9a0a95d9a66c3ea": {
+      "workers": {
+        "app/admin/testimonials/new/page": {
+          "moduleId": 952499,
+          "async": true,
+          "exportedName": "$$RSC_SERVER_ACTION_0",
+          "filename": "src/app/admin/layout.tsx"
+        }
+      },
+      "layer": {
+        "app/admin/testimonials/new/page": "rsc"
+      },
+      "exportedName": "$$RSC_SERVER_ACTION_0",
+      "filename": "src/app/admin/layout.tsx"
+    },
+    "60c9a462b9451c2e2e1f90adacd9aa091e60437b8d": {
+      "workers": {
+        "app/admin/testimonials/new/page": {
+          "moduleId": 952499,
+          "async": true,
+          "exportedName": "createTestimonial",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/testimonials/new/page": "action-browser"
+      },
+      "exportedName": "createTestimonial",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

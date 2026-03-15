@@ -1,0 +1,38 @@
+[00:00:01.315] Server  LOG     ✓ Ready in 1131ms
+[00:00:03.727] Server  ERROR   (node:98947) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:00:03.739] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.359] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:16.386] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/drzwi2.jpg"
+[00:00:16.396] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/przesuwne02.jpg"
+[00:00:16.398] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/oslony.jpg"
+[00:00:16.399] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/okna-do-sesji-43.jpg"
+[00:00:16.406] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:16.413] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/2efc-ogrodzenie3.jpg"
+[00:00:23.105] Server  LOG     [DEBUG] Database connection established
+[00:00:23.418] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/moskitiera01.jpg"
+[00:00:23.434] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:23.435] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/pergolanuuneco1.jpg"
+[00:00:25.282] Server  LOG     [DEBUG] Database connection established
+[00:00:25.352] Server  LOG     Found 80 project photos in /Users/innovarslabo/Desktop/Yannova.be/public/fotos
+[00:00:27.031] Server  ERROR   ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1486406149905-6c6d4e0dd99e?q=80&w=2670&auto=format&fit=crop" 404
+[00:00:57.215] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:57.222] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:57.223] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:57.225] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:57.226] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:00:57.227] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:01:04.281] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:01:04.288] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:01:04.290] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/przesuwne02.jpg"
+[00:01:04.319] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[00:01:04.322] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[04:03:03.521] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[04:03:03.530] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/drzwi2.jpg"
+[04:03:03.531] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[04:03:03.533] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/uploads/Animacje/Brama/brama_01.jpg"
+[04:03:03.533] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/przesuwne02.jpg"
+[04:03:03.534] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/moskitiera01.jpg"
+[04:03:10.555] Server  ERROR   ⨯ "upstream image response timed out for" "https://ekookna.nl/file/records/oryginalne/pergolanuuneco1.jpg"
+[04:03:10.557] Server  ERROR   TimeoutError: The operation was aborted due to timeout
+[04:03:10.562] Server  ERROR   TimeoutError: The operation was aborted due to timeout

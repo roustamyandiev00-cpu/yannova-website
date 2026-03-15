@@ -1,0 +1,20 @@
+{
+  "node": {
+    "6059315ccd63b55f204ec457fedb85e4146fb3ca66": {
+      "workers": {
+        "app/(public)/deuren/schoten/page": {
+          "moduleId": 278342,
+          "async": true,
+          "exportedName": "createLead",
+          "filename": "src/lib/actions.ts"
+        }
+      },
+      "layer": {
+        "app/(public)/deuren/schoten/page": "action-browser"
+      },
+      "exportedName": "createLead",
+      "filename": "src/lib/actions.ts"
+    }
+  },
+  "edge": {}
+}

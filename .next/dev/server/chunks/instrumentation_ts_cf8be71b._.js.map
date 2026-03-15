@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/innovarslabo/Desktop/Yannova.be/instrumentation.ts"],"sourcesContent":["export async function register() {\n  if (process.env.NEXT_RUNTIME === 'nodejs') {\n    const tracer = (await import('dd-trace')).default\n    tracer.init({\n      service: 'yannova',\n      env: process.env.NODE_ENV,\n      version: process.env.npm_package_version,\n      logInjection: true,\n    })\n  }\n}\n"],"names":[],"mappings":";;;;AAAO,eAAe;IACpB,wCAA2C;QACzC,MAAM,SAAS,CAAC,+HAAwB,EAAE,OAAO;QACjD,OAAO,IAAI,CAAC;YACV,SAAS;YACT,GAAG;YACH,SAAS,QAAQ,GAAG,CAAC,mBAAmB;YACxC,cAAc;QAChB;IACF;AACF"}}]
+}
