@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle2, Shield, Award 
 import { ContactForm } from "@/components/ContactForm";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { company } from "@/lib/company";
-import { trackPhoneClick, trackWhatsAppClick } from "@/lib/analytics";
+import { trackPhoneClick, trackWhatsAppClick, trackEmailClick } from "@/lib/analytics";
 import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from "@/components/GoogleTagManager";
 
 const breadcrumbSchema = generateBreadcrumbSchema([
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     <a
                       className="hover:text-secondary transition-colors font-semibold break-all"
                       href={`mailto:${company.email}`}
-                      onClick={() => gtmTrackEmail()}
+                      onClick={() => { trackEmailClick('contact_page'); gtmTrackEmail(); }}
                     >
                       {company.email}
                     </a>

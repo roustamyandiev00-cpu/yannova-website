@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { company } from "@/lib/company";
 import { gtmTrackPhone, gtmTrackWhatsApp, gtmTrackEmail } from "@/components/GoogleTagManager";
+import { trackPhoneClick, trackWhatsAppClick, trackEmailClick } from "@/lib/analytics";
 
 export function Footer() {
   return (
@@ -41,7 +42,7 @@ export function Footer() {
             <div className="flex flex-wrap gap-3">
               <a
                 href={company.phoneHref}
-                onClick={() => gtmTrackPhone()}
+                onClick={() => { trackPhoneClick('footer'); gtmTrackPhone(); }}
                 className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-4 py-2.5 text-sm text-gray-200 shadow-elegant"
               >
                 <Phone className="h-4 w-4 text-secondary" />
@@ -51,7 +52,7 @@ export function Footer() {
                 href={company.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => gtmTrackWhatsApp()}
+                onClick={() => { trackWhatsAppClick('footer'); gtmTrackWhatsApp(); }}
                 className="inline-flex items-center gap-2 rounded-xl glass glass-hover px-4 py-2.5 text-sm text-gray-200 shadow-elegant"
               >
                 <MessageCircle className="h-4 w-4 text-secondary" />
@@ -156,7 +157,7 @@ export function Footer() {
                     <Phone className="h-5 w-5 text-secondary shrink-0" />
                     <a
                       href={company.phoneHref}
-                      onClick={() => gtmTrackPhone()}
+                      onClick={() => { trackPhoneClick('footer'); gtmTrackPhone(); }}
                       className="hover:text-white"
                     >
                       {company.phoneDisplay}
@@ -166,7 +167,7 @@ export function Footer() {
                     <Mail className="h-5 w-5 text-secondary shrink-0" />
                     <a
                       href={`mailto:${company.email}`}
-                      onClick={() => gtmTrackEmail()}
+                      onClick={() => { trackEmailClick('footer'); gtmTrackEmail(); }}
                       className="hover:text-white"
                     >
                       {company.email}

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { getPricingInfo, ServiceType } from "@/lib/local-seo-helper";
+import { trackCtaClick } from "@/lib/analytics";
 
 interface PricingSectionProps {
   service: ServiceType;
@@ -51,6 +54,7 @@ export function PricingSection({ service, city }: PricingSectionProps) {
             </p>
             <Link
               href="/contact"
+              onClick={() => trackCtaClick('offerte_aanvragen', 'pricing_section')}
               className="inline-flex items-center gap-2 rounded-lg bg-secondary px-6 py-3 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
             >
               Gratis offerte aanvragen

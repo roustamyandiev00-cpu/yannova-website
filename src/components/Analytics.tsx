@@ -30,7 +30,7 @@ export function Analytics() {
     <>
       {/* ── Google Consent Mode V2 — must run before any gtag config ── */}
       {(gaId || googleAdsId) && (
-ive">
+        <Script id="google-consent-mode" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

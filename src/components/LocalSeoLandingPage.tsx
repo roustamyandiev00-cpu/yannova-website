@@ -8,6 +8,7 @@ import { generateFAQSchema } from "@/lib/faq-schema";
 import { getLocalProofProjects } from "@/lib/data/local-proof";
 import { testimonials } from "@/data/testimonials";
 import { getRelatedBlogPosts } from "@/lib/data/blog-posts";
+import { LocalSeoHeroCTAs, LocalSeoSidebarCTAs } from "@/components/LocalSeoCTAButtons";
 
 interface LocalSeoLandingPageProps {
   page: LocalSeoPageData;
@@ -93,26 +94,7 @@ export function LocalSeoLandingPage({ page }: LocalSeoLandingPageProps) {
                 {page.heroDescription}
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link
-                  href="/offerte"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors"
-                >
-                  Offerte aanvragen
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3.5 text-base font-medium text-white hover:bg-white/5 transition-colors"
-                >
-                  Contact opnemen
-                </Link>
-                <a
-                  href={company.phoneHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-6 py-3.5 text-base font-medium text-white hover:bg-white/5 transition-colors"
-                >
-                  <Phone className="h-4 w-4" />
-                  {company.phoneDisplay}
-                </a>
+                <LocalSeoHeroCTAs />
               </div>
             </div>
           </div>
@@ -198,21 +180,7 @@ export function LocalSeoLandingPage({ page }: LocalSeoLandingPageProps) {
                   zonder omwegen.
                 </p>
                 <div className="mt-6 flex flex-col gap-3">
-                  <Link
-                    href="/offerte"
-                    className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-semibold text-[#0a0c10] hover:bg-white/90 transition-colors"
-                  >
-                    Vraag uw offerte
-                  </Link>
-                  <a
-                    href={company.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    WhatsApp
-                  </a>
+                  <LocalSeoSidebarCTAs />
                 </div>
               </div>
             </div>

@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { X, Gift, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { trackCtaClick } from '@/lib/analytics';
+import { gtmTrackFormSubmit } from '@/components/GoogleTagManager';
 
 export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -104,6 +105,7 @@ export function ExitIntentPopup() {
                     onClick={(e) => {
                       e.stopPropagation();
                       trackCtaClick('offerte_aanvragen', 'exit_intent_popup');
+                      gtmTrackFormSubmit('exit_intent_cta');
                       setIsVisible(false);
                     }}
                     className="w-full bg-secondary text-white py-4 rounded-xl font-bold hover:bg-secondary/80 transition-colors flex items-center justify-center gap-2"

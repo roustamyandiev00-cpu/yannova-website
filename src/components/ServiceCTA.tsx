@@ -3,7 +3,7 @@
 
 import { Phone, MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { company } from '@/lib/company';
-import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
+import { trackPhoneClick, trackWhatsAppClick, trackCtaClick } from '@/lib/analytics';
 import { gtmTrackPhone, gtmTrackWhatsApp } from '@/components/GoogleTagManager';
 
 interface ServiceCTAProps {
@@ -76,6 +76,7 @@ export function ServiceCTA({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href={primaryCTALink}
+                onClick={() => trackCtaClick('offerte_aanvragen', 'service_cta')}
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-secondary hover:bg-secondary/90 px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>{primaryCTA}</span>

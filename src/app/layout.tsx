@@ -4,11 +4,8 @@ import Script from "next/script";
 import { Suspense } from "react";
 import "./globals.css";
 import { Analytics } from "@/components/Analytics";
-import dynamic from "next/dynamic";
+import { PerformanceMonitor, DatadogRUM } from "@/components/ClientOnlyComponents";
 import { generateLocalBusinessSchema, generateServiceSchema, generateWebSiteSchema, generateOrganizationSchema, services } from "@/lib/structured-data";
-
-const PerformanceMonitor = dynamic(() => import("@/components/PerformanceMonitor").then(m => ({ default: m.PerformanceMonitor })), { ssr: false });
-const DatadogRUM = dynamic(() => import("@/components/DatadogRUM").then(m => ({ default: m.DatadogRUM })), { ssr: false });
 
 const inter = Inter({ 
   subsets: ["latin"],
