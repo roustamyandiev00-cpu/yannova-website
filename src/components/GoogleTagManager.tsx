@@ -57,12 +57,11 @@ export function GoogleTagManagerNoScript() {
 // Helper functions for GTM events
 export function gtmEvent(eventName: string, eventData?: Record<string, unknown>) {
   if (typeof window !== 'undefined') {
-    const w = window as unknown as { dataLayer: Record<string, unknown>[] };
-    if (w.dataLayer) {
-      w.dataLayer.push({
+    if (window.dataLayer) {
+      window.dataLayer.push({
         event: eventName,
         ...eventData,
-      });
+      } as unknown);
     }
   }
 }
