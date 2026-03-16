@@ -4,6 +4,7 @@ import { Specializations } from "@/components/Specializations";
 import { CTASection } from "@/components/CTASection";
 import { FAQSection } from "@/components/FAQSection";
 import { HomeSeoSection } from "@/components/HomeSeoSection";
+import { HomeTextSection } from "@/components/HomeTextSection";
 import { PartnerBrands } from "@/components/PartnerBrands";
 import { ProductCatalogSection } from "@/components/ProductCatalogSection";
 import { generateFAQSchema } from "@/lib/faq-schema";
@@ -44,6 +45,7 @@ export default function HomePage() {
       <Specializations />
       <ProductCatalogSection compact />
       <HomeSeoSection />
+      <HomeTextSection />
       <FAQSection />
       <CTASection />
     </>
