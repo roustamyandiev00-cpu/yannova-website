@@ -55,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/crepi-isolatie-antwerpen',
   ]
 
+  // Get all blog posts (both dynamic and static)
   const blogPages = getBlogIndexPosts().map((post) => `/blog/${post.slug}`)
   const productPages = productCatalog.map((item) => `/producten/${item.slug}`)
 

@@ -25,8 +25,7 @@ export function generateSEO({
   return {
     title: fullTitle,
     description,
-    keywords: [
-      ...keywords,
+    keywords: keywords.length > 0 ? keywords : [
       'ramen antwerpen',
       'deuren antwerpen',
       'renovatie antwerpen',
