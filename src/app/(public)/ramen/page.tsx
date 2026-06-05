@@ -5,7 +5,7 @@ import { ArrowRight, Phone, CheckCircle2, Star, MessageCircle, Shield, Clock } f
 import { company } from '@/lib/company';
 import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // herindexeer elk uur
 
 export const metadata = generateSEO({
   title: "Ramen plaatsen Zoersel & Antwerpen | PVC & Aluminium | Yannova",

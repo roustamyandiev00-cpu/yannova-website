@@ -673,6 +673,186 @@ export const blogPosts: BlogPostData[] = [
     category: "Prijzen",
     keywords: ["ramen prijzen", "wat kosten ramen", "pvc ramen prijs", "aluminium ramen prijs"],
     serviceTags: ["ramen-deuren"],
+    dynamic: false,
+  },
+  {
+    slug: "nieuwe-voordeur-kiezen-tips",
+    title: "Nieuwe voordeur kiezen: 7 tips voor de juiste keuze",
+    excerpt: "Wat moet je weten bij het kiezen van een nieuwe voordeur? Van materiaal tot inbraakwering — alles op een rij.",
+    description: "Nieuwe voordeur kiezen? Ontdek de 7 belangrijkste criteria: materiaal (PVC, aluminium, staal), inbraakklasse, isolatie, design en prijs. Expert advies van Yannova.",
+    date: "2026-06-05",
+    readTime: "6 min",
+    category: "Advies",
+    keywords: ["nieuwe voordeur kiezen", "voordeur keuze", "voordeur materiaal", "inbraakwerende voordeur", "voordeur advies"],
+    serviceTags: ["ramen-deuren", "deuren"],
+    dynamic: true,
+    intro: "Een nieuwe voordeur is meer dan een functioneel element — het is het visitekaartje van uw woning. De keuze tussen PVC, aluminium of staal, de juiste inbraakklasse en het design dat bij uw woning past: het vraagt om een doordachte afweging. In deze gids geeft Yannova u 7 concrete tips om de juiste voordeur te kiezen.",
+    keyPoints: [
+      "Kies het materiaal op basis van budget, onderhoud en gewenste uitstraling: PVC is onderhoudsarm, aluminium is strak en staal is robuust.",
+      "Inbraakklasse RC2 is de minimumstandaard voor stedelijke woningen in Antwerpen en omgeving.",
+      "Let op de U-waarde: een goede voordeur heeft een U-waarde van 1,0 W/m²K of lager voor optimale isolatie.",
+      "Kleur en design moeten passen bij de architectuur van uw woning — vraag kleurstalen aan.",
+    ],
+    sections: [
+      {
+        title: "Tip 1: Kies het juiste materiaal voor uw situatie",
+        paragraphs: [
+          "De drie meest voorkomende materialen voor voordeuren zijn PVC, aluminium en staal. Elk materiaal heeft zijn eigen voordelen afhankelijk van uw budget, onderhoudstijd en esthetische voorkeur.",
+          "PVC is de meest budgetvriendelijke optie en zeer onderhoudsarm. Het isoleert uitstekend maar is minder geschikt voor zeer grote of zware voordeuren. PVC voordeuren zijn ideaal voor gezinswoningen waar praktisch comfort en prijs voorop staan.",
+          "Aluminium biedt een strakke, moderne uitstraling met smalle profielen. Het is zeer duurzaam, verkrijgbaar in elke RAL-kleur en geschikt voor grote deuropeningen. Aluminium is iets duurder maar loont op lange termijn door de minimale onderhoudskosten.",
+          "Stalen deuren zijn de stevigste optie en worden vooral gekozen voor een industriële of karaktervolle uitstraling. Ze zijn zwaarder en duurder, maar bieden maximale veiligheid en een unieke look.",
+        ],
+        bullets: [
+          "PVC: budgetvriendelijk, goed isolerend, onderhoudsarm",
+          "Aluminium: strak design, duurzaam, elke kleur mogelijk",
+          "Staal: maximale stevigheid, industrieel karakter, langste levensduur",
+        ],
+      },
+      {
+        title: "Tip 2: Let op de inbraakklasse (RC-waarde)",
+        paragraphs: [
+          "Een voordeur moet uw woning niet alleen beschermen tegen kou en lawaai, maar ook tegen inbraak. De inbraakklasse wordt aangeduid met RC (Resistance Class) en loopt van RC1 tot RC6.",
+          "Voor woningen in Antwerpen en andere stedelijke gebieden raden wij minimaal RC2 aan. Dit betekent dat de deur, het slot en het hang- en sluitwerk gecertificeerd zijn en een inbraakpoging minstens 3 minuten weerstaan.",
+          "RC2 wordt ook steeds vaker geëist door verzekeringsmaatschappijen. Yannova plaatst standaard voordeuren met SKG**-gecertificeerd beslag en een cilinder met verhoogde boorbescherming.",
+        ],
+        bullets: [
+          "RC1: basisbeveiliging tegen fysiek geweld (niet aanbevolen)",
+          "RC2: standaard voor woningen (minimaal 3 minuten inbraakwerendheid)",
+          "RC3: verhoogde beveiliging (minimaal 5 minuten, voor risicowoningen)",
+        ],
+      },
+      {
+        title: "Tip 3: Check de isolatiewaarde (U-waarde)",
+        paragraphs: [
+          "De U-waarde van een deur geeft aan hoeveel warmte er per vierkante meter verloren gaat. Hoe lager de U-waarde, hoe beter de isolatie.",
+          "Moderne voordeuren hebben een U-waarde tussen 0,8 en 1,2 W/m²K. Voor passiefhuizen en nieuwbouwprojecten streeft men naar een U-waarde onder de 1,0 W/m²K.",
+          "Een goed geïsoleerde voordeur bespaart energie, verhoogt het comfort (geen tocht) en vermindert geluidshinder van buiten.",
+        ],
+        bullets: [
+          "U-waarde < 1,0 W/m²K: uitstekende isolatie",
+          "U-waarde 1,0 - 1,5 W/m²K: goede isolatie",
+          "U-waarde > 1,5 W/m²K: matige isolatie (oude deuren)",
+        ],
+      },
+      {
+        title: "Tip 4: Kies een design dat past bij uw woning",
+        paragraphs: [
+          "Een voordeur moet passen bij de architectuur van uw woning. Een moderne villa vraagt om een andere deur dan een klassieke rijwoning of een hedendaags appartement.",
+          "Let op de verhoudingen: een hoge, smalle deur past bij een herenhuis, terwijl een brede deur met zijlichten geschikt is voor een vrijstaande woning. Ook de kleur speelt een grote rol in de uitstraling.",
+          "Vraag altijd kleurstalen en visualisaties aan voordat u definitief kiest. Yannova kan u digitale impressies tonen van hoe verschillende deurmodellen en kleuren bij uw gevel passen.",
+        ],
+        bullets: [
+          "Moderne woning: strakke lijnen, weinig versieringen, vaak antraciet of mat zwart",
+          "Klassieke woning: horizontale of verticale verdeling, warme kleuren",
+          "Landelijke stijl: houtlook of authentieke details, vaak groen of donkerblauw",
+        ],
+      },
+      {
+        title: "Tip 5: Vergeet de deurgreep en het slot niet",
+        paragraphs: [
+          "De kwaliteit van het hang- en sluitwerk is net zo belangrijk als de deur zelf. Een goede voordeur heeft een meerpuntsluiting (minimaal 3 sluitpunten) en een cilinder met anti-inbraakbescherming.",
+          "Kies voor een comfortabele deurgreep die makkelijk vast te pakken is, ook voor kinderen en ouderen. Moderne opties zijn vingerafdruksloten of elektronische sloten met cijfercode.",
+        ],
+      },
+      {
+        title: "Tip 6: Budget en prijs-kwaliteitverhouding",
+        paragraphs: [
+          "De prijs van een voordeur varieert sterk afhankelijk van materiaal, afmetingen en afwerking. Een standaard PVC voordeur kost tussen €800 en €1.500, terwijl een aluminium voordeur tussen €1.500 en €3.500 ligt.",
+          "Investeer in kwaliteit: een goede voordeur gaat 30 jaar of langer mee. Een goedkope deur met slechte isolatie of zwak beslag kost u op lange termijn meer door hogere energiekosten en eerder onderhoud.",
+        ],
+        bullets: [
+          "PVC voordeur: €800 - €1.500 inclusief plaatsing",
+          "Aluminium voordeur: €1.500 - €3.500 inclusief plaatsing",
+          "Stalen voordeur op maat: €3.000 - €6.000+",
+        ],
+      },
+      {
+        title: "Tip 7: Werk met een specialist die opmeet en correct plaatst",
+        paragraphs: [
+          "De beste voordeur is waardeloos als de plaatsing niet correct is. Een vakkundige montage zorgt voor perfecte afsluiting, geen tocht en een lange levensduur.",
+          "Yannova komt altijd gratis langs voor een opmeting. We controleren de bestaande opening, adviseren over de beste oplossing en zorgen voor een technisch correcte plaatsing met garantie.",
+        ],
+      },
+    ],
+    ctaTitle: "Nieuwe voordeur laten plaatsen?",
+    ctaText: "Yannova adviseert u graag over de beste voordeur voor uw woning in Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u.",
+    relatedSlugs: ["voordeur-vervangen-prijs-antwerpen", "ramen-vervangen-wanneer-lonen", "aannemer-antwerpen-kiezen"],
+  },
+  {
+    slug: "dubbel-glas-vervangen-door-hr-glas",
+    title: "Dubbel glas vervangen door HR++ glas: wanneer loont het?",
+    excerpt: "Wanneer moet je oud dubbel glas vervangen door HR++ glas? Besparing, kosten en terugverdientijd op een rij.",
+    description: "Dubbel glas vervangen door HR++ glas? Ontdek wanneer het loont, hoeveel je bespaart en wat het kost. Expert advies voor woningen in Antwerpen.",
+    date: "2026-06-05",
+    readTime: "5 min",
+    category: "Besparing",
+    keywords: ["dubbel glas vervangen", "hr++ glas vervangen", "oude ramen vervangen", "dubbel glas of hr++ glas", "glas vervangen prijs"],
+    serviceTags: ["ramen-deuren", "ramen"],
+    dynamic: true,
+    intro: "Veel woningen hebben nog oud dubbel glas uit de jaren 80 of 90. Dit glas isoleert veel slechter dan modern HR++ glas, wat resulteert in hogere energiekosten en minder comfort. Maar wanneer loont het om oud dubbel glas te vervangen? In deze gids leggen we uit wanneer vervanging zinvol is en wat het oplevert.",
+    keyPoints: [
+      "Oud dubbel glas (uit de jaren 80-90) heeft een U-waarde van 2,5-2,8 W/m²K, HR++ glas haalt 1,1 W/m²K.",
+      "Door te vervangen bespaar je gemiddeld 20-30% op je verwarmingskosten.",
+      "Alleen het glas vervangen kan, maar bij oude profielen is volledige raamvervanging vaak beter.",
+      "De terugverdientijd ligt tussen 7 en 12 jaar, afhankelijk van je huidige situatie.",
+    ],
+    sections: [
+      {
+        title: "Verschil tussen oud dubbel glas en HR++ glas",
+        paragraphs: [
+          "Oud dubbel glas uit de jaren 80 en 90 bestaat uit twee glasplaten met een spouw van 6mm gevuld met droge lucht. De U-waarde ligt rond de 2,8 W/m²K, wat betekent dat er veel warmte verloren gaat.",
+          "HR++ glas (hoogrendementsglas) heeft een spouw van 16mm gevuld met edelgas (argon) en een onzichtbare metaalcoating (low-e coating) die warmte reflecteert. Hierdoor haalt HR++ glas een U-waarde van ongeveer 1,1 W/m²K — meer dan twee keer zo goed als oud dubbel glas.",
+        ],
+        bullets: [
+          "Oud dubbel glas: U-waarde 2,5-2,8 W/m²K",
+          "HR+ glas: U-waarde 1,6 W/m²K",
+          "HR++ glas: U-waarde 1,1 W/m²K",
+          "HR+++ glas (triple): U-waarde 0,6 W/m²K",
+        ],
+      },
+      {
+        title: "Hoeveel bespaar je door te vervangen?",
+        paragraphs: [
+          "De besparing hangt af van de oppervlakte van je ramen, je huidige verwarmingskosten en het type verwarming. Voor een gemiddelde rijwoning met 15m² ramen kun je rekenen op een besparing van €200 tot €350 per jaar.",
+          "Naast energiebesparing verbetert ook het comfort: geen koude ramen meer in de winter, minder condensatie en minder tocht. In de zomer blijft het langer koel in huis door de warmtewerende coating.",
+        ],
+        bullets: [
+          "Gemiddelde rijwoning (15m² ramen): €200-€350/jaar besparing",
+          "Vrijstaande woning (25m² ramen): €350-€600/jaar besparing",
+          "Extra: minder condensatie, meer comfort, hogere woningwaarde",
+        ],
+      },
+      {
+        title: "Alleen glas vervangen of complete ramen?",
+        paragraphs: [
+          "In principe kun je alleen het glas vervangen zonder de profielen te vervangen. Dit is goedkoper (€150-€250 per m² glas), maar niet altijd de beste oplossing.",
+          "Als je profielen ouder zijn dan 20 jaar, zijn de dichtingen vaak versleten en de profielen zelf slecht isolerend. Dan loont volledige raamvervanging meer, omdat je dan ook profiteert van moderne meerkamerprofielen met veel betere isolatie.",
+          "Yannova adviseert bij een plaatsbezoek altijd of alleen glasvervanging volstaat of dat complete vervanging beter is voor jouw situatie.",
+        ],
+      },
+      {
+        title: "Wat kost het en wat is de terugverdientijd?",
+        paragraphs: [
+          "Alleen het glas vervangen kost €150-€250 per m². Voor complete raamvervanging met nieuwe PVC profielen reken je €400-€600 per m².",
+          "De terugverdientijd van alleen glasvervanging ligt rond de 7-10 jaar. Voor complete raamvervanging is dat 10-15 jaar, maar je krijgt dan ook een volledig nieuw, onderhoudsvrij raam met betere isolatie en veiligheid.",
+        ],
+        bullets: [
+          "Alleen glas vervangen: €150-€250/m², terugverdientijd 7-10 jaar",
+          "Volledige raamvervanging: €400-€600/m², terugverdientijd 10-15 jaar",
+          "Premies via Mijn VerbouwPremie kunnen de terugverdientijd met 2-3 jaar verkorten",
+        ],
+      },
+      {
+        title: "Wanneer is vervanging het meest logisch?",
+        paragraphs: [
+          "Glasvervanging loont het meest wanneer je ramen ouder zijn dan 20 jaar, je merkt dat het koud is bij de ramen, er condensatie optreedt tussen de glasbladen of je energiefactuur hoog blijft ondanks zuinige verwarming.",
+          "Het is ook slim om raamvervanging te combineren met andere renovatiewerken zoals gevelisolatie. Dan kun je de werken op elkaar afstemmen en profiteer je van efficiëntere planning.",
+        ],
+      },
+    ],
+    ctaTitle: "Twijfel je of je ramen aan vervanging toe zijn?",
+    ctaText: "Yannova komt gratis langs voor een inspectie en adviseert of glasvervanging volstaat of dat nieuwe ramen beter zijn.",
+    relatedSlugs: ["wat-is-hr-glas-en-waarom-belangrijk", "ramen-vervangen-wanneer-lonen", "wat-kosten-nieuwe-ramen"],
   },
   {
     slug: "premies-ramen-deuren-2026",
@@ -973,6 +1153,296 @@ export const blogPosts: BlogPostData[] = [
     ctaTitle: "Gevelisolatie in Antwerpen met maximale premies?",
     ctaText: "Yannova adviseert u over de beste isolatieoplossing voor uw woning in Antwerpen en verzorgt de volledige premie-aanvraag voor u.",
     relatedSlugs: ["energie-renovatie-premie-belgie", "hoeveel-kost-gevelrenovatie", "crepi-gevel-voordelen"],
+  },
+  {
+    slug: "voordeur-vervangen-prijs-antwerpen",
+    title: "Voordeur vervangen in Antwerpen: prijs, types en tips voor 2026",
+    excerpt: "Wat kost een nieuwe voordeur in Antwerpen? PVC, aluminium of staal — alles op een rij inclusief inbraakwering en premies.",
+    description: "Ontdek wat een nieuwe voordeur kost in Antwerpen in 2026. Vergelijk PVC, aluminium en stalen deuren, inbraakklassen en hoe u premies aanvraagt.",
+    date: "2026-06-05",
+    readTime: "5 min",
+    category: "Prijzen",
+    keywords: [
+      "voordeur vervangen antwerpen",
+      "nieuwe voordeur antwerpen prijs",
+      "voordeur plaatsen antwerpen",
+      "aluminium voordeur antwerpen",
+      "pvc voordeur antwerpen",
+      "inbraakwerende deur antwerpen",
+      "voordeur prijs 2026",
+    ],
+    serviceTags: ["ramen-deuren", "deuren"],
+    cityTags: ["antwerpen", "berchem", "deurne", "wilrijk"],
+    dynamic: true,
+    intro:
+      "Een nieuwe voordeur is meer dan een esthetische keuze. In Antwerpen, waar inbraakcijfers hoger liggen dan op het platteland, maakt de juiste deur een reëel verschil in veiligheid. Maar ook isolatie, uitstraling en onderhoud spelen mee. In deze gids zetten we alles op een rij.",
+    keyPoints: [
+      "Een kwalitatieve aluminium voordeur in Antwerpen kost gemiddeld €1.500 tot €3.500 inclusief plaatsing.",
+      "Inbraakklasse RC2 is de minimumstandaard voor stedelijke woningen in Antwerpen.",
+      "PVC deuren zijn goedkoper maar minder geschikt voor grote, zware voordeuren.",
+      "Mijn VerbouwPremie dekt soms ook deuren als onderdeel van een bredere renovatie.",
+    ],
+    sections: [
+      {
+        title: "Welke types voordeur zijn er?",
+        paragraphs: [
+          "De drie meest voorkomende materialen voor voordeuren in Antwerpen zijn aluminium, PVC en staal. Elk heeft zijn sterktes afhankelijk van uw situatie.",
+          "Aluminium is verreweg de populairste keuze voor voordeuren in Antwerpen. Het is sterk, strak en verkrijgbaar in elke RAL-kleur. PVC wordt minder gebruikt voor voordeuren omdat het bij zware afmetingen minder vormvast is. Stalen deuren zijn de sterkste optie en worden soms gekozen voor karakter of maximale veiligheid.",
+        ],
+        bullets: [
+          "Aluminium: sterk, strak design, elke kleur, lange levensduur",
+          "PVC: budgetvriendelijk, goed isolerend, minder geschikt voor zware deuren",
+          "Staal: maximale stevigheid, karaktervol uiterlijk, hogere prijs",
+        ],
+      },
+      {
+        title: "Inbraakwering: wat heeft u nodig in Antwerpen?",
+        paragraphs: [
+          "Voor stedelijke woningen in Antwerpen raden wij minimaal inbraakklasse RC2 aan. Dit betekent dat de deur, het slot en het hang- en sluitwerk gecertificeerd zijn en een poging tot inbraak minstens 3 minuten weerstaan.",
+          "RC2 is ook de klasse die verzekeringsmaatschappijen steeds vaker als minimumvereiste stellen voor woonverzekeringen in stedelijke gebieden. Yannova plaatst standaard deuren met SKG**-gecertificeerd beslag en een cilinder met verhoogde boormeerstand.",
+        ],
+      },
+      {
+        title: "Wat kost een nieuwe voordeur in Antwerpen?",
+        paragraphs: [
+          "De prijs van een voordeur hangt af van materiaal, inbraakklasse, afmetingen en afwerking. Een indicatie voor Antwerpen:",
+        ],
+        bullets: [
+          "PVC voordeur (standaard afmetingen): €800 – €1.500 inclusief plaatsing",
+          "Aluminium voordeur (RC2): €1.500 – €3.500 inclusief plaatsing",
+          "Aluminium voordeur met zijlichten: €2.500 – €5.000",
+          "Stalen voordeur op maat: €3.000 – €6.000+",
+          "Extra opties: fingerprint-slot (+€200), glaspartijen (+€300), speciale kleur (+€150)",
+        ],
+      },
+      {
+        title: "Hoe lang duurt het plaatsen van een voordeur?",
+        paragraphs: [
+          "Het plaatsen van een voordeur duurt doorgaans een halve tot een volledige dag. Na de opmeting duurt de productie gemiddeld 3 tot 5 weken.",
+          "In Antwerpen houden we rekening met de bereikbaarheid van uw woning, eventuele parkeervergunningen voor onze werkwagen en de specifieke eisen van bepaalde wijken of beschermde panden.",
+        ],
+      },
+      {
+        title: "Premies voor een nieuwe voordeur in Antwerpen",
+        paragraphs: [
+          "Een voordeur alleen komt doorgaans niet in aanmerking voor Mijn VerbouwPremie. Maar als u de deur combineert met andere energiewerken (ramen, gevelisolatie), kan de totaalinvestering wel gedeeltelijk in aanmerking komen.",
+          "Voor inbraakwerende deuren zijn er soms kortingen via uw verzekeraar. Vraag dit na bij uw makelaar of verzekeringsmaatschappij.",
+        ],
+      },
+    ],
+    ctaTitle: "Nieuwe voordeur in Antwerpen?",
+    ctaText: "Yannova plaatst aluminium en PVC voordeuren in Antwerpen en omgeving. Gratis opmeting aan huis, offerte binnen 24u.",
+    relatedSlugs: ["ramen-vervangen-prijs-antwerpen", "aannemer-antwerpen-kiezen", "wat-kosten-nieuwe-ramen"],
+  },
+  {
+    slug: "ramen-vervangen-wanneer-lonen",
+    title: "Wanneer loont het om ramen te vervangen? De 5 signalen",
+    excerpt: "Hoe weet u of uw ramen aan vervanging toe zijn? Deze 5 signalen vertellen u wanneer nieuwe ramen renderen.",
+    description: "Wanneer is het tijd voor nieuwe ramen? Ontdek de 5 duidelijkste signalen dat uw ramen aan vervanging toe zijn en wanneer de investering loont.",
+    date: "2026-06-05",
+    readTime: "5 min",
+    category: "Advies",
+    keywords: [
+      "wanneer ramen vervangen",
+      "ramen vervangen nodig",
+      "oude ramen vervangen",
+      "condensatie ramen",
+      "tocht ramen oplossen",
+      "ramen aan vervanging toe",
+    ],
+    serviceTags: ["ramen-deuren", "ramen"],
+    dynamic: true,
+    intro:
+      "Veel eigenaars twijfelen of het moment voor nieuwe ramen al aangebroken is. Soms zijn ramen visueel nog in orde maar presteren ze technisch al jaren slecht. In dit artikel leggen we de 5 duidelijkste signalen uit die aangeven dat uw ramen echt aan vervanging toe zijn.",
+    keyPoints: [
+      "Condensatie tussen de glasbladen is het duidelijkste teken dat uw beglazing defect is.",
+      "Tocht bij gesloten ramen wijst op versleten dichtingen of vervormde profielen.",
+      "Een hoge energiefactuur terwijl de verwarming altijd aan staat kan aan de ramen liggen.",
+      "Ramen die moeilijk open of dicht gaan zorgen voor extra warmteverlies.",
+    ],
+    sections: [
+      {
+        title: "Signaal 1: Condensatie tussen de glasbladen",
+        paragraphs: [
+          "Als u mist of waterdruppels ziet tussen de twee glasbladen van uw dubbelglas, is de isolerende gasvulling (argon of lucht) verloren gegaan. Dit betekent dat het glas zijn isolerende werking heeft verloren en dat uw ramen thermisch niet meer presteren.",
+          "Dit probleem kan soms worden opgelost door alleen het glas te vervangen zonder de profielen te wisselen. Als de profielen echter ook verouderd zijn, is een volledige vervanging meestal goedkoper en efficiënter.",
+        ],
+      },
+      {
+        title: "Signaal 2: Tocht bij gesloten ramen",
+        paragraphs: [
+          "Voelt u tocht bij gesloten ramen? Dan zijn de EPDM-dichtingen waarschijnlijk versleten of zijn de profielen licht vervormd door jarenlang gebruik. Dit zorgt niet alleen voor oncomfort maar ook voor een merkbaar hoger energieverbruik.",
+          "Een simpele test: houd een aansteker of kaarsje bij de raamrand. Flakkert de vlam, dan is er tocht. Nieuwe ramen met meerkamerprofielen zijn volledig luchtdicht en elimineren dit probleem direct.",
+        ],
+      },
+      {
+        title: "Signaal 3: Hoge energiefactuur",
+        paragraphs: [
+          "Ramen zijn verantwoordelijk voor 20 tot 30% van het warmteverlies in een gemiddelde woning. Als uw energiefactuur hoog blijft ondanks een zuinige verwarming, kunnen de ramen een grote oorzaak zijn.",
+          "Oude enkelglas- of verouderd dubbelglas-ramen hebben een U-waarde van 2,5 tot 5,8 W/m²K. Nieuwe HR++ ramen halen 1,1 W/m²K. Dat verschil is direct voelbaar in uw factuur.",
+        ],
+      },
+      {
+        title: "Signaal 4: Ramen die moeilijk bewegen",
+        paragraphs: [
+          "Ramen die stijf zijn, klemmen of niet meer goed afsluiten zijn een teken van profiel-vervorming of slijtage van het hang- en sluitwerk. Naast het ongemak zorgt dit ook voor luchtlekken die energie verspillen.",
+          "Soms kan dit worden opgelost met een afstelling, maar bij oudere ramen is de vervorming vaak structureel en loont enkel volledige vervanging.",
+        ],
+      },
+      {
+        title: "Signaal 5: Ramen ouder dan 20 jaar",
+        paragraphs: [
+          "De meeste ramen en beglazing hebben een technische levensduur van 20 tot 30 jaar. Daarna neemt de isolatiewaarde af, ook als er geen zichtbare problemen zijn. Als uw ramen ouder zijn dan 20 jaar, is een inspectie door een vakman altijd zinvol.",
+          "Zeker in combinatie met een nakende gevelrenovatie of andere energiewerken is dit het ideale moment: door alles te combineren bespaart u op de totale kost en geniet u van de maximale premies.",
+        ],
+      },
+      {
+        title: "Wanneer loont vervanging het meest?",
+        paragraphs: [
+          "Ramen vervangen loont het hardst wanneer u meerdere signalen tegelijk ziet, wanneer u toch al andere bouwwerken plant, of wanneer uw EPC-score een verbetering nodig heeft. De combinatie van lagere energiekosten en premies van Mijn VerbouwPremie maakt de investering in de meeste gevallen terug op 5 tot 8 jaar.",
+          "Vraag een gratis opmeting aan — dan ziet u ter plaatse wat de staat van uw ramen is en wat de meest rendabele aanpak is voor uw situatie.",
+        ],
+      },
+    ],
+    ctaTitle: "Twijfelt u of uw ramen aan vervanging toe zijn?",
+    ctaText: "Yannova komt gratis langs voor een inspectie en geeft u eerlijk advies over wat nodig is en wat het oplevert.",
+    relatedSlugs: ["wat-kosten-nieuwe-ramen", "pvc-of-aluminium-ramen", "premies-ramen-deuren-2026"],
+  },
+  {
+    slug: "schuifdeuren-prijs-types-antwerpen",
+    title: "Schuifdeuren in Antwerpen: prijs, types en wat past bij uw woning",
+    excerpt: "Wat kost een schuifdeur in Antwerpen? Vergelijk hef-schuif, vouwwand en zwart aluminium — met prijzen en tips.",
+    description: "Alles over schuifdeuren in Antwerpen: hef-schuifsystemen, vouwwanden, prijzen vanaf €2.000 en hoe u de juiste keuze maakt voor uw woning of tuin.",
+    date: "2026-06-05",
+    readTime: "5 min",
+    category: "Advies",
+    keywords: [
+      "schuifdeuren antwerpen",
+      "schuifdeur prijs antwerpen",
+      "hef schuifdeur antwerpen",
+      "vouwwand antwerpen",
+      "aluminium schuifdeur antwerpen",
+      "schuifdeur tuin antwerpen",
+      "terrasdeuren antwerpen",
+    ],
+    serviceTags: ["ramen-deuren", "deuren"],
+    cityTags: ["antwerpen", "berchem", "wilrijk", "deurne"],
+    dynamic: true,
+    intro:
+      "Schuifdeuren zijn de populairste manier om woning en tuin naadloos te verbinden. In Antwerpen zien we steeds meer vraag naar grote glaspartijen met slanke aluminium profielen. In deze gids vergelijken we de types, prijzen en wat het beste past bij uw woning.",
+    keyPoints: [
+      "Een hef-schuifdeur in aluminium kost in Antwerpen gemiddeld €2.500 tot €5.000 inclusief plaatsing.",
+      "Hef-schuifdeuren zijn luchtdichter en zwaarder belastbaar dan klassieke schuifdeuren.",
+      "Voor grote openingen zijn vouwwanden (openslaande glaswand) de meest spectaculaire optie.",
+      "Drempelloos (flat threshold) is mogelijk en verplicht bij nieuwe constructies.",
+    ],
+    sections: [
+      {
+        title: "Welke types schuifdeuren zijn er?",
+        paragraphs: [
+          "Er zijn drie hoofdtypes: de klassieke schuifdeur, de hef-schuifdeur en de vouwwand. Voor woningen in Antwerpen is de hef-schuifdeur verreweg de meest populaire keuze voor terras- en tuinopeningen.",
+          "Een klassieke schuifdeur schuift over een bodem- en bovengeleider. Een hef-schuifdeur wordt bij opening iets opgeheven van de drempel, wat een veel soepeler bediening geeft en een betere luchtdichtheid oplevert. Een vouwwand bestaat uit meerdere glasdelen die als harmonica openvouwen voor een volledige opening.",
+        ],
+        bullets: [
+          "Klassieke schuifdeur: budgetvriendelijk, geschikt voor kleinere openingen",
+          "Hef-schuifdeur: luchtdicht, soepel, voor grote openingen tot 6m breed",
+          "Vouwwand: maximale opening, ideaal voor grote terrasopeningen",
+        ],
+      },
+      {
+        title: "Prijzen schuifdeuren in Antwerpen",
+        paragraphs: [
+          "De prijs hangt af van het type systeem, de breedte, het glas en het profiel. Voor een gemiddelde opening van 2,5 tot 3,5 meter kunt u rekenen op:",
+        ],
+        bullets: [
+          "Klassieke PVC schuifdeur (2-delig): €900 – €1.800 incl. plaatsing",
+          "Aluminium hef-schuifdeur (2-delig): €2.500 – €4.000 incl. plaatsing",
+          "Aluminium hef-schuifdeur (3-delig breed): €3.500 – €6.000 incl. plaatsing",
+          "Vouwwand aluminium (4 vleugels): €4.000 – €8.000 incl. plaatsing",
+          "Extra opties: drempelloos (+€300), zonwerend glas (+€400), smartlock (+€250)",
+        ],
+      },
+      {
+        title: "Zwart aluminium: trend of duurzame keuze?",
+        paragraphs: [
+          "Antraciet (RAL 7016) en mat zwart zijn momenteel de meest gevraagde kleuren voor schuifdeuren in Antwerpen. Ze geven een moderne, architecturale uitstraling en combineren goed met zowel klassieke als eigentijdse woningen.",
+          "Poederlak op aluminium is zeer duurzaam en houdt zijn kleur tientallen jaren zonder bij te kleuren of te onderhouden. Het is geen modegril maar een waardevolle investering.",
+        ],
+      },
+      {
+        title: "Wat moet u weten voor plaatsing in Antwerpen?",
+        paragraphs: [
+          "In Antwerpen gelden bij het vergroten van een raam- of deuropening naar buiten toe specifieke regels. Als u een muur doorbreekt voor een grotere schuifdeur, is een omgevingsvergunning nodig. Yannova begeleidt u in dit proces.",
+          "Ook bereikbaarheid speelt mee: grote schuifdeuren worden in stukken geleverd maar vragen ruimte voor het plaatsen. We checken dit altijd vooraf zodat er op de dag zelf geen verrassingen zijn.",
+        ],
+      },
+    ],
+    ctaTitle: "Schuifdeuren laten plaatsen in Antwerpen?",
+    ctaText: "Yannova plaatst hef-schuifdeuren en vouwwanden in Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u.",
+    relatedSlugs: ["ramen-vervangen-prijs-antwerpen", "voordeur-vervangen-prijs-antwerpen", "aannemer-antwerpen-kiezen"],
+  },
+  {
+    slug: "ramen-plaatsen-berchem-schoten-wijnegem",
+    title: "Ramen plaatsen in Berchem, Schoten en Wijnegem: specialist aan huis",
+    excerpt: "Yannova plaatst PVC en aluminium ramen in Berchem, Schoten, Wijnegem en omgeving. Gratis opmeting, offerte binnen 24u.",
+    description: "Op zoek naar een specialist voor ramen in Berchem, Schoten of Wijnegem? Yannova plaatst PVC en aluminium ramen met HR++ glas. Gratis opmeting aan huis.",
+    date: "2026-06-05",
+    readTime: "5 min",
+    category: "Lokaal",
+    keywords: [
+      "ramen plaatsen berchem",
+      "ramen schoten",
+      "ramen wijnegem",
+      "schrijnwerker berchem",
+      "schrijnwerker schoten",
+      "ramen vervangen berchem",
+      "pvc ramen berchem",
+      "aluminium ramen schoten",
+    ],
+    serviceTags: ["ramen-deuren", "ramen"],
+    cityTags: ["berchem", "schoten", "wijnegem"],
+    dynamic: true,
+    intro:
+      "Berchem, Schoten en Wijnegem hebben elk hun eigen woonkarakter maar één gemeenschappelijke behoefte: een betrouwbare lokale specialist voor ramen en deuren. Yannova werkt dagelijks in deze gemeenten en kent de specifieke woningtypen en verwachtingen van eigenaars in de regio.",
+    keyPoints: [
+      "Yannova werkt actief in Berchem, Schoten, Wijnegem en alle omliggende gemeenten.",
+      "In Berchem zijn herenhuizen en appartementen de meest voorkomende projecten.",
+      "Schoten en Wijnegem vragen vaak naar grotere raampartijen voor gezinswoningen.",
+      "Gratis opmeting thuis in alle drie de gemeenten.",
+    ],
+    sections: [
+      {
+        title: "Ramen plaatsen in Berchem",
+        paragraphs: [
+          "Berchem is een dicht bebouwde gemeente met veel rijwoningen, herenhuizen en appartementen uit de 20e eeuw. Veel van deze woningen hebben ramen die dringend aan vervanging toe zijn. De combinatie van oud dubbel glas, versleten dichtingen en dunne profielen zorgt voor warmteverlies en geluidshinder.",
+          "In Berchem werken we vaak met aluminium ramen voor de authentieke gevels van herenhuizen, waarbij strakke profielen en de juiste kleur het karakter van de woning bewaren. PVC is populair voor achtergevels en appartementen waar prijs en isolatie centraal staan.",
+        ],
+      },
+      {
+        title: "Ramen plaatsen in Schoten",
+        paragraphs: [
+          "Schoten heeft een mix van vrijstaande woningen, halfopen bebouwing en gezinswoningen. De vraag gaat hier vaker naar grotere raampartijen, schuifdeuren naar de tuin en energetische upgrades in het kader van een bredere renovatie.",
+          "Yannova werkt regelmatig in Schoten voor projecten waarbij ramen worden gecombineerd met gevelrenovatie. Dit geeft de beste technische aansluiting en de hoogste energiewinst.",
+        ],
+      },
+      {
+        title: "Ramen plaatsen in Wijnegem",
+        paragraphs: [
+          "Wijnegem ligt strategisch tussen Antwerpen en de Kempen en heeft veel naoorlogse gezinswoningen en rijwoningen. In deze woningen zijn de ramen vaak nog origineel uit de jaren 70-80 en zijn ze dringend aan vervanging toe.",
+          "In Wijnegem combineren we ramen vaak met een EPC-verbetering in het kader van Mijn VerbouwPremie. De premies kunnen oplopen tot enkele duizenden euro's afhankelijk van het inkomen en het aantal ramen.",
+        ],
+      },
+      {
+        title: "Werkwijze Yannova in de regio",
+        paragraphs: [
+          "We starten altijd met een gratis plaatsbezoek in uw gemeente. Daarna ontvangt u binnen 24 uur een gedetailleerde offerte per post (PVC of aluminium), per type beglazing (HR++ of triple glas) en per opning.",
+          "Na akkoord plannen we de productie (4-6 weken) en de installatiedag in overleg met u. We werken met een vast team en laten geen rommel achter.",
+        ],
+      },
+    ],
+    ctaTitle: "Ramen laten plaatsen in Berchem, Schoten of Wijnegem?",
+    ctaText: "Yannova komt gratis langs voor een opmeting. Offerte binnen 24u, professionele plaatsing door eigen vakmensen.",
+    relatedSlugs: ["ramen-vervangen-prijs-antwerpen", "ramen-vervangen-wanneer-lonen", "premies-ramen-deuren-2026"],
   },
 ];
 
