@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getLocalSeoPageSlugs } from '@/lib/data/local-seo'
+import { priorityCities, localSeoServices } from '@/lib/data/local-seo'
 import { getBlogIndexPosts } from '@/lib/data/blog-posts'
 import { productCatalog } from '@/lib/data/product-catalog'
 
@@ -36,31 +36,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
   ]
 
-  // Gemeenten
-  const municipalities = [
-    'antwerpen',
-    'berchem',
-    'brasschaat',
-    'deurne',
-    'merksem',
-    'mortsel',
-    'schilde',
-    'schoten',
-    'wijnegem',
-    'wilrijk',
-    'zoersel'
-  ]
+  // Genereer alle lokale pagina's dynamically uit local-seo config
+  const localSeoPages: string[] = []
+  localSeoServices.forEach((service) => {
+    // Only generate nested paths, not hubs or legacy hyphenated paths
+    if (service.slug !== 'ramen-deuren' && service.slug !== 'crepi-gevel') {
+      priorityCities.forEach((city) => {
+        localSeoPages.push(`/${service.slug}/${city.slug}`)
+      })
+    }
+  })
 
-  // Genereer alle lokale pagina's in de nieuwe hiërarchie
-  const localRamenPages = municipalities.map(m => `/ramen/${m}`)
-  const localDeurenPages = municipalities.map(m => `/deuren/${m}`)
-  const localGevelrenovatiePages = municipalities.map(m => `/gevelrenovatie/${m}`)
-  const localRenovatiePages = municipalities.map(m => `/renovatie/${m}`)
-  const localTotaalRenovatiePages = municipalities.map(m => `/totaalrenovatie/${m}`)
-  const localCrepiPages = municipalities.map(m => `/crepi/${m}`)
-  const localGevelisolatiePages = municipalities.map(m => `/gevelisolatie/${m}`)
-
-  // Overige specifieke landingspagina&apos;s
+  // Overige specifieke landingspagina's
   const specialLandingPages = [
     '/ramen-deuren-antwerpen',
     '/gevelrenovatie-antwerpen',
@@ -68,22 +55,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/crepi-isolatie-antwerpen',
   ]
 
-  const flatLocalSeoPages = getLocalSeoPageSlugs().map((slug) => `/${slug}`)
   const blogPages = getBlogIndexPosts().map((post) => `/blog/${post.slug}`)
   const productPages = productCatalog.map((item) => `/producten/${item.slug}`)
 
   const allPages = [
     ...mainPages, 
-    ...flatLocalSeoPages,
     ...blogPages,
     ...productPages,
-    ...localRamenPages, 
-    ...localDeurenPages, 
-    ...localGevelrenovatiePages,
-    ...localRenovatiePages,
-    ...localTotaalRenovatiePages,
-    ...localCrepiPages,
-    ...localGevelisolatiePages,
+    ...localSeoPages,
     ...specialLandingPages
   ]
 
@@ -101,16 +80,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ? 1.0
         : page === '/diensten' || page === '/ramen' || page === '/deuren' || page === '/gevelrenovatie' || page === '/crepi' || page === '/gevelisolatie'
           ? 0.95
-        : flatLocalSeoPages.includes(page)
-          ? 0.9
           : blogPages.includes(page)
             ? 0.7
             : productPages.includes(page)
               ? 0.85
-          : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') || page.includes('/crepi/') || page.includes('/gevelisolatie/')
-            ? 0.85
-            : page === '/vraag-ai'
-              ? 0.8
-              : 0.75,
+            : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') || page.includes('/crepi/') || page.includes('/gevelisolatie/') || page.includes('/renovatie/') || page.includes('/totaalrenovatie/')
+              ? 0.85
+              : page === '/vraag-ai'
+                ? 0.8
+                : 0.75,
   }))
 }

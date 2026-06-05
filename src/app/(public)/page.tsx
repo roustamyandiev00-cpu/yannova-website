@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { Specializations } from "@/components/Specializations";
@@ -10,6 +11,21 @@ import { ProductCatalogSection } from "@/components/ProductCatalogSection";
 import { generateFAQSchema } from "@/lib/faq-schema";
 
 export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova',
+  description: 'Specialist in ramen, deuren en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen, crepi, isolatie.',
+  keywords: [
+    "ramen antwerpen",
+    "deuren antwerpen",
+    "gevelrenovatie antwerpen",
+    "renovatiebedrijf antwerpen",
+    "pvc ramen antwerpen",
+    "aluminium ramen antwerpen",
+    "crepi antwerpen",
+    "gevelisolatie antwerpen",
+  ],
+};
 
 const homepageFAQs = [
   {

@@ -16,7 +16,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { stad } = await params;
-  const page = getLocalSeoPageData("crepi", stad);
+  const page = getLocalSeoPageData("totaalrenovatie", stad);
 
   if (!page) {
     return {
@@ -32,9 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function CrepiStadPage({ params }: Props) {
+export default async function TotaalrenovatieStadPage({ params }: Props) {
   const { stad } = await params;
-  const page = getLocalSeoPageData("crepi", stad);
+  const page = getLocalSeoPageData("totaalrenovatie", stad);
 
   if (!page) {
     notFound();

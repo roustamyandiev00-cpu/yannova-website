@@ -350,3 +350,25 @@ export function generateReviewSchema(reviews: Array<{
     datePublished: review.datePublished
   }));
 }
+
+/**
+ * Generate HowTo schema for blog posts and step-by-step guides
+ */
+export function generateHowToSchema(howto: {
+  name: string;
+  description: string;
+  steps: Array<{ name: string; text: string }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: howto.name,
+    description: howto.description,
+    step: howto.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}

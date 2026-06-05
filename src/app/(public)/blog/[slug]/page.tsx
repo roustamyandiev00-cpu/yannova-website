@@ -5,6 +5,7 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { generateBlogMetadata } from "@/components/SEO";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 import { generateArticleSchema } from "@/lib/article-schema";
+import { generateHowToSchema } from "@/lib/structured-data";
 import { getBlogPostBySlug, getDynamicBlogPosts, getRelatedBlogPosts } from "@/lib/data/blog-posts";
 
 interface Props {
@@ -62,6 +63,14 @@ export default async function DynamicBlogPostPage({ params }: Props) {
     .filter((relatedPost): relatedPost is NonNullable<typeof relatedPost> => Boolean(relatedPost))
     .slice(0, 3) ?? getRelatedBlogPosts({ currentSlug: post.slug, serviceSlug: post.serviceTags[0], limit: 3 });
 
+  const howToSchema = post.howtoSteps
+    ? generateHowToSchema({
+        name: post.title,
+        description: post.description,
+        steps: post.howtoSteps,
+      })
+    : null;
+
   return (
     <>
       <script
@@ -72,6 +81,12 @@ export default async function DynamicBlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+      )}
 
       <div className="min-h-screen bg-[#0a0c10]">
         <article className="py-20">

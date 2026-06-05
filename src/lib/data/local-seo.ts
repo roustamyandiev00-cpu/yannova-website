@@ -14,7 +14,7 @@ export interface LocalSeoLink {
 }
 
 export interface LocalSeoService {
-  slug: "renovatie" | "ramen-deuren" | "gevelrenovatie" | "crepi-gevel" | "totaalrenovatie";
+  slug: "renovatie" | "ramen-deuren" | "gevelrenovatie" | "crepi-gevel" | "totaalrenovatie" | "ramen" | "deuren" | "crepi" | "gevelisolatie";
   name: string;
   hubPath: string;
   detailPath: string;
@@ -135,6 +135,30 @@ export const priorityCities: LocalSeoCity[] = [
     propertyFocus: "gezinswoningen, verbouwingen en energetische verbeteringen",
     priority: 0.8,
   },
+  {
+    slug: "berchem",
+    name: "Berchem",
+    nearby: ["Antwerpen", "Mortsel", "Wilrijk"],
+    localContext: "woonwijken met een mix van herenhuizen en gezinswoningen waar energetische renovaties en hoogwaardig schrijnwerk gewild zijn",
+    propertyFocus: "herenhuizen, burgerwoningen en appartementen",
+    priority: 0.85,
+  },
+  {
+    slug: "wilrijk",
+    name: "Wilrijk",
+    nearby: ["Antwerpen", "Berchem", "Hoboken"],
+    localContext: "residentiële wijken met grotere woningen waar esthetiek en thermische isolatie hand in hand gaan",
+    propertyFocus: "villa's, gezinswoningen en halfopen bebouwingen",
+    priority: 0.85,
+  },
+  {
+    slug: "mortsel",
+    name: "Mortsel",
+    nearby: ["Berchem", "Edegem", "Borsbeek"],
+    localContext: "woningen nabij drukke assen waar akoestische isolatie van ramen en gevelrenovatie direct zorgen voor meer rust en comfort",
+    propertyFocus: "gezinswoningen, rijwoningen en appartementen",
+    priority: 0.8,
+  },
 ];
 
 export const localSeoServices: LocalSeoService[] = [
@@ -146,7 +170,7 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Bekijk onze renovatie-aanpak",
     hubTitle: "Renovatie in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale renovatiepagina&apos;s voor Zoersel, Schilde, Brasschaat, Malle, Wijnegem, Antwerpen, Deurne, Merksem, Kapellen en Schoten. Focus op renovatie, gevelwerken, ramen en totaalprojecten.",
+      "Lokale renovatiepagina's voor Zoersel, Schilde, Brasschaat, Malle, Wijnegem, Antwerpen, Deurne, Merksem, Kapellen en Schoten. Focus op renovatie, gevelwerken, ramen en totaalprojecten.",
     hubIntro: [
       "Yannova bouwt hiermee een consistente lokale SEO-structuur uit rond renovatie in de sterkste gemeenten rond Zoersel. Elke pagina koppelt renovatie aan concrete wooncontext, omliggende deelgemeenten en relevante interne links.",
       "Dat maakt de site duidelijker voor Google en sterker voor bezoekers die zoeken op combinaties zoals renovatie Zoersel, aannemer Schilde of renovatiebedrijf Brasschaat.",
@@ -177,9 +201,9 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over ramen en deuren",
     hubTitle: "Ramen en deuren in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale landingspagina&apos;s voor ramen en deuren in de belangrijkste gemeenten rond Zoersel. Gericht op PVC, aluminium, hoogrendementsbeglazing en nette plaatsing.",
+      "Lokale landingspagina's voor ramen en deuren in de belangrijkste gemeenten rond Zoersel. Gericht op PVC, aluminium, hoogrendementsbeglazing en nette plaatsing.",
     hubIntro: [
-      "Met deze hub bundelt Yannova de lokale pagina&apos;s voor ramen en deuren in de regio waar de meeste zoekvraag zit. Elke stadspagina focust op plaatsing, isolatie, veiligheid en de koppeling met andere renovatiewerken.",
+      "Met deze hub bundelt Yannova de lokale pagina's voor ramen en deuren in de regio waar de meeste zoekvraag zit. Elke stadspagina focust op plaatsing, isolatie, veiligheid en de koppeling met andere renovatiewerken.",
       "Zo ontstaat een duidelijke SEO-structuur rond termen als ramen en deuren Zoersel, ramen vervangen Brasschaat of buitenschrijnwerk Antwerpen.",
     ],
     benefits: [
@@ -208,9 +232,9 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over gevelrenovatie",
     hubTitle: "Gevelrenovatie in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale SEO-pagina&apos;s voor gevelrenovatie in de sterkste gemeenten rond Zoersel. Gericht op gevelherstel, isolatie, crepi en duurzame buitenafwerking.",
+      "Lokale SEO-pagina's voor gevelrenovatie in de sterkste gemeenten rond Zoersel. Gericht op gevelherstel, isolatie, crepi en duurzame buitenafwerking.",
     hubIntro: [
-      "De gevel is vaak de eerste winst bij een renovatie. Deze hub groepeert lokale pagina&apos;s rond gevelrenovatie voor gemeenten waar veel gezocht wordt op gevelwerken, crepi en gevelisolatie.",
+      "De gevel is vaak de eerste winst bij een renovatie. Deze hub groepeert lokale pagina's rond gevelrenovatie voor gemeenten waar veel gezocht wordt op gevelwerken, crepi en gevelisolatie.",
       "Per stadspagina koppelen we gevelrenovatie aan de lokale woningvoorraad, omliggende buurten en de link met ramen, isolatie en totaalrenovatie.",
     ],
     benefits: [
@@ -239,10 +263,10 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over crepi en gevelafwerking",
     hubTitle: "Crepi gevels in Zoersel en regio Antwerpen",
     hubDescription:
-      "Gerichte lokale pagina&apos;s voor crepi gevelafwerking in Zoersel en de omliggende zoekregio. Focus op strakke afwerking, kleurkeuze, isolatie en onderhoudsarme gevels.",
+      "Gerichte lokale pagina's voor crepi gevelafwerking in Zoersel en de omliggende zoekregio. Focus op strakke afwerking, kleurkeuze, isolatie en onderhoudsarme gevels.",
     hubIntro: [
-      "Crepi wordt vaak afzonderlijk gezocht, los van het bredere begrip gevelrenovatie. Daarom krijgt crepi hier een eigen lokale SEO-structuur met expliciete stadspagina&apos;s.",
-      "Die pagina&apos;s ondersteunen zoekopdrachten zoals crepi gevel Zoersel, crepi Schilde of gevelbepleistering Brasschaat en linken tegelijk slim door naar gevelrenovatie en totaalrenovatie.",
+      "Crepi wordt vaak afzonderlijk gezocht, los van het bredere begrip gevelrenovatie. Daarom krijgt crepi hier een eigen lokale SEO-structuur met expliciete stadspagina's.",
+      "Die pagina's ondersteunen zoekopdrachten zoals crepi gevel Zoersel, crepi Schilde of gevelbepleistering Brasschaat en linken tegelijk slim door naar gevelrenovatie en totaalrenovatie.",
     ],
     benefits: [
       "Zelfreinigende siliconenharspleister",
@@ -270,10 +294,10 @@ export const localSeoServices: LocalSeoService[] = [
     detailLabel: "Meer over totaalrenovatie",
     hubTitle: "Totaalrenovatie in Zoersel en regio Antwerpen",
     hubDescription:
-      "Lokale SEO-pagina&apos;s voor totaalrenovatie in de gemeenten met de meeste zoekvraag rond Zoersel. Focus op coördinatie, planning en één vast aanspreekpunt van start tot oplevering.",
+      "Lokale SEO-pagina's voor totaalrenovatie in de gemeenten met de meeste zoekvraag rond Zoersel. Focus op coördinatie, planning en één vast aanspreekpunt van start tot oplevering.",
     hubIntro: [
-      "Totaalrenovatie vraagt meer dan losse aannemingswerken. Deze hub zet daarom in op lokale pagina&apos;s die het volledige traject uitleggen voor gemeenten waar eigenaars gericht zoeken naar één partner.",
-      "Zo worden zoektermen zoals totaalrenovatie Zoersel, totaalrenovatie Antwerpen of renovatiebedrijf Schoten beter ondersteund door duidelijke landingspagina&apos;s en interne links.",
+      "Totaalrenovatie vraagt meer dan losse aannemingswerken. Deze hub zet daarom in op lokale pagina's die het volledige traject uitleggen voor gemeenten waar eigenaars gericht zoeken naar één partner.",
+      "Zo worden zoektermen zoals totaalrenovatie Zoersel, totaalrenovatie Antwerpen of renovatiebedrijf Schoten beter ondersteund door duidelijke landingspagina's en interne links.",
     ],
     benefits: [
       "Eén partner voor gevel, ramen en dakwerken",
@@ -293,6 +317,130 @@ export const localSeoServices: LocalSeoService[] = [
       `Totaalrenovatie in ${city}? Yannova coördineert uw renovatie van afbraak tot afwerking met één vast aanspreekpunt. Vraag een vrijblijvende offerte aan.`,
     getCityHeading: (city) => `Totaalrenovatie in ${city} met strakke opvolging`,
   },
+  {
+    slug: "ramen",
+    name: "Ramen",
+    hubPath: "/ramen",
+    detailPath: "/diensten/ramen-deuren",
+    detailLabel: "Bekijk onze ramen",
+    hubTitle: "Ramen in Zoersel en regio Antwerpen",
+    hubDescription:
+      "Vakkundige plaatsing en vervanging van PVC en aluminium ramen door Yannova. Uw specialist in Zoersel en Antwerpen.",
+    hubIntro: [
+      "Nieuwe ramen nodig voor uw woning? Bij Yannova kiest u voor topkwaliteit, perfecte isolatie en een vlekkeloze afwerking.",
+      "Wij begeleiden u van gratis opmeting tot de complete montage en afwerking van uw nieuwe PVC of aluminium ramen.",
+    ],
+    benefits: [
+      "PVC en aluminium profielen tot 7 kamers",
+      "Standaard hoogrendementsglas (HR++) of triple glas",
+      "Luchtdichte montage en gevelintegratie",
+      "10 tot 30 jaar garantie op profielen",
+    ],
+    deliverables: ["PVC en aluminium ramen", "hoogrendementsglas", "schuiframen op maat", "perfecte aansluiting op gevelisolatie"],
+    focusSentence:
+      "Wij plaatsen ramen die uitmuntend isoleren en esthetisch perfect bij uw woning passen.",
+    priceCue: "afhankelijk van aantal openingen, materiaal, beglazing en afwerking",
+    timeline: "1 tot 3 plaatsingsdagen na opmeting en productie",
+    keywordRoots: ["ramen", "ramen vervangen", "nieuwe ramen", "ramen plaatsen"],
+    extraKeywords: ["pvc ramen", "aluminium ramen", "triple glas", "ramen specialist"],
+    getCityTitle: (city) => `Ramen ${city} | Ramen Vervangen & Plaatsen | Yannova`,
+    getCityDescription: (city) =>
+      `Ramen in ${city} vervangen? Yannova is specialist in PVC en aluminium ramen met HR++ isolatieglas. Verlaag uw energiefactuur. Vraag een offerte!`,
+    getCityHeading: (city) => `Ramen in ${city} laten vervangen of plaatsen`,
+  },
+  {
+    slug: "deuren",
+    name: "Deuren",
+    hubPath: "/deuren",
+    detailPath: "/diensten/ramen-deuren",
+    detailLabel: "Bekijk onze deuren",
+    hubTitle: "Deuren in Zoersel en regio Antwerpen",
+    hubDescription:
+      "Kwalitatieve en veilige voor- en achterdeuren in PVC en aluminium door Yannova. Ontdek ons aanbod.",
+    hubIntro: [
+      "Een voordeur is het visitekaartje van uw woning. Bij Yannova leveren en plaatsen we veilige, stijlvolle en perfect isolerende deuren.",
+      "Of het nu gaat om een moderne aluminium voordeur of een praktische achterdeur: wij maken alles op maat.",
+    ],
+    benefits: [
+      "Maximale inbraakveiligheid met driepuntssluiting",
+      "Uitstekende thermische en akoestische isolatie",
+      "PVC en aluminium deuren op maat",
+      "Keuze uit honderden RAL-kleuren en designs",
+    ],
+    deliverables: ["aluminium voordeuren", "PVC buitendeuren", "schuifdeuren", "inbraakveilig beslag en cilinders"],
+    focusSentence:
+      "Wij plaatsen deuren die uw woning beveiligen en een prachtige uitstraling geven.",
+    priceCue: "afhankelijk van afmetingen, deursysteem, materiaal en beslag",
+    timeline: "meestal 1 dag voor demontage en montage",
+    keywordRoots: ["deuren", "deuren plaatsen", "nieuwe deuren", "voordeur"],
+    extraKeywords: ["buitendeuren", "pvc deuren", "aluminium deuren", "schuifdeur"],
+    getCityTitle: (city) => `Deuren ${city} | Buitendeuren & Binnendeuren | Yannova`,
+    getCityDescription: (city) =>
+      `Nieuwe deuren in ${city}? Wij plaatsen kwalitatieve en veilige voor- en achterdeuren in PVC en aluminium. Ontdek ons aanbod en vraag een offerte.`,
+    getCityHeading: (city) => `Deuren in ${city} laten plaatsen`,
+  },
+  {
+    slug: "crepi",
+    name: "Crepi",
+    hubPath: "/crepi-gevel",
+    detailPath: "/diensten/gevelrenovatie",
+    detailLabel: "Meer over crepi gevels",
+    hubTitle: "Crepi gevels in Zoersel en regio Antwerpen",
+    hubDescription:
+      "Crepi gevelafwerking met isolatie door Yannova. Specialist in gevelbepleistering in Zoersel en Antwerpen.",
+    hubIntro: [
+      "Crepi is de ideale afwerking voor een moderne en energiezuinige gevel. Yannova brengt siliconenharspleister vakkundig aan.",
+      "U kunt crepi perfect combineren met hoogwaardige gevelisolatie om uw EPC-score drastisch te verbeteren.",
+    ],
+    benefits: [
+      "Siliconenharspleister (crepi) is zelfreinigend",
+      "Naadloze isolatieschil elimineert koudebruggen",
+      "Keuze uit honderden kleurvaste afwerkingen",
+      "10 jaar garantie op de gevelbepleistering",
+    ],
+    deliverables: ["siliconen crepi", "gevelisolatie (EPS/minerale wol)", "kleuradvies op maat", "technische detailafwerking rond ramen en plinten"],
+    focusSentence:
+      "Wij geven uw gevel een strakke, moderne uitstraling and verlagen uw energiefactuur.",
+    priceCue: "afhankelijk van oppervlakte, isolatiedikte, hoeken en eventueel stellingwerk",
+    timeline: "meestal 1 tot 2 weken afhankelijk van het weer",
+    keywordRoots: ["crepi", "crepi gevel", "gevelbepleistering", "sierpleister"],
+    extraKeywords: ["gevelisolatie", "crepi afwerking", "buitengevel"],
+    getCityTitle: (city) => `Crepi ${city} | Gevelbepleistering & Gevelisolatie | Yannova`,
+    getCityDescription: (city) =>
+      `Crepi in ${city}? Yannova is specialist in gevelbepleistering, crepi en gevelisolatie. Vernieuw uw gevel en bespaar op energie. Vraag direct uw offerte aan.`,
+    getCityHeading: (city) => `Crepi gevel in ${city} laten plaatsen`,
+  },
+  {
+    slug: "gevelisolatie",
+    name: "Gevelisolatie",
+    hubPath: "/gevelisolatie-crepi",
+    detailPath: "/diensten/gevelrenovatie",
+    detailLabel: "Meer over gevelisolatie",
+    hubTitle: "Gevelisolatie in Zoersel en regio Antwerpen",
+    hubDescription:
+      "Buitengevelisolatie door Yannova. Verbeter uw EPC-label en bespaar tot 30% op energiekosten. Vraag een offerte.",
+    hubIntro: [
+      "Met hoogwaardige gevelisolatie verpakt u uw woning in een warme deken. Dit verhoogt uw comfort en verlaagt uw energiekosten.",
+      "Gevelisolatie wordt door Yannova doorgaans afgewerkt met crepi of steenstrips, EPB-conform voor subsidies.",
+    ],
+    benefits: [
+      "Bespaar tot 30% op uw verwarmingskosten",
+      "Eliminatie van condensatie en koudebruggen",
+      "Mijn VerbouwPremie en subsidies mogelijk",
+      "Directe waardestijging van uw vastgoed",
+    ],
+    deliverables: ["buitengevelisolatie (EPS/minerale wol)", "crepi of steenstrips afwerking", "attesten voor premie-aanvragen", "volledige EPB-conformiteit"],
+    focusSentence:
+      "Wij isoleren uw buitenschil vakkundig zodat uw woning voldoet aan de strengste energienormen.",
+    priceCue: "afhankelijk van de te isoleren oppervlakte en gewenste afwerking",
+    timeline: "meestal 1 tot 3 weken inclusief gevelafwerking",
+    keywordRoots: ["gevelisolatie", "gevel isoleren", "buitenmuur isoleren", "epc verbeteren"],
+    extraKeywords: ["buitenisolatie", "eps isolatieplaten", "gevelrenovatie met isolatie"],
+    getCityTitle: (city) => `Gevelisolatie ${city} | EPC Verbeteren & Premies | Yannova`,
+    getCityDescription: (city) =>
+      `Gevelisolatie in ${city}? Verbeter uw EPC-label en bespaar tot 30% op energiekosten. Premies via Mijn VerbouwPremie mogelijk. Vraag nu een offerte.`,
+    getCityHeading: (city) => `Gevelisolatie in ${city} laten uitvoeren`,
+  },
 ];
 
 const orderedServiceSlugs = [...localSeoServices]
@@ -308,7 +456,10 @@ export function getLocalSeoCity(citySlug: string) {
 }
 
 export function getLocalSeoPagePath(serviceSlug: LocalSeoService["slug"], citySlug: string) {
-  return `/${serviceSlug}-${citySlug}`;
+  if (serviceSlug === "ramen-deuren" || serviceSlug === "crepi-gevel") {
+    return `/${serviceSlug}-${citySlug}`;
+  }
+  return `/${serviceSlug}/${citySlug}`;
 }
 
 export function getLocalSeoPageSlugs() {
@@ -318,11 +469,19 @@ export function getLocalSeoPageSlugs() {
 }
 
 export function getServiceHubLinks(): LocalSeoLink[] {
-  return localSeoServices.map((service) => ({
-    label: service.name,
-    href: service.hubPath,
-    description: `${service.name} in Zoersel en regio Antwerpen`,
-  }));
+  const seenHrefs = new Set<string>();
+  const links: LocalSeoLink[] = [];
+  for (const service of localSeoServices) {
+    if (!seenHrefs.has(service.hubPath)) {
+      seenHrefs.add(service.hubPath);
+      links.push({
+        label: service.name,
+        href: service.hubPath,
+        description: `${service.name} in Zoersel en regio Antwerpen`,
+      });
+    }
+  }
+  return links;
 }
 
 function buildKeywords(service: LocalSeoService, city: LocalSeoCity) {
@@ -429,18 +588,19 @@ export function getLocalSeoHubSeoInput(serviceSlug: LocalSeoService["slug"]) {
   };
 }
 
-export function getLocalSeoPageBySlug(seoSlug: string): LocalSeoPageData | null {
-  const parsed = parseLocalSeoSlug(seoSlug);
-  if (!parsed) {
+export function getLocalSeoPageData(serviceSlug: LocalSeoService["slug"], citySlug: string): LocalSeoPageData | null {
+  const service = getLocalSeoService(serviceSlug);
+  const city = getLocalSeoCity(citySlug);
+
+  if (!service || !city) {
     return null;
   }
 
-  const { service, city } = parsed;
   const sameCityPages = getSameCityPages(city, service.slug);
   const sameServicePages = getSameServicePages(service, city.slug);
 
   return {
-    slug: seoSlug,
+    slug: `${service.slug}-${city.slug}`,
     path: getLocalSeoPagePath(service.slug, city.slug),
     title: service.getCityTitle(city.name),
     description: service.getCityDescription(city.name),
@@ -470,4 +630,12 @@ export function getLocalSeoPageBySlug(seoSlug: string): LocalSeoPageData | null 
     sameServicePages,
     serviceHubLinks: getServiceHubLinks(),
   };
+}
+
+export function getLocalSeoPageBySlug(seoSlug: string): LocalSeoPageData | null {
+  const parsed = parseLocalSeoSlug(seoSlug);
+  if (!parsed) {
+    return null;
+  }
+  return getLocalSeoPageData(parsed.service.slug, parsed.city.slug);
 }

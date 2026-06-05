@@ -74,7 +74,10 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-// Google Reviews data (update met echte Google Reviews)
+// Google Reviews data
+// ⚠️ VEREIST: Vul je Google Place ID en review link in (zie GOOGLE-REVIEWS-SETUP.md)
+// Place ID vinden: https://business.google.com → jouw bedrijf → "bekijk op Google Maps"
+// Review link: https://business.google.com → Reviews → "Meer reviews opvragen"
 export const googleReviewsData = {
   averageRating: 4.9,
   totalReviews: 50,
@@ -85,6 +88,11 @@ export const googleReviewsData = {
     2: 0,
     1: 0,
   },
-  googlePlaceId: 'YOUR_GOOGLE_PLACE_ID', // Vul in met echte Google Place ID
-  reviewsUrl: 'https://g.page/r/YOUR_REVIEW_LINK/review', // Vul in met echte review link
+  // TODO: Vervang door je echte Google Place ID (begint met "ChIJ...")
+  // Instructies: zie GOOGLE-REVIEWS-SETUP.md in de root van het project
+  googlePlaceId: 'YOUR_GOOGLE_PLACE_ID',
+  // TODO: Vervang door je directe review link (te vinden in Google Business Profile)
+  reviewsUrl: 'https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID',
+  // Directe link om reviews te bekijken op Google Maps:
+  mapsUrl: 'https://www.google.com/maps/search/Yannova+Bouw+Zoersel',
 };

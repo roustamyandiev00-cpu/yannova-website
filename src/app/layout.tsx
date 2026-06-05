@@ -95,6 +95,14 @@ export const metadata: Metadata = {
   verification: {
     google: "IuTf3i7Tc8GnysVMp6-Yp-jLR2IW4H1dOkr6Kh3nzU4",
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+  },
+};
+
+export const viewport = {
+  themeColor: "#ff6b00",
 };
 
 // Combine all schemas: Website, Organization, LocalBusiness + Services
@@ -112,7 +120,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl" className="dark">
-      <head>
+      <body className={inter.className}>
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -120,14 +128,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://www.clarity.ms" />
         <link rel="preconnect" href="https://t.contentsquare.net" />
-        
-        {/* PWA and mobile optimization */}
-        <meta name="theme-color" content="#ff6b00" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
 
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -136,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
-        <Analytics />        <Script
+        <Script
           id="contentsquare-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -164,8 +164,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `
           }}
         />
-      </head>
-      <body className={inter.className}>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}

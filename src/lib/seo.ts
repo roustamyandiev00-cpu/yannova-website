@@ -20,7 +20,7 @@ export function generateSEO({
   noindex = false,
 }: SEOProps): Metadata {
   const url = `${baseUrl}${path}`;
-  const fullTitle = path === '' ? title : `${title} | Yannova`;
+  const fullTitle = path === '' || title.includes('Yannova') ? title : `${title} | Yannova`;
 
   return {
     title: fullTitle,

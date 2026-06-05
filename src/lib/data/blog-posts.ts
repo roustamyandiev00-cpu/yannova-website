@@ -24,9 +24,82 @@ export interface BlogPostData {
   ctaTitle?: string;
   ctaText?: string;
   relatedSlugs?: string[];
+  howtoSteps?: Array<{ name: string; text: string }>;
 }
 
 export const blogPosts: BlogPostData[] = [
+  {
+    slug: "wat-is-hr-glas-en-waarom-belangrijk",
+    title: "Wat is HR++ glas en waarom is het belangrijk?",
+    excerpt: "Alles over HR++ glas: de werking, isolatiewaarde, prijs, terugverdientijd en waarom het de beste keuze is voor jouw renovatie.",
+    description: "Wat is HR++ glas? Ontdek de voordelen, isolatiewaarden (U-waarde), prijzen en besparing van hoogrendementsglas voor ramen in Antwerpen en omgeving.",
+    date: "2026-06-05",
+    readTime: "6 min",
+    category: "Besparing",
+    keywords: ["wat is hr++ glas", "hr++ glas isolatiewaarde", "hoogrendementsglas", "hr++ glas prijs", "ramen isoleren"],
+    serviceTags: ["ramen-deuren"],
+    dynamic: true,
+    intro:
+      "Bij het vervangen van je ramen hoor je de term 'HR++ glas' voortdurend vallen. Maar wat is HR++ glas nu precies, hoe verschilt het van standaard dubbel of driedubbel glas, en waarom is het zo'n belangrijke investering voor je woning? In deze gids leggen we de werking, isolatiewaarden, kosten en premies van hoogrendementsglas haarfijn uit.",
+    keyPoints: [
+      "HR++ glas isoleert tot 5 keer beter dan enkel glas en 2,5 keer beter dan oud dubbel glas.",
+      "Dankzij een edelgasvulling (argon) en een onzichtbare metaalcoating wordt warmte effectief binnengehouden.",
+      "De gemiddelde U-waarde van HR++ glas ligt rond de 1,1 W/m²K.",
+      "Met Mijn VerbouwPremie kun je in Vlaanderen een aanzienlijk deel van de investering terugkrijgen.",
+    ],
+    sections: [
+      {
+        title: "Wat is HR++ glas precies?",
+        paragraphs: [
+          "HR++ staat voor Hoog Rendement glas van de second-generation. In tegenstelling to traditioneel dubbel glas, dat enkel gevuld is met droge lucht, bevindt er zich tussen de twee glasplaten van HR++ glas een edelgas, meestal argon. Edelgas geleidt warmte veel slechter dan lucht, waardoor de isolatiewaarde drastisch verbetert.",
+          "Daarnaast is de binnenzijde van een van de glasbladen voorzien van een flinterdun, onzichtbaar metaalcoating-laagje. Deze coating laat het zonlicht (en dus de gratis zonnewarmte) wel naar binnen, maar reflecteert de langgolvige warmtestraling van je verwarming terug de kamer in. Hierdoor blijft je woning in de winter behaaglijk warm en in de zomer langer koel.",
+        ],
+      },
+      {
+        title: "Isolatiewaarden vergeleken: de U-waarde",
+        paragraphs: [
+          "De isolatiekracht van glas wordt uitgedrukt in de U-waarde (warmtedoorgangscoëfficiënt). Hoe lager deze U-waarde, hoe beter het glas isoleert. Hieronder zie je het enorme verschil tussen de verschillende glastypes:",
+        ],
+        bullets: [
+          "Enkel glas: U-waarde van ca. 5,8 W/m²K (vrijwel geen isolatie)",
+          "Standaard dubbel glas (oud): U-waarde van ca. 2,8 W/m²K",
+          "HR+ glas: U-waarde van ca. 1,6 W/m²K",
+          "HR++ glas: U-waarde van ca. 1,1 W/m²K (de huidige standaard)",
+          "HR+++ glas (driedubbel glas): U-waarde van ca. 0,6 W/m²K (voor passiefhuizen)",
+        ],
+      },
+      {
+        title: "Waarom is HR++ glas belangrijk voor jouw woning?",
+        paragraphs: [
+          "Het installeren van HR++ glas is een van de snelste manieren om je energierekening te verlagen en het wooncomfort te verhogen. Oude ramen zijn vaak de grootste bron van tocht en warmteverlies. Door over te stappen op hoogrendementsglas elimineer je koude zones bij het raam en voorkom je condensvorming aan de binnenzijde.",
+          "Bovendien draagt HR++ glas bij aan een betere EPC-score van je woning. In Vlaanderen geldt sinds enkele jaren een renovatieverplichting voor residentiële gebouwen met een EPC-label E of F. Het vervangen van glas en raamprofielen is een cruciale stap om aan deze verplichtingen te voldoen en de waarde van je vastgoed te verhogen.",
+        ],
+      },
+      {
+        title: "Prijs en terugverdientijd van HR++ glas",
+        paragraphs: [
+          "De prijs van HR++ glas zelf ligt gemiddeld tussen de €80 en €120 per vierkante meter, exclusief de btw en de kosten voor de raamprofielen en plaatsing. Hoewel dit duurder is dan standaard dubbel glas, verdient deze investering zichzelf snel terug door de lagere stookkosten.",
+          "Gemiddeld bespaar je met HR++ glas zo'n €250 tot €300 per jaar op je gasrekening voor een gemiddelde gezinswoning. De terugverdientijd ligt daardoor meestal tussen de 5 en 7 jaar, zeker wanneer je ook gebruikmaakt van de Vlaamse renovatiepremies.",
+        ],
+      },
+      {
+        title: "Premies voor HR++ glas in Vlaanderen 2026",
+        paragraphs: [
+          "In 2026 kun je voor het vervangen van ramen en beglazing rekenen op Mijn VerbouwPremie. Om in aanmerking te komen voor de premie voor hoogrendementsglas, moet de U-waarde van het geplaatste glas maximaal 1,0 W/m²K bedragen (of 1,1 W/m²K in specifieke renovatiecontexten in combinatie met de profielen).",
+          "De premiebedragen hangen af van je inkomenscategorie en kunnen oplopen tot 35% of zelfs 50% van de totale factuur voor de lagere inkomensgroepen. Dit maakt de overstap naar HR++ glas financieel nog aantrekkelijker.",
+        ],
+      },
+    ],
+    ctaTitle: "Wil je besparen met HR++ glas?",
+    ctaText: "Yannova adviseert je graag over de beste raamprofielen en HR++ beglazing voor jouw woning. Neem contact op voor een gratis opmeting en offerte op maat.",
+    relatedSlugs: ["wat-kosten-nieuwe-ramen", "pvc-of-aluminium-ramen", "energiebesparing-nieuwe-ramen"],
+    howtoSteps: [
+      { name: "Stap 1: Gratis opmeting en inspectie", text: "Een adviseur van Yannova komt bij je langs om de huidige ramen op te meten en de staat van de profielen te controleren." },
+      { name: "Stap 2: Offerte en materiaalkeuze", text: "Je ontvangt een gedetailleerde offerte en kiest het gewenste type raamprofiel (PVC of aluminium) en de dikte van het HR++ glas." },
+      { name: "Stap 3: Professionele plaatsing", text: "Onze ervaren monteurs demonteren de oude ramen en plaatsen de nieuwe profielen met HR++ glas tocht- en waterdicht." },
+      { name: "Stap 4: Premie-aanvraag indienen", text: "Met de attesten en facturen van Yannova dien je de aanvraag voor Mijn VerbouwPremie in om een deel van de kosten terug te krijgen." },
+    ],
+  },
   {
     slug: "prijs-renovatie-zoersel",
     title: "Wat kost renovatie in Zoersel in 2026?",
@@ -353,7 +426,7 @@ export const blogPosts: BlogPostData[] = [
         title: "Wat is de slimste volgorde?",
         paragraphs: [
           "Meestal begint een slim traject met ramen, deuren en/of gevel. Daarna volgen technieken en binnenafwerking. Zo bouwt u eerst de energieprestatie en het comfort op, en daarna de rest van de woning.",
-          "Dat is precies de reden waarom lokale SEO-pagina&apos;s voor ramen, gevelrenovatie en totaalrenovatie elkaar intern moeten versterken: ze horen inhoudelijk ook echt samen.",
+          "Dat is precies de reden waarom lokale SEO-pagina's voor ramen, gevelrenovatie en totaalrenovatie elkaar intern moeten versterken: ze horen inhoudelijk ook echt samen.",
         ],
       },
     ],
@@ -644,6 +717,262 @@ export const blogPosts: BlogPostData[] = [
     category: "Prijzen",
     keywords: ["gevelrenovatie prijs", "kosten gevelrenovatie", "crepi prijs", "gevelisolatie kosten"],
     serviceTags: ["gevelrenovatie", "crepi-gevel"],
+  },
+  {
+    slug: "totaalrenovatie-antwerpen-prijs",
+    title: "Totaalrenovatie Antwerpen: wat kost het en hoe pakt u het slim aan?",
+    excerpt: "Wat kost een totaalrenovatie in Antwerpen in 2026? Prijzen, slimme fasering en hoe u maximaal premies haalt.",
+    description: "Ontdek wat een totaalrenovatie in Antwerpen kost in 2026. Richtprijzen, fasering, premies en hoe u één aannemer voor alles kiest. Yannova helpt u.",
+    date: "2026-06-05",
+    readTime: "7 min",
+    category: "Prijzen",
+    keywords: [
+      "totaalrenovatie antwerpen",
+      "totaalrenovatie antwerpen prijs",
+      "renovatie antwerpen kosten",
+      "aannemer totaalrenovatie antwerpen",
+      "renovatiebedrijf antwerpen",
+      "woning renoveren antwerpen",
+    ],
+    serviceTags: ["totaalrenovatie", "renovatie"],
+    cityTags: ["antwerpen", "berchem", "deurne", "wilrijk"],
+    dynamic: true,
+    intro:
+      "Wie een totaalrenovatie in Antwerpen plant, staat voor een complexe puzzel: wat doet u wanneer, wie coördineert alles, en hoe houdt u het budget onder controle? In deze gids vindt u concrete richtprijzen, slimme tips voor fasering en een helder beeld van wat een goede aannemer voor u kan doen.",
+    keyPoints: [
+      "Een totaalrenovatie in Antwerpen kost gemiddeld €700 tot €1.500 per m² afhankelijk van de omvang en afwerkingsgraad.",
+      "De buitenschil (ramen, gevel, dak) is altijd de logische eerste fase — dit beschermt de rest van de woning.",
+      "Via Mijn VerbouwPremie kunt u voor meerdere werken tegelijk premies combineren.",
+      "Één aannemer voor de volledige buitenschil bespaart u coördinatiekosten en voorkomt planningsproblemen.",
+    ],
+    sections: [
+      {
+        title: "Wat valt onder een totaalrenovatie?",
+        paragraphs: [
+          "Een totaalrenovatie omvat alle werken die een woning grondig vernieuwen: van de buitenschil (ramen, gevel, dak en isolatie) tot technieken (elektriciteit, verwarming, sanitair) en binnenafwerking (vloeren, wanden, keuken, badkamer).",
+          "In Antwerpen gaat het vaak om rijhuizen, herenhuizen of appartementen die in één project worden aangepakt. De combinatie van stedelijke bereikbaarheid, strikte bouwnormen en de nood aan snelle uitvoering maakt een goede aannemer essentieel.",
+        ],
+      },
+      {
+        title: "Wat zijn de richtprijzen voor totaalrenovatie in Antwerpen?",
+        paragraphs: [
+          "De prijs van een totaalrenovatie in Antwerpen hangt sterk af van de omvang, de keuze van materialen en de staat van de woning. Globaal kunt u rekenen op:",
+        ],
+        bullets: [
+          "Lichte renovatie (enkel buitenschil of technieken): €300–€600/m²",
+          "Uitgebreide renovatie (buitenschil + technieken): €600–€1.000/m²",
+          "Totaalrenovatie inclusief binnenafwerking: €1.000–€1.800/m²",
+          "Specifiek gevelrenovatie met isolatie en crepi: €80–€150/m² gevelvlak",
+          "Nieuwe ramen en deuren: €400–€900 per raam/deur inclusief plaatsing",
+        ],
+      },
+      {
+        title: "Hoe faseert u een renovatie in Antwerpen slim?",
+        paragraphs: [
+          "De meeste experts adviseren te starten met de buitenschil: ramen, gevel en dak. Reden: zolang de buitenschil lekt of slecht isoleert, heeft binnenafwerking weinig zin. Moisture, tocht en warmteverlies tasten alles aan.",
+          "Na de buitenschil volgen technieken (verwarming, elektriciteit, sanitair) en daarna pas de binnenafwerking. Wie deze volgorde volgt, vermijdt dat verse vloeren of plafonds later opnieuw opengebroken moeten worden.",
+        ],
+        bullets: [
+          "Fase 1: buitenschil — ramen, deuren, gevel, isolatie, dak",
+          "Fase 2: technieken — cv-installatie, elektriciteit, ventilatie, sanitair",
+          "Fase 3: binnenafwerking — vloeren, wanden, plafonds, keuken, badkamer",
+        ],
+      },
+      {
+        title: "Welke premies zijn er voor totaalrenovatie in Antwerpen?",
+        paragraphs: [
+          "In Antwerpen kunt u voor een totaalrenovatie meerdere premies combineren. Mijn VerbouwPremie is de Vlaamse premie voor energiebesparende werken: gevelisolatie, dakisolatie, ramen met HR++ glas en ventilatie komen in aanmerking.",
+          "Naast de Vlaamse premies heeft Antwerpen ook stedelijke energiepremies voor bepaalde wijken en doelgroepen. Door meerdere werken samen aan te vragen, maximaliseert u het premiebedrag.",
+        ],
+      },
+      {
+        title: "Waarom één aannemer voor de buitenschil?",
+        paragraphs: [
+          "Wie ramen, gevel en isolatie bij verschillende aannemers bestelt, riskeert planningsproblemen, aansluitingsfouten en discussies over verantwoordelijkheid. Een aannemer die alle buitenschilwerken coördineert, garandeert een technisch correcte aansluiting tussen ramen en gevelisolatie — cruciaal om koudebruggen en vochtproblemen te vermijden.",
+          "Yannova specialiseert zich precies in deze buitenschilrenovaties in Antwerpen en omgeving. Eén aanspreekpunt, vaste ploeg, geen onderaannemers voor de kernwerken.",
+        ],
+      },
+      {
+        title: "Wat zijn typische valkuilen bij renovatie in Antwerpen?",
+        paragraphs: [
+          "De meest voorkomende fouten zijn: starten met binnenafwerking terwijl de buitenschil nog lekt, de volgorde van technieken verkeerd plannen, en te laat nadenken over vergunningen en premie-voorwaarden.",
+          "In Antwerpen speelt ook de stedelijke context mee: beperkte parkeermogelijkheden voor machines, omgevingsvergunning voor gevelwijzigingen, en specifieke regels in bepaalde wijken of beschermde zones.",
+        ],
+      },
+    ],
+    ctaTitle: "Totaalrenovatie plannen in Antwerpen?",
+    ctaText: "Yannova bespreekt graag uw project ter plaatse: van de buitenschil tot een realistische budgetplanning en premie-advies op maat.",
+    relatedSlugs: ["renovatiebedrijf-antwerpen", "ramen-vervangen-prijs-antwerpen", "energie-renovatie-premie-belgie"],
+    howtoSteps: [
+      { name: "Stap 1: Plaatsbezoek en inspectie", text: "Een adviseur van Yannova inspecteert de woning en brengt de prioriteiten voor de buitenschil in kaart." },
+      { name: "Stap 2: Offerte per fase", text: "U ontvangt een gedetailleerde offerte per fase zodat u het budget stap voor stap kunt beheren." },
+      { name: "Stap 3: Vergunningen en premie-aanvraag", text: "Yannova begeleidt u bij de nodige omgevingsvergunning en dient de premie-aanvraag voor u in." },
+      { name: "Stap 4: Uitvoering buitenschil", text: "Het vaste team voert ramen, gevel en isolatiewerken uit in één aaneengesloten planning." },
+      { name: "Stap 5: Oplevering en attesten", text: "Na oplevering ontvangt u alle technische attesten voor de premie-aanvraag en garantiedocumenten." },
+    ],
+  },
+  {
+    slug: "aannemer-antwerpen-kiezen",
+    title: "Aannemer kiezen in Antwerpen: waar moet u op letten in 2026?",
+    excerpt: "Hoe kiest u een betrouwbare aannemer in Antwerpen? De 7 belangrijkste criteria om een goede renovatieaannemer te herkennen.",
+    description: "Op zoek naar een goede aannemer in Antwerpen? Ontdek de 7 criteria voor een betrouwbare renovatieaannemer, wat een correcte offerte inhoudt en welke valkuilen u vermijdt.",
+    date: "2026-06-05",
+    readTime: "6 min",
+    category: "Advies",
+    keywords: [
+      "aannemer antwerpen",
+      "aannemer kiezen antwerpen",
+      "betrouwbare aannemer antwerpen",
+      "renovatieaannemer antwerpen",
+      "aannemer ramen antwerpen",
+      "aannemer gevelrenovatie antwerpen",
+    ],
+    serviceTags: ["renovatie", "totaalrenovatie", "ramen-deuren", "gevelrenovatie"],
+    cityTags: ["antwerpen", "berchem", "wilrijk", "deurne", "merksem"],
+    dynamic: true,
+    intro:
+      "Een goede aannemer vinden in Antwerpen lijkt makkelijker dan het is. Er zijn honderden bedrijven actief, maar de kwaliteitsverschillen zijn enorm. In deze gids geeft Yannova u de 7 concrete criteria om een betrouwbare renovatieaannemer te herkennen — en de valkuilen te vermijden die renovaties duur en frustrerend maken.",
+    keyPoints: [
+      "Een betrouwbare aannemer werkt met een eigen vaste ploeg — geen rondtrekkende onderaannemers.",
+      "Een goede offerte is gedetailleerd: materialen, hoeveelheden, tijdlijn en garanties staan er allemaal in.",
+      "Vraag altijd naar referenties in uw buurt en bekijk recente projecten.",
+      "Controleer of de aannemer erkend is (erkenningsnummer) en RSZ-gecompliant werkt.",
+    ],
+    sections: [
+      {
+        title: "Waarom is een goede aannemer kiezen in Antwerpen zo belangrijk?",
+        paragraphs: [
+          "Antwerpen heeft een grote en competitieve renovatiemarkt. Dat is goed voor de keuze, maar ook voor het risico: tussen serieuze bedrijven en minder betrouwbare aannemers zit een groot verschil in kwaliteit, communicatie en eindresultaat.",
+          "Een slechte keuze van aannemer leidt tot meerwerk, discussies, vertragingen en soms structurele problemen die jaren later opduiken. Een grondige selectie vooraf is de beste investering die u kunt doen.",
+        ],
+      },
+      {
+        title: "De 7 criteria voor een betrouwbare aannemer in Antwerpen",
+        paragraphs: [
+          "Gebruik deze checklist wanneer u offertes vergelijkt en aannemers beoordeelt:",
+        ],
+        bullets: [
+          "1. Eigen vaste ploeg — geen rondtrekkende onderaannemers die u niet kent",
+          "2. Transparante offerte — gedetailleerd per post, met materialen en garanties",
+          "3. Referenties in uw regio — recente projecten die u kunt bekijken of navragen",
+          "4. Erkenningsnummer — controleer via de Kruispuntbank of het RSZ-nummer correct is",
+          "5. Duidelijke communicatie — snel bereikbaar, heldere planning, schriftelijke afspraken",
+          "6. Premie-kennis — kennis van Mijn VerbouwPremie en lokale subsidies",
+          "7. Garanties op materiaal én uitvoering — niet alleen op producten, ook op plaatsing",
+        ],
+      },
+      {
+        title: "Wat zegt een goede offerte over een aannemer?",
+        paragraphs: [
+          "Een offerte is de eerste echte test voor een aannemer. Een goede offerte beschrijft exact welke werken worden uitgevoerd, welke materialen worden gebruikt (merk, type, dikte), hoeveel m² of stuks, en wat de garantietermijnen zijn.",
+          "Een vage offerte met enkel een totaalprijs is een alarmsignaal. Hoe minder detail, hoe groter het risico op discussies achteraf over wat er al dan niet inbegrepen was.",
+        ],
+      },
+      {
+        title: "Plaatsbezoek: verplicht voor een correcte prijs",
+        paragraphs: [
+          "Een serieuze aannemer geeft nooit een vaste prijs zonder uw woning te hebben gezien. Zeker in Antwerpen, waar bereikbaarheid, parkeerobstructies en de specifieke toestand van een pand de uitvoeringskosten sterk beïnvloeden.",
+          "Een aannemer die op basis van een foto of telefonische beschrijving al een scherpe prijs communiceert, is ofwel heel naïef of rekent later meerwerk aan. Vraag altijd om een gratis plaatsbezoek voordat u een offerte bespreekt.",
+        ],
+      },
+      {
+        title: "Specialisatie versus algemeen aannemer: wanneer kiest u wat?",
+        paragraphs: [
+          "Voor specifieke werken zoals ramen en deuren, gevelrenovatie of gevelisolatie is een gespecialiseerde aannemer vaak beter dan een algemeen renovatiebedrijf. Specialisten hebben meer ervaring met de specifieke technieken, betere toegang tot kwaliteitsmaterialen en efficiëntere uitvoering.",
+          "Voor een totaalrenovatie heeft u een coördinerende aannemer nodig die alle disciplines aanstuurt. Let er op dat deze aannemer ook voor de buitenschilwerken een eigen ploeg heeft — dat is waar de meeste kwaliteitsverschillen zichtbaar worden.",
+        ],
+      },
+      {
+        title: "Hoe gaat Yannova te werk in Antwerpen?",
+        paragraphs: [
+          "Yannova werkt met een vaste ploeg voor alle buitenschilwerken: ramen en deuren, gevelrenovatie, isolatie en crepi. Geen onderaannemers voor de kernwerken. Eén aanspreekpunt van plaatsbezoek tot oplevering.",
+          "We geven altijd een gedetailleerde offerte na een gratis plaatsbezoek, inclusief premie-advies en een realistische planning. Zo weet u op voorhand precies wat u kunt verwachten.",
+        ],
+      },
+    ],
+    ctaTitle: "Op zoek naar een betrouwbare aannemer in Antwerpen?",
+    ctaText: "Neem contact op met Yannova voor een gratis plaatsbezoek en een transparante offerte voor ramen, gevel of renovatiewerken in Antwerpen.",
+    relatedSlugs: ["totaalrenovatie-antwerpen-prijs", "ramen-vervangen-prijs-antwerpen", "renovatie-vergunning-antwerpen"],
+  },
+  {
+    slug: "gevelisolatie-subsidie-antwerpen-2026",
+    title: "Gevelisolatie subsidie Antwerpen 2026: alles over premies en voordelen",
+    excerpt: "Welke subsidies zijn er in 2026 voor gevelisolatie in Antwerpen? Mijn VerbouwPremie, stedelijke premies en hoe u ze combineert.",
+    description: "Overzicht van alle subsidies voor gevelisolatie in Antwerpen in 2026. Mijn VerbouwPremie, stedelijke premies, EPB-attesten en wat Yannova voor u regelt.",
+    date: "2026-06-05",
+    readTime: "6 min",
+    category: "Premies",
+    keywords: [
+      "gevelisolatie subsidie antwerpen",
+      "premie gevelisolatie antwerpen 2026",
+      "mijn verbouwpremie gevelisolatie",
+      "subsidie buitenisolatie antwerpen",
+      "gevelisolatie premie vlaanderen 2026",
+      "epc verbeteren premie antwerpen",
+    ],
+    serviceTags: ["gevelisolatie", "gevelrenovatie"],
+    cityTags: ["antwerpen"],
+    dynamic: true,
+    intro:
+      "Gevelisolatie in Antwerpen is niet alleen goed voor uw comfort en energiefactuur — in 2026 zijn er ook substantiële subsidies beschikbaar. In deze gids zetten we alle premies voor buitengevelisolatie op een rij en leggen we uit hoe u ze combineert voor het maximale voordeel.",
+    keyPoints: [
+      "Via Mijn VerbouwPremie kunt u in 2026 een subsidie van 20% tot 50% van de kostprijs terugkrijgen voor gevelisolatie.",
+      "Voor gevelisolatie moet de R-waarde van het isolatiemateriaal minimaal 3,5 m²K/W bedragen.",
+      "Combineer gevelisolatie met ramen en dak voor nog hogere premies via het renovatiepakket.",
+      "Yannova bezorgt alle EPB-attesten en technische documentatie voor uw premie-aanvraag.",
+    ],
+    sections: [
+      {
+        title: "Welke premies zijn er voor gevelisolatie in Antwerpen in 2026?",
+        paragraphs: [
+          "De belangrijkste subsidie voor gevelisolatie in Antwerpen is Mijn VerbouwPremie van de Vlaamse overheid. Deze premie geldt voor alle eigenaar-bewoners en verhuurders in het Vlaams Gewest die energiebesparende werken laten uitvoeren.",
+          "Naast de Vlaamse premie heeft de stad Antwerpen voor bepaalde doelgroepen en wijken aanvullende energiepremies. Het is zinvol om beide premiekanalen te controleren voor u start.",
+        ],
+        bullets: [
+          "Mijn VerbouwPremie: 20% tot 50% van de factuur (afhankelijk van inkomenscategorie)",
+          "Maximale premie per woning voor gevelisolatie: tot €5.000 (te controleren voor uw situatie)",
+          "Combinatiepremie bij gevelisolatie + ramen + dak: hogere totaalpremie mogelijk",
+          "Stedelijke Antwerpen-premies: check bij het Energiehuis Antwerpen",
+        ],
+      },
+      {
+        title: "Aan welke technische eisen moet gevelisolatie voldoen voor premie?",
+        paragraphs: [
+          "Om in aanmerking te komen voor Mijn VerbouwPremie moet de gevelisolatie voldoen aan een minimale R-waarde van 3,5 m²K/W. In de praktijk betekent dit minstens 10 cm EPS-isolatieplaten of een gelijkwaardig systeem.",
+          "De isolatiewerken moeten uitgevoerd worden door een erkende aannemer en gedocumenteerd worden met een EPB-attest. Yannova zorgt voor alle vereiste technische documentatie.",
+        ],
+      },
+      {
+        title: "Hoe vraagt u de premie aan voor gevelisolatie in Antwerpen?",
+        paragraphs: [
+          "De aanvraag voor Mijn VerbouwPremie gebeurt via het online platform van de Vlaamse overheid, na uitvoering van de werken. U heeft de factuur van de aannemer en het EPB-conformiteitsattest nodig.",
+          "Yannova bezorgt u na de werken alle nodige documenten: de technische fiche van de isolatie, het bewijs van R-waarde, en een factuur met de vereiste vermelding van het erkenningsnummer.",
+        ],
+      },
+      {
+        title: "Wat is het financiële voordeel van gevelisolatie in Antwerpen?",
+        paragraphs: [
+          "De combinatie van lagere energiekosten en premies maakt gevelisolatie een sterke investering. Voor een gemiddeld rijhuis in Antwerpen met 80 m² te isoleren gevelvlak rekent u:",
+        ],
+        bullets: [
+          "Investering gevelisolatie met crepi: €6.400 – €12.000",
+          "Mijn VerbouwPremie (gemiddeld 30%): €1.900 – €3.600 terug",
+          "Jaarlijkse energiebesparing: €350 – €600 per jaar",
+          "Netto terugverdientijd: 7 tot 12 jaar",
+          "Meerwaarde woning door EPC-verbetering: significant",
+        ],
+      },
+      {
+        title: "Waarom is 2026 een goed moment voor gevelisolatie in Antwerpen?",
+        paragraphs: [
+          "De renovatieverplichting in Vlaanderen verplicht eigenaar-bewoners van woningen met EPC-label E of F om te renoveren na aankoop of bij overdracht. Voor wie nog niet verplicht is, is het verstandig om nu te handelen: de premies zijn momenteel relatief gunstig en de energieprijzen blijven volatiel.",
+          "Bovendien verwacht men dat de technische eisen voor premies in de komende jaren zullen verstrengen. Wie nu isoleert, doet dit nog aan de huidige voorwaarden.",
+        ],
+      },
+    ],
+    ctaTitle: "Gevelisolatie in Antwerpen met maximale premies?",
+    ctaText: "Yannova adviseert u over de beste isolatieoplossing voor uw woning in Antwerpen en verzorgt de volledige premie-aanvraag voor u.",
+    relatedSlugs: ["energie-renovatie-premie-belgie", "hoeveel-kost-gevelrenovatie", "crepi-gevel-voordelen"],
   },
 ];
 

@@ -65,6 +65,9 @@ export default async function ProjectenPage() {
     });
   } catch (error) {
     logger.error("Kon projecten niet ophalen uit de database", error);
+  }
+
+  if (!projects || projects.length === 0) {
     // Veilige fallback: bouw een eenvoudige lijst op basis van lokale images
     projects = (projectsData as string[]).map((imageUrl, idx) => {
       const filename = imageUrl.split('/').pop()?.split('.')[0] ?? `project-${idx + 1}`;
@@ -76,6 +79,9 @@ export default async function ProjectenPage() {
         category: 'Totaalrenovatie',
         imageUrl,
         featured: idx < 3,
+        location: 'Antwerpen',
+        material: 'Premium materialen',
+        year: 2026,
       };
     });
   }
@@ -101,7 +107,7 @@ export default async function ProjectenPage() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1486406149905-6c6d4e0dd99e?q=80&w=2670&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop"
             alt="Onze Projecten"
             fill
             className="object-cover brightness-[0.3]"
@@ -113,7 +119,7 @@ export default async function ProjectenPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 bg-secondary/20 backdrop-blur-sm rounded-full px-5 py-2 mb-8">
               <Award className="h-4 w-4 text-secondary" />
-              <span className="text-secondary text-sm font-medium">Meer dan {projects.length} tevreden klanten</span>
+              <span className="text-secondary text-sm font-medium">Meer dan 500 tevreden klanten</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               Onze <span className="text-secondary">Realisaties</span>

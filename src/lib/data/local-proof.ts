@@ -20,7 +20,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Project rond gevelrenovatie en afwerking met focus op een rustig werfverloop en een strakke buitenzijde.",
     imageUrl: "/images/projects/crepi-1.jpg",
     result: "Nieuwe uitstraling en betere buitenschil voor een woning in Zoersel.",
-    serviceSlugs: ["gevelrenovatie", "crepi-gevel", "renovatie"],
+    serviceSlugs: ["gevelrenovatie", "crepi-gevel", "renovatie", "crepi", "gevelisolatie"],
   },
   {
     id: "proof-schilde-ramen",
@@ -30,7 +30,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Vervanging van buitenschrijnwerk met aandacht voor uitstraling, detaillering en isolatiewinst.",
     imageUrl: "/images/projects/replacing_windows_no_people.png",
     result: "Meer comfort en een strakkere gevelaanblik in Schilde.",
-    serviceSlugs: ["ramen-deuren", "renovatie"],
+    serviceSlugs: ["ramen-deuren", "renovatie", "ramen", "deuren"],
   },
   {
     id: "proof-brasschaat-totaal",
@@ -40,7 +40,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Combinatie van ramen, gevel en afwerkingskeuzes met nadruk op duurzame materialen.",
     imageUrl: "/images/projects/Gemini_Generated_Image_bf8tm8bf8tm8bf8t.jpg",
     result: "Coherente renovatiestijl en betere energetische basis.",
-    serviceSlugs: ["totaalrenovatie", "renovatie", "ramen-deuren", "gevelrenovatie"],
+    serviceSlugs: ["totaalrenovatie", "renovatie", "ramen-deuren", "gevelrenovatie", "ramen", "deuren", "gevelisolatie"],
   },
   {
     id: "proof-malle-renovatie",
@@ -60,7 +60,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Aanpak gericht op uitstraling, isolatie en een verzorgde aansluiting rond ramen en dorpels.",
     imageUrl: "/images/projects/crepi-patterns.jpg",
     result: "Frissere gevel en duidelijk betere energieprestatie.",
-    serviceSlugs: ["gevelrenovatie", "crepi-gevel"],
+    serviceSlugs: ["gevelrenovatie", "crepi-gevel", "crepi", "gevelisolatie"],
   },
   {
     id: "proof-antwerpen-ramen",
@@ -70,7 +70,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Ramenproject waarbij bereikbaarheid, plaatsing en nette afwerking in een stadspand centraal stonden.",
     imageUrl: "/images/projects/interior_renovation_sliding_doors.png",
     result: "Betere isolatie en geluidsdemping voor een woning in Antwerpen.",
-    serviceSlugs: ["ramen-deuren", "renovatie"],
+    serviceSlugs: ["ramen-deuren", "renovatie", "ramen", "deuren"],
   },
   {
     id: "proof-deurne-ramen",
@@ -80,7 +80,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Vernieuwing van buitenschrijnwerk met aandacht voor snelheid, afwerking en dagelijks comfort.",
     imageUrl: "/images/projects/003a3c82-53d0-4c81-8d96-4ae5ad333f15.png",
     result: "Merkbaar minder tocht en een rustigere binnenruimte.",
-    serviceSlugs: ["ramen-deuren", "renovatie"],
+    serviceSlugs: ["ramen-deuren", "renovatie", "ramen", "deuren"],
   },
   {
     id: "proof-merksem-totaal",
@@ -90,7 +90,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Project waarbij ramen, gevel en algemene renovatiewerken in een haalbare volgorde zijn gepland.",
     imageUrl: "/images/projects/modern_extension_construction.png",
     result: "Meer controle op budget en uitvoering in Merksem.",
-    serviceSlugs: ["renovatie", "totaalrenovatie", "gevelrenovatie"],
+    serviceSlugs: ["renovatie", "totaalrenovatie", "gevelrenovatie", "gevelisolatie"],
   },
   {
     id: "proof-kapellen-crepi",
@@ -100,7 +100,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Gevelafwerking afgestemd op een residentiële woning waar esthetiek en duurzaamheid samenkomen.",
     imageUrl: "/images/projects/c67c2ffe-a42b-477f-a67d-10100999c4f0.jpg",
     result: "Strakke buitenzijde en onderhoudsvriendelijk resultaat in Kapellen.",
-    serviceSlugs: ["crepi-gevel", "gevelrenovatie"],
+    serviceSlugs: ["crepi-gevel", "gevelrenovatie", "crepi", "gevelisolatie"],
   },
   {
     id: "proof-schoten-renovatie",
@@ -110,7 +110,7 @@ export const localProofProjects: LocalProofProject[] = [
     description: "Combinatieproject voor eigenaars die hun woning tegelijk comfortabeler en visueel sterker wilden maken.",
     imageUrl: "/images/projects/Gemini_Generated_Image_4xh3am4xh3am4xh3.jpg",
     result: "Beter geheel tussen ramen, gevel en renovatieplanning.",
-    serviceSlugs: ["renovatie", "ramen-deuren", "gevelrenovatie", "totaalrenovatie"],
+    serviceSlugs: ["renovatie", "ramen-deuren", "gevelrenovatie", "totaalrenovatie", "ramen", "deuren", "gevelisolatie"],
   },
 ];
 

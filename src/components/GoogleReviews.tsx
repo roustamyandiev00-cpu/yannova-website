@@ -4,7 +4,12 @@ import { Star, ExternalLink } from 'lucide-react';
 import { googleReviewsData } from '@/data/testimonials';
 
 export function GoogleReviews() {
-  const { averageRating, totalReviews, reviewsUrl } = googleReviewsData;
+  const { averageRating, totalReviews, reviewsUrl, mapsUrl } = googleReviewsData;
+
+  // Controleer of Place ID nog placeholder is
+  const isConfigured = !reviewsUrl.includes('YOUR_GOOGLE_PLACE_ID');
+  const reviewLink = isConfigured ? reviewsUrl : mapsUrl;
+  const mapsLink = mapsUrl || 'https://www.google.com/maps/search/Yannova+Bouw+Zoersel';
 
   return (
     <div className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-md">
@@ -22,7 +27,6 @@ export function GoogleReviews() {
           alt="Google" 
           className="h-8 w-auto opacity-80"
           onError={(e) => {
-            // Fallback als logo niet bestaat
             e.currentTarget.style.display = 'none';
           }}
         />
@@ -52,7 +56,7 @@ export function GoogleReviews() {
       </div>
 
       <a
-        href={reviewsUrl}
+        href={mapsLink}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center gap-2 w-full rounded-full bg-white/10 hover:bg-white/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:scale-[1.02] active:scale-[0.98] border border-white/10"
@@ -63,7 +67,7 @@ export function GoogleReviews() {
 
       <div className="mt-6 pt-6 border-t border-white/10">
         <a
-          href={reviewsUrl}
+          href={reviewLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 text-sm text-secondary hover:text-secondary/80 transition-colors"
