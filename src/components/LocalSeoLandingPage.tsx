@@ -9,6 +9,7 @@ import { getLocalProofProjects } from "@/lib/data/local-proof";
 import { testimonials } from "@/data/testimonials";
 import { getRelatedBlogPosts } from "@/lib/data/blog-posts";
 import { LocalSeoHeroCTAs, LocalSeoSidebarCTAs } from "@/components/LocalSeoCTAButtons";
+import { EnhancedServiceContent } from "@/components/EnhancedServiceContent";
 
 interface LocalSeoLandingPageProps {
   page: LocalSeoPageData;
@@ -186,6 +187,15 @@ export function LocalSeoLandingPage({ page }: LocalSeoLandingPageProps) {
             </div>
           </div>
         </section>
+
+        {/* Enhanced Service Content with pricing, materials, process, etc. */}
+        {["ramen", "deuren", "crepi", "gevelisolatie", "gevelrenovatie", "renovatie", "totaalrenovatie"].includes(page.service.slug) && (
+          <EnhancedServiceContent 
+            service={page.service.slug as "ramen" | "deuren" | "crepi" | "gevelisolatie" | "gevelrenovatie" | "renovatie" | "totaalrenovatie"} 
+            city={page.city.name} 
+            citySlug={page.city.slug} 
+          />
+        )}
 
         <section className="border-t border-white/10 py-16">
           <div className="container mx-auto px-6">
