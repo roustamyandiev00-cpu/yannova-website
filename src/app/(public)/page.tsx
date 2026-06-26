@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     "crepi antwerpen",
     "gevelisolatie antwerpen",
   ],
+  alternates: {
+    canonical: 'https://www.yannova.be',
+  },
 };
 
 const homepageFAQs = [

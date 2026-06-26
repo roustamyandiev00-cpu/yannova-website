@@ -5,7 +5,10 @@ import { productCatalog } from '@/lib/data/product-catalog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.yannova.be'
-  const lastModified = new Date()
+  // Gebruik vaste datum per type i.p.v. new Date() om onnodige crawls te vermijden
+  const today = new Date()
+  const lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000)
+  const lastMonth = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000)
 
   // Hoofdpagina's
   const mainPages = [
@@ -69,7 +72,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,
-    lastModified,
+    lastModified:
+      page === ''
+        ? today
+        : page.includes('/blog/')
+          ? lastMonth
+          : lastWeek,
     changeFrequency: 
       page === '' 
         ? 'daily' as const
