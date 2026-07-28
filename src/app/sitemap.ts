@@ -5,7 +5,6 @@ import { productCatalog } from '@/lib/data/product-catalog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.yannova.be'
-  // Gebruik vaste datum per type i.p.v. new Date() om onnodige crawls te vermijden
   const today = new Date()
   const lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000)
   const lastMonth = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000)
@@ -39,10 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
   ]
 
-  // Genereer alle lokale pagina's dynamically uit local-seo config
+  // Genereer alle lokale pagina's uit local-seo config
   const localSeoPages: string[] = []
   localSeoServices.forEach((service) => {
-    // Only generate nested paths, not hubs or legacy hyphenated paths
     if (service.slug !== 'ramen-deuren' && service.slug !== 'crepi-gevel') {
       priorityCities.forEach((city) => {
         localSeoPages.push(`/${service.slug}/${city.slug}`)
@@ -50,29 +48,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  // Overige specifieke landingspagina's
-  const specialLandingPages = [
-    '/ramen-deuren-antwerpen',
-    '/gevelrenovatie-antwerpen',
-    '/renovatiebedrijf-antwerpen',
-    '/crepi-isolatie-antwerpen',
-    // Geraardsbergen specifieke landing pages
+  // Prioritaire Geraardsbergen landingspagina's (hoge SEO prioriteit)
+  const geraardsbergenPages = [
+    '/ramen-deuren-geraardsbergen',
     '/gevelrenovatie-geraardsbergen',
     '/renovatie-geraardsbergen',
-    '/ramen-deuren-geraardsbergen',
     '/crepi-geraardsbergen',
   ]
 
-  // Get all blog posts (both dynamic and static)
   const blogPages = getBlogIndexPosts().map((post) => `/blog/${post.slug}`)
   const productPages = productCatalog.map((item) => `/producten/${item.slug}`)
 
   const allPages = [
-    ...mainPages, 
+    ...mainPages,
     ...blogPages,
     ...productPages,
     ...localSeoPages,
-    ...specialLandingPages
+    ...geraardsbergenPages,
   ]
 
   return allPages.map((page) => ({
@@ -83,25 +75,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : page.includes('/blog/')
           ? lastMonth
           : lastWeek,
-    changeFrequency: 
-      page === '' 
+    changeFrequency:
+      page === ''
         ? 'daily' as const
-        : page.includes('/blog/') 
+        : page.includes('/blog/')
           ? 'monthly' as const
           : 'weekly' as const,
     priority:
       page === ''
         ? 1.0
-        : page === '/diensten' || page === '/ramen' || page === '/deuren' || page === '/gevelrenovatie' || page === '/crepi' || page === '/gevelisolatie'
+        : geraardsbergenPages.includes(page)
+          ? 0.97
+        : page === '/diensten' || page === '/ramen' || page === '/deuren' || page === '/gevelrenovatie' || page === '/crepi' || page === '/gevelisolatie' || page === '/renovatie' || page === '/totaalrenovatie'
           ? 0.95
-          : blogPages.includes(page)
-            ? 0.7
-            : productPages.includes(page)
-              ? 0.85
-            : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') || page.includes('/crepi/') || page.includes('/gevelisolatie/') || page.includes('/renovatie/') || page.includes('/totaalrenovatie/')
-              ? 0.85
-              : page === '/vraag-ai'
-                ? 0.8
-                : 0.75,
+        : page.includes('/geraardsbergen') || page.includes('/ninove') || page.includes('/ronse')
+          ? 0.90
+        : page.includes('/ramen/') || page.includes('/deuren/') || page.includes('/gevelrenovatie/') || page.includes('/crepi/') || page.includes('/gevelisolatie/') || page.includes('/renovatie/') || page.includes('/totaalrenovatie/')
+          ? 0.85
+        : blogPages.includes(page)
+          ? 0.7
+        : productPages.includes(page)
+          ? 0.85
+        : 0.75,
   }))
 }
