@@ -56,6 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/gevelrenovatie-antwerpen',
     '/renovatiebedrijf-antwerpen',
     '/crepi-isolatie-antwerpen',
+    // Geraardsbergen specifieke landing pages
+    '/gevelrenovatie-geraardsbergen',
+    '/renovatie-geraardsbergen',
+    '/ramen-deuren-geraardsbergen',
+    '/crepi-geraardsbergen',
   ]
 
   // Get all blog posts (both dynamic and static)

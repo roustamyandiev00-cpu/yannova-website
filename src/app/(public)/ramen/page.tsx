@@ -8,19 +8,19 @@ import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 export const revalidate = 3600; // herindexeer elk uur
 
 export const metadata = generateSEO({
-  title: "Ramen plaatsen Zoersel & Antwerpen | PVC & Aluminium | Yannova",
-  description: "PVC en aluminium ramen met HR++ of drievoudig glas. Specialist in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
+  title: "Ramen plaatsen Geraardsbergen & Vlaamse Ardennen | PVC & Aluminium | Yannova",
+  description: "PVC en aluminium ramen met HR++ of drievoudig glas. Specialist in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. Gratis opmeting, offerte binnen 24 uur en 30 jaar garantie.",
   path: "/ramen",
   keywords: [
-    "ramen zoersel",
-    "ramen plaatsen zoersel",
-    "ramen plaatsen antwerpen",
-    "ramen antwerpen stad",
-    "pvc ramen zoersel",
-    "aluminium ramen antwerpen",
-    "ramen brasschaat",
-    "ramen schoten",
-    "ramen wijnegem",
+    "ramen geraardsbergen",
+    "ramen plaatsen geraardsbergen",
+    "ramen ninove",
+    "ramen ronse",
+    "pvc ramen geraardsbergen",
+    "aluminium ramen vlaamse ardennen",
+    "ramen oudenaarde",
+    "ramen zottegem",
+    "ramen aalst",
     "hr++ beglazing",
     "drievoudig glas",
   ],
@@ -81,7 +81,7 @@ export default function RamenPage() {
               <span className="text-sm text-gray-400">4.9 Google score • 200+ projecten</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
-              Ramen in <span className="text-secondary">Zoersel</span> en regio Antwerpen
+              Ramen in <span className="text-secondary">Geraardsbergen</span> en regio Antwerpen
             </h1>
             <p className="mt-6 text-xl text-gray-300 leading-relaxed">
               PVC en aluminium ramen met HR++ beglazing. Gratis opmeting, duidelijke offerte binnen 24 uur,
@@ -303,8 +303,8 @@ export default function RamenPage() {
               Ramen Antwerpen
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/ramen/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
-              Ramen Zoersel
+            <Link href="/ramen/geraardsbergen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Ramen Geraardsbergen
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/ramen/brasschaat" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">

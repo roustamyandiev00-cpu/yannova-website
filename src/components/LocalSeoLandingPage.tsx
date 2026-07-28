@@ -388,7 +388,7 @@ export function LocalSeoLandingPage({ page }: LocalSeoLandingPageProps) {
             </h2>
             <p className="mt-3 max-w-3xl text-lg leading-relaxed text-gray-300">
               Naast {page.city.name} zet Yannova dezelfde structuur in voor andere sterke gemeenten
-              rond Zoersel en Antwerpen.
+              in Geraardsbergen en de Vlaamse Ardennen.
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {page.sameServicePages.slice(0, 6).map((link) => (

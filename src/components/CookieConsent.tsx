@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import { Shield, Cookie } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { updateGoogleConsent } from '@/lib/google-consent';
 
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
   const broadcastConsent = (value: 'accepted' | 'declined') => {
+    updateGoogleConsent(value === 'accepted');
     window.dispatchEvent(new CustomEvent('cookie-consent-change', { detail: value }));
   };
 

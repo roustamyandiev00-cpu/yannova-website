@@ -159,7 +159,7 @@ export default async function WerkgebiedPage({ params }: Props) {
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-4 text-secondary">
               <MapPin className="h-5 w-5" />
-              <span className="text-sm font-medium">{gebied.distance} van Zoersel</span>
+              <span className="text-sm font-medium">{gebied.distance}</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
               Ramen & Deuren in <span className="text-secondary">{gebied.name}</span>

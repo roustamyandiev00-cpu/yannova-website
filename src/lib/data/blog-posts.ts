@@ -101,19 +101,19 @@ export const blogPosts: BlogPostData[] = [
     ],
   },
   {
-    slug: "prijs-renovatie-zoersel",
-    title: "Wat kost renovatie in Zoersel in 2026?",
-    excerpt: "Prijsrichtlijnen voor renovatie in Zoersel: van ramen en gevel tot totaalrenovatie en slimme fasering.",
-    description: "Ontdek wat renovatie in Zoersel kost in 2026. Inclusief prijsvoorbeelden voor ramen, gevelrenovatie en totaalrenovatie, plus de factoren die uw budget beïnvloeden.",
+    slug: "prijs-renovatie-geraardsbergen",
+    title: "Wat kost renovatie in Geraardsbergen in 2026?",
+    excerpt: "Prijsrichtlijnen voor renovatie in Geraardsbergen: van ramen en gevel tot totaalrenovatie en slimme fasering.",
+    description: "Ontdek wat renovatie in Geraardsbergen kost in 2026. Inclusief prijsvoorbeelden voor ramen, gevelrenovatie en totaalrenovatie, plus de factoren die uw budget beïnvloeden.",
     date: "2026-03-12",
     readTime: "7 min",
     category: "Prijzen",
-    keywords: ["prijs renovatie zoersel", "renovatie zoersel prijs", "totaalrenovatie zoersel", "aannemer zoersel"],
+    keywords: ["prijs renovatie geraardsbergen", "renovatie geraardsbergen prijs", "totaalrenovatie geraardsbergen", "aannemer geraardsbergen"],
     serviceTags: ["renovatie", "totaalrenovatie", "ramen-deuren", "gevelrenovatie"],
-    cityTags: ["zoersel"],
+    cityTags: ["geraardsbergen"],
     dynamic: true,
     intro:
-      "Wie zoekt op renovatie Zoersel wil meestal geen algemene richtprijzen, maar een realistisch budget voor een woning in de eigen regio. In deze gids zetten we de belangrijkste prijsblokken op een rij en leggen we uit hoe u werken slim kunt faseren.",
+      "Wie zoekt op renovatie Geraardsbergen wil meestal geen algemene richtprijzen, maar een realistisch budget voor een woning in de eigen regio. In deze gids zetten we de belangrijkste prijsblokken op een rij en leggen we uit hoe u werken slim kunt faseren.",
     keyPoints: [
       "Gerichte renovatiewerken: vanaf ongeveer €8.000",
       "Gevelrenovatie met isolatie: vaak €80 tot €150 per m²",
@@ -122,10 +122,10 @@ export const blogPosts: BlogPostData[] = [
     ],
     sections: [
       {
-        title: "Welke renovatiewerken worden het vaakst gecombineerd in Zoersel?",
+        title: "Welke renovatiewerken worden het vaakst gecombineerd in Geraardsbergen?",
         paragraphs: [
-          "In Zoersel zien we vaak renovatieprojecten waarbij de buitenschil centraal staat: nieuwe ramen en deuren, gevelisolatie, crepi of een grotere totaalrenovatie waarin ook binnenafwerking wordt meegenomen.",
-          "Omdat veel woningen in en rond Zoersel vrijstaand of halfopen zijn, loont het meestal om niet alleen naar één onderdeel te kijken. Wie ramen, gevel en algemene renovatiewerken samen bekijkt, haalt doorgaans een beter resultaat op vlak van comfort, EPC en planning.",
+          "In Geraardsbergen zien we vaak renovatieprojecten waarbij de buitenschil centraal staat: nieuwe ramen en deuren, gevelisolatie, crepi of een grotere totaalrenovatie waarin ook binnenafwerking wordt meegenomen.",
+          "Omdat veel woningen in en rond Geraardsbergen vrijstaand of halfopen zijn, loont het meestal om niet alleen naar één onderdeel te kijken. Wie ramen, gevel en algemene renovatiewerken samen bekijkt, haalt doorgaans een beter resultaat op vlak van comfort, EPC en planning.",
         ],
         bullets: [
           "Ramen en deuren vervangen om warmteverlies en tocht te beperken",
@@ -153,7 +153,7 @@ export const blogPosts: BlogPostData[] = [
         ],
       },
       {
-        title: "Hoe houdt u renovatie in Zoersel financieel beheersbaar?",
+        title: "Hoe houdt u renovatie in Geraardsbergen financieel beheersbaar?",
         paragraphs: [
           "De meest efficiënte aanpak is meestal starten met de buitenschil: ramen, deuren, gevel en isolatie. Daarna volgen technieken en binnenafwerking. Zo vermijdt u dat afgewerkte ruimtes later opnieuw open moeten.",
           "Vraag ook altijd naar scenario's. Een offerte met een basisaanpak, een energetische upgrade en een totaaltraject maakt het eenvoudiger om het juiste evenwicht te vinden tussen investering en rendement.",
@@ -163,13 +163,13 @@ export const blogPosts: BlogPostData[] = [
         title: "Wanneer is een offerte echt bruikbaar?",
         paragraphs: [
           "Een bruikbare offerte is meer dan een totaalprijs. Ze splitst materialen, voorbereiding, uitvoering en afwerking op, en ze maakt duidelijk welke keuzes nog openstaan.",
-          "Voor renovatie in Zoersel is het zinvol om zowel de werken op korte termijn als de logische volgende fase mee te bespreken. Dat voorkomt dat u vandaag goedkopere keuzes maakt die later extra kosten veroorzaken.",
+          "Voor renovatie in Geraardsbergen is het zinvol om zowel de werken op korte termijn als de logische volgende fase mee te bespreken. Dat voorkomt dat u vandaag goedkopere keuzes maakt die later extra kosten veroorzaken.",
         ],
       },
     ],
-    ctaTitle: "Renovatie in Zoersel bespreken?",
-    ctaText: "Yannova bekijkt graag welke combinatie van ramen, gevel en renovatiewerken voor uw woning in Zoersel het meeste effect geeft.",
-    relatedSlugs: ["prijs-renovatie-zoersel", "energie-renovatie-premie-belgie", "hoeveel-kost-gevelrenovatie"],
+    ctaTitle: "Renovatie in Geraardsbergen bespreken?",
+    ctaText: "Yannova bekijkt graag welke combinatie van ramen, gevel en renovatiewerken voor uw woning in Geraardsbergen het meeste effect geeft.",
+    relatedSlugs: ["prijs-renovatie-geraardsbergen", "energie-renovatie-premie-belgie", "hoeveel-kost-gevelrenovatie"],
   },
   {
     slug: "ramen-vervangen-prijs-antwerpen",
@@ -367,7 +367,7 @@ export const blogPosts: BlogPostData[] = [
     ],
     ctaTitle: "Renovatieproject in Antwerpen opstarten?",
     ctaText: "We bekijken graag samen welke werken technisch en praktisch logisch zijn, en waar u vooraf rekening mee moet houden.",
-    relatedSlugs: ["prijs-renovatie-zoersel", "crepi-gevel-voordelen", "ramen-vervangen-prijs-antwerpen"],
+    relatedSlugs: ["prijs-renovatie-geraardsbergen", "crepi-gevel-voordelen", "ramen-vervangen-prijs-antwerpen"],
   },
   {
     slug: "energie-renovatie-premie-belgie",
@@ -432,7 +432,7 @@ export const blogPosts: BlogPostData[] = [
     ],
     ctaTitle: "Wilt u weten welke premiegericht renovatiepad logisch is?",
     ctaText: "Yannova helpt u graag prioriteiten te leggen tussen ramen, gevel, isolatie en bredere renovatiewerken.",
-    relatedSlugs: ["premies-ramen-deuren-2026", "hoeveel-kost-gevelrenovatie", "prijs-renovatie-zoersel"],
+    relatedSlugs: ["premies-ramen-deuren-2026", "hoeveel-kost-gevelrenovatie", "prijs-renovatie-geraardsbergen"],
   },
   {
     slug: "crepi-prijs-per-m2",

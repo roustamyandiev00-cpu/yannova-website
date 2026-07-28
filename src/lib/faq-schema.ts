@@ -22,7 +22,7 @@ export function generateFAQSchema(faqs: FAQItem[]) {
 export const commonFAQs = {
   ramen: [
     {
-      question: 'Wat kost het plaatsen van nieuwe ramen in Antwerpen?',
+      question: 'Wat kost het plaatsen van nieuwe ramen in Geraardsbergen?',
       answer: 'De prijs voor nieuwe ramen hangt af van het type, de grootte en het materiaal. Gemiddeld betaal je tussen €300 en €800 per m². Wij bieden een gratis opmeting en offerte binnen 24 uur.',
     },
     {
@@ -36,7 +36,7 @@ export const commonFAQs = {
   ],
   deuren: [
     {
-      question: 'Wat kost een nieuwe voordeur in Zoersel of Antwerpen?',
+      question: 'Wat kost een nieuwe voordeur in Geraardsbergen of Ninove?',
       answer: 'Een nieuwe voordeur kost gemiddeld tussen €800 en €2.500 afhankelijk van het materiaal (PVC of aluminium), het design en de veiligheidsklasse. Wij bieden een gratis opmeting en offerte binnen 24 uur.',
     },
     {

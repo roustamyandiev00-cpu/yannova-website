@@ -36,7 +36,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm leading-6 text-gray-300 max-w-sm">
-              Uw specialist voor ramen, deuren en totaalrenovatie in Zoersel, Antwerpen en Mechelen.
+              Uw specialist voor ramen, deuren en totaalrenovatie in Geraardsbergen, Ninove, Zottegem en de Vlaamse Ardennen.
               Meer dan 15 jaar ervaring en vakmanschap.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -125,23 +125,23 @@ export function Footer() {
                 <h3 className="text-sm font-semibold leading-6 text-white">Populaire Regio&apos;s</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   <li>
-                    <Link href="/ramen/antwerpen" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      Ramen Antwerpen
+                    <Link href="/ramen/geraardsbergen" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Ramen Geraardsbergen
                     </Link>
                   </li>
                   <li>
-                    <Link href="/gevelrenovatie/zoersel" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      Gevel Zoersel
+                    <Link href="/gevelrenovatie/ninove" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Gevel Ninove
                     </Link>
                   </li>
                   <li>
-                    <Link href="/totaalrenovatie/brasschaat" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      Renovatie Brasschaat
+                    <Link href="/totaalrenovatie/zottegem" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Renovatie Zottegem
                     </Link>
                   </li>
                   <li>
-                    <Link href="/deuren/schoten" className="text-sm leading-6 text-gray-300 hover:text-white">
-                      Deuren Schoten
+                    <Link href="/deuren/ronse" className="text-sm leading-6 text-gray-300 hover:text-white">
+                      Deuren Ronse
                     </Link>
                   </li>
                 </ul>

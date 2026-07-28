@@ -28,6 +28,25 @@ function gtagEvent(name: string, params?: Record<string, unknown>) {
   }
 }
 
+/** Fire Google Ads conversion when label env var is set */
+function trackAdsConversion(labelEnvKey: string, value: number) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') return;
+  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  const labels: Record<string, string | undefined> = {
+    contact: process.env.NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL,
+    phone: process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL,
+    whatsapp: process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL,
+    email: process.env.NEXT_PUBLIC_GOOGLE_ADS_EMAIL_LABEL,
+  };
+  const label = labels[labelEnvKey];
+  if (!adsId || !label) return;
+  window.gtag('event', 'conversion', {
+    send_to: `${adsId}/${label}`,
+    value,
+    currency: 'EUR',
+  });
+}
+
 // ─── Page view ───────────────────────────────────────────────────────────────
 
 /** Call on every route change in App Router */
@@ -44,16 +63,19 @@ export function trackPageView(url: string, title?: string) {
 export function trackPhoneClick(location = 'unknown') {
   gtagEvent('phone_click', { event_category: 'conversion', event_label: location });
   dlPush('phone_click', { location });
+  trackAdsConversion('phone', 25);
 }
 
 export function trackWhatsAppClick(location = 'unknown') {
   gtagEvent('whatsapp_click', { event_category: 'conversion', event_label: location });
   dlPush('whatsapp_click', { location });
+  trackAdsConversion('whatsapp', 20);
 }
 
 export function trackEmailClick(location = 'unknown') {
   gtagEvent('email_click', { event_category: 'conversion', event_label: location });
   dlPush('email_click', { location });
+  trackAdsConversion('email', 15);
 }
 
 /**
@@ -68,17 +90,7 @@ export function trackGenerateLead(formType = 'contact') {
     value: 50,
   });
   dlPush('generate_lead', { form_type: formType });
-
-  // Also fire Google Ads conversion if configured
-  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-  const label = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL;
-  if (adsId && label && typeof window.gtag === 'function') {
-    window.gtag('event', 'conversion', {
-      send_to: `${adsId}/${label}`,
-      value: 50,
-      currency: 'EUR',
-    });
-  }
+  trackAdsConversion('contact', 50);
 }
 
 export function trackCtaClick(ctaLabel: string, location = 'unknown') {

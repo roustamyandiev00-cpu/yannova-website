@@ -40,7 +40,7 @@ export function LocalSeoHubPage({ serviceSlug }: LocalSeoHubPageProps) {
             <div className="max-w-4xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-secondary">
                 <MapPin className="h-4 w-4" />
-                Lokale SEO structuur voor Zoersel en regio Antwerpen
+                Lokale SEO structuur voor Geraardsbergen en regio
               </div>
               <h1 className="text-4xl font-bold text-white sm:text-5xl">{service.hubTitle}</h1>
               <p className="mt-6 max-w-3xl text-xl leading-relaxed text-gray-300">
@@ -160,7 +160,7 @@ export function LocalSeoHubPage({ serviceSlug }: LocalSeoHubPageProps) {
                   </div>
                   <h3 className="text-2xl font-semibold text-white">Deuren & Toebehoren</h3>
                   <p className="text-gray-400 leading-relaxed">
-                    Een moderne voordeur is het pronkstuk van uw woning in Antwerpen. Verkrijgbaar in uiterst inbraakveilige panelen met onzichtbare vleugels, slimme beslag-opties, handgrepen op maat en ultieme isolatienormen.
+                    Een moderne voordeur is het pronkstuk van uw woning. Verkrijgbaar in uiterst inbraakveilige panelen met onzichtbare vleugels, slimme beslag-opties, handgrepen op maat en ultieme isolatienormen.
                   </p>
                 </div>
               </div>
@@ -208,7 +208,7 @@ export function LocalSeoHubPage({ serviceSlug }: LocalSeoHubPageProps) {
             <div className="mb-12 max-w-3xl">
               <h2 className="text-3xl font-bold text-white">Prioritaire stadspagina&apos;s</h2>
               <p className="mt-3 text-lg leading-relaxed text-gray-400">
-                Lokaal gericht op Zoersel en de Antwerpse rand.
+                Lokaal gericht op Geraardsbergen en de Antwerpse rand.
               </p>
             </div>
             <div className="grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">

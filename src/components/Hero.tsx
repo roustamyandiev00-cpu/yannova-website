@@ -56,7 +56,7 @@ export function Hero() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] drop-shadow-2xl animate-slide-up mb-6">
               <span className="block text-white mb-2">Ramen, Gevels & Renovatie in</span>
               <span className="block bg-linear-to-r from-secondary via-orange-400 to-secondary bg-clip-text text-transparent drop-shadow-lg animate-gradient-x">
-                Zoersel, Antwerpen & omgeving
+                Geraardsbergen, Vlaamse Ardennen & omgeving
               </span>
             </h1>
 

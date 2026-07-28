@@ -9,7 +9,7 @@ export function GoogleReviews() {
   // Controleer of Place ID nog placeholder is
   const isConfigured = !reviewsUrl.includes('YOUR_GOOGLE_PLACE_ID');
   const reviewLink = isConfigured ? reviewsUrl : mapsUrl;
-  const mapsLink = mapsUrl || 'https://www.google.com/maps/search/Yannova+Bouw+Zoersel';
+  const mapsLink = mapsUrl || 'https://www.google.com/maps/search/Yannova+Bouw+Geraardsbergen';
 
   return (
     <div className="bg-white/5 rounded-2xl p-8 border border-white/10 backdrop-blur-md">

@@ -5,12 +5,16 @@ export const company = {
   phoneHref: "tel:+32489960001",
   whatsappHref: "https://wa.me/32489960001",
   email: "info@yannova.be",
-  address: "Zoersel",
-  city: "Zoersel",
-  zip: "2980",
-  // Primaire werkgebieden (binnen 15km van Zoersel)
+  address: "Geraardsbergen",
+  city: "Geraardsbergen",
+  zip: "9500",
+  // Primaire werkgebieden (Vlaamse Ardennen en regio Antwerpen)
   areas: [
-    "Zoersel", "Antwerpen", "Schilde", "Brasschaat", "Schoten", "Wijnegem",
+    "Geraardsbergen", "Ninove", "Ronse", "Zottegem", "Aalst", "Brakel",
+    "Herzele", "Lierde", "Denderleeuw", "Erpe-Mere", "Haaltert",
+    "Sint-Lievens-Houtem", "Kluisbergen", "Oudenaarde", "Horebeke",
+    "Maarkedal", "Gavere", "Kruisem",
+    "Antwerpen", "Schilde", "Brasschaat", "Schoten", "Wijnegem",
     "Wommelgem", "Ranst", "Brecht", "Malle", "Westmalle", "Oelegem",
     "Zandhoven", "Massenhoven", "Hove", "Kontich", "Mortsel", "Edegem",
     "Boechout", "Lint", "Aartselaar", "Wilrijk", "Berchem", "Deurne",
@@ -27,6 +31,11 @@ export const company = {
     "gevelisolatie", "totaalrenovatie", "renovatie", "verbouwing",
     "energiezuinige ramen", "premies renovatie", "EPC verbetering",
     "raamplaatsing", "deurplaatsing", "renovatiebedrijf", "aannemer",
-    "bouwbedrijf", "schrijnwerk", "ramen op maat", "deuren op maat"
+    "bouwbedrijf", "schrijnwerk", "ramen op maat", "deuren op maat",
+    // Geraardsbergen specifiek
+    "renovatie geraardsbergen", "aannemer geraardsbergen",
+    "ramen geraardsbergen", "gevelrenovatie geraardsbergen",
+    "renovatie vlaamse ardennen", "aannemer ninove", "renovatie ronse",
+    "aannemer zottegem", "gevelwerken geraardsbergen"
   ]
 };

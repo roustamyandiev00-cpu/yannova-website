@@ -12,14 +12,15 @@ export function LocalBusinessSchema() {
     email: company.email,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Zoersel',
-      addressRegion: 'Antwerpen',
+      addressLocality: 'Geraardsbergen',
+      addressRegion: 'Oost-Vlaanderen',
+      postalCode: '9500',
       addressCountry: 'BE',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 51.2667,
-      longitude: 4.7167,
+      latitude: 50.7667,
+      longitude: 3.8833,
     },
     areaServed: company.areas.map((area) => ({
       '@type': 'City',

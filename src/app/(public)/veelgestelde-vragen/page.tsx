@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: "Werken jullie ook in mijn gemeente?",
-    answer: "We zijn actief in heel Antwerpen en omgeving: Antwerpen stad, Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten, Wijnegem, Mortsel, Edegem, Kontich, Zoersel en Mechelen. Neem contact op om te checken of we in uw gemeente werken."
+    answer: "We zijn gevestigd in Geraardsbergen en actief in de volledige Vlaamse Ardennen en Denderstreek: Geraardsbergen, Ninove, Zottegem, Ronse, Brakel, Lierde, Herzele, Aalst, Galmaarden en Oudenaarde. Neem contact op om te checken of we in uw gemeente werken."
   },
   {
     question: "Hoe snel kan ik een offerte krijgen?",

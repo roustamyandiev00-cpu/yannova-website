@@ -26,9 +26,9 @@ export function generateSEO({
     title: fullTitle,
     description,
     keywords: keywords.length > 0 ? keywords : [
-      'ramen antwerpen',
-      'deuren antwerpen',
-      'renovatie antwerpen',
+      'ramen geraardsbergen',
+      'deuren geraardsbergen',
+      'renovatie geraardsbergen',
       'yannova',
     ],
     alternates: {
@@ -77,41 +77,46 @@ export function generateSEO({
 
 // Lokale SEO keywords per gebied
 export const locationKeywords = {
-  antwerpen: [
-    'ramen antwerpen',
-    'deuren antwerpen',
-    'renovatie antwerpen',
-    'gevelrenovatie antwerpen',
-    'ramen antwerpen stad',
+  geraardsbergen: [
+    'ramen geraardsbergen',
+    'deuren geraardsbergen',
+    'renovatie geraardsbergen',
+    'gevelrenovatie geraardsbergen',
+    'crepi geraardsbergen',
   ],
-  berchem: [
-    'ramen berchem',
-    'deuren berchem',
-    'renovatie berchem',
+  ninove: [
+    'ramen ninove',
+    'deuren ninove',
+    'renovatie ninove',
   ],
-  deurne: [
-    'ramen deurne',
-    'deuren deurne',
-    'renovatie deurne',
+  zottegem: [
+    'ramen zottegem',
+    'deuren zottegem',
+    'renovatie zottegem',
   ],
-  merksem: [
-    'ramen merksem',
-    'deuren merksem',
-    'renovatie merksem',
+  ronse: [
+    'ramen ronse',
+    'deuren ronse',
+    'renovatie ronse',
   ],
-  wilrijk: [
-    'ramen wilrijk',
-    'deuren wilrijk',
-    'renovatie wilrijk',
+  brakel: [
+    'ramen brakel',
+    'deuren brakel',
+    'renovatie brakel',
   ],
-  mechelen: [
-    'ramen mechelen',
-    'deuren mechelen',
-    'renovatie mechelen',
+  lierde: [
+    'ramen lierde',
+    'deuren lierde',
+    'renovatie lierde',
   ],
-  zoersel: [
-    'ramen zoersel',
-    'deuren zoersel',
-    'renovatie zoersel',
+  herzele: [
+    'ramen herzele',
+    'deuren herzele',
+    'renovatie herzele',
+  ],
+  aalst: [
+    'ramen aalst',
+    'deuren aalst',
+    'renovatie aalst',
   ],
 };

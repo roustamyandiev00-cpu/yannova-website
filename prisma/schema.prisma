@@ -25,7 +25,7 @@ model Project {
   description String
   category    String   // e.g., "ramen-deuren", "gevelrenovatie", "totaalrenovatie"
   imageUrl    String
-  location    String?  // e.g., "Zoersel", "Antwerpen", "Mechelen"
+  location    String?  // e.g., "Geraardsbergen", "Ninove", "Zottegem"
   material    String?  // e.g., "PVC", "Aluminium", "Crepi"
   year        Int?     // Year of completion
   featured    Boolean  @default(false)

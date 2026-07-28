@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const siteConfig = {
   name: 'Yannova',
-  description: 'Ramen, deuren en renovatie in Antwerpen stad en randgemeenten. Gratis opmeting en offerte binnen 24 uur.',
+  description: 'Ramen, deuren en renovatie in Geraardsbergen, Ninove, Ronse en regio Antwerpen. Gratis opmeting en offerte binnen 24 uur.',
   url: 'https://www.yannova.be',
   ogImage: 'https://www.yannova.be/og-image.jpg',
   links: {
@@ -28,7 +28,7 @@ export function generateMetadata({
 }): Metadata {
   const metadataTitle = title 
     ? `${title} | Yannova` 
-    : 'Ramen, Deuren & Renovatie in Antwerpen (Stad + Rand) | Yannova';
+    : 'Ramen, Deuren & Renovatie in Geraardsbergen, Antwerpen en Omgeving | Yannova';
   
   const metadataDescription = description || siteConfig.description;
   const metadataImage = image || siteConfig.ogImage;
@@ -39,6 +39,10 @@ export function generateMetadata({
     title: metadataTitle,
     description: metadataDescription,
     keywords: keywords || [
+      'ramen geraardsbergen',
+      'renovatie geraardsbergen',
+      'gevelrenovatie geraardsbergen',
+      'aannemer geraardsbergen',
       'ramen antwerpen',
       'deuren antwerpen',
       'gevelrenovatie antwerpen',
@@ -86,10 +90,10 @@ export function generateMetadata({
       },
     },
     other: {
-      'geo.region': 'BE-VAN',
-      'geo.placename': 'Antwerpen',
-      'geo.position': '51.2194;4.4025',
-      'ICBM': '51.2194, 4.4025',
+      'geo.region': 'BE-VOV',
+      'geo.placename': 'Geraardsbergen',
+      'geo.position': '50.7667;3.8833',
+      'ICBM': '50.7667, 3.8833',
     },
   };
 }

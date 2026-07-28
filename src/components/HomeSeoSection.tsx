@@ -4,11 +4,15 @@ import { getBlogIndexPosts } from "@/lib/data/blog-posts";
 import { getHubCityLinks } from "@/lib/data/local-seo";
 
 export function HomeSeoSection() {
-  const featuredCities = [
-    ...getHubCityLinks("renovatie").slice(0, 3),
-    ...getHubCityLinks("ramen-deuren").slice(0, 2),
-    ...getHubCityLinks("gevelrenovatie").slice(0, 1),
+  // Toon specifiek Geraardsbergen bovenaan, dan andere steden
+  const geraardsbergenLinks = getHubCityLinks("renovatie").filter(l => l.href.includes("geraardsbergen")).slice(0, 1);
+  const geraardsbergenGevel = getHubCityLinks("gevelrenovatie").filter(l => l.href.includes("geraardsbergen")).slice(0, 1);
+  const geraardsbergenRamen = getHubCityLinks("ramen").filter(l => l.href.includes("geraardsbergen")).slice(0, 1);
+  const otherCities = [
+    ...getHubCityLinks("renovatie").filter(l => !l.href.includes("geraardsbergen")).slice(0, 2),
+    ...getHubCityLinks("ramen-deuren").slice(0, 1),
   ];
+  const featuredCities = [...geraardsbergenLinks, ...geraardsbergenGevel, ...geraardsbergenRamen, ...otherCities];
   const featuredPosts = getBlogIndexPosts().slice(0, 6);
 
   return (
@@ -22,7 +26,7 @@ export function HomeSeoSection() {
           <h2 className="text-3xl font-bold text-white">Veelgezochte diensten per gemeente</h2>
           <p className="mt-4 max-w-2xl text-gray-300">
             Deze pagina&apos;s zijn gericht opgebouwd rond de sterkste combinatie van dienst + stad
-            in de regio rond Zoersel en Antwerpen.
+            in Geraardsbergen, de Vlaamse Ardennen en de regio Antwerpen.
           </p>
           <div className="mt-8 grid gap-x-6 gap-y-1 sm:grid-cols-2">
             {featuredCities.map((link) => (

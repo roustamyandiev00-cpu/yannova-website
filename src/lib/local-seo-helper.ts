@@ -95,7 +95,7 @@ export function generateLocalFAQs(service: ServiceType, city: string) {
     },
     {
       question: `Werken jullie in heel ${city}?`,
-      answer: `Ja, wij zijn actief in heel ${city} en alle deelgemeenten. We werken binnen een straal van 30 kilometer rondom Zoersel en Antwerpen, dus ${city} valt binnen ons werkgebied.`,
+      answer: `Ja, wij zijn actief in heel ${city} en alle deelgemeenten. We werken binnen een straal van 35 kilometer rondom Geraardsbergen en de Vlaamse Ardennen, dus ${city} valt binnen ons werkgebied.`,
     },
   ];
 }

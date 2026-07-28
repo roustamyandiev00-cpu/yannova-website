@@ -299,19 +299,19 @@ export default async function ProjectenPage() {
             {[
               {
                 name: "Familie Janssens",
-                location: "Zoersel",
+                location: "Geraardsbergen",
                 text: "Professioneel werk en uitstekende service. Onze nieuwe ramen en deuren zijn prachtig en perfect geïnstalleerd.",
                 rating: 5
               },
               {
                 name: "Marc & Linda",
-                location: "Antwerpen",
+                location: "Ninove",
                 text: "Van offerte tot oplevering alles perfect geregeld. De gevelrenovatie heeft onze woning volledig getransformeerd.",
                 rating: 5
               },
               {
                 name: "Peter De Vries",
-                location: "Mechelen",
+                location: "Zottegem",
                 text: "Vakmanschap van hoge kwaliteit. Het team werkte netjes en efficiënt. Zeer tevreden met het eindresultaat!",
                 rating: 5
               }

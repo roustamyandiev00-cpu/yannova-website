@@ -57,7 +57,7 @@ export default function InsulationPage() {
     {
       title: "Spouwmuurisolatie",
       description: "Bij woningen met een bruikbare spouw kan muurisolatie een snelle en efficiënte oplossing zijn. Het is een interessante ingreep wanneer u zonder zware breekwerken warmteverlies via de gevel wilt beperken.",
-      features: ["Beperkte ingreep met snelle uitvoering", "Minder tocht en koudestraling langs buitenmuren", "Interessant bij bestaande woningen in Antwerpen en rand"]
+      features: ["Beperkte ingreep met snelle uitvoering", "Minder tocht en koudestraling langs buitenmuren", "Interessant bij bestaande woningen"]
     },
     {
       title: "Buitengevelisolatie",
@@ -132,7 +132,7 @@ export default function InsulationPage() {
     {
       icon: CheckCircle2,
       title: "Lokale aanpak",
-      description: "Actief in Zoersel, Antwerpen en omliggende gemeenten met focus op renovaties die echt renderen."
+      description: "Actief in Geraardsbergen, Ninove, Ronse en omliggende gemeenten met focus op renovaties die echt renderen."
     }
   ];
 
@@ -169,7 +169,7 @@ export default function InsulationPage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2670&auto=format&fit=crop"
-            alt="Isolatiewerken in Antwerpen voor dak, vloer en gevel"
+            alt="Isolatiewerken voor dak, vloer en gevel"
             fill
             sizes="100vw"
             className="object-cover"
@@ -180,10 +180,10 @@ export default function InsulationPage() {
         <div className="container mx-auto px-6 text-center relative z-10">
           <FadeIn>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Isolatiewerken in Antwerpen voor dak, muur en vloer
+              Isolatiewerken voor dak, muur en vloer
             </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Minder warmteverlies, meer wooncomfort en een sterkere buitenschil voor woningen in Zoersel, Antwerpen en omgeving.
+            <p className="mt-6 text-xl text-gray-200 max-w-3xl mx-auto">
+              Minder warmteverlies, meer wooncomfort en een sterkere buitenschil voor woningen in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen.
             </p>
           </FadeIn>
         </div>
@@ -200,7 +200,7 @@ export default function InsulationPage() {
                 Isolatie is vaak de snelste weg naar een lagere energiefactuur, maar alleen als u de juiste zone aanpakt. Daarom bekijken we niet alleen het materiaal, maar de volledige woning: dak, buitenmuren, vloer, ramen en aansluitingen.
               </p>
               <p>
-                Yannova voert isolatiewerken uit in Zoersel, Antwerpen en omliggende gemeenten. We adviseren wanneer dakisolatie, spouwmuurisolatie, buitengevelisolatie of vloerisolatie het meeste effect geeft en wanneer een combinatie met <Link href="/diensten/gevelrenovatie" className="text-secondary hover:underline">gevelrenovatie</Link> of <Link href="/diensten/ramen-deuren" className="text-secondary hover:underline">nieuwe ramen</Link> slimmer is.
+                Yannova voert isolatiewerken uit in Geraardsbergen, Ninove, Ronse en heel de Vlaamse Ardennen. We adviseren wanneer dakisolatie, spouwmuurisolatie, buitengevelisolatie of vloerisolatie het meeste effect geeft en wanneer een combinatie met <Link href="/diensten/gevelrenovatie" className="text-secondary hover:underline">gevelrenovatie</Link> of <Link href="/diensten/ramen-deuren" className="text-secondary hover:underline">nieuwe ramen</Link> slimmer is.
               </p>
               <p>
                 Wie ook premies of een betere EPC-score wil meenemen, kan zich vooraf verdiepen in onze <Link href="/premie-gids" className="text-secondary hover:underline">premie-gids</Link>. Tijdens het traject helpen we u praktisch vooruit met duidelijke keuzes en een realistische offerte.
@@ -237,7 +237,7 @@ export default function InsulationPage() {
 
       <section className="py-16 bg-muted/20 border-y border-white/5">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Isolatieproject plannen in Antwerpen of regio Zoersel?</h2>
+          <h2 className="text-3xl font-bold mb-6 text-foreground">Isolatieproject plannen in Geraardsbergen of Vlaamse Ardennen?</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             We maken een voorstel op maat van uw woning, uw budget en de volgorde van werken die het meeste rendement oplevert.
           </p>
@@ -395,7 +395,7 @@ export default function InsulationPage() {
               Veelgestelde vragen over <span className="text-secondary">isolatiewerken</span>
             </h2>
             <p className="mt-4 text-center text-muted-foreground">
-              Een paar praktische vragen die vaak terugkomen bij eigenaars in Antwerpen en regio Zoersel.
+              Een paar praktische vragen die vaak terugkomen bij eigenaars in Geraardsbergen en de Vlaamse Ardennen.
             </p>
           </FadeIn>
 
@@ -417,7 +417,7 @@ export default function InsulationPage() {
           <FadeIn>
             <h2 className="text-3xl font-bold mb-6 text-foreground">Klaar om te isoleren?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Vraag vrijblijvend advies en ontdek welke isolatiewerken voor uw woning in Antwerpen of regio Zoersel het meeste effect geven.
+              Vraag vrijblijvend advies en ontdek welke isolatiewerken voor uw woning in Geraardsbergen of de Vlaamse Ardennen het meeste effect geven.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact" className="inline-flex items-center rounded-lg bg-secondary px-8 py-4 text-base font-semibold text-white hover:bg-secondary/90 transition-colors shadow-lg">

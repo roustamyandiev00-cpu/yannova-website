@@ -5,27 +5,29 @@ const path = require('path');
 
 // Import data
 const lokalePaginas = [
-  // Ramen pagina's 
-  { type: 'ramen', gemeente: 'merksem', naam: 'Merksem' },
-  { type: 'ramen', gemeente: 'wilrijk', naam: 'Wilrijk' },
-  { type: 'ramen', gemeente: 'brasschaat', naam: 'Brasschaat' },
-  { type: 'ramen', gemeente: 'schoten', naam: 'Schoten' },
-  { type: 'ramen', gemeente: 'wijnegem', naam: 'Wijnegem' },
-  { type: 'ramen', gemeente: 'mortsel', naam: 'Mortsel' },
-  { type: 'ramen', gemeente: 'schilde', naam: 'Schilde' },
-  { type: 'ramen', gemeente: 'antwerpen', naam: 'Antwerpen' },
-  { type: 'ramen', gemeente: 'zoersel', naam: 'Zoersel' },
-  
+  // Ramen pagina's
+  { type: 'ramen', gemeente: 'geraardsbergen', naam: 'Geraardsbergen' },
+  { type: 'ramen', gemeente: 'ninove', naam: 'Ninove' },
+  { type: 'ramen', gemeente: 'zottegem', naam: 'Zottegem' },
+  { type: 'ramen', gemeente: 'ronse', naam: 'Ronse' },
+  { type: 'ramen', gemeente: 'brakel', naam: 'Brakel' },
+  { type: 'ramen', gemeente: 'lierde', naam: 'Lierde' },
+  { type: 'ramen', gemeente: 'herzele', naam: 'Herzele' },
+  { type: 'ramen', gemeente: 'aalst', naam: 'Aalst' },
+  { type: 'ramen', gemeente: 'oudenaarde', naam: 'Oudenaarde' },
+  { type: 'ramen', gemeente: 'galmaarden', naam: 'Galmaarden' },
+
   // Deuren pagina's
-  { type: 'deuren', gemeente: 'merksem', naam: 'Merksem' },
-  { type: 'deuren', gemeente: 'wilrijk', naam: 'Wilrijk' },
-  { type: 'deuren', gemeente: 'brasschaat', naam: 'Brasschaat' },
-  { type: 'deuren', gemeente: 'schoten', naam: 'Schoten' },
-  { type: 'deuren', gemeente: 'wijnegem', naam: 'Wijnegem' },
-  { type: 'deuren', gemeente: 'mortsel', naam: 'Mortsel' },
-  { type: 'deuren', gemeente: 'schilde', naam: 'Schilde' },
-  { type: 'deuren', gemeente: 'antwerpen', naam: 'Antwerpen' },
-  { type: 'deuren', gemeente: 'zoersel', naam: 'Zoersel' },
+  { type: 'deuren', gemeente: 'geraardsbergen', naam: 'Geraardsbergen' },
+  { type: 'deuren', gemeente: 'ninove', naam: 'Ninove' },
+  { type: 'deuren', gemeente: 'zottegem', naam: 'Zottegem' },
+  { type: 'deuren', gemeente: 'ronse', naam: 'Ronse' },
+  { type: 'deuren', gemeente: 'brakel', naam: 'Brakel' },
+  { type: 'deuren', gemeente: 'lierde', naam: 'Lierde' },
+  { type: 'deuren', gemeente: 'herzele', naam: 'Herzele' },
+  { type: 'deuren', gemeente: 'aalst', naam: 'Aalst' },
+  { type: 'deuren', gemeente: 'oudenaarde', naam: 'Oudenaarde' },
+  { type: 'deuren', gemeente: 'galmaarden', naam: 'Galmaarden' },
 ];
 
 const template = (type, gemeente, naam) => {
@@ -123,7 +125,7 @@ export default function ${label}${naam.replace(/[^a-zA-Z]/g, '')}Page() {
             <div className="max-w-4xl">
               <div className="flex items-center gap-2 text-secondary mb-4">
                 <MapPin className="h-5 w-5" />
-                <span className="text-sm font-medium uppercase tracking-wider">${naam} en Provincie Antwerpen</span>
+                <span className="text-sm font-medium uppercase tracking-wider">${naam} en de Vlaamse Ardennen</span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
                 ${label} in <span className="text-secondary">${naam}</span> vervangen of plaatsen

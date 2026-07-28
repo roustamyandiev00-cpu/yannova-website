@@ -267,18 +267,17 @@ export function detectIntent(message: string): {
     lowerMessage.includes('komen jullie') ||
     lowerMessage.includes('actief in') ||
     lowerMessage.includes('berchem') ||
-    lowerMessage.includes('deurne') ||
-    lowerMessage.includes('merksem') ||
-    lowerMessage.includes('wilrijk') ||
-    lowerMessage.includes('brasschaat') ||
-    lowerMessage.includes('schoten') ||
-    lowerMessage.includes('wijnegem') ||
-    lowerMessage.includes('mortsel') ||
-    lowerMessage.includes('edegem') ||
-    lowerMessage.includes('kontich') ||
-    lowerMessage.includes('antwerpen') ||
-    lowerMessage.includes('mechelen') ||
-    lowerMessage.includes('zoersel')
+    lowerMessage.includes('geraardsbergen') ||
+    lowerMessage.includes('ninove') ||
+    lowerMessage.includes('zottegem') ||
+    lowerMessage.includes('ronse') ||
+    lowerMessage.includes('brakel') ||
+    lowerMessage.includes('lierde') ||
+    lowerMessage.includes('herzele') ||
+    lowerMessage.includes('aalst') ||
+    lowerMessage.includes('denderleeuw') ||
+    lowerMessage.includes('galmaarden') ||
+    lowerMessage.includes('oudenaarde')
   ) {
     return { intent: 'location', confidence: 0.9 };
   }
@@ -400,7 +399,7 @@ export function qualifyLead(messages: ChatMessage[]): LeadQualification {
   const signals = {
     hasTimeline: /wanneer|snel|dringend|binnenkort|volgende maand|dit jaar|planning/.test(conversationText),
     hasBudget: /budget|prijs|kost|betalen|financier|lening/.test(conversationText),
-    hasLocation: /antwerpen|berchem|deurne|merksem|wilrijk|brasschaat|schoten|wijnegem|mortsel|edegem|kontich|zoersel|mechelen/.test(conversationText),
+    hasLocation: /geraardsbergen|ninove|zottegem|ronse|brakel|lierde|herzele|aalst|denderleeuw|galmaarden|oudenaarde/.test(conversationText),
     hasSpecificNeeds: /ramen|deuren|renovatie|gevel|isolatie|badkamer|keuken/.test(conversationText),
     isComparison: /vergelijk|verschil|beter|alternatief|andere|concurrent/.test(conversationText),
     isReadyToBuy: /offerte|opmeting|afspraak|langskomen|bezoek|contact|bellen/.test(conversationText),

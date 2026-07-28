@@ -2,17 +2,18 @@ const fs = require('fs');
 const path = require('path');
 
 const municipalities = [
-  'antwerpen',
-  'berchem',
-  'brasschaat',
-  'deurne',
-  'merksem',
-  'mortsel',
-  'schilde',
-  'schoten',
-  'wijnegem',
-  'wilrijk',
-  'zoersel'
+  'geraardsbergen',
+  'ninove',
+  'zottegem',
+  'ronse',
+  'brakel',
+  'lierde',
+  'herzele',
+  'aalst',
+  'oudenaarde',
+  'galmaarden',
+  'denderleeuw',
+  'haaltert',
 ];
 
 const template = (city) => {
@@ -90,7 +91,7 @@ export default function GevelrenovatieCityPage() {
             <div className="max-w-4xl">
               <div className="flex items-center gap-2 text-secondary mb-4">
                 <MapPin className="h-5 w-5" />
-                <span className="text-sm font-medium uppercase tracking-wider">{cityName} en Provincie Antwerpen</span>
+                <span className="text-sm font-medium uppercase tracking-wider">{cityName} en de Vlaamse Ardennen</span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
                 Gevelrenovatie & Gevelisolatie in <span className="text-secondary">{cityName}</span>
@@ -289,7 +290,7 @@ export default function GevelrenovatieCityPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-white">Werkgebied</div>
-                    <div className="text-sm text-gray-400">Actief in {cityName} en heel de provincie.</div>
+                    <div className="text-sm text-gray-400">Actief in {cityName} en de Vlaamse Ardennen.</div>
                   </div>
                 </div>
               </div>

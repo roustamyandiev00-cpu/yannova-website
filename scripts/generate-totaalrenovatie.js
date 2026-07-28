@@ -4,17 +4,18 @@ const fs = require('fs');
 const path = require('path');
 
 const municipalities = [
-  'antwerpen',
-  'berchem',
-  'brasschaat',
-  'deurne',
-  'merksem',
-  'mortsel',
-  'schilde',
-  'schoten',
-  'wijnegem',
-  'wilrijk',
-  'zoersel'
+  'geraardsbergen',
+  'ninove',
+  'zottegem',
+  'ronse',
+  'brakel',
+  'lierde',
+  'herzele',
+  'aalst',
+  'oudenaarde',
+  'galmaarden',
+  'denderleeuw',
+  'haaltert',
 ];
 
 const template = (city, type) => {

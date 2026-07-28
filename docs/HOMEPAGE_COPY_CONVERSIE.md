@@ -1,12 +1,12 @@
 # Homepage Copy - Conversie Optimalisatie
-## Yannova Bouwbedrijf - Zoersel, Antwerpen & Mechelen
+## Yannova Bouwbedrijf - Geraardsbergen, Ninove & Vlaamse Ardennen
 
 ---
 
 ## 1. HERO HEADLINE
 
 ### Optie A (Direct & Lokaal)
-**Nieuwe ramen en deuren in Zoersel, Antwerpen en Mechelen**
+**Nieuwe ramen en deuren in Geraardsbergen, Ninove en Ronse**
 
 ### Optie B (Probleem → Oplossing)
 **Uw woning verdient betere ramen. Wij plaatsen ze binnen 3 weken.**
@@ -32,7 +32,7 @@
 ## 3. KORTE INTRO TEKST
 
 ### Optie A (Actiegericht)
-**Gratis opmeting bij u thuis. Duidelijke offerte binnen 24 uur. Professionele plaatsing door eigen vakmensen. Actief in Zoersel, Antwerpen, Mechelen en 30km omgeving.**
+**Gratis opmeting bij u thuis. Duidelijke offerte binnen 24 uur. Professionele plaatsing door eigen vakmensen. Actief in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen.**
 
 ### Optie B (Vertrouwen)
 **Meer dan 200 tevreden klanten in de regio. Wij plaatsen uw nieuwe ramen en deuren met oog voor detail en respect voor uw woning. Offerte binnen 24 uur, plaatsing binnen 3 weken.**
@@ -88,7 +88,7 @@
 ## 6. WAAROM KIEZEN VOOR ONS
 
 ### Titel
-**Waarom kiezen klanten in Zoersel en Antwerpen voor Yannova?**
+**Waarom kiezen klanten in Geraardsbergen en de Vlaamse Ardennen voor Yannova?**
 
 ### Intro
 **Omdat wij doen wat we beloven. Geen verkooppraatjes, geen verrassingen achteraf. Gewoon eerlijk vakwerk tegen een faire prijs.**
@@ -96,7 +96,7 @@
 ### USP's (6 punten)
 
 #### 1. Gratis opmeting in uw regio
-Wij komen gratis langs in Zoersel, Antwerpen, Mechelen en omgeving. U krijgt direct advies over de beste oplossing voor uw woning.
+Wij komen gratis langs in Geraardsbergen, Ninove, Ronse en heel de Vlaamse Ardennen. U krijgt direct advies over de beste oplossing voor uw woning.
 
 #### 2. Offerte binnen 24 uur
 Na de opmeting ontvangt u binnen één werkdag een heldere offerte. Alle kosten staan erin, geen kleine lettertjes.
@@ -169,12 +169,12 @@ Van ramen tot badkamer, van gevel tot binnenafwerking. Eén aanspreekpunt, één
 Ramen en deuren die 30 jaar meegaan
 
 **Tekst:**
-Nieuwe ramen zijn de slimste investering in uw woning. Minder energiekosten, meer comfort, hogere woningwaarde. Wij plaatsen PVC en aluminium ramen met HR++ of drievoudig glas in Zoersel, Antwerpen en omgeving.
+Nieuwe ramen zijn de slimste investering in uw woning. Minder energiekosten, meer comfort, hogere woningwaarde. Wij plaatsen PVC en aluminium ramen met HR++ of drievoudig glas in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen.
 
 U kiest het profiel, de kleur en het type glas. Wij zorgen voor correcte opmeting, professionele plaatsing en nette afwerking. Gemiddeld bespaart u 30-40% op uw energiefactuur na plaatsing van nieuwe ramen.
 
 **Features:**
-- ✅ Gratis opmeting binnen 30km (Zoersel, Antwerpen, Mechelen)
+- ✅ Gratis opmeting in heel de Vlaamse Ardennen (Geraardsbergen, Ninove, Ronse, Oudenaarde)
 - ✅ HR++ en drievoudig glas voor maximale isolatie
 - ✅ Volledige afwerking en hulp bij premieaanvraag
 
@@ -188,7 +188,7 @@ Gevelisolatie die uw EPC-label verbetert
 **Tekst:**
 Een geïsoleerde gevel bespaart energie en verhoogt de waarde van uw woning. Wij isoleren uw buitenmuur en werken af met hoogwaardige crepi in de kleur van uw keuze.
 
-Resultaat: gemiddeld 2 tot 3 EPC-labels beter, tot 25% minder verwarmingskosten en een gevel die er weer jaren tegen kan. Ideaal voor woningen in Zoersel, Antwerpen en regio die toe zijn aan een opfrisbeurt.
+Resultaat: gemiddeld 2 tot 3 EPC-labels beter, tot 25% minder verwarmingskosten en een gevel die er weer jaren tegen kan. Ideaal voor woningen in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen die toe zijn aan een opfrisbeurt.
 
 **Features:**
 - ✅ EPC-verbetering van 2-3 labels (hogere woningwaarde)
@@ -205,7 +205,7 @@ Uw volledige renovatie in vertrouwde handen
 **Tekst:**
 Een totaalrenovatie vraagt om één betrouwbare partner die alles regelt. Van nieuwe ramen en gevelisolatie tot badkamer, keuken en elektriciteit. Wij begeleiden uw project van begin tot eind met een vast team en duidelijke planning.
 
-Geen onderaannemers, alles uit eigen hand. Dat betekent: één aanspreekpunt, heldere communicatie en gegarandeerde kwaliteit. Actief in Zoersel, Antwerpen, Mechelen en omgeving.
+Geen onderaannemers, alles uit eigen hand. Dat betekent: één aanspreekpunt, heldere communicatie en gegarandeerde kwaliteit. Actief in Geraardsbergen, Ninove, Ronse en heel de Vlaamse Ardennen.
 
 **Features:**
 - ✅ Eén vaste projectleider van start tot oplevering
@@ -255,7 +255,7 @@ Na akkoord plannen we de plaatsing in. Onze eigen ploeg voert het werk uit en la
 ## 10. REVIEWS INTRO
 
 ### Titel
-**Wat klanten in Zoersel en Antwerpen zeggen**
+**Wat klanten in Geraardsbergen en de Vlaamse Ardennen zeggen**
 
 ### Intro Optie A
 **Meer dan 200 tevreden klanten gingen u voor. Lees wat zij zeggen over onze aanpak, communicatie en afwerking.**
@@ -301,7 +301,7 @@ In veel gevallen wel. Via Mijn VerbouwPremie kunt u subsidie aanvragen voor ener
 ### Vraag 5
 **Werken jullie ook in mijn gemeente?**
 
-Wij zijn actief in Zoersel, Antwerpen, Mechelen en alle gemeenten binnen 30km. Denk aan: Schilde, Brasschaat, Wijnegem, Mortsel, Berchem, Deurne, Ranst, Kontich en omgeving. Twijfelt u? Bel ons even.
+Wij zijn actief in Geraardsbergen, Ninove, Ronse, Oudenaarde en heel de Vlaamse Ardennen. Denk aan: Zottegem, Brakel, Aalst, Herzele, Lierde, Horebeke en omgeving. Twijfelt u? Bel ons even.
 
 ---
 
@@ -379,13 +379,13 @@ Plan nu uw gratis opmeting in. Wij plannen de plaatsing zo snel mogelijk, vaak b
 ## 13. FOOTER KORTE BEDRIJFSOMSCHRIJVING
 
 ### Optie A (Professioneel & Lokaal)
-**Yannova** is uw specialist voor ramen, deuren en gevelrenovatie in Zoersel, Antwerpen en Mechelen. Sinds 2009 helpen wij particulieren en bedrijven met energiezuinige renovaties. Gratis opmeting, offerte binnen 24 uur, plaatsing door eigen vakmensen.
+**Yannova** is uw specialist voor ramen, deuren en gevelrenovatie in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. Sinds 2009 helpen wij particulieren en bedrijven met energiezuinige renovaties. Gratis opmeting, offerte binnen 24 uur, plaatsing door eigen vakmensen.
 
 ### Optie B (Menselijk & Betrouwbaar)
-**Yannova Bouw** - Gevestigd in Zoersel, actief in heel Antwerpen en omgeving. Wij plaatsen ramen en deuren, renoveren gevels en begeleiden totaalrenovaties. Met respect voor uw woning en uw budget. Meer dan 200 tevreden klanten gingen u voor.
+**Yannova Bouw** - Gevestigd in Geraardsbergen, actief in de Vlaamse Ardennen. Wij plaatsen ramen en deuren, renoveren gevels en begeleiden totaalrenovaties. Met respect voor uw woning en uw budget. Meer dan 200 tevreden klanten gingen u voor.
 
 ### Optie C (Resultaat-gedreven)
-**Yannova** helpt u besparen op energie en verhoogt de waarde van uw woning. Specialist in PVC en aluminium ramen, gevelisolatie en totaalrenovatie. Actief in Zoersel, Antwerpen, Mechelen en 30km omgeving. 15+ jaar ervaring, 4.9 sterren op Google.
+**Yannova** helpt u besparen op energie en verhoogt de waarde van uw woning. Specialist in PVC en aluminium ramen, gevelisolatie en totaalrenovatie. Actief in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. 15+ jaar ervaring, 4.9 sterren op Google.
 
 ---
 
@@ -404,7 +404,7 @@ Plan nu uw gratis opmeting in. Wij plannen de plaatsing zo snel mogelijk, vaak b
 - Schüco | Reynaers | Deceuninck | Aluplast | Salamander
 
 **Locaties die herkenning geven:**
-- Zoersel | Antwerpen | Mechelen | Schilde | Brasschaat | Wijnegem
+- Geraardsbergen | Ninove | Ronse | Oudenaarde | Zottegem | Aalst
 
 ---
 

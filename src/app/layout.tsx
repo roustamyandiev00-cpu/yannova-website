@@ -17,23 +17,27 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-D3Z5L5RJ";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.yannova.be"),
-  title: "Ramen & Deuren Zoersel | Gevelrenovatie & Crepi Antwerpen | Yannova",
+  title: "Ramen & Deuren | Gevelrenovatie Geraardsbergen & Vlaamse Ardennen | Yannova",
   description:
-    "Yannova: specialist in ramen, deuren en gevelrenovatie in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium, crepi, isolatie.",
+    "Yannova: specialist in ramen, deuren en gevelrenovatie in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. Gratis opmeting, offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium, crepi, isolatie.",
   keywords: [
-    "ramen zoersel",
-    "deuren zoersel",
-    "ramen plaatsen antwerpen",
-    "deuren antwerpen",
-    "crepi zoersel",
-    "gevelrenovatie zoersel",
-    "gevelisolatie antwerpen",
-    "renovatiebedrijf antwerpen",
-    "ramen antwerpen stad",
-    "ramen brasschaat",
-    "ramen schoten",
-    "gevelrenovatie antwerpen",
-    "totaalrenovatie antwerpen",
+    "ramen geraardsbergen",
+    "gevelrenovatie geraardsbergen",
+    "renovatie geraardsbergen",
+    "aannemer geraardsbergen",
+    "crepi geraardsbergen",
+    "gevelisolatie geraardsbergen",
+    "ramen ninove",
+    "renovatie ninove",
+    "ramen ronse",
+    "renovatie ronse",
+    "ramen zottegem",
+    "ramen oudenaarde",
+    "ramen aalst",
+    "aannemer vlaamse ardennen",
+    "renovatie vlaamse ardennen",
+    "gevelrenovatie vlaamse ardennen",
+    "totaalrenovatie vlaamse ardennen",
   ],
   alternates: {
     languages: {
@@ -41,9 +45,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ramen & Deuren Zoersel | Gevelrenovatie & Crepi Antwerpen | Yannova",
+    title: "Ramen & Deuren | Gevelrenovatie Geraardsbergen & Vlaamse Ardennen | Yannova",
     description:
-      "Yannova: specialist in ramen, deuren, crepi en gevelrenovatie in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u. 15+ jaar ervaring.",
+      "Yannova: specialist in ramen, deuren, crepi en gevelrenovatie in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. Gratis opmeting, offerte binnen 24u. 15+ jaar ervaring.",
     url: "https://www.yannova.be",
     type: "website",
     locale: "nl_BE",
@@ -53,15 +57,15 @@ export const metadata: Metadata = {
         url: "https://www.yannova.be/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Yannova - Ramen, Deuren & Renovatie in Antwerpen",
+        alt: "Yannova - Ramen, Deuren & Renovatie in de Vlaamse Ardennen",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ramen & Deuren Zoersel | Gevelrenovatie & Crepi Antwerpen | Yannova",
+    title: "Ramen & Deuren | Gevelrenovatie Geraardsbergen & Vlaamse Ardennen | Yannova",
     description:
-      "Yannova: specialist in ramen, deuren, crepi en gevelrenovatie in Zoersel, Antwerpen en omgeving. Gratis opmeting, offerte binnen 24u.",
+      "Yannova: specialist in ramen, deuren, crepi en gevelrenovatie in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. Gratis opmeting, offerte binnen 24u.",
     images: ["https://www.yannova.be/og-image.jpg"],
   },
   robots: {
@@ -76,10 +80,10 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "geo.region": "BE-VAN",
-    "geo.placename": "Antwerpen",
-    "geo.position": "51.2194;4.4025",
-    ICBM: "51.2194, 4.4025",
+    "geo.region": "BE-VOV",
+    "geo.placename": "Geraardsbergen",
+    "geo.position": "50.7667;3.8833",
+    ICBM: "50.7667, 3.8833",
   },
   icons: {
     icon: [

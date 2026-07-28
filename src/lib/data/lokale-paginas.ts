@@ -1,58 +1,49 @@
-// Lijst van alle lokale pagina&apos;s die we moeten maken voor SEO
+// Lijst van alle lokale pagina's die we moeten maken voor SEO
 export const lokalePaginas = [
-  // Ramen pagina&apos;s
-  { type: 'ramen', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.9 },
-  { type: 'ramen', gemeente: 'berchem', naam: 'Berchem', priority: 0.85 },
-  { type: 'ramen', gemeente: 'deurne', naam: 'Deurne', priority: 0.85 },
-  { type: 'ramen', gemeente: 'merksem', naam: 'Merksem', priority: 0.85 },
-  { type: 'ramen', gemeente: 'wilrijk', naam: 'Wilrijk', priority: 0.85 },
-  { type: 'ramen', gemeente: 'brasschaat', naam: 'Brasschaat', priority: 0.8 },
-  { type: 'ramen', gemeente: 'schoten', naam: 'Schoten', priority: 0.8 },
-  { type: 'ramen', gemeente: 'wijnegem', naam: 'Wijnegem', priority: 0.8 },
-  { type: 'ramen', gemeente: 'schilde', naam: 'Schilde', priority: 0.8 },
-  { type: 'ramen', gemeente: 'mortsel', naam: 'Mortsel', priority: 0.8 },
-  { type: 'ramen', gemeente: 'edegem', naam: 'Edegem', priority: 0.8 },
-  { type: 'ramen', gemeente: 'kontich', naam: 'Kontich', priority: 0.8 },
-  { type: 'ramen', gemeente: 'zoersel', naam: 'Zoersel', priority: 0.75 },
-  { type: 'ramen', gemeente: 'mechelen', naam: 'Mechelen', priority: 0.75 },
-  { type: 'ramen', gemeente: 'lier', naam: 'Lier', priority: 0.75 },
+  // Ramen pagina's
+  { type: 'ramen', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'ramen', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
+  { type: 'ramen', gemeente: 'zottegem', naam: 'Zottegem', priority: 0.93 },
+  { type: 'ramen', gemeente: 'ronse', naam: 'Ronse', priority: 0.92 },
+  { type: 'ramen', gemeente: 'brakel', naam: 'Brakel', priority: 0.9 },
+  { type: 'ramen', gemeente: 'lierde', naam: 'Lierde', priority: 0.9 },
+  { type: 'ramen', gemeente: 'herzele', naam: 'Herzele', priority: 0.88 },
+  { type: 'ramen', gemeente: 'aalst', naam: 'Aalst', priority: 0.93 },
   
-  // Deuren pagina&apos;s
-  { type: 'deuren', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.9 },
-  { type: 'deuren', gemeente: 'berchem', naam: 'Berchem', priority: 0.85 },
-  { type: 'deuren', gemeente: 'deurne', naam: 'Deurne', priority: 0.85 },
-  { type: 'deuren', gemeente: 'merksem', naam: 'Merksem', priority: 0.85 },
-  { type: 'deuren', gemeente: 'wilrijk', naam: 'Wilrijk', priority: 0.85 },
-  { type: 'deuren', gemeente: 'brasschaat', naam: 'Brasschaat', priority: 0.8 },
-  { type: 'deuren', gemeente: 'schoten', naam: 'Schoten', priority: 0.8 },
-  { type: 'deuren', gemeente: 'wijnegem', naam: 'Wijnegem', priority: 0.8 },
-  { type: 'deuren', gemeente: 'zoersel', naam: 'Zoersel', priority: 0.75 },
+  // Deuren pagina's
+  { type: 'deuren', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'deuren', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
+  { type: 'deuren', gemeente: 'zottegem', naam: 'Zottegem', priority: 0.93 },
+  { type: 'deuren', gemeente: 'ronse', naam: 'Ronse', priority: 0.92 },
+  { type: 'deuren', gemeente: 'brakel', naam: 'Brakel', priority: 0.9 },
+  { type: 'deuren', gemeente: 'lierde', naam: 'Lierde', priority: 0.9 },
+  { type: 'deuren', gemeente: 'aalst', naam: 'Aalst', priority: 0.93 },
   
-  // Gevelrenovatie / Crepi pagina&apos;s
-  { type: 'gevelrenovatie', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
-  { type: 'gevelrenovatie', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
-  { type: 'gevelrenovatie', gemeente: 'deurne', naam: 'Deurne', priority: 0.8 },
-  { type: 'gevelrenovatie', gemeente: 'merksem', naam: 'Merksem', priority: 0.8 },
-  { type: 'gevelrenovatie', gemeente: 'wilrijk', naam: 'Wilrijk', priority: 0.8 },
+  // Gevelrenovatie / Crepi pagina's
+  { type: 'gevelrenovatie', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'gevelrenovatie', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
+  { type: 'gevelrenovatie', gemeente: 'zottegem', naam: 'Zottegem', priority: 0.93 },
+  { type: 'gevelrenovatie', gemeente: 'ronse', naam: 'Ronse', priority: 0.92 },
+  { type: 'gevelrenovatie', gemeente: 'brakel', naam: 'Brakel', priority: 0.9 },
   
-  { type: 'crepi', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
-  { type: 'crepi', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
-  { type: 'crepi', gemeente: 'schoten', naam: 'Schoten', priority: 0.8 },
+  { type: 'crepi', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'crepi', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
+  { type: 'crepi', gemeente: 'zottegem', naam: 'Zottegem', priority: 0.93 },
   
-  // Gevelisolatie pagina&apos;s
-  { type: 'gevelisolatie', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
-  { type: 'gevelisolatie', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
-  { type: 'gevelisolatie', gemeente: 'deurne', naam: 'Deurne', priority: 0.8 },
+  // Gevelisolatie pagina's
+  { type: 'gevelisolatie', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'gevelisolatie', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
+  { type: 'gevelisolatie', gemeente: 'zottegem', naam: 'Zottegem', priority: 0.93 },
   
-  // Renovatie pagina&apos;s
-  { type: 'renovatie', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
-  { type: 'renovatie', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
-  { type: 'renovatie', gemeente: 'deurne', naam: 'Deurne', priority: 0.8 },
-  { type: 'renovatie', gemeente: 'merksem', naam: 'Merksem', priority: 0.8 },
+  // Renovatie pagina's
+  { type: 'renovatie', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'renovatie', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
+  { type: 'renovatie', gemeente: 'zottegem', naam: 'Zottegem', priority: 0.93 },
+  { type: 'renovatie', gemeente: 'ronse', naam: 'Ronse', priority: 0.92 },
   
-  // Renovatiebedrijf pagina&apos;s
-  { type: 'renovatiebedrijf', gemeente: 'antwerpen', naam: 'Antwerpen', priority: 0.85 },
-  { type: 'renovatiebedrijf', gemeente: 'berchem', naam: 'Berchem', priority: 0.8 },
+  // Renovatiebedrijf pagina's
+  { type: 'renovatiebedrijf', gemeente: 'geraardsbergen', naam: 'Geraardsbergen', priority: 1.0 },
+  { type: 'renovatiebedrijf', gemeente: 'ninove', naam: 'Ninove', priority: 0.95 },
 ];
 
 // Content templates per type

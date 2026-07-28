@@ -19,6 +19,6 @@ export default async function LocalSeoPage({ params }: Props) {
     notFound();
   }
 
-  // Permanently redirect (308) to the new nested path structure (e.g., /renovatie/zoersel)
+  // Permanently redirect (308) to the new nested path structure (e.g., /renovatie/geraardsbergen)
   permanentRedirect(page.path);
 }

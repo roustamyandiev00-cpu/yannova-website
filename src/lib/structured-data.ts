@@ -24,49 +24,36 @@ export interface LocalBusinessData {
   areaServed: string[];
 }
 
-// Werkgebied: Zoersel + 30km straal, Antwerpen + 30km straal - alle belangrijke gemeenten
+// Werkgebied: Geraardsbergen + Vlaamse Ardennen en Denderstreek
 const serviceAreas = [
-  // Primaire zone (0-10km van Zoersel)
-  "Zoersel", "Schilde", "Brasschaat", "Schoten", "Wijnegem", "Wommelgem",
-  "Ranst", "Brecht", "Malle", "Westmalle", "Oelegem", "Zandhoven",
-  "Massenhoven", "Hove", "Kontich", "Mortsel", "Edegem", "Boechout",
-  
-  // Antwerpen en districten
-  "Antwerpen", "Wilrijk", "Berchem", "Deurne", "Borgerhout", "Merksem",
-  "Ekeren", "Hoboken", "Berendrecht", "Zandvliet",
-  
-  // Noordelijke rand (10-20km)
-  "Kapellen", "Stabroek", "Essen", "Kalmthout", "Wuustwezel",
-  
-  // Zuidelijke zone (10-25km)
-  "Lint", "Aartselaar", "Boom", "Rumst", "Niel", "Hemiksem",
-  
-  // Mechelen en omgeving (20-30km)
-  "Mechelen", "Bonheiden", "Putte", "Berlaar", "Lier", "Nijlen",
-  "Duffel", "Sint-Katelijne-Waver", "Walem",
-  
-  // Kempen (15-30km)
-  "Heist-op-den-Berg", "Grobbendonk", "Herentals", "Vorselaar", "Olen",
-  "Westerlo", "Turnhout", "Oud-Turnhout", "Beerse", "Vosselaar",
-  "Lille", "Kasterlee", "Geel", "Mol", "Balen", "Dessel", "Retie"
+  // Geraardsbergen en Vlaamse Ardennen (primaire zone)
+  "Geraardsbergen", "Lierde", "Brakel", "Ronse", "Zottegem", "Herzele",
+  "Ninove", "Aalst", "Denderleeuw", "Erpe-Mere", "Haaltert",
+  "Sint-Lievens-Houtem", "Kluisbergen", "Oudenaarde", "Kruisem",
+  "Galmaarden", "Tollembeek", "Vollezele", "Herne", "Bever",
+
+  // Ruimere zone (15-30km van Geraardsbergen)
+  "Horebeke", "Maarkedal", "Gavere", "Merelbeke", "Wetteren",
+  "Liedekerke", "Teralfene", "Affligem", "Wortegem-Petegem", "Zwalm",
+  "Lessines", "Ellezelles", "Flobecq", "Ath"
 ];
 
 export const localBusinessData: LocalBusinessData = {
   name: "Yannova Bouw",
-  description: "Specialist in ramen plaatsen, deuren plaatsen, gevelrenovatie en totaalrenovatie in Zoersel, Antwerpen en omgeving. PVC & aluminium ramen met HR++ en drievoudig glas. Gratis opmeting binnen 30km. 15+ jaar ervaring. Premie-advies Mijn VerbouwPremie.",
+  description: "Specialist in ramen plaatsen, deuren plaatsen, gevelrenovatie en totaalrenovatie in Geraardsbergen en de Vlaamse Ardennen & Denderstreek. PVC & aluminium ramen met HR++ en drievoudig glas. Gratis opmeting. 15+ jaar ervaring. Werkgebied: Geraardsbergen, Ninove, Ronse, Zottegem, Brakel, Aalst en omgeving. Premie-advies Mijn VerbouwPremie.",
   url: "https://www.yannova.be",
   telephone: "+32489960001",
   email: "info@yannova.be",
   address: {
-    streetAddress: "Zoersel",
-    addressLocality: "Zoersel",
-    postalCode: "2980",
-    addressRegion: "Antwerpen",
+    streetAddress: "Geraardsbergen",
+    addressLocality: "Geraardsbergen",
+    postalCode: "9500",
+    addressRegion: "Oost-Vlaanderen",
     addressCountry: "BE",
   },
   geo: {
-    latitude: "51.2625",
-    longitude: "4.6472",
+    latitude: "50.7667",
+    longitude: "3.8833",
   },
   openingHours: ["Mo-Fr 08:00-18:00", "Sa 09:00-13:00"],
   priceRange: "€€-€€€",
@@ -112,7 +99,7 @@ export function generateLocalBusinessSchema(data: LocalBusinessData = localBusin
     priceRange: data.priceRange,
     image: data.image,
     areaServed: data.areaServed.map((area) => ({
-      "@type": "City",
+      "@type": "AdministrativeArea",
       name: area,
     })),
     sameAs: [
@@ -144,7 +131,7 @@ export interface ServiceData {
 export const services: ServiceData[] = [
   {
     name: "Ramen & Deuren Plaatsen",
-    description: "PVC en aluminium ramen en deuren plaatsen met HR++ of drievoudig glas. Energiezuinige ramen voor maximale isolatie. Gratis opmeting in Zoersel, Antwerpen, Schilde, Brasschaat en omgeving. Premie-advies Mijn VerbouwPremie inbegrepen. 30 jaar garantie.",
+    description: "PVC en aluminium ramen en deuren plaatsen met HR++ of drievoudig glas. Energiezuinige ramen voor maximale isolatie. Gratis opmeting in Geraardsbergen, Ninove, Zottegem, Ronse, Brakel en omgeving. Premie-advies Mijn VerbouwPremie inbegrepen. 30 jaar garantie.",
     url: "https://www.yannova.be/diensten/ramen-deuren",
     provider: "Yannova Bouw",
     areaServed: serviceAreas,
@@ -155,7 +142,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Gevelrenovatie & Crepi",
-    description: "Professionele gevelisolatie met crepi-afwerking. EPC-verbetering gemiddeld 2-3 labels. Vochtbestrijding en drooglegging. 10 jaar garantie op afwerking. Ideaal voor woningen in Zoersel, Antwerpen en regio.",
+    description: "Professionele gevelisolatie met crepi-afwerking. EPC-verbetering gemiddeld 2-3 labels. Vochtbestrijding en drooglegging. 10 jaar garantie op afwerking. Ideaal voor woningen in Geraardsbergen, Ninove, Zottegem en de Vlaamse Ardennen.",
     url: "https://www.yannova.be/diensten/gevelrenovatie",
     provider: "Yannova Bouw",
     areaServed: serviceAreas,
@@ -169,7 +156,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Isolatiewerken voor dak, gevel en vloer",
-    description: "Isolatiewerken in Zoersel, Antwerpen en omgeving: dakisolatie, spouwmuurisolatie, buitengevelisolatie en vloerisolatie voor meer comfort, een betere EPC-score en een lagere energiefactuur.",
+    description: "Isolatiewerken in Geraardsbergen, de Vlaamse Ardennen en omgeving: dakisolatie, spouwmuurisolatie, buitengevelisolatie en vloerisolatie voor meer comfort, een betere EPC-score en een lagere energiefactuur.",
     url: "https://www.yannova.be/diensten/isolatie",
     provider: "Yannova Bouw",
     areaServed: serviceAreas,

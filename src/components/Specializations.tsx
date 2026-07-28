@@ -8,9 +8,9 @@ import { FadeIn } from "@/components/animations/FadeIn";
 const specializations = [
   {
     title: "Ramen & Deuren Plaatsen",
-    description: "Specialist in PVC en aluminium ramen met HR++ of drievoudig beglazing voor maximale energie-efficiëntie. Wij plaatsen ramen en deuren op maat in Zoersel, Antwerpen, Schilde, Brasschaat en omgeving. Gratis opmeting, professioneel advies over het juiste profiel en glassysteem, en nette plaatsing inclusief volledige afwerking. Gemiddeld 30-40% energiebesparing na plaatsing van nieuwe energiezuinige ramen.",
+    description: "Specialist in PVC en aluminium ramen met HR++ of drievoudig beglazing voor maximale energie-efficiëntie. Wij plaatsen ramen en deuren op maat in Geraardsbergen, Antwerpen, Ninove, Ronse en omgeving. Gratis opmeting, professioneel advies over het juiste profiel en glassysteem, en nette plaatsing inclusief volledige afwerking. Gemiddeld 30-40% energiebesparing na plaatsing van nieuwe energiezuinige ramen.",
     features: [
-      "Gratis opmeting in Zoersel, Antwerpen en 30km omgeving",
+      "Gratis opmeting in Geraardsbergen, Antwerpen en 30km omgeving",
       "HR++ en drievoudig glas voor optimale isolatie",
       "Inclusief volledige afwerking en premie-advies Mijn VerbouwPremie"
     ],
@@ -19,7 +19,7 @@ const specializations = [
   },
   {
     title: "Gevelrenovatie & Crepi",
-    description: "Professionele gevelisolatie met hoogwaardige crepi-afwerking voor een energiezuinige woning. Wij verbeteren uw EPC-label met gemiddeld 2 tot 3 labels door isolatie van de buitenmuur. Volledige gevelrenovatie in kleur naar keuze, inclusief herstel van scheuren, vochtproblemen en drooglegging indien nodig. Ideaal voor woningen in Zoersel, Antwerpen en omliggende gemeenten.",
+    description: "Professionele gevelisolatie met hoogwaardige crepi-afwerking voor een energiezuinige woning. Wij verbeteren uw EPC-label met gemiddeld 2 tot 3 labels door isolatie van de buitenmuur. Volledige gevelrenovatie in kleur naar keuze, inclusief herstel van scheuren, vochtproblemen en drooglegging indien nodig. Ideaal voor woningen in Geraardsbergen, Antwerpen en omliggende gemeenten.",
     features: [
       "EPC-verbetering gemiddeld 2-3 labels voor hogere woningwaarde",
       "Professionele drooglegging bij vochtproblemen",
@@ -30,7 +30,7 @@ const specializations = [
   },
   {
     title: "Totaalrenovatie & Verbouwing",
-    description: "Volledige renovatie van uw woning met één aanspreekpunt van A tot Z. Van nieuwe ramen en gevelisolatie tot badkamer, keuken en binnenafwerking. Wij begeleiden uw totaalrenovatie in Zoersel, Antwerpen en regio met een vast projectteam, duidelijke planning en transparante communicatie. Geen onderaannemers, alles uit eigen hand voor gegarandeerde kwaliteit.",
+    description: "Volledige renovatie van uw woning met één aanspreekpunt van A tot Z. Van nieuwe ramen en gevelisolatie tot badkamer, keuken en binnenafwerking. Wij begeleiden uw totaalrenovatie in Geraardsbergen, Antwerpen en regio met een vast projectteam, duidelijke planning en transparante communicatie. Geen onderaannemers, alles uit eigen hand voor gegarandeerde kwaliteit.",
     features: [
       "Eén vaste projectleider van start tot oplevering",
       "Eigen ploeg vakmensen, geen onderaannemers",
@@ -64,11 +64,11 @@ export function Specializations() {
             <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-6">
               Ramen plaatsen, gevelrenovatie en totaalrenovatie in{" "}
               <span className="bg-linear-to-r from-secondary via-orange-400 to-secondary bg-clip-text text-transparent">
-                Zoersel, Antwerpen en omgeving
+                Geraardsbergen, Antwerpen en omgeving
               </span>
             </h2>
             <p className="text-lg leading-8 text-gray-300">
-              Meer dan 200 projecten gerealiseerd in Zoersel, Schilde, Brasschaat, Antwerpen en regio. 
+              Meer dan 200 projecten gerealiseerd in Geraardsbergen, Ninove, Ronse, Brasschaat, Antwerpen en regio. 
               Gratis opmeting, duidelijke offerte binnen 24u, professionele plaatsing door eigen vakmensen.
             </p>
           </div>

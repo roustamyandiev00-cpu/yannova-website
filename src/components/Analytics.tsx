@@ -16,6 +16,7 @@ import { trackPageView } from '@/lib/analytics';
 export function Analytics() {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  const gtagLoaderId = gaId || googleAdsId;
   const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
   const facebookPixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
   const microsoftUetId = process.env.NEXT_PUBLIC_MICROSOFT_UED;
@@ -42,37 +43,48 @@ export function Analytics() {
               wait_for_update: 500
             });
             gtag('set', 'ads_data_redaction', true);
+            try {
+              if (localStorage.getItem('cookieConsent') === 'accepted') {
+                gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                  analytics_storage: 'granted'
+                });
+                gtag('set', 'ads_data_redaction', false);
+              }
+            } catch(e) {}
+            window.addEventListener('cookie-consent-change', function(e) {
+              var granted = e.detail === 'accepted';
+              gtag('consent', 'update', {
+                ad_storage: granted ? 'granted' : 'denied',
+                ad_user_data: granted ? 'granted' : 'denied',
+                ad_personalization: granted ? 'granted' : 'denied',
+                analytics_storage: granted ? 'granted' : 'denied'
+              });
+              gtag('set', 'ads_data_redaction', !granted);
+            });
           `}
         </Script>
       )}
 
-      {/* ── GA4 ── */}
-      {gaId && (
+      {/* ── gtag.js (GA4 + Google Ads) ── */}
+      {gtagLoaderId && (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${gtagLoaderId}`}
             strategy="afterInteractive"
           />
-          <Script id="ga4-init" strategy="afterInteractive">
+          <Script id="gtag-init" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${gaId}', { send_page_view: false });
+              ${gaId ? `gtag('config', '${gaId}', { send_page_view: false });` : ''}
+              ${googleAdsId ? `gtag('config', '${googleAdsId}');` : ''}
             `}
           </Script>
         </>
-      )}
-
-      {/* ── Google Ads ── */}
-      {googleAdsId && (
-        <Script id="google-ads-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('config', '${googleAdsId}');
-          `}
-        </Script>
       )}
 
       {/* ── Microsoft Clarity ── */}

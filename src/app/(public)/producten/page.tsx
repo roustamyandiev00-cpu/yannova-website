@@ -87,8 +87,8 @@ export default function ProductenPage() {
               <h2 className="text-2xl font-bold text-white">Volgende uitbouw</h2>
               <p className="mt-4 text-gray-200">
                 Zodra het gamma op hoofdniveau zichtbaar is, kunnen we voor de best presterende
-                productgroepen ook lokale pagina's maken zoals `rolluiken-zoersel` of
-                `garagepoorten-antwerpen`.
+                productgroepen ook lokale pagina's maken zoals `rolluiken-geraardsbergen` of
+                `garagepoorten-ninove`.
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link

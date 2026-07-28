@@ -15,9 +15,9 @@ export const testimonials: Testimonial[] = [
   {
     id: '1',
     name: 'Bart & Sofie V.',
-    location: 'Zoersel',
+    location: 'Geraardsbergen',
     service: 'Gevelrenovatie',
-    text: 'Yannova heeft onze gevel volledig gerenoveerd met crepi. Het resultaat is verbluffend! Zeer propere afwerking en alles volgens afspraak. De communicatie was uitstekend en ze hielden zich perfect aan de planning.',
+    text: 'Yannova heeft onze gevel in Geraardsbergen volledig gerenoveerd met crepi. Het resultaat is verbluffend! Zeer propere afwerking en alles volgens afspraak. De communicatie was uitstekend en ze hielden zich perfect aan de planning.',
     rating: 5,
     date: '2025-11',
     verified: true,
@@ -25,9 +25,9 @@ export const testimonials: Testimonial[] = [
   {
     id: '2',
     name: 'Tom J.',
-    location: 'Schilde',
+    location: 'Ninove',
     service: 'Ramen & Deuren',
-    text: 'Nieuwe ramen laten plaatsen. Het advies was eerlijk en de plaatsers werkten zeer nauwkeurig. Een absolute aanrader voor wie kwaliteit zoekt. De isolatie is merkbaar verbeterd!',
+    text: 'Nieuwe ramen laten plaatsen in Ninove. Het advies was eerlijk en de plaatsers werkten zeer nauwkeurig. Een absolute aanrader voor wie kwaliteit zoekt. De isolatie is merkbaar verbeterd!',
     rating: 5,
     date: '2025-10',
     verified: true,
@@ -35,9 +35,9 @@ export const testimonials: Testimonial[] = [
   {
     id: '3',
     name: 'Familie Peeters',
-    location: 'Antwerpen',
+    location: 'Zottegem',
     service: 'Totaalrenovatie',
-    text: 'We zochten een aannemer voor onze totaalrenovatie en kwamen bij Yannova terecht. Eén aanspreekpunt voor alles was een enorme geruststelling. Professioneel werk van A tot Z.',
+    text: 'We zochten een aannemer voor onze totaalrenovatie in Zottegem en kwamen bij Yannova terecht. Eén aanspreekpunt voor alles was een enorme geruststelling. Professioneel werk van A tot Z.',
     rating: 5,
     date: '2025-09',
     verified: true,
@@ -45,9 +45,9 @@ export const testimonials: Testimonial[] = [
   {
     id: '4',
     name: 'Linda M.',
-    location: 'Brasschaat',
+    location: 'Ronse',
     service: 'Isolatie',
-    text: 'Gevelisolatie laten aanbrengen. Zeer tevreden over het resultaat. Het huis is nu veel warmer en onze energiefactuur is merkbaar gedaald. Aanrader!',
+    text: 'Gevelisolatie laten aanbrengen in Ronse. Zeer tevreden over het resultaat. Het huis is nu veel warmer en onze energiefactuur is merkbaar gedaald. Aanrader!',
     rating: 5,
     date: '2025-08',
     verified: true,
@@ -55,9 +55,9 @@ export const testimonials: Testimonial[] = [
   {
     id: '5',
     name: 'Marc D.',
-    location: 'Wijnegem',
+    location: 'Brakel',
     service: 'Ramen',
-    text: 'Snelle service, correcte prijs en kwaliteitsvol werk. De nieuwe ramen zijn prachtig en perfect geplaatst. Geen rommel achtergelaten, alles netjes opgeruimd.',
+    text: 'Snelle service, correcte prijs en kwaliteitsvol werk. De nieuwe ramen zijn prachtig en perfect geplaatst in Brakel. Geen rommel achtergelaten, alles netjes opgeruimd.',
     rating: 5,
     date: '2025-07',
     verified: true,
@@ -65,7 +65,7 @@ export const testimonials: Testimonial[] = [
   {
     id: '6',
     name: 'Sarah & Kevin',
-    location: 'Schoten',
+    location: 'Aalst',
     service: 'Gevelrenovatie',
     text: 'Onze gevel ziet er weer als nieuw uit! Yannova heeft ons goed geadviseerd over de beste oplossing. Het team was vriendelijk en professioneel. Top!',
     rating: 5,
@@ -94,5 +94,5 @@ export const googleReviewsData = {
   // TODO: Vervang door je directe review link (te vinden in Google Business Profile)
   reviewsUrl: 'https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID',
   // Directe link om reviews te bekijken op Google Maps:
-  mapsUrl: 'https://www.google.com/maps/search/Yannova+Bouw+Zoersel',
+  mapsUrl: 'https://www.google.com/maps/search/Yannova+Bouw+Geraardsbergen',
 };

@@ -3,10 +3,10 @@
 ## ✅ Wat is aangemaakt
 
 ### Nieuwe lokale pagina's
-- `/ramen/antwerpen` - Ramen plaatsen in Antwerpen
-- `/ramen/zoersel` - Ramen plaatsen in Zoersel
-- `/deuren/antwerpen` - Deuren plaatsen in Antwerpen
-- `/deuren/zoersel` - Deuren plaatsen in Zoersel
+- `/ramen/geraardsbergen` - Ramen plaatsen in Geraardsbergen
+- `/ramen/ninove` - Ramen plaatsen in Ninove
+- `/deuren/geraardsbergen` - Deuren plaatsen in Geraardsbergen
+- `/deuren/ninove` - Deuren plaatsen in Ninove
 
 ### SEO optimalisaties
 - ✅ Unieke titles en meta descriptions per locatie
@@ -26,9 +26,9 @@
 - [ ] Link naar je website
 
 ### 2. Content toevoegen
-- [ ] Voeg foto's toe van projecten in Antwerpen en Zoersel
+- [ ] Voeg foto's toe van projecten in Geraardsbergen, Ninove en Ronse
 - [ ] Schrijf klantreviews/testimonials met locatie vermeldingen
-- [ ] Voeg meer lokale content toe (bijv. "Wij kennen de Antwerpse woningen")
+- [ ] Voeg meer lokale content toe (bijv. "Wij kennen de woningen in de Vlaamse Ardennen")
 
 ### 3. Technische SEO
 - [ ] Test de nieuwe pagina's: `npm run build` en `npm run start`
@@ -36,11 +36,11 @@
 - [ ] Controleer of pagina's geïndexeerd worden in Google Search Console
 
 ### 4. Meer lokale pagina's (optioneel)
-Je kunt hetzelfde doen voor andere gemeenten:
-- Berchem: `/ramen/berchem`, `/deuren/berchem`
-- Brasschaat: `/ramen/brasschaat`, `/deuren/brasschaat`
-- Schoten: `/ramen/schoten`, `/deuren/schoten`
-- Wijnegem: `/ramen/wijnegem`, `/deuren/wijnegem`
+Je kunt hetzelfde doen voor andere gemeenten in de Vlaamse Ardennen:
+- Ronse: `/ramen/ronse`, `/deuren/ronse`
+- Oudenaarde: `/ramen/oudenaarde`, `/deuren/oudenaarde`
+- Zottegem: `/ramen/zottegem`, `/deuren/zottegem`
+- Aalst: `/ramen/aalst`, `/deuren/aalst`
 
 ### 5. Externe links (backlinks)
 - [ ] Registreer op lokale directories (Gouden Gids, etc.)
@@ -50,12 +50,12 @@ Je kunt hetzelfde doen voor andere gemeenten:
 ## 🎯 Verwachte resultaten
 
 Na 2-4 weken zou je moeten beginnen verschijnen voor:
-- "ramen antwerpen"
-- "deuren antwerpen"
-- "ramen zoersel"
-- "deuren zoersel"
-- "ramen plaatsen antwerpen"
-- "deuren plaatsen zoersel"
+- "ramen geraardsbergen"
+- "deuren geraardsbergen"
+- "ramen ninove"
+- "deuren ninove"
+- "ramen plaatsen geraardsbergen"
+- "deuren plaatsen vlaamse ardennen"
 
 ## 📊 Monitoring
 

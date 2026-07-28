@@ -13,9 +13,14 @@ import { generateFAQSchema } from "@/lib/faq-schema";
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Ramen & Deuren Plaatsen Antwerpen | Gevelrenovatie & Crepi | Yannova',
-  description: 'Specialist in ramen, deuren en gevelrenovatie in Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen, crepi, isolatie.',
+  title: 'Ramen & Deuren | Gevelrenovatie Geraardsbergen & Antwerpen | Yannova',
+  description: 'Specialist in ramen, deuren en gevelrenovatie in Geraardsbergen, Ninove, Ronse, Antwerpen en omgeving. Gratis opmeting en offerte binnen 24u. 15+ jaar ervaring. PVC & aluminium ramen, crepi, isolatie.',
   keywords: [
+    "ramen geraardsbergen",
+    "gevelrenovatie geraardsbergen",
+    "renovatie geraardsbergen",
+    "aannemer geraardsbergen",
+    "renovatie vlaamse ardennen",
     "ramen antwerpen",
     "deuren antwerpen",
     "gevelrenovatie antwerpen",
@@ -41,7 +46,7 @@ const homepageFAQs = [
   },
   {
     question: "In welke regio's is Yannova actief?",
-    answer: "Wij zijn actief in heel de regio Antwerpen en de Kempen, met een focus op Zoersel, Schilde, Brasschaat, Wijnegem en Antwerpen-stad.",
+    answer: "Wij zijn actief in de Vlaamse Ardennen (Geraardsbergen, Ninove, Ronse, Zottegem, Brakel en omgeving) én de regio Antwerpen (Brasschaat, Schilde, Wijnegem, Antwerpen-stad en omgeving). Gratis opmeting in heel ons werkgebied.",
   },
   {
     question: "Helpen jullie bij de aanvraag van premies?",

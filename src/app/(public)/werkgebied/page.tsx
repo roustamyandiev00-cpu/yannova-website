@@ -5,14 +5,15 @@ import { generateSEO } from "@/lib/seo";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 
 export const metadata: Metadata = generateSEO({
-  title: "Werkgebied - Actief in Antwerpen en Omgeving",
-  description: "Yannova is actief in Antwerpen en alle randgemeenten: Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten, Wijnegem, Mortsel, Edegem, Kontich en meer. Bekijk waar wij werken.",
+  title: "Werkgebied - Actief in Geraardsbergen en de Vlaamse Ardennen",
+  description: "Yannova is gevestigd in Geraardsbergen en actief in de gehele regio Vlaamse Ardennen & Denderstreek (Ninove, Ronse, Zottegem, Brakel, Lierde, Herzele, Aalst, Galmaarden, Oudenaarde). Bekijk waar wij werken.",
   path: "/werkgebied",
   keywords: [
     "werkgebied yannova",
     "waar actief",
-    "antwerpen en omgeving",
-    "regio antwerpen",
+    "geraardsbergen en omgeving",
+    "vlaamse ardennen",
+    "denderstreek",
   ],
 });
 
@@ -22,71 +23,60 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 ]);
 
 const werkgebieden = [
+  // Geraardsbergen en Vlaamse Ardennen & Denderstreek
   {
-    name: "Antwerpen",
-    slug: "antwerpen",
-    description: "Heel Antwerpen stad en alle deelgemeenten",
+    name: "Geraardsbergen",
+    slug: "geraardsbergen",
+    description: "Onze thuisbasis",
     priority: true,
   },
   {
-    name: "Berchem",
-    slug: "berchem",
-    description: "Specialist in Berchem en omgeving",
+    name: "Ninove",
+    slug: "ninove",
+    description: "Actief in Ninove en deelgemeenten",
+    priority: true,
   },
   {
-    name: "Deurne",
-    slug: "deurne",
-    description: "Actief in heel Deurne",
+    name: "Zottegem",
+    slug: "zottegem",
+    description: "Service in Zottegem en omgeving",
+    priority: true,
   },
   {
-    name: "Merksem",
-    slug: "merksem",
-    description: "Ramen en deuren in Merksem",
+    name: "Ronse",
+    slug: "ronse",
+    description: "Ramen en deuren in Ronse",
+    priority: true,
   },
   {
-    name: "Wilrijk",
-    slug: "wilrijk",
-    description: "Service in Wilrijk en omstreken",
+    name: "Brakel",
+    slug: "brakel",
+    description: "Actief in Brakel en omgeving",
   },
   {
-    name: "Brasschaat",
-    slug: "brasschaat",
-    description: "Actief in Brasschaat",
+    name: "Lierde",
+    slug: "lierde",
+    description: "Ramen en renovaties in Lierde",
   },
   {
-    name: "Schoten",
-    slug: "schoten",
-    description: "Ramen en deuren in Schoten",
+    name: "Herzele",
+    slug: "herzele",
+    description: "Service in Herzele en deelgemeenten",
   },
   {
-    name: "Wijnegem",
-    slug: "wijnegem",
-    description: "Service in Wijnegem",
+    name: "Aalst",
+    slug: "aalst",
+    description: "Actief in Aalst en omgeving",
   },
   {
-    name: "Mortsel",
-    slug: "mortsel",
-    description: "Actief in Mortsel",
+    name: "Galmaarden",
+    slug: "galmaarden",
+    description: "Ramen en isolatiewerken in Galmaarden",
   },
   {
-    name: "Edegem",
-    slug: "edegem",
-    description: "Ramen en deuren in Edegem",
-  },
-  {
-    name: "Kontich",
-    slug: "kontich",
-    description: "Service in Kontich",
-  },
-  {
-    name: "Zoersel",
-    slug: "zoersel",
-    description: "Onze thuisbasis",
-  },
-  {
-    name: "Mechelen",
-    slug: "mechelen",
-    description: "Actief in Mechelen en omgeving",
+    name: "Oudenaarde",
+    slug: "oudenaarde",
+    description: "Totaalrenovatie in Oudenaarde",
   },
 ];
 
@@ -109,8 +99,8 @@ export default function WerkgebiedOverviewPage() {
                 Ons <span className="text-secondary">Werkgebied</span>
               </h1>
               <p className="mt-6 text-xl text-gray-300 leading-relaxed">
-                Vanuit Zoersel bedienen we heel Antwerpen en omgeving. Bekijk hieronder waar we actief zijn
-                voor ramen, deuren en renovatiewerken.
+                Vanuit Geraardsbergen bedienen we de Vlaamse Ardennen (Geraardsbergen, Ninove, Ronse, Zottegem) 
+                en de regio Antwerpen. Bekijk hieronder waar we actief zijn.
               </p>
             </div>
           </div>
@@ -156,15 +146,14 @@ export default function WerkgebiedOverviewPage() {
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                   <h3 className="text-lg font-semibold text-white mb-3">Snelle service</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Door onze centrale ligging in Zoersel zijn we snel ter plaatse in heel de regio
-                    Antwerpen. Gratis opmeting meestal binnen 48 uur.
+                    Door onze ligging in Geraardsbergen zijn we snel ter plaatse in de Vlaamse Ardennen en hebben goede bereikbaarheid naar Antwerpen. Gratis opmeting meestal binnen 48 uur.
                   </p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6">
                   <h3 className="text-lg font-semibold text-white mb-3">Lokale kennis</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    We kennen de regio en hebben ervaring met verschillende woningtypes in elke
-                    gemeente. Van klassieke rijwoningen tot moderne nieuwbouw.
+                    We kennen de Vlaamse Ardennen en de regio Antwerpen en hebben ervaring met verschillende 
+                    woningtypes in elke gemeente. Van klassieke rijwoningen tot moderne nieuwbouw.
                   </p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6">

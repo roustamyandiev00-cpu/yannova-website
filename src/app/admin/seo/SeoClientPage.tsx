@@ -386,7 +386,7 @@ export default function SeoClientPage({ pages, audits }: { pages: SeoPageType[];
                       required
                       rows={3}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
-                      placeholder="Specialist in ramen, deuren en renovatie in regio Zoersel..."
+                      placeholder="Specialist in ramen, deuren en renovatie in regio Geraardsbergen..."
                     />
                   </div>
 
@@ -400,7 +400,7 @@ export default function SeoClientPage({ pages, audits }: { pages: SeoPageType[];
                       value={editingPage.keywords || ''}
                       onChange={(e) => setEditingPage({ ...editingPage, keywords: e.target.value })}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
-                      placeholder="ramen, deuren, renovatie, zoersel"
+                      placeholder="ramen, deuren, renovatie, geraardsbergen"
                     />
                   </div>
 
@@ -414,7 +414,7 @@ export default function SeoClientPage({ pages, audits }: { pages: SeoPageType[];
                       value={editingPage.h1 || ''}
                       onChange={(e) => setEditingPage({ ...editingPage, h1: e.target.value })}
                       className="w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
-                      placeholder="Specialist in Ramen en Deuren in Zoersel"
+                      placeholder="Specialist in Ramen en Deuren in Geraardsbergen"
                     />
                   </div>
 

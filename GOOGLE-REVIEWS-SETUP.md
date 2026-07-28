@@ -7,13 +7,13 @@
 3. Klik rechtsboven op het menu (drie puntjes ...)
 4. Klik op **"Bedrijfsprofiel bekijken"** of **"Google Maps bekijken"**
 5. De URL in je browser ziet er zo uit:
-   `https://www.google.com/maps/place/Yannova+Bouw/@51.xxx,4.xxx/...`
+   `https://www.google.com/maps/place/Yannova+Bouw/@50.xxx,3.xxx/...`
 6. Zoek in die URL naar `ChIJ...` — dat is je Place ID
    (begint altijd met "ChIJ" gevolgd door letters en cijfers)
 
 **Of gebruik deze tool:**
 https://developers.google.com/maps/documentation/places/web-service/place-id#find-id
-→ Zoek op "Yannova Bouw Zoersel"
+→ Zoek op "Yannova Bouw Geraardsbergen"
 
 ---
 
@@ -97,7 +97,7 @@ Stuur de review-uitnodiging bij voorkeur **2-4 weken na oplevering** van de werk
 ## Google Business Profile optimalisatie checklist
 
 - [ ] Bedrijfsnaam: "Yannova Bouw" ✓
-- [ ] Adres: Zoersel correct ingesteld?
+- [ ] Adres: Geraardsbergen correct ingesteld?
 - [ ] Telefoon: +32 489 96 00 01 ingesteld?
 - [ ] Website: https://www.yannova.be ingesteld?
 - [ ] Openingsuren: Ma-Vr 08:00-18:00 en Za 09:00-13:00
@@ -110,4 +110,4 @@ Stuur de review-uitnodiging bij voorkeur **2-4 weken na oplevering** van de werk
 
 ### Aanbevolen beschrijving voor Google Business:
 
-Yannova Bouw is uw specialist in ramen, deuren en gevelrenovatie in Zoersel, Antwerpen en omgeving. Wij plaatsen PVC en aluminium ramen met HR++ en drievoudig glas voor maximale isolatie en energiebesparing. Voor gevelrenovatie werken wij met hoogwaardige siliconenharspleister (crepi) en buitengevelisolatie (ETICS). Gratis opmeting aan huis, offerte binnen 24u en premie-advies Mijn VerbouwPremie inbegrepen. 15+ jaar ervaring in de Antwerpse regio. Werkgebied: Zoersel, Schilde, Brasschaat, Antwerpen, Deurne, Berchem, Wilrijk, Merksem, Kapellen, Schoten en omgeving.
+Yannova Bouw is uw specialist in ramen, deuren en gevelrenovatie in Geraardsbergen, Ninove, Ronse en de Vlaamse Ardennen. Wij plaatsen PVC en aluminium ramen met HR++ en drievoudig glas voor maximale isolatie en energiebesparing. Voor gevelrenovatie werken wij met hoogwaardige siliconenharspleister (crepi) en buitengevelisolatie (ETICS). Gratis opmeting aan huis, offerte binnen 24u en premie-advies Mijn VerbouwPremie inbegrepen. 15+ jaar ervaring in de regio. Werkgebied: Geraardsbergen, Ninove, Ronse, Oudenaarde, Aalst, Zottegem, Brakel en heel de Vlaamse Ardennen.

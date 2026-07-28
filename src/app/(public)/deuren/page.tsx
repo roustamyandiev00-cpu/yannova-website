@@ -7,12 +7,12 @@ import { generateFAQSchema, commonFAQs } from "@/lib/faq-schema";
 import { generateBreadcrumbSchema } from "@/lib/breadcrumb-schema";
 
 export const metadata: Metadata = generateSEO({
-  title: "Deuren plaatsen Zoersel & Antwerpen | PVC & Aluminium | Yannova",
-  description: "Professionele plaatsing van PVC en aluminium deuren in Zoersel, Antwerpen en omgeving. Voordeur, achterdeur, schuifdeuren. Gratis opmeting, offerte binnen 24u.",
+  title: "Deuren plaatsen Geraardsbergen & Antwerpen | PVC & Aluminium | Yannova",
+  description: "Professionele plaatsing van PVC en aluminium deuren in Geraardsbergen, Antwerpen en omgeving. Voordeur, achterdeur, schuifdeuren. Gratis opmeting, offerte binnen 24u.",
   path: "/deuren",
   keywords: [
-    "deuren zoersel",
-    "deuren plaatsen zoersel",
+    "deuren geraardsbergen",
+    "deuren plaatsen geraardsbergen",
     "deuren plaatsen antwerpen",
     "pvc deuren",
     "aluminium deuren",
@@ -78,10 +78,10 @@ export default function DeurenPage() {
               <span className="text-sm text-gray-400">4.9 Google score • 200+ projecten</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white">
-              Deuren plaatsen in <span className="text-secondary">Zoersel en Antwerpen</span>
+              Deuren plaatsen in <span className="text-secondary">Geraardsbergen en Antwerpen</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300 leading-relaxed">
-              PVC en aluminium deuren met inbraakwerend beslag. Specialist in Zoersel, Antwerpen en omgeving. Gratis opmeting, duidelijke offerte binnen 24 uur.
+              PVC en aluminium deuren met inbraakwerend beslag. Specialist in Geraardsbergen, Antwerpen en omgeving. Gratis opmeting, duidelijke offerte binnen 24 uur.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-secondary px-6 py-3.5 text-base font-semibold text-white hover:bg-secondary/90 transition-colors">
@@ -168,7 +168,7 @@ export default function DeurenPage() {
             <p className="text-gray-300 leading-relaxed mb-4">
               Bij het kiezen van nieuwe deuren in Antwerpen staat u voor een belangrijke keuze: <strong>PVC of aluminium</strong>?
               <strong> PVC deuren</strong> zijn uitstekend isolerend, onderhoudsarm en betaalbaar. Ze zijn ideaal voor voor- en achterdeuren
-              in Zoersel, Antwerpen, Berchem en Deurne waar isolatie en prijs-kwaliteit centraal staan.
+              in Geraardsbergen, Antwerpen, Berchem en Deurne waar isolatie en prijs-kwaliteit centraal staan.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               <strong>Aluminium deuren</strong> bieden een strakke, moderne uitstraling met smalle profielen en zijn uiterst duurzaam.
@@ -218,7 +218,7 @@ export default function DeurenPage() {
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
               Wij helpen u bij het aanvragen van premies en zorgen dat alle technische attesten correct zijn.
-              Voor woningen in Zoersel, Antwerpen, Brasschaat, Schoten en omgeving kunnen de premies oplopen tot
+              Voor woningen in Geraardsbergen, Antwerpen, Brasschaat, Schoten en omgeving kunnen de premies oplopen tot
               enkele honderden euro&apos;s per deur.
             </p>
 
@@ -226,7 +226,7 @@ export default function DeurenPage() {
               Onze Werkwijze: Van Opmeting tot Plaatsing
             </h3>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Na uw aanvraag komen wij <strong>gratis bij u langs voor een opmeting</strong> in Zoersel, Antwerpen of een andere
+              Na uw aanvraag komen wij <strong>gratis bij u langs voor een opmeting</strong> in Geraardsbergen, Antwerpen of een andere
               gemeente in de regio. Wij bespreken uw wensen, nemen nauwkeurige maten en adviseren over het beste type deur
               voor uw situatie.
             </p>
@@ -250,8 +250,8 @@ export default function DeurenPage() {
               Deuren Antwerpen
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/deuren/zoersel" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
-              Deuren Zoersel
+            <Link href="/deuren/geraardsbergen" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">
+              Deuren Geraardsbergen
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/deuren/brasschaat" className="inline-flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-6 py-3 text-base font-medium text-white hover:bg-white/10 transition-colors">

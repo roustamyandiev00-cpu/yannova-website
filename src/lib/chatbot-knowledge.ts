@@ -5,15 +5,15 @@
 
 export const COMPANY_INFO = {
   name: 'Yannova',
-  tagline: 'Ramen, Deuren & Renovatie in Antwerpen',
+  tagline: 'Ramen, Deuren & Renovatie in Geraardsbergen & Vlaamse Ardennen',
   founded: '2010',
   location: {
-    base: 'Zoersel',
-    region: 'Antwerpen en omgeving',
+    base: 'Geraardsbergen',
+    region: 'Geraardsbergen, Vlaamse Ardennen en Denderstreek',
   },
   contact: {
-    phone: '03 123 45 67',
-    phoneHref: 'tel:+3231234567',
+    phone: '0489 96 00 01',
+    phoneHref: 'tel:+32489960001',
     email: 'info@yannova.be',
     website: 'www.yannova.be',
   },
@@ -21,23 +21,23 @@ export const COMPANY_INFO = {
 
 export const WERKGEBIED = {
   primary: [
-    'Antwerpen (stad en alle deelgemeenten)',
-    'Berchem',
-    'Deurne',
-    'Merksem',
-    'Wilrijk',
+    'Geraardsbergen',
+    'Ninove',
+    'Zottegem',
+    'Ronse',
+    'Brakel',
   ],
   secondary: [
-    'Brasschaat',
-    'Schoten',
-    'Wijnegem',
-    'Mortsel',
-    'Edegem',
-    'Kontich',
-    'Zoersel',
-    'Mechelen',
+    'Lierde',
+    'Herzele',
+    'Aalst',
+    'Denderleeuw',
+    'Galmaarden',
+    'Oudenaarde',
+    'Kluisbergen',
+    'Sint-Lievens-Houtem',
   ],
-  description: 'We zijn actief in heel Antwerpen en alle randgemeenten. Vanuit onze thuisbasis in Zoersel bereiken we de hele regio snel.',
+  description: 'We zijn gevestigd in Geraardsbergen en actief in de gehele regio Vlaamse Ardennen en Denderstreek. Vanuit Geraardsbergen bereiken we alle omliggende steden en dorpen snel.',
 };
 
 export const DIENSTEN = {
@@ -138,7 +138,7 @@ export const FAQ = [
   },
   {
     question: 'Werken jullie ook in [gemeente]?',
-    answer: 'We zijn actief in heel Antwerpen en alle randgemeenten: Berchem, Deurne, Merksem, Wilrijk, Brasschaat, Schoten, Wijnegem, Mortsel, Edegem, Kontich, Zoersel en Mechelen. Vanuit onze thuisbasis in Zoersel bereiken we de hele regio snel.',
+    answer: 'We zijn gevestigd in Geraardsbergen en actief in de gehele regio Vlaamse Ardennen en Denderstreek: Geraardsbergen, Ninove, Zottegem, Ronse, Brakel, Lierde, Herzele, Aalst, Denderleeuw, Galmaarden en Oudenaarde.',
   },
   {
     question: 'Hoe snel kunnen jullie starten?',

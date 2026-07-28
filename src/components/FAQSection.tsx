@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Werken jullie ook in mijn regio?",
     answer:
-      "Wij zijn gevestigd in Zoersel en werken in de provincie Antwerpen en regio Mechelen. Neem contact op met uw postcode en we bevestigen meteen de beschikbaarheid.",
+      "Wij zijn gevestigd in Geraardsbergen en actief in de volledige Vlaamse Ardennen en Denderstreek. Neem contact op met uw postcode en we bevestigen meteen de beschikbaarheid.",
   },
   {
     question: "Moet ik zelf voor de afbraak zorgen?",
