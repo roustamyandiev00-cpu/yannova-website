@@ -84,6 +84,7 @@ export const metadata: Metadata = {
     "geo.placename": "Geraardsbergen",
     "geo.position": "50.7667;3.8833",
     ICBM: "50.7667, 3.8833",
+    "msvalidate.01": "C3661B0C83BA01EC518D069DF5501B8F",
   },
   icons: {
     icon: [
